@@ -3,13 +3,15 @@ from odoo import fields, models, _
 from odoo.exceptions import UserError
 
 
+
+
 # Codes that must never be deleted
 _PROTECTED_CODES = {
     'committee_decision_accepted',
     'committee_decision_rejected',
     'request_transfer_auction',
 }
-
+ 
 
 class AuctionManagerApproval(models.Model):
     _name = 'auction.manager.approval'

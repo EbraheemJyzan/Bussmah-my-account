@@ -1291,12 +1291,6 @@ msgid "Negotiator"
 msgstr "المتفاوض"
 
 #. module: bussma_system
-#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__deputy_studies_manager_approval
-#: model:request.stage,name:bussma_system.deputy_studies_manager_approval
-msgid "Deputy Studies Manager Approval"
-msgstr "اعتماد نائب مدير الدراسات"
-
-#. module: bussma_system
 #: model:auction.manager.approval,name:bussma_system.auction_manager_approval_accept_committee
 #: model:ir.model.fields.selection,name:bussma_system.selection__entries__auctions_manager_approval__committee_decision_accepted
 #: model:ir.model.fields.selection,name:bussma_system.selection__entries__sales_manager_approval__committee_decision_accepted
@@ -2880,11 +2874,6 @@ msgstr "تعيين المفاوض (أيام)"
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_negotiator_days
 msgid "Negotiator Duration (Days)"
 msgstr "المفاوض (أيام)"
-
-#. module: bussma_system
-#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_deputy_studies_manager_approval_days
-msgid "Deputy Studies Manager Approval Duration (Days)"
-msgstr "اعتماد نائب مدير الدراسات (أيام)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_manager_contract_approval_days
