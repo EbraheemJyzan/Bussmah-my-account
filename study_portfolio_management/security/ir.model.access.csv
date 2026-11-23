@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_study_portfolio_user,study.portfolio.user,model_study_portfolio,base.group_user,1,1,1,1
+

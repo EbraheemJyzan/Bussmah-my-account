@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_bussma_project_form" model="ir.ui.view">
+        <field name="name">bussma.project.form</field>
+        <field name="model">bussma.project</field>
+        <field name="arch" type="xml">
+            <form string="Project">
+                <header>
+                    <button name="action_open_assign_wizard"
+                            type="object"
+                            string="➕ Assign Properties"
+                            class="btn-primary"
+                            invisible="id == False or basic_project_type != False or bussma_project_stage_selection == 'bussma_project_completed'"/>
+                    <button name="action_add_new_eanfaz_property"
+                            type="object"
+                            string="➕ Add Eanfaz Property"
+                            class="btn-primary"
+                            invisible="basic_project_type != 'auction_enf'"/>
+                    <!-- Send All Properties to Studies Supervisor -->
+                    <!-- Only for non-basic Eanfaz projects — Auctions PM role -->
+                    <button name="action_send_all_to_supervisor"
+                            type="object"
+                            string="Send All to Studies Supervisor"
+                            class="btn-success"
+                            groups="sales_and_auction_management.group_sales_project_manager"
+                            invisible="not(project_type == 'auction_enf' and is_basic == False) or bussma_project_stage_selection == 'bussma_project_completed'"
+                            confirm="Are You Sure You Want to Send All Properties in This Project to the Studies Supervisor?"/>
+                    <!-- Stage Action Buttons -->
+                    <button name="action_move_to_sales_fin"
+                            type="object"
+                            string="Send to Sales and Finance"
+                            class="btn-primary"
+                            confirm="Are You Sure You Want to Move This Project to Sales and Finance?"
+                            invisible="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed'] or is_basic"/>
+                    <!-- Stage Return Buttons -->
+                    <button name="action_return_to_project_management"
+                            type="object"
+                            string="Return to Project Management"
+                            class="btn-secondary"
+                            confirm="Are You Sure You Want to Return This Project to Project Management Stage?"
+                            invisible="bussma_project_stage_selection != 'bussma_project_sales_fin' or is_basic"/>
+                    <button name="action_move_to_completed"
+                            type="object"
+                            string="Move to Completed"
+                            class="btn-success"
+                            confirm="Are You Sure You Want to Move This Project to Completed?"
+                            invisible="bussma_project_stage_selection != 'bussma_project_sales_fin' or is_basic"/>
+                    <button name="action_return_to_sales_fin"
+                            type="object"
+                            string="Return to Sales and Finance"
+                            class="btn-secondary"
+                            confirm="Are You Sure You Want to Return This Project to Sales and Finance?"
+                            invisible="bussma_project_stage_selection != 'bussma_project_completed' or is_basic"/>
+                    <field name="stage_id" widget="statusbar" invisible="is_basic"/>
+                </header>
+                <sheet>
+                    <field name="basic_project_type" invisible="1"/>
+                    <field name="bussma_project_stage_selection" invisible="1"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_dummy_pass" type="object" class="oe_stat_button" icon="fa-building">
+                            <field name="entries_count" widget="statinfo" string="Properties"/>
+                        </button>
+                        <button name="action_view_transferred_entries"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-exchange"
+                                invisible="is_basic or not transferred_entries_count">
+                            <field name="transferred_entries_count" widget="statinfo" string="Referred and Transferred Properties"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="code" readonly="1"/>
+                        </h1>
+                        <label for="name" class="oe_edit_only"/>
+                        <h2>
+                            <field name="name" placeholder="Project Name..." readonly="is_basic"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="project_type" invisible="1"/>
+                            <field name="project_manager_id" required="basic_project_type == False" invisible="basic_project_type != False"/>
+                        </group>
+                        <group>
+                            <field name="project_category" invisible="is_basic == True"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="properties" string="Properties">
+                            <field name="entry_ids">
+                                <list create="0" delete="0" edit="0">
+                                    <field name="entrie_name"/>
+                                    <field name="partner_id" string="Client Name"/>
+                                    <field name="contract_agreed_price" widget="monetary"/>
+                                    <field name="stage_id"/>
+                                    <button name="action_remove_from_project"
+                                            type="object"
+                                            icon="fa-times"
+                                            string="Cancel Assignment"
+                                            class="btn-sm btn-danger"
+                                            confirm="Are you sure you want to cancel the assignment of this property from the project?"/>
+                                </list>
+                                <form create="0" edit="0" delete="0">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="entrie_name" readonly="1"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group string="Client &amp; Contracting Information">
+                                                <field name="partner_id" readonly="1"/>
+                                                <field name="partner_mobile" readonly="1"/>
+                                                <field name="contract_client_name" readonly="1"/>
+                                                <field name="contract_agreed_price" widget="monetary" readonly="1"/>
+                                                <field name="contract_duration" readonly="1"/>
+                                                <field name="currency_id" invisible="1"/>
+                                            </group>
+                                            <group string="Property Details">
+                                                <field name="property_type" readonly="1"/>
+                                                <field name="city" readonly="1"/>
+                                                <field name="district_id" readonly="1"/>
+                                                <field name="area_sqm" readonly="1"/>
+                                                <field name="deed_number" readonly="1"/>
+                                                <field name="plan_number" readonly="1"/>
+                                                <field name="plot_number" readonly="1"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Preliminary Study" name="preliminary_study">
+                                                <group>
+                                                    <group string="Study Status &amp; Pricing">
+                                                        <field name="preliminary_study_status" readonly="1"/>
+                                                        <field name="customer_price_per_sqm" widget="monetary" readonly="1"/>
+                                                        <field name="final_property_price" widget="monetary" readonly="1"/>
+                                                        <field name="comparison_average" widget="monetary" readonly="1"/>
+                                                        <field name="justice_index_average" widget="monetary" readonly="1"/>
+                                                    </group>
+                                                    <group string="Income &amp; Property Info">
+                                                        <field name="verified_income" widget="monetary" readonly="1"/>
+                                                        <field name="expected_full_lease_income" widget="monetary" readonly="1"/>
+                                                        <field name="properties_count" readonly="1"/>
+                                                        <field name="building_requirements" readonly="1"/>
+                                                    </group>
+                                                </group>
+                                                <group string="Analyst Recommendations &amp; Notes">
+                                                    <field name="analyst_recommendation_preliminary" readonly="1"/>
+                                                    <field name="analyst_rejection_notes" readonly="1" invisible="not analyst_rejection_notes"/>
+                                                </group>
+                                            </page>
+                                            <page string="Detailed Study" name="detailed_study">
+                                                <group>
+                                                    <group string="Detailed Evaluation &amp; Pricing">
+                                                        <field name="detailed_final_property_price" widget="monetary" readonly="1"/>
+                                                        <field name="detailed_comparison_average" widget="monetary" readonly="1"/>
+                                                        <field name="justice_ministry_index_average" widget="monetary" readonly="1"/>
+                                                        <field name="lowest_price_per_meter_total_property" widget="monetary" readonly="1"/>
+                                                        <field name="approximate_building_value_per_meter" widget="monetary" readonly="1"/>
+                                                        <field name="current_total_income" widget="monetary" readonly="1"/>
+                                                    </group>
+                                                    <group string="Property Specifications">
+                                                        <field name="building_area" readonly="1"/>
+                                                        <field name="floors_count" readonly="1"/>
+                                                        <field name="units_count" readonly="1"/>
+                                                        <field name="building_license_number" readonly="1"/>
+                                                        <field name="building_license_date" readonly="1"/>
+                                                        <field name="best_property_use" readonly="1"/>
+                                                    </group>
+                                                </group>
+                                                <group>
+                                                    <group string="Services &amp; Utilities">
+                                                        <field name="electricity_service" readonly="1"/>
+                                                        <field name="electricity_meters_count" readonly="1"/>
+                                                        <field name="water_service" readonly="1"/>
+                                                        <field name="water_meters_count" readonly="1"/>
+                                                        <field name="sewage_service" readonly="1"/>
+                                                        <field name="pavement_service" readonly="1"/>
+                                                    </group>
+                                                    <group string="Analysis Points">
+                                                        <field name="internal_strength_points" readonly="1"/>
+                                                        <field name="external_strength_points" readonly="1"/>
+                                                        <field name="external_weakness_points" readonly="1"/>
+                                                    </group>
+                                                </group>
+                                                <group string="Detailed Analyst Recommendation">
+                                                    <field name="analyst_recommendation_details" readonly="1"/>
+                                                    <field name="detailed_building_requirements" readonly="1"/>
+                                                </group>
+                                            </page>
+                                            <page string="Negotiation &amp; Committee Decision" name="negotiation_page">
+                                                <group>
+                                                    <group string="Owner Final Negotiation">
+                                                        <field name="final_owner_decision" readonly="1"/>
+                                                        <field name="final_owner_price" widget="monetary" readonly="1"/>
+                                                        <field name="manager_negotiator_final_owner_decision" readonly="1"/>
+                                                        <field name="manager_negotiator_final_owner_price" widget="monetary" readonly="1"/>
+                                                    </group>
+                                                    <group string="Committee Decision">
+                                                        <field name="committee_decision" readonly="1"/>
+                                                        <field name="committee_decision_date" readonly="1"/>
+                                                        <field name="marketing_duration_months" readonly="1"/>
+                                                        <field name="committe_notes" readonly="1"/>
+                                                    </group>
+                                                </group>
+                                            </page>
+                                            <page string="Attachments &amp; Documents" name="attachments">
+                                                <group>
+                                                    <group string="Contracts &amp; Deeds">
+                                                        <field name="rent_contract_ids" widget="many2many_binary" readonly="1"/>
+                                                        <field name="contract_buyer_attachment" filename="contract_buyer_attachment_name" readonly="1"/>
+                                                        <field name="contract_buyer_attachment_name" invisible="1"/>
+                                                        <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name" readonly="1"/>
+                                                        <field name="contract_agency_deed_attachment_name" invisible="1"/>
+                                                    </group>
+                                                    <group string="Photos &amp; Files">
+                                                        <field name="facility_photo_ids" widget="many2many_binary" readonly="1"/>
+                                                    </group>
+                                                </group>
+                                            </page>
+                                            <page string="Notes &amp; Description" name="notes">
+                                                <group>
+                                                    <field name="entered_notes" readonly="1"/>
+                                                    <field name="property_description" readonly="1"/>
+                                                </group>
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="project_management_page" string="Project Management" invisible="is_basic">
+                            <!-- Auction Projects Fields (Private, Cities, Eanfaz) -->
+                            <group invisible="project_type == 'sales'">
+                                <group>
+                                    <field name="auction_category" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="project_cat" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="need_identity" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="platform_extra_notification" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                </group>
+                                <group>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="wallet_recharge_amount" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="auction_type" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="auction_date" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="auction_start_time" invisible="auction_type == 'onsite'" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="auction_end_time" invisible="auction_type == 'onsite'" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                </group>
+                            </group>
+                            <!-- Direct Sale Project Fields -->
+                            <group invisible="project_type != 'sales'">
+                                <group>
+                                    <field name="sales_project_status" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="project_cat" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                </group>
+                            </group>
+                            <!-- Shared Project Dates for all Project Types -->
+                            <group string="Project Dates">
+                                <group>
+                                    <field name="project_start_date" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="project_end_date" readonly="bussma_project_stage_selection in ['bussma_project_sales_fin', 'bussma_project_completed']"/>
+                                    <field name="project_duration"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="govt_auction_info_page" string="Government Auction Information"
+                              invisible="project_type != 'auction_enf' or is_basic">
+                            <group>
+                                <group string="Government Auction Information">
+                                    <field name="auction_category"/>
+                                    <field name="need_identity"/>
+                                </group>
+                                <group string="Execution Applicant Information">
+                                    <field name="asset_number"/>
+                                    <field name="court_decision_number"/>
+                                    <field name="execution_applicant_name"/>
+                                    <field name="execution_applicant_phone"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Deed Information">
+                                    <field name="deed_number"/>
+                                    <field name="deed_date_hijri" widget="hijri_date"/>
+                                    <field name="deed_issuer"/>
+                                    <field name="plan_number"/>
+                                    <field name="plot_number"/>
+                                </group>
+                                <group string="Location and Area">
+                                    <field name="city"/>
+                                    <field name="district_id"/>
+                                    <field name="property_type"/>
+                                    <field name="area_sqm"/>
+                                    <field name="location_url" widget="url"/>
+                                </group>
+                            </group>
+                            <group string="Dimensions and Boundaries (North/South)">
+                                <group>
+                                    <field name="limit_north"/>
+                                    <field name="length_north"/>
+                                </group>
+                                <group>
+                                    <field name="limit_south"/>
+                                    <field name="length_south"/>
+                                </group>
+                            </group>
+                            <group string="Dimensions and Boundaries (East/West)">
+                                <group>
+                                    <field name="limit_east"/>
+                                    <field name="length_east"/>
+                                </group>
+                                <group>
+                                    <field name="limit_west"/>
+                                    <field name="length_west"/>
+                                </group>
+                            </group>
+                            <group string="Description">
+                                <field name="property_description"/>
+                                <field name="property_images_url" widget="url"/>
+                                <field name="project_notes"/>
+                            </group>
+                            <group>
+                                <field name="lease_contract_type"/>
+                                <field name="has_operation_contract"/>
+                                <field name="lease_contract_expiry_date" widget="hijri_date"/>
+                                <field name="project_manager_notes"/>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_bussma_project_tree" model="ir.ui.view">
+        <field name="name">bussma.project.list</field>
+        <field name="model">bussma.project</field>
+        <field name="arch" type="xml">
+            <list string="Projects">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="project_type"/>
+                <field name="stage_id" widget="badge"/>
+                <field name="entries_count" string="Properties Count"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View (Professional) -->
+    <record id="view_bussma_project_kanban" model="ir.ui.view">
+        <field name="name">bussma.project.kanban</field>
+        <field name="model">bussma.project</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" create="true" sample="1">
+                <field name="id"/>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="project_type"/>
+                <field name="project_category"/>
+                <field name="entries_count"/>
+                <field name="is_basic"/>
+                <templates>
+                    <t t-name="card">
+                        <t t-set="project_theme" t-value="record.project_type.raw_value == 'sales' ? 'theme-project-sales' : record.project_type.raw_value == 'auction_pvt' ? 'theme-project-pvt' : record.project_type.raw_value == 'auction_enf' ? 'theme-project-enf' : 'theme-project-city'"/>
+                        <div t-attf-class="oe_kanban_global_click o_kanban_record d-flex flex-column justify-content-between p-3 border-start border-4 bussma-project-kanban-card #{project_theme} #{record.is_basic.raw_value ? 'bussma-project-basic-special' : ''}">
+                            <t t-if="record.is_basic.raw_value">
+                                <span class="portfolio-badge">
+                                    <i class="fa fa-star"/> محفظة أساسية
+                                </span>
+                            </t>
+                            
+                            <div class="d-flex justify-content-between align-items-start mb-2 mt-4">
+                                <div class="fw-bold text-truncate" style="font-size: 15px; color: #1e293b; max-width: 70%;">
+                                    [<field name="code"/>] <field name="name"/>
+                                </div>
+                                
+                                <!-- Tailored Colored Badges for Project Types -->
+                                <t t-if="record.project_type.raw_value == 'sales'">
+                                    <span class="badge" style="font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;">
+                                        بيع مباشر
+                                    </span>
+                                </t>
+                                <t t-if="record.project_type.raw_value == 'auction_pvt'">
+                                    <span class="badge" style="font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0;">
+                                        مزاد خاص
+                                    </span>
+                                </t>
+                                <t t-if="record.project_type.raw_value == 'auction_enf'">
+                                    <span class="badge" style="font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #fff7ed; color: #9a3412; border: 1px solid #ffedd5;">
+                                        مزاد إنفاذ
+                                    </span>
+                                </t>
+                                <t t-if="record.project_type.raw_value == 'city'">
+                                    <span class="badge" style="font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #f5f3ff; color: #5b21b6; border: 1px solid #ddd6fe;">
+                                        مدن
+                                    </span>
+                                </t>
+                            </div>
+
+                            <div class="mb-2" t-if="record.project_category.raw_value">
+                                <span class="badge text-bg-light border text-dark" style="font-size: 11px; padding: 3px 6px; border-radius: 4px; font-weight: 500;">
+                                    <i class="fa fa-folder-open-o" title="Category" style="color: #64748b; margin-left: 2px;"/>
+                                    <field name="project_category"/>
+                                </span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top border-light">
+                                <div class="d-flex align-items-center gap-1 text-muted" style="font-size: 13px;">
+                                    <i class="fa fa-building-o" style="color: #64748b;"/>
+                                    <span>العقارات:</span>
+                                    <span class="fw-bold text-dark"><field name="entries_count"/></span>
+                                </div>
+                                
+                                <button class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1 py-1 px-2 border-0 btn-project-view" 
+                                        type="object" name="action_view_properties" 
+                                        style="font-size: 12px; border-radius: 4px; color: #475569;">
+                                    <span>عرض</span>
+                                    <i class="fa fa-arrow-right"/>
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_bussma_project_search" model="ir.ui.view">
+        <field name="name">bussma.project.search</field>
+        <field name="model">bussma.project</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="stage_id"/>
+                <filter string="Sales Projects" name="sales" domain="[('project_type', '=', 'sales')]"/>
+                <filter string="Auctions Projects" name="auctions" domain="[('project_type', '=', 'auctions')]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type" name="group_by_type" context="{'group_by': 'project_type'}"/>
+                    <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Assign Project Properties List View -->
+    <record id="view_entries_assign_project_list" model="ir.ui.view">
+        <field name="name">sales.auction.management.assign.project.list</field>
+        <field name="model">sales.auction.management</field>
+        <field name="arch" type="xml">
+            <list string="Select properties to assign to project"
+                  create="0" delete="0" edit="0">
+                <header>
+                    <button name="action_assign_to_project"
+                            type="object"
+                            string="Assign Selected Properties to Project"
+                            class="oe_highlight"/>
+                </header>
+                <field name="entrie_name"/>
+                <field name="partner_id"/>
+                <field name="city"/>
+                <field name="area_sqm"/>
+                <field name="property_type"/>
+                <field name="stage_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Window Action: Sales Projects -->
+    <record id="action_bussma_project_sales" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('project_type', '=', 'sales'), ('is_basic', '=', False)]</field>
+        <field name="context">{'default_project_type': 'sales', 'delete': False}</field>
+        <field name="search_view_id" ref="view_bussma_project_search"/>
+    </record>
+
+    <!-- Window Action: Auctions - Private Projects -->
+    <record id="action_bussma_project_auction_pvt" model="ir.actions.act_window">
+        <field name="name">Projects (Private Auctions)</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('project_type', '=', 'auction_pvt'), ('is_basic', '=', False)]</field>
+        <field name="context">{'default_project_type': 'auction_pvt', 'delete': False}</field>
+        <field name="search_view_id" ref="view_bussma_project_search"/>
+    </record>
+
+    <!-- Window Action: Auctions - Eanfaz Projects -->
+    <record id="action_bussma_project_auction_enf" model="ir.actions.act_window">
+        <field name="name">Projects (Eanfaz Auctions)</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('project_type', '=', 'auction_enf'), ('is_basic', '=', False)]</field>
+        <field name="context">{'default_project_type': 'auction_enf', 'delete': False}</field>
+        <field name="search_view_id" ref="view_bussma_project_search"/>
+    </record>
+
+    <!-- Window Action: Auctions - City Projects -->
+    <record id="action_bussma_project_city" model="ir.actions.act_window">
+        <field name="name">Projects (City)</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('project_type', '=', 'city'), ('is_basic', '=', False)]</field>
+        <field name="context">{'default_project_type': 'city', 'delete': False}</field>
+        <field name="search_view_id" ref="view_bussma_project_search"/>
+    </record>
+
+    <!-- Dedicated Actions for Basic Portfolios -->
+    <record id="action_project_sales_basic" model="ir.actions.act_window">
+        <field name="name">محفظة العقارات الأساسية بيع مباشر</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="res_id" ref="sales_and_auction_management.project_sales_basic"/>
+        <field name="domain" eval="[('id', '=', ref('sales_and_auction_management.project_sales_basic'))]"/>
+        <field name="context">{'delete': False}</field>
+    </record>
+
+    <record id="action_project_auctions_pvt_basic" model="ir.actions.act_window">
+        <field name="name">محفظة العقارات الأساسية مزاد - خاص</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="res_id" ref="sales_and_auction_management.project_auctions_pvt_basic"/>
+        <field name="domain" eval="[('id', '=', ref('sales_and_auction_management.project_auctions_pvt_basic'))]"/>
+        <field name="context">{'delete': False}</field>
+    </record>
+
+    <record id="action_project_auctions_enf_basic" model="ir.actions.act_window">
+        <field name="name">محفظة العقارات الأساسية مزاد - انفاذ</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="res_id" ref="sales_and_auction_management.project_auctions_enf_basic"/>
+        <field name="domain" eval="[('id', '=', ref('sales_and_auction_management.project_auctions_enf_basic'))]"/>
+        <field name="context">{'delete': False}</field>
+    </record>
+
+    <record id="action_project_cities_basic" model="ir.actions.act_window">
+        <field name="name">محفظة العقارات الأساسية مدن</field>
+        <field name="res_model">bussma.project</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="res_id" ref="sales_and_auction_management.project_cities_basic"/>
+        <field name="domain" eval="[('id', '=', ref('sales_and_auction_management.project_cities_basic'))]"/>
+        <field name="context">{'delete': False}</field>
+    </record>
+</odoo>

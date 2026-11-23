@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Commercial Sector Manager Approval Data                          -->
+        <!-- ================================================================ -->
+
+        <record id="commercial_sector_manager_approval_approval" model="commercial.sector.manager.approval">
+            <field name="name">Accept Listing and Move to Negotiation</field>
+            <field name="code">approval</field>
+        </record>
+
+        <record id="commercial_sector_manager_approval_return_committee" model="commercial.sector.manager.approval">
+            <field name="name">Return to Committee</field>
+            <field name="code">return_committee</field>
+        </record>
+
+        <record id="commercial_sector_manager_approval_transfer" model="commercial.sector.manager.approval">
+            <field name="name">Transfer to Partners</field>
+            <field name="code">transfer</field>
+        </record>
+
+        <record id="commercial_sector_manager_approval_declined" model="commercial.sector.manager.approval">
+            <field name="name">Decline</field>
+            <field name="code">declined</field>
+        </record>
+
+        <record id="commercial_sector_manager_approval_postponed" model="commercial.sector.manager.approval">
+            <field name="name">Postpone</field>
+            <field name="code">postponed</field>
+        </record>
+
+    </data>
+</odoo>

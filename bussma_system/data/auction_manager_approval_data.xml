@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Auction Manager Approval Data                                     -->
+        <!-- ================================================================ -->
+
+        <record id="auction_manager_approval_accept_committee" model="auction.manager.approval">
+            <field name="name">Accept Committee Decision</field>
+            <field name="code">committee_decision_accepted</field>
+        </record>
+
+        <record id="auction_manager_approval_reject_committee" model="auction.manager.approval">
+            <field name="name">Reject Committee Decision</field>
+            <field name="code">committee_decision_rejected</field>
+        </record>
+
+        <record id="auction_manager_approval_request_transfer" model="auction.manager.approval">
+            <field name="name">Request Property Transfer to Auction</field>
+            <field name="code">request_transfer_auction</field>
+        </record>
+
+    </data>
+</odoo>

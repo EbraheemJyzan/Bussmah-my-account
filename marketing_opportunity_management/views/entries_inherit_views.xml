@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_entries_form_inherit_opportunity" model="ir.ui.view">
+            <field name="name">entries.form.inherit.opportunity</field>
+            <field name="model">entries</field>
+            <field name="inherit_id" ref="bussma_system.entries_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Field near requires_technical_offer -->
+                <xpath expr="//field[@name='requires_technical_offer']" position="after">
+                    <field name="opportunity_id" readonly="1" invisible="not opportunity_id" options="{'no_create': True, 'no_open': True}"/>
+                </xpath>
+                <!-- Add group restriction to Stage History page -->
+                <xpath expr="//page[@name='stage_history_page']" position="attributes">
+                    <attribute name="groups">sales_and_auction_management.group_system_admin</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

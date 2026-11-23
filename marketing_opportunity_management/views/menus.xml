@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 1. Opportunity Management -->
+        <menuitem id="menu_opportunity_root"
+                  name="Opportunity Management"
+                  web_icon="marketing_opportunity_management,static/description/icon_opportunity.svg"
+                  groups="marketing_opportunity_management.group_opportunity_user"
+                  sequence="25"/>
+
+        <menuitem id="menu_opportunity_list"
+                  name="Opportunities"
+                  parent="menu_opportunity_root"
+                  action="action_bussma_opportunity"
+                  sequence="10"/>
+
+        <menuitem id="menu_opportunity_department_mgmt"
+                  name="Opportunity Department"
+                  parent="menu_opportunity_root"
+                  action="action_bussma_opportunity_department"
+                  groups="marketing_opportunity_management.group_opportunity_management,base.group_system"
+                  sequence="20"/>
+
+        <!-- 2. Marketing Management -->
+        <menuitem id="menu_marketing_root"
+                  name="Marketing Management"
+                  web_icon="marketing_opportunity_management,static/description/icon_marketing.svg"
+                  groups="marketing_opportunity_management.group_marketing_user"
+                  sequence="26"/>
+
+        <menuitem id="menu_bussma_projects"
+                  name="Projects"
+                  parent="menu_marketing_root"
+                  action="action_bussma_projects"
+                  sequence="1"/>
+
+        <menuitem id="menu_bussma_marketing_opportunity_requests"
+                  name="Opportunity Requests"
+                  parent="menu_marketing_root"
+                  action="action_bussma_marketing_opportunity_requests"
+                  sequence="2"/>
+
+        <menuitem id="menu_bussma_marketing_office_requests"
+                  name="Marketing Requests"
+                  parent="menu_marketing_root"
+                  action="action_bussma_marketing_office_requests"
+                  sequence="3"/>
+
+        <menuitem id="menu_bussma_marketing_archive"
+                  name="Marketing Archive"
+                  parent="menu_marketing_root"
+                  action="action_bussma_marketing_archive"
+                  groups="marketing_opportunity_management.group_marketing_supervisor"
+                  sequence="100"/>
+
+        <menuitem id="configuration_menu_marketing_requests"
+                  name="Configuration Marketing Requests"
+                  parent="sales_and_auction_management.menu_employee_guide_root"
+                  groups="sales_and_auction_management.group_system_admin"
+                  sequence="15"/>
+
+        <menuitem id="menu_marketing_departments_root"
+                  name="Departments"
+                  parent="menu_marketing_root"
+                  sequence="15"/>
+
+        <menuitem id="menu_marketing_material_content"
+                  name="Content Department"
+                  parent="menu_marketing_departments_root"
+                  action="action_bussma_marketing_material_content"
+                  sequence="10"/>
+
+        <menuitem id="menu_marketing_material_design"
+                  name="Design Department"
+                  parent="menu_marketing_departments_root"
+                  action="action_bussma_marketing_material_design"
+                  sequence="20"/>
+
+        <menuitem id="menu_marketing_material_digital"
+                  name="Digital and Publishing Department"
+                  parent="menu_marketing_departments_root"
+                  action="action_bussma_marketing_material_digital"
+                  sequence="30"/>
+
+        <menuitem id="menu_marketing_material_ops"
+                  name="Operations Department"
+                  parent="menu_marketing_departments_root"
+                  action="action_bussma_marketing_material_ops"
+                  sequence="40"/>
+
+        <menuitem id="menu_marketing_activity_list"
+                  name="Marketing Activities"
+                  parent="menu_marketing_root"
+                  action="action_bussma_marketing_activity"
+                  groups="marketing_opportunity_management.group_marketing_supervisor"
+                  sequence="40"/>
+
+        <menuitem id="menu_office_department_marketing_list"
+                  name="Department Management"
+                  parent="menu_marketing_root"
+                  action="action_bussma_marketing_department"
+                  groups="marketing_opportunity_management.group_marketing_supervisor"
+                  sequence="50"/>
+
+        <!-- 3. Office Requests -->
+        <menuitem id="menu_office_request_list"
+                  name="Marketing Requests"
+                  parent="sales_and_auction_management.my_requests"
+                  action="action_office_request"
+                  sequence="1"/>
+
+        <menuitem id="menu_office_department_list"
+                  name="Departments"
+                  parent="configuration_menu_marketing_requests"
+                  action="action_office_department"
+                  sequence="20"/>
+    </data>
+</odoo>

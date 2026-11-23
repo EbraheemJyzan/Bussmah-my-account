@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Study Portfolio List View -->
+        <record id="view_study_portfolio_list" model="ir.ui.view">
+            <field name="name">study.portfolio.list</field>
+            <field name="model">study.portfolio</field>
+            <field name="arch" type="xml">
+                <list string="Study Portfolios" sample="1">
+                    <field name="reference"/>
+                    <field name="name"/>
+                    <field name="stage_ids" widget="many2many_tags" string="Stages"/>
+                    <field name="entry_count" string="Properties Count"/>
+                    <field name="total_area" string="Total Area (m²)"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Study Portfolio Kanban View -->
+        <record id="view_study_portfolio_kanban" model="ir.ui.view">
+            <field name="name">study.portfolio.kanban</field>
+            <field name="model">study.portfolio</field>
+            <field name="arch" type="xml">
+                <kanban records_draggable="false" group_create="false" group_edit="false" group_delete="false" class="o_kanban_mobile" quick_create="false" create="1" sample="1">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="entry_count"/>
+                    <field name="total_area"/>
+                    <field name="currency_id"/>
+                    <field name="total_portfolio_value"/>
+                    <field name="stage_ids"/>
+                    <field name="stage_counts_json"/>
+                    <field name="stage_count_entry_screen"/>
+                    <field name="stage_count_data_completion"/>
+                    <field name="stage_count_define_project_path"/>
+                    <field name="stage_count_analyst"/>
+                    <field name="stage_count_study_approval"/>
+                    <field name="stage_count_detailed_study_analyst"/>
+                    <field name="stage_count_detailed_study_approval"/>
+                    <field name="stage_count_committee_decision"/>
+                    <field name="stage_count_sales_manager_decision"/>
+                    <field name="stage_count_auctions_manager_decision"/>
+                    <field name="stage_count_commercial_manager_approval"/>
+                    <field name="stage_count_assign_negotiator"/>
+                    <field name="stage_count_negotiator"/>
+                    <field name="stage_count_manager_contract_approval"/>
+                    <field name="stage_count_contract_followup"/>
+                    <field name="stage_count_negotiation_approval"/>
+                    <field name="stage_count_contract_completion"/>
+                    <field name="stage_count_completed"/>
+                    <field name="stage_count_city_study_analyst"/>
+                    <field name="stage_count_city_study_approval"/>
+                    <field name="stage_count_city_study_completed"/>
+                    <field name="stage_count_studies_supervisor_eanfaz"/>
+                    <field name="stage_count_detailed_study_eanfaz"/>
+                    <field name="stage_count_detailed_study_approval_eanfaz"/>
+                    <field name="stage_count_detailed_study_completed_eanfaz"/>
+                    <templates>
+                        <t t-name="card">
+                            <t t-set="curr_stage_id" t-value="context.default_stage_ids and (context.default_stage_ids[0] || context.default_stage_ids)"/>
+                            <t t-set="stage_counts" t-value="record.stage_counts_json.raw_value and (typeof record.stage_counts_json.raw_value === 'string' ? JSON.parse(record.stage_counts_json.raw_value) : record.stage_counts_json.raw_value)"/>
+                            <t t-set="curr_count" t-value="(curr_stage_id and stage_counts) ? (stage_counts[curr_stage_id] || 0) : record.entry_count.value"/>
+                            
+                            <!-- Top Section: Icon, Portfolio Name, and Code (Reference) -->
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1 min-w-0">
+                                    <div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0 shadow-xs"
+                                         style="width: 38px; height: 38px; background-color: #f0f7f8; color: #234090; border: 1px solid #d8eef0;">
+                                        <i class="fa fa-briefcase fa-lg"/>
+                                    </div>
+                                    <strong class="o_kanban_record_title d-block text-truncate fw-bold fs-6" 
+                                            style="color: #1e293b;" 
+                                            t-att-title="record.name.value">
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+                                <span class="badge rounded-pill flex-shrink-0 shadow-xs" 
+                                      style="background-color: #234090; color: #ffffff; font-weight: 600; font-size: 11px; padding: 5px 10px; letter-spacing: 0.3px;">
+                                    <i class="fa fa-hashtag opacity-75 me-1"/>
+                                    <field name="reference"/>
+                                </span>
+                            </div>
+
+                            <!-- Key Metrics: Properties & Area Cards -->
+                            <div class="row g-2 my-2">
+                                <div class="col-6">
+                                    <div class="p-2 rounded-3 h-100 d-flex flex-column justify-content-center"
+                                         style="background: #f8fafc; border: 1px solid #edf2f7;">
+                                        <span class="text-muted small d-flex align-items-center gap-1 mb-1" style="font-size: 11px;">
+                                            <i class="fa fa-building" style="color: #234090;"/>
+                                            <span>Properties</span>
+                                        </span>
+                                        <div class="d-flex align-items-baseline">
+                                            <t t-if="curr_stage_id">
+                                                <span class="fw-bold fs-4" style="color: #234090;">
+                                                    <t t-out="curr_count"/>
+                                                </span>
+                                                <span class="text-muted fw-bold fs-6 ms-1">
+                                                    /<t t-out="record.entry_count.value"/>
+                                                </span>
+                                            </t>
+                                            <t t-else="">
+                                                <span class="fw-bold fs-4" style="color: #234090;">
+                                                    <t t-out="record.entry_count.value"/>
+                                                </span>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-2 rounded-3 h-100 d-flex flex-column justify-content-center"
+                                         style="background: #f0fdfa; border: 1px solid #ccfbf1;">
+                                        <span class="text-muted small d-flex align-items-center gap-1 mb-1" style="font-size: 11px;">
+                                            <i class="fa fa-pie-chart" style="color: #0d9488;"/>
+                                            <span>Total Area</span>
+                                        </span>
+                                        <div class="d-flex align-items-baseline gap-1">
+                                            <span class="fw-bold fs-5" style="color: #0f766e;">
+                                                <field name="total_area"/>
+                                            </span>
+                                            <span class="fw-semibold ms-auto" style="font-size: 11px; color: #0d9488;">m²</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Total Portfolio Value Card -->
+                            <div class="p-2 rounded-3 mb-2"
+                                 style="background: #f8faff; border: 1px solid #e0e7ff;">
+                                <span class="text-muted small d-flex align-items-center gap-1 mb-1" style="font-size: 11px;">
+                                    <i class="fa fa-money" style="color: #234090;"/>
+                                    <span>Total Portfolio Value</span>
+                                </span>
+                                <div class="d-flex align-items-baseline gap-1">
+                                    <span class="fw-bold fs-5" style="color: #234090;">
+                                        <field name="total_portfolio_value" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Footer: Button to view properties in this stage -->
+                            <footer class="pt-2 mt-auto border-top w-100">
+                                <button name="action_view_stage_entries"
+                                        type="object"
+                                        class="btn btn-primary w-100 d-flex justify-content-between align-items-center py-2 px-3 rounded-3 shadow-sm text-white"
+                                        style="background: linear-gradient(135deg, #234090 0%, #3bb8bc 100%) !important; border: none !important;"
+                                        title="Open Stage Properties">
+                                    <span class="d-inline-flex align-items-center gap-2">
+                                        <i class="fa fa-arrow-right"/>
+                                        <span>Open Stage Properties</span>
+                                    </span>
+                                    <span class="badge rounded-pill bg-white px-2 py-1" style="color: #234090 !important; font-size: 11px; font-weight: 700;">
+                                        <t t-if="curr_stage_id"><t t-out="curr_count"/>/<t t-out="record.entry_count.value"/></t>
+                                        <t t-else=""><t t-out="curr_count"/></t>
+                                    </span>
+                                </button>
+                            </footer>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Study Portfolio Form View -->
+        <record id="view_study_portfolio_form" model="ir.ui.view">
+            <field name="name">study.portfolio.form</field>
+            <field name="model">study.portfolio</field>
+            <field name="arch" type="xml">
+                <form string="Study Portfolio">
+                    <header>
+                        <button name="action_open_assign_wizard"
+                                type="object"
+                                string="Assign Properties"
+                                icon="fa-plus"
+                                class="btn-primary"
+                                invisible="not id or not can_manage_portfolio_assignment"
+                                groups="base.group_system,bussma_system.group_sales_manager,bussma_system.group_auctions_manager,bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_city_studies_manager"/>
+                    </header>
+                    <sheet>
+                        <field name="can_manage_portfolio_assignment" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_entries"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-building">
+                                <field name="entry_count" widget="statinfo" string="Properties"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="reference" class="oe_edit_only" string="Reference"/>
+                            <h1>
+                                <field name="reference" readonly="1"/>
+                            </h1>
+                            <label for="name" class="oe_edit_only" string="Portfolio Name"/>
+                            <h2>
+                                <field name="name" placeholder="e.g. Riyadh Commercial Portfolio..."/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_area"/>
+                                <field name="total_portfolio_value" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Assigned Properties" name="assigned_properties">
+                                <field name="entry_ids" readonly="0">
+                                    <list string="Properties" create="0" no_open="1" delete="0">
+                                        <button name="action_open_entry_form"
+                                                type="object"
+                                                string="Open"
+                                                icon="fa-external-link"
+                                                class="btn btn-sm btn-primary"
+                                                title="Open Details"/>
+                                        <field name="entrie_name"/>
+                                        <field name="partner_id"/>
+                                        <field name="city"/>
+                                        <field name="district_id"/>
+                                        <field name="property_type"/>
+                                        <field name="area_sqm" sum="Total Area"/>
+                                        <field name="stage_id"/>
+                                        <button name="action_remove_from_portfolio"
+                                                type="object"
+                                                string="Remove"
+                                                icon="fa-times text-danger"
+                                                help="Remove from Portfolio"
+                                                confirm="Are you sure you want to remove this property from this portfolio?"
+                                                invisible="not parent.can_manage_portfolio_assignment"
+                                                groups="base.group_system,bussma_system.group_sales_manager,bussma_system.group_auctions_manager,bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_city_studies_manager"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Description &amp; Notes" name="description_notes">
+                                <field name="notes" placeholder="Add detailed notes or description about this portfolio..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Study Portfolio Search View -->
+        <record id="view_study_portfolio_search" model="ir.ui.view">
+            <field name="name">study.portfolio.search</field>
+            <field name="model">study.portfolio</field>
+            <field name="arch" type="xml">
+                <search string="Search Study Portfolios">
+                    <field name="name" string="Portfolio Name"/>
+                    <field name="reference" string="Reference"/>
+                    <field name="stage_ids" string="Stage"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_ids'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Window Action: Study Portfolio -->
+        <record id="action_study_portfolio" model="ir.actions.act_window">
+            <field name="name">Study Portfolios</field>
+            <field name="res_model">study.portfolio</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="search_view_id" ref="view_study_portfolio_search"/>
+            <field name="context">{'search_default_group_by_stage': 1}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Study Portfolio
+                </p>
+                <p>
+                    Group and organize study properties into dedicated portfolios and manage them efficiently.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_record_editor" model="ir.module.category">
+        <field name="name">Record Editor</field>
+        <field name="description">Permissions for editing messages and notes in chatter</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="group_record_editor" model="res.groups">
+        <field name="name">Editor</field>
+        <field name="category_id" ref="module_category_record_editor"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Allow to edit messages and notes in chatter</field>
+    </record>
+
+    <record id="group_record_deleter" model="res.groups">
+        <field name="name">Deleter</field>
+        <field name="category_id" ref="module_category_record_editor"/>
+        <field name="implied_ids" eval="[(4, ref('group_record_editor'))]"/>
+        <field name="comment">Allow to delete and edit messages and notes in chatter</field>
+    </record>
+</odoo>
+

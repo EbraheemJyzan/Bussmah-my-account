@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_request_category_manager,hr.request.category.manager,model_hr_request_category,base.group_user,1,1,1,1
+access_hr_request_type_manager,hr.request.type.manager,model_hr_request_type,base.group_user,1,1,1,1
+access_hr_request_manager,hr.request.manager,model_hr_request,base.group_user,1,1,1,1
+access_hr_request_dept_line_user,hr.request.dept.line.user,model_hr_request_dept_line,base.group_user,1,1,1,1
+access_hr_clearance_procedure_status_user,hr.clearance.procedure.status.user,model_hr_clearance_procedure_status,base.group_user,1,1,1,1

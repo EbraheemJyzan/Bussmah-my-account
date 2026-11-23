@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Sales Manager Approval Data                                       -->
+        <!-- ================================================================ -->
+
+        <record id="sales_manager_approval_accept_committee" model="sales.manager.approval">
+            <field name="name">Accept Committee Decision</field>
+            <field name="code">committee_decision_accepted</field>
+        </record>
+
+        <record id="sales_manager_approval_reject_committee" model="sales.manager.approval">
+            <field name="name">Reject Committee Decision</field>
+            <field name="code">committee_decision_rejected</field>
+        </record>
+
+        <record id="sales_manager_approval_request_transfer" model="sales.manager.approval">
+            <field name="name">Request Property Transfer to Direct Sale</field>
+            <field name="code">request_transfer_direct_sale</field>
+        </record>
+
+    </data>
+</odoo>

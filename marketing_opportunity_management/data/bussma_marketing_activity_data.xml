@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="activity_campaigns" model="bussma.marketing.activity">
+            <field name="name">الحملات التسويقية</field>
+            <field name="code">ACT0001</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_digital'), ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_billboards" model="bussma.marketing.activity">
+            <field name="name">اللوحات الاعلانية</field>
+            <field name="code">ACT0002</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_ops'), ref('dept_design')])]"/>
+        </record>
+
+        <record id="activity_messaging" model="bussma.marketing.activity">
+            <field name="name">الرسائل والواتس</field>
+            <field name="code">ACT0003</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_digital'), ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_aerial_photo" model="bussma.marketing.activity">
+            <field name="name">التصوير الجوي</field>
+            <field name="code">ACT0004</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_content'), ref('dept_design')])]"/>
+        </record>
+
+        <record id="activity_brochures" model="bussma.marketing.activity">
+            <field name="name">البروشور</field>
+            <field name="code">ACT0005</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_design'), ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_av" model="bussma.marketing.activity">
+            <field name="name">الفيديو والصوت</field>
+            <field name="code">ACT0006</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_content'), ref('dept_design')])]"/>
+        </record>
+
+        <record id="activity_visual_identity" model="bussma.marketing.activity">
+            <field name="name">الهوية البصرية</field>
+            <field name="code">ACT0007</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_design')])]"/>
+        </record>
+
+        <record id="activity_social_media" model="bussma.marketing.activity">
+            <field name="name">منصات التواصل</field>
+            <field name="code">ACT0008</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_digital'), ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_influencers" model="bussma.marketing.activity">
+            <field name="name">المؤثرون</field>
+            <field name="code">ACT0009</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_digital'), ref('dept_ops')])]"/>
+        </record>
+
+        <record id="activity_technical_offer" model="bussma.marketing.activity">
+            <field name="name">عرض فني</field>
+            <field name="code">ACT0010</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_financial_offer" model="bussma.marketing.activity">
+            <field name="name">عرض مالي</field>
+            <field name="code">ACT0011</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_content')])]"/>
+        </record>
+
+        <record id="activity_technical_financial_offer" model="bussma.marketing.activity">
+            <field name="name">عرض فني ومالي</field>
+            <field name="code">ACT0012</field>
+            <field name="department_ids" eval="[(6, 0, [ref('dept_content')])]"/>
+        </record>
+    </data>
+</odoo>

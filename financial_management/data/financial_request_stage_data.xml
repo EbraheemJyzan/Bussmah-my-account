@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Request Type for Financial Management -->
+        <record id="request_type_financial" model="request.type">
+            <field name="name">Financial Management</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+        </record>
+
+        <!-- Stage 1: Request Submission -->
+        <record id="stage_fin_draft" model="request.stage">
+            <field name="name">Request Submission</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">1</field>
+            <field name="state">draft</field>
+            <field name="financial_stage_selection">fin_draft</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 2: Marketing Manager Approval -->
+        <record id="stage_fin_marketing_mgr" model="request.stage">
+            <field name="name">Marketing Manager Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">2</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_marketing_mgr</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 3: Commercial Sector Accountant Approval -->
+        <record id="stage_fin_sector_accountant" model="request.stage">
+            <field name="name">Commercial Sector Accountant Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">3</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_sector_accountant</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 4: Department Manager Approval -->
+        <record id="stage_fin_dept_mgr" model="request.stage">
+            <field name="name">Department Manager Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">4</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_dept_mgr</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 5: Commercial Sector Manager Approval -->
+        <record id="stage_fin_sector_mgr" model="request.stage">
+            <field name="name">Commercial Sector Manager Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">5</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_sector_mgr</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 6: Administration Accountant Approval -->
+        <record id="stage_fin_admin_accountant" model="request.stage">
+            <field name="name">Administration Accountant Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">6</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_admin_accountant</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 7: Financial Management Manager Approval -->
+        <record id="stage_fin_financial_mgr" model="request.stage">
+            <field name="name">Financial Management Manager Approval</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">7</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_financial_mgr</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 8: Attach Receipts -->
+        <record id="stage_fin_attach_receipts" model="request.stage">
+            <field name="name">Attach Receipts</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">8</field>
+            <field name="state">in_progress</field>
+            <field name="financial_stage_selection">fin_attach_receipts</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+
+        <!-- Stage 9: Archived -->
+        <record id="stage_fin_archived" model="request.stage">
+            <field name="name">Archived</field>
+            <field name="res_model">financial.request</field>
+            <field name="res_model_id" ref="model_financial_request"/>
+            <field name="sequence">9</field>
+            <field name="state">done</field>
+            <field name="financial_stage_selection">fin_archived</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_financial')])]"/>
+        </record>
+    </data>
+</odoo>

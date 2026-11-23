@@ -1,0 +1,1149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* study_portfolio_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 06:08+0000\n"
+"PO-Revision-Date: 2026-11-10 06:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "%(portfolio)s - %(stage)s"
+msgstr "%(portfolio)s - %(stage)s"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "Open Stage Properties"
+msgstr "فتح عقارات المرحلة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "Stage Properties"
+msgstr "عقارات المرحلة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "View All Properties in Portfolio"
+msgstr "عرض كل عقارات المحفظة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "All"
+msgstr "الكل"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "<span class=\"ms-1\">Available in same stage</span>"
+msgstr "<span class=\"ms-1\">متاح في نفس المرحلة</span>"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "<span class=\"ms-1\">Selected</span>"
+msgstr "<span class=\"ms-1\">محدد</span>"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid ""
+"<strong class=\"text-primary\">Apply Action on Portfolio Properties</strong>"
+msgstr ""
+"<strong class=\"text-primary\">تطبيق الإجراء على عقارات المحفظة</strong>"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة نشاط الاستثناء"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Add detailed notes or description about this portfolio..."
+msgstr "إضافة ملاحظات تفصيلية أو وصف عن هذه المحفظة..."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__batch_allowed_entry_ids
+msgid "Allowed Peer Properties"
+msgstr "العقارات النظيرة المسموح بها"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Are you sure you want to remove this property from this portfolio?"
+msgstr "هل أنت متأكد من رغبتك في إزالة هذا العقار من هذه المحفظة؟"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "Area (m²)"
+msgstr "المساحة (م²)"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_assign_negotiator
+msgid "Assign Negotiator Properties Count"
+msgstr "عدد عقارات تعيين المفافض"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Assign Properties"
+msgstr "➕ إسناد عقارات"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_assign_portfolio_list
+msgid "Assign Selected Properties to Portfolio"
+msgstr "إسناد العقارات المحددة للمحفظة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Assigned Properties"
+msgstr "العقارات المسندة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Batch Action Completed"
+msgstr "اكتمل الإجراء الجماعي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__enable_portfolio_batch_action
+msgid "Batch Action on Portfolio Properties"
+msgstr "تنفيذ الإجراء على عدة عقارات في المحفظة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"Batch Portfolio Action '%s' executed on %d properties (Source: %s, Targets: "
+"%s)."
+msgstr ""
+"تم تنفيذ إجراء المحفظة الجماعي '%s' على %d عقارات (المصدر: %s، الأهداف: %s)."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Batch Portfolio Action executed from property '%s' (%s). Action: %s"
+msgstr "تم تنفيذ إجراء المحفظة الجماعي من العقار '%s' (%s). الإجراء: %s"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Batch save: Changes from property '%s' replicated to %d properties: %s"
+msgstr "حفظ جماعي: تم نسخ التغييرات من العقار '%s' إلى %d عقارات: %s"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_eanfaz_entries_import_wizard__has_portfolio
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries_import_wizard__has_portfolio
+msgid "Belongs to a Portfolio?"
+msgstr "هل العقارات تابعة لمحفظة؟"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__has_portfolio
+#: model:ir.model.fields,field_description:study_portfolio_management.field_sales_auction_management__has_portfolio
+msgid "Belongs to a Portfolio?"
+msgstr "هل العقار تابعة لمحفظة؟"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"Cannot complete action '%(action)s' on batch property '%(property)s':\n"
+"\n"
+"%(error)s"
+msgstr ""
+"تعذر إكمال الإجراء '%(action)s' على عقار المحفظة '%(property)s':\n"
+"\n"
+"%(error)s"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "City"
+msgstr "المدينة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_city_study_analyst
+msgid "City Study - Analyst Properties Count"
+msgstr "عدد عقارات دراسة المدن - الدارس"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_city_study_approval
+msgid "City Study - Approval Properties Count"
+msgstr "عدد عقارات دراسة المدن - الاعتماد"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_city_study_completed
+msgid "City Study - Completed Properties Count"
+msgstr "عدد عقارات دراسة المدن - مكتملة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "Clear Selection"
+msgstr "إلغاء تحديد الكل"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+msgid "Client"
+msgstr "العميل"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_commercial_manager_approval
+msgid "Commercial Manager Approval Properties Count"
+msgstr "عدد عقارات اعتماد المدير التجاري"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Commercial Manager Decision"
+msgstr "قرار المدير التجاري"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Commercial Manager Decline"
+msgstr "رفض المدير التجاري"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_committee_decision
+msgid "Committee Decision Properties Count"
+msgstr "عدد عقارات قرار اللجنة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_completed
+msgid "Completed Detailed Study Properties Count"
+msgstr "عدد عقارات اكتمال الدراسة التفصيلية"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_manager_contract_approval
+msgid "Contract Approval Properties Count"
+msgstr "عدد عقارات اعتماد العقد من مدير القطاع"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_contract_completion
+msgid "Contract Completion Properties Count"
+msgstr "عدد عقارات إتمام التعاقد"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_contract_followup
+msgid "Contract Followup Properties Count"
+msgstr "عدد عقارات متابعة توقيع العقد"
+
+#. module: study_portfolio_management
+#: model_terms:ir.actions.act_window,help:study_portfolio_management.action_study_portfolio
+msgid "Create a new Study Portfolio"
+msgstr "إنشاء محفظة دراسات جديدة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_define_project_path
+msgid "Define Project Path Properties Count"
+msgstr "عدد عقارات تحديد مسار المشروع"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_sales_manager_decision
+msgid "Sales Manager Decision Properties Count"
+msgstr "عدد عقارات قرار مدير المبيعات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_auctions_manager_decision
+msgid "Auctions Manager Decision Properties Count"
+msgstr "عدد عقارات قرار مدير المزادات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_analyst
+msgid "Detailed Study Analyst Properties Count"
+msgstr "عدد عقارات إعداد الدراسة التفصيلية"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_approval
+msgid "Detailed Study Approval Properties Count"
+msgstr "عدد عقارات اعتماد الدراسة التفصيلية"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Description & Notes"
+msgstr "الوصف والملاحظات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields.selection,name:study_portfolio_management.selection__entries__study_type__detailed
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+msgid "Detailed Study"
+msgstr "دراسة تفصيلية"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_approval_eanfaz
+msgid "Detailed Study Approval Properties Count"
+msgstr "عدد عقارات اعتماد الدراسة التفصيلية - إنفاذ"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_completed_eanfaz
+msgid "Detailed Study Completed Properties Count"
+msgstr "عدد عقارات اكتمال الدراسة التفصيلية - إنفاذ"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_eanfaz
+msgid "Detailed Study Properties Count"
+msgstr "عدد عقارات الدراسة التفصيلية - إنفاذ"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "District"
+msgstr "الحي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_entries__enable_portfolio_batch_action
+msgid ""
+"Enable to apply stage changes and actions to selected properties in the same"
+" portfolio and stage."
+msgstr ""
+"تفعيل لتطبيق تغييرات المرحلة والإجراءات على العقارات المحددة في نفس المحفظة "
+"والمرحلة."
+
+#. module: study_portfolio_management
+#: model:ir.model,name:study_portfolio_management.model_entries
+msgid "Entries"
+msgstr "الإدراجات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_entry_screen
+msgid "Entry Screen Properties Count"
+msgstr "عدد عقارات شاشة الإدراج"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: study_portfolio_management
+#: model_terms:ir.actions.act_window,help:study_portfolio_management.action_study_portfolio
+msgid ""
+"Group and organize study properties into dedicated portfolios and manage "
+"them efficiently."
+msgstr "تجميع وتنظيم عقارات الدراسات في محافظ مخصصة وإدارتها بكفاءة."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+msgid "Has Portfolio"
+msgstr "مرتبط بمحفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__id
+msgid "ID"
+msgstr "المُعرِّف"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فهذا يعني أن هناك رسائل جديدة تتطلب انتباهك."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__message_has_error
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فهذا يعني وجود أخطاء في تسليم بعض الرسائل."
+
+#. module: study_portfolio_management
+#: model:ir.model,name:study_portfolio_management.model_eanfaz_entries_import_wizard
+msgid "Import Eanfaz Properties from Excel"
+msgstr "استيراد عقارات إنفاذ من ملف إكسيل"
+
+#. module: study_portfolio_management
+#: model:ir.model,name:study_portfolio_management.model_entries_import_wizard
+msgid "Import Entries from Excel"
+msgstr "استيراد العقارات من ملف إكسيل"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Move to Archive"
+msgstr "نقل إلى الأرشيف"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Move to Deferred Opportunities"
+msgstr "نقل إلى الفرص المؤجلة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Move to Next Stage"
+msgstr "الانتقال إلى المرحلة التالية"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Move to Partners"
+msgstr "نقل إلى الشركاء"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_negotiation_approval
+msgid "Negotiation Approval Properties Count"
+msgstr "عدد عقارات اعتماد التفاوض"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_negotiator
+msgid "Negotiator Properties Count"
+msgstr "عدد عقارات المفاوض"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الحدث في تقويم النشاط التالي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+msgid "No Portfolio"
+msgstr "بدون محفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__notes
+msgid "Notes / Description"
+msgstr "ملاحظات / وصف"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Open"
+msgstr "فتح"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Open Details"
+msgstr "فتح تفاصيل العقار"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__batch_peer_count
+msgid "Peer Properties Count"
+msgstr "عدد العقارات المتاحة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__name
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_search
+msgid "Portfolio Name"
+msgstr "اسم المحفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_ids
+msgid "Portfolio Stages"
+msgstr "مراحل المحفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields.selection,name:study_portfolio_management.selection__entries__study_type__preliminary
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+msgid "Preliminary Study"
+msgstr "دراسة أولية"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__entry_ids
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Properties"
+msgstr "العقارات المسندة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "Properties - %(portfolio)s"
+msgstr "العقارات - %(portfolio)s"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__entry_count
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_list
+msgid "Properties Count"
+msgstr "عدد العقارات"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "Property (%s) was added to portfolio properties."
+msgstr "تمت إضافة العقار (%s) إلى عقارات المحفظة."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "Property (%s) was removed from portfolio properties."
+msgstr "تمت إزالة العقار (%s) من عقارات المحفظة."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Property Details"
+msgstr "تفاصيل العقار"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "Property Name"
+msgstr "اسم العقار"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "Property Type"
+msgstr "نوع العقار"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "Property was added to study portfolio (%s)."
+msgstr "تمت إضافة العقار إلى محفظة الدراسات (%s)."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "Property was removed from study portfolio (%s)."
+msgstr "تمت إزالة العقار من محفظة الدراسات (%s)."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Reactivate Opportunity"
+msgstr "إعادة تفعيل الفرصة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__reference
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_search
+msgid "Reference"
+msgstr "الرقم المرجعي"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Reject Owner Decision"
+msgstr "رفض قرار المالك"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Reject and Archive Study"
+msgstr "رفض وأرشفة الدراسة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Remove"
+msgstr "إزالة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Remove from Portfolio"
+msgstr "إزالة من المحفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Return to Analyst"
+msgstr "إرجاع إلى الدارس"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Return to Analyst (Eanfaz)"
+msgstr "إرجاع إلى الدارس (إنفاذ)"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Return to Lister"
+msgstr "إرجاع إلى مدخل العقار"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Return to Negotiator"
+msgstr "إرجاع إلى المفاوض"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Return to Project Manager (Eanfaz)"
+msgstr "إرجاع إلى مدير المشروع (إنفاذ)"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة (SMS)"
+
+#. module: study_portfolio_management
+#: model:ir.model,name:study_portfolio_management.model_sales_auction_management
+msgid "Sales and Auctions Management"
+msgstr "إدارة المبيعات والمزادات"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_search
+msgid "Search Study Portfolios"
+msgstr "البحث في محافظ الدراسات"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+msgid "Select Portfolio Properties in Same Stage"
+msgstr "تحديد عقارات المحفظة في نفس المرحلة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_assign_portfolio_list
+msgid "Select Properties to Assign to Portfolio"
+msgstr "تحديد العقارات لإسنادها للمحفظة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid ""
+"Select portfolio properties to sync changes with. When you save this record "
+"or click any stage action button in the header, all modified data and stage "
+"actions will automatically be applied to the selected properties."
+msgstr ""
+"حدد عقارات المحفظة لمزامنة التعديلات معها. عند حفظ هذا السجل أو الضغط على أي"
+" زر من أزرار المرحلة، سيتم تطبيق كافة التعديلات والقرارات تلقائياً على "
+"العقارات المحددة."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__batch_selected_count
+msgid "Selected Properties Count"
+msgstr "عدد العقارات المحددة"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+msgid "Selected Properties for Batch Action"
+msgstr "العقارات المختارة للتعميم"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Send to Deputy Studies Manager"
+msgstr "إرسال إلى نائب مدير الدراسات"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Send to Detailed Study"
+msgstr "إرسال إلى الدراسة التفصيلية"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_batch_portfolio_select_list
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_form_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_search
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_counts_json
+msgid "Stage Counts JSON"
+msgstr "بيانات أعداد المراحل JSON"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_list
+msgid "Stages"
+msgstr "المراحل"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__stage_ids
+msgid "Stages of properties currently associated with this portfolio."
+msgstr "مراحل العقارات المرتبطة حالياً بهذه المحفظة."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد مضى بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_studies_supervisor_eanfaz
+msgid "Studies Supervisor Properties Count"
+msgstr "عدد عقارات مشرف الدراسات - إنفاذ"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_analyst
+msgid "Study Analyst Properties Count"
+msgstr "عدد عقارات إعداد الدراسة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_study_approval
+msgid "Study Approval Properties Count"
+msgstr "عدد عقارات اعتماد الدراسة"
+
+#. module: study_portfolio_management
+#: model:ir.model,name:study_portfolio_management.model_study_portfolio
+#: model:ir.model.fields,field_description:study_portfolio_management.field_eanfaz_entries_import_wizard__portfolio_id
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__portfolio_id
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries_import_wizard__portfolio_id
+#: model:ir.model.fields,field_description:study_portfolio_management.field_sales_auction_management__portfolio_id
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Study Portfolio"
+msgstr "محفظة الدراسات"
+
+#. module: study_portfolio_management
+#: model:ir.actions.act_window,name:study_portfolio_management.action_study_portfolio
+#: model:ir.ui.menu,name:study_portfolio_management.menu_study_portfolio
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_list
+msgid "Study Portfolios"
+msgstr "محافظ الدراسات"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__study_type
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
+msgid "Study Type"
+msgstr "نوع الدراسة"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Successfully applied action to %d properties in portfolio '%s'."
+msgstr "تم تطبيق الإجراء بنجاح على %d عقار في المحفظة '%s'."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__batch_portfolio_entry_ids
+msgid "Target Properties for Batch Action"
+msgstr "العقارات المستهدفة للتعميم"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "Total Area"
+msgstr "إجمالي المساحة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__total_portfolio_value
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "Total Portfolio Value"
+msgstr "قيمة المحفظة الإجمالية"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__total_area
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_list
+msgid "Total Area (m²)"
+msgstr "إجمالي المساحة (م²)"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "View Properties in this Stage"
+msgstr "عرض عقارات هذه المرحلة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,help:study_portfolio_management.field_study_portfolio__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Auctions Manager "
+"can approve auction properties."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المزادات "
+"اعتماد عقارات المزاد."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Auctions Manager "
+"can approve exclusion properties with Auction customer intent."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المزادات "
+"اعتماد عقارات الاستبعاد ذات نية العميل (مزاد)."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Auctions Manager "
+"can perform this action."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المزادات "
+"القيام بهذا الإجراء."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Department "
+"Manager can approve exclusion properties."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير الإدارة اعتماد"
+" عقارات الاستبعاد."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Department "
+"Manager can perform this action."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير الإدارة القيام"
+" بهذا الإجراء."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Deputy Studies "
+"Manager can perform this action."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لنائب مدير الدراسات "
+"القيام بهذا الإجراء."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Sales Manager can"
+" approve direct sale properties."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المبيعات "
+"اعتماد عقارات البيع المباشر."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Sales Manager can"
+" approve exclusion properties with Direct Sale customer intent."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المبيعات "
+"اعتماد عقارات الاستبعاد ذات نية العميل (بيع مباشر)."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Sales Manager can"
+" perform this action."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير المبيعات "
+"القيام بهذا الإجراء."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': Only the Studies Manager "
+"can approve studies."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': يحق فقط لمدير الدراسات "
+"اعتماد الدراسات."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': You are not the assigned "
+"analyst for this property."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست الدارس المسند إليه هذا "
+"العقار."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': You are not the assigned "
+"detailed analyst for this property."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست محلل الدراسة التفصيلية "
+"المسند إليه هذا العقار."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': You are not the assigned "
+"negotiator for this property."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست المفاوض المسند إليه هذا "
+"العقار."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid ""
+"You cannot execute batch action on property '%s': You are not the assigned "
+"project manager for this property."
+msgstr ""
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست مدير المشروع المسند إليه"
+" هذا العقار."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "You do not have permission to modify this property."
+msgstr "ليس لديك الصلاحية لتعديل هذا العقار."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "You do not have permission to view this property."
+msgstr "ليس لديك الصلاحية لعرض هذا العقار."
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
+msgid "e.g. Riyadh Commercial Portfolio..."
+msgstr "مثال: محفظة الرياض التجارية..."
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid "m²"
+msgstr "م²"
+
+#. module: study_portfolio_management
+#: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_kanban
+msgid ""
+"<span class=\"d-inline-flex align-items-center gap-2\">\n"
+"                                        <i class=\"fa fa-arrow-right\"/>\n"
+"                                        <span>Open Stage Properties</span>\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"d-inline-flex align-items-center gap-2\">\n"
+"                                            <i class=\"fa fa-arrow-right\"/>\n"
+"                                            <span>فتح عقارات المرحلة</span>\n"
+"                                        </span>"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "You do not have permission to assign properties to a study portfolio."
+msgstr "ليس لديك الصلاحية لإسناد عقارات إلى محفظة دراسات."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "You do not have permission to remove properties from a study portfolio."
+msgstr "ليس لديك الصلاحية لإلغاء إسناد العقارات من محفظة دراسات."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+#: code:addons/study_portfolio_management/models/study_portfolio.py:0
+msgid "You do not have permission to assign or unassign properties to/from a study portfolio."
+msgstr "ليس لديك الصلاحية لإسناد أو إلغاء إسناد العقارات إلى/من محفظة الدراسات."
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_entries__can_manage_portfolio_assignment
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__can_manage_portfolio_assignment
+msgid "Can Manage Portfolio Assignment"
+msgstr "صلاحية إدارة إسناد المحفظة"
+
+#. module: study_portfolio_management
+#: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_data_completion
+msgid "Data Completion Properties Count"
+msgstr "عدد العقارات في مرحلة استكمال البيانات"
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Please fill in the Study Manager Approval decision before returning."
+msgstr "يرجى تحديد قرار اعتماد مدير إدارة الدراسات قبل الإرجاع."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "You cannot return the study when the approval decision is 'Completed'. The approval decision must be 'Incomplete'."
+msgstr "لا يمكن إرجاع الدراسة عندما يكون قرار الاعتماد 'مكتمل'. يجب أن يكون القرار 'غير مكتمل'."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "You cannot return the study when the approval decision is not 'Incomplete'."
+msgstr "لا يمكن إرجاع الدراسة عندما يكون قرار الاعتماد غير 'غير مكتمل'."
+
+#. module: study_portfolio_management
+#. odoo-python
+#: code:addons/study_portfolio_management/models/entries_inherit.py:0
+msgid "Please enter the Study Manager Notes explaining the return reason before returning."
+msgstr "يرجى إدخال ملاحظات مدير إدارة الدراسات توضح سبب الإرجاع قبل الإرجاع."

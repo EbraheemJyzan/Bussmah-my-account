@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="base.main_partner" model="res.partner">
+            <field name="image_1920" type="base64" file="nomow_web_theme/static/src/img/Group.png"/>
+        </record>
+
+    </data>
+</odoo>

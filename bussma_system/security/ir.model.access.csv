@@ -1,0 +1,17 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_entries_user,entries_user,model_entries,base.group_user,1,1,1,1
+access_property_type,property_type,model_property_type,,1,1,1,1
+access_entries_return_log,entries_return_log,model_entries_return_log,base.group_user,1,1,1,1
+access_res_partner_bussma,res_partner_bussma,base.model_res_partner,base.group_user,1,1,1,0
+access_auction_manager_approval,auction_manager_approval,model_auction_manager_approval,base.group_user,1,1,1,1
+access_sales_manager_approval,sales_manager_approval,model_sales_manager_approval,base.group_user,1,1,1,1
+access_customer_intent,customer_intent,model_customer_intent,base.group_user,1,1,1,1
+access_committee_decision_type,committee_decision_type,model_committee_decision_type,base.group_user,1,1,1,1
+access_customer_role,customer_role,model_customer_role,base.group_user,1,1,1,1
+access_project_path,project_path,model_project_path,base.group_user,1,1,1,1
+access_property_usage_type,property_usage_type,model_property_usage_type,base.group_user,1,1,1,1
+access_final_owner_decision,final_owner_decision,model_final_owner_decision,base.group_user,1,1,1,1
+access_entries_stage_history,entries_stage_history,model_entries_stage_history,base.group_user,1,1,1,1
+access_res_city_user,res_city_user,base_address_extended.model_res_city,base.group_user,1,1,1,1
+access_commercial_sector_manager_approval,commercial_sector_manager_approval,model_commercial_sector_manager_approval,base.group_user,1,1,1,1
+access_standard_study_manager_approval,standard_study_manager_approval,model_standard_study_manager_approval,base.group_user,1,1,1,1

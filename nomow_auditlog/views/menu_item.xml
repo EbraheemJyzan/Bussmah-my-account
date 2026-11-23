@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <menuitem id="menu_audit" name="Audit" web_icon="nomow_auditlog,static/description/icon.png" groups="nomow_auditlog.group_auditlog_user" />
+    <menuitem id="menu_audit_logs" name="Logs" parent="menu_audit" action="action_auditlog_log_tree" sequence="0" />
+    <menuitem id="menu_action_auditlog_http_session_tree" parent="menu_audit" action="action_auditlog_http_session_tree" groups="base.group_no_one" sequence="1" />
+    <menuitem id="menu_action_auditlog_autovacuum" parent="menu_audit" action="action_auditlog_autovacuum" groups="nomow_auditlog.group_auditlog_manager" sequence="2" />
+    <menuitem id="menu_action_auditlog_rule_tree" parent="menu_audit" action="action_auditlog_rule_tree" groups="nomow_auditlog.group_auditlog_manager" sequence="3" />
+</odoo>

@@ -1,0 +1,459 @@
+2026-05-20 11:02:03,906 56661 INFO ? odoo: Odoo version 18.0 
+2026-05-20 11:02:03,907 56661 INFO ? odoo: Using configuration file at /home/masa/odoo_apps/config/odoo_18/bussma.conf 
+2026-05-20 11:02:03,907 56661 INFO ? odoo: addons paths: ['/home/masa/odoo_apps/odoo18/odoo/addons', '/home/masa/.local/share/Odoo/addons/18.0', '/home/masa/odoo_apps/odoo18/addons', '/home/masa/odoo_apps/repos_odoo_18/Bussmah', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Sales', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Purchases', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Stocks', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Accounting'] 
+2026-05-20 11:02:03,907 56661 INFO ? odoo: database: odoo@localhost:5432 
+2026-05-20 11:02:04,015 56661 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-05-20 11:02:04,023 56661 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/local/bin/wkhtmltoimage 
+2026-05-20 11:02:04,229 56661 INFO ? odoo.service.server: HTTP service (werkzeug) running on masa:3457 
+WARNING:  database "postgres" has a collation version mismatch
+DETAIL:  The database was created using collation version 2.41, but the operating system provides version 2.42.
+HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE postgres REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+WARNING:  database "postgres" has a collation version mismatch
+DETAIL:  The database was created using collation version 2.41, but the operating system provides version 2.42.
+HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE postgres REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+2026-05-20 11:02:08,590 56661 INFO ? odoo.modules.loading: loading 1 modules... 
+2026-05-20 11:02:08,604 56661 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-05-20 11:02:08,649 56661 INFO ? odoo.modules.loading: loading 50 modules... 
+2026-05-20 11:02:09,478 56661 WARNING ? py.warnings: /home/masa/odoo_apps/odoo18/odoo/api.py:484: DeprecationWarning: The model odoo.addons.request.models.request is not overriding the create method in batch
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 128, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 363, in handle
+    super().handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 420, in handle_one_request
+    method()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2533, in __call__
+    response = request._serve_db()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2037, in _serve_db
+    self.registry, cr_readwrite = self._open_registry()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 1647, in _open_registry
+    registry = Registry(self.db)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 108, in __new__
+    return cls.new(db_name)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/masa/odoo_apps/odoo18/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 129, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 480, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/__init__.py", line 1, in <module>
+    from . import models
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/__init__.py", line 2, in <module>
+    from . import request
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/request.py", line 11, in <module>
+    class Request(models.AbstractModel):
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/request.py", line 119, in Request
+    @api.model
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+2026-05-20 11:02:09,481 56661 WARNING ? py.warnings: /home/masa/odoo_apps/odoo18/odoo/api.py:484: DeprecationWarning: The model odoo.addons.request.models.res_users_role is not overriding the create method in batch
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 128, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 363, in handle
+    super().handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 420, in handle_one_request
+    method()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2533, in __call__
+    response = request._serve_db()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2037, in _serve_db
+    self.registry, cr_readwrite = self._open_registry()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 1647, in _open_registry
+    registry = Registry(self.db)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 108, in __new__
+    return cls.new(db_name)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/masa/odoo_apps/odoo18/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 129, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 480, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/__init__.py", line 1, in <module>
+    from . import models
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/__init__.py", line 5, in <module>
+    from . import res_users_role
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/res_users_role.py", line 5, in <module>
+    class ResUsersRole(models.Model):
+  File "/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common/request/models/res_users_role.py", line 8, in ResUsersRole
+    @api.model
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+2026-05-20 11:02:09,484 56661 WARNING ? py.warnings: /home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_system/models/entries.py:4: DeprecationWarning: hijri-converter is deprecated. Use 'hijridate' instead: pip install hijridate==2.3.0
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 128, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 363, in handle
+    super().handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 420, in handle_one_request
+    method()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2533, in __call__
+    response = request._serve_db()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2037, in _serve_db
+    self.registry, cr_readwrite = self._open_registry()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 1647, in _open_registry
+    registry = Registry(self.db)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 108, in __new__
+    return cls.new(db_name)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/masa/odoo_apps/odoo18/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 129, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 480, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_system/__init__.py", line 2, in <module>
+    from . import models
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_system/models/__init__.py", line 4, in <module>
+    from . import entries
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_system/models/entries.py", line 4, in <module>
+    from hijri_converter import Gregorian
+ 
+2026-05-20 11:02:09,490 56661 INFO ? odoo.modules.loading: Loading module bussma_phase2 (49/50) 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.verified_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.expected_full_lease_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.detailed_final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.allocation_fees: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,576 56661 WARNING ? odoo.fields: Field entries.annual_financial_fee: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.verified_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.expected_full_lease_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.detailed_final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.allocation_fees: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,670 56661 WARNING ? odoo.fields: Field entries.annual_financial_fee: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:09,685 56661 INFO ? odoo.modules.registry: module bussma_phase2: creating or updating database tables 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_building_requirements, building_requirements) of entries.phase.two() have the same label: Building Requirements. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_final_property_price, final_property_price) of entries.phase.two() have the same label: Final Property Price. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_comparison_average, comparison_average) of entries.phase.two() have the same label: Comparables Average. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (specialized_study_manager_approval, standard_study_manager_approval) of entries.phase.two() have the same label: Study Manager Approval. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (committe_notes, entered_notes) of entries.phase.two() have the same label: Notes. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auctions_manager_approval, sales_manager_approval) of entries.phase.two() have the same label: Sales Manager Decision. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (manager_negotiator_final_owner_decision, final_owner_decision) of entries.phase.two() have the same label: Final Owner Decision. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (manager_negotiator_final_owner_price, final_owner_price) of entries.phase.two() have the same label: Final Owner Price. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auction_project_path, project_path) of entries.phase.two() have the same label: Project Path. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (sales_buyer_name, buyer_name) of entries.phase.two() have the same label: Buyer Name. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (sales_buyer_mobile, buyer_mobile) of entries.phase.two() have the same label: Buyer Mobile. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,750 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (sales_property_type, property_type) of entries.phase.two() have the same label: Property Type. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (sales_brokerage_fee, saai_amount) of entries.phase.two() have the same label: Brokerage Fee. [Modules: bussma_phase2 and bussma_phase2] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_building_requirements, building_requirements) of entries() have the same label: Building Requirements. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_final_property_price, final_property_price) of entries() have the same label: Final Property Price. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (detailed_comparison_average, comparison_average) of entries() have the same label: Comparables Average. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (specialized_study_manager_approval, standard_study_manager_approval) of entries() have the same label: Study Manager Approval. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (specialized_study_manager_note, standard_study_manager_note) of entries() have the same label: Study Manager Note. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (cities_study_manager_approval, standard_study_manager_approval) of entries() have the same label: Study Manager Approval. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (cities_study_manager_note, standard_study_manager_note) of entries() have the same label: Study Manager Note. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (committe_notes, entered_notes) of entries() have the same label: Notes. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (manager_negotiator_final_owner_decision, final_owner_decision) of entries() have the same label: Final Owner Decision. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (manager_negotiator_final_owner_price, final_owner_price) of entries() have the same label: Final Owner Price. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (manager_negotiator_owner_rejection_reasons, owner_rejection_reasons) of entries() have the same label: Owner Rejection Reasons. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auction_assigned_contract_manager, direct_sale_assigned_contract_manager) of entries() have the same label: Assigned Contract Manager. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auction_contract_status, direct_sale_contract_status) of entries() have the same label: Contract Status. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auction_contract_non_compliance_reasons, direct_sale_contract_non_compliance_reasons) of entries() have the same label: Reasons for Not Contracting. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,751 56661 WARNING ? odoo.addons.base.models.ir_model: Two fields (auction_contract_attachments, direct_sale_contract_attachments) of entries() have the same label: Contract Attachments. [Modules: bussma_system and bussma_system] 
+2026-05-20 11:02:09,885 56661 INFO ? odoo.modules.loading: loading bussma_phase2/security/security.xml 
+2026-05-20 11:02:09,892 56661 INFO ? odoo.modules.loading: loading bussma_phase2/security/ir.model.access.csv 
+2026-05-20 11:02:10,363 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/entries_phase2_task_views.xml 
+2026-05-20 11:02:10,378 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/phase2_sequences.xml 
+2026-05-20 11:02:10,380 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/bussma_project_data.xml 
+2026-05-20 11:02:10,385 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/users_roles_data.xml 
+2026-05-20 11:02:11,003 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/phase2_stages.xml 
+2026-05-20 11:02:11,058 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/phase2_cron.xml 
+2026-05-20 11:02:11,060 56661 INFO ? odoo.modules.loading: loading bussma_phase2/data/phase2_mail_templates.xml 
+2026-05-20 11:02:11,069 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/entries_phase2_sales_views.xml 
+2026-05-20 11:02:11,124 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/entries_phase2_views.xml 
+2026-05-20 11:02:11,164 56661 WARNING ? odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 94,
+ 'name': 'entries.phase.two.form',
+ 'view': ir.ui.view(725,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_form'} 
+2026-05-20 11:02:11,165 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-exclamation-triangle fa-lg mt-1 text-warning) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 95,
+ 'name': 'entries.phase.two.form',
+ 'view': ir.ui.view(725,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_form'} 
+2026-05-20 11:02:11,209 56661 WARNING ? odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 109,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,209 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-exclamation-triangle fa-lg mt-1 text-warning) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 110,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,209 56661 WARNING ? odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 116,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,210 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-exclamation-triangle fa-lg mt-1 text-warning) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 117,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,210 56661 WARNING ? odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 124,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,210 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-exclamation-triangle fa-lg mt-1 text-warning) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 125,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,211 56661 WARNING ? odoo.addons.base.models.ir_ui_view: An alert (class alert-*) must have an alert, alertdialog or status role or an alert-link class. Please use alert and alertdialog only for what expects to stop any activity to be read immediately.
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 132,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,211 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-exclamation-triangle fa-lg mt-1 text-warning) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 133,
+ 'name': 'entries.phase.two.eanfaz.form',
+ 'view': ir.ui.view(726,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(631,),
+ 'xmlid': 'view_entries_phase2_eanfaz_form'} 
+2026-05-20 11:02:11,235 56661 WARNING ? odoo.addons.base.models.ir_ui_view: 'kanban-box' is deprecated, define a 'card' template instead 
+2026-05-20 11:02:11,238 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-calendar) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 147,
+ 'name': 'entries.phase.two.kanban',
+ 'view': ir.ui.view(728,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(),
+ 'xmlid': 'view_entries_phase2_kanban'} 
+2026-05-20 11:02:11,239 56661 WARNING ? odoo.addons.base.models.ir_ui_view: A <i> with fa class (fa fa-calendar) must have title in its tag, parents, descendants or have text
+View error context:
+{'file': '/home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/views/entries_phase2_views.xml',
+ 'line': 150,
+ 'name': 'entries.phase.two.kanban',
+ 'view': ir.ui.view(728,),
+ 'view.model': 'entries.phase.two',
+ 'view.parent': ir.ui.view(),
+ 'xmlid': 'view_entries_phase2_kanban'} 
+2026-05-20 11:02:11,265 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7380, 7381, 7382] 
+2026-05-20 11:02:11,288 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7383, 7384, 7385] 
+2026-05-20 11:02:11,297 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7386, 7387, 7388] 
+2026-05-20 11:02:11,307 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7389, 7390, 7391] 
+2026-05-20 11:02:11,317 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7392, 7393, 7394] 
+2026-05-20 11:02:11,326 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7395, 7396, 7397] 
+2026-05-20 11:02:11,334 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7398, 7399, 7400] 
+2026-05-20 11:02:11,344 56661 INFO ? odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [7401, 7402] 
+2026-05-20 11:02:11,349 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/entries_inherit_views.xml 
+2026-05-20 11:02:11,350 56661 INFO ? odoo.modules.loading: loading bussma_phase2/wizard/record_control_wizard_views.xml 
+2026-05-20 11:02:11,361 56661 INFO ? odoo.modules.loading: loading bussma_phase2/wizard/entries_phase2_request_wizard_views.xml 
+2026-05-20 11:02:11,371 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/entries_import_wizard_views.xml 
+2026-05-20 11:02:11,381 56661 INFO ? odoo.modules.loading: loading bussma_phase2/views/phase_2_manus.xml 
+2026-05-20 11:02:11,491 56661 INFO ? odoo.addons.base.models.ir_module: module bussma_phase2: loading translation file /home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/i18n/ar_001.po for language ar_001 
+2026-05-20 11:02:11,491 56661 INFO ? odoo.tools.translate: loading base translation file /home/masa/odoo_apps/repos_odoo_18/Bussmah/bussma_phase2/i18n/ar_001.po for language ar_001 
+WARNING:  database "postgres" has a collation version mismatch
+DETAIL:  The database was created using collation version 2.41, but the operating system provides version 2.42.
+HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE postgres REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+2026-05-20 11:02:11,623 56661 INFO ? odoo.modules.loading: Module bussma_phase2 loaded in 2.13s, 1248 queries (+1249 other) 
+2026-05-20 11:02:11,626 56661 WARNING ? py.warnings: /home/masa/odoo_apps/odoo18/odoo/api.py:484: DeprecationWarning: The model odoo.addons.helpdesk_ticket.models.ticket is not overriding the create method in batch
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 128, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 363, in handle
+    super().handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 420, in handle_one_request
+    method()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2533, in __call__
+    response = request._serve_db()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2037, in _serve_db
+    self.registry, cr_readwrite = self._open_registry()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 1647, in _open_registry
+    registry = Registry(self.db)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 108, in __new__
+    return cls.new(db_name)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/masa/odoo_apps/odoo18/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 129, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 480, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/__init__.py", line 3, in <module>
+    from . import models
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/__init__.py", line 3, in <module>
+    from . import ticket
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/ticket.py", line 6, in <module>
+    class HelpdeskTicket(models.Model):
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/ticket.py", line 35, in HelpdeskTicket
+    @api.model
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+2026-05-20 11:02:11,628 56661 INFO ? odoo.modules.loading: 50 modules loaded in 2.98s, 1248 queries (+1249 extra) 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.verified_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.expected_full_lease_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.detailed_final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.allocation_fees: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,701 56661 WARNING ? odoo.fields: Field entries.annual_financial_fee: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-05-20 11:02:11,887 56661 INFO ? odoo.modules.loading: Modules loaded. 
+2026-05-20 11:02:11,903 56661 INFO ? odoo.modules.registry: Caches invalidated, signaling through the database: ['default', 'groups', 'templates'] 
+2026-05-20 11:02:11,904 56661 INFO ? odoo.modules.registry: Registry loaded in 3.327s 
+2026-05-20 11:02:11,907 56661 INFO bussma_07 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-05-20 11:02:12,028 56661 INFO bussma_07 werkzeug: 127.0.0.1 - - [20/May/2026 11:02:12] "GET /websocket?version=18.0-5 HTTP/1.1" 101 - 1512 0.744 2.708
+2026-05-20 11:02:12,038 56661 INFO bussma_07 werkzeug: 127.0.0.1 - - [20/May/2026 11:02:12] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.001 0.004
+2026-05-20 11:02:12,353 56661 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+WARNING:  database "postgres" has a collation version mismatch
+DETAIL:  The database was created using collation version 2.41, but the operating system provides version 2.42.
+HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE postgres REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+2026-05-20 11:04:04,429 56661 INFO bussma_07 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) starting 
+2026-05-20 11:04:04,479 56661 INFO bussma_07 odoo.addons.base.models.ir_attachment: filestore gc 5 checked, 1 removed 
+2026-05-20 11:04:04,551 56661 INFO bussma_07 odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-05-20 11:04:04,560 56661 INFO bussma_07 odoo.addons.base.models.res_users: GC 'res.users.apikeys' delete 0 entries 
+2026-05-20 11:04:04,564 56661 INFO bussma_07 odoo.addons.base.models.res_device: GC device logs delete 1 entries 
+2026-05-20 11:04:04,574 56661 INFO bussma_07 odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2026-05-20 11:04:04,590 56661 INFO bussma_07 odoo.addons.base.models.res_users: GC 'auth_totp.device' delete 0 entries 
+2026-05-20 11:04:04,698 56661 INFO bussma_07 odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2026-05-20 11:04:04,771 56661 INFO bussma_07 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) done in 0.342s 
+2026-05-20 11:04:04,783 56661 INFO bussma_07 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) processed 0 records, 0 records remaining 
+2026-05-20 11:04:04,788 56661 INFO bussma_07 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) completed 

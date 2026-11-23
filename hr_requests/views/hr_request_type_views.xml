@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_hr_request_type_tree" model="ir.ui.view">
+        <field name="name">hr.request.type.tree</field>
+        <field name="model">hr.request.type</field>
+        <field name="arch" type="xml">
+            <list string="HR Request Types" default_order="sequence" create="0">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="employee_classification"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hr_request_type_form" model="ir.ui.view">
+        <field name="name">hr.request.type.form</field>
+        <field name="model">hr.request.type</field>
+        <field name="arch" type="xml">
+            <form string="HR Request Type">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="category_id"/>
+                            <field name="employee_classification"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_hr_request_type_search" model="ir.ui.view">
+        <field name="name">hr.request.type.search</field>
+        <field name="model">hr.request.type</field>
+        <field name="arch" type="xml">
+            <search string="Search Types">
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="employee_classification"/>
+                <separator/>
+                <filter string="Employee Request" name="employee" domain="[('employee_classification', '=', 'employee')]"/>
+                <filter string="Manager Request" name="manager" domain="[('employee_classification', '=', 'manager')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Request Category (Package)" name="group_category" context="{'group_by': 'category_id'}"/>
+                    <filter string="Employee Classification" name="group_classification" context="{'group_by': 'employee_classification'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_hr_request_type" model="ir.actions.act_window">
+        <field name="name">Request Types</field>
+        <field name="res_model">hr.request.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_hr_request_type_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new request type
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+        <!-- Form View -->
+        <record id="view_entries_auction_form" model="ir.ui.view">
+            <field name="name">sales.auction.management.form</field>
+            <field name="model">sales.auction.management</field>
+            <field name="mode">primary</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="request.request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_send']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_accept']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_refuse']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="amount_matches_selling_price" invisible="1"/>
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        statusbar_visible="sector_manager,done"
+                        invisible="amount_matches_selling_price"
+                    />
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        invisible="not amount_matches_selling_price"
+                    />
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <!-- Contract Cancellation Buttons -->
+                    <button name="action_cancel_contract"
+                            string="Cancel Contract"
+                            type="object"
+                            class="btn-danger"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="is_contract_cancelled"
+                            confirm="Are you sure you want to cancel this contract?"/>
+                    <button name="action_reactivate_contract"
+                            string="Reactivate Contract"
+                            type="object"
+                            class="btn-secondary"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="not is_contract_cancelled"
+                            confirm="Are you sure you want to reactivate this contract?"/>
+                    <button name="action_archive"
+                            string="Archive"
+                            type="object"
+                            class="btn-secondary"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="not is_contract_cancelled or sales_auction_stage_selection in ['p2_sales_archive', 'p2_shared_archive']"
+                            confirm="Are you sure you want to archive this record?"/>
+
+                    <!-- ================================================================ -->
+                    <!-- Cities Path Buttons -->
+                    <!-- ================================================================ -->
+
+                    <!-- Return to Cities Portfolio (Not Sold) -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_city_reject_to_portfolio"
+                            class="btn-warning"
+                            string="Return to Cities Portfolio"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_shared_sales_fin' and is_source_city and is_sold == 'no') or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Return This Property to Cities Portfolio?"/>
+                    <!-- Send to Direct Sales -->
+                    <!-- Stage: p2_auction_pvt_portfolio | Role: Auctions Manager -->
+                    <button name="action_move_to_direct_sales"
+                            class="btn-warning"
+                            string="Send To Direct Sales"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_auction_pvt_portfolio' and is_sold == 'no') or is_auctions_manager_group == False"
+                            confirm="Are You Sure You Want to Send This Property to Direct Sales?"/>
+                    <!-- Transfer to Archive -->
+                    <!-- Stage: p2_auction_pvt_portfolio | Role: Auctions Manager -->
+                    <button name="action_move_to_archive" class="btn-success" string="Send To Archive" type="object" 
+                        invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_auction_pvt_portfolio' and is_sold == 'no') or is_auctions_manager_group == False" 
+                        confirm="Are You Sure You Want to Send This Property to Archive?" />
+                    <!-- Transfer to Collection and Evacuation -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_move_to_collection"
+                            class="btn-success"
+                            string="Transfer To Collection And Evacuation"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or sales_auction_stage_selection != 'p2_shared_sales_fin' or is_sold != 'yes' or is_sale_cancelled or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Transfer This Property to Collection And Evacuation?"/>
+                    <!-- Return to Portfolio (Not Sold) -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_reject_to_portfolio"
+                            class="btn-warning"
+                            string="Return To Portfolio (Not Sold)"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_shared_sales_fin' and is_source_pvt and is_sold == 'no') or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Return This Property to Portfolio?"/>
+                    <!-- Transfer to Portfolio -->
+                    <!-- Stage: withdrawn properties -->
+                    <button name="action_return_to_portfolio" class="btn-warning" string="Transfer To Portfolio" type="object"
+                            invisible="not (property_status == 'withdrawn') or (sales_auction_stage_selection == 'p2_auction_pvt_portfolio' and property_status == 'withdrawn') or sales_auction_stage_selection == 'p2_shared_archive'"
+                            confirm="Are You Sure You Want to Transfer This Property to Portfolio?"/>
+                    <!-- Transfer to Auction Archive (Not Sold) -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_reject_to_archive"
+                            class="btn-warning"
+                            string="Transfer To Archive (Not Sold)"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_shared_sales_fin' and is_source_enf and is_sold == 'no') or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Transfer This Property to Archive (Not Sold)?"/>
+                    <!-- Transfer to Archive -->
+                    <!-- p2_shared_col_trans: Collection Officer | p2_auction_pvt_portfolio withdrawn: Auctions Manager -->
+                    <button name="action_move_to_archive" class="btn-success" string="Transfer to Archive" type="object" 
+                            invisible="not (
+                                (sales_auction_stage_selection == 'p2_shared_col_trans' and property_status != 'withdrawn' and is_collection_officer_group == True and amount_matches_selling_price == True)
+                                or
+                                (sales_auction_stage_selection == 'p2_auction_pvt_portfolio' and property_status == 'withdrawn' and is_auctions_manager_group == True and amount_matches_selling_price == True)
+                            )"
+                            confirm="Are You Sure You Want to Archive This Property?" />
+                    <!-- Cancel Sale -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_cancel_sale"
+                             string="Cancel Sale"
+                             type="object"
+                             class="btn-danger"
+                             invisible="property_status == 'withdrawn' or sales_auction_stage_selection != 'p2_shared_sales_fin' or is_sale_cancelled or is_sold == 'no' or is_commercial_accountant_group == False"
+                             confirm="Are You Sure You Want to Cancel This Sale?"/>
+                    <!-- Confirm Cancellation and Archive -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_confirm_cancellation_and_archive"
+                             string="Confirm Cancellation And Archive"
+                             type="object"
+                             class="btn-danger"
+                             invisible="not (is_sale_cancelled == True and sales_auction_stage_selection == 'p2_shared_sales_fin') or is_commercial_accountant_group == False"
+                             confirm="The property will be transferred to the archive, do you want to continue?"/>
+                    <!-- Move to Sales Archive -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                       <button name="action_sales_move_to_archive"
+                            class="btn-warning"
+                            string="Move To Sales Archive"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_sales_fin' 
+                                    or is_sold != 'no' 
+                                    or property_status == 'withdrawn' 
+                                    or not is_source_sales"
+                            confirm="Are You Sure You Want To Move This Property To Sales Archive"/>
+                    <!-- Return To Portfolio -->
+                    <!-- Archive stages: no role restriction -->
+                    <button name="action_return_from_archive" groups="sales_and_auction_management.group_system_admin"
+                            class="btn-danger"
+                            string="Return To Portfolio"
+                            type="object"
+                            invisible="sales_auction_stage_selection not in ['p2_shared_archive', 'p2_sales_archive'] or is_sold == 'yes'"
+                            confirm="Are You Sure You Want to Return This Property To Portfolio?"/>
+                    <!-- Transfer to Sales with Finance -->
+                    <!-- Stage: blocked | Role: Commercial Accountant -->
+                    <button name="action_move_to_sales_fin_manual"
+                        string="Move to Sales and Finance"
+                        type="object"
+                        class="btn-success"
+                        invisible="property_status == 'withdrawn' or is_auctions_pm_group == False or is_contract_with_buyer == False or (sales_auction_stage_selection != 'p2_shared_buyer_contracting' and not is_not_move_to_sale_fin_notes)"
+                        confirm="Are You Sure You Want to Move This Property to Sales and Finance?"/>
+                    <!-- Contract with Buyer -->
+                    <button name="action_sales_contract_with_buyer"
+                            class="btn-primary"
+                            string="Contract with Buyer"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_contract_with_buyer == True or is_auctions_pm_group == False"
+                            confirm="Are You Sure You Want to proceed to Contract with Buyer?"/>
+                    <button name="action_send_to_sector_manager"
+                            class="btn-warning"
+                            string="Send to Sector Manager Approval"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False or amount_matches_selling_price == True or not collected_amount"
+                            confirm="The Collected Amount Does Not Match The Selling Price. Do You Want To Send The Request To The Sector Manager For Approval?"/>
+                    <button name="action_move_from_sector_approval_to_archive"
+                            class="btn-success"
+                            string="Approve and Move To Archive"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_sector_manager_approval' or is_collection_officer_group == False"
+                            confirm="Are You Sure You Want to Approve and Move This Property To Archive?"/>
+                    <button name="action_return_to_collection"
+                            type="object"
+                            string="Return To Collection"
+                            class="btn-primary"
+                            invisible="sales_auction_stage_selection != 'p2_shared_sector_manager_approval' or is_collection_officer_group == False"
+                            confirm="Are You Sure You Want to Return This Property To Collection?"/>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <field name="is_contract_cancelled" invisible="1"/>
+                    <widget name="web_ribbon" title="Contract Cancelled" bg_color="bg-danger" invisible="not is_contract_cancelled"/>
+                    <widget name="web_ribbon" title="Unsold Auction" bg_color="text-bg-warning" invisible="is_sold !=  'no'"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="entrie_name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <field name="auction_name" invisible="1"/>
+                    <!-- ============================================================ -->
+                    <!-- Role Group Flags (invisible — used in readonly/invisible      -->
+                    <!-- conditions throughout this view)                             -->
+                    <!-- ============================================================ -->
+                    <field name="is_auctions_manager_group" invisible="1"/>
+                    <field name="is_auctions_pm_group" invisible="1"/>
+                    <field name="is_sales_manager_group" invisible="1"/>
+                    <field name="is_commercial_accountant_group" invisible="1"/>
+                    <field name="is_collection_officer_group" invisible="1"/>
+                    <field name="is_studies_manager_group" invisible="1"/>
+                    <field name="is_analyst_group" invisible="1"/>
+                    <field name="project_type_selection" invisible="1"/>
+                    <field name="collected_amount" invisible="1"/>
+                    <field name="amount_matches_selling_price" invisible="1"/>
+                    <field name="is_sold" invisible="1"/>
+                    <field name="bussma_project_stage_selection" invisible="1"/>
+                    <!-- ============================================================ -->
+                    <!-- Auction Manager Stage - Assigning Project Manager             -->
+                    <!-- Allowed: Auctions Manager -->
+                    <!-- ============================================================ -->
+                    <group string="Properties Information">
+                        <field name="project_manager_id" invisible="1"/>
+                        <field name="project_id" readonly="1" options="{'no_open': True}"/>
+                        <field name="auction_project_path" readonly="1" />
+                        <field name="property_status" readonly="1" invisible="is_source_sales or is_source_enf"/>
+                    </group>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (is_not_move_to_sale_fin_notes)" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                            <strong class="text-warning-emphasis d-block mb-1">Notes About Not Moving To Sales And Finance Stage</strong>
+                            <field name="is_not_move_to_sale_fin_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <group>
+                        <field name="request_type_id" readonly="1" invisible="1" domain="[('res_model', '=', 'sales.auction.management')]"/>
+                        <field name="sales_auction_stage_selection" readonly="1" invisible="1"/>
+                        <field name="is_source_pvt" invisible="1"/>
+                        <field name="is_source_city" invisible="1"/>
+                        <field name="is_source_sales" invisible="1"/>
+                        <field name="entry_id" readonly="1" invisible="1" force_save="1"/>
+
+                    </group>
+                    <group>
+                        <field name="show_studies_info"/>
+                    </group>
+                    <notebook>
+                        <page string="Buyer Info" invisible="sales_auction_stage_selection not in['p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive'] or is_source_sales">
+                            <group>
+                                <group>
+                                    <field name="sales_buyer_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_buyer_mobile" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_buyer_birthdate" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_buyer_capacity" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_buyer_identity_attachment" filename="sales_buyer_identity_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_buyer_identity_attachment_name" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="sales_property_type" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_agreed_amount" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_brokerage_fee" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_brokerage_tax" readonly="1"/>
+                                    <field name="sales_brokerage_total" readonly="1"/>
+                                    <field name="sales_market_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_agent_identity_attachment" filename="sales_agent_identity_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_auctions_pm_group == False"/>
+                                    <field name="sales_agent_identity_attachment_name" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Contract with Buyer                                      -->
+                        <!-- Allowed: All                                                 -->
+                        <!-- ============================================================ -->
+                        <page string="Contract with Buyer" name="contract_with_buyer_page" invisible="sales_auction_stage_selection not in ['p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive', 'p2_sales_archive'] or is_contract_with_buyer == False">
+                            <group>
+                                <group>
+                                    <field name="sales_buyer_name" readonly="1"/>
+                                    <field name="sales_buyer_mobile" readonly="1"/>
+                                    <field name="sales_buyer_birthdate" readonly="1"/>
+                                    <field name="sales_buyer_capacity" readonly="1"/>
+                                    <field name="sales_buyer_identity_attachment" filename="sales_buyer_identity_attachment_name" readonly="1"/>
+                                    <field name="sales_buyer_identity_attachment_name" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="sales_property_type" readonly="1"/>
+                                    <field name="sales_agreed_amount" readonly="1"/>
+                                    <field name="sales_brokerage_fee" readonly="1"/>
+                                    <field name="sales_brokerage_tax" readonly="1"/>
+                                    <field name="sales_brokerage_total" readonly="1"/>
+                                    <field name="sales_market_name" readonly="1"/>
+                                    <field name="sales_agent_identity_attachment" filename="sales_agent_identity_attachment_name" readonly="1"/>
+                                    <field name="sales_agent_identity_attachment_name" invisible="1"/>
+                                    <field name="contract_buyer_attachment" filename="contract_buyer_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="contract_buyer_attachment_name" invisible="1"/>
+
+                                </group>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Sales with Finance                                       -->
+                        <!-- Allowed: Commercial Sector Accountant -->
+                        <!-- ============================================================ -->
+                        <page string="Sales with Finance" invisible="sales_auction_stage_selection not in ['p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive', 'p2_sales_archive']">
+                            <group>
+                                <group>
+                                    <field name="selling_price" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="price_per_meter" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="saai_amount" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_tax" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_with_tax" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="total_price" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="real_estate_transaction_tax" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                                <group>
+                                    <field name="bidder_number" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="check_amount" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="participant_name" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="participant_id_number" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="participant_mobile" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="buyer_representative_name" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="buyer_representative_id" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="buyer_representative_mobile" invisible="is_source_sales" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="is_sold" readonly="sales_auction_stage_selection != 'p2_shared_sales_fin' or is_commercial_accountant_group == False" />
+                                    <field name="is_sale_cancelled" invisible="1" />
+                                    <field name="net_basmah_share" invisible="not is_sale_cancelled" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Collection and Transfer                                  -->
+                        <!-- Allowed: Collection/Evacuation Officer -->
+                        <!-- ============================================================ -->
+                        <page string="Collection and Transfer" invisible="sales_auction_stage_selection not in ['p2_shared_col_trans', 'p2_shared_archive', 'p2_sales_archive', 'p2_shared_sector_manager_approval']">
+                            <group>
+                                <group>
+                                    <field name="award_record_number" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" />
+                                    <field name="payment_status" invisible="1" />
+                                    <field name="payment_status_ids" widget="many2many_checkboxes" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" />
+                                    <field name="collection_notes" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" />
+                                    <field name="transfer_status" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" />
+                                    <field name="transfer_notes" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" />
+                                </group>
+                                <group string="Operation Attachments">
+                                    <field name="real_estate_invoice_name" invisible="1"/>
+                                    <field name="real_estate_invoice" filename="real_estate_invoice_name" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" force_save="1"/>
+                                    <field name="payment_proof_name" invisible="1"/>
+                                    <field name="payment_proof" filename="payment_proof_name" readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False" force_save="1"/>
+                                </group>
+                            </group>
+                            <group string="Settlement">
+                                    <field name="collected_amount"
+                                           readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False"
+                                           widget="monetary"
+                                           class="oe_inline"
+                                           options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_amount" readonly="1"
+                                           widget="monetary"
+                                           class="oe_inline"
+                                           options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_matches_selling_price" invisible="1"/>
+                                    <field name="collection_receipt_name" invisible="1"/>
+                                    <field name="collection_receipt"
+                                           filename="collection_receipt_name"
+                                           readonly="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False"
+                                           force_save="1"
+                                           string="Collection Receipt"/>
+                                    <div class="alert alert-warning d-flex align-items-center gap-2"
+                                         invisible="amount_matches_selling_price or not collected_amount"
+                                         role="status">
+                                        <i class="fa fa-exclamation-triangle" title="Mismatch"/>
+                                        <span>Collected amount does not match the selling price. Request will be sent to sector manager approval.</span>
+                                    </div>
+                            </group>
+                        </page>
+                        <page string="Studies Information" name="general_info" invisible="not show_studies_info">
+                            <notebook>
+                                <page string="General Information">
+                                    <group>
+                                        <group string="Customer Data">
+                                            <label for="customer_intent" class="text-warning font-weight-bold"/>
+                                            <field name="customer_intent" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="partner_id" class="text-warning font-weight-bold"/>
+                                            <field name="partner_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="customer_role_rel" class="text-warning font-weight-bold"/>
+                                            <field name="customer_role_rel" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="owner_type" class="text-warning font-weight-bold"/>
+                                            <field name="owner_type" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="partner_mobile" class="text-warning font-weight-bold"/>
+                                            <field name="partner_mobile" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="entered_by_id" class="text-warning font-weight-bold"/>
+                                            <field name="entered_by_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="entered_by_email" class="text-warning font-weight-bold"/>
+                                            <field name="entered_by_email" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                        <group>
+                                            <label for="project_path" class="text-warning font-weight-bold"/>
+                                            <field name="project_path" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="analyst_id" class="text-warning font-weight-bold"/>
+                                            <field name="analyst_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="detailed_analyst_id" invisible="is_source_city" class="text-warning font-weight-bold"/>
+                                            <field name="detailed_analyst_id" invisible="is_source_city" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="is_authorized_property" class="text-warning font-weight-bold"/>
+                                            <field name="is_authorized_property" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="rejection_reason" class="text-warning font-weight-bold" invisible="is_authorized_property != 'no'"/>
+                                            <field name="rejection_reason" invisible="is_authorized_property != 'no'" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <field name="return_to_lister_note" invisible="is_authorized_property != 'return_to_lister'" readonly="1" class="imported_data_field"/>
+                                        </group>
+                                    </group>
+                                    <group string="Property Details">
+                                        <group>
+                                            <label for="country_id" class="text-warning font-weight-bold"/>
+                                            <field name="country_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="city" class="text-warning font-weight-bold"/>
+                                            <field name="city" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="district_id" class="text-warning font-weight-bold"/>
+                                            <field name="district_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="property_type" class="text-warning font-weight-bold"/>
+                                            <field name="property_type" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="area_sqm" class="text-warning font-weight-bold"/>
+                                            <field name="area_sqm" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="property_usage_rel" class="text-warning font-weight-bold"/>
+                                            <field name="property_usage_rel" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                        <group>
+                                            <label for="current_income" class="text-warning font-weight-bold"/>
+                                            <field name="current_income" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="currency_id" class="text-warning font-weight-bold"/>
+                                            <field name="currency_id" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="plan_number" class="text-warning font-weight-bold"/>
+                                            <field name="plan_number" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="deed_number" class="text-warning font-weight-bold"/>
+                                            <field name="deed_number" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="deed_date" class="text-warning font-weight-bold"/>
+                                            <field name="deed_date" widget="hijri_date" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="plot_number" class="text-warning font-weight-bold"/>
+                                            <field name="plot_number" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="customer_price_per_sqm" class="text-warning font-weight-bold"/>
+                                            <field name="customer_price_per_sqm" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="location_url" class="text-warning font-weight-bold"/>
+                                            <field name="location_url" widget="url" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="requires_technical_offer" class="text-warning font-weight-bold"/>
+                                            <field name="requires_technical_offer" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page name="preliminary_study_page" string="Preliminary Study Information"
+                                    invisible="project_path != 'standard'">
+                                    <group>
+                                        <group>
+                                            <label for="verified_income" class="text-warning font-weight-bold"/>
+                                            <field name="verified_income" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="expected_full_lease_income" class="text-warning font-weight-bold"/>
+                                            <field name="expected_full_lease_income" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="building_requirements" class="text-warning font-weight-bold"/>
+                                            <field name="building_requirements" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="justice_index_average" class="text-warning font-weight-bold"/>
+                                            <field name="justice_index_average" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="comparison_average" class="text-warning font-weight-bold"/>
+                                            <field name="comparison_average" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        </group>
+                                        <group>
+                                            <label for="final_property_price" class="text-warning font-weight-bold"/>
+                                            <field name="final_property_price" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="properties_count" class="text-warning font-weight-bold"/>
+                                            <field name="properties_count" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="analyst_recommendation_preliminary" class="text-warning font-weight-bold"/>
+                                            <field name="analyst_recommendation_preliminary" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="preliminary_study_status" class="text-warning font-weight-bold"/>
+                                            <field name="preliminary_study_status" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="analyst_rejection_notes" class="text-warning font-weight-bold" invisible="preliminary_study_status != 'rejected'"/>
+                                            <field name="analyst_rejection_notes" invisible="preliminary_study_status != 'rejected'" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page name="cities_study_page" string="Cities Study Information" invisible="project_path != 'cities'">
+                                    <group>
+                                        <group>
+                                            <field name="gps_coordinates" readonly="1"/>
+                                            <field name="area" readonly="1"/>
+                                            <field name="industrial_city" readonly="1"/>
+                                            <field name="allocation_fees" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="annual_financial_fee" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="previous_activity" readonly="1"/>
+                                            <field name="facility_investor" readonly="1"/>
+                                            <field name="investor_contact_number" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="has_movables" readonly="1" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="equipment" invisible="has_movables != 'yes'" readonly="1"/>
+                                            <field name="vehicles" invisible="has_movables != 'yes'" readonly="1"/>
+                                            <field name="machinery" invisible="has_movables != 'yes'" readonly="1"/>
+                                            <field name="systems" invisible="has_movables != 'yes'" readonly="1"/>
+                                            <field name="analyst_notes" readonly="1"/>
+                                        </group>
+                                    </group>
+                                    <group string="Required Documents" name="city_study_documents">
+                                        <group>
+                                            <field name="coordinates_kmz_name" invisible="1"/>
+                                            <field name="coordinates_kmz" filename="coordinates_kmz_name" readonly="1"/>
+                                            <field name="facility_photo_ids" widget="many2many_binary" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="current_income_file_name" invisible="1"/>
+                                            <field name="current_income_file" filename="current_income_file_name" readonly="1"/>
+                                            <field name="rent_contract_ids" widget="many2many_binary" readonly="1"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page name="detailed_study_page" string="Detailed Study Information"
+                                    invisible="not(project_path == 'specialized' or (project_path == 'standard' and is_assign_detailed_study))">
+                                    <notebook>
+                                        <page string="Property and Location">                                    
+                                            <group>
+                                                <group>
+                                                    <label for="limit_east" class="text-warning font-weight-bold"/>
+                                                    <field name="limit_east" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="limit_west" class="text-warning font-weight-bold"/>
+                                                    <field name="limit_west" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="limit_north" class="text-warning font-weight-bold"/>
+                                                    <field name="limit_north" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="limit_south" class="text-warning font-weight-bold"/>
+                                                    <field name="limit_south" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="street" class="text-warning font-weight-bold"/>
+                                                    <field name="street" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="nearest_main_road" class="text-warning font-weight-bold"/>
+                                                    <field name="nearest_main_road" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="precise_plot_location_link" class="text-warning font-weight-bold"/>
+                                                    <field name="precise_plot_location_link" widget="url" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                                <group>
+                                                    <label for="length_east" class="text-warning font-weight-bold"/>
+                                                    <field name="length_east" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="length_west" class="text-warning font-weight-bold"/>
+                                                    <field name="length_west" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="length_north" class="text-warning font-weight-bold"/>
+                                                    <field name="length_north" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="length_south" class="text-warning font-weight-bold"/>
+                                                    <field name="length_south" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                            </group>
+                                        </page>
+                                        <page string="Building and Licensing">                                    
+                                            <group>
+                                                <group>
+                                                    <label for="building_area" class="text-warning font-weight-bold"/>
+                                                    <field name="building_area" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="floors_count" class="text-warning font-weight-bold"/>
+                                                    <field name="floors_count" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="units_count" class="text-warning font-weight-bold"/>
+                                                    <field name="units_count" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="property_age_estimated" class="text-warning font-weight-bold"/>
+                                                    <field name="property_age_estimated" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="land_nature" class="text-warning font-weight-bold"/>
+                                                    <field name="land_nature" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                                <group>
+                                                    <label for="building_license_number" class="text-warning font-weight-bold"/>
+                                                    <field name="building_license_number" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="building_license_date" class="text-warning font-weight-bold"/>
+                                                    <field name="building_license_date" widget="hijri_date" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="completion_certificate_issued" class="text-warning font-weight-bold"/>
+                                                    <field name="completion_certificate_issued" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="detailed_building_requirements" class="text-warning font-weight-bold"/>
+                                                    <field name="detailed_building_requirements" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                            </group>
+                                        </page>
+                                        <page string="Services">                        
+                                            <group>
+                                                <group>
+                                                    <label for="electricity_service" class="text-warning font-weight-bold"/>
+                                                    <field name="electricity_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="electricity_meters_count" class="text-warning font-weight-bold"/>
+                                                    <field name="electricity_meters_count" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="electricity_meters_numbers" class="text-warning font-weight-bold"/>
+                                                    <field name="electricity_meters_numbers" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="lighting_service" class="text-warning font-weight-bold"/>
+                                                    <field name="lighting_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="gas_service" class="text-warning font-weight-bold"/>
+                                                    <field name="gas_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="ac_service" class="text-warning font-weight-bold"/>
+                                                    <field name="ac_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="internet_service" class="text-warning font-weight-bold"/>
+                                                    <field name="internet_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="telecom_service" class="text-warning font-weight-bold"/>
+                                                    <field name="telecom_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                                <group>
+                                                    <label for="water_service" class="text-warning font-weight-bold"/>
+                                                    <field name="water_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="water_meters_count" class="text-warning font-weight-bold"/>
+                                                    <field name="water_meters_count" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="water_meters_numbers" class="text-warning font-weight-bold"/>
+                                                    <field name="water_meters_numbers" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="sewage_service" class="text-warning font-weight-bold"/>
+                                                    <field name="sewage_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="pavement_service" class="text-warning font-weight-bold"/>
+                                                    <field name="pavement_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="security_service" class="text-warning font-weight-bold"/>
+                                                    <field name="security_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="elevator_service" class="text-warning font-weight-bold"/>
+                                                    <field name="elevator_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="pool_service" class="text-warning font-weight-bold"/>
+                                                    <field name="pool_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="garden_service" class="text-warning font-weight-bold"/>
+                                                    <field name="garden_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="parking_service" class="text-warning font-weight-bold"/>
+                                                    <field name="parking_service" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                            </group>
+                                            <group string="Warranties">
+                                                <label for="construction_warranty" class="text-warning font-weight-bold"/>
+                                                <field name="construction_warranty" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                <label for="electrical_warranty" class="text-warning font-weight-bold"/>
+                                                <field name="electrical_warranty" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                <label for="plumbing_warranty" class="text-warning font-weight-bold"/>
+                                                <field name="plumbing_warranty" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                <label for="services_description" class="text-warning font-weight-bold"/>
+                                                <field name="services_description" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            </group>
+                                        </page>
+                                        <page string="Financial and Valuation">
+                                            <group>
+                                                <group>
+                                                    <label for="current_total_income" class="text-warning font-weight-bold"/>
+                                                    <field name="current_total_income" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="expected_total_income_full_rent" class="text-warning font-weight-bold"/>
+                                                    <field name="expected_total_income_full_rent" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="detailed_comparison_average" class="text-warning font-weight-bold"/>
+                                                    <field name="detailed_comparison_average" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="justice_ministry_index_average" class="text-warning font-weight-bold"/>
+                                                    <field name="justice_ministry_index_average" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                </group>
+                                                <group>
+                                                    <label for="lowest_price_per_meter_total_property" class="text-warning font-weight-bold"/>
+                                                    <field name="lowest_price_per_meter_total_property" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="highest_price_per_meter_total_property" class="text-warning font-weight-bold"/>
+                                                    <field name="highest_price_per_meter_total_property" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="approximate_building_value_per_meter" class="text-warning font-weight-bold"/>
+                                                    <field name="approximate_building_value_per_meter" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="approximate_land_value_per_meter" class="text-warning font-weight-bold"/>
+                                                    <field name="approximate_land_value_per_meter" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                    <label for="detailed_final_property_price" class="text-warning font-weight-bold"/>
+                                                    <field name="detailed_final_property_price" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                                </group>
+                                            </group>
+                                        </page>
+                                        <page string="Analysis and Recommendation">
+                                            <group>
+                                                <group>
+                                                    <label for="internal_strength_points" class="text-warning font-weight-bold"/>
+                                                    <field name="internal_strength_points" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="internal_weakness_points" class="text-warning font-weight-bold"/>
+                                                    <field name="internal_weakness_points" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="external_strength_points" class="text-warning font-weight-bold"/>
+                                                    <field name="external_strength_points" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="external_weakness_points" class="text-warning font-weight-bold"/>
+                                                    <field name="external_weakness_points" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                </group>
+                                                <group>
+                                                    <label for="best_property_use" class="text-warning font-weight-bold"/>
+                                                    <field name="best_property_use" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="analyst_recommendation_details" class="text-warning font-weight-bold"/>
+                                                    <field name="analyst_recommendation_details" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <label for="property_description" class="text-warning font-weight-bold"/>
+                                                    <field name="property_description" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                                    <div>
+                                                        <label string="Finishing Ratio" for="finishing_ratio" class="text-warning font-weight-bold"/>
+                                                        <field name="finishing_ratio" class="oe_inline" readonly="1" force_save="1"/>
+                                                        <span class="oe_inline">%</span>
+                                                    </div>
+                                                </group>
+                                            </group>
+                                        </page>
+                                    </notebook>
+                                </page>
+                                <page string="Contracting Information" name="contracting_info_page">
+                                    <group>
+                                        <group string="Client Details">
+                                            <field name="contract_client_name" readonly="1" force_save="1"/>
+                                            <field name="contract_client_identity" readonly="1" force_save="1"/>
+                                            <field name="contract_client_birthdate" widget="hijri_date" readonly="1" force_save="1"/>
+                                            <field name="contract_client_mobile" readonly="1" force_save="1"/>
+                                            <field name="contract_client_role" readonly="1" force_save="1"/>
+                                        </group>
+                                        <group string="Agent Owner Details" invisible="contract_client_role != 'agent'">
+                                            <field name="contract_owner_name" readonly="1" force_save="1"/>
+                                            <field name="contract_owner_identity" readonly="1" force_save="1"/>
+                                            <field name="contract_owner_birthdate" widget="hijri_date" readonly="1" force_save="1"/>
+                                            <field name="contract_owner_mobile" readonly="1" force_save="1"/>
+                                            <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name" readonly="1" force_save="1"/>
+                                            <field name="contract_agency_deed_attachment_name" invisible="1"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group string="Contract &amp; Financial Information">
+                                            <field name="contract_agreed_price" readonly="1" force_save="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="contract_duration" readonly="1" force_save="1"/>
+                                        </group>
+                                        <group string="Property Details">
+                                            <field name="rooms_count" readonly="1" force_save="1"/>
+                                            <field name="property_facade" readonly="1" force_save="1"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page name="awards_execution_page" string="Awards &amp; Execution" invisible="is_source_city">
+                                    <group>
+                                        <group string="Study Approval" name="study_approval_group">
+                                            <label for="standard_study_manager_approval" class="text-warning font-weight-bold"/>
+                                            <field name="standard_study_manager_approval" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="specialized_study_manager_approval" class="text-warning font-weight-bold"/>
+                                            <field name="specialized_study_manager_approval" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                        <group string="Committee Decision" name="committee_decision_group">
+                                            <label for="committee_decision" class="text-warning font-weight-bold"/>
+                                            <field name="committee_decision" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="committee_decision_date" class="text-warning font-weight-bold"/>
+                                            <field name="committee_decision_date" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="marketing_duration_months" class="text-warning font-weight-bold"/>
+                                            <field name="marketing_duration_months" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="committe_notes" class="text-warning font-weight-bold"/>
+                                            <field name="committe_notes" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group string="Managers Approval" name="managers_approval_group">
+                                            <field name="sales_manager_approval" readonly="1" />
+                                            <field name="auctions_manager_approval" readonly="1"/>
+                                        </group>
+                                        <group string="Negotiation" name="negotiation_group">
+                                            <label for="final_owner_decision" class="text-warning font-weight-bold"/>
+                                            <field name="final_owner_decision" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="final_owner_price" class="text-warning font-weight-bold"/>
+                                            <field name="final_owner_price" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <label for="manager_negotiator_final_owner_decision" class="text-warning font-weight-bold"/>
+                                            <field name="manager_negotiator_final_owner_decision" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                                            <label for="manager_negotiator_final_owner_price" class="text-warning font-weight-bold"/>
+                                            <field name="manager_negotiator_final_owner_price" readonly="1" force_save="1" nolabel="1" class="imported_data_field" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_entries_eanfaz_form" model="ir.ui.view">
+            <field name="name">entries.eanfaz.form</field>
+            <field name="model">sales.auction.management</field>
+            <field name="mode">primary</field>
+            <field name="priority">3</field>
+            <field name="inherit_id" ref="request.request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_send']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_accept']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_refuse']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="amount_matches_selling_price" invisible="1"/>
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        statusbar_visible="sector_manager,not done"
+                        invisible="amount_matches_selling_price"
+                    />
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        invisible="not amount_matches_selling_price"
+                    />
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <!-- Contract Cancellation Buttons -->
+                    <button name="action_cancel_contract"
+                            string="Cancel Contract"
+                            type="object"
+                            class="btn-danger"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="is_contract_cancelled"
+                            confirm="Are you sure you want to cancel this contract?"/>
+                    <button name="action_reactivate_contract"
+                            string="Reactivate Contract"
+                            type="object"
+                            class="btn-secondary"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="not is_contract_cancelled"
+                            confirm="Are you sure you want to reactivate this contract?"/>
+                    <button name="action_archive"
+                            string="Archive"
+                            type="object"
+                            class="btn-secondary"
+                            groups="bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager"
+                            invisible="not is_contract_cancelled or sales_auction_stage_selection in ['p2_sales_archive', 'p2_shared_archive']"
+                            confirm="Are you sure you want to archive this record?"/>
+
+                    <!-- Send to Project Manager -->
+                    <!-- Stage: p2_auction_enf_portfolio | Role: Auctions Manager -->
+                    <button name="action_send_to_project_manager" class="btn-success"
+                         string="Send To Project Manager" type="object"
+                         invisible="sales_auction_stage_selection != 'p2_auction_enf_portfolio' or is_auctions_manager_group == False" 
+                         confirm="Are You Sure You Want to Send This Property to Project Manager?" />
+                    <!-- Send to Studies Supervisor -->
+                    <!-- Stage: p2_auction_enf_project_manager | Role: Auctions PM -->
+                    <button name="action_send_to_supervisor" class="btn-success"
+                         string="Send To Studies Supervisor"
+                         type="object"
+                         invisible="sales_auction_stage_selection != 'p2_auction_enf_project_manager'"
+                         confirm="Are You Sure You Want to Send This Property to Studies Supervisor?" />
+                    <!-- Send to Detailed Study -->
+                    <!-- Stage: p2_auction_enf_sup | Role: Studies Manager -->
+                    <button name="action_send_to_detailed_study" class="btn-success" string="Send To Detailed Study" type="object" 
+                        invisible="sales_auction_stage_selection != 'p2_auction_enf_sup' or studies_supervisor_data_complete != 'yes' or is_studies_manager_group == False or studies_supervisor_data_complete == 'no'" 
+                        confirm="Are You Sure You Want to Send This Property to Detailed Study?" />
+                    <!-- Send for Project Manager Approval -->
+                    <!-- Stage: p2_auction_enf_detailed_appr | Role: Studies Manager -->
+                    <button name="action_send_to_project_manager_approval" class="btn-success" string="Send To Project Manager Approval" type="object" 
+                        invisible="sales_auction_stage_selection != 'p2_auction_enf_detailed_appr' or study_approval_second != 'completed' or is_studies_manager_group == False" 
+                        confirm="Are You Sure You Want to Send This Property to Project Manager Approval?" />
+                    <!-- Return to Detailed Study -->
+                    <!-- Stage: p2_auction_enf_pm_appr | Role: Auctions PM -->
+                    <button name="action_return_to_detailed_study" class="btn-warning" string="Return to Detailed Study" type="object" 
+                        invisible="sales_auction_stage_selection != 'p2_auction_enf_pm_appr' or project_manager_study_approval != 'rejected'" 
+                        confirm="Are You Sure You Want to Return This Property to Detailed Study?" />
+                    <!-- Move directly to Buyer Contracting if Project is in Sales & Finance -->
+                    <!-- Stage: p2_auction_enf_pm_appr | Role: Auctions PM -->
+                    <button name="action_enf_pm_appr_move_to_buyer_contracting"
+                            class="btn-success"
+                            string="Send To Buyer Contracting"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_auction_enf_pm_appr' or bussma_project_stage_selection not in ['bussma_project_sales_fin', 'bussma_project_completed']"
+                            confirm="Are You Sure You Want to Send This Property To Buyer Contracting?"/>
+                    <!-- Transfer to Collection and Evacuation -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_move_to_collection"
+                            class="btn-success"
+                            string="Move to Collection and Evacuation"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or sales_auction_stage_selection != 'p2_shared_sales_fin' or is_sold != 'yes' or is_sale_cancelled or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Move This Property to Collection and Evacuation?"/>
+                    <!-- Return to Portfolio (Not Sold) -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_reject_to_portfolio"
+                            class="btn-warning"
+                            string="Return To Portfolio"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_shared_sales_fin' and is_source_pvt and is_sold == 'no') or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Return This Property To Portfolio?"/>
+                    <!-- Transfer to Archive (withdrawn) -->
+                    <button name="action_reject_to_archive" class="btn-success" string="Send To Archive" type="object"
+                            invisible="not (property_status == 'withdrawn')"
+                            confirm="Are Yor Sure You Want to Send This Property To Archive?"/>
+                    <!-- Transfer to Auction Archive (Not Sold) -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_reject_to_archive"
+                            class="btn-warning"
+                            string="Send To Auction Archive (Not Sold)"
+                            type="object"
+                            invisible="property_status == 'withdrawn' or not(sales_auction_stage_selection == 'p2_shared_sales_fin' and is_source_enf and is_sold == 'no') or is_commercial_accountant_group == False"
+                            confirm="Are You Sure You Want to Send This Property To Auction Archive?"/>
+                    <!-- Transfer to Archive -->
+                    <!-- p2_shared_col_trans (amounts match) OR pvt_portfolio (withdrawn) -->
+                    <button name="action_move_to_archive" class="btn-success" string="Move To Archive" type="object"
+                        invisible="not (
+                            (sales_auction_stage_selection == 'p2_shared_col_trans' and property_status != 'withdrawn' and is_collection_officer_group == True and amount_matches_selling_price == True)
+                            or
+                            (sales_auction_stage_selection == 'p2_auction_pvt_portfolio' and property_status == 'withdrawn')
+                        )"
+                        confirm="Are You Sure You Want to Send This Property To Archive?" />
+                    <!-- Send to Sector Manager Approval (amounts mismatch) -->
+                    <!-- p2_shared_col_trans: Collection Officer — only when collected ≠ selling price -->
+                    <button name="action_send_to_sector_manager"
+                            class="btn-warning"
+                            string="Send to Sector Manager Approval"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_col_trans' or is_collection_officer_group == False or amount_matches_selling_price == True or not collected_amount"
+                            confirm="The Collected Amount Does Not Match The Selling Price. Do You Want To Send The Request To The Sector Manager For Approval?"/>
+                    <!-- Transfer to Archive from Sector Manager Approval -->
+                    <!-- p2_shared_sector_manager_approval: Collection Officer -->
+                    <button name="action_move_from_sector_approval_to_archive"
+                            class="btn-success"
+                            string="Approve and Move To Archive"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_sector_manager_approval' or is_collection_officer_group == False"
+                            confirm="Are You Sure You Want to Approve and Move This Property To Archive?"/>
+                    <!-- Cancel Sale -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_cancel_sale"
+                        string="Cancel Sale"
+                        type="object"
+                        class="btn-danger"
+                        invisible="property_status == 'withdrawn' or sales_auction_stage_selection != 'p2_shared_sales_fin' or is_sale_cancelled or is_sold == 'no' or is_commercial_accountant_group == False"
+                        confirm="Are You Sure You Want to Cancel This Sale?"/>
+                    <!-- Confirm Cancellation and Archive -->
+                    <!-- Stage: p2_shared_sales_fin | Role: Commercial Accountant -->
+                    <button name="action_confirm_cancellation_and_archive"
+                        string="Confirm Cancellation and Archive"
+                        type="object"
+                        class="btn-danger"
+                        invisible="not (is_sale_cancelled == True and sales_auction_stage_selection == 'p2_shared_sales_fin') or is_commercial_accountant_group == False"
+                        confirm="Will move the property to the archive, do you want to continue?"/>
+                    <!-- Transfer to Sales with Finance -->
+                    <!-- Stage: blocked | Role: Commercial Accountant -->
+                    <button name="action_move_to_sales_fin_manual"
+                        string="Move to Sales and Finance"
+                        type="object"
+                        class="btn-success"
+                        invisible="property_status == 'withdrawn' or is_auctions_pm_group == False or is_contract_with_buyer == False or (sales_auction_stage_selection != 'p2_shared_buyer_contracting' and not is_not_move_to_sale_fin_notes)"
+                        confirm="Are You Sure You Want to Move This Property to Sales and Finance?"/>
+                    <!-- Return To Portfolio -->
+                    <!-- Archive stages: no role restriction -->
+                    <button name="action_return_from_archive"
+                            groups="sales_and_auction_management.group_system_admin"
+                            class="btn-danger"
+                            string="Return To Portfolio"
+                            type="object"
+                            invisible="sales_auction_stage_selection not in ['p2_shared_archive', 'p2_sales_archive'] or is_sold == 'yes'"
+                            confirm="Are You Sure You Want to Return This Property To Portfolio?"/>
+                    <button name="action_sales_contract_with_buyer"
+                            class="btn-primary"
+                            string="Contract with Buyer"
+                            type="object"
+                            invisible="sales_auction_stage_selection != 'p2_shared_buyer_contracting' or is_contract_with_buyer == True or is_auctions_pm_group == False"
+                            confirm="Are You Sure You Want to proceed to Contract with Buyer?"/>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <field name="is_contract_cancelled" invisible="1"/>
+                    <widget name="web_ribbon" title="Contract Cancelled" bg_color="bg-danger" invisible="not is_contract_cancelled"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="entrie_name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <field name="auction_name" invisible="1"/>
+                    <!-- ============================================================ -->
+                    <!-- Role Group Flags (invisible — used in readonly/invisible      -->
+                    <!-- conditions throughout this view)                             -->
+                    <!-- ============================================================ -->
+                    <field name="is_auctions_manager_group" invisible="1"/>
+                    <field name="is_auctions_pm_group" invisible="1"/>
+                    <field name="is_sales_manager_group" invisible="1"/>
+                    <field name="is_commercial_accountant_group" invisible="1"/>
+                    <field name="is_collection_officer_group" invisible="1"/>
+                    <field name="is_studies_manager_group" invisible="1"/>
+                    <field name="is_analyst_group" invisible="1"/>
+                    <field name="project_type_selection" invisible="1"/>
+                    <!-- Used in button visibility conditions for sector manager routing -->
+                    <field name="collected_amount" invisible="1"/>
+                    <field name="amount_matches_selling_price" invisible="1"/>
+                    <field name="is_source_sales" invisible="1"/>
+                    <field name="is_sold" invisible="1"/>
+                    <field name="bussma_project_stage_selection" invisible="1"/>
+                    <group>
+                        <field name="project_manager_id" invisible="1"/>
+                        <field name="project_id" readonly="1" options="{'no_open': True}" />
+                        <field name="currency_id" invisible="1" readonly="1" force_save="1" nolabel="1" class="imported_data_field"/>
+                    </group>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (is_not_move_to_sale_fin_notes)" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                            <strong class="text-warning-emphasis d-block mb-1">Notes of Not Moving to Sales and Finance</strong>
+                            <field name="is_not_move_to_sale_fin_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (studies_supervisor_data_complete == 'no' and sales_auction_stage_selection == 'p2_auction_enf_project_manager')" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                        <!-- Studies Supervisor Notes on Property Data -->
+                            <strong class="text-warning-emphasis d-block mb-1">Notes of Supervisor Study Data Incomplete</strong>
+                            <field name="studies_supervisor_data_complete_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (analyst_return_notes and sales_auction_stage_selection == 'p2_auction_enf_project_manager')" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                        <!-- Analyst Return Notes -->
+                            <strong class="text-warning-emphasis d-block mb-1">Notes of Analyst on Study Return</strong>
+                            <field name="analyst_return_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (study_approval_second == 'not_completed' and sales_auction_stage_selection == 'p2_auction_enf_detailed')" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                            <!-- Studies Manager Notes on Study -->
+                            <strong class="text-warning-emphasis d-block mb-1">Notes of Study Manager on Study</strong>
+                            <field name="studies_manager_notes_second" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                        invisible="not (project_manager_study_approval == 'rejected' and sales_auction_stage_selection == 'p2_auction_enf_detailed')" role="status">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                        <div class="w-100">
+                        <!-- Project Manager Notes on Study -->
+                            <strong class="text-warning-emphasis d-block mb-1">Notes of Project Manager on Study</strong>
+                            <field name="study_rejection_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                        </div>
+                    </div>
+                    <notebook>
+                        <page string="Government Auction Information"
+                            invisible="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager', 'p2_auction_enf_sup', 'p2_auction_enf_detailed', 'p2_auction_enf_detailed_appr', 'p2_auction_enf_pm_appr', 'p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive']">
+                            <group>
+                                <group string="Government Auction Information">
+                                    <field name="auction_project_path" readonly="1"/>
+                                    <field name="auction_category" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="need_identity" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                                <group string="Execution Applicant Information">
+                                    <field name="asset_number" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="court_decision_number" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="execution_applicant_name" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="execution_applicant_phone" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Deed Information">
+                                    <field name="deed_number" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="deed_date" widget="hijri_date" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="deed_issuer" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="plan_number" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="plot_number" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                                <group string="Location and Area">
+                                    <field name="city" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="district_id" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="property_type" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="area_sqm" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="location_url" widget="url" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                            </group>
+                            <group string="Dimensions and Boundaries (North/South)">
+                                <group>
+                                    <field name="limit_north" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="length_north" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                                <group>
+                                    <field name="limit_south" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="length_south" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                            </group>
+                            <group string="Dimensions and Boundaries (East/West)">
+                                <group>
+                                    <field name="limit_east" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="length_east" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                                <group>
+                                    <field name="limit_west" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                    <field name="length_west" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                </group>
+                            </group>
+                            <group string="Description">
+                                <field name="property_description" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                <field name="property_images_url" widget="url" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                <field name="project_notes" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                            </group>
+                            <group>
+                                <field name="lease_contract_type" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                <field name="has_operation_contract" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                <field name="lease_contract_expiry_date" widget="hijri_date" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                                <field name="project_manager_notes" readonly="sales_auction_stage_selection not in ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager']"/>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Detailed Study — Allowed: Analyst -->
+                        <!-- ============================================================ -->
+                        <page string="Detailed Study"
+                              invisible="sales_auction_stage_selection not in ['p2_auction_enf_detailed', 'p2_auction_enf_detailed_appr', 'p2_auction_enf_pm_appr', 'p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive']">
+                            <notebook>
+                                <!-- 1. General Information and Property -->
+                                <page string="General Information and Property">
+                                    <group>
+                                        <group>
+                                            <field name="has_movables" readonly="1"/>
+                                            <field name="is_estimated_more_than_50k" invisible="has_movables != 'yes'" readonly="1"/>
+                                            <field name="are_keys_available" readonly="1"/>
+                                            <field name="key_location" invisible="are_keys_available != 'yes'" readonly="1"/>
+                                            <field name="property_condition" readonly="1"/>
+                                            <field name="property_usage_rel" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="limit_east" readonly="1"/>
+                                            <field name="limit_west" readonly="1"/>
+                                            <field name="limit_north" readonly="1"/>
+                                            <field name="limit_south" readonly="1"/>
+                                            <field name="street" readonly="1"/>
+                                            <field name="street_length" readonly="1"/>
+                                            <field name="nearest_main_road" readonly="1"/>
+                                            <field name="precise_plot_location_link" widget="url" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="length_east" readonly="1"/>
+                                            <field name="length_west" readonly="1"/>
+                                            <field name="length_north" readonly="1"/>
+                                            <field name="length_south" readonly="1"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- 2. Building and Licenses -->
+                                <page string="Building and Licenses">
+                                    <group>
+                                        <group>
+                                            <field name="building_area" readonly="1"/>
+                                            <field name="floors_count" readonly="1"/>
+                                            <field name="units_count" readonly="1"/>
+                                            <field name="property_age_estimated" readonly="1"/>
+                                            <field name="land_nature" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="building_license_number" readonly="1"/>
+                                            <field name="building_license_date" widget="hijri_date" readonly="1"/>
+                                            <field name="completion_certificate_issued" readonly="1"/>
+                                            <field name="detailed_building_requirements" readonly="1"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- 3. Services and Utilities -->
+                                <page string="Services and Utilities">
+                                    <group>
+                                        <group>
+                                            <field name="electricity_service" readonly="1"/>
+                                            <field name="electricity_meters_count" readonly="1"/>
+                                            <field name="electricity_meters_numbers" readonly="1"/>
+                                            <field name="lighting_service" readonly="1"/>
+                                            <field name="gas_service" readonly="1"/>
+                                            <field name="ac_service" readonly="1"/>
+                                            <field name="internet_service" readonly="1"/>
+                                            <field name="telecom_service" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="water_service" readonly="1"/>
+                                            <field name="water_meters_count" readonly="1"/>
+                                            <field name="water_meters_numbers" readonly="1"/>
+                                            <field name="sewage_service" readonly="1"/>
+                                            <field name="pavement_service" readonly="1"/>
+                                            <field name="security_service" readonly="1"/>
+                                            <field name="elevator_service" readonly="1"/>
+                                            <field name="pool_service" readonly="1"/>
+                                            <field name="garden_service" readonly="1"/>
+                                            <field name="parking_service" readonly="1"/>
+                                        </group>
+                                    </group>
+                                    <group string="Warranties">
+                                        <field name="construction_warranty" readonly="1"/>
+                                        <field name="electrical_warranty" readonly="1"/>
+                                        <field name="plumbing_warranty" readonly="1"/>
+                                        <field name="services_description" readonly="1"/>
+                                    </group>
+                                </page>
+                                <!-- 4. Financial Valuation -->
+                                <page string="Financial Valuation">
+                                    <group>
+                                        <group>
+                                            <field name="current_total_income" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="expected_total_income_full_rent" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="detailed_comparison_average" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="justice_ministry_index_average" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        </group>
+                                        <group>
+                                            <field name="lowest_price_per_meter_total_property" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="highest_price_per_meter_total_property" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="approximate_building_value_per_meter" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="approximate_land_value_per_meter" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                            <field name="detailed_final_property_price" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- 5. Analysis and Recommendations -->
+                                <page string="Analysis and Recommendation">
+                                    <group>
+                                        <group>
+                                            <field name="internal_strength_points" readonly="1"/>
+                                            <field name="internal_weakness_points" readonly="1"/>
+                                            <field name="external_strength_points" readonly="1"/>
+                                            <field name="external_weakness_points" readonly="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="best_property_use" readonly="1"/>
+                                            <field name="analyst_recommendation_details" readonly="1"/>
+                                            <field name="property_description" readonly="1"/>
+                                            <field name="are_property_images_attached" readonly="1"/>
+                                            <div>
+                                                <label string="Finishing Ratio " for="finishing_ratio"/>
+                                                <field name="finishing_ratio" class="oe_inline" readonly="1"/>
+                                                <span class="oe_inline">%</span>
+                                            </div>
+                                        </group>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Study Approval — Allowed: Studies Manager -->
+                        <!-- ============================================================ -->
+                        <page string="Studies Supervisor Approval For Detailed Study Eanfaz"
+                              invisible="sales_auction_stage_selection not in ['p2_auction_enf_detailed_appr', 'p2_auction_enf_pm_appr', 'p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive']">
+                            <group>
+                                <field name="specialized_study_manager_approval" readonly="1"/>
+                                <field name="specialized_study_manager_note" readonly="1"/>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Project Management — Allowed: Auctions PM              -->
+                        <!-- ============================================================ -->
+                        <page string="Project Manager Approval"
+                              invisible="sales_auction_stage_selection not in ['p2_auction_enf_pm_appr', 'p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive']">
+                            <group>
+                                <group string="Project Manager Approval">
+                                    <field name="project_manager_study_approval" readonly="sales_auction_stage_selection != 'p2_auction_enf_pm_appr' or is_auctions_pm_group == False"/>
+                                    <field name="study_rejection_notes" required="project_manager_study_approval == 'rejected'" invisible="project_manager_study_approval != 'rejected'" readonly="sales_auction_stage_selection != 'p2_auction_enf_pm_appr' or is_auctions_pm_group == False"/>
+                                </group>
+                            </group>
+                            <group>
+                                <!-- Request to Legal Department (Project Management Stage) -->
+                                <button name="action_raise_legal_request_wizard"
+                                        type="object"
+                                        class="btn-primary"
+                                        string="Raise a legal request"
+                                        invisible="1"/>
+                            </group>
+                        </page>
+                        <page string="Buyer Info" invisible="sales_auction_stage_selection not in ['p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive']">
+                            <group>
+                                <group>
+                                    <field name="sales_buyer_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_buyer_mobile" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_buyer_birthdate" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_buyer_capacity" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_buyer_identity_attachment" filename="sales_buyer_identity_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_buyer_identity_attachment_name" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="sales_property_type" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_agreed_amount" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_brokerage_fee" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_brokerage_tax" readonly="1"/>
+                                    <field name="sales_brokerage_total" readonly="1"/>
+                                    <field name="sales_market_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_agent_identity_attachment" filename="sales_agent_identity_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="sales_agent_identity_attachment_name" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Contract with Buyer" name="contract_with_buyer_page" invisible="sales_auction_stage_selection not in ['p2_shared_buyer_contracting', 'p2_shared_sales_fin', 'p2_shared_col_trans', 'p2_shared_archive'] or is_contract_with_buyer == False">
+                            <group>
+                                <group>
+                                    <field name="sales_buyer_name" readonly="1"/>
+                                    <field name="sales_buyer_mobile" readonly="1"/>
+                                    <field name="sales_buyer_birthdate" readonly="1"/>
+                                    <field name="sales_buyer_capacity" readonly="1"/>
+                                    <field name="sales_buyer_identity_attachment" filename="sales_buyer_identity_attachment_name" readonly="1"/>
+                                    <field name="sales_buyer_identity_attachment_name" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="sales_property_type" readonly="1"/>
+                                    <field name="sales_agreed_amount" readonly="1"/>
+                                    <field name="sales_brokerage_fee" readonly="1"/>
+                                    <field name="sales_brokerage_tax" readonly="1"/>
+                                    <field name="sales_brokerage_total" readonly="1"/>
+                                    <field name="sales_market_name" readonly="1"/>
+                                    <field name="sales_agent_identity_attachment" filename="sales_agent_identity_attachment_name" readonly="1"/>
+                                    <field name="sales_agent_identity_attachment_name" invisible="1"/>
+                                    <field name="contract_buyer_attachment" filename="contract_buyer_attachment_name" readonly="sales_auction_stage_selection != 'p2_shared_buyer_contracting'"/>
+                                    <field name="contract_buyer_attachment_name" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Sales with Finance                                       -->
+                        <!-- Allowed: Commercial Sector Accountant -->
+                        <!-- ============================================================ -->
+                        <page string="Sales with Finance" invisible="sales_auction_stage_selection not in ['p2_shared_archive', 'p2_sales_archive']">
+                            <group>
+                                <group>
+                                    <field name="selling_price" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="price_per_meter" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="saai_amount" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_tax" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_with_tax" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="total_price" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="real_estate_transaction_tax" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                                <group>
+                                    <field name="bidder_number" invisible="is_source_sales" readonly="1" />
+                                    <field name="check_amount" invisible="is_source_sales" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="participant_name" invisible="is_source_sales" readonly="1" />
+                                    <field name="participant_id_number" invisible="is_source_sales" readonly="1" />
+                                    <field name="participant_mobile" invisible="is_source_sales" readonly="1" />
+                                    <field name="buyer_representative_name" invisible="is_source_sales" readonly="1" />
+                                    <field name="buyer_representative_id" invisible="is_source_sales" readonly="1" />
+                                    <field name="buyer_representative_mobile" invisible="is_source_sales" readonly="1" />
+                                    <field name="is_sold" readonly="1" />
+                                    <field name="is_sale_cancelled" invisible="1" />
+                                    <field name="net_basmah_share" invisible="not is_sale_cancelled" readonly="1" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <!-- ============================================================ -->
+                        <!-- Page: Collection and Transfer                                  -->
+                        <!-- Allowed: Collection/Evacuation Officer -->
+                        <!-- ============================================================ -->
+                        <page string="Collection and Transfer" invisible="sales_auction_stage_selection not in ['p2_shared_archive', 'p2_sales_archive']">
+                            <group>
+                                <group>
+                                    <field name="award_record_number" readonly="1" />
+                                    <field name="payment_status" invisible="1" />
+                                    <field name="payment_status_ids" widget="many2many_checkboxes" readonly="1" />
+                                    <field name="collection_notes" readonly="1" />
+                                    <field name="transfer_status" readonly="1" />
+                                    <field name="transfer_notes" readonly="1" />
+                                </group>
+                                <group string="Operation Attachments">
+                                    <field name="real_estate_invoice_name" invisible="1"/>
+                                    <field name="real_estate_invoice" filename="real_estate_invoice_name" readonly="1" force_save="1"/>
+                                    <field name="payment_proof_name" invisible="1"/>
+                                    <field name="payment_proof" filename="payment_proof_name" readonly="1" force_save="1"/>
+                                </group>
+                            </group>
+                            <group string="Settlement">
+                                    <field name="collected_amount"
+                                           readonly="1"
+                                           widget="monetary"
+                                           class="oe_inline"
+                                           options="{'currency_field': 'currency_id'}"/>
+                                    <field name="saai_amount" readonly="1"
+                                           widget="monetary"
+                                           class="oe_inline"
+                                           options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_matches_selling_price" invisible="1"/>
+                                    <field name="collection_receipt_name" invisible="1"/>
+                                    <field name="collection_receipt"
+                                           filename="collection_receipt_name"
+                                           readonly="1"
+                                           force_save="1"
+                                           string="Collection Receipt"/>
+                                    <div class="alert alert-warning d-flex align-items-center gap-2"
+                                         invisible="amount_matches_selling_price or not collected_amount"
+                                         role="status">
+                                        <i class="fa fa-exclamation-triangle" title="Mismatch"/>
+                                        <span>Collected amount does not match the selling price. Request will be sent to sector manager approval.</span>
+                                    </div>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_entries_sales_auction_list" model="ir.ui.view">
+            <field name="name">entries.sales.auction.list</field>
+            <field name="model">sales.auction.management</field>
+            <field name="arch" type="xml">
+                <list string="Sales and Auction Management">
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="customer_intent"/>
+                    <field name="project_path"/>
+                    <field name="stage_id" decoration-info="state == 'draft'" decoration-success="state == 'done'" widget="badge"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_transferred_entries_kanban" model="ir.ui.view">
+            <field name="name">transferred.entries.sales.auction.kanban</field>
+            <field name="model">sales.auction.management</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" records_draggable="false" create="0" group_create="0" group_edit="0" archive="0" group_delete="0">
+                    <field name="id"/>
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="request_type_id"/>
+                    <field name="city"/>
+                    <field name="area_sqm"/>
+                    <field name="is_move_to_direct_sales"/>
+                    <field name="is_sale_cancelled"/>
+                    <field name="is_source_pvt"/>
+                    <field name="is_source_enf"/>
+                    <field name="is_source_sales"/>
+                    <field name="is_source_city"/>
+                    <field name="stage_id"/>
+                    <field name="state"/>
+                    <field name="write_date"/>
+                    <field name="sales_auction_stage_selection"/>
+                    <field name="color"/>
+                    <field name="currency_id"/>
+                    <field name="auction_name"/>
+                    <field name="property_price_display"/>
+                    <field name="is_sold"/>
+                    <field name="is_contract_cancelled"/>
+                    <field name="transfer_status_display"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <t t-set="card_theme" t-value="record.is_source_pvt.raw_value ? 'theme-pvt' : record.is_source_enf.raw_value ? 'theme-eanfaz' : record.is_source_city.raw_value ? 'theme-city' : 'theme-sales'"/>
+                            <div t-attf-class="bussma-kanban-card #{card_theme}">
+                                <div class="alert alert-info py-1 px-2 mb-2 rounded border border-info d-flex align-items-center justify-content-between" style="font-size: 12px; font-weight: bold; background-color: #e0f2fe; color: #0369a1; border-radius: 6px;">
+                                    <span><i class="fa fa-info-circle me-1"/> Referral Details:</span>
+                                    <span><t t-out="record.transfer_status_display.value"/></span>
+                                </div>
+                                <div class="ribbon ribbon-top-right" t-if="record.is_contract_cancelled.raw_value">
+                                    <span class="text-bg-danger">Contract Cancelled</span>
+                                </div>
+                                <div class="ribbon ribbon-top-right" t-elif="record.is_sold.raw_value == 'no'">
+                                    <span class="text-bg-warning" t-if="record.is_source_sales.raw_value">Unsold Properties</span>
+                                    <span class="text-bg-warning" t-if="!record.is_source_sales.raw_value">Unsold Auction</span>
+                                </div>
+                                <!-- Main Body -->
+                                <div class="bussma-main-body">
+                                    <div class="bussma-l-bar m-1"
+                                        t-att-style="record.is_move_to_direct_sales.raw_value ? 'background: linear-gradient(to bottom, #0D7142 50%, #dc7921ff 50%); justify-content: space-around; padding: 4px 0;' : ''">
+                                        <t t-if="record.is_source_pvt.raw_value">
+                                            Auctions - Private
+                                        </t>
+                                        <t t-if="record.is_source_enf.raw_value">
+                                            Auctions - Eanfaz
+                                        </t>
+                                        <t t-if="record.is_source_city.raw_value">
+                                            Auctions - Cities
+                                        </t>
+                                        <t t-if="record.is_source_sales.raw_value &amp;&amp; !record.is_move_to_direct_sales.raw_value">
+                                            Direct Sales
+                                        </t>
+                                        <t t-if="record.is_source_sales.raw_value &amp;&amp; record.is_move_to_direct_sales.raw_value">
+                                            <span style="display:block; text-align:center; font-size:12px;">Unsold Auction</span>
+                                            <span style="display:block; width:85%; height:1px; background:rgba(255,255,255,0.45); margin:2px auto;"></span>
+                                            <span style="display:block; text-align:center; font-size:12px;">Direct Sales</span>
+                                        </t>
+                                    </div>
+                                    <!-- Content Area -->
+                                    <div class="bussma-content-area d-flex flex-column">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="d-flex gap-3 align-items-center">
+                                                <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)" class="bussma-avatar" alt="Avatar"/>
+                                                <!-- <img t-att-src="image_url('res.partner', record.partner_id.raw_value, 'avatar_128')" class="bussma-avatar" alt="Avatar"/> -->
+                                                <div class="d-flex flex-column align-items-start gap-2">
+                                                    <!-- Custom Badge styling based on path -->
+                                                    <div class="d-flex align-items-center" style="position: relative; margin-right: 15px;">
+                                                        <t t-if="record.is_source_pvt.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #f59e0b; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-gavel">
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_enf.raw_value">
+                                                            <!-- Saudi Emblem style icon -->
+                                                            <div style="height: 55px; width: 65px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #1e3a5f; display: flex; align-items: center; justify-content: center;">
+                                                                <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+                                                                    <!-- Palm Tree -->
+                                                                    <g transform="translate(50,42) scale(0.8)" fill="#1e3a5f">
+                                                                        <rect x="-3" y="-5" width="6" height="32" rx="3"/>
+                                                                        <path d="M0 -5 C-8 -18 -22 -18 -26 -8 C-18 -14 -10 -12 0 -5 Z"/>
+                                                                        <path d="M0 -5 C8 -18 22 -18 26 -8 C18 -14 10 -12 0 -5 Z"/>
+                                                                        <path d="M0 -2 C-12 -12 -28 -8 -30 2 C-22 -5 -12 -6 0 -2 Z"/>
+                                                                        <path d="M0 -2 C12 -12 28 -8 30 2 C22 -5 12 -6 0 -2 Z"/>
+                                                                    </g>
+                                                                    <!-- Crossed Swords -->
+                                                                    <g transform="translate(50,78) scale(1.0)" stroke="#1e3a5f" stroke-width="4" stroke-linecap="round">
+                                                                        <line x1="-15" y1="-10" x2="15" y2="10"/>
+                                                                        <line x1="15" y1="-10" x2="-15" y2="10"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_sales.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #065f46; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-handshake-o">
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_city.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #6d28d9; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-building">
+                                                            </div>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-secondary fw-normal mt-1" style="letter-spacing: 0.5px; font-size: 13px;">
+                                                REF: <field name="entrie_name" class="fw-bold text-dark"/>
+                                            </div>
+                                        </div>
+                                        <!-- Client Name -->
+                                        <t t-if="!record.is_source_enf.raw_value">
+                                            <div class="text-dark fw-bold mb-1" style="font-size: 14px;">
+                                                <span class="text-muted fw-normal" style="font-size: 12.5px;">Client:</span> <field name="partner_id"/>
+                                            </div>
+                                        </t>
+                                        <!-- Property / Project Name (all paths) -->
+                                        <t t-if="record.project_id">
+                                            <div class="text-dark fw-semibold mb-1" style="font-size: 13px;">
+                                                <span class="text-muted fw-normal" style="font-size: 12px;">Project Name:</span>
+                                                <field name="project_id" class="fw-bold"/>
+                                            </div>
+                                        </t>
+                                        <!-- Sale Cancelled Badge -->
+                                        <t t-if="record.is_sale_cancelled.raw_value">
+                                            <div class="badge text-bg-danger py-1 px-2 mb-2 w-100 text-center fw-bold d-flex align-items-center justify-content-center gap-1" style="font-size: 12px; border-radius: 6px;">
+                                                <i class="fa fa-ban"/>
+                                                <span>Sale Cancelled</span>
+                                            </div>
+                                        </t>
+                                        <!-- Info Box -->
+                                        <div class="bussma-info-box">
+                                            <!-- Area Row -->
+                                            <div class="bussma-info-row">
+                                                <span>Area: <span class="fw-bolder"><field name="area_sqm"/> sqm</span></span>
+                                                <i class="fa fa-arrows-h text-muted fa-lg"/>
+                                            </div>
+                                            <!-- Location Row -->
+                                            <div class="bussma-info-row">
+                                                <span>Location: <span class="fw-bolder"><field name="city"/> - <field name="district_id"/></span></span>
+                                                <i class="fa fa-map-marker text-muted fa-lg"/>
+                                            </div>
+                                            <!-- Sales: Property Status -->
+                                            <div class="bussma-info-row">
+                                                <span>Status: <span class="fw-bolder"><field name="property_status"/></span></span>
+                                                <i class="fa fa-briefcase text-muted fa-lg"/>
+                                            </div>
+                                        </div>
+                                        <div class="bussma-divider"></div>
+                                        <!-- Sales: Bottom Row - show requested price label + value -->
+                                        <t t-if="record.is_source_sales.raw_value">
+                                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                                <div style="background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:6px 12px; color:#15803d; font-size:10px; font-weight:570;">
+                                                    Property Price
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="background:#fff3cd; border:1.5px solid #fbbf24; border-radius:8px; padding:5px 8px; color:#92400e; font-weight:700; font-size:11px;">
+                                                        <span><field name="property_price_display" widget="monetary" currency="currency_id"/></span>
+                                                    </div>
+                                                    <div class="rounded-circle" style="width:14px; height:14px; background:#cbd5e1;"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_entries_sales_auction_kanban" model="ir.ui.view">
+            <field name="name">entries.sales.auction.kanban</field>
+            <field name="model">sales.auction.management</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" records_draggable="false" create="0" group_create="0" group_edit="0" archive="0" group_delete="0" sample="1">
+                    <field name="id"/>
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="request_type_id"/>
+                    <field name="city"/>
+                    <field name="area_sqm"/>
+                    <field name="is_move_to_direct_sales"/>
+                    <field name="is_sale_cancelled"/>
+                    <field name="is_contract_cancelled"/>
+                    <field name="is_source_pvt"/>
+                    <field name="is_source_enf"/>
+                    <field name="is_source_sales"/>
+                    <field name="is_source_city"/>
+                    <field name="stage_id"/>
+                    <field name="state"/>
+                    <field name="write_date"/>
+                    <field name="sales_auction_stage_selection"/>
+                    <field name="color"/>
+                    <field name="currency_id"/>
+                    <field name="auction_name"/>
+                    <field name="property_price_display"/>
+                    <field name="is_sold"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <t t-set="card_theme" t-value="record.is_source_pvt.raw_value ? 'theme-pvt' : record.is_source_enf.raw_value ? 'theme-eanfaz' : record.is_source_city.raw_value ? 'theme-city' : 'theme-sales'"/>
+                            <div t-attf-class="bussma-kanban-card #{card_theme}">
+                                <div class="ribbon ribbon-top-right" t-if="record.is_contract_cancelled.raw_value">
+                                    <span class="text-bg-danger">Contract Cancelled</span>
+                                </div>
+                                <div class="ribbon ribbon-top-right" t-if="record.is_sold.raw_value == 'no' and !record.is_contract_cancelled.raw_value">
+                                    <span class="text-bg-warning" t-if="record.is_source_sales.raw_value">Unsold Properties</span>
+                                    <span class="text-bg-warning" t-if="!record.is_source_sales.raw_value">Unsold Auction</span>
+                                </div>
+                                <!-- Main Body -->
+                                <div class="bussma-main-body">
+                                    <div class="bussma-l-bar m-1"
+                                        t-att-style="record.is_move_to_direct_sales.raw_value ? 'background: linear-gradient(to bottom, #0D7142 50%, #dc7921ff 50%); justify-content: space-around; padding: 4px 0;' : ''">
+                                        <t t-if="record.is_source_pvt.raw_value">
+                                            Auctions - Private
+                                        </t>
+                                        <t t-if="record.is_source_enf.raw_value">
+                                            Auctions - Eanfaz
+                                        </t>
+                                        <t t-if="record.is_source_city.raw_value">
+                                            Auctions - Cities
+                                        </t>
+                                        <t t-if="record.is_source_sales.raw_value &amp;&amp; !record.is_move_to_direct_sales.raw_value">
+                                            Direct Sales
+                                        </t>
+                                        <t t-if="record.is_source_sales.raw_value &amp;&amp; record.is_move_to_direct_sales.raw_value">
+                                            <span style="display:block; text-align:center; font-size:12px;">Unsold Auction</span>
+                                            <span style="display:block; width:85%; height:1px; background:rgba(255,255,255,0.45); margin:2px auto;"></span>
+                                            <span style="display:block; text-align:center; font-size:12px;">Direct Sales</span>
+                                        </t>
+                                    </div>
+                                    <!-- Content Area -->
+                                    <div class="bussma-content-area d-flex flex-column" dir="rtl">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div class="d-flex gap-3 align-items-center">
+                                                <img t-att-src="kanban_image('res.partner', 'avatar_128', record.partner_id.raw_value)" class="bussma-avatar" alt="Avatar"/>
+                                                <!-- <img t-att-src="image_url('res.partner', record.partner_id.raw_value, 'avatar_128')" class="bussma-avatar" alt="Avatar"/> -->
+                                                <div class="d-flex flex-column align-items-start gap-2">
+                                                    <!-- Custom Badge styling based on path -->
+                                                    <div class="d-flex align-items-center" style="position: relative; margin-right: 15px;">
+                                                        <t t-if="record.is_source_pvt.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #f59e0b; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-gavel">
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_enf.raw_value">
+                                                            <!-- Saudi Emblem style icon -->
+                                                            <div style="height: 55px; width: 65px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #1e3a5f; display: flex; align-items: center; justify-content: center;">
+                                                                <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+                                                                    <!-- Palm Tree -->
+                                                                    <g transform="translate(50,42) scale(0.8)" fill="#1e3a5f">
+                                                                        <rect x="-3" y="-5" width="6" height="32" rx="3"/>
+                                                                        <path d="M0 -5 C-8 -18 -22 -18 -26 -8 C-18 -14 -10 -12 0 -5 Z"/>
+                                                                        <path d="M0 -5 C8 -18 22 -18 26 -8 C18 -14 10 -12 0 -5 Z"/>
+                                                                        <path d="M0 -2 C-12 -12 -28 -8 -30 2 C-22 -5 -12 -6 0 -2 Z"/>
+                                                                        <path d="M0 -2 C12 -12 28 -8 30 2 C22 -5 12 -6 0 -2 Z"/>
+                                                                    </g>
+                                                                    <!-- Crossed Swords -->
+                                                                    <g transform="translate(50,78) scale(1.0)" stroke="#1e3a5f" stroke-width="4" stroke-linecap="round">
+                                                                        <line x1="-15" y1="-10" x2="15" y2="10"/>
+                                                                        <line x1="15" y1="-10" x2="-15" y2="10"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_sales.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #065f46; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-handshake-o">
+                                                            </div>
+                                                        </t>
+                                                        <t t-if="record.is_source_city.raw_value">
+                                                            <div style="height: 50px; width: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12)); position: relative; right: -5px; z-index: 2; color: #6d28d9; font-size: 31px; display: flex; align-items: center; justify-content: center;" class="fa fa-building">
+                                                            </div>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-secondary fw-normal mt-1" style="letter-spacing: 0.5px; font-size: 13px;">
+                                                REF: <field name="entrie_name" class="fw-bold text-dark"/>
+                                            </div>
+                                        </div>
+                                        <!-- Client Name -->
+                                        <t t-if="!record.is_source_enf.raw_value">
+                                            <div class="text-dark fw-bold mb-1" style="font-size: 14px;">
+                                                <span class="text-muted fw-normal" style="font-size: 12.5px;">Client:</span> <field name="partner_id"/>
+                                            </div>
+                                        </t>
+                                        <!-- Property / Project Name (all paths) -->
+                                        <t t-if="record.project_id">
+                                            <div class="text-dark fw-semibold mb-1" style="font-size: 13px;">
+                                                <span class="text-muted fw-normal" style="font-size: 12px;">Project Name:</span>
+                                                <field name="project_id" class="fw-bold"/>
+                                            </div>
+                                        </t>
+                                        <!-- Sale Cancelled Badge -->
+                                        <t t-if="record.is_sale_cancelled.raw_value">
+                                            <div class="badge text-bg-danger py-1 px-2 mb-2 w-100 text-center fw-bold d-flex align-items-center justify-content-center gap-1" style="font-size: 12px; border-radius: 6px;">
+                                                <i class="fa fa-ban"/>
+                                                <span>Sale Cancelled</span>
+                                            </div>
+                                        </t>
+                                        <!-- Contract Cancelled Badge -->
+                                        <t t-if="record.is_contract_cancelled.raw_value">
+                                            <div class="badge text-bg-danger py-1 px-2 mb-2 w-100 text-center fw-bold d-flex align-items-center justify-content-center gap-1" style="font-size: 12px; border-radius: 6px;">
+                                                <i class="fa fa-times-circle"/>
+                                                <span>Contract Cancelled</span>
+                                            </div>
+                                        </t>
+                                        <!-- Info Box -->
+                                        <div class="bussma-info-box">
+                                            <!-- Area Row -->
+                                            <div class="bussma-info-row">
+                                                <span>Area: <span class="fw-bolder"><field name="area_sqm"/> sqm</span></span>
+                                                <i class="fa fa-arrows-h text-muted fa-lg"/>
+                                            </div>
+                                            <!-- Location Row -->
+                                            <div class="bussma-info-row">
+                                                <span>Location: <span class="fw-bolder"><field name="city"/> - <field name="district_id"/></span></span>
+                                                <i class="fa fa-map-marker text-muted fa-lg"/>
+                                            </div>
+                                            <!-- Sales: Property Status -->
+                                            <div class="bussma-info-row">
+                                                <span>Status: <span class="fw-bolder"><field name="property_status"/></span></span>
+                                                <i class="fa fa-briefcase text-muted fa-lg"/>
+                                            </div>
+                                        </div>
+                                        <div class="bussma-divider"></div>
+                                        <!-- Sales: Bottom Row - show requested price label + value -->
+                                        <t t-if="record.is_source_sales.raw_value">
+                                            <div class="d-flex justify-content-between align-items-center mt-auto">
+                                                <div style="background:#dcfce7; border:1px solid #86efac; border-radius:8px; padding:6px 12px; color:#15803d; font-size:10px; font-weight:570;">
+                                                    Property Price
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="background:#fff3cd; border:1.5px solid #fbbf24; border-radius:8px; padding:5px 8px; color:#92400e; font-weight:700; font-size:11px;">
+                                                        <span><field name="property_price_display" widget="monetary" currency="currency_id"/></span>
+                                                    </div>
+                                                    <div class="rounded-circle" style="width:14px; height:14px; background:#cbd5e1;"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- List View for Private Auctions (No Create) -->
+        <record id="view_entries_list_pvt" model="ir.ui.view">
+            <field name="name">entries.list.pvt</field>
+            <field name="model">sales.auction.management</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="view_entries_sales_auction_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Auctions Eanfaz Action -->
+        <record id="action_entries_auctions_enf" model="ir.actions.act_window">
+            <field name="name">Auctions - Eanfaz</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="&quot;[('request_type_id', '=', %d), ('project_id', '=', active_id)]&quot; % ref('sales_and_auction_management.p2_type_auction_enf')"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_enf'), 'default_project_id': ref('sales_and_auction_management.project_auctions_enf_basic'), 'default_auction_project_path': 'enforcement', 'search_default_group_by_stage': 1, 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_eanfaz_form')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Click to create a new Eanfaz Auction record.
+                </p>
+            </field>
+        </record>
+
+        <!-- Auctions pvt -->
+        <record id="action_entries_pvt" model="ir.actions.act_window">
+            <field name="name">Auctions - Pvt</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="&quot;[('request_type_id', '=', %d), ('auction_project_path', '=', 'private'), ('project_id', '=', active_id)]&quot; % ref('sales_and_auction_management.p2_type_auction_pvt')"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_pvt'), 'search_default_group_by_stage': 1, 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_list_pvt')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Click to create a new Pvt Auction record.
+                </p>
+            </field>
+        </record>
+
+        <!-- Auctions City Action -->
+        <record id="action_entries_auctions_city" model="ir.actions.act_window">
+            <field name="name">Auctions - City</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="&quot;[('request_type_id', '=', %d), ('auction_project_path', '=', 'city'), ('project_id', '=', active_id)]&quot; % ref('sales_and_auction_management.p2_type_auction_city')"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_city'), 'default_project_id': ref('sales_and_auction_management.project_cities_basic'), 'default_auction_project_path': 'city', 'search_default_group_by_stage': 1, 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Click to create a new City Auction record.
+                </p>
+            </field>
+        </record>
+
+        <!-- Sales Portfolio Action (Basic) -->
+        <record id="action_entries_sales_portfolio" model="ir.actions.act_window">
+            <field name="name">Sales Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.p2_type_sales')), ('project_id', '=', ref('sales_and_auction_management.project_sales_basic')), ('sales_auction_stage_selection', 'not in', ['p2_shared_archive', 'p2_sales_archive'])]"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_sales'), 'default_project_id': ref('sales_and_auction_management.project_sales_basic'), 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('view_entries_sales_list')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('view_entries_sales_form')})]"/>
+        </record>
+
+        <!-- Auctions Eanfaz Portfolio Action (Basic) -->
+        <record id="action_entries_auctions_enf_portfolio" model="ir.actions.act_window">
+            <field name="name">Eanfaz Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.p2_type_auction_enf')), ('project_id', '=', ref('sales_and_auction_management.project_auctions_enf_basic')), ('sales_auction_stage_selection', 'not in', ['p2_shared_archive', 'p2_sales_archive'])]"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_enf'), 'default_project_id': ref('sales_and_auction_management.project_auctions_enf_basic'), 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_eanfaz_form')})]"/>
+        </record>
+
+        <!-- Auctions Pvt Portfolio Action (Basic) -->
+        <record id="action_entries_pvt_portfolio" model="ir.actions.act_window">
+            <field name="name">Pvt Auctions Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.p2_type_auction_pvt')), ('auction_project_path', '=', 'private'), ('project_id', '=', ref('sales_and_auction_management.project_auctions_pvt_basic')), ('sales_auction_stage_selection', 'not in', ['p2_shared_archive', 'p2_sales_archive'])]"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_pvt'), 'default_project_id': ref('sales_and_auction_management.project_auctions_pvt_basic'), 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_list_pvt')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})]"/>
+        </record>
+
+        <!-- Auctions City Portfolio Action (Basic) -->
+        <record id="action_entries_auctions_city_portfolio" model="ir.actions.act_window">
+            <field name="name">City Auctions Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.p2_type_auction_city')), ('project_id', '=', ref('sales_and_auction_management.project_cities_basic')), ('sales_auction_stage_selection', 'not in', ['p2_shared_archive', 'p2_sales_archive'])]"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_city'), 'default_project_id': ref('sales_and_auction_management.project_cities_basic'), 'default_auction_project_path': 'city', 'search_default_group_by_stage': 1, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})]"/>
+        </record>
+
+        <!-- Search View for search -->
+        <record id="view_entries_search" model="ir.ui.view">
+            <field name="name">sales.auction.management.search</field>
+            <field name="model">sales.auction.management</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="city"/>
+                    <field name="district_id"/>
+                    <filter string="Contract Cancelled" name="contract_cancelled" domain="[('is_contract_cancelled', '=', True)]"/>
+                    <filter string="Archived" name="archived" domain="[('active', '=', False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                        <filter string="Request Type" name="group_by_request_type" context="{'group_by': 'request_type_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Sales Management Action -->
+        <record id="action_entries_sales" model="ir.actions.act_window">
+            <field name="name">Sale Management</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="&quot;[('request_type_id', '=', %d), ('project_id', '=', active_id)]&quot; % ref('sales_and_auction_management.p2_type_sales')"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_sales'), 'default_stage_id': ref('sales_and_auction_management.p2_stage_sales_direct_mgmt'), 'search_default_group_by_stage': 1, 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('view_entries_sales_list')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('view_entries_sales_form')})]"/>
+        </record>
+
+        <record id="action_sales_archive" model="ir.actions.act_window">
+            <field name="name">Sales Archive</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.p2_type_sales')), ('sales_auction_stage_selection', '=', 'p2_sales_archive')]"/>
+            <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.p2_type_sales'), 'default_stage_id': ref('sales_and_auction_management.p2_stage_sales_direct_mgmt'), 'create': 0, 'delete': False}"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('view_entries_sales_list')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('view_entries_sales_form')})]"/>
+        </record>
+
+        <record id="action_shared_finance" model="ir.actions.act_window">
+            <field name="name">Sales and Finance</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain" eval="[
+                '|',
+                ('sales_auction_stage_selection', '=', 'p2_shared_sales_fin'),
+                '&amp;',
+                ('sales_auction_stage_selection', '=', 'p2_shared_buyer_contracting'),
+                ('is_contract_with_buyer', '=', True)
+            ]"/>
+            <field name="context">{'search_default_group_by_request_type': 1, 'create': 0, 'delete': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('view_entries_auction_form')})
+            ]"/>
+        </record>
+
+        <record id="action_shared_collection_transfer" model="ir.actions.act_window">
+            <field name="name">Collection and Transfer</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain" eval="[
+                ('sales_auction_stage_selection', 'in', ['p2_shared_col_trans', 'p2_shared_sector_manager_approval'])
+            ]"/>
+            <field name="context">{'search_default_group_by_request_type': 1, 'create': 0, 'delete': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('view_entries_auction_form')})
+            ]"/>
+        </record>
+
+        <record id="action_archive_auctions" model="ir.actions.act_window">
+            <field name="name">Archive Auctions</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain" eval="[
+                ('sales_auction_stage_selection', '=', 'p2_shared_archive')
+            ]"/>
+            <field name="context">{'search_default_group_by_request_type': 1, 'create': 0, 'delete': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_entries_sales_auction_kanban')}),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})
+            ]"/>
+        </record>
+
+        <record id="action_entries_basic_portfolio" model="ir.actions.act_window">
+            <field name="name">Basic Real Estate Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">list,form</field>
+            <field name="context" eval="{'create': 0, 'delete': False}"/>
+            <field name="domain" eval="[
+                ('request_type_id', '=', ref('sales_and_auction_management.p2_type_auction_pvt')),
+                ('stage_id', '=', ref('sales_and_auction_management.p2_stage_auction_pvt_portfolio')),
+                ('project_manager_id', '=', False),
+            ]"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_list_pvt')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_auction_form')})]"/>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Completed Studies Action                                          -->
+        <!-- All completed entries: Preliminary, Detailed, Cities, Eanfaz     -->
+        <!-- ================================================================ -->
+        <record id="completed_studies_action" model="ir.actions.act_window">
+            <field name="name">Completed Studies</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('is_partners_screen', '=', False),
+                '|', '|',
+                    ('project_stage_selection', '=', 'completed'),
+                    ('project_stage_selection', '=', 'city_study_completed'),
+                    ('project_stage_selection', '=', 'detailed_study_completed_eanfaz')
+            ]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+            <field name="context">{'create': False, 'search_default_group_by_stage': 1, 'delete': False}</field>
+        </record>
+
+        <record id="action_my_eanfaz_entries" model="ir.actions.act_window">
+            <field name="name">Eanfaz Entries</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('project_type_selection', '=', 'auction_enf'), ('create_uid', '=', uid), ('sales_auction_stage_selection', 'in', ['p2_auction_enf_portfolio', 'p2_auction_enf_project_manager'])]</field>
+            <field name="context" eval="{
+                'default_request_type_id': ref('sales_and_auction_management.p2_type_auction_enf'),
+                'default_stage_id': ref('sales_and_auction_management.p2_auction_enf_portfolio'),
+                'default_project_id': ref('sales_and_auction_management.project_auctions_enf_basic'),
+                'default_auction_project_path': 'enforcement',
+            }"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('view_entries_sales_auction_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_entries_eanfaz_form')})
+            ]"/>
+        </record>
+    </data>
+</odoo>

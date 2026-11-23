@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kanban_view_setting_admin,kanban.view.setting.admin,model_kanban_view_setting,base.group_system,1,1,1,1
+access_kanban_view_setting_user,kanban.view.setting.user,model_kanban_view_setting,base.group_user,1,0,0,0
+access_tree_view_setting_admin,tree.view.setting.admin,model_tree_view_setting,base.group_system,1,1,1,1
+access_tree_view_setting_user,tree.view.setting.user,model_tree_view_setting,base.group_user,1,0,0,0

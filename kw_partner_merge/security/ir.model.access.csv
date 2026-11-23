@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kw_partner_duplicate_system,kw.partner.duplicate.system,model_kw_partner_duplicate,base.group_system,1,1,1,1
+access_kw_partner_duplicate_manager,kw.partner.duplicate.manager,model_kw_partner_duplicate,base.group_erp_manager,1,1,1,1

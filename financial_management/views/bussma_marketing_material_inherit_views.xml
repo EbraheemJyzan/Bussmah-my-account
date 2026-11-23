@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Inherited Form View for bussma.marketing.material in financial_management -->
+        <record id="view_bussma_marketing_material_form_inherit_financial" model="ir.ui.view">
+            <field name="name">bussma.marketing.material.form.inherit.financial</field>
+            <field name="model">bussma.marketing.material</field>
+            <field name="inherit_id" ref="marketing_opportunity_management.view_bussma_marketing_material_form"/>
+            <field name="arch" type="xml">
+                <!-- Add Financial Request button to header -->
+                <xpath expr="//header" position="inside">
+                    <button name="action_create_financial_request"
+                            string="Create Financial Request"
+                            type="object"
+                            class="btn-primary"
+                            icon="fa-money"
+                            invisible="material_stage_selection not in ['mat_digital_exec', 'mat_ops_exec'] or not can_see_financial_buttons"/>
+                </xpath>
+                <!-- Add Financial Smart Buttons into existing button_box -->
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_cost_invoices"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-file-text-o"
+                            invisible="cost_invoice_count == 0 or not can_see_financial_buttons">
+                        <field name="cost_invoice_count" widget="statinfo" string="Cost Invoices"/>
+                    </button>
+                    <button name="action_view_supplier_invoices"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-truck"
+                            invisible="supplier_invoice_count == 0 or not can_see_financial_buttons">
+                        <field name="supplier_invoice_count" widget="statinfo" string="Supplier Invoices"/>
+                    </button>
+                </xpath>
+                <!-- Add technical invisible count fields -->
+                <xpath expr="//sheet" position="inside">
+                    <field name="can_see_financial_buttons" invisible="1"/>
+                    <field name="cost_invoice_count" invisible="1"/>
+                    <field name="supplier_invoice_count" invisible="1"/>
+                    <field name="financial_request_count" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

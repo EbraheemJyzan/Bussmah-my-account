@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_marketing_return_to_requste_wizard_form" model="ir.ui.view">
+            <field name="name">marketing.return.to.requste.wizard.form</field>
+            <field name="model">marketing.return.to.requste.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Return Request to Requester">
+                    <group>
+                        <field name="marketing_id" invisible="1"/>
+                        <field name="return_to_requester_notes" placeholder="Enter missing requirements or notes for returning request to requester..."/>
+                    </group>
+                    <group string="Additional Attachments">
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm_return"
+                                string="Confirm Return"
+                                type="object"
+                                class="btn-warning"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

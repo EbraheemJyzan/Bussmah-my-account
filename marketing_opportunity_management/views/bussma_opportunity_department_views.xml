@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for bussma.opportunity.department -->
+        <record id="view_bussma_opportunity_department_form" model="ir.ui.view">
+            <field name="name">bussma.opportunity.department.form</field>
+            <field name="model">bussma.opportunity.department</field>
+            <field name="arch" type="xml">
+                <form string="Opportunity Department">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="member_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                                <field name="active" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View for bussma.opportunity.department -->
+        <record id="view_bussma_opportunity_department_tree" model="ir.ui.view">
+            <field name="name">bussma.opportunity.department.tree</field>
+            <field name="model">bussma.opportunity.department</field>
+            <field name="arch" type="xml">
+                <list string="Opportunity Department" create="false" delete="false">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="member_ids" widget="many2many_tags"/>
+                    <field name="active" invisible="1"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action for bussma.opportunity.department -->
+        <record id="action_bussma_opportunity_department" model="ir.actions.act_window">
+            <field name="name">Opportunity Department</field>
+            <field name="res_model">bussma.opportunity.department</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'no_create': True}</field>
+        </record>
+    </data>
+</odoo>

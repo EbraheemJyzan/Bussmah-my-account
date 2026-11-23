@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Request Type for Marketing Material -->
+        <record id="request_type_marketing_material" model="request.type">
+            <field name="name">Marketing Material</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+        </record>
+
+        <!-- Marketing Material Stages (request.stage) -->
+        <record id="stage_mat_content_exec" model="request.stage">
+            <field name="name">Content Execution</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">1</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_content_exec</field>
+            <field name="department_id" ref="dept_content"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_content_approve" model="request.stage">
+            <field name="name">Content Supervisor Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">2</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_content_approve</field>
+            <field name="department_id" ref="dept_content"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_design_exec" model="request.stage">
+            <field name="name">Design Execution</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">3</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_design_exec</field>
+            <field name="department_id" ref="dept_design"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_design_approve" model="request.stage">
+            <field name="name">Design Supervisor Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">4</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_design_approve</field>
+            <field name="department_id" ref="dept_design"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_digital_exec" model="request.stage">
+            <field name="name">Campaigns and Publishing Setup</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">5</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_digital_exec</field>
+            <field name="department_id" ref="dept_digital"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_digital_approve" model="request.stage">
+            <field name="name">Digital Supervisor Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">6</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_digital_approve</field>
+            <field name="department_id" ref="dept_digital"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_ops_exec" model="request.stage">
+            <field name="name">Printing and Production</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">7</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_ops_exec</field>
+            <field name="department_id" ref="dept_ops"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_ops_approve" model="request.stage">
+            <field name="name">Operations Supervisor Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">8</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_ops_approve</field>
+            <field name="department_id" ref="dept_ops"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_marketing_approve" model="request.stage">
+            <field name="name">Marketing Supervisor Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">9</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_marketing_approve</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_pm_approve" model="request.stage">
+            <field name="name">Pending Project Manager Approval</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">10</field>
+            <field name="state">in_progress</field>
+            <field name="material_stage_selection">mat_pm_approve</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+
+        <record id="stage_mat_done" model="request.stage">
+            <field name="name">Completed</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="res_model_id" ref="model_bussma_marketing_material"/>
+            <field name="sequence">11</field>
+            <field name="state">done</field>
+            <field name="material_stage_selection">mat_done</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('request_type_marketing_material')])]"/>
+        </record>
+    </data>
+</odoo>

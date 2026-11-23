@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="entries_kanban_view_inherit_activity" model="ir.ui.view">
+        <field name="name">entries.kanban.view.inherit.activity</field>
+        <field name="model">entries</field>
+        <field name="inherit_id" ref="bussma_system.entries_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='entrie_name']" position="after">
+                <field name="activity_state"/>
+                <field name="is_my_activity"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_headings')]/div[1]" position="replace">
+                <div class="text-muted d-flex align-items-center justify-content-between mb-1">
+                    <strong class="text-primary me-2"><field name="entrie_name"/></strong>
+                    <span t-if="record.activity_state.raw_value and ['today', 'overdue'].includes(record.activity_state.raw_value) and record.is_my_activity.raw_value" class="badge rounded-circle custom-activity-badge bg-success text-white ms-auto" t-att-title="record.activity_state.value">
+                        1
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

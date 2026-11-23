@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_bussma_opportunity_form" model="ir.ui.view">
+            <field name="name">bussma.opportunity.form</field>
+            <field name="model">bussma.opportunity</field>
+            <field name="arch" type="xml">
+                <form string="Opportunity Management">
+                    <header>
+                        <button name="action_open_assign_wizard"
+                                string="➕ Assign Properties"
+                                type="object"
+                                class="btn-primary"
+                                invisible="id == False or not can_edit_opportunity or opportunity_stage_selection in ['opp_approve_close', 'opp_contracted']"/>
+                        <button name="action_move_to_data_completion"
+                                string="Data Completion"
+                                type="object"
+                                class="btn-primary"
+                                invisible="opportunity_stage_selection != 'opp_draft' or not can_edit_opportunity"
+                                confirm="Are you sure you want to send the opportunity to Data Completion stage?"/>
+                        <button name="action_move_to_marketing_request"
+                                string="Marketing Request"
+                                type="object"
+                                class="btn-primary"
+                                invisible="opportunity_stage_selection != 'opp_data_completion' or not can_edit_opportunity"
+                                confirm="Are you sure you want to send the opportunity to Marketing Request stage?"/>
+                        <button name="action_move_to_final_material"
+                                string="Final Material Receipt"
+                                type="object"
+                                class="btn-primary"
+                                invisible="opportunity_stage_selection != 'opp_marketing_request' or not can_edit_opportunity"
+                                confirm="Are you sure you want to send the opportunity to Final Material Receipt stage?"/>
+                        <button name="action_open_marketing_request_wizard"
+                                string="➕ Create Marketing Request"
+                                type="object"
+                                class="btn-success"
+                                invisible="opportunity_stage_selection != 'opp_marketing_request' or not can_edit_opportunity"/>
+                        <button name="action_move_to_approve_close"
+                                string="Approve Opportunity Closure"
+                                type="object"
+                                class="btn-primary"
+                                invisible="opportunity_stage_selection != 'opp_final_material' or not can_edit_opportunity"
+                                confirm="Are you sure you want to send the opportunity to Approve Opportunity Closure stage?"/>
+                        <button name="action_move_to_contracted"
+                                string="Contracted"
+                                type="object"
+                                class="btn-success"
+                                invisible="opportunity_stage_selection != 'opp_approve_close' or not can_edit_opportunity"
+                                confirm="Are you sure you want to send the opportunity to Contracted stage?"/>
+                        <button name="action_return_to_final_material"
+                                string="Return to Final Material Stage"
+                                type="object"
+                                class="btn-warning"
+                                invisible="not (opportunity_stage_selection in ['opp_approve_close', 'opp_contracted'] and can_edit_opportunity)"
+                                confirm="Are you sure you want to return the opportunity to the Final Marketing Material stage?"/>
+                        <field name="stage_id" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <field name="can_edit_opportunity" invisible="1"/>
+                        <field name="can_add_attachments" invisible="1"/>
+                        <field name="opportunity_stage_selection" invisible="1"/>
+                        <field name="marketing_id" invisible="1" groups="marketing_opportunity_management.group_marketing_supervisor"/>
+                        <field name="marketing_stage_selection" invisible="1"/>
+                        <field name="is_returned_to_requester" invisible="1"/>
+                        <field name="material_count" invisible="1"/>
+
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_opportunity_materials"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-cubes"
+                                    invisible="not marketing_id">
+                                <field name="material_count" widget="statinfo" string="Marketing Materials"/>
+                            </button>
+                        </div>
+
+                        <!-- Marketing Pending Info Alert -->
+                        <div class="alert alert-info d-flex align-items-start gap-2 mb-3" invisible="not marketing_id or is_returned_to_requester or (marketing_stage_selection == 'mkt_done')">
+                            <i class="fa fa-info-circle fa-lg mt-1 text-info"/>
+                            <div class="w-100">
+                                <strong class="text-info-emphasis d-block">The request has been submitted to Marketing Department and is awaiting results.</strong>
+                            </div>
+                        </div>
+
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Opportunity Name"/>
+                            <h1>
+                                <field name="name" placeholder="Enter opportunity name..." readonly="not can_edit_opportunity or (opportunity_stage_selection in ['opp_approve_close', 'opp_contracted'])"/>
+                            </h1>
+                            <h3>
+                                <field name="code" readonly="1"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group string="Opportunity Information">
+                                <field name="opportunity_type" invisible="1"/>
+                                <field name="opportunity_source" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                                <field name="source_other" invisible="opportunity_source != 'external_source'" required="opportunity_source == 'external_source'" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                                <field name="source" invisible="1"/>
+                                <field name="priority" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])" widget="priority"/>
+                                <field name="creation_date" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                                <field name="expected_closing_date" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                            </group>
+                            <group string="Contact Officer">
+                                <field name="assigned_user_id" readonly="not can_edit_opportunity or (opportunity_stage_selection in ['opp_approve_close', 'opp_contracted'])" domain="[('groups_id', 'in', [%(marketing_opportunity_management.group_opportunity_contact_officer)d])]"/>
+                                <field name="assigned_department" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                                <field name="assignment_notes" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                            </group>
+                        </group>
+
+                        <field name="has_no_entries" invisible="1"/>
+                        <group>
+                            <group string="Client Information">
+                                <field name="partner_id" readonly="not can_edit_opportunity" options="{'no_open': True}"/>
+                                <field name="email" readonly="not can_edit_opportunity" widget="email"/>
+                                <field name="mobile" readonly="not can_edit_opportunity" widget="phone"/>
+                            </group>
+                            <group string="Property Information">
+                                <field name="property_name" readonly="not can_edit_opportunity or (opportunity_stage_selection and opportunity_stage_selection not in ['opp_draft', 'opp_data_completion'])"/>
+                                <field name="property_type_id" readonly="not can_edit_opportunity" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="area_sqm" readonly="not can_edit_opportunity"/>
+                                <field name="location_url" readonly="not can_edit_opportunity" widget="url"/>
+                                <field name="property_city_id" readonly="not can_edit_opportunity" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="property_district_id" readonly="not can_edit_opportunity" options="{'no_open': True}"/>
+                            </group>
+                        </group>
+
+                        <group string="Study Data">
+                            <field name="approved_pricing" widget="monetary" class="oe_inline" readonly="1"/>
+                        </group>
+
+                        <group string="Opportunity Attachments">
+                            <field name="attachment_ids" widget="many2many_binary" string="Attachments" readonly="not can_add_attachments"/>
+                        </group>
+                        <field name="is_returned_to_requester" invisible="1"/>
+                        <field name="has_pm_or_done_materials" invisible="1"/>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not return_to_requester_notes or opportunity_stage_selection != 'opp_marketing_request'">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Request returned from Marketing Department with the following notes</strong>
+                                <field name="return_to_requester_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="attachment_return_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                         <group>
+                            <field name="creation_date" groups="base.group_system" readonly="0"/>
+                        </group>
+                        <notebook>
+                            <page string="Linked Properties (Listings)" name="linked_entries">
+                                <field name="entry_ids" readonly="1" options="{'no_create': True}">
+                                    <list create="0" delete="0" edit="0">
+                                        <field name="currency_id" column_invisible="True"/>
+                                        <field name="partner_id" string="Client Name"/>
+                                        <field name="entrie_name" string="Reference"/>
+                                        <field name="partner_mobile" string="Client Phone"/>
+                                        <field name="city" string="City"/>
+                                        <field name="district_id" string="District"/>
+                                        <field name="property_type" string="Property Type"/>
+                                        <field name="area_sqm" string="Area"/>
+                                        <field name="committee_decision_rel" string="Committee Decision"/>
+                                        <field name="direct_sale_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="direct_sale_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="committe_notes"/>
+                                        <button name="action_unlink_from_opportunity"
+                                                string="Unlink"
+                                                type="object"
+                                                icon="fa-times"
+                                                class="btn-danger btn-sm"
+                                                groups="marketing_opportunity_management.group_opportunity_management"
+                                                confirm="Are you sure you want to unlink this property from the opportunity?"/>
+                                    </list>
+                                    <form create="0" edit="0" delete="0">
+                                        <sheet>
+                                            <div class="oe_title">
+                                                <h1>
+                                                    <field name="entrie_name" readonly="1"/>
+                                                </h1>
+                                            </div>
+                                            <group>
+                                                <group string="Client &amp; Contracting Information">
+                                                    <field name="partner_id" readonly="1"/>
+                                                    <field name="partner_mobile" readonly="1"/>
+                                                    <field name="contract_client_name" readonly="1"/>
+                                                    <field name="contract_agreed_price" widget="monetary" readonly="1"/>
+                                                    <field name="contract_duration" readonly="1"/>
+                                                    <field name="currency_id" invisible="1"/>
+                                                </group>
+                                                <group string="Property Details">
+                                                    <field name="property_type" readonly="1"/>
+                                                    <field name="city" readonly="1"/>
+                                                    <field name="district_id" readonly="1"/>
+                                                    <field name="area_sqm" readonly="1"/>
+                                                    <field name="deed_number" readonly="1"/>
+                                                    <field name="plan_number" readonly="1"/>
+                                                    <field name="plot_number" readonly="1"/>
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Preliminary Study" name="preliminary_study">
+                                                    <group>
+                                                        <group string="Study Status &amp; Pricing">
+                                                            <field name="preliminary_study_status" readonly="1"/>
+                                                            <field name="customer_price_per_sqm" widget="monetary" readonly="1"/>
+                                                            <field name="final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_index_average" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Income &amp; Property Info">
+                                                            <field name="verified_income" widget="monetary" readonly="1"/>
+                                                            <field name="expected_full_lease_income" widget="monetary" readonly="1"/>
+                                                            <field name="properties_count" readonly="1"/>
+                                                            <field name="building_requirements" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Analyst Recommendations &amp; Notes">
+                                                        <field name="analyst_recommendation_preliminary" readonly="1"/>
+                                                        <field name="analyst_rejection_notes" readonly="1" invisible="not analyst_rejection_notes"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Detailed Study" name="detailed_study">
+                                                    <group>
+                                                        <group string="Detailed Evaluation &amp; Pricing">
+                                                            <field name="detailed_final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="detailed_comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_ministry_index_average" widget="monetary" readonly="1"/>
+                                                            <field name="lowest_price_per_meter_total_property" widget="monetary" readonly="1"/>
+                                                            <field name="approximate_building_value_per_meter" widget="monetary" readonly="1"/>
+                                                            <field name="current_total_income" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Property Specifications">
+                                                            <field name="building_area" readonly="1"/>
+                                                            <field name="floors_count" readonly="1"/>
+                                                            <field name="units_count" readonly="1"/>
+                                                            <field name="building_license_number" readonly="1"/>
+                                                            <field name="building_license_date" readonly="1"/>
+                                                            <field name="best_property_use" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group>
+                                                        <group string="Services &amp; Utilities">
+                                                            <field name="electricity_service" readonly="1"/>
+                                                            <field name="electricity_meters_count" readonly="1"/>
+                                                            <field name="water_service" readonly="1"/>
+                                                            <field name="water_meters_count" readonly="1"/>
+                                                            <field name="sewage_service" readonly="1"/>
+                                                            <field name="pavement_service" readonly="1"/>
+                                                        </group>
+                                                        <group string="Analysis Points">
+                                                            <field name="internal_strength_points" readonly="1"/>
+                                                            <field name="external_strength_points" readonly="1"/>
+                                                            <field name="external_weakness_points" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Detailed Analyst Recommendation">
+                                                        <field name="analyst_recommendation_details" readonly="1"/>
+                                                        <field name="detailed_building_requirements" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Negotiation &amp; Committee Decision" name="negotiation_page">
+                                                    <group>
+                                                        <group string="Owner Final Negotiation">
+                                                            <field name="final_owner_decision" readonly="1"/>
+                                                            <field name="final_owner_price" widget="monetary" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_decision" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_price" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Committee Decision">
+                                                            <field name="committee_decision" readonly="1"/>
+                                                            <field name="committee_decision_date" readonly="1"/>
+                                                            <field name="marketing_duration_months" readonly="1"/>
+                                                            <field name="committe_notes" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Attachments &amp; Documents" name="attachments">
+                                                    <group>
+                                                        <group string="Contracts &amp; Deeds">
+                                                            <field name="rent_contract_ids" widget="many2many_binary" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment_name" invisible="1"/>
+                                                        </group>
+                                                        <group string="Photos &amp; Files">
+                                                            <field name="facility_photo_ids" widget="many2many_binary" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Notes &amp; Description" name="notes">
+                                                    <group>
+                                                        <field name="entered_notes" readonly="1"/>
+                                                        <field name="property_description" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Marketing Management" name="marketing_records">
+                                <group>
+                                    <group string="Related Marketing Record">
+                                        <field name="marketing_id" groups="marketing_opportunity_management.group_marketing_supervisor" options="{'no_create': True, 'no_open': True}" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Marketing Materials Results" invisible="not marketing_id or not has_pm_or_done_materials">
+                                <field name="material_ids" mode="kanban" readonly="1" no_open="1" domain="[('material_stage_selection', 'in', ['mat_pm_approve', 'mat_done'])]">
+                                    <kanban default_group_by="activity_id" create="false" edit="false" delete="false" can_open="false">
+                                        <field name="name"/>
+                                        <field name="employee_id"/>
+                                        <field name="result_notes"/>
+                                        <field name="output_attachment_ids"/>
+                                        <field name="activity_id"/>
+                                        <field name="material_stage_selection"/>
+                                        <field name="is_project_manager"/>
+                                        <field name="modification_request_count"/>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="oe_kanban_card p-2 border rounded shadow-sm mb-2 bg-white">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <strong class="fs-6 text-primary"><field name="name"/></strong>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small">
+                                                        <strong>Responsible: </strong>
+                                                        <field name="employee_id"/>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small" t-if="record.result_notes.raw_value">
+                                                        <strong>Notes / Results: </strong>
+                                                        <field name="result_notes"/>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top" t-if="record.output_attachment_ids.raw_value and record.output_attachment_ids.raw_value.length">
+                                                        <strong class="text-secondary small d-block mb-1"><i class="fa fa-paperclip me-1"/>Final Attachments:</strong>
+                                                        <field name="output_attachment_ids" widget="many2many_binary" readonly="1"/>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_pm_approve'">
+                                                        <span class="badge text-bg-warning">Pending Opportunity Management Approval</span>
+                                                        <button name="action_open_pm_approval_wizard" type="object" class="btn btn-sm btn-primary">
+                                                            <i class="fa fa-gavel me-1"/> Opportunity Management Decision
+                                                        </button>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_done'">
+                                                        <span class="badge text-bg-success">Completed ✓</span>
+                                                        <button name="action_open_request_modification_wizard" type="object" class="btn btn-sm btn-warning" t-if="record.is_project_manager.raw_value">
+                                                            <i class="fa fa-edit me-1"/> Request Modification
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_bussma_opportunity_tree" model="ir.ui.view">
+            <field name="name">bussma.opportunity.tree</field>
+            <field name="model">bussma.opportunity</field>
+            <field name="arch" type="xml">
+                <list string="Opportunities">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="opportunity_type"/>
+                    <field name="opportunity_source"/>
+                    <field name="priority" widget="priority"/>
+                    <field name="assigned_user_id"/>
+                    <field name="stage_id"/>
+                    <field name="creation_date"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Kanban View -->
+        <record id="view_bussma_opportunity_kanban" model="ir.ui.view">
+            <field name="name">bussma.opportunity.kanban</field>
+            <field name="model">bussma.opportunity</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="stage_id" group_create="false" quick_create="false" records_draggable="false" group_delete="false" class="o_kanban_small_column" sample="1" create="true" edit="false" delete="false">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="opportunity_type"/>
+                    <field name="priority"/>
+                    <field name="assigned_user_id"/>
+                    <field name="stage_id"/>
+                    <field name="activity_state"/>
+                    <field name="is_my_activity"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="oe_kanban_content d-flex flex-column h-100">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span class="text-muted small"><field name="code"/></span>
+                                            <span t-if="record.activity_state.raw_value and ['today', 'overdue'].includes(record.activity_state.raw_value) and record.is_my_activity.raw_value"
+                                                  class="badge rounded-circle custom-activity-badge bg-success text-white ms-auto"
+                                                  t-att-title="record.activity_state.value">
+                                                1
+                                            </span>
+                                        </div>
+                                        <strong class="o_kanban_record_title fs-6">
+                                            <field name="name"/>
+                                        </strong>
+                                        <div class="o_kanban_record_subtitle text-muted mt-1 small">
+                                            <div><i class="fa fa-user me-1"/> <span>Client: </span><field name="partner_id"/></div>
+                                            <div><i class="fa fa-id-badge me-1"/> <span>Contact Officer: </span><field name="assigned_user_id"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_body mt-2">
+                                    <span class="badge text-bg-info me-1"><field name="opportunity_type"/></span>
+                                </div>
+                                <footer class="pt-1 mt-auto border-top d-flex align-items-center justify-content-between">
+                                    <field name="priority" widget="priority"/>
+                                    <field name="assigned_user_id" widget="many2one_avatar_user"/>
+                                </footer>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_bussma_opportunity_search" model="ir.ui.view">
+            <field name="name">bussma.opportunity.search</field>
+            <field name="model">bussma.opportunity</field>
+            <field name="arch" type="xml">
+                <search string="Search Opportunities">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="assigned_user_id"/>
+                    <filter string="My Opportunities" name="my_opportunities" domain="[('assigned_user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Active Opportunities" name="active_opportunities" domain="[('stage_id.state', '!=', 'done')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}"/>
+                        <filter string="Opportunity Type" name="group_type" context="{'group_by': 'opportunity_type'}"/>
+                        <filter string="Client" name="group_partner" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Contact Officer" name="group_user" context="{'group_by': 'assigned_user_id'}"/>
+                        <filter string="Assigned Department" name="group_dept" context="{'group_by': 'assigned_department'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="stage_id" icon="fa-tasks" enable_counters="1" filter_bussma="1"/>
+                        <field name="assigned_user_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                        <field name="partner_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bussma_opportunity" model="ir.actions.act_window">
+            <field name="name">Opportunity Management</field>
+            <field name="res_model">bussma.opportunity</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="context">{'search_default_active_opportunities': 1, 'delete': False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first marketing opportunity!
+                </p>
+            </field>
+        </record>
+        <!-- Assign Opportunity Properties List View -->
+        <record id="view_entries_assign_opportunity_list" model="ir.ui.view">
+            <field name="name">entries.assign.opportunity.list</field>
+            <field name="model">entries</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <list string="Select Properties to Assign to Opportunity" create="0" delete="0" edit="0">
+                    <header>
+                        <button name="action_assign_to_opportunity"
+                                type="object"
+                                string="Assign Selected Properties to Opportunity"
+                                class="oe_highlight"/>
+                    </header>
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="city"/>
+                    <field name="district_id"/>
+                    <field name="property_type"/>
+                    <field name="area_sqm"/>
+                    <field name="stage_id"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

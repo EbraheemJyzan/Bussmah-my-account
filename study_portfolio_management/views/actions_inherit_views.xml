@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- 0. Entries (Entry Screen) Action -->
+        <record id="bussma_system.entries_action" model="ir.actions.act_window">
+            <field name="domain">[
+                ('project_stage_selection', '=', 'entry_screen'),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]</field>
+        </record>
+
+        <!-- 0.1 Data Completion Action -->
+        <record id="bussma_system.data_completion_action" model="ir.actions.act_window">
+            <field name="domain">[
+                ('project_stage_selection', '=', 'data_completion'),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]</field>
+        </record>
+
+        <!-- 1. Define Project Path Action -->
+        <record id="bussma_system.define_project_path_action" model="ir.actions.act_window">
+            <field name="domain" eval="[
+                ('stage_id', '=', ref('bussma_system.define_project_path_assign_analyst')),('is_entry_archive', '=', False),('is_deferred_opportunities_archive', '=', False),('is_listing_archive_2023', '=', False),('is_technical_offers_archive', '=', False),('is_partners_screen', '=', False),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]"/>
+        </record>
+
+        <!-- 2. Preliminary Study Action -->
+        <record id="bussma_system.direct_sale_preliminary_study_action" model="ir.actions.act_window">
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'analyst',
+                    'study_approval',
+                    'committee_decision',
+                    'sales_manager_decision',
+                    'auctions_manager_decision',
+                    'commercial_manager_approval',
+                    'assign_negotiator',
+                    'negotiator',
+                    'manager_contract_approval',
+                    'contract_followup',
+                    'contract_completion',
+                )),
+                ('is_assign_detailed_study', '=', False),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('is_partners_screen', '=', False),
+                ('project_path', '=', 'standard'),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]</field>
+        </record>
+
+        <!-- 3. Detailed Study Action -->
+        <record id="bussma_system.direct_sale_detailed_study_action" model="ir.actions.act_window">
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'detailed_study_analyst',
+                    'detailed_study_approval',
+                    'analyst',
+                    'study_approval',
+                    'committee_decision',
+                    'sales_manager_decision',
+                    'auctions_manager_decision',
+                    'commercial_manager_approval',
+                    'assign_negotiator',
+                    'negotiator',
+                    'manager_contract_approval',
+                    'contract_followup',
+                    'negotiation_approval',
+                    'contract_completion',
+                )),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('is_partners_screen', '=', False),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False),
+                '|',
+                    ('is_assign_detailed_study', '=', True),
+                    ('project_path', '=', 'specialized')
+            ]</field>
+        </record>
+
+        <!-- 4. City Study Action -->
+        <record id="bussma_system.direct_sale_city_study_action" model="ir.actions.act_window">
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'city_study_analyst',
+                    'city_study_approval',
+                )),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]</field>
+        </record>
+
+        <!-- 5. Detailed Study - Eanfaz Action -->
+        <record id="sales_and_auction_management.action_detailed_study_eanfaz" model="ir.actions.act_window">
+            <field name="domain" eval="[
+                ('request_type_id', '=', ref('sales_and_auction_management.detailed_study_eanfaz')),
+                ('project_stage_selection', '!=', 'detailed_study_completed_eanfaz'),
+                ('portfolio_id', '=', False),
+                ('has_portfolio', '=', False)
+            ]"/>
+        </record>
+
+    </data>
+</odoo>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="web.LangMenu">
+        <t t-foreach="state.langs" t-as="lang" t-key="lang_index">
+            <t t-set="userLangNormalized" t-value="user.lang.replace('-', '_')"/>
+            <button
+                t-if="userLangNormalized != lang.code"
+                class="btn btn-light ms-2"
+                t-on-click="() => this.onSelectLang(lang.code)"
+            >
+                <img t-att-src="lang.flag" class="o_lang_flag"/>
+                <span class="text-uppercase" t-out="lang.iso_code"/>
+            </button>
+        </t>
+    </t>
+</templates>

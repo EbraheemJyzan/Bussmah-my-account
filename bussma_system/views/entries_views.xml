@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ========================= -->
+        <!-- List View Entries -->
+        <!-- ========================= -->
+        <record id="entries_list_view" model="ir.ui.view">
+            <field name="name">entries.list.view</field>
+            <field name="model">entries</field>
+            <field name="arch" type="xml">
+                <list string="Entries">
+                    <field name="entrie_name" readonly="1" decoration-bf="1" optional="show"/>
+                    <field name="customer_intent_rel" optional="show"/>
+                    <field name="partner_id" optional="show"/>
+                    <field name="entered_by_id" optional="show"/>
+                    <field name="customer_role_rel" optional="show"/>
+                    <field name="property_type" optional="show"/>
+                    <field name="city" optional="show"/>
+                    <field name="district_id" optional="show"/>
+                    <field name="area_sqm" optional="show"/>
+                    <field name="location_url" widget="url" optional="show"/>
+                    <field name="customer_total_price" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="customer_price_per_sqm" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="verified_income" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="direct_sale_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="direct_sale_total_price" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="auction_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="auction_total_price" widget="monetary" options="{'currency_field': 'currency_id'}" optional="show"/>
+                    <field name="committee_decision_rel" optional="show"/>
+                    <field name="final_owner_decision_rel" optional="show"/>
+                    <field name="final_owner_price_diff_percentage" optional="show"/>
+                    <field name="manager_negotiator_final_owner_decision" optional="show"/>
+                    <field name="manager_negotiator_price_diff_percentage" optional="show"/>
+                    <field name="committe_notes" string="Committee Notes" optional="show"/>
+                    <field name="owner_rejection_reasons" optional="show"/>
+                    <field name="manager_negotiator_owner_rejection_reasons" optional="show"/>
+                    <field name="current_stage_duration_days" string="Days Listed" optional="show"/>
+                    <field name="currency_id" column_invisible="True"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="request_type_view_tree_inherit" model="ir.ui.view">
+            <field name="name">request.type.view.tree.inherit</field>
+            <field name="model">request.type</field>
+            <field name="inherit_id" ref="request.request_type_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="replace"/>
+            </field>
+        </record>
+
+        <!-- ========================= -->
+        <!-- Kanban View Entries -->
+        <!-- ========================= -->
+        <record id="entries_kanban_view" model="ir.ui.view">
+            <field name="name">entries.kanban.view</field>
+            <field name="model">entries</field>
+            <field name="arch" type="xml">
+                <kanban highlight_color="kanban_color" class="o_kanban_mobile" 
+                        records_draggable="false" sample="1" group_create="false" group_edit="false" group_delete="false" quick_create="false" create="1">
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="project_stage_selection"/>
+                    <field name="city"/>
+                    <field name="district_id"/>
+                    <field name="property_type"/>
+                    <field name="area_sqm"/>
+                    <field name="committee_decision"/>
+                    <field name="is_assign_detailed_study"/>
+                    <field name="has_data_completion"/>
+                    <field name="is_entry_archive"/>
+                    <field name="is_partners_screen"/>
+                    <field name="is_deferred_opportunities_archive"/>
+                    <field name="is_from_deferred_archive_menu"/>
+                    <field name="analyst_id"/>
+                    <field name="detailed_analyst_id"/>
+                    <field name="city_analyst_id"/>
+                    <field name="activity_ids"/>
+                    <field name="currency_id"/>
+                    <field name="customer_price_per_sqm"/>
+                    <field name="kanban_color"/>
+                    <templates>
+                        <t t-name="card">
+                            <!-- Ribbon for internal status -->
+                            <!-- Detailed Study Indicator: Thin Yellow Side Bar -->
+                            <div t-if="record.is_assign_detailed_study.raw_value" class="bg-warning position-absolute top-0 start-0 h-100" style="width: 4px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; z-index: 1;"/>
+
+                            <!-- Archived Property Indicator: Red Right Edge Strip -->
+                            <div t-if="record.is_entry_archive.raw_value" class="bg-danger position-absolute top-0 end-0 h-100" style="width: 5px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; z-index: 1;" title="مؤرشف"/>
+
+                            <!-- Partners Screen Indicator: Cyan / Info Right Edge Strip -->
+                            <div t-if="!record.is_entry_archive.raw_value and record.is_partners_screen.raw_value" class="bg-info position-absolute top-0 end-0 h-100" style="width: 5px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; z-index: 1;" title="Partners Screen"/>
+
+                            <!-- Deferred Opportunities Indicator: Warning Right Edge Strip -->
+                            <div t-if="!record.is_entry_archive.raw_value and !record.is_partners_screen.raw_value and (record.is_deferred_opportunities_archive.raw_value or record.is_from_deferred_archive_menu.raw_value)" class="bg-warning position-absolute top-0 end-0 h-100" style="width: 5px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; z-index: 1;" title="Deferred Opportunities"/>
+
+                            <div t-attf-class="oe_kanban_content d-flex flex-column h-100 #{record.is_assign_detailed_study.raw_value ? 'ps-2' : ''}">
+                                <!-- Archived Red Banner Strip -->
+                                <div t-if="record.is_entry_archive.raw_value" class="bg-danger text-white text-center fw-bold small py-1 px-2 rounded-1 mb-2">
+                                    <i class="fa fa-archive me-1"/> Archived Property
+                                </div>
+                                <!-- Partners Screen Banner Strip -->
+                                <div t-if="record.is_partners_screen.raw_value" class="bg-info text-white text-center fw-bold small py-1 px-2 rounded-1 mb-2">
+                                    <i class="fa fa-handshake-o me-1"/> Partners Screen
+                                </div>
+                                <!-- Deferred Opportunities Banner Strip -->
+                                <div t-if="record.is_deferred_opportunities_archive.raw_value or record.is_from_deferred_archive_menu.raw_value" class="bg-warning text-dark text-center fw-bold small py-1 px-2 rounded-1 mb-2">
+                                    <i class="fa fa-clock-o me-1"/> Deferred Opportunities
+                                </div>
+                                <!-- Top Section: Title and Subtitle -->
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <div class="text-muted d-block mb-1">
+                                            <strong class="text-primary me-2"><field name="entrie_name"/></strong>
+                                        </div>
+                                        <strong class="o_kanban_record_title fs-6">
+                                            <field name="partner_id"/>
+                                        </strong>
+                                        <div class="o_kanban_record_subtitle text-muted x-small mt-1">
+                                            <i class="fa fa-map-marker me-1" title="Location"/>
+                                            <field name="city"/> / <field name="district_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Body Section: Key Metrics -->
+                                <div class="o_kanban_record_body mt-1">
+                                    <div class="d-flex align-items-center gap-4 mb-1">
+                                        <span class="x-small text-muted">
+                                            <i class="fa fa-home text-primary me-1" title="Property Type"/>
+                                            <field name="property_type"/>
+                                        </span>
+                                        <span class="x-small text-muted">
+                                            <i class="fa fa-arrows-alt text-info me-1" title="Area"/>
+                                            <field name="area_sqm"/> m²
+                                        </span>
+                                    </div>
+                                    <!-- Decision Info with solid dark styles -->
+                                    <div t-if="record.committee_decision.raw_value" 
+                                         t-attf-class="x-small py-1 px-2 rounded-1 border-start border-3 #{
+                                            record.committee_decision.raw_value == 'direct_sale' ? 'border-success text-white bg-success' : 
+                                            record.committee_decision.raw_value == 'auction' ? 'border-warning text-dark bg-warning' : 
+                                            'border-danger text-white bg-danger'}">
+                                        <i t-if="record.committee_decision.raw_value == 'direct_sale'" class="fa fa-handshake-o me-1" title="Direct Sale"/>
+                                        <i t-if="record.committee_decision.raw_value == 'auction'" class="fa fa-gavel me-1" title="Auction"/>
+                                        <i t-if="record.committee_decision.raw_value == 'exclusion'" class="fa fa-ban me-1" title="Exclusion"/>
+                                        <field name="committee_decision"/>
+                                    </div>
+                                </div>
+                                <!-- Standard Footer Layout -->
+                                <footer class="pt-1 mt-auto border-top">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center gap-2 ms-auto">
+                                            <div t-if="record.analyst_id.raw_value" class="d-flex align-items-center gap-1" title="Primary Analyst">
+                                                <span class="x-small text-muted">Primary Analyst:</span>
+                                                <field name="analyst_id" widget="many2one_avatar_user" readonly="1"/>
+                                            </div>
+                                            <div t-if="record.detailed_analyst_id.raw_value" class="d-flex align-items-center gap-1" title="Detailed Analyst">
+                                                <span class="x-small text-muted">Detailed Analyst:</span>
+                                                <field name="detailed_analyst_id" widget="many2one_avatar_user" readonly="1"/>
+                                            </div>
+                                            <div t-if="record.city_analyst_id.raw_value" class="d-flex align-items-center gap-1" title="City Analyst">
+                                                <span class="x-small text-muted">City Analyst:</span>
+                                                <field name="city_analyst_id" widget="many2one_avatar_user" readonly="1"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- ========================= -->
+        <!-- Form View Entries -->
+        <!-- ========================= -->
+        <record id="entries_form_view" model="ir.ui.view">
+            <field name="name">entries.form.view</field>
+            <field name="model">entries</field>
+            <field name="mode">primary</field>
+            <field name="priority">10</field>
+            <field name="inherit_id" ref="request.request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_send']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_accept']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='active']" position="replace"/>
+                <xpath expr="//header//field[@name='stage_id']" position="attributes">
+                    <attribute name="domain">[
+                        ('res_model', '=', 'entries'),
+                        ('project_stage_selection', 'not in',
+                            [] if (has_data_completion or project_stage_selection == 'data_completion') else ['data_completion']
+                        ),
+                        ('project_stage_selection', 'not in',
+                            ['detailed_study_analyst', 'detailed_study_approval']
+                            if (project_path == 'standard' and not is_assign_detailed_study)
+                            else (['analyst', 'study_approval'] if project_path == 'specialized' else [])
+                        ),
+                        ('project_stage_selection', 'not in',
+                            ['auctions_manager_decision']
+                            if (committee_decision == 'direct_sale' or (committee_decision == 'exclusion' and customer_intent == 'direct_sale'))
+                            else (['sales_manager_decision']
+                                if (committee_decision == 'auction' or (committee_decision == 'exclusion' and customer_intent == 'auction'))
+                                else [])
+                        ),
+                        '|', ('request_type_ids', '=', False), ('request_type_ids', '=', request_type_id),
+                    ]</attribute>
+                </xpath>
+                <xpath expr="//form" position="attributes">
+                    <attribute name="archive">false</attribute>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <!-- action_send button with translation based on the stage transition -->
+                    <!-- Send to Define Project Path -->
+                    <button name="action_accept" class="btn-success" string="Define Project Path" type="object" confirm="Are you sure you want to entry to define the project path and assign an analyst?" invisible="project_stage_selection != 'entry_screen'" groups="base.group_user" />
+                    <button name="action_accept" class="btn-success" string="Send to define the project path" type="object" confirm="Are you sure you want to send the completed data to the Deputy Studies Manager?" invisible="not (project_stage_selection == 'data_completion' and is_assigned_data_completer)" groups="base.group_user" />
+
+                    <!-- action_accept button with translation based on the stage transition -->
+                    <!-- Send to Reviewer (Standard and Specialized paths) -->
+                    <button name="action_accept" class="btn-success" string="Send to Reviewer" type="object" confirm="Are you sure you want to send this entry to the reviewer?" invisible="not (project_stage_selection == 'define_project_path_assign_analyst' and is_authorized_property == 'yes') or project_path == 'cities'" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+                    <!-- Send to Reviewer (Cities path - City Studies Manager only) -->
+                    <button name="action_accept" class="btn-success" string="Send to Reviewer" type="object" confirm="Are you sure you want to send this entry to the reviewer?" invisible="not (project_stage_selection == 'define_project_path_assign_analyst' and is_authorized_property == 'yes') or project_path != 'cities'" groups="bussma_system.group_city_studies_manager" />
+                    <!-- Send to Preliminary Study Approval -->
+                    <button name="action_accept" class="btn-success" string="Send to Preliminary Study Approval" type="object" confirm="Are you sure you want to send the preliminary study for approval?" invisible="not (project_stage_selection == 'analyst' and not is_assign_detailed_study and project_path != 'specialized')" groups="bussma_system.group_analyst" />
+                    <button name="action_accept" class="btn-success" string="Send to City Study Analyst Approval" type="object" confirm="Are you sure you want to send the preliminary study for approval?" invisible="not (project_stage_selection == 'city_study_analyst')" groups="bussma_system.group_analyst" />
+                    <!-- Send to Detailed Study Approval -->
+                    <button name="action_accept" class="btn-success" string="Send to Detailed Study Approval" type="object" confirm="Are you sure you want to send the detailed study for approval?" invisible="not (project_stage_selection == 'detailed_study_analyst' and (project_path == 'specialized' or (project_path == 'standard' and is_assign_detailed_study and is_send_email_to_detailed_study == True)))" groups="bussma_system.group_analyst" />
+                    <!-- Send to city completed -->
+                    <button name="action_accept" class="btn-success" string="Send to City Completed" type="object" confirm="Are you sure you want to mark the city study as completed?" invisible="not (project_stage_selection == 'city_study_approval' and cities_study_manager_approval == 'completed')" groups="bussma_system.group_city_studies_manager" />
+                    <!-- Send to committee (Preliminary Study) -->
+                    <button name="action_accept" class="btn-success" string="Send to Committee" type="object" confirm="Are you sure you want to send this entry to the committee?" invisible="not (project_stage_selection == 'study_approval' and standard_study_manager_approval == 'completed' and project_path == 'standard' and not is_assign_detailed_study)" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+                    <!-- Send to committee (Detailed Study - Specialized Path) -->
+                    <button name="action_accept" class="btn-success" string="Send to Committee" type="object" confirm="Are you sure you want to send this entry to the committee?" invisible="not ((project_stage_selection == 'detailed_study_approval' or (project_stage_selection == 'study_approval' and not is_assign_detailed_study)) and specialized_study_manager_approval == 'completed' and project_path == 'specialized')" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+                    <!-- Send to Sales Manager Decision -->
+                    <button name="action_accept" class="btn-success" string="Send to Sales Manager" type="object" confirm="Are you sure you want to send this entry to the sales manager?" invisible="not (project_stage_selection == 'committee_decision' and committee_decision != False and not (committee_decision == 'auction' or (committee_decision == 'exclusion' and customer_intent == 'auction'))) or is_entry_archive or final_owner_decision == 'higher_price' or manager_negotiator_final_owner_decision == 'higher_price'" groups="bussma_system.group_committee_member" />
+                    <!-- Send to Auctions Manager Decision -->
+                    <button name="action_accept" class="btn-success" string="Send to Auctions Manager" type="object" confirm="Are you sure you want to send this entry to the auctions manager?" invisible="not (project_stage_selection == 'committee_decision' and (committee_decision == 'auction' or (committee_decision == 'exclusion' and customer_intent == 'auction'))) or is_entry_archive or final_owner_decision == 'higher_price' or manager_negotiator_final_owner_decision == 'higher_price'" groups="bussma_system.group_committee_member" />
+                    <!-- Send to Commercial Manager for Contracting (Higher Price) -->
+                    <button name="action_accept" class="btn-success" string="Send to Commercial Manager for Contracting" type="object" confirm="Are you sure you want to send this entry to the commercial manager for contracting?" invisible="not (project_stage_selection == 'committee_decision' and committee_decision != False and not is_entry_archive and (final_owner_decision == 'higher_price' or manager_negotiator_final_owner_decision == 'higher_price'))" groups="bussma_system.group_committee_member" />
+                    <!-- Send from Sales Manager to Auctions Manager (Exclusion + Select All / Studies Recommendation) -->
+                    <button name="action_accept" class="btn-success" string="Send to Auctions Manager" type="object" confirm="Are you sure you want to send this entry to the auctions manager?" invisible="not (project_stage_selection == 'sales_manager_decision' and sales_manager_approval != False and committee_decision == 'exclusion' and customer_intent in ('select_all', 'studies_recommendation'))" groups="bussma_system.group_sales_manager" />
+                    <!-- Send from Sales Manager to Commercial Manager -->
+                    <button name="action_accept" class="btn-success" string="Send to Commercial Manager" type="object" confirm="Are you sure you want to send this for commercial manager approval?" invisible="not (project_stage_selection == 'sales_manager_decision' and sales_manager_approval != False and not (committee_decision == 'exclusion' and customer_intent in ('select_all', 'studies_recommendation')))" groups="bussma_system.group_sales_manager" />
+                    <!-- Send from Auctions Manager to Commercial Manager -->
+                    <button name="action_accept" class="btn-success" string="Send to Commercial Manager" type="object" confirm="Are you sure you want to send this for commercial manager approval?" invisible="not (project_stage_selection == 'auctions_manager_decision' and auctions_manager_approval != False)" groups="bussma_system.group_auctions_manager" />
+                    <!-- Send to Negotiator -->
+                    <button name="action_accept" class="btn-success" string="Send to Negotiator" type="object" confirm="Are you sure you want to send this entry to the negotiator?" invisible="not (project_stage_selection == 'assign_negotiator' and assigned_negotiator != False)" groups="bussma_system.group_assign_negotiator" />
+                    <!-- Send to Manager Contract Approval (Negotiator) -->
+                    <!-- Button: Send to Deputy Studies Manager for approval (shown after negotiation result is set) -->
+                    <button name="action_send_to_deputy_studies_manager" class="btn-primary" string="Send to Deputy Studies Manager" type="object"
+                        confirm="Are you sure you want to send the negotiation result to the Deputy Studies Manager for approval?"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False and ((not is_manager_negotiator and final_owner_decision != False and final_owner_decision != 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision != False and manager_negotiator_final_owner_decision != 'higher_price')))"
+                        groups="bussma_system.group_negotiator,bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
+                    <!-- Button: Send to Contract Approval (only after deputy approval is accepted) -->
+                    <button name="action_accept" class="btn-success" string="Send To Sector Manager Approval" type="object" confirm="Are you sure you want to send the entry to the Commercial Sector Manager's approval stage for the negotiation result?"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'accepted' and ((not is_manager_negotiator and final_owner_decision != 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision != 'higher_price')))"
+                        groups="bussma_system.group_deputy_studies_manager" />
+                    <!-- Return to Negotiator (Deputy Studies Manager) - shown when rejected -->
+                    <button name="action_deputy_return_to_negotiator" class="btn-warning" string="Return to Negotiator" type="object" confirm="Are you sure you want to return this entry to the negotiator?"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'rejected')"
+                        groups="bussma_system.group_deputy_studies_manager" />
+                    <!-- Return to Committee -->
+                    <button name="action_accept" class="btn-warning" string="Return to Committee" type="object" confirm="Are you sure you want to return this entry to the committee?" invisible="not (project_stage_selection == 'negotiator' and ((not is_manager_negotiator and final_owner_decision == 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision == 'higher_price')))" groups="bussma_system.group_negotiator,bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
+                    <!-- Send to Contract Follow-up -->
+                    <button name="action_accept" class="btn-success" string="Send To Contract Follow-up" type="object" 
+                        confirm="Are you sure you want to move this entry to the contract follow-up stage?" 
+                        invisible="not (
+                            project_stage_selection == 'manager_contract_approval' 
+                            and commercial_sector_manager_contract_approval == 'accepted'
+                            and (
+                                (not is_manager_negotiator and final_owner_decision in ['higher_price', 'committee_price'])
+                                or
+                                (is_manager_negotiator and manager_negotiator_final_owner_decision in ['higher_price', 'committee_price'])
+                            )
+                        )" groups="bussma_system.group_commercial_sector_manager" />
+                    <!-- Send to Contract Completion (from contract_followup - Direct Sale) -->
+                    <button name="action_accept" class="btn-success" string="Send To Contract Completion" type="object"
+                        confirm="Are you sure you want to move this entry to the contract completion stage?"
+                        invisible="not (project_stage_selection == 'contract_followup' and committee_decision == 'direct_sale') or not is_assigned_project_manager"/>
+
+                    <!-- Send to Negotiation Approval (from contract_followup - Auction) -->
+                    <button name="action_accept" class="btn-success" string="Send To Negotiation Approval" type="object"
+                        confirm="Are you sure you want to move this entry to the negotiation approval stage?"
+                        invisible="not (project_stage_selection == 'contract_followup' and committee_decision == 'auction') or not is_assigned_project_manager" />
+
+
+                    <!-- Send to Contract Completion (from negotiation_approval) -->
+                    <button name="action_accept" class="btn-success" string="Send To Contract Completion" type="object"
+                        confirm="Are you sure you want to move this entry to the contract completion stage?"
+                        invisible="not (project_stage_selection == 'negotiation_approval' and negotiation_commercial_manager_approval == 'approval' and (committee_decision == 'auction' or negotiation_studies_manager_approval == 'approval'))"
+                        groups="bussma_system.group_commercial_sector_manager,bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager" />
+
+                    <!-- Send to Assign Detailed Study (from contract_completion, standard path, contract done) -->
+                    <button name="action_accept" class="btn-success" string="Send To Assign Detailed Study" type="object"
+                        confirm="Are you sure you want to send the entry to the assign detailed study?"
+                        invisible="not (project_stage_selection == 'contract_completion' and project_path == 'standard' and ((direct_sale_contract_status == 'yes' and committee_decision == 'direct_sale') or (auction_contract_status == 'yes' and committee_decision == 'auction')))"
+                        groups="bussma_system.group_contract_manager" />
+
+                    <!-- Send to Completed (from contract_completion, specialized path, contract done) -->
+                    <button name="action_accept"
+                        class="btn-success"
+                        string="Complete Detailed Study"
+                        type="object"
+                        confirm="Are you sure you want to mark this project as completed?"
+                        invisible="not (
+                            (project_stage_selection == 'contract_completion' and project_path == 'specialized' and (
+                                (committee_decision == 'auction' and auction_contract_status == 'yes') or
+                                (committee_decision == 'direct_sale' and direct_sale_contract_status == 'yes')
+                            ))
+                            or
+                            (project_stage_selection == 'detailed_study_approval' and (is_assign_detailed_study and specialized_study_manager_approval == 'completed'))
+                        )" groups="bussma_system.group_studies_manager,bussma_system.group_contract_manager"/>
+                    
+
+                    <!-- Move the entry to archive from the entry stage -->
+                    <button name="move_to_entry_archive" class="btn-success" string="Archived Entry" type="object" 
+                        confirm="Are you sure you want to move the entry to the archive?"
+                        invisible="not (project_stage_selection == 'define_project_path_assign_analyst' and is_authorized_property == 'no') or is_entry_archive == True" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+
+                    <!-- Return the entry to the lister (Entry Screen stage) -->
+                    <button name="action_return_to_lister" class="btn-warning" string="Return To Lister" type="object" 
+                        confirm="Are you sure you want to return this entry to the lister?"
+                        invisible="not (project_stage_selection == 'define_project_path_assign_analyst' and is_authorized_property == 'return_to_lister') or is_entry_archive == True" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+
+                    <!-- Send the entry to Data Completion stage -->
+                    <button name="action_send_to_data_completion" class="btn-warning" string="Send to Data Completion" type="object"
+                        confirm="Are you sure you want to send this entry for data completion?"
+                        invisible="not (project_stage_selection == 'define_project_path_assign_analyst' and is_authorized_property == 'data_completion') or is_entry_archive == True"
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+
+                    <!-- Return the study to the analyst (Preliminary Study) if it is incomplete at the approval stage -->
+                    <button name="return_to_analyst" class="btn-success" string="Return To Analyst" type="object" 
+                        confirm="Are you sure you want to return the entry to the analyst for the preliminary study?"
+                        invisible="not (project_stage_selection == 'study_approval' and standard_study_manager_approval == 'incomplete' and not is_assign_detailed_study) or project_path != 'standard'" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager"/>
+                    <!-- Reject and archive entry (Preliminary Study) at the approval stage -->
+                    <button name="action_standard_study_reject_and_archive" class="btn-success" string="Decline Listing and Archive" type="object" 
+                        confirm="Are you sure you want to decline this listing and archive it?"
+                        invisible="not (project_stage_selection == 'study_approval' and standard_study_manager_approval == 'reject_and_archive') or project_path != 'standard' or is_entry_archive == True" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager"/>
+                    <!-- Return the study to the analyst (Detailed Study) if it is incomplete at the approval stage -->
+                    <button name="return_to_analyst" class="btn-success" string="Return To Analyst" type="object" 
+                        confirm="Are you sure you want to return the entry to the analyst for the detailed study?"
+                        invisible="not (project_stage_selection in ('detailed_study_approval', 'study_approval') and specialized_study_manager_approval == 'incomplete' and (project_path == 'specialized' or is_assign_detailed_study))" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager"/>
+                    <!-- Return the study to the analyst (Cities Study) if it is incomplete at the approval stage -->
+                    <button name="return_to_analyst" class="btn-success" string="Return To Analyst" type="object" 
+                        confirm="Are you sure you want to return the entry to the analyst for the cities study?"
+                        invisible="not (project_stage_selection == 'city_study_approval' and cities_study_manager_approval == 'incomplete')" groups="bussma_system.group_city_studies_manager"/>
+
+                    <!-- send email to the detailed analyst -->
+                    <button name="send_email_to_detailed_study" class="btn-success" 
+                        string="Send to Detailed Study" type="object" 
+                        confirm="Are you sure you want to send this entry to the detailed study?"
+                        invisible="project_stage_selection != 'detailed_study_analyst' or not is_assign_detailed_study or is_send_email_to_detailed_study == True" groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager" />
+
+                    <!-- ===== Commercial Sector Manager Approval Stage Actions ===== -->
+                    <!-- 1. Accept Listing and Move to Negotiation -->
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Accept Listing and Move to Negotiation" type="object" 
+                        confirm="Are you sure you want to move this listing to the negotiation stage?"
+                        invisible="not (project_stage_selection == 'commercial_manager_approval' and commercial_sector_manager_approval == 'approval') or is_entry_archive == True" groups="bussma_system.group_commercial_sector_manager" />
+
+                    <!-- 2. Return Listing to Committee -->
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Return Listing to Committee" type="object" 
+                        confirm="Are you sure you want to return this listing to the committee?"
+                        invisible="not (project_stage_selection == 'commercial_manager_approval' and commercial_sector_manager_approval == 'return_committee') or is_entry_archive == True" groups="bussma_system.group_commercial_sector_manager" />
+
+                    <!-- 3. Transfer Listing to Partners Management -->
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Transfer Listing to Partners Management" type="object" 
+                        confirm="Are you sure you want to transfer this listing to partner management?"
+                        invisible="not (project_stage_selection == 'commercial_manager_approval' and commercial_sector_manager_approval == 'transfer' and is_partners_screen == False)" groups="bussma_system.group_commercial_sector_manager"/>
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Transfer Listing to Partners Management" type="object" 
+                        confirm="Are you sure you want to transfer this listing to partner management?"
+                        invisible="not (project_stage_selection == 'manager_contract_approval' and commercial_sector_manager_contract_approval == 'transfer' and is_partners_screen == False)" groups="bussma_system.group_commercial_sector_manager"/>
+
+                    <!-- 4. Reject Listing and Archive -->
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Decline Listing and Archive" type="object" 
+                        confirm="Are you sure you want to decline this listing and archive it?"
+                        invisible="not (project_stage_selection == 'commercial_manager_approval' and commercial_sector_manager_approval == 'declined') or is_entry_archive == True" groups="bussma_system.group_commercial_sector_manager" />
+
+                    <!-- 5. Postpone Listing -->
+                    <button name="commercial_sector_manager_approval_path" class="btn-success" 
+                        string="Move to postponed page" type="object" 
+                        confirm="Are you sure you want to postpone this listing?"
+                        invisible="not (project_stage_selection == 'commercial_manager_approval' and commercial_sector_manager_approval == 'postponed') or is_entry_archive == True or is_deferred_opportunities_archive == True or is_from_deferred_archive_menu == True" groups="bussma_system.group_commercial_sector_manager"/>
+                    
+                    <!-- Move the entry to the archive from the Commercial Sector Manager contract approval stage 
+                             (when approving the owner's rejection) -->                        
+                    <button name="move_to_entry_archive" class="btn-success" string="Archived Entry" type="object" 
+                        confirm="Are you sure you want to move the entry to the archive?"
+                        invisible="
+                        not (
+                            project_stage_selection == 'manager_contract_approval'
+                            and commercial_sector_manager_contract_approval == 'accepted'
+                            and (
+                                (not is_manager_negotiator and final_owner_decision == 'rejected')
+                                or
+                                (is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected')
+                            )
+                        )
+                        " groups="bussma_system.group_commercial_sector_manager" />
+                    <!-- Reject the owner's decision and return the entry to the negotiator -->
+                    <button name="rejecte_owner_decision" class="btn-success" string="Return to DM for Negotiator" type="object" 
+                        confirm="Are you sure you want to return the entry to the negotiator?"
+                        invisible="not (project_stage_selection == 'manager_contract_approval' and commercial_sector_manager_contract_approval == 'rejected')"
+                        groups="bussma_system.group_commercial_sector_manager" />
+                    <!-- Move the entry to the archive at the contract completion stage 
+                        if the project type is Direct Sale (contract status = No) -->
+                    <button name="move_to_entry_archive" class="btn-success" string="Archived Entry" type="object" 
+                        confirm="Are you sure you want to move the entry to the archive?"
+                        invisible="not (project_stage_selection == 'contract_completion' and committee_decision == 'direct_sale' and direct_sale_contract_status == 'no')" groups="bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
+                    <!-- Move the entry to the archive at the contract completion stage 
+                        if the project type is Auction (contract status = No) -->
+                    <button name="move_to_entry_archive" class="btn-success" string="Archived Entry" type="object" 
+                        confirm="Are you sure you want to move the entry to the archive?"
+                        invisible="not (project_stage_selection == 'contract_completion' and committee_decision == 'auction' and auction_contract_status == 'no')" groups="bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
+                    
+                    <!-- Reactivate the entry from the Deferred Opportunities Archive stage -->
+                    <button name="reactivate_deferred_opportunity" class="btn-success" string="Reactivate Deferred Opportunity" type="object" 
+                        confirm="Are you sure you want to reactivate the deferred opportunity?"
+                        invisible="is_deferred_opportunities_archive == False or is_from_deferred_archive_menu == False" groups="bussma_system.group_commercial_sector_manager"/>
+                    
+                    
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_lister_returns" class="oe_stat_button text-primary" icon="fa-pencil-square-o" invisible="return_to_lister_count == 0">
+                            <field name="return_to_lister_count" widget="statinfo" string="Return to Lister" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_data_completer_returns" class="oe_stat_button text-info" icon="fa-pencil-square-o" invisible="data_completer_return_count == 0">
+                            <field name="data_completer_return_count" widget="statinfo" string="Data Completer Returns" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_study_returns" class="oe_stat_button text-info" icon="fa-pencil-square-o" invisible="study_return_count == 0">
+                            <field name="study_return_count" widget="statinfo" string="Preliminary Study Returns" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_study_returns" context="{'is_detailed_study': True}" class="oe_stat_button text-warning" icon="fa-pencil-square-o" invisible="detailed_study_return_count == 0">
+                            <field name="detailed_study_return_count" widget="statinfo" string="Detailed Study Returns" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_committee_returns" class="oe_stat_button text-primary" icon="fa-users" invisible="committee_return_count == 0">
+                            <field name="committee_return_count" widget="statinfo" string="Committee Returns" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_department_returns" class="oe_stat_button text-warning" icon="fa-building" invisible="department_return_count == 0">
+                            <field name="department_return_count" widget="statinfo" string="Department Returns" class="no_readonly_style"/>
+                        </button>
+                        <button type="object" name="action_view_negotiator_returns" class="oe_stat_button text-success" icon="fa-handshake-o" invisible="negotiator_return_count == 0">
+                            <field name="negotiator_return_count" widget="statinfo" string="Negotiator Returns" class="no_readonly_style"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived Entry" bg_color="text-bg-danger" invisible="is_entry_archive == False"/>
+                    <widget name="web_ribbon" title="Archived Listings 2023" bg_color="text-bg-danger" invisible="is_listing_archive_2023 == False"/>
+                    <widget name="web_ribbon" title="Archived Technical Offers" bg_color="text-bg-danger" invisible="is_technical_offers_archive == False"/>
+                    <widget name="web_ribbon" title="Complete Analyst Study" bg_color="text-bg-warning"
+                        invisible="not (project_stage_selection == 'completed' and project_path == 'standard' and is_assign_detailed_study == True)"/>
+                    <widget name="web_ribbon" title="Completed Detailed Study" bg_color="text-bg-success"
+                        invisible="not (project_stage_selection == 'completed' and project_path == 'specialized' and is_assign_detailed_study == False)"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="entrie_name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <field name="is_entry_archive" invisible="1"/>
+                    <field name="is_deferred_opportunities_archive" invisible="1"/>
+                    <field name="is_listing_archive_2023" invisible="1"/>
+                    <field name="is_technical_offers_archive" invisible="1"/>
+                    <field name="is_partners_screen" invisible="1"/>
+                    <field name="is_assign_detailed_study" invisible="1"/>
+                    <field name="has_data_completion" invisible="1"/>
+                    <field name="is_send_email_to_detailed_study" invisible="1"/>
+                    <field name="is_studies_manager_group" invisible="1"/>
+                    <field name="is_deputy_studies_manager_group" invisible="1"/>
+                    <field name="is_rnd_manager_group" invisible="1"/>
+                    <field name="is_analyst_group" invisible="1"/>
+                    <field name="is_sales_manager_group" invisible="1"/>
+                    <field name="is_assign_negotiator_group" invisible="1"/>
+                    <field name="is_auctions_manager_group" invisible="1"/>
+                    <field name="is_commercial_manager_group" invisible="1"/>
+                    <field name="is_negotiator_group" invisible="1"/>
+                    <field name="is_contract_manager_group" invisible="1"/>
+                    <field name="is_committee_member_group" invisible="1"/>
+                    <field name="is_city_studies_manager_group" invisible="1"/>
+                    <field name="is_assigned_analyst" invisible="1"/>
+                    <field name="is_assigned_detailed_analyst" invisible="1"/>
+                    <field name="is_assigned_negotiator" invisible="1"/>
+                    <field name="is_assigned_project_manager" invisible="1"/>
+                    <field name="is_assigned_data_completer" invisible="1"/>
+                    <field name="is_assigned_direct_sale_contract_manager" invisible="1"/>
+                    <field name="is_assigned_auction_contract_manager" invisible="1"/>
+                    <field name="is_land_property_type" invisible="1"/>
+                    <div name="entry_information_section">
+                        <!-- ========================= -->
+                        <!-- Entry Information -->
+                        <!-- ========================= -->
+                        <field name="currency_id" invisible="1"/>
+                        <field name="is_from_deferred_archive_menu" invisible="1"/>
+                        <field name="is_from_smart_sheet" invisible="1"/>
+                        <group string="Entry Information">
+                            <group>
+                                <field name="company_id" invisible="1"/>
+                                <field name="country_id" invisible="1"/>
+                                <field name="customer_intent" invisible="1"/>
+                                <field name="customer_intent_rel" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" options="{'no_create': True, 'no_open': True}" />
+                                <field name="partner_id" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" context="{'default_is_customer': True}" />
+
+                                <field name="customer_role_rel" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="owner_type" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="partner_mobile" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" widget="phone"/>
+                            </group>
+
+                            <group>
+                                <field name="entered_by_id" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="entered_by_email" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="requires_technical_offer" readonly="is_entry_archive or is_deferred_opportunities_archive or is_listing_archive_2023 or is_technical_offers_archive or is_partners_screen or is_from_smart_sheet or is_from_deferred_archive_menu or (project_stage_selection in ('completed', 'city_study_completed'))"/>
+                                <field name="is_modon_auction" readonly="is_entry_archive or (project_stage_selection != 'entry_screen')"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="property_type" readonly="is_entry_archive or (project_stage_selection not in ('entry_screen', 'negotiator') and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" options="{'no_create': True, 'no_open': True}"/>
+
+                                <field name="property_usage_rel" readonly="is_entry_archive or (project_stage_selection not in ('entry_screen', 'negotiator') and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="area_sqm" readonly="is_entry_archive or (project_stage_selection not in ['entry_screen', 'analyst', 'detailed_study_analyst', 'city_study_analyst', 'committee_decision'] and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="customer_price_per_sqm" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" />
+                                <field name="has_income" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="current_income" invisible="has_income != 'yes'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+
+                            </group>
+
+                            <group>
+                                <field name="city" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="district_id" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="location_url" widget="url" readonly="is_entry_archive or (project_stage_selection not in ['entry_screen', 'analyst', 'detailed_study_analyst', 'city_study_analyst'] and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="plot_number" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="plan_number" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="deed_number" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="deed_date" widget="hijri_date" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                                <field name="listing_date" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="entered_notes" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                            </group>
+                            <group>
+                                <field name="property_attachment_ids" widget="many2many_binary" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))" />
+                            </group>
+                        </group>
+                    </div>
+                    <div name="project_path_group" invisible="project_stage_selection in ('entry_screen', 'data_completion')">
+                    <!-- ========================= -->
+                    <!-- Difind Project Path and Assign Analyst Information -->
+                    <!-- ========================= -->
+                        <group string="Project Path">
+                            <group>
+                                <field name="is_authorized_property" invisible="project_stage_selection != 'define_project_path_assign_analyst' and is_authorized_property == 'yes'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))"  required="project_stage_selection == 'define_project_path_assign_analyst'"/>
+                                <field name="rejection_reason" invisible="is_authorized_property != 'no'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" required="is_authorized_property == 'no'"/>
+                                <field name="return_to_lister_note" invisible="is_authorized_property != 'return_to_lister'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" required="is_authorized_property == 'return_to_lister'"/>
+                                <field name="data_completer_id" invisible="is_authorized_property != 'data_completion'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" domain="[('groups_id', 'in', [%(bussma_system.group_data_completer)d])]"/>
+                                <field name="data_completion_note" invisible="is_authorized_property != 'data_completion'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))"/>
+                            </group>
+                            <group>
+                                <field name="project_path" invisible="1"/>
+                                <field name="project_path_rel" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" invisible="is_authorized_property != 'yes'" required="project_stage_selection == 'define_project_path_assign_analyst'" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="analyst_id" invisible="is_authorized_property != 'yes' or project_path in ('specialized', 'cities')" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" required="project_stage_selection == 'define_project_path_assign_analyst' and project_path not in ('specialized', 'cities')"/>
+                                <field name="city_analyst_id" invisible="is_authorized_property != 'yes' or project_path != 'cities'" readonly="is_entry_archive or (project_stage_selection != 'define_project_path_assign_analyst' or not is_city_studies_manager_group)"/>
+                                <field name="detailed_analyst_id" invisible="is_authorized_property != 'yes' or (project_path != 'specialized' and not (project_path == 'standard' and is_assign_detailed_study))" readonly="is_entry_archive or ((is_studies_manager_group == False and is_deputy_studies_manager_group == False) or not ((project_stage_selection == 'define_project_path_assign_analyst' and project_path == 'specialized') or (project_stage_selection in ('detailed_study_analyst', 'analyst') and is_assign_detailed_study)))" required="(project_stage_selection == 'define_project_path_assign_analyst' and project_path == 'specialized') or (project_stage_selection in ('detailed_study_analyst', 'analyst') and is_assign_detailed_study)"/>
+                            </group>
+                        </group>
+                        <!-- Manager Return Notes: shown as yellow warning banner to analyst -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (
+                                (project_stage_selection == 'analyst' and standard_study_manager_approval == 'incomplete' and project_path == 'standard' and not is_assign_detailed_study)
+                                or (project_stage_selection in ('detailed_study_analyst', 'analyst') and specialized_study_manager_approval == 'incomplete' and (project_path == 'specialized' or is_assign_detailed_study))
+                                or (project_stage_selection == 'city_study_analyst' and cities_study_manager_approval == 'incomplete')
+                            )">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Study Manager Note — Please Review and Correct</strong>
+                                <field name="standard_study_manager_note" readonly="1"
+                                    invisible="not (standard_study_manager_approval == 'incomplete' and project_path == 'standard')"
+                                    nolabel="1"
+                                    class="no_readonly_style text-dark fst-italic"/>
+                                <field name="specialized_study_manager_note" readonly="1"
+                                    invisible="not (specialized_study_manager_approval == 'incomplete' and (project_path == 'specialized' or is_assign_detailed_study))"
+                                    nolabel="1"
+                                    class="no_readonly_style text-dark fst-italic"/>
+                                <field name="cities_study_manager_note" readonly="1"
+                                    invisible="not (cities_study_manager_approval == 'incomplete' and project_path == 'cities')"
+                                    nolabel="1"
+                                    class="no_readonly_style text-dark fst-italic"/>
+                            </div>
+                        </div>
+                        <!-- Commercial Sector Manager Return Notes: shown when record is returned to Committee -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (project_stage_selection == 'committee_decision' and commercial_sector_manager_approval == 'return_committee')">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Commercial Sector Manager Note — Please Review</strong>
+                                <field name="commercial_sector_manager_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                            </div>
+                        </div>
+                        <!-- Commercial Sector Manager Contract Rejection Notes: shown to negotiator -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (project_stage_selection == 'negotiator' and commercial_sector_manager_contract_approval == 'rejected' and is_manager_negotiator == True)">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Commercial Sector Manager Note: Contract Rejection — Please Review</strong>
+                                <field name="commercial_sector_manager_contract_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                            </div>
+                        </div>
+                        <!-- Deputy Studies Manager Rejection Notes: shown to negotiator after rejection return -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False and deputy_studies_manager_notes != False)">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Deputy Studies Manager Rejection Note — Please Re-Negotiate and Re-Send</strong>
+                                <field name="deputy_studies_manager_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                            </div>
+                        </div>
+                        <!-- Negotiation Result Higher Price Warning: shown to Committee -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (project_stage_selection == 'committee_decision' and (final_owner_decision == 'higher_price' or manager_negotiator_final_owner_decision == 'higher_price'))">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Result of Negotiation at Higher Price</strong>
+                                <span class="text-dark fst-italic">The owner requested a higher price following the negotiation</span>
+                                <field name="negotiator_note" string="Negotiator Note" readonly="1" invisible="is_manager_negotiator"/>
+                                <field name="manager_negotiator_note" string="Negotiator Note" readonly="1" invisible="not is_manager_negotiator"/>
+                            </div>
+                        </div>
+                        <!-- Negotiation Result Higher Price Warning: shown to Commercial Sector Manager -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                            invisible="not (project_stage_selection == 'manager_contract_approval' and (final_owner_decision == 'higher_price' or manager_negotiator_final_owner_decision == 'higher_price'))">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Warning to Commercial Sector Manager for Contracting with the Customer: Sent from the Committee</strong>
+                                <span class="text-dark fst-italic"> The owner requested a higher price and the committee reviewed it with notes.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Return to Lister Alert Banner (Only shown in Entry Screen stage) -->
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-3"
+                        invisible="project_stage_selection != 'entry_screen' or not return_to_lister_note" role="status">
+                        <i class="fa fa-exclamation-triangle mt-1" title="Return Note"/>
+                        <div>
+                            <strong>Notes for Returning to the Lister: </strong>
+                            <field name="return_to_lister_note" readonly="1" class="mb-0"/>
+                        </div>
+                    </div>
+                    <!-- Data Completion Alert Banner (Only shown in Data Completion stage) -->
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-3"
+                        invisible="project_stage_selection != 'data_completion' or not data_completion_note" role="status">
+                        <i class="fa fa-exclamation-triangle mt-1" title="Data Completion Note"/>
+                        <div>
+                            <strong>Data Completion Notes: </strong>
+                            <field name="data_completion_note" readonly="1" class="mb-0"/>
+                        </div>
+                    </div>
+                    <group>
+                        <field name="sheet_date" invisible="1" readonly="1"/>
+                        <field name="row_id" invisible="1" readonly="1"/>
+                        <field name="row_number" invisible="1" readonly="1"/>
+                        <field name="sheet_name" invisible="1" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page name="preliminary_study_page" string="Preliminary Study Information"
+                            invisible="not is_from_smart_sheet and (project_stage_selection in ['entry_screen', 'data_completion', 'define_project_path_assign_analyst'] or (project_path != 'standard' and is_assign_detailed_study == False))">
+                            <!-- ========================= -->
+                            <!-- Preliminary Study Information -->
+                            <!-- ========================= -->
+                            <group>
+                                <group>
+                                    <field name="property_usage_standard" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)"/>
+                                    <field name="verified_income" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="expected_full_lease_income" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="building_requirements" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="justice_index_average" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" class="oe_inline" />
+                                    <field name="comparison_average" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" class="oe_inline" />
+                                    <field name="plan_number" class="oe_inline" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)"/>
+                                    <field name="deed_number" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)"/>
+                                    <field name="deed_date" widget="hijri_date" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" invisible="0"/>
+                                    <field name="old_data_deed_date" invisible="1"/>
+                                    <field name="rooms_count" invisible="is_land_property_type" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="property_facade" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                </group>
+                                <group>
+                                    <field name="price_per_meter" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)"/>
+                                    <field name="final_property_price" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="properties_count" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="analyst_recommendation_preliminary" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="preliminary_study_status" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="analyst_rejection_notes" required="project_stage_selection == 'analyst' and project_path == 'standard' and preliminary_study_status == 'rejected'" readonly="is_entry_archive or ((project_stage_selection != 'analyst' or is_assign_detailed_study) or is_assigned_analyst == False)" />
+                                    <field name="old_data_verified_analyst_income_amount" invisible="not is_from_smart_sheet" readonly="1"/>
+                                    <field name="old_data_owner_attached_rental_amount" invisible="not is_from_smart_sheet" readonly="1"/>
+                                    <field name="old_data_rental_amount" invisible="not is_from_smart_sheet" readonly="1"/>
+                                    <field name="old_data_income_amount" invisible="not is_from_smart_sheet" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="detailed_study_page" string="Detailed Study Information"
+                            invisible="not is_from_smart_sheet and (project_stage_selection in ['entry_screen', 'data_completion', 'define_project_path_assign_analyst'] or not (project_path == 'specialized' or (project_path == 'standard' and is_assign_detailed_study == True and is_send_email_to_detailed_study == True)))">
+                            <notebook>
+                                <!-- ========================= -->
+                                <!-- 1. Property & Location -->
+                                <!-- ========================= -->
+                                <page string="Property and Location">                                    
+                                    <group>
+                                        <group>
+                                            <field name="limit_east" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="limit_west" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="limit_north" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="limit_south" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="street_length" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="property_facade" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" />
+                                            <field name="nearest_main_road" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="precise_plot_location_link" widget="url" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                        <group>
+                                            <field name="length_east" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="length_west" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="length_north" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="length_south" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="street" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- ========================= -->
+                                <!-- 2. Building & Licensing -->
+                                <!-- ========================= -->
+                                <page string="Building and Licensing">                                    
+                                    <group>
+                                        <group>
+                                            <field name="building_area" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="floors_count" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" invisible="is_land_property_type"/>
+                                            <field name="units_count" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" invisible="is_land_property_type"/>
+                                            <field name="rooms_count" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" invisible="is_land_property_type"/>
+                                            <field name="property_age_estimated" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" invisible="is_land_property_type"/>
+                                            <field name="land_nature" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="property_usage_detailed" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                        <group>
+                                            <field name="property_age_estimated" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" invisible="not is_from_smart_sheet or is_land_property_type"/>
+                                            <field name="building_license_number" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="building_license_date" widget="hijri_date" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="completion_certificate_issued" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="detailed_building_requirements" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="plan_number" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="deed_number" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="deed_date" widget="hijri_date" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- ========================= -->
+                                <!-- 3. Utilities & Services -->
+                                <!-- ========================= -->
+                                <page string="Services">                        
+                                    <group>
+                                        <group>
+                                            <field name="electricity_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="electricity_meters_count" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="electricity_meters_numbers" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="lighting_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="gas_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="ac_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="internet_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="telecom_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                        <group>
+                                            <field name="water_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="water_meters_count" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="water_meters_numbers" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="sewage_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="pavement_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="security_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="elevator_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="pool_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="garden_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="parking_service" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                    </group>
+                                    <group string="Warranties">
+                                        <field name="construction_warranty" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        <field name="electrical_warranty" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        <field name="plumbing_warranty" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        <field name="services_description" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                    </group>
+                                </page>
+                                <!-- ========================= -->
+                                <!-- 4. Financial & Valuation -->
+                                <!-- ========================= -->
+                                <page string="Financial and Valuation">
+                                    <group>
+                                        <group>
+                                            <field name="current_total_income" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="expected_total_income_full_rent" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="detailed_comparison_average" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline" />
+                                            <field name="justice_ministry_index_average" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline" />
+                                        </group>
+                                        <group>
+                                            <field name="lowest_price_per_meter_total_property" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="highest_price_per_meter_total_property" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="approximate_building_value_per_meter" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="approximate_land_value_per_meter" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                            <field name="detailed_price_per_meter" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                            <field name="detailed_final_property_price" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)" class="oe_inline"  widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                        </group>
+                                    </group>
+                                </page>
+                                <!-- ========================= -->
+                                <!-- 5. Analysis & Recommendation -->
+                                <!-- ========================= -->
+                                <page string="Analysis and Recommendation">
+                                    <group>
+                                        <group>
+                                            <field name="internal_strength_points" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="internal_weakness_points" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="external_strength_points" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="external_weakness_points" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                        <group>
+                                            <field name="property_usage_detailed" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="best_property_use" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="analyst_recommendation_details" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <field name="property_description" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                            <div>
+                                                <label string="Finishing Ratio" for="finishing_ratio"/>
+                                                <field name="finishing_ratio" class="oe_inline" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                                <span class="oe_inline">%</span>
+                                            </div>
+                                            <field name="detailed_analyst_notes" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_analyst', 'analyst') or is_assigned_detailed_analyst == False)"/>
+                                        </group>
+                                    </group>
+                                </page>
+
+                            </notebook>
+                        </page>
+                        <page name="cities_study_section" string="Cities Study Information" invisible="project_stage_selection in ['entry_screen', 'data_completion', 'define_project_path_assign_analyst'] or project_path != 'cities'">
+                            <!-- ========================= -->
+                            <!-- Cities Study Information -->
+                            <!-- ========================= -->
+                            <group>
+                                <group>
+                                    <field name="gps_coordinates" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="area" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="industrial_city" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="allocation_fees" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="annual_financial_fee" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="previous_activity" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="facility_investor" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="investor_contact_number" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                </group>
+
+                                <group>
+                                    <field name="has_movables" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="equipment" invisible="has_movables != 'yes'" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="vehicles" invisible="has_movables != 'yes'" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="machinery" invisible="has_movables != 'yes'" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="systems" invisible="has_movables != 'yes'" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                    <field name="analyst_notes" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                </group>
+                            </group>
+                            <group string="Required Documents" name="city_study_documents">
+                                <group>
+                                    <field name="coordinates_kmz_name" invisible="1"/>
+                                    <field name="coordinates_kmz" filename="coordinates_kmz_name" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" force_save="1"/>
+                                    <field name="facility_photo_ids" widget="many2many_binary" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                </group>
+                                <group>
+                                    <field name="current_income_file_name" invisible="1"/>
+                                    <field name="current_income_file" filename="current_income_file_name" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" force_save="1"/>
+                                    <field name="rent_contract_ids" widget="many2many_binary" readonly="is_entry_archive or (project_stage_selection != 'city_study_analyst' or is_assigned_analyst == False)" />
+                                </group>
+                            </group>
+                        </page>
+                        <page name="study_manager_approval_page" string="Study Approval" invisible="not is_from_smart_sheet and project_stage_selection in ('entry_screen', 'data_completion', 'define_project_path_assign_analyst','analyst', 'city_study_analyst', 'detailed_study_analyst')">
+                            <group invisible="not is_from_smart_sheet and not (
+                                    (project_path == 'standard' and is_assign_detailed_study == False)
+                                    or
+                                    (project_path == 'standard' and project_stage_selection == 'completed' and is_assign_detailed_study == True)
+                                )">
+                                <field name="standard_study_manager_approval" invisible="1"/>
+                                <field name="standard_study_manager_approval_rel"
+                                    readonly="is_entry_archive or (project_stage_selection != 'study_approval' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))"
+                                    required="project_stage_selection == 'study_approval' and project_path == 'standard' and not is_assign_detailed_study"
+                                    domain="[('code', 'in', ['completed', 'incomplete', 'reject_and_archive'])] if preliminary_study_status == 'rejected' else [('code', 'in', ['completed', 'incomplete'])]"
+                                    options="{'no_create': True, 'no_open': True}"/>
+                                <field name="standard_study_manager_note" required="standard_study_manager_approval in ('incomplete', 'reject_and_archive')" readonly="is_entry_archive or (project_stage_selection != 'study_approval' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" />
+                            </group>
+                            <group invisible="not is_from_smart_sheet and not (
+                                    project_path == 'specialized'
+                                    or
+                                    (project_path == 'standard' and is_assign_detailed_study == True)
+                                )">
+                                <field name="specialized_study_manager_approval" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_approval', 'study_approval') or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))" required="project_stage_selection in ('detailed_study_approval', 'study_approval') and (project_path == 'specialized' or is_assign_detailed_study)"/>
+                                <field name="specialized_study_manager_note" required="specialized_study_manager_approval == 'incomplete'" readonly="is_entry_archive or (project_stage_selection not in ('detailed_study_approval', 'study_approval') or (is_studies_manager_group == False and is_deputy_studies_manager_group == False))"/>
+                            </group>
+                            <group invisible="project_path != 'cities'">
+                                <field name="cities_study_manager_approval" readonly="is_entry_archive or (project_stage_selection != 'city_study_approval' or not is_city_studies_manager_group)" required="project_stage_selection == 'city_study_approval'" />
+                                <field name="cities_study_manager_note" required="cities_study_manager_approval == 'incomplete'" readonly="is_entry_archive or (project_stage_selection != 'city_study_approval' or not is_city_studies_manager_group)" />
+                            </group>
+                        </page>
+                        <page name="committee_decision_page" string="Committee Decision" invisible="project_stage_selection in ('entry_screen', 'data_completion', 'define_project_path_assign_analyst', 
+                                                                                                        'analyst', 'city_study_analyst',
+                                                                                                        'study_approval', 'city_study_approval', 'detailed_study_analyst', 'detailed_study_approval') or project_path == 'cities'">
+                            <group string="Committee Decision" col="6">
+                                <field name="committee_approved_users" widget="many2many_tags" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]" required="project_stage_selection == 'committee_decision' and committee_decision in ('direct_sale', 'auction')"/>
+                                <field name="committee_rejected_users" widget="many2many_tags" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]" required="project_stage_selection == 'committee_decision' and committee_decision == 'exclusion'"/>
+                                <field name="committee_postponed_users" widget="many2many_tags" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="marketing_duration_months" required="project_stage_selection == 'committee_decision' and committee_decision in ('direct_sale', 'auction')" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" />
+                                </group>
+                                <group>
+                                    <field name="committee_decision_date" required="project_stage_selection == 'committee_decision' and committee_decision in ('direct_sale', 'auction')" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" />
+                                </group>
+                            </group> 
+                            <group>
+                                <field name="committee_decision" invisible="1" />                                
+                                <field name="committee_decision_rel" required="project_stage_selection == 'committee_decision'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" options="{'no_create': True, 'no_open': True}" />
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="direct_sale_price_per_meter" required="project_stage_selection == 'committee_decision' and committee_decision == 'direct_sale'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="direct_sale_total_price" required="project_stage_selection == 'committee_decision' and committee_decision == 'direct_sale'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                </group>
+                                <group>
+                                    <field name="auction_price_per_meter" required="project_stage_selection == 'committee_decision' and committee_decision == 'auction'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="auction_total_price" required="project_stage_selection == 'committee_decision' and committee_decision == 'auction'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                </group>
+                            </group>
+                            <group>
+                                <field name="committe_notes" required="project_stage_selection == 'committee_decision' and committee_decision == 'exclusion'" readonly="is_entry_archive or (project_stage_selection != 'committee_decision' or is_committee_member_group == False)" />
+                            </group>
+                        </page>
+                        <page name="sales_manager_decision_page" string="Sales Manager Decision" invisible="project_stage_selection in ('entry_screen', 'data_completion', 'define_project_path_assign_analyst', 
+                                                                                                        'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval',
+                                                                                                        'committee_decision') or project_path == 'cities' or committee_decision == 'auction' or (committee_decision == 'exclusion' and customer_intent == 'auction')">
+                            <group>
+                                <field name="sales_manager_approval" invisible="1"/>
+                                <field name="sales_manager_approval_rel"
+                                    readonly="is_entry_archive or (project_stage_selection != 'sales_manager_decision' or is_sales_manager_group == False)"
+                                    required="project_stage_selection == 'sales_manager_decision'"
+                                    domain="[('code', 'in', ['committee_decision_accepted', 'committee_decision_rejected', 'request_transfer_direct_sale'])] if committee_decision == 'exclusion' else [('code', 'in', ['committee_decision_accepted', 'committee_decision_rejected'])]"
+                                    options="{'no_create': True, 'no_open': True}" />
+                                <field name="sales_manager_notes" readonly="is_entry_archive or (project_stage_selection != 'sales_manager_decision' or is_sales_manager_group == False)" />
+                            </group>
+                        </page>
+                        <page name="auctions_manager_decision_page" string="Auctions Manager Decision" invisible="project_stage_selection in ('entry_screen', 'data_completion', 'define_project_path_assign_analyst', 
+                                                                                                        'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval',
+                                                                                                        'committee_decision', 'sales_manager_decision') or project_path == 'cities' or committee_decision == 'direct_sale' or (committee_decision == 'exclusion' and customer_intent == 'direct_sale')">
+                            <group>
+                                <field name="auctions_manager_approval" invisible="1"/>
+                                <field name="auctions_manager_approval_rel"
+                                    readonly="is_entry_archive or (project_stage_selection != 'auctions_manager_decision' or is_auctions_manager_group == False)"
+                                    required="project_stage_selection == 'auctions_manager_decision'"
+                                    domain="[('code', 'in', ['committee_decision_accepted', 'committee_decision_rejected', 'request_transfer_auction'])] if committee_decision == 'exclusion' else [('code', 'in', ['committee_decision_accepted', 'committee_decision_rejected'])]"
+                                    options="{'no_create': True, 'no_open': True}" />
+                                <field name="auctions_manager_notes" readonly="is_entry_archive or (project_stage_selection != 'auctions_manager_decision' or is_auctions_manager_group == False)" />
+                            </group>
+                        </page>
+                        <page name="commercial_sector_manager_approval_page" string="Commercial Sector Manager Approval" invisible="project_stage_selection in ('entry_screen', 'data_completion', 'define_project_path_assign_analyst', 
+                                                                                                            'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval',
+                                                                                                            'committee_decision', 'sales_manager_decision', 'auctions_manager_decision') or project_path == 'cities'">
+                            <group>
+                                <field name="commercial_sector_manager_approval" invisible="1"/>
+                                <field name="commercial_sector_manager_approval_rel"
+                                    readonly="is_entry_archive or (project_stage_selection != 'commercial_manager_approval' or is_commercial_manager_group == False)"
+                                    required="project_stage_selection == 'commercial_manager_approval'"
+                                    domain="[('code', 'in', ['return_committee', 'transfer', 'declined', 'postponed'])] if committee_decision == 'exclusion' else [('code', 'in', ['approval', 'return_committee', 'transfer', 'declined', 'postponed'])]"
+                                    options="{'no_create': True, 'no_open': True}"/>
+                                <field name="commercial_sector_manager_reason" invisible="commercial_sector_manager_approval not in ('declined', 'transfer')" required="commercial_sector_manager_approval in ('declined', 'transfer')" readonly="is_entry_archive or (project_stage_selection != 'commercial_manager_approval' or is_commercial_manager_group == False)"/>
+                                <field name="commercial_sector_manager_notes" readonly="is_entry_archive or (project_stage_selection != 'commercial_manager_approval' or is_commercial_manager_group == False)" required="commercial_sector_manager_approval == 'return_committee'" />
+                                <field name="commercial_sector_advisor_decision" readonly="is_entry_archive" invisible="not is_partners_screen and not is_from_smart_sheet"/>
+                            </group>
+                        </page>
+                        <page name="partners_screen" string="Partners Screen" invisible="not is_partners_screen">
+                            <group>
+                                <field name="partner_name" readonly="is_entry_archive"/>
+                                <field name="partner_phone" readonly="is_entry_archive"/>
+                                <field name="partner_decision" readonly="is_entry_archive"/>
+                                <field name="partner_percentage_approval" readonly="is_entry_archive"/>
+                                <field name="transfer_to_year" readonly="is_entry_archive"/>
+                                <field name="partner_page_date" readonly="is_entry_archive"/>
+                                <field name="property_stage" readonly="is_entry_archive"/>
+                            </group>
+                        </page>
+                        <page name="negotiation_page" string="Negotiation" invisible="project_stage_selection not in ('assign_negotiator', 'negotiator',
+                                                                                                                        'manager_contract_approval', 'contract_followup', 'negotiation_approval',
+                                                                                                                        'contract_completion', 'completed', 'city_study_completed') or project_path == 'cities'">
+                            <group>
+                                <!-- Assigned Negotiator -->
+                                <group string="Negotiation Assignment">
+                                    <field name="assigned_negotiator" readonly="is_entry_archive or (project_stage_selection not in ('assign_negotiator', 'negotiator') or is_assign_negotiator_group == False)" required="project_stage_selection == 'assign_negotiator'"/>
+                                </group>
+                                <group string="Negotiation" invisible="project_stage_selection not in ('negotiator', 'manager_contract_approval',
+                                                                                                                        'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
+                                    <field name="is_sent_to_deputy_studies_manager" invisible="1"/>
+                                    <field name="final_owner_decision" invisible="1"/>
+                                    <field name="final_owner_decision_rel" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator'" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="final_owner_price_per_meter" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="final_owner_price" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="final_owner_price_diff_percentage" readonly="1" class="oe_inline"/>
+                                    <field name="owner_rejection_reasons" invisible="final_owner_decision != 'rejected'" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and (final_owner_decision == 'rejected' and is_manager_negotiator == False)"/>
+                                    <field name="negotiator_note" string="Negotiator Note" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" />
+                                </group>
+                                <group string="Sales Manager Negotiator" invisible="not (is_manager_negotiator == True and committee_decision == 'direct_sale')">
+                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'direct_sale'" />
+                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_price_diff_percentage" readonly="1" class="oe_inline"/>
+                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'direct_sale'"/>
+                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" />
+                                </group>
+                                <group string="Auctions Manager Negotiator" invisible="not (is_manager_negotiator == True and committee_decision == 'auction')">
+                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'auction'" />
+                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="manager_negotiator_price_diff_percentage" readonly="1" class="oe_inline"/>
+                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'auction'"/>
+                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" />
+                                </group>
+                            </group>
+                             <group name="deputy_studies_manager_approval_group" string="Deputy Studies Manager Approval"
+                                    invisible="project_stage_selection not in ('negotiator', 'manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities' or (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False)">
+                                 <field name="deputy_studies_manager_approval"
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_deputy_studies_manager_group == False)"
+                                        required="project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True"/>
+                                 <field name="deputy_studies_manager_notes"
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_deputy_studies_manager_group == False)"
+                                        required="project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'rejected'"/>
+                             </group>
+                             <group name="commercial_sector_manager_contract_approval_group" string="Commercial Sector Manager Approval for Contract" invisible="project_stage_selection not in ('manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
+                                <field name="commercial_sector_manager_contract_approval" readonly="is_entry_archive or (project_stage_selection != 'manager_contract_approval' or is_commercial_manager_group == False)" required="project_stage_selection == 'manager_contract_approval'" />
+                                <field name="commercial_sector_manager_contract_notes" readonly="is_entry_archive or (project_stage_selection != 'manager_contract_approval' or is_commercial_manager_group == False)" required="project_stage_selection == 'manager_contract_approval' and commercial_sector_manager_contract_approval == 'rejected'" />
+                            </group>
+                            <group name="negotiation_approval_group" string="Negotiation Approval" invisible="project_stage_selection not in ('negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
+                                <group invisible="committee_decision == 'auction'">
+                                    <field name="negotiation_studies_manager_approval" 
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiation_approval' or is_studies_manager_group == False)" />
+                                </group>
+                                <group invisible="committee_decision == 'direct_sale' and not negotiation_studies_manager_approval">
+                                    <field name="negotiation_commercial_manager_approval" 
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiation_approval' or is_commercial_manager_group == False)" />
+                                </group>
+                                <group>
+                                    <field name="negotiation_approval_notes" readonly="is_entry_archive or (project_stage_selection != 'negotiation_approval')" />
+                                </group>
+                            </group>
+                        </page>
+                        <!-- Page: Project Manager Assignment -->
+                        <page name="project_manager_assignment_page" string="Project Manager Assignment" invisible="project_stage_selection not in ('manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
+                            <group string="Project Manager Assignment">
+                                <field name="assigned_project_manager"
+                                       readonly="is_entry_archive or (project_stage_selection not in ['manager_contract_approval', 'contract_followup'] or (committee_decision == 'direct_sale' and is_sales_manager_group == False) or (committee_decision == 'auction' and is_auctions_manager_group == False))" 
+                                       options="{'no_open': True}"/>
+                            </group>
+                        </page>
+                        <!-- Page: Contract Follow-up (detailed client and property details) -->
+                        <page name="contract_page" string="Contracting" invisible="project_stage_selection not in ('contract_followup', 'negotiation_approval','contract_completion', 'completed') or project_path == 'cities'">
+                            <group string="Client Details">
+                                <group>
+                                    <field name="contract_client_name"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_client_identity"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_client_birthdate" widget="hijri_date"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                </group>
+                                <group>
+                                    <field name="contract_client_mobile"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_client_role"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                </group>
+                            </group>
+                            <group string="Agent Owner Details" invisible="contract_client_role != 'agent'">
+                                <group>
+                                    <field name="contract_owner_name"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_owner_identity"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_owner_birthdate" widget="hijri_date"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                </group>
+                                <group>
+                                    <field name="contract_owner_mobile"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                    <field name="contract_agency_deed_attachment_name" invisible="1" />
+                                </group>
+                            </group>
+                            <group string="Contract &amp; Financial Information">
+                                <group>
+                                    <field name="contract_agreed_price"
+                                        readonly="1" />
+                                    <field name="contract_duration"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                </group>
+                                <group>
+                                    <field name="contract_notes"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_assigned_negotiator == False and is_assigned_project_manager == False))" />
+                                </group>
+                            </group>
+                            <group string="Property Details (From Studies/Listing)">
+                                <group>
+                                    <field name="deed_number" readonly="1" force_save="1" />
+                                    <field name="property_type" readonly="1" force_save="1" />
+                                    <field name="property_age_estimated" readonly="1" force_save="1" invisible="is_land_property_type" />
+                                    <field name="rooms_count" readonly="1" force_save="1" invisible="is_land_property_type" />
+                                    <field name="area_sqm" readonly="1" force_save="1" />
+                                    <field name="property_facade" readonly="1" force_save="1" />
+                                    <field name="street_length" string="Street Length" readonly="1" force_save="1" />
+                                </group>
+                                <group>
+                                    <field name="electricity_service" readonly="1" force_save="1" />
+                                    <field name="lighting_service" readonly="1" force_save="1" />
+                                    <field name="water_service" readonly="1" force_save="1" />
+                                    <field name="sewage_service" readonly="1" force_save="1" />
+                                    <field name="pavement_service" readonly="1" force_save="1" />
+                                    <field name="city" readonly="1" force_save="1" />
+                                    <field name="district_id" readonly="1" force_save="1" />
+                                    <field name="plan_number" readonly="1" force_save="1" />
+                                    <field name="plot_number" readonly="1" force_save="1" />
+                                    <field name="location_url" widget="url" readonly="1" force_save="1" />
+                                </group>
+                            </group>
+                            <group string="Assigned Contract Manager">
+                                <group invisible="committee_decision != 'direct_sale'">
+                                    <field name="direct_sale_assigned_contract_manager"
+                                        domain="[('groups_id', 'in', [%(bussma_system.group_contract_manager)d])]"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_sales_manager_group == False and is_assigned_project_manager == False))" />
+                                </group>
+                                <group invisible="committee_decision != 'auction'">
+                                    <field name="auction_assigned_contract_manager"
+                                        domain="[('groups_id', 'in', [%(bussma_system.group_contract_manager)d])]"
+                                        readonly="is_entry_archive or (project_stage_selection != 'contract_followup' or (is_auctions_manager_group == False and is_assigned_project_manager == False))" />
+                                </group>
+                            </group>
+                        </page>
+                        <!-- Page: Contract Completion -->
+                        <page name="contract_completion_page" string="Contract Completion" invisible="project_stage_selection not in ('contract_completion', 'completed') or project_path == 'cities'">
+                            <group invisible="not is_from_smart_sheet and committee_decision != 'direct_sale'">
+                                <field name="direct_sale_contract_status"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_direct_sale_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and committee_decision == 'direct_sale'"/>
+                                <field name="direct_sale_contract_non_compliance_reasons"
+                                    invisible="not is_from_smart_sheet and direct_sale_contract_status != 'no'"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_direct_sale_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and direct_sale_contract_status == 'no'"/>
+                                <field name="direct_sale_contract_attachments"
+                                    widget="many2many_binary"
+                                    invisible="not is_from_smart_sheet and direct_sale_contract_status == 'no'"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_direct_sale_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and direct_sale_contract_status == 'yes'"/>
+                            </group>
+                            <group invisible="not is_from_smart_sheet and committee_decision != 'auction'">
+                                <field name="auction_contract_status"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_auction_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and committee_decision == 'auction'" />
+                                <field name="auction_contract_non_compliance_reasons"
+                                    invisible="not is_from_smart_sheet and auction_contract_status != 'no'"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_auction_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and auction_contract_status == 'no'"/>
+                                <field name="auction_contract_attachments"
+                                    widget="many2many_binary"
+                                    invisible="not is_from_smart_sheet and auction_contract_status == 'no'"
+                                    readonly="is_entry_archive or (project_stage_selection != 'contract_completion' or is_assigned_auction_contract_manager == False)"
+                                    required="project_stage_selection == 'contract_completion' and auction_contract_status == 'yes'"/>
+                            </group>
+                        </page>
+                        <page string="Stage History and Durations" name="stage_history_page">
+                            <group>
+                                <group string="Current and Total Duration">
+                                    <field name="current_stage_duration_days" string="Current Stage (Days)"/>
+                                    <field name="total_stage_duration_days" string="Total All Stages (Days)"/>
+                                </group>
+                            </group>
+                            <group string="Stages Durations - Standard and Specialized Paths (Days)" invisible="project_path == 'cities'">
+                                <group string="Study Stages">
+                                    <field name="duration_entry_screen_days"/>
+                                    <field name="duration_data_completion_days"/>
+                                    <field name="duration_define_path_days"/>
+                                    <field name="duration_preliminary_analyst_days"/>
+                                    <field name="duration_preliminary_study_approval_days"/>
+                                    <field name="duration_detailed_analyst_days"/>
+                                    <field name="duration_detailed_study_approval_days"/>
+                                    <field name="duration_committee_decision_days"/>
+                                    <field name="duration_sales_manager_decision_days"/>
+                                    <field name="duration_auctions_manager_decision_days"/>
+                                    <field name="duration_commercial_approval_days"/>
+                                </group>
+                                <group string="Negotiation and Contract Stages">
+                                    <field name="duration_assign_negotiator_days"/>
+                                    <field name="duration_negotiator_days"/>
+                                    <field name="duration_manager_contract_approval_days"/>
+                                    <field name="duration_contract_followup_days"/>
+                                    <field name="duration_negotiation_approval_days"/>
+                                    <field name="duration_contract_completion_days"/>
+                                </group>
+                            </group>
+                            <group string="Stages Durations - City Study Path (Days)" invisible="project_path != 'cities'">
+                                <group string="City Study Stages">
+                                    <field name="duration_entry_screen_days"/>
+                                    <field name="duration_data_completion_days"/>
+                                    <field name="duration_define_path_days"/>
+                                    <field name="duration_city_study_analyst_days"/>
+                                    <field name="duration_city_study_approval_days"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="stage_history_filter_stage_id"
+                                    string="Filter by Stage"
+                                    options="{'no_create': True, 'no_edit': True}"
+                                    placeholder="-- All Stages --"
+                                    domain="[('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'city_study_analyst', 'city_study_approval'])] if project_path == 'cities' else [('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval', 'committee_decision', 'sales_manager_decision', 'auctions_manager_decision', 'commercial_manager_approval', 'assign_negotiator', 'negotiator', 'manager_contract_approval', 'contract_followup', 'contract_completion'])]"/>
+                            </group>
+                            <field name="stage_history_filtered_ids" readonly="1">
+                                <list string="Stage Log" create="0" delete="0" edit="0" no_open="1">
+                                    <field name="stage_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="duration_days" string="Duration (Days)"/>
+                                    <field name="is_return" string="Return" widget="boolean"/>
+                                    <field name="returned_by_user_id" string="Returned By"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_entries_search" model="ir.ui.view">
+            <field name="name">entries.search</field>
+            <field name="model">entries</field>
+            <field name="arch" type="xml">
+                <search string="Entries Search">
+                    <field name="entrie_name"/>
+                    <field name="city_analyst_id"/>
+                    <field name="data_completer_id"/>
+                    <filter string="Sector Manager Stages" name="commercial_sector_stages"
+                            domain="[('project_stage_selection', 'in', ('commercial_manager_approval', 'manager_contract_approval'))]"/>
+                            
+                    <!-- Group By -->
+                    <group expand="0" string="Group By">
+                        <filter string="Project Stage" name="project_stage" context="{'group_by':'stage_id'}"/>
+                        <filter name="group_by_partner" context="{'group_by':'partner_id'}"/>
+                        <filter name="group_by_entered_by" context="{'group_by':'entered_by_id'}"/>
+                        <filter string="Data Completer" name="group_by_data_completer" context="{'group_by':'data_completer_id'}"/>
+                        <filter name="group_by_city" context="{'group_by':'city'}"/>
+                        <filter name="group_by_district" context="{'group_by':'district_id'}"/>
+                        <filter name="group_by_analyst" context="{'group_by':'analyst_id'}"/>
+                        <filter name="group_by_detailed_analyst" context="{'group_by':'detailed_analyst_id'}"/>
+                        <filter string="City Analyst" name="group_by_city_analyst" context="{'group_by':'city_analyst_id'}"/>
+                        <filter name="group_by_assigned_negotiator" context="{'group_by':'assigned_negotiator'}"/>
+                        <filter name="group_by_assigned_project_manager" context="{'group_by':'assigned_project_manager'}"/>
+                    </group>
+
+                    <!-- SearchPanel -->
+                    <searchpanel>
+                        <field name="stage_id" filter_bussma="1" icon="fa-tasks" enable_counters="1" select="multi"/>
+                        <field name="city" filter_bussma="1" icon="fa-building" enable_counters="1" select="multi"/>
+                        <field name="district_id" filter_bussma="1" icon="fa-map-marker" enable_counters="1" select="multi"/>
+                        <field name="partner_id" filter_bussma="1" icon="fa-users" enable_counters="1" select="multi"/>
+                        <field name="entered_by_id" filter_bussma="1" icon="fa-user-plus" enable_counters="1" select="multi"/>
+                        <field name="analyst_id" filter_bussma="1" icon="fa-user" enable_counters="1" select="multi"/>
+                        <field name="detailed_analyst_id" filter_bussma="1" icon="fa-user-circle" enable_counters="1" select="multi"/>
+                        <field name="city_analyst_id" filter_bussma="1" icon="fa-user" enable_counters="1" select="multi"/>
+                        <field name="assigned_negotiator" filter_bussma="1" icon="fa-handshake-o" enable_counters="1" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- Search + SearchPanel view for My Studies menu -->
+        <record id="view_my_studies_search" model="ir.ui.view">
+            <field name="name">entries.my_studies.search</field>
+            <field name="model">entries</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <search string="My Studies">
+                    <field name="name" string="Entry Name"/>
+                    <filter string="Group By Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                    <searchpanel>
+                        <field name="project_path" string="Path" icon="fa-road" enable_counters="1"/>
+                        <field name="stage_id" string="Stage" icon="fa-tasks" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

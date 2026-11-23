@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Committee Decision Type Data                                      -->
+        <!-- ================================================================ -->
+
+        <record id="committee_decision_direct_sale" model="committee.decision.type">
+            <field name="name">Direct Sale</field>
+            <field name="code">direct_sale</field>
+        </record>
+
+        <record id="committee_decision_auction" model="committee.decision.type">
+            <field name="name">Auction</field>
+            <field name="code">auction</field>
+        </record>
+
+        <record id="committee_decision_exclusion" model="committee.decision.type">
+            <field name="name">Exclusion</field>
+            <field name="code">exclusion</field>
+        </record>
+
+    </data>
+</odoo>

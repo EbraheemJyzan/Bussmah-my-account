@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bussma_marketing_request_wizard_form" model="ir.ui.view">
+            <field name="name">bussma.marketing.request.wizard.form</field>
+            <field name="model">bussma.marketing.request.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Marketing Request">
+                    <group>
+                        <group string="Opportunity and Client Info">
+                            <field name="opportunity_id" invisible="1"/>
+                            <field name="marketing_id" invisible="0" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="opportunity_name" readonly="1"/>
+                            <field name="partner_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="entry_ids" widget="many2many_tags" invisible="not entry_ids"/>
+                        </group>
+                        <group string="Property and Request Info">
+                            <field name="property_name"/>
+                            <field name="property_type_id"/>
+                            <field name="city_id"/>
+                            <field name="district_id"/>
+                            <field name="area_sqm"/>
+                            <field name="sale_price"/>
+                            <field name="name" readonly="1"/>
+                            <field name="opportunity_type" readonly="1"/>
+                            <field name="opportunity_source" readonly="1"/>
+                            <field name="source_other" readonly="1" invisible="opportunity_source != 'external_source'"/>
+                            <field name="source" invisible="1"/>
+                            <field name="priority" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Client Requirements">
+                        <field name="client_requirements" readonly="1"/>
+                    </group>
+                    <group string="Description / Notes">
+                        <field name="description" placeholder="Enter any additional details or notes for the marketing request..."/>
+                    </group>
+                    <group string="Attachments" name="attachments_group">
+                        <field name="attachments_ids" widget="many2many_binary"/>
+                    </group>
+                    <footer>
+                        <button name="action_update_marketing_request"
+                                string="Update Marketing Request"
+                                type="object"
+                                class="btn-primary"
+                                invisible="not marketing_id"/>
+                        <button name="action_create_marketing_request"
+                                string="Create New Marketing Request"
+                                type="object"
+                                class="btn-primary"
+                                invisible="marketing_id"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

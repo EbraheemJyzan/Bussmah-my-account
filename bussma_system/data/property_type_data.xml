@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="property_type_agricultural_land" model="property.type">
+            <field name="name">Agricultural Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_commercial_land" model="property.type">
+            <field name="name">Commercial Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_residential_land" model="property.type">
+            <field name="name">Residential Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_mixed_use_land" model="property.type">
+            <field name="name">Mixed-Use Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_commercial_plan" model="property.type">
+            <field name="name">Commercial Plan</field>
+        </record>
+        <record id="property_type_residential_plan" model="property.type">
+            <field name="name">Residential Plan</field>
+        </record>
+        <record id="property_type_mixed_use_plan" model="property.type">
+            <field name="name">Mixed-Use Plan</field>
+        </record>
+        <record id="property_type_commercial_building" model="property.type">
+            <field name="name">Commercial Building</field>
+        </record>
+        <record id="property_type_residential_building" model="property.type">
+            <field name="name">Residential Building</field>
+        </record>
+        <record id="property_type_mixed_use_building" model="property.type">
+            <field name="name">Mixed-Use Building</field>
+        </record>
+        <record id="property_type_commercial_block" model="property.type">
+            <field name="name">Commercial Block</field>
+        </record>
+        <record id="property_type_residential_block" model="property.type">
+            <field name="name">Residential Block</field>
+        </record>
+        <record id="property_type_mixed_use_block" model="property.type">
+            <field name="name">Mixed-Use Block</field>
+        </record>
+        <record id="property_type_other" model="property.type">
+            <field name="name">Other</field>
+        </record>
+        <record id="property_type_commercial" model="property.type">
+            <field name="name">Commercial</field>
+        </record>
+        <record id="property_type_residential_commercial" model="property.type">
+            <field name="name">Residential Commercial</field>
+        </record>
+        <record id="property_type_agricultural" model="property.type">
+            <field name="name">Agricultural</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_health_facility" model="property.type">
+            <field name="name">Health Facility</field>
+        </record>
+        <record id="property_type_industrial" model="property.type">
+            <field name="name">Industrial</field>
+        </record>
+        <record id="property_type_residential_commercial_office" model="property.type">
+            <field name="name">Residential Commercial Office</field>
+        </record>
+        <record id="property_type_educational_facility" model="property.type">
+            <field name="name">Educational Facility</field>
+        </record>
+        <record id="property_type_building" model="property.type">
+            <field name="name">Building</field>
+        </record>
+        <record id="property_type_villa" model="property.type">
+            <field name="name">Villa</field>
+        </record>
+        <record id="property_type_land" model="property.type">
+            <field name="name">Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_duplex" model="property.type">
+            <field name="name">Duplex</field>
+        </record>
+        <record id="property_type_hotel" model="property.type">
+            <field name="name">Hotel</field>
+        </record>
+        <record id="property_type_showroom" model="property.type">
+            <field name="name">Showroom</field>
+        </record>
+        <record id="property_type_rest_house" model="property.type">
+            <field name="name">Rest House</field>
+        </record>
+        <record id="property_type_farm" model="property.type">
+            <field name="name">Farm</field>
+        </record>
+        <record id="property_type_raw_land" model="property.type">
+            <field name="name">Raw Land</field>
+            <field name="is_land">True</field>
+        </record>
+        <record id="property_type_apartment" model="property.type">
+            <field name="name">Apartment</field>
+        </record>
+        <record id="property_type_factory" model="property.type">
+            <field name="name">Factory</field>
+        </record>
+        <record id="property_type_workshop" model="property.type">
+            <field name="name">Workshop</field>
+        </record>
+        <record id="property_type_warehouse" model="property.type">
+            <field name="name">Warehouse</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,259 @@
+2026-07-18 19:12:58,221 76930 INFO ? odoo: Odoo version 18.0 
+2026-07-18 19:12:58,221 76930 INFO ? odoo: Using configuration file at /home/masa/odoo_apps/config/odoo_18/bussma.conf 
+2026-07-18 19:12:58,222 76930 INFO ? odoo: addons paths: ['/home/masa/odoo_apps/odoo18/odoo/addons', '/home/masa/.local/share/Odoo/addons/18.0', '/home/masa/odoo_apps/odoo18/addons', '/home/masa/odoo_apps/repos_odoo_18/Bussmah', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Common', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Sales', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Purchases', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Odoo-Customization-Module/Stocks', '/home/masa/odoo_apps/repos_odoo_18/nomow_production/Accounting'] 
+2026-07-18 19:12:58,222 76930 INFO ? odoo: database: odoo@localhost:5432 
+2026-07-18 19:12:58,398 76930 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-07-18 19:12:58,406 76930 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltoimage binary at /usr/local/bin/wkhtmltoimage 
+2026-07-18 19:12:58,583 76930 INFO ? odoo.service.server: HTTP service (werkzeug) running on masa:3457 
+2026-07-18 19:13:00,866 76930 INFO ? odoo.modules.loading: loading 1 modules... 
+2026-07-18 19:13:00,875 76930 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-07-18 19:13:00,883 76930 WARNING ? odoo.modules.graph: module datetime_calendar: not installable, skipped 
+2026-07-18 19:13:00,915 76930 INFO ? odoo.modules.loading: loading 62 modules... 
+2026-07-18 19:13:02,085 76930 WARNING ? py.warnings: /home/masa/odoo_apps/odoo18/odoo/api.py:484: DeprecationWarning: The model odoo.addons.helpdesk_ticket.models.ticket is not overriding the create method in batch
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 128, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 363, in handle
+    super().handle()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/http/server.py", line 420, in handle_one_request
+    method()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2577, in __call__
+    response = request._serve_db()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 2081, in _serve_db
+    self.registry, cr_readwrite = self._open_registry()
+  File "/home/masa/odoo_apps/odoo18/odoo/http.py", line 1690, in _open_registry
+    registry = Registry(self.db)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 108, in __new__
+    return cls.new(db_name)
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/masa/odoo_apps/odoo18/odoo/tools/func.py", line 97, in locked
+    return func(inst, *args, **kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/registry.py", line 129, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 485, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 365, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/loading.py", line 186, in load_module_graph
+    load_openerp_module(package.name)
+  File "/home/masa/odoo_apps/odoo18/odoo/modules/module.py", line 384, in load_openerp_module
+    __import__(qualname)
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/__init__.py", line 3, in <module>
+    from . import models
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/__init__.py", line 3, in <module>
+    from . import ticket
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/ticket.py", line 6, in <module>
+    class HelpdeskTicket(models.Model):
+  File "/home/masa/odoo_apps/repos_odoo_18/Bussmah/helpdesk_ticket/models/ticket.py", line 35, in HelpdeskTicket
+    @api.model
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 431, in model
+    return model_create_single(method)
+  File "/home/masa/odoo_apps/odoo18/odoo/api.py", line 484, in model_create_single
+    warnings.warn(
+ 
+2026-07-18 19:13:02,110 76930 INFO ? odoo.modules.loading: 62 modules loaded in 1.20s, 0 queries (+0 extra) 
+2026-07-18 19:13:02,345 76930 WARNING ? odoo.fields: Field ks_dashboard_ninja.ai_dashboard.ks_dash_name: unknown parameter 'char', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,345 76930 WARNING ? odoo.fields: Field ks_dashboard_ninja.ai_dashboard.ks_menu_name: unknown parameter 'char', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,358 76930 WARNING ? odoo.fields: Field entries.verified_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,358 76930 WARNING ? odoo.fields: Field entries.expected_full_lease_income: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,358 76930 WARNING ? odoo.fields: Field entries.price_per_meter: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,358 76930 WARNING ? odoo.fields: Field entries.final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,359 76930 WARNING ? odoo.fields: Field entries.detailed_price_per_meter: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,359 76930 WARNING ? odoo.fields: Field entries.detailed_final_property_price: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,359 76930 WARNING ? odoo.fields: Field entries.allocation_fees: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,359 76930 WARNING ? odoo.fields: Field entries.annual_financial_fee: unknown parameter 'currency_field', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-07-18 19:13:02,386 76930 ERROR ? odoo.modules.loading: Some modules are not loaded, some dependencies or manifest may be missing: ['datetime_calendar'] 
+2026-07-18 19:13:02,387 76930 INFO ? odoo.modules.loading: Modules loaded. 
+2026-07-18 19:13:02,398 76930 INFO ? odoo.modules.registry: Registry loaded in 1.545s 
+2026-07-18 19:13:02,402 76930 INFO bussma_with_att odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-07-18 19:13:02,417 76930 INFO bussma_with_att odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2026-07-18 19:13:02,476 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:13:02] "GET /websocket?version=18.0-7 HTTP/1.1" 101 - 29 0.035 1.590
+2026-07-18 19:13:02,488 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:13:02] "POST /bus/has_missed_notifications HTTP/1.1" 200 - 2 0.003 0.005
+2026-07-18 19:13:02,623 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:13:02] "POST /web/dataset/call_kw/entries/web_save HTTP/1.1" 200 - 97 0.070 0.232
+2026-07-18 19:13:02,638 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:13:02] "POST /mail/thread/messages HTTP/1.1" 200 - 4 0.005 0.005
+2026-07-18 19:13:02,697 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:13:02] "POST /mail/thread/data HTTP/1.1" 200 - 36 0.027 0.029
+2026-07-18 19:13:02,803 76930 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2026-07-18 19:13:58,656 76930 INFO bussma_with_att odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) starting 
+2026-07-18 19:13:58,729 76930 INFO bussma_with_att odoo.addons.base.models.ir_attachment: filestore gc 6 checked, 0 removed 
+2026-07-18 19:13:58,737 76930 INFO bussma_with_att odoo.models.unlink: User #1 deleted ir.cron.progress records with IDs: [4904, 4905, 4906, 4907, 4908, 4909] 
+2026-07-18 19:13:58,812 76930 INFO bussma_with_att odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-07-18 19:13:58,820 76930 INFO bussma_with_att odoo.addons.base.models.res_users: GC 'res.users.apikeys' delete 0 entries 
+2026-07-18 19:13:58,826 76930 INFO bussma_with_att odoo.addons.base.models.res_device: GC device logs delete 1 entries 
+2026-07-18 19:13:58,830 76930 INFO bussma_with_att odoo.addons.base.models.res_device: GC device logs delete 0 entries 
+2026-07-18 19:13:58,847 76930 INFO bussma_with_att odoo.addons.base.models.res_users: GC 'auth_totp.device' delete 0 entries 
+2026-07-18 19:13:58,966 76930 INFO bussma_with_att odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2026-07-18 19:13:59,033 76930 INFO bussma_with_att odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) done in 0.377s 
+2026-07-18 19:13:59,044 76930 INFO bussma_with_att odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) processed 0 records, 0 records remaining 
+2026-07-18 19:13:59,047 76930 INFO bussma_with_att odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) completed 
+2026-07-18 19:14:34,680 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:34] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 19 0.015 0.046
+2026-07-18 19:14:37,714 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:37] "POST /web/dataset/call_kw/property.type/name_search HTTP/1.1" 200 - 3 0.002 0.006
+2026-07-18 19:14:39,343 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:39] "POST /web/dataset/call_kw/property.usage.type/name_search HTTP/1.1" 200 - 3 0.005 0.014
+2026-07-18 19:14:43,751 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:43] "POST /web/dataset/call_kw/entries/web_save HTTP/1.1" 200 - 32 0.017 0.052
+2026-07-18 19:14:43,762 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:43] "POST /mail/thread/messages HTTP/1.1" 200 - 3 0.002 0.005
+2026-07-18 19:14:43,791 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:43] "POST /mail/thread/data HTTP/1.1" 200 - 18 0.008 0.015
+2026-07-18 19:14:45,560 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:45] "POST /web/dataset/call_button/entries/action_send HTTP/1.1" 200 - 28 0.022 0.048
+2026-07-18 19:14:45,602 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:45] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.020 0.017
+2026-07-18 19:14:45,618 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:45] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 29 0.020 0.031
+2026-07-18 19:14:45,650 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:45] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 3 0.004 0.007
+2026-07-18 19:14:45,664 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:45] "POST /mail/thread/data HTTP/1.1" 200 - 18 0.009 0.017
+2026-07-18 19:14:58,147 76930 ERROR bussma_with_att odoo.tools.translate: malformed po file: unknown occurrence: model_terms:ir.ui.view,arch_db:nomow_web_theme_login 
+2026-07-18 19:14:58,147 76930 ERROR bussma_with_att odoo.tools.translate: malformed po file: unknown occurrence: model_terms:ir.ui.view,arch_db:nomow_web_theme_login 
+2026-07-18 19:14:58,147 76930 ERROR bussma_with_att odoo.tools.translate: malformed po file: unknown occurrence: model_terms:ir.ui.view,arch_db:nomow_web_theme_login 
+2026-07-18 19:14:59,618 76930 WARNING bussma_with_att odoo.addons.base.models.ir_asset: IrAsset: the path "nomow_web_theme/static/src/components/apps_menu_item/*" did not resolve to anything. 
+2026-07-18 19:14:59,732 76930 WARNING bussma_with_att odoo.addons.base.models.ir_asset: IrAsset: the path "nomow_web_theme/static/src/components/apps_menu_item/*" did not resolve to anything. 
+2026-07-18 19:14:59,764 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:14:59] "GET /odoo/action-585/9412 HTTP/1.1" 200 - 107 0.047 1.792
+2026-07-18 19:15:00,165 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /web/dataset/call_kw/res.users/search_read HTTP/1.1" 200 - 3 0.004 0.011
+2026-07-18 19:15:00,177 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /web/dataset/call_kw/res.company/search_read HTTP/1.1" 200 - 6 0.011 0.015
+2026-07-18 19:15:00,230 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /mail/data HTTP/1.1" 200 - 32 0.045 0.032
+2026-07-18 19:15:00,240 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /api/flag_image_url HTTP/1.1" 200 - 3 0.004 0.006
+2026-07-18 19:15:00,241 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "GET /odoo/action-585/9412?debug=1 HTTP/1.1" 200 - 26 0.022 0.049
+2026-07-18 19:15:00,491 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /web/dataset/call_kw/res.company/search_read HTTP/1.1" 200 - 2 0.005 0.012
+2026-07-18 19:15:00,491 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /web/dataset/call_kw/res.users/search_read HTTP/1.1" 200 - 3 0.009 0.010
+2026-07-18 19:15:00,519 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /mail/data HTTP/1.1" 200 - 19 0.021 0.022
+2026-07-18 19:15:00,546 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /api/flag_image_url HTTP/1.1" 200 - 2 0.001 0.004
+2026-07-18 19:15:00,648 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 13 0.020 0.029
+2026-07-18 19:15:00,751 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:00] "POST /web/action/load HTTP/1.1" 200 - 10 0.018 0.122
+2026-07-18 19:15:01,045 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "POST /web/dataset/call_kw/entries/get_views HTTP/1.1" 200 - 219 0.136 0.146
+2026-07-18 19:15:01,104 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 29 0.015 0.024
+2026-07-18 19:15:01,228 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.002 0.005
+2026-07-18 19:15:01,284 76930 WARNING ? odoo.modules.module: Missing `license` key in manifest for 'nomow_users_management', defaulting to LGPL-3 
+2026-07-18 19:15:01,310 76930 WARNING ? odoo.modules.module: Missing `license` key in manifest for 'partner_location_map', defaulting to LGPL-3 
+2026-07-18 19:15:01,318 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "POST /mail/thread/data HTTP/1.1" 200 - 18 0.016 0.021
+2026-07-18 19:15:01,367 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.019 0.029
+2026-07-18 19:15:01,372 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "GET /code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 303 - 5 0.007 0.768
+2026-07-18 19:15:01,994 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:01] "GET /ar/code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 404 - 330 0.116 0.497
+2026-07-18 19:15:10,145 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:10] "POST /web/action/load HTTP/1.1" 200 - 10 0.009 0.023
+2026-07-18 19:15:10,226 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:10] "POST /web/dataset/call_kw/res.config.settings/get_views HTTP/1.1" 200 - 19 0.009 0.040
+2026-07-18 19:15:10,293 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:10] "POST /web/dataset/call_kw/res.config.settings/onchange HTTP/1.1" 200 - 85 0.020 0.033
+2026-07-18 19:15:10,382 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:10] "POST /base_setup/demo_active HTTP/1.1" 200 - 3 0.002 0.004
+2026-07-18 19:15:10,882 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:10] "POST /base_setup/data HTTP/1.1" 200 - 6 0.002 0.479
+2026-07-18 19:15:13,382 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:13] "POST /web/action/load HTTP/1.1" 200 - 12 0.013 0.030
+2026-07-18 19:15:13,614 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:13] "POST /web/dataset/call_kw/res.users/get_views HTTP/1.1" 200 - 118 0.041 0.170
+2026-07-18 19:15:13,633 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:13] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 1 0.000 0.005
+2026-07-18 19:15:13,664 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:13] "POST /web/dataset/call_kw/res.users/web_search_read HTTP/1.1" 200 - 15 0.010 0.029
+2026-07-18 19:15:15,974 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:15] "POST /web/dataset/call_kw/res.users/web_read HTTP/1.1" 200 - 46 0.021 0.044
+2026-07-18 19:15:16,103 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:16] "GET /web/image/res.users/2/avatar_128?unique=1784402116014 HTTP/1.1" 200 - 9 0.009 0.026
+2026-07-18 19:15:24,306 76930 INFO bussma_with_att odoo.modules.registry: Caches invalidated, signaling through the database: ['default'] 
+2026-07-18 19:15:24,307 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:24] "POST /web/dataset/call_kw/res.users/web_save HTTP/1.1" 200 - 136 0.062 0.104
+2026-07-18 19:15:28,204 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "GET /odoo/action-585/9412?debug=1 HTTP/1.1" 200 - 76 0.033 0.137
+2026-07-18 19:15:28,474 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "GET /web/webclient/load_menus/0bf0ce7be23b6da8c47db757cc727753774fc6f0bb7e1129f61be361e9a8772d HTTP/1.1" 200 - 170 0.083 0.155
+2026-07-18 19:15:28,496 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "POST /mail/data HTTP/1.1" 200 - 33 0.037 0.036
+2026-07-18 19:15:28,513 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "POST /web/dataset/call_kw/res.company/search_read HTTP/1.1" 200 - 2 0.003 0.006
+2026-07-18 19:15:28,515 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "POST /web/dataset/call_kw/res.users/search_read HTTP/1.1" 200 - 3 0.002 0.008
+2026-07-18 19:15:28,559 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "POST /api/flag_image_url HTTP/1.1" 200 - 3 0.002 0.004
+2026-07-18 19:15:28,613 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "GET /code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 303 - 5 0.007 0.008
+2026-07-18 19:15:28,620 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 16 0.015 0.019
+2026-07-18 19:15:28,639 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:28] "POST /web/action/load HTTP/1.1" 200 - 10 0.010 0.024
+2026-07-18 19:15:29,021 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "POST /web/dataset/call_kw/entries/get_views HTTP/1.1" 200 - 192 0.250 0.120
+2026-07-18 19:15:29,101 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 36 0.028 0.032
+2026-07-18 19:15:29,270 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 3 0.011 0.009
+2026-07-18 19:15:29,299 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "GET /ar/code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 404 - 274 0.175 0.497
+2026-07-18 19:15:29,371 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "POST /mail/thread/data HTTP/1.1" 200 - 29 0.031 0.032
+2026-07-18 19:15:29,429 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:29] "POST /mail/thread/messages HTTP/1.1" 200 - 21 0.047 0.043
+2026-07-18 19:15:32,136 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:32] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 20 0.010 0.022
+2026-07-18 19:15:33,234 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:33] "POST /web/dataset/call_kw/project.path/name_search HTTP/1.1" 200 - 3 0.005 0.014
+2026-07-18 19:15:34,299 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:34] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 22 0.013 0.032
+2026-07-18 19:15:34,958 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:34] "POST /web/dataset/call_kw/res.users/name_search HTTP/1.1" 200 - 4 0.007 0.023
+2026-07-18 19:15:36,015 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:36] "POST /web/dataset/call_kw/request.stage/name_search HTTP/1.1" 200 - 2 0.002 0.008
+2026-07-18 19:15:36,882 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:36] "POST /web/dataset/call_kw/res.users/name_search HTTP/1.1" 200 - 4 0.008 0.021
+2026-07-18 19:15:39,332 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:39] "POST /web/dataset/call_kw/entries/web_save HTTP/1.1" 200 - 45 0.022 0.045
+2026-07-18 19:15:39,368 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:39] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.014 0.018
+2026-07-18 19:15:39,388 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:39] "POST /mail/thread/data HTTP/1.1" 200 - 17 0.012 0.023
+2026-07-18 19:15:46,597 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Mail (mail.mail) with ID 12003 and Message-Id '<410594197646554.1784402142.244213104248047-openerp-9412-entries@masa>' from 'abrahymjyzan306@gmail.com' to (redacted) "'*************06@gmail.com'" successfully sent 
+2026-07-18 19:15:46,598 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Total emails tried by SMTP: 1 
+2026-07-18 19:15:46,615 76930 INFO bussma_with_att odoo.models.unlink: User #2 deleted mail.mail records with IDs: [12003] 
+2026-07-18 19:15:46,644 76930 INFO bussma_with_att odoo.models.unlink: User #2 deleted mail.message records with IDs: [23693] 
+2026-07-18 19:15:46,645 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Sent batch 1 emails via mail server ID #1 
+2026-07-18 19:15:46,923 76930 INFO bussma_with_att odoo.addons.bussma_system.models.entries: [Email] Sent successfully to abrahymjyzan306@gmail.com 
+2026-07-18 19:15:46,988 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:46] "POST /web/dataset/call_button/entries/action_accept HTTP/1.1" 200 - 63 0.077 4.735
+2026-07-18 19:15:47,065 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:47] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.034 0.033
+2026-07-18 19:15:47,082 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:47] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 30 0.037 0.044
+2026-07-18 19:15:47,109 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:47] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.002 0.007
+2026-07-18 19:15:47,126 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:47] "POST /mail/thread/data HTTP/1.1" 200 - 17 0.010 0.018
+2026-07-18 19:15:52,499 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:52] "POST /web/dataset/call_kw/request.stage/name_search HTTP/1.1" 200 - 2 0.004 0.014
+2026-07-18 19:15:53,998 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:53] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 24 0.012 0.026
+2026-07-18 19:15:54,020 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:54] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.001 0.004
+2026-07-18 19:15:55,318 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:55] "POST /web/dataset/call_kw/project.path/name_search HTTP/1.1" 200 - 2 0.003 0.019
+2026-07-18 19:15:57,246 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:57] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 26 0.017 0.038
+2026-07-18 19:15:59,655 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:59] "POST /web/dataset/call_kw/entries/web_save HTTP/1.1" 200 - 36 0.019 0.046
+2026-07-18 19:15:59,696 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:59] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.017 0.020
+2026-07-18 19:15:59,703 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:15:59] "POST /mail/thread/data HTTP/1.1" 200 - 17 0.012 0.019
+2026-07-18 19:16:05,445 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Mail (mail.mail) with ID 12004 and Message-Id '<035307146869084.1784402161.835817098617554-openerp-9412-entries@masa>' from 'abrahymjyzan306@gmail.com' to (redacted) "'*************06@gmail.com'" successfully sent 
+2026-07-18 19:16:05,446 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Total emails tried by SMTP: 1 
+2026-07-18 19:16:05,459 76930 INFO bussma_with_att odoo.models.unlink: User #2 deleted mail.mail records with IDs: [12004] 
+2026-07-18 19:16:05,478 76930 INFO bussma_with_att odoo.models.unlink: User #2 deleted mail.message records with IDs: [23696] 
+2026-07-18 19:16:05,479 76930 INFO bussma_with_att odoo.addons.mail.models.mail_mail: Sent batch 1 emails via mail server ID #1 
+2026-07-18 19:16:05,769 76930 INFO bussma_with_att odoo.addons.bussma_system.models.entries: [Email] Sent successfully to abrahymjyzan306@gmail.com 
+2026-07-18 19:16:05,826 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:05] "POST /web/dataset/call_button/entries/action_accept HTTP/1.1" 200 - 54 0.059 3.965
+2026-07-18 19:16:05,909 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:05] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.037 0.036
+2026-07-18 19:16:05,936 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:05] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 30 0.040 0.060
+2026-07-18 19:16:06,005 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:06] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.002 0.019
+2026-07-18 19:16:06,037 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:06] "POST /mail/thread/data HTTP/1.1" 200 - 17 0.027 0.031
+2026-07-18 19:16:07,325 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "GET /odoo/action-585/9412?debug=1 HTTP/1.1" 200 - 26 0.011 0.035
+2026-07-18 19:16:07,639 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /web/dataset/call_kw/res.users/search_read HTTP/1.1" 200 - 3 0.004 0.012
+2026-07-18 19:16:07,639 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /web/dataset/call_kw/res.company/search_read HTTP/1.1" 200 - 2 0.002 0.014
+2026-07-18 19:16:07,664 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /mail/data HTTP/1.1" 200 - 19 0.014 0.023
+2026-07-18 19:16:07,700 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /api/flag_image_url HTTP/1.1" 200 - 2 0.001 0.003
+2026-07-18 19:16:07,756 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 9 0.005 0.014
+2026-07-18 19:16:07,756 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "GET /code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 303 - 1 0.001 0.004
+2026-07-18 19:16:07,787 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /web/action/load HTTP/1.1" 200 - 10 0.012 0.016
+2026-07-18 19:16:07,911 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "GET /ar/code_backend_theme/static/src/img/icons/close.png HTTP/1.1" 404 - 19 0.057 0.088
+2026-07-18 19:16:07,968 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:07] "POST /web/dataset/call_kw/entries/get_views HTTP/1.1" 200 - 47 0.045 0.113
+2026-07-18 19:16:08,023 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:08] "POST /web/dataset/call_kw/entries/web_read HTTP/1.1" 200 - 30 0.012 0.022
+2026-07-18 19:16:08,158 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:08] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.001 0.005
+2026-07-18 19:16:08,265 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:08] "POST /mail/thread/data HTTP/1.1" 200 - 17 0.006 0.012
+2026-07-18 19:16:08,320 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:16:08] "POST /mail/thread/messages HTTP/1.1" 200 - 19 0.011 0.029
+2026-07-18 19:17:54,723 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:54] "POST /web/dataset/call_kw/request.stage/name_search HTTP/1.1" 200 - 2 0.004 0.017
+2026-07-18 19:17:56,310 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:56] "POST /web/dataset/call_kw/request.stage/get_views HTTP/1.1" 200 - 22 0.010 0.022
+2026-07-18 19:17:56,328 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:56] "POST /web/dataset/call_kw/res.users/has_group HTTP/1.1" 200 - 1 0.001 0.005
+2026-07-18 19:17:56,329 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:56] "POST /web/dataset/call_kw/request.stage/web_search_read HTTP/1.1" 200 - 2 0.002 0.006
+2026-07-18 19:17:58,422 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:58] "POST /web/dataset/call_kw/request.stage/web_read HTTP/1.1" 200 - 2 0.006 0.008
+2026-07-18 19:17:58,489 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:58] "POST /web/dataset/call_kw/entries/onchange HTTP/1.1" 200 - 24 0.018 0.037
+2026-07-18 19:17:58,518 76930 INFO bussma_with_att werkzeug: 127.0.0.1 - - [18/Jul/2026 19:17:58] "POST /web/dataset/call_kw/request.stage/search_read HTTP/1.1" 200 - 2 0.001 0.005
+2026-07-18 19:28:12,503 76930 INFO ? odoo.service.server: Initiating shutdown 
+2026-07-18 19:28:12,503 76930 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-07-18 19:28:12,745 76930 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 3 connections  
+Exception in thread odoo.service.cron.cron0:
+Traceback (most recent call last):
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 541, in target
+    self.cron_thread(i)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 523, in cron_thread
+    _run_cron(cr)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 507, in _run_cron
+    pg_conn.poll()
+psycopg2.InterfaceError: connection already closed
+Exception in thread odoo.service.cron.cron1:
+Traceback (most recent call last):
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/home/masa/.pyenv/versions/3.11.3/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 541, in target
+    self.cron_thread(i)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 523, in cron_thread
+    _run_cron(cr)
+  File "/home/masa/odoo_apps/odoo18/odoo/service/server.py", line 507, in _run_cron
+    pg_conn.poll()
+psycopg2.InterfaceError: connection already closed

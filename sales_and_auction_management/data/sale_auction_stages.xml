@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- ================================================================ -->
+        <!-- Request Types for Sales and Auctions Management                    -->
+        <!-- ================================================================ -->
+        <!-- Private Auctions -->
+        <record id="p2_type_auction_pvt" model="request.type">
+            <field name="name">Auctions - Private</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="res_model">sales.auction.management</field>
+        </record>
+        <!-- Eanfaz Auctions -->
+        <record id="p2_type_auction_enf" model="request.type">
+            <field name="name">Auctions - Eanfaz</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="res_model">sales.auction.management</field>
+        </record>
+        <!-- Cities Auctions -->
+        <record id="p2_type_auction_city" model="request.type">
+            <field name="name">Auctions - Cities</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="res_model">sales.auction.management</field>
+        </record>
+        <!-- Sales -->
+        <record id="p2_type_sales" model="request.type">
+            <field name="name">Sales</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="res_model">sales.auction.management</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stages for path: Auctions - Private             -->
+        <!-- ================================================================ -->
+        <!-- ================================================================ -->
+        <!-- Stage: pvt Real Estate Portfolio                                  -->
+        <!-- Allowed: Auctions Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_auction_pvt_portfolio" model="request.stage">
+            <field name="name">Real Estate Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">1</field>
+            <field name="state">draft</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_auctions_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_pvt')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_pvt_portfolio</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stages for path: Auctions - Cities -->
+        <!-- ================================================================ -->
+        <!-- ================================================================ -->
+        <!-- Stage: city Portfolio -->
+        <!-- Allowed: Auctions Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_auction_city_portfolio" model="request.stage">
+            <field name="name">Cities Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">1</field>
+            <field name="state">draft</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_auctions_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_city')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_city_portfolio</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stages for path: Auctions - Eanfaz             -->
+        <!-- ================================================================ -->
+        <!-- ================================================================ -->
+        <!-- Stage: enf Real Estate Portfolio                                  -->
+        <!-- Allowed: Auctions Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_portfolio" model="request.stage">
+            <field name="name">Real Estate Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">1</field>
+            <field name="state">draft</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_auctions_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_portfolio</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: enf Project Manager                                        -->
+        <!-- Allowed: Project Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_project_manager" model="request.stage">
+            <field name="name">Project Manager</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">2</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_sales_project_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_project_manager</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: enf Studies Supervisor                                     -->
+        <!-- Allowed: Studies Manager / Deputy Studies Manager                 -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_supervisor" model="request.stage">
+            <field name="name">Studies Supervisor</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">3</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [
+                ref('bussma_system.role_studies_manager'),
+                ref('bussma_system.role_deputy_studies_manager'),
+            ])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_sup</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: enf Detailed Study                                         -->
+        <!-- Allowed: Analyst -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_detailed" model="request.stage">
+            <field name="name">Detailed Study for Government Auctions</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">4</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_analyst')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_detailed</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: enf Approval of Detailed Study                             -->
+        <!-- Allowed: Studies Manager / Deputy Studies Manager                 -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_detailed_appr" model="request.stage">
+            <field name="name">Approval of Detailed Study for Government Auctions</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">5</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [
+                ref('bussma_system.role_studies_manager'),
+                ref('bussma_system.role_deputy_studies_manager'),
+            ])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_detailed_appr</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: enf Study Approval by Project Manager                      -->
+        <!-- Allowed: Project Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_auction_enf_pm_appr" model="request.stage">
+            <field name="name">Study Approval by Project Manager</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">6</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_sales_project_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_auction_enf')])]"/>
+            <field name="sales_auction_stage_selection">p2_auction_enf_pm_appr</field>
+        </record>
+
+
+        <!-- ================================================================ -->
+        <!-- Stage: Direct Sales Portfolio                                     -->
+        <!-- Allowed: Sales Manager -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_sales_direct_mgmt" model="request.stage">
+            <field name="name">Direct Sales Portfolio</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">1</field>
+            <field name="state">draft</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_sales_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_sales')])]"/>
+            <field name="sales_auction_stage_selection">p2_sales_direct_mgmt</field>
+        </record>
+
+        <!-- sales Archive -->
+        <record id="p2_stage_sales_archive" model="request.stage">
+            <field name="name">Sales Archive</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">93</field>
+            <field name="state">done</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('p2_type_sales')])]"/>
+            <field name="sales_auction_stage_selection">p2_sales_archive</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: shared Contracting with Buyer                              -->
+        <!-- Allowed: Sales Project Manager                                    -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_shared_buyer_contracting" model="request.stage">
+            <field name="name">Contracting with Buyer</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">89</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_sales_project_manager')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [
+                ref('p2_type_auction_pvt'),
+                ref('p2_type_auction_enf'),
+                ref('p2_type_auction_city'),
+                ref('p2_type_sales'),
+            ])]"/>
+            <field name="sales_auction_stage_selection">p2_shared_buyer_contracting</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: shared Sales & Finance                                     -->
+        <!-- Allowed: Commercial Sector Accountant -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_shared_sales_fin" model="request.stage">
+            <field name="name">Sales and Finance</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">90</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_commercial_sector_accountant')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [
+                ref('p2_type_auction_pvt'),
+                ref('p2_type_auction_enf'),
+                ref('p2_type_auction_city'),
+                ref('p2_type_sales'),
+            ])]"/>
+            <field name="sales_auction_stage_selection">p2_shared_sales_fin</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: shared Collection & Evacuation                             -->
+        <!-- Allowed: Collection and Evacuation Officer -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_shared_col_trans" model="request.stage">
+            <field name="name">Collection and Evacuation</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">91</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_collection_evacuation_officer')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [
+                ref('p2_type_auction_pvt'),
+                ref('p2_type_auction_enf'),
+                ref('p2_type_auction_city'),
+                ref('p2_type_sales'),
+            ])]"/>
+            <field name="sales_auction_stage_selection">p2_shared_col_trans</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage: Sector Manager Approval -->
+        <!-- Shown only when collected_amount != selling_price                -->
+        <!-- via _get_extra_domain override                                   -->
+        <!-- ================================================================ -->
+        <record id="p2_stage_sector_manager_approval" model="request.stage">
+            <field name="name">Sector Manager Approval</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">92</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('sales_and_auction_management.role_collection_evacuation_officer')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [
+                ref('p2_type_auction_pvt'),
+                ref('p2_type_auction_enf'),
+                ref('p2_type_auction_city'),
+                ref('p2_type_sales'),
+            ])]"/>
+            <field name="sales_auction_stage_selection">p2_shared_sector_manager_approval</field>
+            <field name="hide_on_flag">True</field>
+        </record>
+        <!-- shared Auctions Archive -->
+        <record id="p2_stage_shared_archive" model="request.stage">
+            <field name="name">Auctions Archive</field>
+            <field name="res_model">sales.auction.management</field>
+            <field name="res_model_id" ref="model_sales_auction_management"/>
+            <field name="sequence">93</field>
+            <field name="state">done</field>
+            <field name="request_type_ids" eval="[(6, 0, [
+                ref('p2_type_auction_pvt'),
+                ref('p2_type_auction_enf'),
+                ref('p2_type_auction_city'),
+            ])]"/>
+            <field name="sales_auction_stage_selection">p2_shared_archive</field>
+        </record>
+    </data>
+</odoo>

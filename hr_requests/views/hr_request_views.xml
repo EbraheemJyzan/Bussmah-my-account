@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree / List View -->
+    <record id="view_hr_request_tree" model="ir.ui.view">
+        <field name="name">hr.request.tree</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <list string="HR Requests">
+                <field name="name"/>
+                <field name="employee_classification"/>
+                <field name="category_id"/>
+                <field name="type_id"/>
+                <field name="date"/>
+                <field name="stage_id" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hr_request_form" model="ir.ui.view">
+        <field name="name">hr.request.form</field>
+        <field name="model">hr.request</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="HR Request">
+                <header>
+                    <!-- Hidden fields needed for button visibility logic -->
+                    <field name="hr_stage_selection" invisible="1"/>
+                    <field name="stage_id" invisible="1"/>
+                    <field name="has_dept_approvals" invisible="1"/>
+                    <field name="allowed_dept_line_ids" invisible="1"/>
+                    <field name="returned_from_stage_id" invisible="1"/>
+                    <field name="returned_from_dept_notes" invisible="1"/>
+                    <field name="show_dept_commercial" invisible="1"/>
+                    <field name="show_dept_projects" invisible="1"/>
+                    <field name="show_dept_marketing" invisible="1"/>
+                    <field name="show_dept_legal" invisible="1"/>
+                    <field name="show_dept_finance" invisible="1"/>
+                    <field name="show_dept_hr" invisible="1"/>
+                    <field name="show_dept_assets" invisible="1"/>
+                    <field name="show_dept_it" invisible="1"/>
+                    <field name="show_dept_executive" invisible="1"/>
+                    <field name="is_last_dept_approval" invisible="1"/>
+                    <field name="is_system" invisible="1"/>
+                    <field name="is_hr_manager" invisible="1"/>
+                    <field name="is_dept_commercial_manager_logged" invisible="1"/>
+                    <field name="is_dept_projects_manager_logged" invisible="1"/>
+                    <field name="is_dept_marketing_manager_logged" invisible="1"/>
+                    <field name="is_dept_legal_manager_logged" invisible="1"/>
+                    <field name="is_dept_finance_manager_logged" invisible="1"/>
+                    <field name="is_dept_hr_manager_logged" invisible="1"/>
+                    <field name="is_dept_assets_manager_logged" invisible="1"/>
+                    <field name="is_dept_it_manager_logged" invisible="1"/>
+                    <field name="is_dept_executive_manager_logged" invisible="1"/>
+                    <field name="is_current_dept_manager_logged" invisible="1"/>
+
+                    <!-- Stage 1: Draft -> Submit -->
+                    <button name="action_submit"
+                            string="Submit Request"
+                            type="object"
+                            class="btn-primary"
+                            invisible="hr_stage_selection != 'hr_draft'"
+                            confirm="Are you sure you want to submit the request?"/>
+
+                    <!-- Dynamic dept stages: Send to Next Department / Send to HR / Reject -->
+                    <button name="action_dept_approve"
+                            string="Send to Next Department"
+                            type="object"
+                            class="btn-success"
+                            invisible="hr_stage_selection not in ['hr_dept_commercial','hr_dept_projects','hr_dept_marketing','hr_dept_legal','hr_dept_finance','hr_dept_hr','hr_dept_assets','hr_dept_it','hr_dept_executive'] or is_last_dept_approval or (not is_current_dept_manager_logged and not is_hr_manager)"
+                            confirm="Are you sure you want to approve and send to the next department?"/>
+                    <button name="action_dept_approve"
+                            string="Send to HR"
+                            type="object"
+                            class="btn-success"
+                            invisible="hr_stage_selection not in ['hr_dept_commercial','hr_dept_projects','hr_dept_marketing','hr_dept_legal','hr_dept_finance','hr_dept_hr','hr_dept_assets','hr_dept_it','hr_dept_executive'] or not is_last_dept_approval or (not is_current_dept_manager_logged and not is_hr_manager)"
+                            confirm="Are you sure you want to approve and send to HR?"/>
+                    <button name="action_dept_reject"
+                            string="Reject and Return"
+                            type="object"
+                            class="btn-danger"
+                            invisible="hr_stage_selection not in ['hr_dept_commercial','hr_dept_projects','hr_dept_marketing','hr_dept_legal','hr_dept_finance','hr_dept_hr','hr_dept_assets','hr_dept_it','hr_dept_executive'] or (not is_current_dept_manager_logged and not is_hr_manager)"
+                            confirm="Are you sure you want to reject this request and return it to submitted stage?"/>
+
+                    <!-- Stage: Submitted -> Normal flow (Send for Approvals) -->
+                    <button name="action_send_to_departments"
+                            string="Send for Approvals"
+                            type="object"
+                            class="btn-primary"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection != 'hr_submitted' or not has_dept_approvals or returned_from_stage_id"
+                            confirm="Are you sure you want to send the request for department approvals?"/>
+                    <button name="action_send_to_departments"
+                            string="Send to HR"
+                            type="object"
+                            class="btn-primary"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection != 'hr_submitted' or has_dept_approvals or returned_from_stage_id"
+                            confirm="Are you sure you want to send the request to HR Approval?"/>
+
+                    <!-- Stage: Submitted (Returned from Department Rejection) -> Re-send to Dept or Reject -->
+                    <button name="action_resend_to_dept"
+                            string="Re-send to Department"
+                            type="object"
+                            class="btn-primary"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection != 'hr_submitted' or not returned_from_stage_id"
+                            confirm="Are you sure you want to re-send this request back to the department?"/>
+
+                    <!-- Stage: HR Approval -> Approve Request -->
+                    <button name="action_approve"
+                            string="Approve Request"
+                            type="object"
+                            class="btn-success"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection != 'hr_approval'"
+                            confirm="Are you sure you want to approve this request?"/>
+
+                    <button name="action_reject"
+                            string="Reject Request"
+                            type="object"
+                            class="btn-danger"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection not in ('hr_submitted', 'hr_approval')"
+                            confirm="Are you sure you want to reject this request?"/>
+
+                    <!-- Reset to Draft -->
+                    <button name="action_reset_to_draft"
+                            string="Reset to Draft"
+                            type="object"
+                            groups="hr_requests.group_hr_request_manager"
+                            invisible="hr_stage_selection not in ('hr_approved', 'hr_rejected')"
+                            confirm="Are you sure you want to reset the request to draft?"/>
+
+                    <field name="dept_line_id" widget="statusbar" domain="[('id', 'in', allowed_dept_line_ids)]" options="{'clickable': false}"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <!-- Warning for Bank Account Change Request -->
+                    <div class="alert alert-warning" role="alert" invisible="request_type_code != 'change_bank_account'">
+                        Bank account must belong to the requesting employee
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="is_manager" invisible="1"/>
+                            <field name="employee_classification" widget="radio" options="{'horizontal': true}" invisible="not is_manager" readonly="hr_stage_selection not in ('hr_draft', 'hr_submitted')"/>
+                            <field name="category_id" domain="['|', ('employee_classification', '=', 'employee'), ('employee_classification', '=', employee_classification)]" options="{'no_create': True,'no_open': True}" required="1" readonly="hr_stage_selection not in ('hr_draft', 'hr_submitted')"/>
+                            <field name="type_id" domain="[('category_id', '=', category_id)]" options="{'no_create': True,'no_open': True}" required="1" readonly="hr_stage_selection not in ('hr_draft', 'hr_submitted')"/>
+                            <field name="request_type_code" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="user_id" options="{'no_open': True}" readonly="hr_stage_selection not in ('hr_draft', 'hr_submitted')"/>
+                            <field name="date" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        </group>
+                    </group>
+
+                    <!-- Request Specific Fields: Recruitment Request -->
+                    <group string="Recruitment Details" invisible="request_type_code != 'recruitment_request'">
+                        <group>
+                            <field name="office_department_id" options="{'no_create': True, 'no_open': True}" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="job_title" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="recruitment_structure" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="recruitment_type" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        </group>
+                        <group>
+                            <field name="branch" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="qualification" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="required_experience" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                            <field name="required_skills" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        </group>
+                    </group>
+                    <group string="Job Requirements &amp; Justifications" invisible="request_type_code != 'recruitment_request'">
+                        <field name="required_tasks" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="reason_for_need" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                    </group>
+
+                    <!-- Request Specific Fields: Other Types -->
+                    <group string="Request Details" invisible="request_type_code == 'recruitment_request'">
+                        <field name="request_details" invisible="request_type_code in ('salary_definition', 'id_card', 'change_bank_account', 'flight_ticket', 'training_course') or not type_id" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+
+                        <!-- Salary Certificate -->
+                        <field name="directed_to" invisible="request_type_code != 'salary_definition'" readonly="hr_stage_selection not in ('hr_draft', 'hr_submitted')"/>
+
+                        <!-- ID Card -->
+                        <field name="job_title" invisible="request_type_code != 'id_card'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="card_name" invisible="request_type_code != 'id_card'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="employee_number" invisible="request_type_code != 'id_card'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+
+                        <!-- Bank Account Change -->
+                        <field name="new_bank_name" invisible="request_type_code != 'change_bank_account'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="new_iban" invisible="request_type_code != 'change_bank_account'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+
+                        <!-- Flight Ticket -->
+                        <field name="start_date" invisible="request_type_code != 'flight_ticket'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="end_date" invisible="request_type_code != 'flight_ticket'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+
+                        <!-- Training Course -->
+                        <field name="course_category" invisible="request_type_code != 'training_course'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="course_name" invisible="request_type_code != 'training_course'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="price" invisible="request_type_code != 'training_course'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                        <field name="training_entity" invisible="request_type_code != 'training_course'" readonly="hr_stage_selection in ('hr_approved', 'hr_rejected')"/>
+                    </group>
+
+                    <group string="Department Approvals Workflow"
+                           invisible="is_clearance or hr_stage_selection != 'hr_submitted' or not is_hr_manager">
+                        <div class="alert alert-info" role="alert"
+                             invisible="is_clearance or hr_stage_selection != 'hr_submitted' or not is_hr_manager">
+                            Add the required departments for request approval and sequence them as needed.
+                            If no departments are added, the request will proceed directly to final approval.
+                        </div>
+                        <field name="dept_approval_ids"
+                               domain="[('is_fixed', '=', False)]"
+                               nolabel="1"
+                               invisible="is_clearance or hr_stage_selection != 'hr_submitted' or not is_hr_manager"
+                               readonly="hr_stage_selection != 'hr_submitted' or not is_hr_manager"
+                               options="{'no_open': True}"
+                               widget="one2many_list">
+                            <list editable="bottom"
+                                  draggable="1"
+                                  decoration-success="state == 'approved'"
+                                  decoration-danger="state == 'rejected'"
+                                  decoration-muted="state == 'pending'">
+                                <field name="sequence" widget="handle"/>
+                                <field name="department" required="1"/>
+                            </list>
+                        </field>
+                    </group>
+                    <!-- Resend Note Input Alert (when returned to submitted stage) -->
+                    <div class="alert alert-warning" role="alert"
+                         invisible="not returned_from_stage_id or hr_stage_selection != 'hr_submitted'">
+                        <div class="fw-bold mb-2">
+                            This request was returned from <field name="returned_from_stage_id" readonly="1" class="d-inline fw-bold" options="{'no_open': True}"/> with rejection. You may enter a note below and re-send it back to the department, or reject the request.
+                        </div>
+                        <div invisible="not returned_from_dept_notes" class="mb-2">
+                            <strong>Department Rejection Note: </strong><field name="returned_from_dept_notes" readonly="1" class="d-inline text-danger"/>
+                        </div>
+                        <field name="resend_notes" readonly="not is_hr_manager" placeholder="Enter note for the department before re-sending..."/>
+                    </div>
+                    <!-- Resend Note Display Alert (when re-sent back to department) -->
+                    <div class="alert alert-warning" role="alert"
+                         invisible="not resend_notes or hr_stage_selection == 'hr_submitted' or hr_stage_selection in ('hr_draft', 'hr_approved', 'hr_rejected')">
+                        <strong>Resend Note: </strong><field name="resend_notes" readonly="1" class="d-inline"/>
+                    </div>
+                    <notebook>
+                        <page string="Commercial Sector Approval" invisible="not show_dept_commercial or (hr_stage_selection != 'hr_dept_commercial' and not is_hr_manager) or (not is_dept_commercial_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_commercial_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_commercial_manager_approval" readonly="hr_stage_selection != 'hr_dept_commercial' or not is_dept_commercial_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_commercial_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_commercial' or not is_dept_commercial_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Project Management Approval" invisible="not show_dept_projects or (hr_stage_selection != 'hr_dept_projects' and not is_hr_manager) or (not is_dept_projects_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_projects_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_projects_manager_approval" readonly="hr_stage_selection != 'hr_dept_projects' or not is_dept_projects_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_projects_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_projects' or not is_dept_projects_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Marketing Management Approval" options="{'no_open': True}" invisible="not show_dept_marketing or (hr_stage_selection != 'hr_dept_marketing' and not is_hr_manager) or (not is_dept_marketing_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_marketing_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_marketing_manager_approval" readonly="hr_stage_selection != 'hr_dept_marketing' or not is_dept_marketing_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_marketing_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_marketing' or not is_dept_marketing_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Legal Management Approval" invisible="not show_dept_legal or (hr_stage_selection != 'hr_dept_legal' and not is_hr_manager) or (not is_dept_legal_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_legal_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_legal_manager_approval" readonly="hr_stage_selection != 'hr_dept_legal' or not is_dept_legal_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_legal_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_legal' or not is_dept_legal_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Financial Management Approval" invisible="not show_dept_finance or (hr_stage_selection != 'hr_dept_finance' and not is_hr_manager) or (not is_dept_finance_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_finance_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_finance_manager_approval" readonly="hr_stage_selection != 'hr_dept_finance' or not is_dept_finance_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_finance_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_finance' or not is_dept_finance_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Human Resources Approval" invisible="not show_dept_hr or (hr_stage_selection != 'hr_dept_hr' and not is_hr_manager) or (not is_dept_hr_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_hr_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_hr_manager_approval" readonly="hr_stage_selection != 'hr_dept_hr' or not is_dept_hr_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_hr_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_hr' or not is_dept_hr_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Assets &amp; Investment Approval" invisible="not show_dept_assets or (hr_stage_selection != 'hr_dept_assets' and not is_hr_manager) or (not is_dept_assets_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_assets_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_assets_manager_approval" readonly="hr_stage_selection != 'hr_dept_assets' or not is_dept_assets_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_assets_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_assets' or not is_dept_assets_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="IT Management Approval" invisible="not show_dept_it or (hr_stage_selection != 'hr_dept_it' and not is_hr_manager) or (not is_dept_it_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_it_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_it_manager_approval" readonly="hr_stage_selection != 'hr_dept_it' or not is_dept_it_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_it_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_it' or not is_dept_it_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Executive Management Approval" invisible="not show_dept_executive or (hr_stage_selection != 'hr_dept_executive' and not is_hr_manager) or (not is_dept_executive_manager_logged and not is_hr_manager)">
+                            <group>
+                                <group>
+                                    <field name="dept_executive_manager_id" options="{'no_open': True}" readonly="not is_system"/>
+                                    <field name="dept_executive_manager_approval" readonly="hr_stage_selection != 'hr_dept_executive' or not is_dept_executive_manager_logged"/>
+                                </group>
+                                <group>
+                                    <field name="dept_executive_manager_notes" placeholder="Enter notes..." readonly="hr_stage_selection != 'hr_dept_executive' or not is_dept_executive_manager_logged"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Additional Notes" invisible="not is_hr_manager or hr_stage_selection in ('hr_approved', 'hr_rejected')">
+                            <field name="notes" placeholder="Enter any additional notes here..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_hr_request_search" model="ir.ui.view">
+        <field name="name">hr.request.search</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <search string="Search Requests">
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="type_id"/>
+                <field name="stage_id"/>
+                <filter string="My Requests" name="my_requests" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Employee Request" name="employee_requests" domain="[('employee_classification', '=', 'employee')]"/>
+                <filter string="Manager Request" name="manager_requests" domain="[('employee_classification', '=', 'manager')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Employee Classification" name="group_classification" context="{'group_by': 'employee_classification'}"/>
+                    <filter string="Request Category (Package)" name="group_category" context="{'group_by': 'category_id'}"/>
+                    <filter string="Request Type" name="group_type" context="{'group_by': 'type_id'}"/>
+                    <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_hr_request_kanban" model="ir.ui.view">
+        <field name="name">hr.request.kanban</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" class="o_kanban_small_column" group_create="false" records_draggable="false" group_delete="false" edit="false" delete="false">
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="type_id"/>
+                <field name="user_id"/>
+                <field name="stage_id"/>
+                <field name="hr_stage_selection"/>
+                <field name="activity_state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="o_kanban_record_headings">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="category_id"/>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="type_id"/>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mt-2">
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="activity_ids" widget="kanban_activity"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_hr_request" model="ir.actions.act_window">
+        <field name="name">HR Requests</field>
+        <field name="res_model">hr.request</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_clearance', '=', False)]</field>
+        <field name="search_view_id" ref="view_hr_request_search"/>
+        <field name="context">{'search_default_my_requests': 1, 'default_is_clearance': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new HR request
+            </p>
+        </field>
+    </record>
+
+    <record id="action_hr_request_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_hr_request_kanban"/>
+        <field name="act_window_id" ref="action_hr_request"/>
+    </record>
+
+    <record id="action_hr_request_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_hr_request_tree"/>
+        <field name="act_window_id" ref="action_hr_request"/>
+    </record>
+
+    <record id="action_hr_request_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hr_request_form"/>
+        <field name="act_window_id" ref="action_hr_request"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_tap" inherit_id="web.layout" name="Customize Favicon and Title">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <t t-set="comp" t-value="logo_company or (request and request.env and request.env.company)"/>
+            <t t-set="site" t-value="cur_website or website or (request and request.env and 'website' in request.env and request.env['website'].get_current_website(fallback=False))"/>
+            <!-- 1. Multi-Website: Use current website logo if set (passed from qcontext or request) -->
+            <link t-if="site and site.logo" type="image/x-icon" rel="shortcut icon" t-attf-href="/web/image/website/#{site.id}/logo"/>
+            <!-- 2. Company logo fallback (passed from qcontext) -->
+            <link t-elif="comp and comp.logo" type="image/x-icon" rel="shortcut icon" t-attf-href="/web/image/res.company/#{comp.id}/logo"/>
+            <!-- 3. Module fallback icon -->
+            <link t-else="" type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/web/static/img/favicon.ico'"/>
+        </xpath>
+    </template>
+
+</odoo>

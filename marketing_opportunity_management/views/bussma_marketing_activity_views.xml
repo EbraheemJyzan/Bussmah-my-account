@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for bussma.marketing.activity -->
+        <record id="view_bussma_marketing_activity_form" model="ir.ui.view">
+            <field name="name">bussma.marketing.activity.form</field>
+            <field name="model">bussma.marketing.activity</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Activity">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Marketing Activity Name..."/></h1>
+                            <h3><field name="code" readonly="0"/></h3>
+                        </div>
+                        <group>
+                            <field name="department_ids" widget="many2many_checkboxes"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View for bussma.marketing.activity -->
+        <record id="view_bussma_marketing_activity_tree" model="ir.ui.view">
+            <field name="name">bussma.marketing.activity.tree</field>
+            <field name="model">bussma.marketing.activity</field>
+            <field name="arch" type="xml">
+                <list string="Marketing Activities" editable="bottom" delete="false">
+                    <field name="code" readonly="1"/>
+                    <field name="name"/>
+                    <field name="department_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action for bussma.marketing.activity -->
+        <record id="action_bussma_marketing_activity" model="ir.actions.act_window">
+            <field name="name">Marketing Activities</field>
+            <field name="res_model">bussma.marketing.activity</field>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>

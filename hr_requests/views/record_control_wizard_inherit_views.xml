@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_record_control_wizard_form_hr" model="ir.ui.view">
+        <field name="name">record.control.wizard.form.hr</field>
+        <field name="model">record.control.wizard</field>
+        <field name="inherit_id" ref="sales_and_auction_management.view_record_control_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_delete']" position="before">
+                <field name="hr_request_id" invisible="control_type != 'hr_request'" required="control_type == 'hr_request'" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

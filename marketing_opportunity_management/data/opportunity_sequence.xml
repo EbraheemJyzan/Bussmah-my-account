@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="seq_bussma_opportunity" model="ir.sequence">
+            <field name="name">Bussma Opportunity Sequence</field>
+            <field name="code">bussma.opportunity</field>
+            <field name="prefix">OPP/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_bussma_marketing_activity" model="ir.sequence">
+            <field name="name">Bussma Marketing Activity Sequence</field>
+            <field name="code">bussma.marketing.activity</field>
+            <field name="prefix">ACT</field>
+            <field name="padding">4</field>
+            <field name="number_next">10</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_office_request" model="ir.sequence">
+            <field name="name">Office Request Sequence</field>
+            <field name="code">office.request</field>
+            <field name="prefix">OFF/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_bussma_marketing" model="ir.sequence">
+            <field name="name">Bussma Marketing Sequence</field>
+            <field name="code">bussma.marketing</field>
+            <field name="prefix">MKT/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

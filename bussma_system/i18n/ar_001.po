@@ -1,0 +1,3974 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bussma_system
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 10:57+0000\n"
+"PO-Revision-Date: 2026-02-04 10:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_agricultural_land
+msgid "Agricultural Land"
+msgstr "أرض زراعية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__allocation_fees
+msgid "Allocation Fees"
+msgstr "رسوم التخصيص"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__analyst_notes
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_analyst_notes
+msgid "Analyst Notes"
+msgstr "ملاحظات الدارس"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__analyst_rejection_notes
+msgid "Analyst Rejection Notes"
+msgstr "ملاحظات الدارس"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__annual_financial_fee
+msgid "Annual Financial Fee"
+msgstr "المقابل المالي السنوي"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Approval"
+msgstr "موافقة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_approval__approval
+msgid "Approval"
+msgstr "قبول الإدراج ونقله لمرحلة المفاوضة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_approved_users
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__negotiation_commercial_manager_approval__approval
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__negotiation_studies_manager_approval__approval
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__partner_decision__approved
+msgid "Approved"
+msgstr "موافق"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__standard_study_manager_approval__approved_rejection
+msgid "Approved Rejection"
+msgstr "الموافقة على رفض الدراسة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__standard_study_manager_approval__reject_and_archive
+#: model:standard.study.manager.approval,name:bussma_system.standard_study_manager_approval_reject_and_archive
+msgid "Reject and Archive"
+msgstr "رفض الادراج وارشفته"
+
+#. module: bussma_system
+#: code:addons/bussma_system/models/entries.py:0
+#, python-format
+msgid "This entry is archived. Editing or filling fields is blocked until the entry is unarchived."
+msgstr "هذا الإدراج مؤرشف، لا يمكن تعديل أو تعبئة الحقول حتى يتم إلغاء الأرشفة."
+
+#. module: bussma_system
+#: model:final.owner.decision,name:bussma_system.final_owner_decision_committee_price
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__final_owner_decision__committee_price
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__manager_negotiator_final_owner_decision__committee_price
+msgid "Approved at Committee Price"
+msgstr "موافق بسعر اللجنة"
+
+#. module: bussma_system
+#: model:final.owner.decision,name:bussma_system.final_owner_decision_higher_price
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__final_owner_decision__higher_price
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__manager_negotiator_final_owner_decision__higher_price
+msgid "Approved at Another Price"
+msgstr "موافق بسعر آخر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__approximate_building_value_per_meter
+msgid "Approximate Building Value per Meter"
+msgstr "القيمة التقريبية للمبنى بالمتر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__approximate_land_value_per_meter
+msgid "Approximate Land Value per Meter"
+msgstr "القيمة التقريبية للأرض بالمتر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__area
+msgid "Area"
+msgstr "المساحة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__area_sqm
+msgid "Area (m²)"
+msgstr "المساحة (م²)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__assigned_negotiator
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__assign_negotiator
+#: model:request.stage,name:bussma_system.assign_negotiator
+msgid "Assign Negotiator"
+msgstr "تعيين المفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__analyst_id
+msgid "Assigned Analyst"
+msgstr "تعيين الدارس"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__city_analyst_id
+msgid "City Assigned Analyst"
+msgstr "تعيين دارس مدن"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_city_studies_manager
+msgid "City Studies Manager"
+msgstr "مدير دراسات مدن"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_assigned_contract_manager
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_assigned_contract_manager
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Assigned Contract Manager"
+msgstr "تعيين مسؤول للتعاقد"
+
+#. module: bussma_system
+#: model:committee.decision.type,name:bussma_system.committee_decision_auction
+#: model:customer.intent,name:bussma_system.customer_intent_auction
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__committee_decision__auction
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__customer_intent__auction
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "Auction"
+msgstr "المزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_price_per_meter
+msgid "Auction Price per Square Meter"
+msgstr "سعر المتر مربع للمزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auctions_manager_approval
+msgid "Auctions Manager Approval"
+msgstr "موافقة مدير المزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auctions_manager_approval
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auctions_manager_approval_rel
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__auctions_manager_decision
+#: model:request.stage,name:bussma_system.auctions_manager_decision
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Auctions Manager Decision"
+msgstr "قرار مدير المزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auctions_manager_notes
+msgid "Auctions Manager Notes"
+msgstr "ملاحظة مدير المزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__best_property_use
+msgid "Best Use of Property"
+msgstr "أفضل استخدام للعقار"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__building_area
+msgid "Building Area"
+msgstr "مساحة مسطح البناء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__building_license_date
+msgid "Building License Date"
+msgstr "تاريخ رخصة البناء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__building_license_number
+msgid "Building License Number"
+msgstr "رقم رخصة البناء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__building_requirements
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_building_requirements
+msgid "Building Requirements"
+msgstr "اشتراطات البناء"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Cities Study Information"
+msgstr "دراسة المدن"
+
+#. module: bussma_system
+#: model:request.type,name:bussma_system.direct_sale_city_study
+msgid "City Study"
+msgstr "دراسة مدن"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.direct_sale_city_study_action
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__project_path__cities
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__study_type_detail__cities
+#: model:ir.ui.menu,name:bussma_system.direct_sale_city_study_menu
+#: model:project.path,name:bussma_system.project_path_cities
+msgid "Cities"
+msgstr "مدن"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_saudi_cities
+#: model:ir.ui.menu,name:bussma_system.saudi_cities_menu
+msgid "Cities"
+msgstr "المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__city
+msgid "Citys"
+msgstr "المدن"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_commercial_block
+msgid "Commercial Block"
+msgstr "بلك تجاري"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_commercial_building
+msgid "Commercial Building"
+msgstr "مبنى تجاري"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_commercial_land
+msgid "Commercial Land"
+msgstr "أرض تجارية"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__commercial_manager_approval
+#: model:request.stage,name:bussma_system.commercial_manager_approval
+msgid "Commercial Manager Approval"
+msgstr "موافقة مدير القطاع التجاري لقرار اللجنة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_commercial_plan
+msgid "Commercial Plan"
+msgstr "مخطط تجاري"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.rout_menu_commercial_sector
+msgid "Studies Management"
+msgstr "إدارة الدراسات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_approval
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Commercial Sector Manager Approval"
+msgstr "موافقة مدير القطاع التجاري لقرار اللجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Commercial Sector Manager Approval for Contract"
+msgstr "موافقة مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_contract_approval
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__manager_contract_approval
+#: model:request.stage,name:bussma_system.manager_contract_approval
+msgid "Commercial Sector Manager Contract Approval"
+msgstr "موافقة مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__manager_contract_approval
+#: model:request.stage,name:bussma_system.manager_contract_approval
+msgid "Manager Contract Approval"
+msgstr "اعتماد مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_notes
+msgid "Commercial Sector Manager Notes"
+msgstr "ملاحظات مدير القطاع التجاري"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_contract_notes
+msgid "Commercial Sector Manager Notes for Client Contract"
+msgstr "ملاحظة مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_decision
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_decision_rel
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__committee_decision
+#: model:request.stage,name:bussma_system.committee_decision
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Committee Decision"
+msgstr "قرار اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_decision_date
+msgid "Committee Decision Date"
+msgstr "تاريخ قرار اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__comparison_average
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_comparison_average
+msgid "Comparables Average"
+msgstr "متوسط المقارنات"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__cities_study_manager_approval__completed
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__preliminary_study_status__completed
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__specialized_study_manager_approval__completed
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__standard_study_manager_approval__completed
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__completed
+#: model:standard.study.manager.approval,name:bussma_system.standard_study_manager_approval_completed
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: bussma_system
+#: model:request.stage,name:bussma_system.completed
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Completed Detailed Study"
+msgstr "دراسة مكتملة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__completion_certificate_issued
+msgid "Completion Certificate Issued?"
+msgstr "هل تم اصدار شهادة اتمام بناء؟"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_contract_status
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_contract_status
+msgid "Contract Status"
+msgstr "هل تم التعاقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Contracting"
+msgstr "التعاقد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__current_income
+msgid "Current Income"
+msgstr "قيمة الدخل الحالي"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__current_total_income
+msgid "Current Total Income"
+msgstr "إجمالي الدخل الحالي"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_customer_intent
+#: model:ir.model.fields,field_description:bussma_system.field_entries__customer_intent
+#: model:ir.model.fields,field_description:bussma_system.field_entries__customer_intent_rel
+msgid "Customer Intent"
+msgstr "رغبة العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_id
+msgid "Customer Name"
+msgstr "اسم العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_mobile
+msgid "Customer Mobile"
+msgstr "رقم التواصل مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__customer_price_per_sqm
+msgid "Customer Price per Square Meter"
+msgstr "سعر العميل (للمتر مربع)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__customer_total_price
+msgid "Customer Total Price"
+msgstr "سعر العميل"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_customer_role
+#: model:ir.model.fields,field_description:bussma_system.field_entries__customer_role_rel
+msgid "Customer Role"
+msgstr "صفة العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_approval__declined
+msgid "Declined"
+msgstr "رفض الادراج وارشفته"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__deed_date
+msgid "Deed Date"
+msgstr "تاريخ الصك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__deed_number
+msgid "Deed Number"
+msgstr "رقم الصك"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.define_project_path_action
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__define_project_path_assign_analyst
+#: model:request.stage,name:bussma_system.define_project_path_assign_analyst
+#: model:ir.ui.menu,name:bussma_system.define_project_path_menu
+msgid "Define Project Path"
+msgstr "تحديد مسار المشروع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Define Project Path"
+msgstr "إدراج"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.direct_sale_detailed_study_action
+#: model:request.stage,name:bussma_system.direct_sale_detailed_study_analyst
+#: model:request.type,name:bussma_system.direct_sale_detailed_study
+msgid "Detailed Study"
+msgstr "الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.direct_sale_detailed_study_menu
+msgid "Detailed"
+msgstr "التفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Detailed Study Information"
+msgstr "الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_price_per_meter
+msgid "Direct Sale Price per Square Meter"
+msgstr "سعر المتر مربع للبيع المباشر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__district_id
+msgid "District"
+msgstr "الحي"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__electricity_meters_numbers
+msgid "Electricity Meters Numbers"
+msgstr "أرقام عدادات الكهرباء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__electricity_service
+msgid "Electricity Service"
+msgstr "خدمة الكهرباء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__entered_by_id
+msgid "Entered By"
+msgstr "اسم المدرج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__entered_by_email
+msgid "Entered By Email"
+msgstr "ايميل المدرج"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.entries_action
+#: model:ir.model,name:bussma_system.model_entries
+#: model:ir.ui.menu,name:bussma_system.entries_main_menu
+#: model:ir.ui.menu,name:bussma_system.entries_menu
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_list_view
+msgid "Entries"
+msgstr "الإدراجات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Entry Information"
+msgstr "الإدراج"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__entry_screen
+#: model:request.stage,name:bussma_system.entry_screen
+msgid "Entry Screen"
+msgstr "شاشة الإدراج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__equipment
+msgid "Equipment"
+msgstr "معدات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__expected_full_lease_income
+msgid "Expected Income (Full Lease)"
+msgstr "المبلغ المتوقع في حال التأجير الكامل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__expected_total_income_full_rent
+msgid "Expected Total Income (Full Rent)"
+msgstr "إجمالي الدخل المتوقع في حال التأجير بالكامل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__external_strength_points
+msgid "External Strength Points"
+msgstr "نقاط القوة (الخارجية)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__external_weakness_points
+msgid "External Weakness Points"
+msgstr "نقاط الضعف (الخارجية)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__facility_investor
+msgid "Facility Investor"
+msgstr "مستثمر المنشأة"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_final_owner_decision
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_owner_decision
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_owner_decision_rel
+msgid "Final Owner Decision"
+msgstr "قرار المالك النهائي"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_final_owner_decision
+msgid "Final Owner Decision"
+msgstr "قرار المالك النهائي (مفاوضة مدير القسم)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_owner_price
+msgid "Final Owner Price"
+msgstr "السعر الإجمالي للمالك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_final_owner_price
+msgid "Final Owner Price"
+msgstr "السعر الإجمالي للمالك  (مفاوضة مدير القسم)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_owner_price_per_meter
+msgid "Final Owner Price Per Meter"
+msgstr "سعر المتر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_final_owner_price_per_meter
+msgid "Final Owner Price Per Meter"
+msgstr "سعر المتر (مفاوضة مدير القسم)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_owner_price_diff_percentage
+msgid "Price Difference Percentage"
+msgstr "نسبة الفرق بين اجمالي اللجنة واجمالي المالك %"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_price_diff_percentage
+msgid "Price Difference Percentage"
+msgstr "نسبة الفرق بين اجمالي اللجنة واجمالي المالك % (مفاوضة مدير القسم)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__owner_rejection_reasons
+msgid "Owner Rejection Reasons"
+msgstr "سبب رفض المالك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_owner_rejection_reasons
+msgid "Owner Rejection Reasons"
+msgstr "سبب رفض المالك (مفاوضة مدير القسم)"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_final_property_price
+#: model:ir.model.fields,field_description:bussma_system.field_entries__final_property_price
+msgid "Final Property Price"
+msgstr "سعر العقار النهائي"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__finishing_ratio
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Finishing Ratio"
+msgstr "نسبة التشطيب"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__gps_coordinates
+msgid "GPS Coordinates"
+msgstr "إحداثيات (GPS)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__highest_price_per_meter_total_property
+msgid "Highest Price per Meter (Total Property)"
+msgstr "أعلى سعر للمتر لإجمالي العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__cities_study_manager_approval__incomplete
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__specialized_study_manager_approval__incomplete
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__standard_study_manager_approval__incomplete
+#: model:standard.study.manager.approval,name:bussma_system.standard_study_manager_approval_incomplete
+msgid "Incomplete"
+msgstr "غير مكتمل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__industrial_city
+msgid "Industrial City"
+msgstr "المدينة الصناعية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__internal_strength_points
+msgid "Internal Strength Points"
+msgstr "نقاط القوة (الداخلية)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__internal_weakness_points
+msgid "Internal Weakness Points"
+msgstr "نقاط الضعف (الداخلية)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__investor_contact_number
+msgid "Investor Contact Number"
+msgstr "رقم التواصل الخاص بالمستثمر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_authorized_property
+msgid "Is Authorized Property"
+msgstr "هل العقار مخول"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__land_nature
+msgid "Land Nature (If Raw Land)"
+msgstr "طبيعة الارض ( في حالة الارض خام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__length_east
+msgid "Length (East)"
+msgstr "الطول (شرقا)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__length_north
+msgid "Length (North)"
+msgstr "الطول (شمالا)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__length_south
+msgid "Length (South)"
+msgstr "الطول (جنوبا)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__length_west
+msgid "Length (West)"
+msgstr "الطول (غربا)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__lighting_service
+msgid "Lighting Service"
+msgstr "خدمة الانارة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__limit_east
+msgid "Limit (East)"
+msgstr "الحد (شرقا)"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__limit_north
+msgid "Limit (North)"
+msgstr "الحد (شمالا)"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__limit_south
+msgid "Limit (South)"
+msgstr "الحد (جنوبا)"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__limit_west
+msgid "Limit (West)"
+msgstr "الحد (غربا)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__location_url
+msgid "Location"
+msgstr "الموقع (اللوكيشن)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__lowest_price_per_meter_total_property
+msgid "Lowest Price per Meter (Total Property)"
+msgstr "أقل سعر للمتر لإجمالي العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__machinery
+msgid "Machinery"
+msgstr "آليات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__marketing_duration_months
+msgid "Marketing Duration (Months)"
+msgstr "مدة التسويق بالشهر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__justice_index_average
+msgid "Ministry of Justice Index Average"
+msgstr "متوسط مؤشر وزارة العدل"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_mixed_use_block
+msgid "Mixed-Use Block"
+msgstr "بلك تجاري سكني"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_mixed_use_building
+msgid "Mixed-Use Building"
+msgstr "مبنى تجاري سكني"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_mixed_use_land
+msgid "Mixed-Use Land"
+msgstr "أرض تجارية سكنية "
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_mixed_use_plan
+msgid "Mixed-Use Plan"
+msgstr "مخطط تجاري سكني"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__nearest_main_road
+msgid "Nearest Main Road"
+msgstr "أقرب طريق رئيسي"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation"
+msgstr "المفاوضة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation Assignment"
+msgstr "تعيين المفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__ac_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auction_contract_status__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__completion_certificate_issued__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__direct_sale_contract_status__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__electricity_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__elevator_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__garden_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__gas_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__has_income__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__has_movables__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__internet_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_authorized_property__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__lighting_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__parking_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__pavement_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__pool_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__requires_technical_offer__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__security_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sewage_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__telecom_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__water_service__no
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_modon_auction__no
+msgid "No"
+msgstr "لا"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committe_notes
+#: model:ir.model.fields,field_description:bussma_system.field_entries__entered_notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__electricity_meters_count
+msgid "Number of Electricity Meters"
+msgstr "عدد عدادات الكهرباء"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__floors_count
+msgid "Number of Floors"
+msgstr "عدد الادوار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__properties_count
+msgid "Number of Properties"
+msgstr "عدد العقارات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__units_count
+msgid "Number of Units"
+msgstr "عدد الوحدات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__water_meters_count
+msgid "Number of Water Meters"
+msgstr "عدد عدادات المياه"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__pavement_service
+msgid "Pavement Service"
+msgstr "خدمة السفلته"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__plan_number
+msgid "Plan Number"
+msgstr "رقم المخطط"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__plot_number
+msgid "Plot Number"
+msgstr "رقم القطعة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_postponed_users
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_approval__postponed
+msgid "Postponed"
+msgstr "تأجيل الادراج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__precise_plot_location_link
+msgid "Precise Plot Location Link"
+msgstr "رابط دقيق لموقع اللوحة"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.direct_sale_preliminary_study_action
+#: model:request.type,name:bussma_system.preliminary_study
+msgid "Preliminary Study"
+msgstr "الدراسة الأولية"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.direct_sale_preliminary_study_menu
+msgid "Preliminary Study"
+msgstr "الأولية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Preliminary Study Information"
+msgstr "الدراسة الأولية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__preliminary_study_status
+msgid "Preliminary Study Result"
+msgstr "قرار الدارس"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__previous_activity
+msgid "Previous Facility Activity"
+msgstr "النشاط السابق للمنشأة"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_project_path
+#: model:ir.model.fields,field_description:bussma_system.field_entries__project_path
+#: model:ir.model.fields,field_description:bussma_system.field_entries__project_path_rel
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Project Path"
+msgstr "مسار المشروع"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_age_estimated
+msgid "Property Age (Estimated if no License)"
+msgstr "عمر العقار (في حال عدم وجود رخصة يكون تقريبي)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_description
+msgid "Property Description"
+msgstr "وصف العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_usage_detailed
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_usage_rel
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_usage_standard
+msgid "Property Usage"
+msgstr "استخدام العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_reason
+msgid "Reason for Rejection or Transfer"
+msgstr "سبب الرفض او التحويل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_contract_non_compliance_reasons
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_contract_non_compliance_reasons
+msgid "Reasons for Not Contracting"
+msgstr "اسباب عدم التعاقد"
+
+#. module: bussma_system
+#: model:final.owner.decision,name:bussma_system.final_owner_decision_rejected
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_rejected_users
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_contract_approval__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__deputy_studies_manager_approval__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__final_owner_decision__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__manager_negotiator_final_owner_decision__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__negotiation_commercial_manager_approval__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__negotiation_studies_manager_approval__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__partner_decision__rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__preliminary_study_status__rejected
+msgid "Rejected"
+msgstr "رفض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__rejection_reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.request_stage_menu
+msgid "Request Stages"
+msgstr "مراحل الدراسات"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.request_type_menu
+msgid "Request Types"
+msgstr "انواع الدراسات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__requires_technical_offer
+msgid "Requires Technical Offer"
+msgstr "هل يتطلب عرض فني؟"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_block
+msgid "Residential Block"
+msgstr "بلك سكني"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_building
+msgid "Residential Building"
+msgstr "مبنى سكني"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_land
+msgid "Residential Land"
+msgstr "أرض سكنية"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_plan
+msgid "Residential Plan"
+msgstr "مخطط سكني"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__contract_followup
+#: model:request.stage,name:bussma_system.contract_followup
+msgid "Contract Followup"
+msgstr "متابعة التعاقد للقسم "
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__negotiation_approval
+#: model:request.stage,name:bussma_system.negotiation_approval
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation Approval"
+msgstr "اعتماد التفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__negotiation_commercial_manager_approval
+msgid "Commercial Sector Manager Negotiation Approval"
+msgstr "اعتماد مدير القطاع التجاري للتفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__negotiation_studies_manager_approval
+msgid "Studies Manager Negotiation Approval"
+msgstr "اعتماد مدير الدراسات للتفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__negotiation_approval_notes
+msgid "Negotiation Approval Notes"
+msgstr "ملاحظات اعتماد التفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__sale_manager_decision
+#: model:request.stage,name:bussma_system.sale_manager_decision
+msgid "Department Manager Decision"
+msgstr "قرار مدير القسم"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__sales_manager_approval
+#: model:ir.model.fields,field_description:bussma_system.field_entries__sales_manager_approval_rel
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Sales Manager Decision"
+msgstr "موافقة مدير المبيعات"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__sales_manager_decision
+#: model:request.stage,name:bussma_system.sale_manager_decision
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Sales Manager Decision"
+msgstr "قرار مدير المبيعات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__sales_manager_notes
+msgid "Sales Manager Notes"
+msgstr "ملاحظة مدير المبيعات"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.setting_menu
+msgid "Setting"
+msgstr "الإعدادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__sewage_service
+msgid "Sewage Service"
+msgstr "خدمة الصرف الصحي"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__project_path__specialized
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__study_type_detail__specialized
+#: model:project.path,name:bussma_system.project_path_specialized
+msgid "Specialized"
+msgstr "نوعي"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__project_path__standard
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__study_type_detail__standard
+#: model:project.path,name:bussma_system.project_path_standard
+msgid "Standard"
+msgstr "عادي"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__street
+msgid "Street"
+msgstr "اسم الشارع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Study Approval"
+msgstr "اعتماد الدراسة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__study_approval
+#: model:request.stage,name:bussma_system.study_approval
+msgid "Preliminary Study Approval"
+msgstr "اعتماد الدراسة الأولية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__standard_study_manager_approval
+#: model:ir.model.fields,field_description:bussma_system.field_entries__standard_study_manager_approval_rel
+msgid "Study Manager Approval"
+msgstr "موافقة مدير الدراسة (اولي)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__specialized_study_manager_approval
+msgid "Study Manager Approval"
+msgstr "موافقة مدير الدراسة (تفصيلي)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__cities_study_manager_approval
+msgid "Study Manager Approval"
+msgstr "موافقة مدير الدراسة (مدن)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__cities_study_manager_note
+#: model:ir.model.fields,field_description:bussma_system.field_entries__specialized_study_manager_note
+#: model:ir.model.fields,field_description:bussma_system.field_entries__standard_study_manager_note
+msgid "Study Manager Note"
+msgstr "ملاحظة مدير الدراسة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auctions_manager_approval__submitted
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sales_manager_approval__submitted
+msgid "Submitted"
+msgstr "موافق"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__systems
+msgid "Systems"
+msgstr "أنظمة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_total_price
+msgid "Total Auction Sale Price"
+msgstr "السعر الإجمالي للمزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_total_price
+msgid "Total Direct Sale Price"
+msgstr "السعر الإجمالي للبيع المباشر"
+
+#. module: bussma_system
+#: model:commercial.sector.manager.approval,name:bussma_system.commercial_sector_manager_approval_transfer
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_approval__transfer
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_contract_approval__transfer
+msgid "Transfer to Partners"
+msgstr "التحويل الى لادارة الشركاء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__vehicles
+msgid "Vehicles"
+msgstr "مركبات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__water_meters_numbers
+msgid "Water Meters Numbers"
+msgstr "أرقام عدادات المياه"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__water_service
+msgid "Water Service"
+msgstr "خدمة المياه"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__ac_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auction_contract_status__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__completion_certificate_issued__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__direct_sale_contract_status__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__electricity_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__elevator_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__garden_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__gas_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__has_income__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__has_movables__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__internet_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_authorized_property__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__lighting_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__parking_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__pavement_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__pool_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__requires_technical_offer__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__security_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sewage_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__telecom_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__water_service__yes
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_modon_auction__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_mixed_use
+msgid "Commercial & Residential"
+msgstr "سكني تجاري"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_commercial
+#: model:property.usage.type,name:bussma_system.property_usage_commercial
+msgid "Commercial"
+msgstr "تجاري"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_residential
+msgid "Residential"
+msgstr "سكني"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_industrial
+#: model:property.usage.type,name:bussma_system.property_usage_industrial
+msgid "Industrial"
+msgstr "صناعي"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_agricultural
+msgid "Agricultural"
+msgstr "زراعي"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_residential_buildings
+msgid "Residential Buildings"
+msgstr "سكني عمائر"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_warehouses
+msgid "Warehouses & Storage"
+msgstr "مستودعات وتخزين"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_services
+msgid "Services & Public Utility"
+msgstr "خدمي ونفع عام"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_recreation
+msgid "Recreation & Tourism"
+msgstr "ترفيهي وسياحي"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_lodging
+msgid "Tourist Lodging"
+msgstr "إيواء سياحي"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_parking
+msgid "Parking Lots"
+msgstr "مواقف سيارات"
+
+#. module: bussma_system
+#: model:property.usage.type,name:bussma_system.property_usage_agricultural
+msgid "Agriculture"
+msgstr "زراعي"
+
+#. module: bussma_system
+#: model:customer.role,name:bussma_system.customer_role_other
+#: model:property.type,name:bussma_system.property_type_other
+msgid "Other"
+msgstr "اخر"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.archives_menu
+msgid "Archives"
+msgstr "الارشيف"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.archived_entry_menu
+msgid "Archived Entries"
+msgstr "أرشيف الإدراج"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.deferred_opportunities_archive_action
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_deferred_opportunities_archive
+#: model:ir.ui.menu,name:bussma_system.deferred_opportunities_archive_menu
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Deferred Opportunities Archive"
+msgstr "أرشيف الفرص المؤجلة"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.partners_screen_action
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_partners_screen
+#: model:ir.ui.menu,name:bussma_system.partners_screen_action_menu
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Partners Screen"
+msgstr "صفحة الشركاء"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.listing_archive_2023_action
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_listing_archive_2023
+#: model:ir.ui.menu,name:bussma_system.listing_archive_2023_menu
+msgid "Entries Archive - 2023"
+msgstr "ارشيف الادراج - 2023"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.technical_offers_archive_action
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_technical_offers_archive
+#: model:ir.ui.menu,name:bussma_system.technical_offers_archive_menu
+msgid "Technical Offers Archive"
+msgstr "ارشيف العروض الفنية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Archived Listings 2023"
+msgstr "أرشيف إدراج 2023"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Archived Technical Offers"
+msgstr "أرشيف العروض الفنية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to move the entry to the partners screen?"
+msgstr "هل انت متاكد من تحويل الادراج الى صفحة الشركاء؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Move To Partners Screen"
+msgstr "تحويل لصفحة الشركاء"
+
+#. module: bussma_system
+#: model:committee.decision.type,name:bussma_system.committee_decision_direct_sale
+#: model:customer.intent,name:bussma_system.customer_intent_direct_sale
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__committee_decision__direct_sale
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__customer_intent__direct_sale
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "Direct Sale"
+msgstr "بيع مباشر"
+
+#. module: bussma_system
+#: model:committee.decision.type,name:bussma_system.committee_decision_exclusion
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__committee_decision__exclusion
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "Exclusion"
+msgstr "استبعاد"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__analyst
+#: model:request.stage,name:bussma_system.analyst
+msgid "Preliminary Study Analyst"
+msgstr "إعداد الدراسة الأولية"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__negotiator
+#: model:request.stage,name:bussma_system.negotiator
+#: model:res.groups,name:bussma_system.group_negotiator
+#: model:res.groups,name:bussma_system.role_negotiator_res_groups
+msgid "Negotiator"
+msgstr "المتفاوض"
+
+#. module: bussma_system
+#: model:auction.manager.approval,name:bussma_system.auction_manager_approval_accept_committee
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auctions_manager_approval__committee_decision_accepted
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sales_manager_approval__committee_decision_accepted
+#: model:sales.manager.approval,name:bussma_system.sales_manager_approval_accept_committee
+msgid "Accept Committee Decision"
+msgstr "القبول بقرار اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__verified_income
+msgid "Verified Income"
+msgstr "مبلغ الدخل بعد التحقق"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__analyst_recommendation_details
+msgid "Analyst Recommendation Details"
+msgstr "توصية الدارس"
+
+#. module: bussma_system
+#: model:auction.manager.approval,name:bussma_system.auction_manager_approval_reject_committee
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auctions_manager_approval__committee_decision_rejected
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sales_manager_approval__committee_decision_rejected
+#: model:sales.manager.approval,name:bussma_system.sales_manager_approval_reject_committee
+msgid "Reject Committee Decision"
+msgstr "رفض قرار اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__sales_manager_approval__request_transfer_direct_sale
+#: model:sales.manager.approval,name:bussma_system.sales_manager_approval_request_transfer
+msgid "Request Property Transfer to Direct Sale"
+msgstr "طلب تحويل العقار للمبيعات"
+
+#. module: bussma_system
+#: model:auction.manager.approval,name:bussma_system.auction_manager_approval_request_transfer
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__auctions_manager_approval__request_transfer_auction
+msgid "Request Property Transfer to Auction"
+msgstr "طلب تحويل العقار للمزادات"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_contract_approval__accepted
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__deputy_studies_manager_approval__accepted
+msgid "Accepted"
+msgstr "موافقة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__city_study_analyst
+#: model:request.stage,name:bussma_system.city_study_analyst
+msgid "City Study - Analyst"
+msgstr "إعداد دراسة المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__city_study_approval
+#: model:request.stage,name:bussma_system.city_study_approval
+msgid "City Study - Approval"
+msgstr "اعتماد دراسة المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__city_study_completed
+#: model:request.stage,name:bussma_system.city_study_completed
+msgid "City Study - Completed"
+msgstr "دراسة مدن منتهية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_assign_detailed_study
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Assign Detailed Study"
+msgstr "تعيين دراسة تفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
+msgid "Project Stage"
+msgstr "المرحلة"
+
+#. module: bussma_system
+#: model:ir.ui.menu,name:bussma_system.direct_sale_menu
+msgid "Studies"
+msgstr "الدراسات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Archived Entry"
+msgstr "نقل الى الارشيف"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_entry_archive
+msgid "Archived Entry"
+msgstr "ادراج مؤرشف"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.archived_entry_action
+msgid "Archived Entry"
+msgstr "أرشيف الادراجات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to move the entry to the archive?"
+msgstr "هل أنت متأكد أنك تريد نقل الإدراج إلى الأرشيف؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return To Analyst"
+msgstr "ارجاع الى الدارس"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return the entry to the analyst for the cities study?"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة مدن؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return the entry to the analyst for the detailed study?"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة تفصيلية؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return the entry to the analyst for the preliminary study?"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة أولية؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to move to the deferred opportunities archive?"
+msgstr "هل أنت متأكد من نقل الادراج إلى أرشيف الفرص المؤجلة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to reactivate the deferred opportunity?"
+msgstr "هل أنت متأكد من إعادة تفعيل الفرصة المؤجلة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to return the entry to the departments managers "
+"approval?"
+msgstr "هل أنت متأكد من إعادة الإدراج إلى قرار مدير القسم؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Reactivate Deferred Opportunity"
+msgstr "إعادة تفعيل الفرصة المؤجلة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__justice_ministry_index_average
+msgid "Average Justice Ministry Index"
+msgstr "متوسط مؤشر وزارة العدل"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return the entry to the negotiator?"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى مدير القسم للتفاوض؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Sales Manager Negotiator"
+msgstr "مفاوضة مدير المبيعات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Auctions Manager Negotiator"
+msgstr "مفاوضة مدير المزادات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Property and Location"
+msgstr "العقار والموقع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Building and Licensing"
+msgstr "المبنى والتراخيص"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Financial and Valuation"
+msgstr "الجانب المالي والتقييم"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Analysis and Recommendation"
+msgstr "التحليل والتوصيات"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_res_partner_customer
+#: model:ir.ui.menu,name:bussma_system.customer_menu
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_property_type
+#: model:ir.ui.menu,name:bussma_system.property_type_menu
+msgid "Property Types"
+msgstr "نوع العقار الرئيسي"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_property_usage_type
+#: model:ir.ui.menu,name:bussma_system.property_usage_type_menu
+msgid "Property Usage Types"
+msgstr "استخدامات العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_analyst_id
+msgid "Detailed Assigned Analyst"
+msgstr "تعيين الدارس التفصيلي"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_property_type
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_type
+msgid "Property Type"
+msgstr "نوع العقار"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/request_stage.py:0
+msgid ""
+"The Project Stage Selection '%s' is already assigned to another stage (%s). "
+"It must be unique."
+msgstr ""
+"قيمة اختيار مرحلة المشروع '%s' مستخدمة مسبقًا في مرحلة أخرى (%s). "
+"يجب أن تكون القيمة فريدة."
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_analyst
+#: model:res.groups,name:bussma_system.role_analyst_res_groups
+msgid "Analyst"
+msgstr "الدارس"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_auctions_manager
+#: model:res.groups,name:bussma_system.role_auctions_manager_res_groups
+msgid "Auctions Manager"
+msgstr "مدير المزادات"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_commercial_sector_manager
+#: model:res.groups,name:bussma_system.role_commercial_sector_manager_res_groups
+msgid "Commercial Sector Manager"
+msgstr "مدير القطاع التجاري"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_sales_manager
+#: model:res.groups,name:bussma_system.role_sales_manager_res_groups
+msgid "Sales Manager"
+msgstr "مدير المبيعات"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_assistant_sales_manager
+#: model:res.groups,name:bussma_system.role_assistant_sales_manager_res_groups
+msgid "Assistant Sales Manager"
+msgstr "مساعد مدير المبيعات"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_ceo
+#: model:res.groups,name:bussma_system.role_ceo_res_groups
+msgid "CEO"
+msgstr "الرئيس التنفيذي"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_deputy_studies_manager
+#: model:res.groups,name:bussma_system.role_deputy_studies_manager_res_groups
+msgid "Deputy Studies Manager"
+msgstr "نائب مدير ادارة الدراسات"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_rd_manager
+#: model:res.groups,name:bussma_system.role_rd_manager_res_groups
+msgid "Research and Development Manager"
+msgstr "مدير البحث والتطوير"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_studies_manager
+#: model:res.groups,name:bussma_system.role_studies_manager_res_groups
+msgid "Studies Manager"
+msgstr "مدير إدارة الدراسات"
+
+#. module: bussma_system
+#: model:ir.module.category,name:bussma_system.category_bussma
+msgid "Bussma System"
+msgstr "نظام بصمة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Study Manager Note — "
+"Please Review and Correct</strong>"
+msgstr "ملاحظة مدير الدراسة — يرجى المراجعة والتصحيح"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Commercial Sector "
+"Manager Note — Please Review</strong>"
+msgstr "ملاحظة مدير القطاع التجاري على قرار اللجنة — يرجى المراجعة والتصحيح"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Commercial Sector "
+"Manager Note: Contract Rejection — Please Review</strong>"
+msgstr "ملاحظة مدير القطاع التجاري: على المفاوضة — يرجى المراجعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Stage: %s\n"
+"\n"
+"The following fields are Must not be zero:\n"
+"- %s"
+msgstr ""
+"في المرحلة: %s\n"
+"\n"
+"الحقول التالية لا تكون اصفاراً:\n"
+"- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Stage: %s\n"
+"\n"
+"The following fields are required:\n"
+"- %s"
+msgstr ""
+"في المرحلة: %s\n"
+"\n"
+"الحقول التالية مطلوبة:\n"
+"- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please assign a Detailed Assigned Analyst before proceeding."
+msgstr "الرجاء تعيين دارس تفصيلي قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please assign a Negotiator before proceeding."
+msgstr "الرجاء تعيين مفاوض قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"You cannot proceed to Commercial Sector Manager Approval because one of the department managers has not yet made a decision.\n"
+"This is required since the committee decision is Exclusion and the customer intent is Direct Sale and Auctions."
+msgstr ""
+"لا يمكن المتابعة إلى مرحلة موافقة مدير القطاع التجاري، لأن أحد مديري الإدارات لم يقم باتخاذ قراره حتى الآن.\n"
+"هذا الاجراء مطلوب في حال كان قرار اللجنة هو استبعاد و رغبة العميل بيع مباشر و مزادات."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "The Auctions Manager must submit their decision before proceeding."
+msgstr "يجب على مدير المزادات تقديم قراره قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "The Sales Manager must submit their decision before proceeding."
+msgstr "يجب على مدير المبيعات تقديم قراره قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"You cannot proceed to the Contract Stage.\n"
+"Approval from both the Sector Manager and the Owner is required first."
+msgstr "لا يمكنك المتابعة إلى مرحلة العقد.\n"
+"يجب موافقة مدير القطاع و المالك قبل المتابعة."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Please select the Committee Decision (Direct Sale / Auction / Exclusion) "
+"before proceeding."
+msgstr "الرجاء اختيار قرار اللجنة (بيع مباشر / مزاد / استبعاد) قبل المتابعة."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please assign an Analyst before proceeding."
+msgstr "الرجاء تعيين الدارس قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please assign a City Analyst before proceeding."
+msgstr "الرجاء تعيين دارس مدن قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please select the Project Path before proceeding."
+msgstr "يجب اختيار مسار المشروع قبل المتابعة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Cannot proceed: Property is not authorized. Please archive it first."
+msgstr "لا يمكنك المتابعة: العقار غير مسموح به. يرجى ارشفته اولا."
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Required Documents"
+msgstr "المستندات المطلوبة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__facility_photo_ids
+msgid "Facility Photos"
+msgstr "صور المنشأة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__coordinates_kmz
+msgid "Coordinates File (KMZ)"
+msgstr "ملف الاحداثيات (KMZ)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__current_income_file
+msgid "Current Income File"
+msgstr "ملف الدخل الحالي"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__rent_contract_ids
+msgid "Rent Contracts"
+msgstr "عقود الإيجار"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__has_movables
+msgid "Is there any movables?"
+msgstr "هل يوجد منقولات؟"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_res_city_districts
+#: model:ir.ui.menu,name:bussma_system.res_city_menu
+msgid "Districts"
+msgstr "المحافظات"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are mandatory to complete the study and move to the next stage:\n"
+"- %s"
+msgstr ""
+"الحقول التالية إلزامية لاكتمال الدراسة والانتقال إلى المرحلة التالية:\n"
+"- %s"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__analyst_recommendation_preliminary
+msgid "Analyst Recommendation Preliminary"
+msgstr "توصية الدارس"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to mark the city study as completed?"
+msgstr "هل أنت متأكد أنك تريد تعيين دراسة مدن مكتملة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to mark this project as completed?"
+msgstr "هل أنت متأكد أنك تريد تحديد هذا المشروع كمكتمل؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to move this entry to the archived entries?"
+msgstr "هل أنت متأكد أنك تريد نقل هذا الإدراج إلى الإدراجات المؤرشفة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return this entry to the committee?"
+msgstr "هل أنت متأكد أنك تريد إعادة هذا الإدراج إلى اللجنة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send the department manager approval?"
+msgstr "هل أنت متأكد أنك تريد إرسال الى موافقة مدير القسم؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send the entry to the assign detailed study?"
+msgstr "هل أنت متأكد أنك تريد إرسال الإدراج إلى تعيين دراسة تفصيلية؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send the preliminary study for approval?"
+msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة الأولية للاعتماد؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to assign a negotiator?"
+msgstr "هل أنت متأكد أنك تريد إرسال هذا الإدراج لتعيين مفاوض؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the committee?"
+msgstr "هل أنت متأكد أنك تريد إرسال هذا الإدراج إلى اللجنة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the negotiator?"
+msgstr "هل أنت متأكد أنك تريد إرسال هذا الإدراج للمفاوض؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the reviewer?"
+msgstr "هل أنت متأكد أنك تريد إرسال هذا الإدراج للدارس"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this for commercial manager approval?"
+msgstr "هل أنت متأكد أنك تريد إرسال الادراج الى موافقة مدير القطاع؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to send the entry to the Commercial Sector Manager's "
+"approval stage for the negotiation result?"
+msgstr "هل أنت متأكد أنك تريد إرسال الادراج الى موافقة مدير القطاع للتعاقد مع العميل؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to move this entry to the contract follow-up stage?"
+msgstr "هل أنت متأكد أنك تريد إرسال الادراج الى مرحلة متابعة التعاقد للقسم؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to entry to define the project path and assign an "
+"analyst?"
+msgstr "هل أنت متأكد أنك تريد إرسال الادراج الى مرحلة تحديد مسار المشروع وتعيين دارس؟"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__res_country_state__location_type__city
+msgid "City"
+msgstr "المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__committee_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Committee Returns"
+msgstr "ارجاعات اللجنة"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__department_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Department Returns"
+msgstr "ارجاعات مدراء القسم"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Dose not confirm detailed study"
+msgstr "لم يتم تاكيد الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_entries_return_log
+msgid "Entries Return Log"
+msgstr "سجل ارجاعات الإدراجات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__entry_id
+msgid "Entry"
+msgstr "الإدراج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__entrie_name
+msgid "Entry Reference"
+msgstr "المرجع"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_res_partner__is_customer
+#: model:ir.model.fields,field_description:bussma_system.field_res_users__is_customer
+msgid "Is Customer"
+msgstr "هل هو عميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_from_deferred_archive_menu
+msgid "Is From Deferred Archive Menu"
+msgstr "هل هو من قائمة الأرشيف المؤجل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_manager_negotiator
+msgid "Is Manager Negotiator"
+msgstr "هل المدير هو المفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__write_uid
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__write_uid
+#: model:ir.model.fields,field_description:bussma_system.field_property_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__write_date
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__write_date
+#: model:ir.model.fields,field_description:bussma_system.field_property_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__manager_to_committee
+msgid "Manager to Committee"
+msgstr "من مدير القطاع إلى اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__manager_to_department
+msgid "Manager to Department"
+msgstr "من مدير القطاع إلى مدير القسم"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Move to Archived Entry"
+msgstr "نقل إلى الإدراج المؤرشف"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__negotiator_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiator Returns"
+msgstr "ارجاعات المفاوض"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__note
+msgid "Note / Reason"
+msgstr "ملاحظة / سبب"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__name
+msgid "Number"
+msgstr "رقم"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__res_country_state__location_type__region
+msgid "Region"
+msgstr "المنطقة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__date
+msgid "Request date"
+msgstr "تاريخ الطلب"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_return_log_form
+msgid "Return Log"
+msgstr "سجل الارجاعات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__return_log_ids
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_return_log_tree
+msgid "Return Logs"
+msgstr "سجلات الارجاعات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__return_type
+msgid "Return Type"
+msgstr "نوع الارجاع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return to Committee"
+msgstr "إعادة إلى اللجنة"
+
+#. module: bussma_system
+#: model:commercial.sector.manager.approval,name:bussma_system.commercial_sector_manager_approval_return_committee
+msgid "Return to Committee"
+msgstr "إعادة للجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return to Department Manager"
+msgstr "إعادة إلى مدير القسم"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return to Negotiator"
+msgstr "إعادة إلى المفاوض"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return to DM for Negotiator"
+msgstr "إعادة الى مدير القسم للتفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__user_id
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__returned_by_user_id
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Returned By"
+msgstr "أُعيد بواسطة"
+
+#. module: bussma_system
+#: model:customer.intent,name:bussma_system.customer_intent_select_all
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__customer_intent__select_all
+msgid "Select All"
+msgstr "تحديد الكل"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send To Assign Detailed Study"
+msgstr "تعيين دراسة تفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send To Sector Manager Approval"
+msgstr "إرسال لمدير القطاع للإعتماد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send To Contract Follow-up"
+msgstr "إرسال لمتابعة التعاقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Complete Detailed Study"
+msgstr "إكمال الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Assign Negotiator"
+msgstr "إرسال لتعيين مفاوض"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to City Completed"
+msgstr "تعيين دراسة مدن مكتملة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Commercial Manager"
+msgstr "إرسال لمدير القطاع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Committee"
+msgstr "إرسال للّجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Department Manager"
+msgstr "إرسال لمدير القسم"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Negotiator"
+msgstr "إرسال للمفاوض"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Reviewer"
+msgstr "إرسال للدارس"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Preliminary Study Approval"
+msgstr "إرسال لاعتماد الدراسة الأولية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_res_country_state__name
+msgid "State Name"
+msgstr "اسم الولاية"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__study_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Preliminary Study Returns"
+msgstr "إرجاعات الدراسة الأولية"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_study_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Detailed Study Returns"
+msgstr "إرجاعات الدراسة التفصيلية"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Study Returns"
+msgstr "ارجاعات الدراسة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_return_log__study_type_detail
+msgid "Study Type Details"
+msgstr "تفاصيل نوع الدراسة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__study_to_analyst
+msgid "Study to Analyst"
+msgstr "ارجاع للدارس"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__return_to_lister
+msgid "Return to Lister"
+msgstr "الارجاع الى المدرج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__request_type_id
+msgid "Type"
+msgstr "النوع"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_request_stage
+msgid "request stage"
+msgstr "مرحلة الطلب"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_request_type
+msgid "request type"
+msgstr "نوع الطلب"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_allow_entries_activity_unlink
+msgid "Allow Deleting Entries Activities"
+msgstr "حذف انشطة الادراجات"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the Auctions Manager can mark this project as completed."
+msgstr "فقط مدير المزادات يمكنه تعيين مكتمل لهذا الادراج."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the Auctions Manager can send this entry to Contract Approval."
+msgstr "فقط مدير المزادات يمكنه ارسال هذا الادراج لاعتماد التعاقد."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the Negotiator can send this entry to Contract Approval."
+msgstr "فقط المفاوض يمكنه ارسال هذا الادراج لاعتماد التعاقد."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the Sales Manager can send this entry to Contract Approval."
+msgstr "فقط مدير المبيعات يمكنه ارسال هذا الادراج لاعتماد التعاقد."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Only the Studies Manager, Deputy Studies Manager, or R&D Manager can mark "
+"this project as completed."
+msgstr "فقط مدير الدراسات أو نائب مدير الدراسات أو مدير البحث والتطوير يمكنه تعيين مكتمل لهذا الادراج."
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.role_rnd_manager_res_groups
+msgid "R&D Manager Role"
+msgstr "مدير البحث والتطوير"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "The finishing ratio must be between 0 and 100."
+msgstr "نسبة التشطيب يجب ان تكون بين 0 و 100"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Notification"
+msgstr "إشعار"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Email has been sent to the Analyst"
+msgstr "تم إرسال بريد إلكتروني إلى الدارس"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Email has been sent to the Negotiator"
+msgstr "تم إرسال بريد إلكتروني إلى المفاوض"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please select a detailed analyst"
+msgstr "الرجاء اختيار دارس تفصيلي"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Detailed Study"
+msgstr "إرسال للدارس"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the detailed study?"
+msgstr "هل انت متاكد من رغبتك في ارسال هذا الادراج للدارس التفصيلي؟"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are mandatory before moving to the define project path stage:\n"
+"- %s"
+msgstr "الحقول التالية مطلوبة قبل الإنتقال الى مرحلة تحديد مسار المشروع:\n- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are required before moving to the study approval stage:\n"
+"- %s"
+msgstr "الحقول التالية مطلوبة قبل الإنتقال الى مرحلة إعتماد الدراسة:\n- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are required before moving to the cities study approval stage:\n"
+"- %s"
+msgstr "الحقول التالية مطلوبة قبل الإنتقال الى مرحلة إعتماد دراسة المدن:\n- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The phone number must be a valid Saudi mobile (e.g., 05xxxxxxxx, "
+"+9665xxxxxxxx, or 009665xxxxxxxx)."
+msgstr "رقم الجوال يجب أن يكون رقم جوال سعودي صحيح (مثل 05xxxxxxxx أو +9665xxxxxxxx أو 009665xxxxxxxx)."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Attention"
+msgstr "تنبيه"
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.action_saudi_neighborhoods
+#: model:ir.ui.menu,name:bussma_system.saudi_neighborhoods_menu
+msgid "Neighborhoods"
+msgstr "الاحياء"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_customer_access
+msgid "Customer Information"
+msgstr "معلومات العملاء"
+
+#. module: bussma_system
+#: model:request.type,name:bussma_system.city_study
+msgid "City Study"
+msgstr "مدن"
+
+#. module: bussma_system
+#: model:request.type,name:bussma_system.detailed_study
+msgid "Detailed Study"
+msgstr "دراسة تفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Complete Analyst Study"
+msgstr "دراسة اولية مكتملة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send To Contract Completion"
+msgstr "ارسال لاتمام التعاقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to move this entry to the contract completion stage?"
+msgstr "هل انت متاكد من رغبتك في ارسال هذا الادراج لمرحلة اتمام التعاقد؟"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__contract_completion
+#: model:request.stage,name:bussma_system.contract_completion
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Contract Completion"
+msgstr "اتمام التعاقد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__auction_contract_attachments
+#: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_contract_attachments
+msgid "Contract Attachments"
+msgstr "مرفقات التعاقد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__street_length
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Street Length"
+msgstr "عرض الشارع"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"A committee member can only hold one decision per entry.\n"
+"The following users appear in more than one decision list:\n"
+"- %s"
+msgstr "لا يمكن لعضو اللجنة أن يكون له أكثر من قرار .\n"
+"المستخدمون التاليون يظهرون في أكثر من قائمة قرار:\n"
+"- %s"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__price_per_meter
+msgid "Price Per Meter"
+msgstr "سعر المتر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_price_per_meter
+msgid "Detailed Price Per Meter"
+msgstr "سعر المتر"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__has_income
+msgid "Is there an income?"
+msgstr "هل يوجد دخل؟"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_auction_manager_approval__name
+#: model:ir.model.fields,field_description:bussma_system.field_property_type__name
+#: model:ir.model.fields,field_description:bussma_system.field_sales_manager_approval__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_workshop
+msgid "Workshop"
+msgstr "ورشة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_warehouse
+msgid "Warehouse"
+msgstr "مستودع"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_villa
+msgid "Villa"
+msgstr "فيلا"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_showroom
+msgid "Showroom"
+msgstr "معرض"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_rest_house
+msgid "Rest House"
+msgstr "استراحة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_raw_land
+msgid "Raw Land"
+msgstr "ارض خام"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_land
+msgid "Land"
+msgstr "ارض"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_hotel
+msgid "Hotel"
+msgstr "فندق"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_farm
+msgid "Farm"
+msgstr "مزرعة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_factory
+msgid "Factory"
+msgstr "مصنع"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_duplex
+msgid "Duplex"
+msgstr "دوبلكس"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_building
+msgid "Building"
+msgstr "عمارة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_apartment
+msgid "Apartment"
+msgstr "شقة"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_commercial
+msgid "Residential Commercial"
+msgstr "سكني تجاري"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_health_facility
+msgid "Health Facility"
+msgstr "مرفق صحي"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_residential_commercial_office
+msgid "Residential Commercial Office"
+msgstr "تجاري سكني مكتبي"
+
+#. module: bussma_system
+#: model:property.type,name:bussma_system.property_type_educational_facility
+msgid "Educational Facility"
+msgstr "مرفق تعليمي"
+
+#. module: bussma_system
+#: model:customer.intent,name:bussma_system.customer_intent_studies_recommendation
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__customer_intent__studies_recommendation
+msgid "Studies Recommendation"
+msgstr "توصية الدراسات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_name
+msgid "Partner Name"
+msgstr "اسم الشريك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_phone
+msgid "Partner Phone"
+msgstr "رقم الشريك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_decision
+msgid "Partner Decision"
+msgstr "قرار الشريك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_percentage_approval
+msgid "Partner Percentage Approval"
+msgstr "موافقة الشريك على النسبة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__transfer_to_year
+msgid "Transfer to Year"
+msgstr "تحويل الى سنة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__partner_page_date
+msgid "Date Partners Page"
+msgstr "تاريخ - صفحة الشركاء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_stage
+msgid "Property Stage"
+msgstr "مرحلة العقار"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__property_stage__transferred_to_commercial_sector_advisor
+msgid "Transferred to Commercial Sector Advisor"
+msgstr "محولة الى مستشار القطاع التجاري"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__property_stage__transferred_to_zayed_platform
+msgid "Transferred to Zayed Platform"
+msgstr "تم التحويل لمنصة زائد"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__property_stage__transfer_to_sales_manager
+msgid "Transfer to Sales Manager"
+msgstr "محولة الى مدير المبيعات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__rooms_count
+msgid "Number of Rooms"
+msgstr "عدد الغرف"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_facade
+msgid "Property Facade"
+msgstr "واجهة العقار"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Client Details"
+msgstr "معلومات العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_client_name
+msgid "Client Name"
+msgstr "اسم العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_client_birthdate
+msgid "Client Birth Date"
+msgstr "تاريخ ميلاد العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_client_identity
+msgid "Client Identity"
+msgstr "هوية العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_client_mobile
+msgid "Client Mobile Number"
+msgstr "رقم الجوال"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_client_role
+msgid "His Role"
+msgstr "صفته"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Agent Owner Details"
+msgstr "بيانات المالك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_owner_name
+msgid "Owner Name"
+msgstr "اسم المالك"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_owner_identity
+msgid "Owner Identity"
+msgstr "هويته"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_owner_birthdate
+msgid "Owner Birth Date"
+msgstr "تاريخ ميلاده"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_owner_mobile
+msgid "Owner Mobile Number"
+msgstr "رقم جواله"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_agency_deed_attachment
+msgid "Power of Attorney Attachment"
+msgstr "مرفق صك الوكالة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Contract & Financial Information"
+msgstr "معلومات العقد والمعلومات المالية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_agreed_price
+msgid "Agreed Price"
+msgstr "القيمة المتفق عليها مع العميل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_duration
+msgid "Contract Duration"
+msgstr "مدة العقد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__contract_notes
+msgid "Contract Notes"
+msgstr "ملاحظات العقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Property Details (From Studies/Listing)"
+msgstr "تفاصيل العقار (من الدراسات)"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_request_stage
+#: model:ir.model.fields,field_description:bussma_system.field_entries__stage_id
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__stage_id
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_my_studies_search
+msgid "Stage"
+msgstr "مرحلة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Commercial Manager for Contracting"
+msgstr "ارسال لمدير القطاع للتعاقد مع العميل"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to send this entry to the commercial manager for "
+"contracting?"
+msgstr "هل انت متاكد من الارسال لمدير القطاع للتعاقد مع العميل؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Result of Negotiation at Higher Price</strong>\n"
+"                                <span class=\"text-dark fst-italic\">The owner requested a higher price following the negotiation</span>"
+msgstr ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">نتيجة التفاوض بسعر أعلى</strong>\n"
+"                                <span class=\"text-dark fst-italic\">طلب المالك سعر أعلى بعد التفاوض</span>"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Warning to Commercial Sector Manager for Contracting with the Customer: Sent from the Committee</strong>\n"
+"                                <span class=\"text-dark fst-italic\"> The owner requested a higher price and the committee reviewed it with notes.</span>"
+msgstr ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">تحذير لمدير القطاع التجاري للتعاقد مع العميل: تم الإرسال من اللجنة</strong>\n"
+"                                <span class=\"text-dark fst-italic\"> طلب المالك سعر أعلى وتم مراجعة الأمر مع الملاحظات.</span>"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "A user can only belong to one committee decision list. Duplicated user(s): %s"
+msgstr ""
+"لا يمكن للمستخدم أن ينتمي إلى أكثر من قائمة قرار لجنة واحدة. المستخدم(ين) المكرر(ين): %s"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__negotiator_note
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiator Note"
+msgstr "ملاحظات المفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__manager_negotiator_note
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Manager Negotiator Note"
+msgstr "ملاحظات مدير الإدارة للتفاض"
+
+#. module: bussma_system
+#: model:customer.role,name:bussma_system.customer_role_agent
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__contract_client_role__agent
+msgid "Agent"
+msgstr "وكيل"
+
+#. module: bussma_system
+#: model:customer.role,name:bussma_system.customer_role_owner
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__contract_client_role__owner
+msgid "Owner"
+msgstr "مالك"
+
+#. module: bussma_system
+#: model:customer.role,name:bussma_system.customer_role_broker
+msgid "Broker"
+msgstr "وسيط"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__gas_service
+msgid "Gas Service"
+msgstr "خدمة غاز"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__ac_service
+msgid "AC Service"
+msgstr "خدمة تكييف"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__internet_service
+msgid "Internet Service"
+msgstr "خدمة انترنت"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__telecom_service
+msgid "Telecom Service"
+msgstr "خدمة اتصالات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__security_service
+msgid "Security Guard Service"
+msgstr "خدمة حراسة أمنية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__elevator_service
+msgid "Elevator Service"
+msgstr "خدمة مصعد"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__pool_service
+msgid "Pool Service"
+msgstr "خدمة مسبح"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__garden_service
+msgid "Garden Service"
+msgstr "خدمة حديقة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__parking_service
+msgid "Parking Service"
+msgstr "خدمة مواقف"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__construction_warranty
+msgid "Construction Warranty"
+msgstr "ضمان الانشاءات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__electrical_warranty
+msgid "Electrical Warranty"
+msgstr "ضمان الكهرباء"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__plumbing_warranty
+msgid "Plumbing Warranty"
+msgstr "ضمان السباكة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__services_description
+msgid "Services Description"
+msgstr "الوصف"
+
+#. module: bussma_system
+#: model:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Warranties"
+msgstr "الضمانات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__owner_type
+msgid "Owner Type"
+msgstr "نوع المالك"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__owner_type__individual
+msgid "Individual"
+msgstr "فرد"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__owner_type__company
+msgid "Company"
+msgstr "شركة"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__owner_type__government
+msgid "Government Agency"
+msgstr "جهة حكومية"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__owner_type__investor
+msgid "Investor"
+msgstr "مستثمر"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Warranties"
+msgstr "الضمانات"
+
+#. module: bussma_system
+#: model:ir.model,name:bussma_system.model_entries_stage_history
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Stage History and Durations"
+msgstr "سجل المراحل ومدد البقاء"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Current Stage (Days)"
+msgstr "المرحلة الحالية (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Total All Stages (Days)"
+msgstr "إجمالي كل المراحل (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Stages Durations (Days)"
+msgstr "مدة كل مرحلة (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Study Stages"
+msgstr "مراحل الدراسة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation & Contract / City Study Stages"
+msgstr "مراحل المفاوضة والعقد ودراسة المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_entry_screen_days
+msgid "Entry Screen Duration (Days)"
+msgstr "شاشة الإدراج (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_define_path_days
+msgid "Define Path Duration (Days)"
+msgstr "تحديد مسار المشروع (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_preliminary_analyst_days
+msgid "Preliminary Study Analyst Duration (Days)"
+msgstr "الدراسة الأولية (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_detailed_analyst_days
+msgid "Detailed Study Analyst Duration (Days)"
+msgstr "الدراسة التفصيلية (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_study_approval_days
+msgid "Study Approval Duration (Days)"
+msgstr "اعتماد الدراسة (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_preliminary_study_approval_days
+msgid "Preliminary Study Approval Duration (Days)"
+msgstr "اعتماد دراسة اولية (ايام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_detailed_study_approval_days
+msgid "Detailed Study Approval Duration (Days)"
+msgstr "اعتماد دراسة تفصيلية (ايام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_committee_decision_days
+msgid "Committee Decision Duration (Days)"
+msgstr "قرار اللجنة (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_sale_manager_decision_days
+msgid "Department Manager Decision Duration (Days)"
+msgstr "قرار مدير القسم (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_sales_manager_decision_days
+msgid "Sales Manager Decision Duration (Days)"
+msgstr "قرار مدير المبيعات (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_auctions_manager_decision_days
+msgid "Auctions Manager Decision Duration (Days)"
+msgstr "قرار مدير المزادات (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_commercial_approval_days
+msgid "Commercial Manager Approval Duration (Days)"
+msgstr "اعتماد مدير القطاع التجاري لقرار اللجنة (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_assign_negotiator_days
+msgid "Assign Negotiator Duration (Days)"
+msgstr "تعيين المفاوض (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_negotiator_days
+msgid "Negotiator Duration (Days)"
+msgstr "المفاوض (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_manager_contract_approval_days
+msgid "Manager Contract Approval Duration (Days)"
+msgstr "اعتماد مدير القطاع التجاري للتعاقد مع العميل (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_contract_followup_days
+msgid "Contract Followup Duration (Days)"
+msgstr "متابعة التعاقد للقسم (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_contract_completion_days
+msgid "Contract Completion Duration (Days)"
+msgstr "اتمام التعاقد (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_negotiation_approval_days
+msgid "Negotiation Approval Duration (Days)"
+msgstr "اعتماد التفاوض (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_city_study_analyst_days
+msgid "City Study Analyst Duration (Days)"
+msgstr "دراسة المدن (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_city_study_approval_days
+msgid "City Study Approval Duration (Days)"
+msgstr "اعتماد دراسة المدن (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Filter by Stage"
+msgstr "تصفية بالمرحلة :"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "-- All Stages --"
+msgstr "كل المراحل"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__duration_days
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Duration (Days)"
+msgstr "المدة (أيام)"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__is_return
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Stages Durations - Standard & Specialized Paths (Days)"
+msgstr "مدد المراحل - المسار العادي والنوعي (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Stages Durations - City Study Path (Days)"
+msgstr "مدد المراحل - مسار دراسة المدن (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation & Contract Stages"
+msgstr "مراحل المفاوضة والعقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "City Study Stages"
+msgstr "مراحل دراسة المدن"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__returned_by_user_id
+msgid "Returned By"
+msgstr "إرجاع بواسطة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Current and Total Duration"
+msgstr "المدة الحالية والكلية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries_stage_history__end_date
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Stages Durations - Standard and Specialized Paths (Days)"
+msgstr "مدد المراحل (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Study Approval (Days)"
+msgstr "اعتماد الدراسة (أيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation and Contract Stages"
+msgstr "مراحل التفاوض والتعاقد"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return"
+msgstr "إرجاع "
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.my_studies_action
+#: model:ir.ui.menu,name:bussma_system.my_studies_menu
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_my_studies_search
+msgid "My Studies"
+msgstr "إدراجاتي"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_my_studies_search
+msgid "Group By Stage"
+msgstr "المرحلة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_my_studies_search
+msgid "Path"
+msgstr "مسار المشروع"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are required before moving from the negotiation stage:\n"
+"- %s"
+msgstr ""
+"الحقول التالية مطلوبة قبل الانتقال من مرحلة التفاوض:\n"
+"- %s"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Negotiation Approvals"
+msgstr "اعتمادات التفاوض"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send To Negotiation Approval"
+msgstr "ارسال لاعتماد التفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__property_attachment_ids
+msgid "Property Attachments"
+msgstr "مرفقات العقار"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to move this entry to the negotiation approval stage?"
+msgstr "هل انت متاكد من نقل هذا الادراج الي مرحلة اعتماد التفاوض"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "<span class=\"x-small text-muted\">Primary Analyst:</span>"
+msgstr "<span class=\"x-small text-muted\">الدارس اولي:</span>"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "<span class=\"x-small text-muted\">Detailed Analyst:</span>"
+msgstr "<span class=\"x-small text-muted\">دارس تفصيلي:</span>"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are required before moving from the negotiation stage:\n"
+"- %s"
+msgstr "الرجاء استكمال البيانات التالية قبل نقل الادراج من مرحلة التفاوض \n"
+"- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following approvals are required before moving to contract completion stage:\n"
+"- %s"
+msgstr "الرجاء استكمال البيانات التالية قبل نقل الادراج من مرحلة اتمام التعاقد:\n"
+"- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Studies Manager Approval is required to complete negotiation approval."
+msgstr "اعتماد مدير الدراسات مطلوب لاكمال اعتماد التفاوض"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Commercial Sector Manager Approval is required to complete negotiation "
+"approval."
+msgstr "اعتماد مدير القطاع التجاري مطلوب لاكمال اعتماد التفاوض"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_authorized_property__return_to_lister
+msgid "Return to Lister"
+msgstr "إعادة الادراج للمدرج"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__return_to_lister_count
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__return_to_lister
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return to Lister"
+msgstr "إرجاعات المدرج"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__return_to_lister_note
+msgid "Return to Lister Note"
+msgstr "ملاحظة الارجاع للمدرج"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return To Lister"
+msgstr "إرجاع للمدرج"
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_entry_returned_to_lister
+msgid "Entry: Returned to Lister"
+msgstr "الإدراج: إرجاع إلى المُدرِج"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_entry_returned_to_lister
+msgid "Notice: Entry Returned to Lister - {{ object.entrie_name }}"
+msgstr "تنبيه: إرجاع الإدراج رقم {{ object.entrie_name }} إلى المُدرِج"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_entry_returned_to_lister
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear Lister / <strong><t t-out=\"object.entered_by_id.name or object.create_uid.name or 'Respected User'\"/></strong>,<br/><br/>\n"
+"                        Please be informed that Entry No. <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> has been returned to you at the <strong>Entry Screen</strong> stage.<br/><br/>\n"
+"                        <strong>Return Note:</strong><br/>\n"
+"                        <t t-out=\"object.return_to_lister_note or 'N/A'\"/><br/><br/>\n"
+"                        Please log in to the system to review the notes and update the required information.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        عزيزي المُدرِج / <strong><t t-out=\"object.entered_by_id.name or object.create_uid.name or 'المحترم'\"/></strong>،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم إرجاع الإدراج رقم <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> إليكم في مرحلة <strong>شاشة الإدراج</strong>.<br/><br/>\n"
+"                        <strong>ملاحظة الإرجاع:</strong><br/>\n"
+"                        <t t-out=\"object.return_to_lister_note or 'N/A'\"/><br/><br/>\n"
+"                        نرجو التكرم بالدخول إلى النظام لمراجعة الملاحظات واستكمال البيانات المطلوبة.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            رابط الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Notes for Returning to the Lister:"
+msgstr "ملاحظة الإرجاع للمُدرِج:"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return this entry to the lister?"
+msgstr "هل انت متاكد من ارجاع هذا الادراج للمدرج"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Accept Listing and Move to Negotiation"
+msgstr "قبول الإدراج ونقله إلى التفاوض"
+
+#. module: bussma_system
+#: model:commercial.sector.manager.approval,name:bussma_system.commercial_sector_manager_approval_approval
+msgid "Accept Listing and Move to Negotiation"
+msgstr "قبول الإدراج ونقله لمرحلة المفاوضة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to move this listing to the negotiation stage?"
+msgstr "هل أنت تأكد من نقل هذا الإدراج إلى مرحلة التفاوض؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Return Listing to Committee"
+msgstr "إعادة الإدراج إلى اللجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return this listing to the committee?"
+msgstr "هل أنت تأكد من إعادة هذا الإدراج إلى اللجنة؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Transfer Listing to Partners Management"
+msgstr "تحويل الإدراج إلى إدارة الشركاء"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to transfer this listing to partner management?"
+msgstr "هل أنت تأكد من تحويل هذا الإدراج إلى إدارة الشركاء؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Decline Listing and Archive"
+msgstr "رفض الإدراج وأرشفته"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to decline this listing and archive it?"
+msgstr "هل أنت تأكد من رفض وأرشفة هذا الإدراج؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Move to postponed page"
+msgstr "النقل إلى صفحة الفرص المؤجلة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to postpone this listing?"
+msgstr "هل أنت تأكد من تأجيل هذا الإدراج؟"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__commercial_sector_manager_approval__return_committee
+msgid "Return to commit"
+msgstr "الإعادة إلى اللجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "<i class=\"fa fa-archive me-1\"/> Archived Property"
+msgstr "<i class=\"fa fa-archive me-1\"/> عقار مؤرشف"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "<i class=\"fa fa-handshake-o me-1\"/> Partners Screen"
+msgstr "<i class=\"fa fa-handshake-o me-1\"/> صفحة الشركاء"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "<i class=\"fa fa-clock-o me-1\"/> Deferred Opportunities"
+msgstr "<i class=\"fa fa-clock-o me-1\"/> الفرص المؤجلة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "Deferred Opportunities"
+msgstr "الفرص المؤجلة"
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_returned_to_negotiator
+msgid "Entry: Returned to Negotiator"
+msgstr "الإدراج: إرجاع إلى المتفاوض"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_returned_to_negotiator
+msgid "Notice: Entry Returned for Re-Negotiation — {{ object.entrie_name }}"
+msgstr "تنبيه: إرجاع الإدراج لإعادة التفاوض — {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_returned_to_negotiator
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong>Negotiator</strong>,<br/><br/>\n"
+"                        Please be informed that Entry No.\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>\n"
+"                        has been returned to you for <strong>re-negotiation</strong>.<br/><br/>\n"
+"                        Please log in to the system, review the notes, re-negotiate, and resubmit the entry for approval.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        عزيزي <strong>المتفاوض</strong>،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم إرجاع الإدراج رقم\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>\n"
+"                        إليكم لـ <strong>إعادة التفاوض</strong>.<br/><br/>\n"
+"                        نرجو التكرم بالدخول إلى النظام ومراجعة الملاحظات وإعادة التفاوض ثم إعادة إرسال الإدراج للاعتماد.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            عرض الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_sent_to_deputy_studies_manager
+msgid "Entry: Sent to Deputy Studies Manager for Approval"
+msgstr "الإدراج: إرسال إلى نائب مدير الدراسات للاعتماد"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_sent_to_deputy_studies_manager
+msgid "Action Required: Negotiation Approval — Entry {{ object.entrie_name }}"
+msgstr "مطلوب اتخاذ إجراء: اعتماد التفاوض — الإدراج {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_sent_to_deputy_studies_manager
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong>Deputy Studies Manager</strong>,<br/><br/>\n"
+"                        Please be informed that the negotiation result for Entry No.\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>\n"
+"                        has been submitted for your review and approval.<br/><br/>\n"
+"                        <strong>Entry Details:</strong><br/>\n"
+"                        — Submitted by: <t t-out=\"(object.env.user.name) or 'N/A'\"/><br/><br/>\n"
+"                        Please log in to the system, review the negotiation details, and take the appropriate action (Approve / Reject).\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        سعادة <strong>نائب مدير الدراسات</strong> المحترم،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم رفع نتيجة التفاوض للإدراج رقم\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>\n"
+"                        لمراجعتكم واعتمادكم.<br/><br/>\n"
+"                        <strong>تفاصيل الإدراج:</strong><br/>\n"
+"                        — قُدم بواسطة: <t t-out=\"(object.env.user.name) or 'N/A'\"/><br/><br/>\n"
+"                        نرجو التكرم بالدخول إلى النظام لمراجعة تفاصيل التفاوض واتخاذ الإجراء المناسب (موافقة / رفض).\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            عرض الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__deputy_studies_manager_approval
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Deputy Studies Manager Approval"
+msgstr "اعتماد نائب مدير الدراسات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__deputy_studies_manager_notes
+msgid "Deputy Studies Manager Notes"
+msgstr "ملاحظات نائب مدير الدراسات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to return this entry to the negotiator?"
+msgstr "هل أنت تأكد من أنك تريد إرجاع هذا الإدراج إلى المتفاوض؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to define the project path"
+msgstr "إرسال إلى تحديد مسار المشروع"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to send the negotiation result to the Deputy Studies "
+"Manager for approval?"
+msgstr ""
+"هل أنت تأكد من أنك تريد إرسال نتيجة التفاوض إلى نائب مدير الدراسات للاعتماد؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Deputy Studies Manager "
+"Rejection Note — Please Re-Negotiate and Re-Send</strong>"
+msgstr ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">ملاحظة رفض نائب مدير "
+"الدراسات — يرجى إعادة التفاوض وإعادة الإرسال</strong>"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Please set the owner's final decision before sending to Deputy Studies "
+"Manager."
+msgstr "يرجى تحديد القرار النهائي للمالك قبل الإرسال إلى نائب مدير الدراسات."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Please send the negotiation result to the Deputy Studies Manager first."
+msgstr "يرجى إرسال نتيجة التفاوض إلى نائب مدير الدراسات أولاً."
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "<strong>Notes for Returning to the Lister: </strong>"
+msgstr "ملاحظات الارجاع الى الدراس"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please set the owner's final price before sending to Deputy Studies Manager."
+msgstr "يرجى تحديد السعر النهائي للمالك قبل الإرسال إلى نائب مدير الدراسات."
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_studies_user
+msgid "Studies User"
+msgstr "مستخدم الدراسات"
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_contract_manager_assigned
+msgid "Entry: Contract Manager Assigned"
+msgstr "الإدراج: تم تعيين مسؤول التعاقد"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_contract_manager_assigned
+msgid "Notice: Assigned as Contract Manager — Entry {{ object.entrie_name }}"
+msgstr "إشعار: تم تعيينك كمسؤول تعاقد — الإدراج {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_contract_manager_assigned
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong>\n"
+"                            <t t-if=\"object.committee_decision == 'auction'\">\n"
+"                                <t t-out=\"object.auction_assigned_contract_manager.name or 'Contract Manager'\"/>\n"
+"                            </t>\n"
+"                            <t t-else=\"\">\n"
+"                                <t t-out=\"object.direct_sale_assigned_contract_manager.name or 'Contract Manager'\"/>\n"
+"                            </t>\n"
+"                        </strong>,<br/><br/>\n"
+"                        Please be informed that you have been assigned as the <strong>Contract Manager</strong> for Entry No.\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>.<br/><br/>\n"
+"                        Please log in to the system to review the entry details and proceed with the required contracting procedures.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        عزيزي <strong>\n"
+"                            <t t-if=\"object.committee_decision == 'auction'\">\n"
+"                                <t t-out=\"object.auction_assigned_contract_manager.name or 'مسؤول التعاقد'\"/>\n"
+"                            </t>\n"
+"                            <t t-else=\"\">\n"
+"                                <t t-out=\"object.direct_sale_assigned_contract_manager.name or 'مسؤول التعاقد'\"/>\n"
+"                            </t>\n"
+"                        </strong>،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم تعيينكم كـ <strong>مسؤول تعاقد</strong> للإدراج رقم\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>.<br/><br/>\n"
+"                        يرجى التكرم بالدخول إلى النظام لمراجعة تفاصيل الإدراج ومتابعة إجراءات التعاقد المطلوبة.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            رابط الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_committee_member
+msgid "Committee Members"
+msgstr "اعضاء اللجنة"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__listing_date
+msgid "Listing Date"
+msgstr "تاريخ الإدراج"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Please set the owner's final price per meter before sending to Deputy "
+"Studies Manager."
+msgstr "فضلا ضع السعر النهائي للمتر قبل الإرسال إلى نائب مدير الدراسات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Project Manager Assignment"
+msgstr "تعيين مدير المشروع"
+
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_assigned_project_manager
+msgid "Is Assigned Project Manager"
+msgstr "هل تم تعيين مدير المشروع"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__assigned_project_manager
+msgid "Project Manager"
+msgstr "مدير المشروع"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"Only the assigned Project Manager can move this entry to the next stage."
+msgstr "فقط مدير المشروع يمكنه نقل هذا الإدراج إلى المرحلة التالية"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_contract_followup_project_manager_assignment
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong>\n"
+"                            <t t-if=\"object.committee_decision == 'auction'\">Auctions Manager</t>\n"
+"                            <t t-else=\"\">Sales Manager</t>\n"
+"                        </strong>,<br/><br/>\n"
+"                        Please be informed that Entry No. <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> has reached the <strong>Contract Follow-up</strong> stage.<br/><br/>\n"
+"                        You are required to log in to the system and assign a <strong>Project Manager</strong> for this property.<br/><br/>\n"
+"                        <strong>Property Details:</strong><br/>\n"
+"                        - Committee Decision: <strong><t t-out=\"object.committee_decision or 'N/A'\"/></strong><br/>\n"
+"                        - Client Name: <strong><t t-out=\"object.contract_client_name or object.partner_id.name or 'N/A'\"/></strong><br/>\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>إدارة بصمة العقارية</strong><br/><br/>\n"
+"                        عزيزي <strong>\n"
+"                            <t t-if=\"object.committee_decision == 'auction'\">مدير المزادات</t>\n"
+"                            <t t-else=\"\">مدير المبيعات</t>\n"
+"                        </strong>،<br/><br/>\n"
+"                        نحيطكم علماً بأن الإدراج رقم <strong><t t-out=\"object.entrie_name or 'غير محدد'\"/></strong> قد وصل إلى مرحلة <strong>متابعة العقود</strong>.<br/><br/>\n"
+"                        يرجى تسجيل الدخول إلى النظام وتعيين <strong>مدير مشروع</strong> لهذا العقار.<br/><br/>\n"
+"                        <strong>تفاصيل العقار:</strong><br/>\n"
+"                        - قرار اللجنة: <strong><t t-out=\"object.committee_decision or 'غير محدد'\"/></strong><br/>\n"
+"                        - اسم العميل: <strong><t t-out=\"object.contract_client_name or object.partner_id.name or 'غير محدد'\"/></strong><br/>\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            عرض الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_contract_followup_project_manager_assignment
+msgid ""
+"Action Required: Project Manager Assignment for Entry {{ object.entrie_name "
+"}}"
+msgstr "إجراء مطلوب: تعيين مدير مشروع للإدراج {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_contract_followup_project_manager_assignment
+msgid "Entry: Project Manager Assignment Required"
+msgstr "الإدراج: مطلوب تعيين مدير مشروع"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_project_manager_assigned
+msgid "Notice: Assigned as Project Manager — Entry {{ object.entrie_name }}"
+msgstr "إشعار: تعيينك كمدير مشروع — الإدراج {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_project_manager_assigned
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong><t t-out=\"object.assigned_project_manager.name or 'Project Manager'\"/></strong>,<br/><br/>\n"
+"                        Please be informed that you have been assigned as the <strong>Project Manager</strong> for Entry No.\n"
+"                        <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong>.<br/><br/>\n"
+"                        <strong>Property &amp; Client Details:</strong><br/>\n"
+"                        - Client Name: <strong><t t-out=\"object.contract_client_name or object.partner_id.name or 'N/A'\"/></strong><br/>\n"
+"                        - Committee Decision: <strong><t t-out=\"object.committee_decision or 'N/A'\"/></strong><br/><br/>\n"
+"                        Please log in to the system to review the entry details and proceed with your tasks.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>إدارة بصمة العقارية</strong><br/><br/>\n"
+"                        عزيزي <strong><t t-out=\"object.assigned_project_manager.name or 'مدير المشروع'\"/></strong>،<br/><br/>\n"
+"                        نحيطكم علماً بأنه قد تم تعيينكم <strong>كمدير مشروع</strong> للإدراج رقم\n"
+"                        <strong><t t-out=\"object.entrie_name or 'غير محدد'\"/></strong>.<br/><br/>\n"
+"                        <strong>تفاصيل العقار والعميل:</strong><br/>\n"
+"                        - اسم العميل: <strong><t t-out=\"object.contract_client_name or object.partner_id.name or 'غير محدد'\"/></strong><br/>\n"
+"                        - قرار اللجنة: <strong><t t-out=\"object.committee_decision or 'غير محدد'\"/></strong><br/><br/>\n"
+"                        يرجى تسجيل الدخول إلى النظام لمراجعة تفاصيل الإدراج ومتابعة مهامكم.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            عرض الإدراج\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_project_manager_assigned
+msgid "Entry: Project Manager Assigned"
+msgstr "الإدراج: تم تعيين مدير المشروع"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__commercial_sector_manager_approval_rel
+msgid "Commercial Sector Manager Decision"
+msgstr "موافقة مدير القطاع التجاري لقرار اللجنة"
+
+#. module: bussma_system
+#: model:commercial.sector.manager.approval,name:bussma_system.commercial_sector_manager_approval_declined
+msgid "Decline"
+msgstr "رفض الادراج وارشفته"
+
+#. module: bussma_system
+#: model:commercial.sector.manager.approval,name:bussma_system.commercial_sector_manager_approval_postponed
+msgid "Postpone"
+msgstr "تأجيل الادراج"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_negotiator_replaced
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear Negotiation Officer / <strong><t t-out=\"ctx.get('old_negotiator_name') or object.env.context.get('old_negotiator_name') or 'Negotiation Officer'\"/></strong>,<br/><br/>\n"
+"                        Please be informed that you have been replaced as the negotiation officer for Entry No. <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> by another negotiation officer.<br/><br/>\n"
+"                        Thank you for your efforts and cooperation.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        عزيزي مسؤول التفاوض / <strong><t t-out=\"ctx.get('old_negotiator_name') or object.env.context.get('old_negotiator_name') or 'مسؤول التفاوض'\"/></strong>،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم استبدالكم كمسؤول تفاوض للإدراج رقم <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> بمسؤول تفاوض آخر.<br/><br/>\n"
+"                        شاكرين ومقدرين جهودكم وحسن تعاونكم.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_negotiator_replaced
+msgid "Entry: Negotiator Replaced"
+msgstr "الإدراج: استبدال مسؤول التفاوض"
+
+#. module: bussma_system
+#: model:mail.template,subject:bussma_system.email_template_negotiator_replaced
+msgid "Notice: Negotiator Replacement — Entry {{ object.entrie_name }}"
+msgstr "إشعار: استبدال مسؤول التفاوض — الإدراج {{ object.entrie_name }}"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
+msgid "Sector Manager Stages"
+msgstr "مراحل مدير القطاع"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_assign_negotiator
+msgid "Assign Negotiator"
+msgstr "صلاحية تعيين المفاوض"
+
+#. module: bussma_system
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only users with 'Assign Negotiator' permission can perform this action."
+msgstr "فقط المستخدمين الذين لديهم صلاحية 'تعيين المفاوض' يمكنهم تنفيذ هذا الإجراء."
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_contract_manager
+msgid "Contract Manager"
+msgstr "مسؤول التعاقد"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_rnd_manager
+msgid "R&D Manager"
+msgstr "مدير البحث والتطوير"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_modon_auction
+msgid "Is Modon Auction"
+msgstr "هل الإدراج تابع لمزادات مدن؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_list_view
+msgid "Committee Notes"
+msgstr "ملاحظات اللجنة"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_list_view
+msgid "Days Listed"
+msgstr "عدد ايام الادراج"
+
+#. module: bussma_system
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only users with 'Assign Negotiator' permission can perform this action."
+msgstr "فقط المستخدمين الذين لديهم صلاحية 'تعيين المفاوض' يمكنهم تنفيذ هذا الإجراء."
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_contract_manager
+msgid "Contract Manager"
+msgstr "مسؤول التعاقد"
+
+#. module: bussma_system
+#: model:res.groups,name:bussma_system.group_rnd_manager
+msgid "R&D Manager"
+msgstr "مدير البحث والتطوير"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__is_modon_auction
+msgid "Is Modon Auction"
+msgstr "هل الإدراج تابع لمزادات مدن؟"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__detailed_study_analyst
+#: model:request.stage,name:bussma_system.detailed_study_analyst
+msgid "Detailed Study Analyst"
+msgstr "إعداد الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__detailed_study_approval
+#: model:request.stage,name:bussma_system.detailed_study_approval
+msgid "Detailed Study Approval"
+msgstr "اعتماد الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Detailed Study Approval"
+msgstr "إرسال لاعتماد الدراسة التفصيلية"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send the detailed study for approval?"
+msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة التفصيلية للاعتماد؟"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Preliminary Study Approval stage not found. Please contact administrator."
+msgstr "مرحلة اعتماد الدراسة الأولية غير موجودة. يرجى التواصل مع المسؤول."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Detailed Study Approval stage not found. Please contact administrator."
+msgstr "مرحلة اعتماد الدراسة التفصيلية غير موجودة. يرجى التواصل مع المسؤول."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the Studies Manager can approve the detailed study."
+msgstr "فقط مدير الدراسات يمكنه اعتماد الدراسة التفصيلية."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Specialized Study Manager Approval must be completed before proceeding."
+msgstr "يجب استكمال اعتماد مدير الدراسات المتخصصة قبل المتابعة."
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Sales Manager"
+msgstr "إرسال إلى مدير المبيعات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the sales manager?"
+msgstr "هل أنت متأكد من إرسال هذا الإدخال إلى مدير المبيعات؟"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Auctions Manager"
+msgstr "إرسال إلى مدير المزادات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry to the auctions manager?"
+msgstr "هل أنت متأكد من إرسال هذا الإدخال إلى مدير المزادات؟"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Sales Manager Decision stage not found."
+msgstr "مرحلة قرار مدير المبيعات غير موجودة."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Auctions Manager Decision stage not found."
+msgstr "مرحلة قرار مدير المزادات غير موجودة."
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
+msgid "City Analyst"
+msgstr "دارس المدن"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to City Study Analyst Approval"
+msgstr "ارسال الى اعتماد دراسة مدن"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please fill in the Study Manager Approval decision before returning."
+msgstr "يرجى تحديد قرار اعتماد مدير إدارة الدراسات قبل الإرجاع."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "You cannot return the study when the approval decision is 'Completed'. The approval decision must be 'Incomplete'."
+msgstr "لا يمكن إرجاع الدراسة عندما يكون قرار الاعتماد 'مكتمل'. يجب أن يكون القرار 'غير مكتمل'."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "You cannot return the study when the approval decision is not 'Incomplete'."
+msgstr "لا يمكن إرجاع الدراسة عندما يكون قرار الاعتماد غير 'غير مكتمل'."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please enter the Study Manager Notes explaining the return reason before returning."
+msgstr "يرجى إدخال ملاحظات مدير إدارة الدراسات توضح سبب الإرجاع قبل الإرجاع."
+
+#. module: bussma_system
+#: model:ir.actions.act_window,name:bussma_system.data_completion_action
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries__is_authorized_property__data_completion
+#: model:ir.model.fields.selection,name:bussma_system.selection__entries_return_log__return_type__data_completion
+#: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__data_completion
+#: model:ir.ui.menu,name:bussma_system.data_completion_menu
+#: model:request.stage,name:bussma_system.data_completion
+msgid "Data Completion"
+msgstr "استكمال بيانات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__data_completer_id
+#: model:res.groups,name:bussma_system.group_data_completer
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
+msgid "Data Completer"
+msgstr "مستكمل البيانات"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__data_completion_note
+msgid "Data Completion Note"
+msgstr "ملاحظات استكمال البيانات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Data Completion"
+msgstr "إرسال لاستكمال البيانات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Are you sure you want to send this entry for data completion?"
+msgstr "هل أنت متأكد من إرسال هذا الإدخال لاستكمال البيانات؟"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Please select 'Data Completion' under Is Authorized Property first."
+msgstr "يرجى اختيار 'استكمال بيانات' في حقل هل العقار معتمد أولاً."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Data Completion stage could not be found."
+msgstr "لم يتم العثور على مرحلة استكمال البيانات."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Only the assigned Data Completer can submit this entry."
+msgstr "يحق لمستكمل البيانات المحدد فقط إرسال هذا السجل."
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid ""
+"The following fields are required before sending to data completion:\n"
+"- %s"
+msgstr ""
+"الحقول التالية مطلوبة قبل الإرسال لاستكمال البيانات:\n"
+"- %s"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+msgid "Define Project Path stage not found. Please contact administrator."
+msgstr "لم يتم العثور على مرحلة تحديد مسار المشروع. يرجى التواصل مع المسؤول."
+
+#. module: bussma_system
+#: model:mail.template,name:bussma_system.email_template_entry_data_completion
+msgid "Entry: Data Completion"
+msgstr "الإدراج: استكمال بيانات"
+
+#. module: bussma_system
+#: model:mail.template,body_html:bussma_system.email_template_entry_data_completion
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: left;\">\n"
+"                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>\n"
+"                        Dear <strong><t t-out=\"object.data_completer_id.name or 'Respected User'\"/></strong>,<br/><br/>\n"
+"                        Please be informed that Entry No. <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> has been assigned to you at the <strong>Data Completion</strong> stage.<br/><br/>\n"
+"                        <strong>Notes:</strong><br/>\n"
+"                        <t t-out=\"object.data_completion_note or 'N/A'\"/><br/><br/>\n"
+"                        Please log in to the system to review the notes and complete the required information.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            View Entry\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px; text-align: right;\">\n"
+"                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>\n"
+"                        عزيزي / <strong><t t-out=\"object.data_completer_id.name or 'المحترم'\"/></strong>،<br/><br/>\n"
+"                        نود إحاطتكم علماً بأنه تم إسناد الإدراج رقم <strong><t t-out=\"object.entrie_name or 'N/A'\"/></strong> إليكم في مرحلة <strong>استكمال بيانات</strong>.<br/><br/>\n"
+"                        <strong>ملاحظات استكمال البيانات:</strong><br/>\n"
+"                        <t t-out=\"object.data_completion_note or 'N/A'\"/><br/><br/>\n"
+"                        نرجو التكرم بالدخول إلى النظام لمراجعة الملاحظات واستكمال البيانات المطلوبة.\n"
+"                    </p>\n"
+"                    <div style=\"margin: 16px 0px 16px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;\">\n"
+"                            عرض العقار\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_entries__duration_data_completion_days
+msgid "Data Completion Duration (Days)"
+msgstr "مدة استكمال البيانات (بالأيام)"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Send to Deputy Studies Manager"
+msgstr "إرسال إلى نائب مدير الدراسات"
+
+#. module: bussma_system
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid ""
+"Are you sure you want to send the completed data to the Deputy Studies "
+"Manager?"
+msgstr "هل أنت متأكد من إرسال البيانات المكتملة إلى نائب مدير الدراسات؟"
+
+#. module: bussma_system
+#: model:ir.model.fields,field_description:bussma_system.field_property_type__is_land
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_property_type_list
+#: model_terms:ir.ui.view,arch_db:bussma_system.view_property_type_search
+msgid "Is Land"
+msgstr "أرض"
+
+#. module: bussma_system
+#. odoo-python
+#: code:addons/bussma_system/models/entries.py:0
+#: model:ir.model.fields,field_description:bussma_system.field_entries__data_completer_return_count
+#: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
+msgid "Data Completer Returns"
+msgstr "إرجاعات مستكمل البيانات"

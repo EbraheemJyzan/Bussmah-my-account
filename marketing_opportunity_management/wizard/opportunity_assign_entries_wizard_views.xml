@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bussma_opportunity_assign_entries_wizard_form" model="ir.ui.view">
+            <field name="name">bussma.opportunity.assign.entries.wizard.form</field>
+            <field name="model">bussma.opportunity.assign.entries.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add / Assign Properties to Opportunity">
+                    <sheet>
+                        <field name="opportunity_id" invisible="1"/>
+                        <group>
+                            <field name="partner_id" readonly="1"/>
+                        </group>
+                        <group string="Select Properties to Assign to Opportunity">
+                            <field name="selected_entry_ids" widget="many2many" domain="[('partner_id', '=', partner_id), ('stage_id.project_stage_selection', '!=', 'completed'), ('opportunity_id', '!=', opportunity_id)]">
+                                <list string="Available Properties for Client">
+                                    <field name="entrie_name"/>
+                                    <field name="city"/>
+                                    <field name="district_id"/>
+                                    <field name="property_type"/>
+                                    <field name="area_sqm"/>
+                                    <field name="stage_id"/>
+                                    <field name="committee_total_price"/>
+                                </list>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm_assign" string="Confirm Link" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

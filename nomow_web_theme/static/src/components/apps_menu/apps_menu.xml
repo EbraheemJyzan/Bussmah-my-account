@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Apps menu -->
+    <t t-name="nomow_web_theme.AppsMenu">
+        <div class="o_grid_apps_menu" t-att-data-theme="theme">
+            <t t-if="has_background_image" t-set="stlye_BackgroundImage" t-value="'background-image:url(' + BackgroundImage +'); background-size: contain; background-repeat: no-repeat; background-position: center;'"/>
+            <t t-else="" t-set="stlye_BackgroundImage" t-value="'background-image:url(' + BackgroundImage +'), linear-gradient(rgb(233, 230, 249), white)'"/>
+            <div class="app-menu-container" t-att-style="stlye_BackgroundImage">
+                <AppsMenuSearchBar />
+                <div class="o-app-menu-list">
+                    <a
+                        t-foreach="menuService.getApps()"
+                        t-as="app"
+                        t-key="app.id"
+                        class="o-app-menu-item"
+                        role="button"
+                        t-att-data-menu-xmlid="app.xmlid"
+                        draggable="false"
+                        t-if="app.xmlid !== 'nomow_web_theme.apps_menu'"
+                        t-att-href="getMenuItemHref(app)"
+                        t-on-onClick="onNavBarDropdownItemSelection.bind(this)"
+                    >
+                        <div
+                            class="position-relative o_app"
+                            t-att-data-menu-xmlid="app.xmlid"
+                        >
+                            <img 
+                                t-if="app.webIconData and app.webIconData != '/web/static/img/default_icon_app.png'"          		
+                                class="o-app-menu-item__icon rounded-3" 
+                                t-attf-src="{{app.webIconData}}"
+                            />
+                            <img  
+                                t-else="" 
+                                class="o-app-menu-item__icon rounded-3" 
+                                src="/nomow_web_theme/static/src/img/main-menu.png"
+                            />
+                           
+                        </div>
+                        <span class="o-app-menu-item__name" t-att-title="app.name">
+                            <t t-out="app.name" />
+                        </span>
+                    </a>
+                  
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

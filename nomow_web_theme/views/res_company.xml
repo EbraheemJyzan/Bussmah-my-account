@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_inherit" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.theme</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='branches']" position="after">
+                <page string="Image Thme" name="image_them">
+                    <group>
+                        <field name="background_image" widget="image" class="oe_avatar" />
+                        <field name="background_login" widget="image" class="oe_avatar" />
+                        <field name="image_login" widget="image" class="oe_avatar" />
+                        <field name="image_theam" widget="image" class="oe_avatar" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

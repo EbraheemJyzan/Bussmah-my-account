@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="view_office_request_form" model="ir.ui.view">
+            <field name="name">office.request.form</field>
+            <field name="model">office.request</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Request">
+                    <header>
+                        <button name="action_open_marketing_wizard" string="Send to Marketing" type="object" class="btn-primary" invisible="marketing_id or state != 'new'"/>
+                        <button name="action_open_marketing_wizard" string="Resend Marketing Request" type="object" class="btn-warning" invisible="not marketing_id or not is_returned_to_requester or state != 'new'"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <field name="is_returned_to_requester" invisible="1"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Request Title..."/></h1>
+                            <h3><field name="code" readonly="1"/></h3>
+                        </div>
+
+                        <!-- Common Request Info (always visible) -->
+                        <group>
+                            <group string="Request Information">
+                                <field name="office_request_type" required="1"/>
+                                <field name="department_id"/>
+                                <field name="requested_by_id"/>
+                                <field name="request_date"/>
+                                <field name="priority" widget="priority"/>
+                                <field name="marketing_id" readonly="1" options="{'no_open': True}" invisible="not marketing_id"/>
+                            </group>
+                        </group>
+                        <!-- ============ Project ============ -->
+                        <group string="Project Details" invisible="office_request_type != 'project_request'">
+                            <group>
+                                <field name="project_name" string="Project Name" required="office_request_type == 'project_request'"/>
+                                <field name="project_type_selection" string="Project Type" required="office_request_type == 'project_request'"/>
+                                <field name="city_id" string="City" required="office_request_type == 'project_request'"/>
+                                <field name="needs_identity" string="Needs Identity?" required="office_request_type == 'project_request'"/>
+                                <field name="has_proposed_project_name" widget="radio" options="{'horizontal': true}" string="Has Proposed Project Name?" required="office_request_type == 'project_request'"/>
+                                <field name="proposed_project_name" invisible="has_proposed_project_name != 'yes'" required="office_request_type == 'project_request' and has_proposed_project_name == 'yes'"/>
+                            </group>
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?" required="office_request_type == 'project_request'"/>
+                                <field name="is_masterplan" widget="radio" options="{'horizontal': true}" string="Is Project a Masterplan?" required="office_request_type == 'project_request'"/>
+                                <field name="delivery_date" string="Delivery Date" required="office_request_type == 'project_request'"/>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?" required="office_request_type == 'project_request'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Change Request ============ -->
+                        <group string="Change Request Details" invisible="office_request_type != 'change_request'">
+                            <group>
+                                <field name="change_request_type" string="Change Type" required="office_request_type == 'change_request'"/>
+                                <field name="target_marketing_project_id" string="Project to Change" required="office_request_type == 'change_request'"/>
+                                <field name="delivery_date" string="Delivery Date" required="office_request_type == 'change_request'"/>
+                            </group>
+                            <group>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?" required="office_request_type == 'change_request'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Business Card ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'business_card'">
+                            <group>
+                                <field name="employee_name" string="Name" required="office_request_type == 'business_card'"/>
+                                <field name="job_title" string="Job Title" required="office_request_type == 'business_card'"/>
+                            </group>
+                            <group>
+                                <field name="phone_number" string="Phone" required="office_request_type == 'business_card'"/>
+                                <field name="extension_number" string="Extension" required="office_request_type == 'business_card'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Email Signature ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'email_signature'">
+                            <group>
+                                <field name="employee_name" string="Name" required="office_request_type == 'email_signature'"/>
+                                <field name="job_title" string="Job Title" required="office_request_type == 'email_signature'"/>
+                                <field name="employee_number" string="Employee Number" required="office_request_type == 'email_signature'"/>
+                            </group>
+                            <group>
+                                <field name="employee_email" string="Employee Email" required="office_request_type == 'email_signature'"/>
+                                <field name="phone_number" string="Phone" required="office_request_type == 'email_signature'"/>
+                                <field name="extension_number" string="Extension" required="office_request_type == 'email_signature'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Signboard Design ============ -->
+                        <group string="Signboard Details" invisible="office_request_type != 'signboard_design'">
+                            <group>
+                                <field name="property_code" string="Property Code" required="office_request_type == 'signboard_design'"/>
+                                <field name="signboard_size" string="Signboard Size" required="office_request_type == 'signboard_design'"/>
+                            </group>
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?" required="office_request_type == 'signboard_design'"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" required="office_request_type == 'signboard_design'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Design Request ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'design_request'">
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?" required="office_request_type == 'design_request'"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" required="office_request_type == 'design_request'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Internal Communication ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'internal_communication'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?" required="office_request_type == 'internal_communication'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Thank You Certificate ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'thank_you_certificate'">
+                            <group>
+                                <field name="employee_name" string="Name" required="office_request_type == 'thank_you_certificate'"/>
+                                <field name="job_title" string="Job Title" required="office_request_type == 'thank_you_certificate'"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" required="office_request_type == 'thank_you_certificate'"/>
+                            </group>
+                        </group>
+                        <!-- ============ ID Card ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'id_card'">
+                            <group>
+                                <field name="employee_name" string="Name" required="office_request_type == 'id_card'"/>
+                                <field name="job_title" string="Job Title" required="office_request_type == 'id_card'"/>
+                                <field name="employee_number" string="Employee Number" required="office_request_type == 'id_card'"/>
+                            </group>
+                        </group>
+                        <!-- ============ Other ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'other'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+
+                        <!-- Alerts for returned requests -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not is_returned_to_requester or state != 'new'">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Request returned from Marketing Department with the following notes</strong>
+                                <field name="return_to_requester_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="attachment_return_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                        <field name="has_pm_or_done_materials" invisible="1"/>
+                        <notebook>
+                            <page string="Request Description">
+                                <field name="description" string="Request Description" required="1" placeholder="Detailed request description..."/>
+                            </page>
+                            <page string="Marketing Materials Results" invisible="not marketing_id or not has_pm_or_done_materials">
+                                <field name="material_ids" mode="kanban" readonly="1" no_open="1" domain="[('material_stage_selection', 'in', ['mat_pm_approve', 'mat_done'])]">
+                                    <kanban default_group_by="activity_id" create="false" edit="false" delete="false" can_open="false">
+                                        <field name="name"/>
+                                        <field name="employee_id"/>
+                                        <field name="result_notes"/>
+                                        <field name="output_attachment_ids"/>
+                                        <field name="activity_id"/>
+                                        <field name="material_stage_selection"/>
+                                        <field name="is_project_manager"/>
+                                        <field name="modification_request_count"/>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="oe_kanban_card p-2 border rounded shadow-sm mb-2 bg-white">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <strong class="fs-6 text-primary"><field name="name"/></strong>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small">
+                                                        <strong>Responsible: </strong>
+                                                        <field name="employee_id"/>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small" t-if="record.result_notes.raw_value">
+                                                        <strong>Notes / Results: </strong>
+                                                        <field name="result_notes"/>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top" t-if="record.output_attachment_ids.raw_value and record.output_attachment_ids.raw_value.length">
+                                                        <strong class="text-secondary small d-block mb-1"><i class="fa fa-paperclip me-1"/>Final Attachments:</strong>
+                                                        <field name="output_attachment_ids" widget="many2many_binary" readonly="1"/>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_pm_approve'">
+                                                        <span class="badge text-bg-warning">Pending Service Requester Approval</span>
+                                                        <button name="action_open_pm_approval_wizard" type="object" class="btn btn-sm btn-primary">
+                                                            <i class="fa fa-gavel me-1"/> Service Requester Decision
+                                                        </button>
+                                                    </div>
+                                                    <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_done'">
+                                                        <span class="badge text-bg-success">Completed ✓</span>
+                                                        <button name="action_open_request_modification_wizard" type="object" class="btn btn-sm btn-warning" t-if="record.is_project_manager.raw_value">
+                                                            <i class="fa fa-edit me-1"/> Request Modification
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_office_request_tree" model="ir.ui.view">
+            <field name="name">office.request.tree</field>
+            <field name="model">office.request</field>
+            <field name="arch" type="xml">
+                <list string="Marketing Requests">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="project_code"/>
+                    <field name="project_name"/>
+                    <field name="department_id"/>
+                    <field name="property_type_id"/>
+                    <field name="requested_by_id"/>
+                    <field name="state"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_office_request_search" model="ir.ui.view">
+            <field name="name">office.request.search</field>
+            <field name="model">office.request</field>
+            <field name="arch" type="xml">
+                <search string="Search Marketing Requests">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="project_code"/>
+                    <field name="project_name"/>
+                    <field name="partner_id"/>
+                    <field name="city_id"/>
+                    <field name="district_id"/>
+                    <field name="property_type_id"/>
+                    <field name="requested_by_id"/>
+                    <filter string="New" name="state_new" domain="[('state', '=', 'new')]"/>
+                    <filter string="In Progress" name="state_in_progress" domain="[('state', '=', 'in_progress')]"/>
+                    <filter string="Completed" name="state_done" domain="[('state', '=', 'done')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="group_state" context="{'group_by': 'state'}"/>
+                        <filter string="Client" name="group_partner" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Property Type" name="group_property_type" context="{'group_by': 'property_type_id'}"/>
+                        <filter string="City" name="group_city" context="{'group_by': 'city_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_office_request" model="ir.actions.act_window">
+            <field name="name">Marketing Requests</field>
+            <field name="res_model">office.request</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_office_request_search"/>
+        </record>
+    </data>
+</odoo>

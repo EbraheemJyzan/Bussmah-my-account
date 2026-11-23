@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <record id="powerbi_connector_dashboard_kanban_view" model="ir.ui.view">
+            <field name="name">powerbi.connector.dashboard</field>
+            <field name="model">powerbi.connector.dashboard</field>
+            <field name="arch" type="xml">
+                <kanban
+                    create="false" can_open="0"
+                    highlight_color="color"
+                    class="oe_background_grey o_kanban_dashboard">
+                    <field name="color" />
+                    <field name="name" />
+                    <field name='total_count' />
+                    <field name='state' />
+                    <field name='unpublish_count' />
+                    <field name='publish_count' />
+                    <field name="kanban_dashboard_graph_data" />
+                    <templates>
+                        <t t-name="menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="card_menu_view col">
+                                        <div class="o_kanban_card_manage_title"
+                                            role="menuitem">
+                                            <strong>View</strong>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'database'"
+                                            class="mt-2 d-grid gap-1">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_kql_database_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_publish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.kql.database','name':'PowerBI KQL Database'}">
+                                                    Publish</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_unpublish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.kql.database','name':'PowerBI KQL Database'}">
+                                                    Unpublish</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'dataset'"
+                                            class="mt-2 d-grid gap-1">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_dataset_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_publish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.dataset','name':'PowerBI Dataset'}">
+                                                    Publish</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_unpublish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.dataset','name':'PowerBI KQL Dataset'}">
+                                                    Unpublish</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'eventhouse'"
+                                            class="mt-2 d-grid gap-1">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_eventhouse_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_publish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.eventhouse','name':'PowerBI Eventhouse'}">
+                                                    Publish</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_unpublish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.eventhouse','name':'PowerBI Eventhouse'}">
+                                                    Unpublish</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'workspace'"
+                                            class="mt-2 d-grid gap-1">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_workspace_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_publish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.workspace','name':'Power BI Workspace'}">
+                                                    Publish</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_unpublish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.workspace','name':'Power BI Workspace'}">
+                                                    Unpublish</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'table'"
+                                            class="mt-2 d-grid gap-1">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_table_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_publish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.table','name':'Power BI Table'}">
+                                                    Publish</a>
+                                            </div>
+                                            <div role="menuitem">
+                                                <a name="action_unpublish"
+                                                    type="object"
+                                                    context="{'model_name':'powerbi.table','name':'Power BI Table'}">
+                                                    Unpublish</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'report'" class="mt-2">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_report_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.state.raw_value == 'dashboard'"
+                                            class="mt-2">
+                                            <div role="menuitem">
+                                                <a
+                                                    name="odoo_powerbi_connect.powerbi_dashboard_action_tree"
+                                                    type="action">All</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        t-if="record.state.raw_value != 'report' and record.state.raw_value != 'dashboard'"
+                                        class="col">
+                                        <div role="menuitem">
+                                            <strong>New</strong>
+                                        </div>
+                                        <div role="menuitem" class="mt-2">
+                                            <a name="action_create_new" type="object">
+                                                <t t-esc="record.name.raw_value" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="o_kanban_card_manage_settings">
+                                    <div role="menuitem" aria-haspopup="true">
+                                        <field name="color" widget="kanban_color_picker" />
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-name="card">
+                            <div>
+                                <div class="container">
+                                    <div class="row mt-4">
+                                        <div class="col-6 o_kanban_primary_left">
+                                            <div t-if="record.state.raw_value == 'workspace'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-building-o fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="Workspaces"></i>
+                                                    <h3>Workspaces</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'eventhouse'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-database fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="Eventhouses"></i>
+                                                    <h3>Eventhouses</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'database'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-database fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="KQL Databases"></i>
+                                                    <h3>KQL Databases</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'dataset'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-database fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="Datasets"></i>
+                                                    <h3>Datasets</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'table'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-table fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="Tables"></i>
+                                                    <h3>Tables</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'report'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-file fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="PowerBI Reports"></i>
+                                                    <h3>Reports</h3>
+                                                </center>
+                                            </div>
+                                            <div t-if="record.state.raw_value == 'dashboard'"
+                                                style="color:rgb(162, 70, 137)">
+                                                <center>
+                                                    <i class="fa fa-dashboard fa-5x mb-2"
+                                                        modifiers="{}"
+                                                        title="PowerBI Dashboards"></i>
+                                                    <h3>Dashboards </h3>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 d-grid">
+                                            <div>
+                                                <a class="btn btn-sm bg-primary text-white w-100"
+                                                    name="total_data"
+                                                    type="object">
+                                                    <span><t
+                                                            t-esc="record.total_count.value" />
+                                                        TOTAL</span>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a class="btn btn-sm bg-success text-white w-100"
+                                                    name="action_publish"
+                                                    type="object"
+                                                    invisible="state == 'report' or state == 'dashboard'">
+                                                    <span><t
+                                                            t-esc="record.publish_count.value" />
+                                                        PUBLISH</span>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a class="btn btn-sm bg-danger text-white w-100"
+                                                    name="action_unpublish"
+                                                    type="object"
+                                                    invisible="state == 'report' or state == 'dashboard'">
+                                                    <span><t
+                                                            t-esc="record.unpublish_count.value" />
+                                                        UNPUBLISH</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 o_kanban_primary_bottom">
+                                        <div>
+                                            <field name="kanban_dashboard_graph_data"
+                                                graph_type="bar"
+                                                widget="dashboard_graph" color="color" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="powerbi_connector_dashboard_action" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">powerbi.connector.dashboard</field>
+            <field name="view_id" ref="powerbi_connector_dashboard_kanban_view" />
+            <field name="view_mode">kanban</field>
+        </record>
+
+    </data>
+</odoo>

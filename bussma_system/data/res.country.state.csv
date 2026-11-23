@@ -1,0 +1,158 @@
+id,name,code,country_id/id
+state_city_sa_gov_1,الرياض,CT_1,base.sa
+state_city_sa_gov_2,الدرعية,CT_2,base.sa
+state_city_sa_gov_3,الخرج,CT_3,base.sa
+state_city_sa_gov_4,الدوادمي,CT_4,base.sa
+state_city_sa_gov_5,المجمعة,CT_5,base.sa
+state_city_sa_gov_6,القويعية,CT_6,base.sa
+state_city_sa_gov_7,وادي الدواسر,CT_7,base.sa
+state_city_sa_gov_8,الأفلاج,CT_8,base.sa
+state_city_sa_gov_9,الزلفي,CT_9,base.sa
+state_city_sa_gov_10,شقراء,CT_10,base.sa
+state_city_sa_gov_11,حوطة بني تميم,CT_11,base.sa
+state_city_sa_gov_12,الغاط,CT_12,base.sa
+state_city_sa_gov_13,عفيف,CT_13,base.sa
+state_city_sa_gov_14,السليل,CT_14,base.sa
+state_city_sa_gov_15,ضرما,CT_15,base.sa
+state_city_sa_gov_16,المزاحمية,CT_16,base.sa
+state_city_sa_gov_17,رماح,CT_17,base.sa
+state_city_sa_gov_18,ثادق,CT_18,base.sa
+state_city_sa_gov_19,حريملاء,CT_19,base.sa
+state_city_sa_gov_20,الحريق,CT_20,base.sa
+state_city_sa_gov_21,مرات,CT_21,base.sa
+state_city_sa_gov_22,الدلم,CT_22,base.sa
+state_city_sa_gov_23,الرين,CT_23,base.sa
+state_city_sa_gov_24,مكة المكرمة,CT_24,base.sa
+state_city_sa_gov_25,جدة,CT_25,base.sa
+state_city_sa_gov_26,الطائف,CT_26,base.sa
+state_city_sa_gov_27,القنفذة,CT_27,base.sa
+state_city_sa_gov_28,الليث,CT_28,base.sa
+state_city_sa_gov_29,رابغ,CT_29,base.sa
+state_city_sa_gov_30,خليص,CT_30,base.sa
+state_city_sa_gov_31,رنية,CT_31,base.sa
+state_city_sa_gov_32,الخرمة,CT_32,base.sa
+state_city_sa_gov_33,تربة,CT_33,base.sa
+state_city_sa_gov_34,الجمجم,CT_34,base.sa
+state_city_sa_gov_35,الكامل,CT_35,base.sa
+state_city_sa_gov_36,ميسان,CT_36,base.sa
+state_city_sa_gov_37,أضم,CT_37,base.sa
+state_city_sa_gov_38,بحرة,CT_38,base.sa
+state_city_sa_gov_39,العرضيات,CT_39,base.sa
+state_city_sa_gov_40,المويه,CT_40,base.sa
+state_city_sa_gov_41,المدينة المنورة,CT_41,base.sa
+state_city_sa_gov_42,ينبع البحر,CT_42,base.sa
+state_city_sa_gov_43,العلا,CT_43,base.sa
+state_city_sa_gov_44,المهد,CT_44,base.sa
+state_city_sa_gov_45,بدر,CT_45,base.sa
+state_city_sa_gov_46,خيبر,CT_46,base.sa
+state_city_sa_gov_47,الحناكية,CT_47,base.sa
+state_city_sa_gov_48,العيص,CT_48,base.sa
+state_city_sa_gov_49,وادي الفرع,CT_49,base.sa
+state_city_sa_gov_50,الدمام,CT_50,base.sa
+state_city_sa_gov_51,الأحساء,CT_51,base.sa
+state_city_sa_gov_52,الخبر,CT_52,base.sa
+state_city_sa_gov_53,الجبيل,CT_53,base.sa
+state_city_sa_gov_54,حفر الباطن,CT_54,base.sa
+state_city_sa_gov_55,القطيف,CT_55,base.sa
+state_city_sa_gov_56,الخفجي,CT_56,base.sa
+state_city_sa_gov_57,النعيرية,CT_57,base.sa
+state_city_sa_gov_58,قرية العليا,CT_58,base.sa
+state_city_sa_gov_59,بقيق,CT_59,base.sa
+state_city_sa_gov_60,رأس تنورة,CT_60,base.sa
+state_city_sa_gov_61,العديد,CT_61,base.sa
+state_city_sa_gov_62,أبها,CT_62,base.sa
+state_city_sa_gov_63,خميس مشيط,CT_63,base.sa
+state_city_sa_gov_64,بيشة,CT_64,base.sa
+state_city_sa_gov_65,النماص,CT_65,base.sa
+state_city_sa_gov_66,محايل,CT_66,base.sa
+state_city_sa_gov_67,سراة عبيدة,CT_67,base.sa
+state_city_sa_gov_68,تثليث,CT_68,base.sa
+state_city_sa_gov_69,رجال ألمع,CT_69,base.sa
+state_city_sa_gov_70,بلقرن,CT_70,base.sa
+state_city_sa_gov_71,أحد رفيدة,CT_71,base.sa
+state_city_sa_gov_72,ظهران الجنوب,CT_72,base.sa
+state_city_sa_gov_73,المجاردة,CT_73,base.sa
+state_city_sa_gov_74,تنومة,CT_74,base.sa
+state_city_sa_gov_75,طريب,CT_75,base.sa
+state_city_sa_gov_76,البرك,CT_76,base.sa
+state_city_sa_gov_77,بارق,CT_77,base.sa
+state_city_sa_gov_78,الأمواه,CT_78,base.sa
+state_city_sa_gov_79,الفرشة,CT_79,base.sa
+state_city_sa_gov_80,الحرجة,CT_80,base.sa
+state_city_sa_gov_81,تبوك,CT_81,base.sa
+state_city_sa_gov_82,ضباء,CT_82,base.sa
+state_city_sa_gov_83,تيماء,CT_83,base.sa
+state_city_sa_gov_84,أملج,CT_84,base.sa
+state_city_sa_gov_85,الوجه,CT_85,base.sa
+state_city_sa_gov_86,حقل,CT_86,base.sa
+state_city_sa_gov_87,البدع,CT_87,base.sa
+state_city_sa_gov_88,بريدة,CT_88,base.sa
+state_city_sa_gov_89,عنيزة,CT_89,base.sa
+state_city_sa_gov_90,الرس,CT_90,base.sa
+state_city_sa_gov_91,المذنب,CT_91,base.sa
+state_city_sa_gov_92,البكيرية,CT_92,base.sa
+state_city_sa_gov_93,البدائع,CT_93,base.sa
+state_city_sa_gov_94,رياض الخبراء,CT_94,base.sa
+state_city_sa_gov_95,عيون الجواء,CT_95,base.sa
+state_city_sa_gov_96,الشماسية,CT_96,base.sa
+state_city_sa_gov_97,ضرية,CT_97,base.sa
+state_city_sa_gov_98,النبهانية,CT_98,base.sa
+state_city_sa_gov_99,الأسياح,CT_99,base.sa
+state_city_sa_gov_100,عقلة الصقور,CT_100,base.sa
+state_city_sa_gov_101,حائل,CT_101,base.sa
+state_city_sa_gov_102,بقعاء,CT_102,base.sa
+state_city_sa_gov_103,الغزالة,CT_103,base.sa
+state_city_sa_gov_104,الشنان,CT_104,base.sa
+state_city_sa_gov_105,السليمي,CT_105,base.sa
+state_city_sa_gov_106,الحائط,CT_106,base.sa
+state_city_sa_gov_107,سميراء,CT_107,base.sa
+state_city_sa_gov_108,الشملي,CT_108,base.sa
+state_city_sa_gov_109,موقق,CT_109,base.sa
+state_city_sa_gov_110,جازان,CT_110,base.sa
+state_city_sa_gov_111,صبيا,CT_111,base.sa
+state_city_sa_gov_112,أبو عريش,CT_112,base.sa
+state_city_sa_gov_113,صامطة,CT_113,base.sa
+state_city_sa_gov_114,أحد المسارحة,CT_114,base.sa
+state_city_sa_gov_115,العارضة,CT_115,base.sa
+state_city_sa_gov_116,بيش,CT_116,base.sa
+state_city_sa_gov_117,ضمد,CT_117,base.sa
+state_city_sa_gov_118,الدرب,CT_118,base.sa
+state_city_sa_gov_119,الحرث,CT_119,base.sa
+state_city_sa_gov_120,الريث,CT_120,base.sa
+state_city_sa_gov_121,فرسان,CT_121,base.sa
+state_city_sa_gov_122,الدائر,CT_122,base.sa
+state_city_sa_gov_123,فيفاء,CT_123,base.sa
+state_city_sa_gov_124,هروب,CT_124,base.sa
+state_city_sa_gov_125,العيدابي,CT_125,base.sa
+state_city_sa_gov_126,الطوال,CT_126,base.sa
+state_city_sa_gov_127,نجران,CT_127,base.sa
+state_city_sa_gov_128,شرورة,CT_128,base.sa
+state_city_sa_gov_129,حبونا,CT_129,base.sa
+state_city_sa_gov_130,بدر الجنوب,CT_130,base.sa
+state_city_sa_gov_131,يدمه,CT_131,base.sa
+state_city_sa_gov_132,ثار,CT_132,base.sa
+state_city_sa_gov_133,خباش,CT_133,base.sa
+state_city_sa_gov_134,الباحة,CT_134,base.sa
+state_city_sa_gov_135,بلجرشي,CT_135,base.sa
+state_city_sa_gov_136,المندق,CT_136,base.sa
+state_city_sa_gov_137,المخواة,CT_137,base.sa
+state_city_sa_gov_138,العقيق,CT_138,base.sa
+state_city_sa_gov_139,قلوة,CT_139,base.sa
+state_city_sa_gov_140,القرى,CT_140,base.sa
+state_city_sa_gov_141,بني حسن,CT_141,base.sa
+state_city_sa_gov_142,فرعة غامد الزناد,CT_142,base.sa
+state_city_sa_gov_143,الحجرة,CT_143,base.sa
+state_city_sa_gov_144,سكاكا,CT_144,base.sa
+state_city_sa_gov_145,القريات,CT_145,base.sa
+state_city_sa_gov_146,دومة الجندل,CT_146,base.sa
+state_city_sa_gov_147,طبرجل,CT_147,base.sa
+state_city_sa_gov_148,عرعر,CT_148,base.sa
+state_city_sa_gov_149,رفحاء,CT_149,base.sa
+state_city_sa_gov_150,طريف,CT_150,base.sa
+state_city_sa_gov_151,العويقيلة,CT_151,base.sa
+state_city_sa_gov_159,الجوف,CT_159,base.sa
+state_city_sa_gov_160,عسير,CT_160,base.sa
+state_city_sa_gov_161,الشرقية,CT_161,base.sa
+state_city_sa_gov_162,تركيا,CT_162,base.sa
+state_city_sa_gov_163,البحرين,CT_163,base.sa
+

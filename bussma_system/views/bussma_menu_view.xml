@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <menuitem id="rout_menu_commercial_sector" name="Studies Management" sequence="5" web_icon="bussma_system,static/description/icon.svg" groups="bussma_system.group_studies_user,bussma_system.group_assign_negotiator,bussma_system.group_city_studies_manager,bussma_system.group_data_completer"/>
+        <menuitem id="entries_main_menu" name="Entries" parent="rout_menu_commercial_sector" sequence="0" />
+        <menuitem id="entries_menu" name="Entries" action="entries_action" parent="entries_main_menu" sequence="0" />
+        <menuitem id="define_project_path_menu" name="Define Project Path" action="define_project_path_action" parent="entries_main_menu" sequence="1" />
+        <menuitem id="data_completion_menu" name="Data Completion" action="data_completion_action" parent="entries_main_menu" sequence="2" />
+
+        <menuitem id="direct_sale_menu" name="Studies" parent="rout_menu_commercial_sector" sequence="1" />
+        <menuitem id="my_studies_menu" name="My Studies" action="my_studies_action" parent="direct_sale_menu" sequence="0"/>
+        <menuitem id="direct_sale_preliminary_study_menu" name="Preliminary" action="direct_sale_preliminary_study_action" parent="direct_sale_menu" sequence="1"/>
+        <menuitem id="direct_sale_detailed_study_menu" name="Detailed" action="direct_sale_detailed_study_action" parent="direct_sale_menu" sequence="2" />
+        <menuitem id="direct_sale_city_study_menu" name="Cities" action="direct_sale_city_study_action" parent="direct_sale_menu" sequence="3"/>
+
+        <menuitem id="archives_menu" name="Archives" parent="rout_menu_commercial_sector" sequence="20" groups="bussma_system.group_analyst,bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_rnd_manager,bussma_system.group_sales_manager,bussma_system.group_auctions_manager,bussma_system.group_commercial_sector_manager,bussma_system.group_negotiator,bussma_system.group_contract_manager,bussma_system.group_committee_member,bussma_system.group_city_studies_manager,base.group_system"/>
+        <menuitem id="archived_entry_menu" name="Archived Entries" action="archived_entry_action" parent="archives_menu" sequence="1" groups="bussma_system.group_commercial_sector_manager,bussma_system.group_rnd_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_studies_manager,bussma_system.group_city_studies_manager" />
+        <menuitem id="deferred_opportunities_archive_menu" name="Deferred Opportunities Archive" action="deferred_opportunities_archive_action" parent="archives_menu" sequence="2" groups="bussma_system.group_commercial_sector_manager,bussma_system.group_rnd_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_studies_manager" />
+        <menuitem id="listing_archive_2023_menu" name="Entries Archive - 2023" action="listing_archive_2023_action" parent="archives_menu" sequence="3" groups="bussma_system.group_commercial_sector_manager,bussma_system.group_rnd_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_studies_manager" />
+        <menuitem id="technical_offers_archive_menu" name="Technical Offers Archive" action="technical_offers_archive_action" parent="archives_menu" sequence="4" groups="bussma_system.group_commercial_sector_manager,bussma_system.group_rnd_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_studies_manager" />
+        <menuitem id="partners_screen_action_menu" name="Partners Screen" action="partners_screen_action" parent="archives_menu" sequence="5" groups="bussma_system.group_commercial_sector_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_studies_manager"/>
+
+        <menuitem id="setting_menu" name="Setting" parent="rout_menu_commercial_sector" sequence="88" groups="base.group_system"/>
+        <menuitem id="request_stage_menu" name="Request Stages" action="action_request_stage" parent="setting_menu" sequence="1" groups="base.group_system"/>
+        <menuitem id="request_type_menu" name="Request Types" action="action_request_type" parent="setting_menu" sequence="2" groups="base.group_system"/>
+        <menuitem id="customer_menu" name="Customers" action="action_res_partner_customer" parent="setting_menu" sequence="3" groups="bussma_system.group_customer_access"/>
+        <menuitem id="property_type_menu" name="Property Types" action="action_property_type" parent="setting_menu" sequence="4" />
+        <menuitem id="property_usage_type_menu" name="Property Usage Types" action="action_property_usage_type" parent="setting_menu" sequence="5" />
+        <menuitem id="saudi_cities_menu" name="Cities" action="action_saudi_cities" parent="setting_menu" sequence="6" />
+        <menuitem id="saudi_neighborhoods_menu" name="Neighborhoods" action="action_saudi_neighborhoods" parent="setting_menu" sequence="7" />
+
+        <!-- Inherited Odoo Root Menus for Custom Web Icons -->
+        <record id="contacts.menu_contacts" model="ir.ui.menu">
+            <field name="web_icon">bussma_system,static/description/contacts.svg</field>
+        </record>
+        <record id="mail.menu_root_discuss" model="ir.ui.menu">
+            <field name="web_icon">bussma_system,static/description/discuss.svg</field>
+        </record>
+        <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+            <field name="web_icon">bussma_system,static/description/calendar.svg</field>
+        </record>
+    </data>
+</odoo>

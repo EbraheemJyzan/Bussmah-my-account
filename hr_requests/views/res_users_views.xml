@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_hr_clearance" model="ir.ui.view">
+        <field name="name">res.users.form.hr.clearance</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="HR Approvers Responsibilities" groups="base.group_system">
+                    <group string="Clearance Department Responsibilities">
+                        <field name="is_hr_clearance_user"/>
+                        <field name="is_finance_clearance_user"/>
+                        <field name="is_it_clearance_user"/>
+                        <field name="is_legal_clearance_user"/>
+                    </group>
+                    <group string="HR Request Department Managers">
+                        <field name="is_commercial_manager_user"/>
+                        <field name="is_projects_manager_user"/>
+                        <field name="is_marketing_manager_user"/>
+                        <field name="is_assets_manager_user"/>
+                        <field name="is_executive_manager_user"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

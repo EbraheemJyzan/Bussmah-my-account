@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- 1. Email Template for Contact Officer Notification -->
+        <record id="email_template_opportunity_user_assigned" model="mail.template">
+            <field name="name">Opportunity: Contact Officer Assigned</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">تم تعيينك كضابط اتصال للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="email_to">{{ object.assigned_user_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        عزيزي / <strong><t t-out="object.assigned_user_id.name"/></strong><br/><br/>
+                        تم تعيينكم كضابط اتصال (Contact Officer) للفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/>
+                        <strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/><br/>
+                        نرجو التكرم بالدخول إلى النظام والمتابعة مع العميل واستكمال البيانات المطلوبة.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 2. Email Template for Opportunity Created from Studies Notification -->
+        <record id="email_template_opportunity_created_from_studies" model="mail.template">
+            <field name="name">Opportunity: Created from Studies Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار إنشاء فرصة جديدة من الدراسات: {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص - بصمة</strong><br/><br/>
+                        إشعار إنشاء فرصة جديدة من قسم الدراسات بكود <strong><t t-out="object.code or 'N/A'"/></strong>.<br/><br/>
+                        <strong>تفاصيل الفرصة:</strong>
+                        <ul>
+                            <li><strong>اسم الفرصة:</strong> <t t-out="object.name"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>تاريخ الإنشاء:</strong> <t t-out="object.creation_date or '-'"/></li>
+                        </ul>
+                        نرجو الاطلاع والمتابعة واتخاذ الإجراءات اللازمة.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 3. Email Template for Study Completed Notification -->
+        <record id="email_template_opportunity_study_completed" model="mail.template">
+            <field name="name">Opportunity: Linked Study Completed</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار اكتمال الدراسة للعقار المترابط مع الفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص والدراسات - بصمة</strong><br/><br/>
+                        نود إحاطتكم باكتمل دراسة العقار المترابط مع الفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>تفاصيل العملية:</strong>
+                        <ul>
+                            <li><strong>اسم العقار / الإدراج:</strong> <t t-out="ctx.get('entry_name') or '-'"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>تمت العملية بواسطة:</strong> <t t-out="ctx.get('action_user_name') or '-'"/></li>
+                        </ul>
+                        نرجو الدخول للنظام والاطلاع على نتائج الدراسة لاستكمال الإجراءات.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 4. Email Template for Marketing Requested Notification -->
+        <record id="email_template_opportunity_marketing_requested" model="mail.template">
+            <field name="name">Opportunity: Marketing Requested</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار رفع طلب تسويق جديد للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص - بصمة</strong><br/><br/>
+                        تم تقديم طلب تسويق جديد للفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/><br/>
+                        تمت إحالة الطلب لقسم التسويق لبدء العمل واستخراج المواد التسويقية.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 5. Email Template for Marketing Returned Notification -->
+        <record id="email_template_opportunity_marketing_returned" model="mail.template">
+            <field name="name">Opportunity: Marketing Returned</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار إرجاع طلب التسويق للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص - بصمة</strong><br/><br/>
+                        تم إرجاع طلب التسويق الخاص بالفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>ملاحظات الإرجاع:</strong><br/>
+                        <div style="background-color: #f8f9fa; padding: 10px; border-right: 3px solid #dc3545; margin: 10px 0;">
+                            <t t-out="object.return_to_requester_notes or 'لا يوجد'"/>
+                        </div>
+                        نرجو الاطلاع واستكمال الملاحظات المطلوبة لإعادة الإرسال.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 6. Email Template for Final Material Sent Notification -->
+        <record id="email_template_opportunity_final_material_sent" model="mail.template">
+            <field name="name">Opportunity: Final Marketing Material Delivered</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار إرسال المخرج النهائي للتسويق للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        تم اكتمال واستلام المخرج النهائي للمواد التسويقية الخاصة بالفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/><br/>
+                        يمكنكم الاطلاع على المواد التسويقية المعتمدة من خلال الرابط أدناه.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #28a745; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 7. Email Template for Attachments Updated from Studies Notification -->
+        <record id="email_template_opportunity_attachments_updated" model="mail.template">
+            <field name="name">Opportunity: Attachments Updated from Studies</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار إضافة وتحديث مرفقات جديدة للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص والدراسات - بصمة</strong><br/><br/>
+                        تم إضافة أو تحديث مرفقات جديدة مأخوذة من قسم الدراسات للفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>تفاصيل العملية:</strong>
+                        <ul>
+                            <li><strong>اسم العقار / الإدراج:</strong> <t t-out="ctx.get('entry_name') or '-'"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>تم التحديث بواسطة:</strong> <t t-out="ctx.get('action_user_name') or '-'"/></li>
+                        </ul>
+                        نرجو الدخول على سجل الفرصة لمراجعة المرفقات والمستندات المضافة.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 8. Email Template for Marketing Material Responsible Notification -->
+        <record id="email_template_marketing_material_responsible_assigned" model="mail.template">
+            <field name="name">Marketing: Material Responsible Assigned</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">تم تعيينك كمدير مشروع تسويقي {{ object.name }} ({{ object.code }})</field>
+            <field name="email_to">{{ object.material_responsible_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        عزيزي / <strong><t t-out="object.material_responsible_id.name"/></strong><br/><br/>
+                        تم تعيينكم كمدير مشروع تسويقي رقم <strong><t t-out="object.code or 'N/A'"/></strong> (عنوان الطلب: <strong><t t-out="object.name"/></strong>).<br/>
+                        <strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/><br/>
+                        <strong>اسم العقار:</strong> <t t-out="object.property_name or '-'"/><br/>
+                        نرجو التكرم بالدخول إلى النظام ومتابعة العمل واستخراج المواد التسويقية المطلوبة.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المشروع التسويقي
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 9. Email Template for Marketing Material User Assigned Notification -->
+        <record id="email_template_marketing_material_user_assigned" model="mail.template">
+            <field name="name">Marketing Material: Responsible User Assigned</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">تم تعيينك كمسؤول للمادة التسويقية {{ object.name }}</field>
+            <field name="email_to">{{ object.user_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        عزيزي / <strong><t t-out="object.user_id.name"/></strong><br/><br/>
+                        تم تعيينكم كمسؤول للمادة التسويقية: <strong><t t-out="object.name"/></strong> (كود النشاط: <strong><t t-out="object.code or 'N/A'"/></strong>).<br/>
+                        <strong>طلب التسويق المرتبط:</strong> <t t-out="object.marketing_id.name or '-'"/><br/>
+                        نرجو التكرم بالدخول إلى النظام والمباشرة في تنفيذ وتجهيز المادة التسويقية.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المادة التسويقية
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 10. Email Template for Marketing Request Resent to Marketing Notification -->
+        <record id="email_template_marketing_resent_to_marketing" model="mail.template">
+            <field name="name">Marketing: Request Resent to Marketing</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">إشعار إعادة إرسال طلب تسويق بعد استكمال الملاحظات: {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        إشعار إعادة إرسال طلب تسويق بعد استكمال الملاحظات المطلوبة للطلب رقم <strong><t t-out="object.code or 'N/A'"/></strong> (عنوان الطلب: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>تفاصيل الطلب:</strong>
+                        <ul>
+                            <li><strong>الجهة المصدرية الطالبة:</strong> <t t-out="object.source_request_type_name"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>اسم العقار:</strong> <t t-out="object.property_name or '-'"/></li>
+                            <li><strong>تمت إعادة الإرسال بواسطة:</strong> <t t-out="user.name or '-'"/></li>
+                        </ul>
+                        نرجو الدخول للنظام والاطلاع على الملاحظات والملفات المحدثة لمتابعة العمل.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المشروع التسويقي
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 11. Email Template for Marketing Request Returned to Requester Notification -->
+        <record id="email_template_marketing_returned_to_requester" model="mail.template">
+            <field name="name">Marketing: Request Returned to Requester</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">إشعار إرجاع طلب تسويق من إدارة التسويق: {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>إدارة التسويق - بصمة</strong><br/><br/>
+                        إشعار إرجاع طلب تسويق للجهة الطالبة (<strong><t t-out="object.source_request_type_name"/></strong>) للطلب رقم <strong><t t-out="object.code or 'N/A'"/></strong> (عنوان الطلب: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>ملاحظات الإرجاع من إدارة التسويق:</strong><br/>
+                        <div style="background-color: #f8f9fa; padding: 12px; border-right: 4px solid #dc3545; margin: 10px 0; font-size: 13px;">
+                            <t t-out="object.return_to_requester_notes or 'لا يوجد ملاحظات'"/>
+                        </div>
+                        نرجو الاطلاع واستكمال الملاحظات والمستندات المطلوبة لإعادة الإرسال.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #dc3545; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الطلب
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 12. Email Template for New Marketing Request Created Notification to Supervisor -->
+        <record id="email_template_new_marketing_request_created" model="mail.template">
+            <field name="name">Marketing: New Request Created Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">إشعار إنشاء طلب تسويق جديد: {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة التسويق - بصمة</strong><br/><br/>
+                        أعضاء <strong>إشراف التسويق</strong> المحترمين،<br/><br/>
+                        تم تقديم طلب تسويق جديد في النظام بكود رقم <strong><t t-out="object.code or 'N/A'"/></strong> (عنوان الطلب: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        <strong>تفاصيل الطلب:</strong>
+                        <ul>
+                            <li><strong>الجهة المصدرية الطالبة:</strong> <t t-out="object.source_request_type_name"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>اسم العقار:</strong> <t t-out="object.property_name or '-'"/></li>
+                            <li><strong>أنشئ بواسطة:</strong> <t t-out="user.name or '-'"/></li>
+                        </ul>
+                        نرجو الدخول للنظام والاطلاع على الطلب وتعيين مسؤول للمشروع واستكمال الإجراءات.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المشروع التسويقي
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 13. Email Template for Marketing Task Assignees Notification -->
+        <record id="email_template_marketing_task_users_assigned" model="mail.template">
+            <field name="name">Marketing Task: Assignees Assigned</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_task"/>
+            <field name="subject">تم تعيينك كمسؤول للمهمة {{ object.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        تم تعيينكم كمسؤول لتنفيذ المهمة: <strong><t t-out="object.name"/></strong>.<br/><br/>
+                        <strong>تفاصيل المهمة:</strong>
+                        <ul>
+                            <li><strong>المادة التسويقية:</strong> <t t-out="object.material_id.name or '-'"/></li>
+                            <li><strong>المشروع التسويقي:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>تاريخ الاستحقاق (Deadline):</strong> <t t-out="object.date_deadline or 'غير محدد'"/></li>
+                        </ul>
+                        نرجو الدخول للنظام والمباشرة في تنفيذ المهمة المطلوبة.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المهمة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 14. Email Template for Marketing Task Completed Notification -->
+        <record id="email_template_marketing_task_completed" model="mail.template">
+            <field name="name">Marketing Task: Task Completed Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_task"/>
+            <field name="subject">إشعار اكتمال المهمة {{ object.name }} ({{ object.material_id.name }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        نحيطكم علماً باكتمل وتنفيذ المهمة: <strong><t t-out="object.name"/></strong>.<br/><br/>
+                        <strong>تفاصيل الإنجاز:</strong>
+                        <ul>
+                            <li><strong>المادة التسويقية:</strong> <t t-out="object.material_id.name or '-'"/></li>
+                            <li><strong>المشروع التسويقي:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>تم التنفيذ بواسطة:</strong> <t t-out="user.name or '-'"/></li>
+                        </ul>
+                        يمكنكم الاطلاع على نتائج مخرجات المهمة عبر الرابط أدناه.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #28a745; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المهمة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 15. Email Template for Material Completed to Supervisor Approval Notification -->
+        <record id="email_template_marketing_material_completed_to_supervisor" model="mail.template">
+            <field name="name">Marketing Material: Ready for Supervisor Approval</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">إشعار اكتمال المادة التسويقية {{ object.name }} ووصولها لمرحلة الاعتماد</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        أعضاء <strong>إشراف التسويق</strong> المحترمين،<br/><br/>
+                        تم اكتمال المادة التسويقية: <strong><t t-out="object.name"/></strong> ووصلت لمرحلة <strong>اعتماد مشرف التسويق</strong>.<br/><br/>
+                        <strong>تفاصيل المادة:</strong>
+                        <ul>
+                            <li><strong>كود النشاط:</strong> <t t-out="object.code or 'N/A'"/></li>
+                            <li><strong>المشروع التسويقي:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>مسؤول المادة:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                        </ul>
+                        نرجو الاطلاع على المادة التسويقية والموافقة أو اتخاذ الإجراء المناسب.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المادة التسويقية
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 16. Email Template for Material Returned from Supervisor Approval to Execution -->
+        <record id="email_template_marketing_material_returned_to_execution" model="mail.template">
+            <field name="name">Marketing Material: Returned to Execution Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">إشعار إرجاع المادة التسويقية {{ object.name }} إلى مرحلة {{ object.stage_id.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>قسم التسويق - بصمة</strong><br/><br/>
+                        إشعار إرجاع المادة التسويقية رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم المادة: <strong><t t-out="object.name"/></strong>).<br/><br/>
+                        تم إرجاع المادة التسويقية من مرحلة <strong><t t-out="ctx.get('old_stage_name') or '-'"/></strong> إلى مرحلة <strong><t t-out="object.stage_id.name or '-'"/></strong> الخاصة بكم لاستكمال الملاحظات والمطلوب.<br/><br/>
+                        <strong>تفاصيل الإرجاع:</strong>
+                        <ul>
+                            <li><strong>المشروع التسويقي:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>ملاحظات المشرف:</strong>
+                                <div style="background-color: #f8f9fa; padding: 8px; border-right: 3px solid #dc3545; margin-top: 5px;">
+                                    <t t-out="object.supervisor_notes or 'لا يوجد ملاحظات'"/>
+                                </div>
+                            </li>
+                        </ul>
+                        نرجو الاطلاع والعمل على تنفيذ المطلوب لإعادة رفعها للاعتماد.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #dc3545; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المادة التسويقية
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 17. Email Template for New Property Added to Opportunity Notification to Marketing Supervisor -->
+        <record id="email_template_opportunity_new_property_added_to_marketing" model="mail.template">
+            <field name="name">Opportunity: New Property Added Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">إشعار إضافة عقار جديد للفرصة {{ object.name }} ({{ object.code }})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص والتسويق - بصمة</strong><br/><br/>
+                        أعضاء <strong>إشراف التسويق</strong> المحترمين،<br/><br/>
+                        تم إضافة عقار جديد للفرصة رقم <strong><t t-out="object.code or 'N/A'"/></strong> (اسم الفرصة: <strong><t t-out="object.name"/></strong>) المرتبطة بطلب التسويق رقم <strong><t t-out="object.marketing_id.code or 'N/A'"/></strong>.<br/><br/>
+                        <strong>تفاصيل الإضافة:</strong>
+                        <ul>
+                            <li><strong>اسم الفرصة:</strong> <t t-out="object.name"/></li>
+                            <li><strong>اسم العقار المضاف:</strong> <t t-out="ctx.get('added_property_name') or '-'"/></li>
+                            <li><strong>العميل:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>تمت الإضافة بواسطة:</strong> <t t-out="ctx.get('action_user_name') or '-'"/></li>
+                        </ul>
+                        تم إلحاق وتحديث كافة مرفقات العقار الجديد في سجل الفرصة وفي طلب التسويق المرتبط تلقائياً.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.marketing_id.id, 'bussma.marketing')"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المشروع التسويقي
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template for Early Contracted Notification -->
+        <record id="email_template_opportunity_early_contracted" model="mail.template">
+            <field name="name">Opportunity: Early Contracted Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">تنبيه: تم التعاقد مع العميل في جميع العقارات المرتبطة بالفرصة {{ object.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>نظام إدارة الفرص - بصمة</strong><br/><br/>
+                        تنبيه لإدارة الفرص:<br/>
+                        تم التعاقد مع العميل في جميع العقارات المرتبطة بالفرصة <strong><t t-out="object.name or 'N/A'"/></strong> (رقم: <t t-out="object.code or 'N/A'"/>).<br/>
+                        يرجى ملاحظة أن الفرصة لم تصل بعد إلى مرحلة "اعتماد إغلاق الفرصة".
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الفرصة
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- 18. Email Template for Opportunity Approve Close Notification to Contact Officer -->
+        <record id="email_template_opportunity_approve_close" model="mail.template">
+            <field name="name">Opportunity: Approve Closure Stage Reached</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">Notification: Opportunity {{ object.name }} ({{ object.code }}) reached Approve Closure stage</field>
+            <field name="email_to">{{ object.assigned_user_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Opportunity Management System - Bussma</strong><br/><br/>
+                        Dear Contact Officer / <strong><t t-out="object.assigned_user_id.name or 'Respected User'"/></strong>,<br/><br/>
+                        We would like to inform you that Opportunity No. <strong><t t-out="object.code or 'N/A'"/></strong> (Opportunity Name: <strong><t t-out="object.name"/></strong>) has moved to the stage <strong>"Approve Opportunity Closure"</strong>. You can now receive the technical and financial proposal.<br/><br/>
+                        <strong>Opportunity Details:</strong>
+                        <ul>
+                            <li><strong>Client:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>Opportunity Type:</strong> <t t-out="object.opportunity_type or '-'"/></li>
+                            <li><strong>Expected Closing Date:</strong> <t t-out="object.expected_closing_date or 'Not specified'"/></li>
+                        </ul>
+                        Please log in to the system to review the details and take the necessary actions to finalize the opportunity.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Opportunity
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 19. Email Template for Material Sent to PM Approval -->
+        <record id="email_template_marketing_material_sent_to_pm" model="mail.template">
+            <field name="name">Marketing Material: Pending PM Approval Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">Notification: Marketing Material {{ object.name }} Awaiting {{ 'Opportunity Department' if (ctx.get('is_opportunity') or (object.marketing_id and (object.marketing_id.is_opportunity_request or object.marketing_id.opportunity_id))) else 'Project Manager' }} Approval</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Marketing Department - Bussma</strong><br/><br/>
+                        <t t-set="is_opp" t-value="ctx.get('is_opportunity') or (object.marketing_id and (object.marketing_id.is_opportunity_request or object.marketing_id.opportunity_id))"/>
+                        <t t-if="is_opp">
+                            Dear Opportunity Department Members / <strong><t t-out="ctx.get('pm_name') or 'Opportunity Team'"/></strong>,<br/><br/>
+                            Marketing material "<strong><t t-out="object.name"/></strong>" has been completed and is awaiting Opportunity Department approval.<br/><br/>
+                        </t>
+                        <t t-else="">
+                            Dear Project Manager / <strong><t t-out="ctx.get('pm_name') or 'Respected User'"/></strong>,<br/><br/>
+                            Marketing material "<strong><t t-out="object.name"/></strong>" has been completed and is awaiting your approval.<br/><br/>
+                        </t>
+                        <strong>Marketing Material Request Details:</strong>
+                        <ul>
+                            <li><strong>Material Name:</strong> <t t-out="object.name"/></li>
+                            <li><strong>Marketing Project Name:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li t-if="is_opp"><strong>Opportunity Name:</strong> <t t-out="ctx.get('source_project_name') or '-'"/></li>
+                            <li t-else=""><strong>Project Name:</strong> <t t-out="ctx.get('source_project_name') or '-'"/></li>
+                        </ul>
+                        Please review the marketing material and take the appropriate decision to approve or return.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <t t-set="mkt" t-value="object.marketing_id"/>
+                        <t t-set="base_url" t-value="object.get_base_url()"/>
+                        <t t-if="ctx.get('target_url')">
+                            <t t-set="btn_url" t-value="ctx.get('target_url')"/>
+                        </t>
+                        <t t-elif="is_opp and mkt and mkt.opportunity_id">
+                            <t t-set="btn_url" t-value="'%s/web#id=%s&amp;model=bussma.opportunity&amp;view_type=form' % (base_url, mkt.opportunity_id.id)"/>
+                        </t>
+                        <t t-elif="mkt and mkt.bussma_project_id">
+                            <t t-set="btn_url" t-value="'%s/web#id=%s&amp;model=bussma.project&amp;view_type=form' % (base_url, mkt.bussma_project_id.id)"/>
+                        </t>
+                        <t t-elif="mkt and mkt.office_request_id">
+                            <t t-set="btn_url" t-value="'%s/web#id=%s&amp;model=office.request&amp;view_type=form' % (base_url, mkt.office_request_id.id)"/>
+                        </t>
+                        <t t-else="">
+                            <t t-set="btn_url" t-value="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (base_url, object.id, object._name)"/>
+                        </t>
+                        <a t-att-href="btn_url"
+                           style="background-color: #875A7B; padding: 10px 20px 10px 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px; font-weight: bold; display: inline-block;">
+                            <t t-if="is_opp">View Opportunity</t>
+                            <t t-else="">View Project</t>
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 20. Email Template for Material Rejected by Project Manager Notification -->
+        <record id="email_template_marketing_material_rejected_by_pm" model="mail.template">
+            <field name="name">Marketing Material: Rejected by Project Manager Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">Notification: Marketing Material {{ object.name }} ({{ object.code or '' }}) Rejected by {{ 'Opportunity Department' if (ctx.get('is_opportunity') or object.is_opportunity_request or (object.marketing_id and (object.marketing_id.is_opportunity_request or object.marketing_id.opportunity_id))) else 'Project Manager' }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Marketing Department - Bussma</strong><br/><br/>
+                        Dear <strong>Marketing Supervisors</strong>,<br/><br/>
+                        <t t-set="is_opp" t-value="ctx.get('is_opportunity') or object.is_opportunity_request or (object.marketing_id and (object.marketing_id.is_opportunity_request or object.marketing_id.opportunity_id))"/>
+                        Marketing material "<strong><t t-out="object.name"/></strong>" (Code: <strong><t t-out="object.code or 'N/A'"/></strong>) has been <strong>rejected</strong> by the <t t-out="'Opportunity Department' if is_opp else 'Project Manager'"/> and returned to the Marketing Supervisor Approval stage.<br/><br/>
+                        <strong>Rejection Details:</strong>
+                        <ul>
+                            <li><strong>Material Name:</strong> <t t-out="object.name"/></li>
+                            <li><strong>Marketing Project Name:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>Responsible User:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong><t t-out="'Opportunity Department Return Notes:' if is_opp else 'Project Manager Return Notes:'"/></strong>
+                                <div style="background-color: #f8f9fa; padding: 10px; border-left: 4px solid #dc3545; margin-top: 5px;">
+                                    <t t-out="object.pm_rejection_notes or 'No rejection notes provided'"/>
+                                </div>
+                            </li>
+                        </ul>
+                        Please log in to the system to review the material and take the necessary action.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #dc3545; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Marketing Material
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 21. Email Template for Material Approved by Project Manager Notification -->
+        <record id="email_template_marketing_material_approved_by_pm" model="mail.template">
+            <field name="name">Marketing Material: Approved by Project Manager Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing_material"/>
+            <field name="subject">Notification: Marketing Material {{ object.name }} ({{ object.code or '' }}) Approved by Project Manager</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Marketing Department - Bussma</strong><br/><br/>
+                        Dear <strong>Marketing Supervisors</strong>,<br/><br/>
+                        Marketing material "<strong><t t-out="object.name"/></strong>" (Code: <strong><t t-out="object.code or 'N/A'"/></strong>) has been <strong>approved</strong> by the Project Manager.<br/><br/>
+                        <strong>Approval Details:</strong>
+                        <ul>
+                            <li><strong>Material Name:</strong> <t t-out="object.name"/></li>
+                            <li><strong>Marketing Project Name:</strong> <t t-out="object.marketing_id.name or '-'"/></li>
+                            <li><strong>Responsible User:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                        </ul>
+                        You can view the approved marketing material details in the system.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #28a745; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Marketing Material
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 22. Email Template for Project Property Added or Removed Notification -->
+        <record id="email_template_project_property_changed" model="mail.template">
+            <field name="name">Marketing: Project Property Added or Removed Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">Notification: Property {{ ctx.get('action_type') or 'Updated' }} - Project {{ object.bussma_project_id.name or object.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Marketing Management System - Bussma</strong><br/><br/>
+                        Dear <strong>Marketing Team</strong>,<br/><br/>
+                        A property has been <strong><t t-out="ctx.get('action_type') or 'updated'"/></strong> in Project "<strong><t t-out="object.bussma_project_id.name or object.name"/></strong>" which is linked to Marketing Request <strong><t t-out="object.name"/></strong> (Code: <strong><t t-out="object.code or 'N/A'"/></strong>).<br/><br/>
+                        <strong>Details:</strong>
+                        <ul>
+                            <li><strong>Project Name:</strong> <t t-out="object.bussma_project_id.name or object.name"/></li>
+                            <li><strong>Property Name / Reference:</strong> <t t-out="ctx.get('property_name') or '-'"/></li>
+                            <li><strong>Action:</strong> Property <t t-out="ctx.get('action_type') or 'Updated'"/></li>
+                            <li><strong>Performed By:</strong> <t t-out="user.name or '-'"/></li>
+                        </ul>
+                        The properties linked to the marketing request have been automatically updated.<br/>
+                        You can view the updated marketing request by clicking the button below.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Marketing Request
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 23. Email Template for Opportunity Property Added or Removed Notification -->
+        <record id="email_template_opportunity_property_changed" model="mail.template">
+            <field name="name">Marketing: Opportunity Property Added or Removed Notification</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_marketing"/>
+            <field name="subject">Notification: Property {{ ctx.get('action_type') or 'Updated' }} - Opportunity {{ object.opportunity_id.name or object.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Marketing Management System - Bussma</strong><br/><br/>
+                        Dear <strong>Marketing Team</strong>,<br/><br/>
+                        A property has been <strong><t t-out="ctx.get('action_type') or 'updated'"/></strong> in Opportunity "<strong><t t-out="object.opportunity_id.name or object.name"/></strong>" (Code: <strong><t t-out="object.opportunity_id.code or 'N/A'"/></strong>) which is linked to Marketing Request <strong><t t-out="object.name"/></strong> (Code: <strong><t t-out="object.code or 'N/A'"/></strong>).<br/><br/>
+                        <strong>Details:</strong>
+                        <ul>
+                            <li><strong>Opportunity Name:</strong> <t t-out="object.opportunity_id.name or object.name"/></li>
+                            <li><strong>Property Name / Reference:</strong> <t t-out="ctx.get('property_name') or '-'"/></li>
+                            <li><strong>Action:</strong> Property <t t-out="ctx.get('action_type') or 'Updated'"/></li>
+                            <li><strong>Performed By:</strong> <t t-out="user.name or '-'"/></li>
+                        </ul>
+                        The properties linked to the marketing request have been automatically updated.<br/>
+                        You can view the updated marketing request by clicking the button below.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Marketing Request
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- 25. Email Template: Property Requires Technical Offer Notification to Opportunity Department Members -->
+        <record id="email_template_entry_requires_technical_offer" model="mail.template">
+            <field name="name">Studies: Property Requires Technical Offer</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Property Requires Technical Offer - {{ object.entrie_name or ('#' + str(object.id)) }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 20px; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background-color: #f8f9fa; color: #333333;">
+                    <div style="max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #e9ecef;">
+                        <!-- Header -->
+                        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 24px 30px; text-align: left;">
+                            <h2 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 600;">Opportunity Department Notification</h2>
+                        </div>
+                        <!-- Content -->
+                        <div style="padding: 30px;">
+                            <p style="font-size: 15px; line-height: 1.6; margin-top: 0; color: #212529;">
+                                Dear Opportunity Department Team,
+                            </p>
+                            <p style="font-size: 14px; line-height: 1.6; color: #495057;">
+                                Please be informed that a property in the <strong>Studies</strong> phase has been marked as requiring a <strong>Technical Offer</strong>.
+                            </p>
+                            
+                            <!-- Details Box -->
+                            <div style="background-color: #f1f5f9; border-left: 4px solid #2a5298; border-radius: 4px; padding: 16px 20px; margin: 20px 0;">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d; width: 38%;"><strong>Property Name:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529; font-weight: 600;"><t t-out="object.entrie_name or 'N/A'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>Client Name:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;"><t t-out="object.partner_id.name or '-'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>Current Stage:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;"><t t-out="object.stage_id.name or 'Studies'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>Property Type:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;"><t t-out="object.property_type.name if object.property_type else '-'"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>City / District:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;">
+                                            <t t-out="object.city.name if object.city else '-'"/> / <t t-out="object.district_id.name if object.district_id else '-'"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>Area (sqm):</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;"><t t-out="object.area_sqm or '-'"/> m²</td>
+                                    </tr>
+                                    <t t-if="object.location_url">
+                                        <tr>
+                                            <td style="padding: 6px 0; color: #6c757d;"><strong>Location:</strong></td>
+                                            <td style="padding: 6px 0;">
+                                                <a t-att-href="object.location_url" target="_blank" style="color: #2a5298; text-decoration: underline;">View Location on Map</a>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td style="padding: 6px 0; color: #6c757d;"><strong>Entered By:</strong></td>
+                                        <td style="padding: 6px 0; color: #212529;"><t t-out="object.entered_by_id.name or object.create_uid.name or '-'"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <p style="font-size: 13px; color: #6c757d; margin: 20px 0;">
+                                Kindly review the property details and proceed with the necessary technical preparation.
+                            </p>
+
+                            <!-- CTA Button -->
+                            <div style="margin: 25px 0 15px 0; text-align: center;">
+                                <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                                   style="background: #2a5298; color: #ffffff; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; display: inline-block;">
+                                    View Property Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="email_template_opportunity_user_replaced" model="mail.template">
+            <field name="name">Opportunity: Contact Officer Replaced</field>
+            <field name="model_id" ref="marketing_opportunity_management.model_bussma_opportunity"/>
+            <field name="subject">Notice: Contact Officer Replacement for Opportunity {{ object.name }} ({{ object.code }})</field>
+            <field name="email_to">{{ ctx.get('old_user_email') }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Opportunity Management System - Bussma</strong><br/><br/>
+                        Dear <strong><t t-out="ctx.get('old_user_name') or 'User'"/></strong>,<br/><br/>
+                        Please be informed that you have been replaced as the <strong>Contact Officer</strong> for Opportunity No. <strong><t t-out="object.code or 'N/A'"/></strong> (Opportunity Name: <strong><t t-out="object.name"/></strong>), and the responsibility has been reassigned to <strong><t t-out="object.assigned_user_id.name or 'another officer'"/></strong>.<br/><br/>
+                        <strong>Opportunity Details:</strong>
+                        <ul>
+                            <li><strong>Opportunity Code:</strong> <t t-out="object.code or 'N/A'"/></li>
+                            <li><strong>Opportunity Name:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Client:</strong> <t t-out="object.partner_id.name or '-'"/></li>
+                            <li><strong>New Contact Officer:</strong> <t t-out="object.assigned_user_id.name or '-'"/></li>
+                            <li><strong>Current Stage:</strong> <t t-out="object.stage_id.name or '-'"/></li>
+                        </ul>
+                        We sincerely appreciate your previous efforts and dedication in following up on this opportunity.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Opportunity
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

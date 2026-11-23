@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    <!-- Top Level App Menu: Templates -->
+    <menuitem id="menu_bussma_template_root"
+              name="Templates"
+              web_icon="bussmah_templates,static/description/icon.png"
+              groups="bussmah_templates.group_bussma_template_user"
+              sequence="15"/>
+    
+    <menuitem id="menu_bussma_templates"
+              name="Templates"
+              action="action_bussma_template"
+              parent="menu_bussma_template_root"
+              groups="bussmah_templates.group_bussma_template_user"
+              sequence="0"/>
+
+    <menuitem id="menu_bussma_templates_configuration"
+              name="Templates Configuration"
+              action="action_bussma_template_configuration"
+              parent="menu_bussma_template_root"
+              groups="base.group_system"
+              sequence="1"/>
+    </data>
+</odoo>

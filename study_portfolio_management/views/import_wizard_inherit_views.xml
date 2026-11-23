@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Inherit Entries Import Wizard Form View -->
+        <record id="view_entries_import_wizard_inherit_portfolio" model="ir.ui.view">
+            <field name="name">entries.import.wizard.inherit.portfolio</field>
+            <field name="model">entries.import.wizard</field>
+            <field name="inherit_id" ref="sales_and_auction_management.view_entries_import_wizard_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='file_name']" position="after">
+                    <field name="has_portfolio"/>
+                    <field name="portfolio_id"
+                           invisible="not has_portfolio"
+                           required="has_portfolio"
+                           options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Eanfaz Entries Import Wizard Form View -->
+        <record id="view_eanfaz_entries_import_wizard_inherit_portfolio" model="ir.ui.view">
+            <field name="name">eanfaz.entries.import.wizard.inherit.portfolio</field>
+            <field name="model">eanfaz.entries.import.wizard</field>
+            <field name="inherit_id" ref="sales_and_auction_management.view_eanfaz_entries_import_wizard_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='file_name']" position="after">
+                    <field name="has_portfolio"/>
+                    <field name="portfolio_id"
+                           invisible="not has_portfolio"
+                           required="has_portfolio"
+                           options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

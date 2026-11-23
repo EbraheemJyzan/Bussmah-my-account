@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ===== Mail Template: Approved ===== -->
+        <record id="email_template_hr_request_approved" model="mail.template">
+            <field name="name">HR Request: Request Approved</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">Your HR Request {{ object.name }} Has Been Approved</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear Employee,<br/><br/>
+                        We are pleased to inform you that your request submitted to the Human Resources Department has been <strong>approved</strong>.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Request Category:</strong> <t t-out="object.category_id.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can view the details of the request by clicking the link below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Rejected ===== -->
+        <record id="email_template_hr_request_rejected" model="mail.template">
+            <field name="name">HR Request: Request Rejected</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">Your HR Request {{ object.name }} Has Been Rejected</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear Employee,<br/><br/>
+                        We regret to inform you that your request submitted to the Human Resources Department has been <strong>rejected</strong>.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Request Category:</strong> <t t-out="object.category_id.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        For inquiries or to submit a new request, you can view the details of the request by clicking the link below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="email_template_hr_request_submitted" model="mail.template">
+            <field name="name">HR Request: Request Submitted to HR Manager</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">New HR Request Submitted: {{ object.name }} - {{ object.type_id.name or '-' }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear <strong t-out="ctx.get('manager_name') or 'HR Manager'"/>,<br/><br/>
+                        A new HR request has been submitted and is awaiting your review.<br/>
+                        <strong>An HR request has been sent to you. Kindly review it.</strong><br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Employee:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong>Request Category:</strong> <t t-out="object.category_id.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can view and process the request by clicking the button below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Clearance Employee Manager ===== -->
+        <record id="email_template_clearance_emp_manager" model="mail.template">
+            <field name="name">Clearance: Employee Manager Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="email_to">{{ object.employee_manager_id.email }}</field>
+            <field name="subject">Clearance Request: {{ object.user_id.name or '-' }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Dear Manager,<br/><br/>
+                        A clearance request has been submitted for employee <strong><t t-out="object.user_id.name or '-'"/></strong>.<br/>
+                        Please kindly take the necessary actions and update the custody status and notes for your department.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Procedure Type:</strong> <t t-out="object.procedure_types or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_formview_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Clearance HR ===== -->
+        <record id="email_template_clearance_hr" model="mail.template">
+            <field name="name">Clearance: HR Department Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="email_to">{{ object.hr_user_id.email }}</field>
+            <field name="subject">Clearance Request: {{ object.user_id.name or '-' }} - HR Department</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Dear HR Manager,<br/><br/>
+                        The clearance request for employee <strong><t t-out="object.user_id.name or '-'"/></strong> has been forwarded to the HR Department.<br/>
+                        Please kindly review and take the necessary action regarding HR custody status and notes.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Procedure Type:</strong> <t t-out="object.procedure_types or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_formview_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Clearance Finance ===== -->
+        <record id="email_template_clearance_finance" model="mail.template">
+            <field name="name">Clearance: Finance Department Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="email_to">{{ object.finance_user_id.email }}</field>
+            <field name="subject">Clearance Request: {{ object.user_id.name or '-' }} - Financial Department</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Dear Financial Manager,<br/><br/>
+                        The clearance request for employee <strong><t t-out="object.user_id.name or '-'"/></strong> has been forwarded to the Financial Department.<br/>
+                        Please kindly review and take the necessary action regarding financial clearances and notes.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Procedure Type:</strong> <t t-out="object.procedure_types or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_formview_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Clearance IT ===== -->
+        <record id="email_template_clearance_it" model="mail.template">
+            <field name="name">Clearance: IT Department Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="email_to">{{ object.it_user_id.email }}</field>
+            <field name="subject">Clearance Request: {{ object.user_id.name or '-' }} - IT Department</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Dear IT Manager,<br/><br/>
+                        The clearance request for employee <strong><t t-out="object.user_id.name or '-'"/></strong> has been forwarded to the IT Department.<br/>
+                        Please kindly review and take the necessary action regarding IT assets/custody status and notes.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Procedure Type:</strong> <t t-out="object.procedure_types or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_formview_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: Clearance Legal ===== -->
+        <record id="email_template_clearance_legal" model="mail.template">
+            <field name="name">Clearance: Legal Department Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="email_to">{{ object.legal_user_id.email }}</field>
+            <field name="subject">Clearance Request: {{ object.user_id.name or '-' }} - Legal Department</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Dear Legal Manager,<br/><br/>
+                        The clearance request for employee <strong><t t-out="object.user_id.name or '-'"/></strong> has been forwarded to the Legal Department.<br/>
+                        Please kindly review and take the necessary action regarding legal custody status and notes.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Procedure Type:</strong> <t t-out="object.procedure_types or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_formview_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: HR Department Approval Required ===== -->
+        <record id="email_template_hr_dept_approval_required" model="mail.template">
+            <field name="name">HR Request: Department Approval Required</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">Approval Required: HR Request {{ object.name }} - {{ ctx.get('dept_name') or object._get_current_dept_name() }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear <strong t-out="ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'Department Manager'"/>,<br/><br/>
+                        An HR request requires your approval for <strong><t t-out="ctx.get('dept_name') or object._get_current_dept_name()"/></strong>.<br/>
+                        Please review the details below and take the appropriate action.<br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Requested By:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong>Department:</strong> <t t-out="ctx.get('dept_name') or object._get_current_dept_name()"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can view and process the request by clicking the button below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: HR Department Approval Re-assigned ===== -->
+        <record id="email_template_hr_dept_approval_reassigned" model="mail.template">
+            <field name="name">HR Request: Department Approval Re-assigned</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">HR Request Re-assigned for Approval: {{ object.name }} - {{ ctx.get('dept_name') or object._get_current_dept_name() }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear <strong t-out="ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'Department Manager'"/>,<br/><br/>
+                        This HR request has been re-assigned to you for approval for <strong><t t-out="ctx.get('dept_name') or object._get_current_dept_name()"/></strong>.<br/>
+                        Please review the request and take the appropriate action.<br/><br/>
+                        <t t-if="object.resend_notes">
+                            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0;">
+                                <strong>HR Note:</strong> <t t-out="object.resend_notes"/>
+                            </div>
+                        </t>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Requested By:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong>Department:</strong> <t t-out="ctx.get('dept_name') or object._get_current_dept_name()"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can view and process the request by clicking the button below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #ff9800; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: HR Department Rejection Notification to HR Managers ===== -->
+        <record id="email_template_hr_dept_rejected" model="mail.template">
+            <field name="name">HR Request: Department Rejection Notification</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">HR Request Returned: {{ object.name }} - Rejected by {{ ctx.get('dept_name') or '-' }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear <strong t-out="ctx.get('manager_name') or 'HR Manager'"/>,<br/><br/>
+                        An HR request has been <strong>rejected and returned</strong> to the HR Department for your review.<br/><br/>
+                        <div style="background-color: #f8d7da; border-left: 4px solid #dc3545; padding: 12px 15px; margin: 15px 0; border-radius: 4px;">
+                            <strong>Rejection Details:</strong><br/>
+                            <strong>Department:</strong> <t t-out="ctx.get('dept_name') or '-' "/><br/>
+                            <strong>Rejected By:</strong> <t t-out="ctx.get('rejected_by_name') or '-' "/><br/>
+                            <t t-if="ctx.get('rejection_notes')">
+                                <strong>Rejection Notes:</strong> <t t-out="ctx.get('rejection_notes')"/>
+                            </t>
+                        </div>
+                        <br/>
+                        <strong>Request Information:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Employee:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong>Request Category:</strong> <t t-out="object.category_id.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can review the request and re-send it to the department or take appropriate action by clicking the button below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- ===== Mail Template: HR Approval Required (Dept Approvals Completed) ===== -->
+        <record id="email_template_hr_approval_required" model="mail.template">
+            <field name="name">HR Request: HR Approval Required</field>
+            <field name="model_id" ref="hr_requests.model_hr_request"/>
+            <field name="subject">HR Request Pending Approval: {{ object.name }} - {{ object.type_id.name or '-' }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;">
+                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>
+                        Dear <strong t-out="ctx.get('manager_name') or 'HR Manager'"/>,<br/><br/>
+                        All department managers' approvals have been completed for this HR request.<br/>
+                        <strong>The request now requires your approval.</strong><br/><br/>
+                        <strong>Request Details:</strong>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Request Number:</strong> <t t-out="object.name or '-'"/></li>
+                            <li><strong>Employee:</strong> <t t-out="object.user_id.name or '-'"/></li>
+                            <li><strong>Request Category:</strong> <t t-out="object.category_id.name or '-'"/></li>
+                            <li><strong>Request Type:</strong> <t t-out="object.type_id.name or '-'"/></li>
+                            <li><strong>Request Date:</strong> <t t-out="object.date or '-'"/></li>
+                        </ul>
+                        <br/>
+                        You can view and process the request by clicking the button below.
+                    </p>
+                    <div style="margin: 20px 0px; text-align: center;">
+                        <a t-att-href="object.get_hr_request_url()"
+                           style="background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;">
+                            View Request in System
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

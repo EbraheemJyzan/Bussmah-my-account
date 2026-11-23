@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="mail.Activity" t-inherit-mode="extension">
+        <xpath expr="//button[@t-on-click='unlink']" position="attributes">
+            <attribute name="t-if">canCancelActivity</attribute>
+        </xpath>
+    </t>
+</templates>

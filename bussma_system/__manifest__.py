@@ -1,0 +1,53 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Bussma System',
+    'version': '18.0',
+    'summary': """ 	Bussma Summary - """,
+    'author': "NomowSoft",
+    'website': "https://www.nomowsoft.com",
+    'category': 'Services',
+    'depends': ['base', 'request', 'base_address_extended', 'hr_holidays', 'contacts', 'mail', 'calendar'],
+    "data": [
+        # Security
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        # Data
+        "data/users_roles_data.xml",
+        "data/commercial_sector.xml",
+        "data/property_type_data.xml",
+        "data/res.country.state.csv",
+        "data/res.city.csv",
+        "data/mail_template_data.xml",
+        "data/entries_sequence.xml",
+        "data/auction_manager_approval_data.xml",
+        "data/sales_manager_approval_data.xml",
+        "data/standard_study_manager_approval_data.xml",
+        "data/commercial_sector_manager_approval_data.xml",
+        "data/customer_intent_data.xml",
+        "data/committee_decision_type_data.xml",
+        "data/customer_role_data.xml",
+        "data/project_path_data.xml",
+        "data/property_usage_type_data.xml",
+        "data/final_owner_decision_data.xml",
+        "data/cron_data.xml",
+        # Views     
+        "views/entries_views.xml",
+        "views/property_type_views.xml",
+        "views/property_usage_type_views.xml",
+        "views/actions.xml",
+        "views/bussma_menu_view.xml",
+        "views/entries_return_log_views.xml",
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'bussma_system/static/src/css/readonly_styles.css',
+            'bussma_system/static/src/js/search_panel_bussma.js',
+            'bussma_system/static/src/js/list_renderer_bussma.js',
+            'bussma_system/static/src/xml/search_panel_bussma.xml',
+        ],
+    },
+    'application': False,
+    'installable': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}

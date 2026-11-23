@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_committee_entries_wizard_form" model="ir.ui.view">
+        <field name="name">committee.entries.wizard.form</field>
+        <field name="model">committee.entries.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Committee Decision">
+                <sheet>
+                    <field name="entry_ids" invisible="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="committee_decision" invisible="1"/>
+                    <group string="Committee Decision" col="6">
+                        <field name="committee_approved_users" widget="many2many_tags" 
+                               domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]" 
+                               required="committee_decision in ('direct_sale', 'auction')" 
+                               options="{'no_create': True}"/>
+                        <field name="committee_rejected_users" widget="many2many_tags" 
+                               domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]" 
+                               required="committee_decision == 'exclusion'" 
+                               options="{'no_create': True}"/>
+                        <field name="committee_postponed_users" widget="many2many_tags" 
+                               domain="[('groups_id', 'in', [%(bussma_system.group_committee_member)d])]" 
+                               options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="marketing_duration_months" 
+                                   required="committee_decision in ('direct_sale', 'auction')"/>
+                        </group>
+                        <group>
+                            <field name="committee_decision_date" 
+                                   required="committee_decision in ('direct_sale', 'auction')"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="committee_decision_rel" 
+                               required="1" 
+                               options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="direct_sale_price_per_meter" 
+                                   required="committee_decision == 'direct_sale'" 
+                                   widget="monetary" 
+                                   options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                        </group>
+                        <group>
+                            <field name="auction_price_per_meter" 
+                                   required="committee_decision == 'auction'" 
+                                   widget="monetary" 
+                                   options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="committe_notes" 
+                               required="committee_decision == 'exclusion'"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_apply" 
+                            string="Send to Department Manager" 
+                            type="object" 
+                            class="btn-success"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_committee_entries_wizard" model="ir.actions.act_window">
+        <field name="name">Committee Decision Actions</field>
+        <field name="res_model">committee.entries.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="bussma_system.model_entries"/>
+        <field name="binding_view_types">list</field>
+        <field name="groups_id" eval="[(4, ref('bussma_system.group_committee_member'))]"/>
+    </record>
+</odoo>

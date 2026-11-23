@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    <!-- Eanfaz Detailed Study Form View -->
+    <record id="detailed_study_eanfaz_form_view" model="ir.ui.view">
+        <field name="name">entries.detailed.study.eanfaz.form.view</field>
+        <field name="model">entries</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="request.request_view_form"/>
+        <field name="priority">33</field>
+        <field name="arch" type="xml">
+            <!-- Hide default action buttons from request model -->
+            <xpath expr="//button[@name='action_send']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_accept']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_refuse']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='active']" position="replace"/>
+            <!-- Custom header buttons for Eanfaz Detailed Study stages -->
+            <xpath expr="//header" position="inside">
+                <!-- Studies Supervisor -> Detailed Study -->
+                <button name="action_accept" class="btn-success" string="Send to Detailed Analyst" type="object" 
+                        confirm="Are you sure you want to send this entry to the detailed analyst?" 
+                        invisible="project_stage_selection != 'studies_supervisor_eanfaz' or is_return_to_supervisor_study == True or studies_supervisor_data_complete != 'yes'" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager" />
+                <!-- Studies Supervisor -> Return to Project Manager -->
+                <button name="action_return_to_project_manager_eanfaz" class="btn-danger" string="Return to Project Manager" type="object" 
+                        confirm="Are you sure you want to return this entry to the project manager?" 
+                        invisible="project_stage_selection != 'studies_supervisor_eanfaz' or is_return_to_supervisor_study == True or studies_supervisor_data_complete != 'no'" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager" />
+                <!-- Detailed Study -> Detailed Study Approval -->
+                <button name="action_accept" class="btn-success" string="Send for Approval" type="object" 
+                        confirm="Are you sure you want to send the detailed study for approval?" 
+                        invisible="project_stage_selection != 'detailed_study_eanfaz'" 
+                        groups="bussma_system.group_analyst" />
+                <!-- Detailed Study Approval -> Completed -->
+                <button name="action_accept" class="btn-success" string="Approve and Complete Study" type="object" 
+                        confirm="Are you sure you want to approve and complete this detailed study?" 
+                        invisible="not (project_stage_selection == 'detailed_study_approval_eanfaz' and specialized_study_manager_approval == 'completed')" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager" />
+                <!-- Detailed Study Approval -> Return to Detailed Study -->
+                <button name="action_return_to_analyst_eanfaz" class="btn-danger" string="Return to Analyst" type="object" 
+                        confirm="Are you sure you want to return this entry to the analyst?" 
+                        invisible="not (project_stage_selection == 'detailed_study_approval_eanfaz' and specialized_study_manager_approval == 'incomplete')" 
+                        groups="bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager" />
+            </xpath>
+            <!-- Form Sheet Design -->
+            <xpath expr="//sheet" position="inside">
+                <div class="oe_title">
+                    <h1>
+                        <field name="entrie_name" readonly="1"/>
+                    </h1>
+                </div>
+                <field name="is_land_property_type" invisible="1"/>
+                <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                    invisible="not (specialized_study_manager_note and project_stage_selection == 'detailed_study_eanfaz')" role="status">
+                    <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                    <div class="w-100">
+                    <!-- Analyst Return Notes -->
+                        <strong class="text-warning-emphasis d-block mb-1">Notes of the studies manager on the study</strong>
+                        <field name="specialized_study_manager_note" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                    </div>
+                </div>
+                <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
+                    invisible="not (study_rejection_notes and project_stage_selection == 'detailed_study_eanfaz')" role="status">
+                    <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning" title="Warning"/>
+                    <div class="w-100">
+                    <!-- Analyst Return Notes -->
+                        <strong class="text-warning-emphasis d-block mb-1">Notes of the studies manager on the study</strong>
+                        <field name="study_rejection_notes" readonly="1" nolabel="1" class="no_readonly_style text-dark fst-italic"/>
+                    </div>
+                </div>
+                <notebook>
+                    <!-- Page 1: Government Auction Basic Info -->
+                    <page string="Government Auction Information">
+                        <group>
+                            <group string="Basic Information">
+                                <field name="p2_auction_project_path"/>
+                                <field name="p2_auction_category"/>
+                                <field name="p2_need_identity"/>
+                            </group>
+                            <group string="Asset &amp; Case Details">
+                                <field name="p2_asset_number"/>
+                                <field name="p2_court_decision_number"/>
+                                <field name="p2_execution_applicant_name"/>
+                                <field name="p2_execution_applicant_phone"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Deed &amp; Plan Info">
+                                <field name="p2_deed_number"/>
+                                <field name="p2_deed_date_hijri"/>
+                                <field name="p2_deed_issuer"/>
+                                <field name="p2_plan_number"/>
+                                <field name="p2_plot_number"/>
+                            </group>
+                            <group string="Location Details">
+                                <field name="p2_city"/>
+                                <field name="p2_district_id"/>
+                                <field name="p2_property_type"/>
+                                <field name="p2_area_sqm"/>
+                                <field name="p2_location_url" widget="url"/>
+                            </group>
+                        </group>
+                        <group string="Limits &amp; Lengths">
+                            <group>
+                                <field name="p2_limit_north"/>
+                                <field name="p2_length_north"/>
+                                <field name="p2_limit_south"/>
+                                <field name="p2_length_south"/>
+                            </group>
+                            <group>
+                                <field name="p2_limit_east"/>
+                                <field name="p2_length_east"/>
+                                <field name="p2_limit_west"/>
+                                <field name="p2_length_west"/>
+                            </group>
+                        </group>
+                        <group string="Lease &amp; Operational Details">
+                            <group>
+                                <field name="p2_lease_contract_type"/>
+                                <field name="p2_has_operation_contract"/>
+                                <field name="p2_lease_contract_expiry_date"/>
+                            </group>
+                            <group>
+                                <field name="p2_property_images_url" widget="url"/>
+                            </group>
+                        </group>
+                        <group string="Notes">
+                            <field name="p2_property_description"/>
+                            <field name="p2_project_notes"/>
+                            <field name="p2_project_manager_notes"/>
+                        </group>
+                    </page>
+                    <!-- Page 2: Studies Supervisor -->
+                    <page string="Studies Supervisor" invisible="project_stage_selection not in ['studies_supervisor_eanfaz', 'detailed_study_eanfaz', 'detailed_study_approval_eanfaz', 'detailed_study_completed_eanfaz']">
+                        <group>
+                            <field name="studies_supervisor_data_complete" readonly="project_stage_selection != 'studies_supervisor_eanfaz' or is_return_to_supervisor_study == True or (is_studies_manager_group == False and is_deputy_studies_manager_group == False)"/>
+                            <field name="detailed_analyst_id" readonly="project_stage_selection != 'studies_supervisor_eanfaz' or is_return_to_supervisor_study == True or (is_studies_manager_group == False and is_deputy_studies_manager_group == False)"/>
+                            <field name="notes_supervisor_study" required="studies_supervisor_data_complete == 'no' and project_stage_selection == 'studies_supervisor_eanfaz'" readonly="project_stage_selection != 'studies_supervisor_eanfaz' or is_return_to_supervisor_study == True or (is_studies_manager_group == False and is_deputy_studies_manager_group == False)"/>
+                        </group>
+                    </page>
+                    <!-- Page 3: Detailed Study -->
+                    <page string="Detailed Study" invisible="project_stage_selection not in ['detailed_study_eanfaz', 'detailed_study_approval_eanfaz', 'detailed_study_completed_eanfaz']">
+                        <field name="currency_id" invisible="1"/>
+                        <notebook>
+                            <!-- ========================= -->
+                            <!-- 1. Property & Location -->
+                            <!-- ========================= -->
+                            <page string="Property and Location">
+                                <group>
+                                    <group>
+                                        <field name="has_movables" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                        <field name="is_estimated_more_than_50k" invisible="has_movables != 'yes'" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                        <field name="are_keys_available" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                        <field name="key_location" invisible="are_keys_available != 'yes'" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                        <field name="property_condition" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                        <field name="property_usage_rel" readonly="project_stage_selection != 'detailed_study_eanfaz' or is_analyst_group == False"/>
+                                    </group>
+                                    <group>
+                                        <field name="limit_east" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="limit_west" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="limit_north" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="limit_south" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="street_length" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="nearest_main_road" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="precise_plot_location_link" widget="url" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                    <group>
+                                        <field name="length_east" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="length_west" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="length_north" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="length_south" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="street" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- ========================= -->
+                            <!-- 2. Building & Licensing -->
+                            <!-- ========================= -->
+                            <page string="Building and Licensing">
+                                <group>
+                                    <group>
+                                        <field name="building_area" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="floors_count" readonly="project_stage_selection != 'detailed_study_eanfaz'" invisible="is_land_property_type"/>
+                                        <field name="units_count" readonly="project_stage_selection != 'detailed_study_eanfaz'" invisible="is_land_property_type"/>
+                                        <field name="property_age_estimated" readonly="project_stage_selection != 'detailed_study_eanfaz'" invisible="is_land_property_type"/>
+                                        <field name="land_nature" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                    <group>
+                                        <field name="building_license_number" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="building_license_date" widget="hijri_date" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="completion_certificate_issued" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="detailed_building_requirements" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- ========================= -->
+                            <!-- 3. Utilities & Services -->
+                            <!-- ========================= -->
+                            <page string="Services">
+                                <group>
+                                    <group>
+                                        <field name="electricity_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="electricity_meters_count" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="electricity_meters_numbers" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="lighting_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="gas_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="ac_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="internet_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="telecom_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                    <group>
+                                        <field name="water_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="water_meters_count" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="water_meters_numbers" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="sewage_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="pavement_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="security_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="elevator_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="pool_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="garden_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="parking_service" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                </group>
+                                <group string="Warranties">
+                                    <field name="construction_warranty" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    <field name="electrical_warranty" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    <field name="plumbing_warranty" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    <field name="services_description" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                </group>
+                            </page>
+                            <!-- ========================= -->
+                            <!-- 4. Financial & Valuation -->
+                            <!-- ========================= -->
+                            <page string="Financial and Valuation">
+                                <group>
+                                    <group>
+                                        <field name="current_total_income" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="expected_total_income_full_rent" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="detailed_comparison_average" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="justice_ministry_index_average" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    </group>
+                                    <group>
+                                        <field name="lowest_price_per_meter_total_property" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="highest_price_per_meter_total_property" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="approximate_building_value_per_meter" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="approximate_land_value_per_meter" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        <field name="detailed_final_property_price" readonly="project_stage_selection != 'detailed_study_eanfaz'" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- ========================= -->
+                            <!-- 5. SWOT & Recommendation -->
+                            <!-- ========================= -->
+                            <page string="Analysis and Recommendation">
+                                <group>
+                                    <group>
+                                        <field name="internal_strength_points" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="internal_weakness_points" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="external_strength_points" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="external_weakness_points" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                    </group>
+                                    <group>
+                                        <field name="best_property_use" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="analyst_recommendation_details" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <field name="property_description" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                        <div>
+                                            <label string="Finishing Ratio" for="finishing_ratio"/>
+                                            <field name="finishing_ratio" class="oe_inline" readonly="project_stage_selection != 'detailed_study_eanfaz'"/>
+                                            <span class="oe_inline">%</span>
+                                        </div>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </page>
+                    <!-- Page 4: Study Approval -->
+                    <page string="Study Approval" invisible="project_stage_selection not in ['detailed_study_approval_eanfaz', 'detailed_study_completed_eanfaz']">
+                        <group>
+                            <field name="specialized_study_manager_approval" readonly="project_stage_selection != 'detailed_study_approval_eanfaz' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False)"/>
+                            <field name="specialized_study_manager_note" required="specialized_study_manager_approval == 'incomplete'" readonly="project_stage_selection != 'detailed_study_approval_eanfaz' or (is_studies_manager_group == False and is_deputy_studies_manager_group == False)"/>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Action for Detailed Study - Eanfaz -->
+    <record id="action_detailed_study_eanfaz" model="ir.actions.act_window">
+        <field name="name">Detailed Study - Eanfaz</field>
+        <field name="res_model">entries</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain" eval="[('request_type_id', '=', ref('sales_and_auction_management.detailed_study_eanfaz')), ('project_stage_selection', '!=', 'detailed_study_completed_eanfaz')]"/>
+        <field name="context" eval="{'default_request_type_id': ref('sales_and_auction_management.detailed_study_eanfaz'), 'hide_personal_create_uid': True, 'search_default_group_by_stage': 1, 'create': False, 'delete': False}"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('detailed_study_eanfaz_form_view')})]"/>
+    </record>
+
+    <!-- Menu Item for Detailed Study - Eanfaz under Studies (direct_sale_menu) -->
+     <menuitem id="detailed_study_eanfaz_menu" 
+              name="Detailed Study - Eanfaz" 
+              action="action_detailed_study_eanfaz" 
+              parent="bussma_system.direct_sale_menu" 
+              sequence="4"/>
+
+    </data>
+</odoo>

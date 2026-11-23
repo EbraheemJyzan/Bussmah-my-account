@@ -1,0 +1,262 @@
+.o_hijri_date_widget {
+    position: relative;
+    width: 100%;
+    
+    // Readonly Mode (Matches standard Odoo fields style)
+    span.text-truncate {
+        display: inline-block;
+        max-width: 100%;
+        color: var(--text-main, #212529);
+        
+        .fw-semibold.text-primary {
+            color: var(--primary, #017e84) !important;
+        }
+        
+        .text-muted {
+            color: var(--text-muted, #6c757d) !important;
+        }
+    }
+    
+    // Input is standard Odoo .o_input, no custom wrappers or border overrides needed!
+    .o_input.o_datetime_input {
+        cursor: pointer;
+        
+        &::placeholder {
+            opacity: 0.55;
+        }
+    }
+    
+    // Popover Datepicker
+    .o_hijri_datepicker_popover {
+        position: absolute;
+        top: 100%;
+        z-index: 1060;
+        width: 320px;
+        background-color: var(--bg-paper, #ffffff);
+        border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+        color: var(--text-main, #212529);
+        margin-top: 6px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+        border-radius: 12px !important;
+        padding: 16px;
+        animation: o_hijri_fade_in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        
+        // Align popover correctly based on text direction
+        html[dir="rtl"] & {
+            right: 0;
+            left: auto;
+        }
+        html[dir="ltr"] & {
+            left: 0;
+            right: auto;
+        }
+        
+        @media (max-width: 576px) {
+            width: 100%;
+            position: fixed;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            border-radius: 20px 20px 0 0 !important;
+            transform: translateY(0);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+            animation: o_hijri_slide_up 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        // Switcher buttons
+        .btn-group {
+            .btn {
+                transition: all 0.2s;
+                font-size: 0.8rem;
+                
+                &.btn-primary {
+                    background-color: var(--primary, #017e84) !important;
+                    border-color: var(--primary, #017e84) !important;
+                    color: #ffffff !important;
+                }
+                
+                &.btn-light {
+                    background-color: var(--fill-thin, #f8f9fa) !important;
+                    border-color: var(--border-color, #dee2e6) !important;
+                    color: var(--text-muted, #6c757d) !important;
+                    
+                    &:hover {
+                        background-color: var(--fill-medium, #e9ecef) !important;
+                        color: var(--text-main, #212529) !important;
+                    }
+                }
+            }
+        }
+        
+        // Popover Header Controls
+        select {
+            cursor: pointer;
+            outline: none;
+            border: 1px solid var(--border-color, #dee2e6) !important;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 10px 10px;
+            padding: 4px 24px 4px 12px !important;
+            background-color: var(--fill-thin, #f3f4f6) !important;
+            color: var(--text-main, #374151) !important;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            
+            html[dir="rtl"] & {
+                background-position: left 8px center;
+                padding-right: 12px !important;
+                padding-left: 24px !important;
+            }
+            
+            &:focus {
+                border-color: var(--primary, #017e84) !important;
+                box-shadow: 0 0 0 2px rgba(1, 126, 132, 0.15) !important;
+            }
+        }
+        
+        .btn-light {
+            background-color: var(--fill-thin, #f8f9fa);
+            color: var(--text-main, #495057);
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            
+            &:hover {
+                background-color: var(--fill-medium, #e9ecef);
+                color: var(--primary, #017e84);
+            }
+        }
+        
+        // Days Grid Header
+        .o_datepicker_days_header {
+            div {
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: var(--text-muted, #a0aec0);
+                padding: 6px 0;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        // Calendar Day Buttons Grid
+        .o_datepicker_days_grid {
+            button {
+                transition: all 0.18s cubic-bezier(0.25, 0.8, 0.25, 1);
+                font-size: 0.85rem;
+                font-weight: 500;
+                width: 34px !important;
+                height: 34px !important;
+                margin: 0 auto;
+                
+                &:hover:not(.btn-primary) {
+                    background-color: rgba(1, 126, 132, 0.08) !important;
+                    color: var(--primary, #017e84) !important;
+                    transform: scale(1.08);
+                }
+                
+                &.btn-primary {
+                    background-color: var(--primary, #017e84) !important;
+                    border-color: var(--primary, #017e84) !important;
+                    color: #ffffff !important;
+                    font-weight: 700;
+                    box-shadow: 0 3px 8px rgba(1, 126, 132, 0.25);
+                }
+                
+                &.btn-light {
+                    background-color: transparent !important;
+                    color: var(--text-main, #374151);
+                }
+            }
+            
+            .text-muted {
+                font-size: 0.85rem;
+                line-height: 34px;
+            }
+        }
+        
+        // Time Picker Section
+        .o_datepicker_time_section {
+            border-top: 1px solid var(--border-color, #e9ecef);
+            padding-top: 12px;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            
+            select {
+                padding: 4px 20px 4px 10px !important;
+                font-size: 0.8rem;
+                
+                html[dir="rtl"] & {
+                    padding: 4px 10px 4px 20px !important;
+                }
+            }
+            
+            i {
+                font-size: 1rem;
+                color: var(--text-muted, #718096);
+            }
+        }
+        
+        // Footer (Quick Actions)
+        .o_datepicker_footer {
+            border-top: 1px solid var(--border-color, #e9ecef);
+            padding-top: 10px;
+            margin-top: 10px;
+            
+            button {
+                font-size: 0.8rem;
+                font-weight: 600;
+                padding: 4px 8px;
+                border-radius: 6px;
+                transition: all 0.2s;
+                
+                &.text-primary {
+                    color: var(--primary, #017e84) !important;
+                    &:hover {
+                        background-color: rgba(1, 126, 132, 0.05);
+                        text-decoration: none !important;
+                    }
+                }
+                
+                &.text-secondary {
+                    color: var(--text-muted, #718096) !important;
+                    &:hover {
+                        background-color: var(--fill-thin, #f8f9fa);
+                        text-decoration: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes o_hijri_fade_in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes o_hijri_slide_up {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

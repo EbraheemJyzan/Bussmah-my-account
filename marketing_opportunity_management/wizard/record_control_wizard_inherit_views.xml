@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_record_control_wizard_form_marketing" model="ir.ui.view">
+        <field name="name">record.control.wizard.form.marketing</field>
+        <field name="model">record.control.wizard</field>
+        <field name="inherit_id" ref="sales_and_auction_management.view_record_control_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_delete']" position="before">
+                <field name="opportunity_id" invisible="control_type != 'opportunity'" required="control_type == 'opportunity'" options="{'no_create': True}"/>
+                <field name="marketing_id" invisible="control_type != 'marketing'" required="control_type == 'marketing'" options="{'no_create': True}"/>
+                <field name="marketing_material_id" invisible="control_type != 'marketing_material'" required="control_type == 'marketing_material'" options="{'no_create': True}"/>
+                <field name="marketing_task_id" invisible="control_type != 'marketing_task'" required="control_type == 'marketing_task'" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

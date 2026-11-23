@@ -1,0 +1,3001 @@
+id,name,state_id/id,country_id/id
+sa_dist_10100003001,حي العمل,state_city_sa_gov_1,base.sa
+sa_dist_10100003002,حي النموذجية,state_city_sa_gov_1,base.sa
+sa_dist_10100003003,حي الجرادية,state_city_sa_gov_1,base.sa
+sa_dist_10100003004,حي الصناعية,state_city_sa_gov_1,base.sa
+sa_dist_10100003005,حي منفوحة الجديدة,state_city_sa_gov_1,base.sa
+sa_dist_10100003006,حي الفاخرية,state_city_sa_gov_1,base.sa
+sa_dist_10100003007,حي الديرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003008,حي ام الحمام الشرقي,state_city_sa_gov_1,base.sa
+sa_dist_10100003009,حي الشرفية,state_city_sa_gov_1,base.sa
+sa_dist_10100003010,حي الهدا,state_city_sa_gov_1,base.sa
+sa_dist_10100003011,حي المعذر الشمالي,state_city_sa_gov_1,base.sa
+sa_dist_10100003012,حي ام الحمام الغربي,state_city_sa_gov_1,base.sa
+sa_dist_10100003013,حي الرحمانية,state_city_sa_gov_1,base.sa
+sa_dist_10100003014,حي لبن,state_city_sa_gov_1,base.sa
+sa_dist_10100003015,حي الرفيعة,state_city_sa_gov_1,base.sa
+sa_dist_10100003016,حي الشهداء,state_city_sa_gov_1,base.sa
+sa_dist_10100003017,حي الملك فهد,state_city_sa_gov_1,base.sa
+sa_dist_10100003018,حي السويدي,state_city_sa_gov_1,base.sa
+sa_dist_10100003019,حي الحزم,state_city_sa_gov_1,base.sa
+sa_dist_10100003020,حي عتيقة,state_city_sa_gov_1,base.sa
+sa_dist_10100003021,حي المربع,state_city_sa_gov_1,base.sa
+sa_dist_10100003022,حي الفلاح,state_city_sa_gov_1,base.sa
+sa_dist_10100003023,حي الندى,state_city_sa_gov_1,base.sa
+sa_dist_10100003024,حي المرسلات,state_city_sa_gov_1,base.sa
+sa_dist_10100003025,حي النزهة,state_city_sa_gov_1,base.sa
+sa_dist_10100003026,حي الورود,state_city_sa_gov_1,base.sa
+sa_dist_10100003027,حي الملك فيصل,state_city_sa_gov_1,base.sa
+sa_dist_10100003028,المدينة الصناعية الثانية,state_city_sa_gov_1,base.sa
+sa_dist_10100003029,حي العزيزية,state_city_sa_gov_1,base.sa
+sa_dist_10100003030,حي المنصورة,state_city_sa_gov_1,base.sa
+sa_dist_10100003031,حي غبيرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003032,حي الفاروق,state_city_sa_gov_1,base.sa
+sa_dist_10100003033,حي الفيصلية,state_city_sa_gov_1,base.sa
+sa_dist_10100003034,حي الخالدية,state_city_sa_gov_1,base.sa
+sa_dist_10100003035,حي الجزيرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003036,حي السعادة,state_city_sa_gov_1,base.sa
+sa_dist_10100003037,حي الناصرية,state_city_sa_gov_1,base.sa
+sa_dist_10100003038,حي المناخ,state_city_sa_gov_1,base.sa
+sa_dist_10100003039,حي الدفاع,state_city_sa_gov_1,base.sa
+sa_dist_10100003040,حي النور,state_city_sa_gov_1,base.sa
+sa_dist_10100003041,حي الملك عبدالله,state_city_sa_gov_1,base.sa
+sa_dist_10100003042,حي الواحة,state_city_sa_gov_1,base.sa
+sa_dist_10100003043,حي صلاح الدين,state_city_sa_gov_1,base.sa
+sa_dist_10100003044,حي الملك عبدالعزيز,state_city_sa_gov_1,base.sa
+sa_dist_10100003045,حي الوزارات,state_city_sa_gov_1,base.sa
+sa_dist_10100003046,حي سكيرينة,state_city_sa_gov_1,base.sa
+sa_dist_10100003047,حي الربوة,state_city_sa_gov_1,base.sa
+sa_dist_10100003048,حي جرير,state_city_sa_gov_1,base.sa
+sa_dist_10100003049,حي المعذر,state_city_sa_gov_1,base.sa
+sa_dist_10100003050,حي الصالحية,state_city_sa_gov_1,base.sa
+sa_dist_10100003051,حي الملز,state_city_sa_gov_1,base.sa
+sa_dist_10100003052,حي منفوحة,state_city_sa_gov_1,base.sa
+sa_dist_10100003053,حي عليشة,state_city_sa_gov_1,base.sa
+sa_dist_10100003054,حي النهضة,state_city_sa_gov_1,base.sa
+sa_dist_10100003055,حي الخليج,state_city_sa_gov_1,base.sa
+sa_dist_10100003056,حي الضباط,state_city_sa_gov_1,base.sa
+sa_dist_10100003057,حي السويدي الغربي,state_city_sa_gov_1,base.sa
+sa_dist_10100003058,حي ديراب,state_city_sa_gov_1,base.sa
+sa_dist_10100003059,حي احد,state_city_sa_gov_1,base.sa
+sa_dist_10100003060,حي نمار,state_city_sa_gov_1,base.sa
+sa_dist_10100003061,حي الشفا,state_city_sa_gov_1,base.sa
+sa_dist_10100003062,حي المحمدية,state_city_sa_gov_1,base.sa
+sa_dist_10100003063,حي السليمانية,state_city_sa_gov_1,base.sa
+sa_dist_10100003064,حي المروة,state_city_sa_gov_1,base.sa
+sa_dist_10100003065,حي عكاظ,state_city_sa_gov_1,base.sa
+sa_dist_10100003066,حي شبرا,state_city_sa_gov_1,base.sa
+sa_dist_10100003067,حي الزهرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003068,حي صياح,state_city_sa_gov_1,base.sa
+sa_dist_10100003069,حي سلطانة,state_city_sa_gov_1,base.sa
+sa_dist_10100003070,حي اليمامة,state_city_sa_gov_1,base.sa
+sa_dist_10100003071,حي البديعة,state_city_sa_gov_1,base.sa
+sa_dist_10100003072,حي المصانع,state_city_sa_gov_1,base.sa
+sa_dist_10100003073,حي القادسية,state_city_sa_gov_1,base.sa
+sa_dist_10100003074,حي الصفا,state_city_sa_gov_1,base.sa
+sa_dist_10100003075,حي العليا,state_city_sa_gov_1,base.sa
+sa_dist_10100003076,حي الدريهمية,state_city_sa_gov_1,base.sa
+sa_dist_10100003077,حي الاسكان,state_city_sa_gov_1,base.sa
+sa_dist_10100003078,حي السلام,state_city_sa_gov_1,base.sa
+sa_dist_10100003079,حي المنار,state_city_sa_gov_1,base.sa
+sa_dist_10100003080,حي النسيم الشرقي,state_city_sa_gov_1,base.sa
+sa_dist_10100003081,حي القدس,state_city_sa_gov_1,base.sa
+sa_dist_10100003082,حي الوادي,state_city_sa_gov_1,base.sa
+sa_dist_10100003083,حي النفل,state_city_sa_gov_1,base.sa
+sa_dist_10100003084,حي المصيف,state_city_sa_gov_1,base.sa
+sa_dist_10100003085,حي التعاون,state_city_sa_gov_1,base.sa
+sa_dist_10100003086,حي الازدهار,state_city_sa_gov_1,base.sa
+sa_dist_10100003087,حي الاندلس,state_city_sa_gov_1,base.sa
+sa_dist_10100003088,حي الروضة,state_city_sa_gov_1,base.sa
+sa_dist_10100003089,حي الروابي,state_city_sa_gov_1,base.sa
+sa_dist_10100003090,حي الريان,state_city_sa_gov_1,base.sa
+sa_dist_10100003091,حي ظهرة البديعة,state_city_sa_gov_1,base.sa
+sa_dist_10100003092,حي النظيم,state_city_sa_gov_1,base.sa
+sa_dist_10100003093,حي الرماية,state_city_sa_gov_1,base.sa
+sa_dist_10100003094,حي البرية,state_city_sa_gov_1,base.sa
+sa_dist_10100003095,حي طيبة,state_city_sa_gov_1,base.sa
+sa_dist_10100003096,حي المنصورية,state_city_sa_gov_1,base.sa
+sa_dist_10100003097,حي ضاحية نمار,state_city_sa_gov_1,base.sa
+sa_dist_10100003098,حي المصفاة,state_city_sa_gov_1,base.sa
+sa_dist_10100003099,حي السفارات,state_city_sa_gov_1,base.sa
+sa_dist_10100003100,خشم العان,state_city_sa_gov_1,base.sa
+sa_dist_10100003101,حي قرطبة,state_city_sa_gov_1,base.sa
+sa_dist_10100003102,حي طويق,state_city_sa_gov_1,base.sa
+sa_dist_10100003103,حي العوالي,state_city_sa_gov_1,base.sa
+sa_dist_10100003104,حي الربيع,state_city_sa_gov_1,base.sa
+sa_dist_10100003105,حي المغرزات,state_city_sa_gov_1,base.sa
+sa_dist_10100003106,حي السلي,state_city_sa_gov_1,base.sa
+sa_dist_10100003107,حي العقيق,state_city_sa_gov_1,base.sa
+sa_dist_10100003108,حي النخيل,state_city_sa_gov_1,base.sa
+sa_dist_10100003109,حي الغدير,state_city_sa_gov_1,base.sa
+sa_dist_10100003110,حي المروج,state_city_sa_gov_1,base.sa
+sa_dist_10100003111,حي العود,state_city_sa_gov_1,base.sa
+sa_dist_10100003112,حي ثليم,state_city_sa_gov_1,base.sa
+sa_dist_10100003113,حي الشميسي,state_city_sa_gov_1,base.sa
+sa_dist_10100003114,حي الوشام,state_city_sa_gov_1,base.sa
+sa_dist_10100003115,منتزه سلام,state_city_sa_gov_1,base.sa
+sa_dist_10100003116,حي الدوبية,state_city_sa_gov_1,base.sa
+sa_dist_10100003117,حي معكال,state_city_sa_gov_1,base.sa
+sa_dist_10100003118,حي جبرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003119,حي القرى,state_city_sa_gov_1,base.sa
+sa_dist_10100003120,حي المرقب,state_city_sa_gov_1,base.sa
+sa_dist_10100003121,حي الفوطة,state_city_sa_gov_1,base.sa
+sa_dist_10100003122,حي ام سليم,state_city_sa_gov_1,base.sa
+sa_dist_10100003123,حي الصحافة,state_city_sa_gov_1,base.sa
+sa_dist_10100003125,حي الرائد,state_city_sa_gov_1,base.sa
+sa_dist_10100003126,حي العريجاء الغربي,state_city_sa_gov_1,base.sa
+sa_dist_10100003127,حي العريجاء,state_city_sa_gov_1,base.sa
+sa_dist_10100003128,حي العريجاء الوسطى,state_city_sa_gov_1,base.sa
+sa_dist_10100003129,حي الحمراء,state_city_sa_gov_1,base.sa
+sa_dist_10100003130,حي الدار البيضاء,state_city_sa_gov_1,base.sa
+sa_dist_10100003131,حي البطيحا,state_city_sa_gov_1,base.sa
+sa_dist_10100003132,حي الزهراء,state_city_sa_gov_1,base.sa
+sa_dist_10100003133,حي الفيحاء,state_city_sa_gov_1,base.sa
+sa_dist_10100003134,حي المؤتمرات,state_city_sa_gov_1,base.sa
+sa_dist_10100003135,حي الوسيطاء,state_city_sa_gov_1,base.sa
+sa_dist_10100003136,حي الجنادرية,state_city_sa_gov_1,base.sa
+sa_dist_10100003137,حي اشبيلية,state_city_sa_gov_1,base.sa
+sa_dist_10100003138,حي المعيزلة,state_city_sa_gov_1,base.sa
+sa_dist_10100003139,حي اليرموك,state_city_sa_gov_1,base.sa
+sa_dist_10100003140,حي المونسية,state_city_sa_gov_1,base.sa
+sa_dist_10100003141,حي الخزامى,state_city_sa_gov_1,base.sa
+sa_dist_10100003142,عرقة,state_city_sa_gov_1,base.sa
+sa_dist_10100003143,حي ظهرة لبن,state_city_sa_gov_1,base.sa
+sa_dist_10100003144,حي حطين,state_city_sa_gov_1,base.sa
+sa_dist_10100003145,حي الملقا,state_city_sa_gov_1,base.sa
+sa_dist_10100003146,حي القيروان,state_city_sa_gov_1,base.sa
+sa_dist_10100003147,حي الياسمين,state_city_sa_gov_1,base.sa
+sa_dist_10100003148,حي العارض,state_city_sa_gov_1,base.sa
+sa_dist_10100003149,مطار الملك خالد,state_city_sa_gov_1,base.sa
+sa_dist_10100003150,حي النرجس,state_city_sa_gov_1,base.sa
+sa_dist_10100003151,جامعة الامام محمد بن سعود الاسلامية,state_city_sa_gov_1,base.sa
+sa_dist_10100003152,حي بنبان,state_city_sa_gov_1,base.sa
+sa_dist_10100003153,حي الرمال,state_city_sa_gov_1,base.sa
+sa_dist_10100003155,حي غرناطة,state_city_sa_gov_1,base.sa
+sa_dist_10100003156,حي الدحو,state_city_sa_gov_1,base.sa
+sa_dist_10100003157,حي العماجية,state_city_sa_gov_1,base.sa
+sa_dist_10100003158,حي هيت,state_city_sa_gov_1,base.sa
+sa_dist_10100003159,حي الحائر,state_city_sa_gov_1,base.sa
+sa_dist_10100003161,حي ام الشعال,state_city_sa_gov_1,base.sa
+sa_dist_10100003162,حي الغنامية,state_city_sa_gov_1,base.sa
+sa_dist_10100003163,حي عريض,state_city_sa_gov_1,base.sa
+sa_dist_10100003164,حي بدر,state_city_sa_gov_1,base.sa
+sa_dist_10100003165,حي المهدية,state_city_sa_gov_1,base.sa
+sa_dist_10100003166,جامعة الملك سعود,state_city_sa_gov_1,base.sa
+sa_dist_10100003167,حي النسيم الغربي,state_city_sa_gov_1,base.sa
+sa_dist_10100003168,حي المشاعل,state_city_sa_gov_1,base.sa
+sa_dist_10100003169,حي الندوة,state_city_sa_gov_1,base.sa
+sa_dist_10100003171,حي الرابية,state_city_sa_gov_1,base.sa
+sa_dist_10100003172,حي وادي لبن,state_city_sa_gov_1,base.sa
+sa_dist_10100003174,حي السدرة,state_city_sa_gov_1,base.sa
+sa_dist_10100003175,حي التضامن,state_city_sa_gov_1,base.sa
+sa_dist_10100003176,مدينة الملك عبدالله للطاقة,state_city_sa_gov_1,base.sa
+sa_dist_10100003177,حي البساتين,state_city_sa_gov_1,base.sa
+sa_dist_10100003178,حي الرحاب,state_city_sa_gov_1,base.sa
+sa_dist_10100003179,حي المجد,state_city_sa_gov_1,base.sa
+sa_dist_10100003180,حي الدانة,state_city_sa_gov_1,base.sa
+sa_dist_10100003182,حي الرسالة,state_city_sa_gov_1,base.sa
+sa_dist_10100003183,حي الخير,state_city_sa_gov_1,base.sa
+sa_dist_10100003184,حي الفرسان,state_city_sa_gov_1,base.sa
+sa_dist_10100003185,حي الشعلة,state_city_sa_gov_1,base.sa
+sa_dist_10100003186,حي الراية,state_city_sa_gov_1,base.sa
+sa_dist_10100003187,حي الزهور,state_city_sa_gov_1,base.sa
+sa_dist_10100003188,حي الزاهر,state_city_sa_gov_1,base.sa
+sa_dist_10100003189,حي المرجان,state_city_sa_gov_1,base.sa
+sa_dist_10100003190,حي البيان,state_city_sa_gov_1,base.sa
+sa_dist_10100003191,حي العلا,state_city_sa_gov_1,base.sa
+sa_dist_10100003192,حي المشرق,state_city_sa_gov_1,base.sa
+sa_dist_10100003193,حي النخبة,state_city_sa_gov_1,base.sa
+sa_dist_10100003194,حي السحاب,state_city_sa_gov_1,base.sa
+sa_dist_10100003195,حي الوسام,state_city_sa_gov_1,base.sa
+sa_dist_10100024001,حي المرقب,state_city_sa_gov_5,base.sa
+sa_dist_10100024002,حي اليرموك,state_city_sa_gov_5,base.sa
+sa_dist_10100024003,حي الفيحاء,state_city_sa_gov_5,base.sa
+sa_dist_10100024004,حي الملك فهد,state_city_sa_gov_5,base.sa
+sa_dist_10100024005,حي الملك سلمان,state_city_sa_gov_5,base.sa
+sa_dist_10100024006,حي الملك عبدالعزيز,state_city_sa_gov_5,base.sa
+sa_dist_10100024007,حي الاندلس,state_city_sa_gov_5,base.sa
+sa_dist_10100024008,حي المطار,state_city_sa_gov_5,base.sa
+sa_dist_10100024009,حي الملك عبدالله,state_city_sa_gov_5,base.sa
+sa_dist_10100024011,المنطقة الصناعية,state_city_sa_gov_5,base.sa
+sa_dist_10100024012,حي الجامعيين,state_city_sa_gov_5,base.sa
+sa_dist_10100024013,حي المروج,state_city_sa_gov_5,base.sa
+sa_dist_10100024014,حي المستقبل,state_city_sa_gov_5,base.sa
+sa_dist_10100270001,حي حطين,state_city_sa_gov_9,base.sa
+sa_dist_10100270002,حي قرطبة,state_city_sa_gov_9,base.sa
+sa_dist_10100270003,حي الفيصلية,state_city_sa_gov_9,base.sa
+sa_dist_10100270004,حي العزيزية,state_city_sa_gov_9,base.sa
+sa_dist_10100270005,حي القدس,state_city_sa_gov_9,base.sa
+sa_dist_10100270006,حي الخالدية,state_city_sa_gov_9,base.sa
+sa_dist_10100270007,حي الروضة,state_city_sa_gov_9,base.sa
+sa_dist_10100270008,حي الربوة,state_city_sa_gov_9,base.sa
+sa_dist_10100270009,حي الريان,state_city_sa_gov_9,base.sa
+sa_dist_10100270010,حي النهضة,state_city_sa_gov_9,base.sa
+sa_dist_10100270011,حي مرخ,state_city_sa_gov_9,base.sa
+sa_dist_10100270012,حي الصناعية,state_city_sa_gov_9,base.sa
+sa_dist_10100270013,حي بدر,state_city_sa_gov_9,base.sa
+sa_dist_10100270014,حي احد,state_city_sa_gov_9,base.sa
+sa_dist_10100270015,حي طويق,state_city_sa_gov_9,base.sa
+sa_dist_10100270016,حي الفاروق,state_city_sa_gov_9,base.sa
+sa_dist_10100270017,حي الصديق,state_city_sa_gov_9,base.sa
+sa_dist_10100270018,حي اليرموك,state_city_sa_gov_9,base.sa
+sa_dist_10100270020,حي اليمامة,state_city_sa_gov_9,base.sa
+sa_dist_10100270021,حي علقة,state_city_sa_gov_9,base.sa
+sa_dist_10100270022,حي الدرعية,state_city_sa_gov_9,base.sa
+sa_dist_10100270023,حي المنتزة,state_city_sa_gov_9,base.sa
+sa_dist_10100270024,حي الاندلس,state_city_sa_gov_9,base.sa
+sa_dist_10100270025,حي سمنان,state_city_sa_gov_9,base.sa
+sa_dist_10100270026,حي السلام,state_city_sa_gov_9,base.sa
+sa_dist_10100270027,حي السيح,state_city_sa_gov_9,base.sa
+sa_dist_10100270028,حي عريعرة,state_city_sa_gov_9,base.sa
+sa_dist_10100270029,حي الورود,state_city_sa_gov_9,base.sa
+sa_dist_10100270030,حي الملك عبدالله,state_city_sa_gov_9,base.sa
+sa_dist_10100270031,حي الواحة,state_city_sa_gov_9,base.sa
+sa_dist_10100270032,حي الازدهار,state_city_sa_gov_9,base.sa
+sa_dist_10100270033,حي الحمراء,state_city_sa_gov_9,base.sa
+sa_dist_10100270034,حي اشبيليا,state_city_sa_gov_9,base.sa
+sa_dist_10100270035,حي غرناطة,state_city_sa_gov_9,base.sa
+sa_dist_10100270036,حي الياسمين,state_city_sa_gov_9,base.sa
+sa_dist_10100270037,حي الربيع,state_city_sa_gov_9,base.sa
+sa_dist_10100270038,حي السعادة,state_city_sa_gov_9,base.sa
+sa_dist_10100270039,حي النور,state_city_sa_gov_9,base.sa
+sa_dist_10100270040,حي الخزامى,state_city_sa_gov_9,base.sa
+sa_dist_10100270041,حي النفل,state_city_sa_gov_9,base.sa
+sa_dist_10100270042,حي الخليج,state_city_sa_gov_9,base.sa
+sa_dist_10100270043,حي الفردوس,state_city_sa_gov_9,base.sa
+sa_dist_10100270044,حي المنار,state_city_sa_gov_9,base.sa
+sa_dist_10100270045,حي القادسية,state_city_sa_gov_9,base.sa
+sa_dist_10100270046,حي الندى,state_city_sa_gov_9,base.sa
+sa_dist_10100270047,حي الفروسية,state_city_sa_gov_9,base.sa
+sa_dist_10100270048,حي السيح,state_city_sa_gov_9,base.sa
+sa_dist_10100270049,الجوى,state_city_sa_gov_9,base.sa
+sa_dist_10100270050,حي الملك سلمان,state_city_sa_gov_9,base.sa
+sa_dist_10100306001,حي الورود,state_city_sa_gov_12,base.sa
+sa_dist_10100306002,حي الزهور,state_city_sa_gov_12,base.sa
+sa_dist_10100306003,حي الاندلس,state_city_sa_gov_12,base.sa
+sa_dist_10100306004,حي الربيع,state_city_sa_gov_12,base.sa
+sa_dist_10100306005,حي المصيف,state_city_sa_gov_12,base.sa
+sa_dist_10100306006,حي الياسمين,state_city_sa_gov_12,base.sa
+sa_dist_10100306007,حي الخزامى,state_city_sa_gov_12,base.sa
+sa_dist_10100306008,حي غرناطة,state_city_sa_gov_12,base.sa
+sa_dist_10100306009,حي الغدير,state_city_sa_gov_12,base.sa
+sa_dist_10100306010,حي الصناعية,state_city_sa_gov_12,base.sa
+sa_dist_10100306011,حي النفل,state_city_sa_gov_12,base.sa
+sa_dist_10100306012,حي البستان,state_city_sa_gov_12,base.sa
+sa_dist_10100306013,حي النخيل,state_city_sa_gov_12,base.sa
+sa_dist_10100306014,حي المروج,state_city_sa_gov_12,base.sa
+sa_dist_10100418001,حي شمال الاذاعة,state_city_sa_gov_13,base.sa
+sa_dist_10100418002,حي المعارض,state_city_sa_gov_13,base.sa
+sa_dist_10100418003,حي الاذاعة,state_city_sa_gov_13,base.sa
+sa_dist_10100418004,حي الملك فهد,state_city_sa_gov_13,base.sa
+sa_dist_10100418005,حي الملز,state_city_sa_gov_13,base.sa
+sa_dist_10100418006,حي الاصفر,state_city_sa_gov_13,base.sa
+sa_dist_10100418007,حي الحجاج,state_city_sa_gov_13,base.sa
+sa_dist_10100418008,حي المهنيين,state_city_sa_gov_13,base.sa
+sa_dist_10100418009,حي النهضة,state_city_sa_gov_13,base.sa
+sa_dist_10100418010,حي الملك فيصل,state_city_sa_gov_13,base.sa
+sa_dist_10100418011,حي الصالحية,state_city_sa_gov_13,base.sa
+sa_dist_10100418012,حي العود,state_city_sa_gov_13,base.sa
+sa_dist_10100418013,حي المنفوحة,state_city_sa_gov_13,base.sa
+sa_dist_10100418014,حي الصناعية,state_city_sa_gov_13,base.sa
+sa_dist_10100418015,حي الخزان,state_city_sa_gov_13,base.sa
+sa_dist_10100418016,حي الملك خالد,state_city_sa_gov_13,base.sa
+sa_dist_10100418017,حي السليمانية,state_city_sa_gov_13,base.sa
+sa_dist_10100418018,الجامعية,state_city_sa_gov_13,base.sa
+sa_dist_10100443001,حي الديرة القديمة,state_city_sa_gov_18,base.sa
+sa_dist_10100443002,حي الخالدية,state_city_sa_gov_18,base.sa
+sa_dist_10100443003,حي العزيزية,state_city_sa_gov_18,base.sa
+sa_dist_10100443004,حي الفيصلية,state_city_sa_gov_18,base.sa
+sa_dist_10100443005,حي الجنادرية,state_city_sa_gov_18,base.sa
+sa_dist_10100500001,المنطقة الصناعية,state_city_sa_gov_10,base.sa
+sa_dist_10100500002,حي غسلة,state_city_sa_gov_10,base.sa
+sa_dist_10100500003,حي الوقف,state_city_sa_gov_10,base.sa
+sa_dist_10100500004,حي الشفاء,state_city_sa_gov_10,base.sa
+sa_dist_10100500005,حي الملك فهد,state_city_sa_gov_10,base.sa
+sa_dist_10100500006,حي الروضة,state_city_sa_gov_10,base.sa
+sa_dist_10100500007,حي النسيم,state_city_sa_gov_10,base.sa
+sa_dist_10100500008,حي الوشم,state_city_sa_gov_10,base.sa
+sa_dist_10100500009,حي الرحبة,state_city_sa_gov_10,base.sa
+sa_dist_10100669001,حي مشرفة,state_city_sa_gov_4,base.sa
+sa_dist_10100669002,حي النزهة,state_city_sa_gov_4,base.sa
+sa_dist_10100669003,حي حطين,state_city_sa_gov_4,base.sa
+sa_dist_10100669004,حي الملك فهد,state_city_sa_gov_4,base.sa
+sa_dist_10100669005,حي الحرمين,state_city_sa_gov_4,base.sa
+sa_dist_10100669006,حي السلام,state_city_sa_gov_4,base.sa
+sa_dist_10100669007,حي الخليج,state_city_sa_gov_4,base.sa
+sa_dist_10100669008,حي الديرة,state_city_sa_gov_4,base.sa
+sa_dist_10100669009,حي الروضة,state_city_sa_gov_4,base.sa
+sa_dist_10100669010,حي الفيصلية,state_city_sa_gov_4,base.sa
+sa_dist_10100669011,حي بدر,state_city_sa_gov_4,base.sa
+sa_dist_10100669012,حي الربوة,state_city_sa_gov_4,base.sa
+sa_dist_10100669013,حي النهضة,state_city_sa_gov_4,base.sa
+sa_dist_10100669014,حي القدس,state_city_sa_gov_4,base.sa
+sa_dist_10100669015,حي الصناعية,state_city_sa_gov_4,base.sa
+sa_dist_10100669016,حي الخالدية,state_city_sa_gov_4,base.sa
+sa_dist_10100669017,حي العزيزية,state_city_sa_gov_4,base.sa
+sa_dist_10100669018,حي الريان,state_city_sa_gov_4,base.sa
+sa_dist_10100669019,حي السنبلة,state_city_sa_gov_4,base.sa
+sa_dist_10100669020,حي الدرع,state_city_sa_gov_4,base.sa
+sa_dist_10100669021,منطقة الاستراحات,state_city_sa_gov_4,base.sa
+sa_dist_10100669022,حي مصده,state_city_sa_gov_4,base.sa
+sa_dist_10100795001,حي الديرة,state_city_sa_gov_19,base.sa
+sa_dist_10100795002,حي النخيل,state_city_sa_gov_19,base.sa
+sa_dist_10100795003,حي السد,state_city_sa_gov_19,base.sa
+sa_dist_10100795004,حي الروضة,state_city_sa_gov_19,base.sa
+sa_dist_10100795005,حي النهضة,state_city_sa_gov_19,base.sa
+sa_dist_10100795006,حي الحزم,state_city_sa_gov_19,base.sa
+sa_dist_10100828001,حي الملقاه,state_city_sa_gov_2,base.sa
+sa_dist_10100828002,حي الفيصلية,state_city_sa_gov_2,base.sa
+sa_dist_10100828003,حي الثليما,state_city_sa_gov_2,base.sa
+sa_dist_10100828004,حي السلمانية,state_city_sa_gov_2,base.sa
+sa_dist_10100828005,حي الملك,state_city_sa_gov_2,base.sa
+sa_dist_10100828006,حي الدرعية,state_city_sa_gov_2,base.sa
+sa_dist_10100828007,حي الخالدية,state_city_sa_gov_2,base.sa
+sa_dist_10100828008,حي العاصمة,state_city_sa_gov_2,base.sa
+sa_dist_10100828010,حي الطريف,state_city_sa_gov_2,base.sa
+sa_dist_10100828011,حي الروقية,state_city_sa_gov_2,base.sa
+sa_dist_10100828012,حي السرحية,state_city_sa_gov_2,base.sa
+sa_dist_10100828013,حي الشهداء,state_city_sa_gov_2,base.sa
+sa_dist_10100828014,حي ظهرة العودة غرب,state_city_sa_gov_2,base.sa
+sa_dist_10100828015,حي البليدا,state_city_sa_gov_2,base.sa
+sa_dist_10100828016,حي العلب,state_city_sa_gov_2,base.sa
+sa_dist_10100828017,سلطانة,state_city_sa_gov_2,base.sa
+sa_dist_10100828018,حي ظهرة العودة شرق,state_city_sa_gov_2,base.sa
+sa_dist_10100839001,المنطقة الصناعية,state_city_sa_gov_15,base.sa
+sa_dist_10100839002,حي اليمامة,state_city_sa_gov_15,base.sa
+sa_dist_10100839003,حي الخالدية,state_city_sa_gov_15,base.sa
+sa_dist_10100839004,حي العزيزية,state_city_sa_gov_15,base.sa
+sa_dist_10100839005,حي الورود 1,state_city_sa_gov_15,base.sa
+sa_dist_10100839006,حي النهضة,state_city_sa_gov_15,base.sa
+sa_dist_10100839007,حي المنتزة,state_city_sa_gov_15,base.sa
+sa_dist_10100839008,حي البديع الغربي,state_city_sa_gov_15,base.sa
+sa_dist_10100839009,حي العنقري,state_city_sa_gov_15,base.sa
+sa_dist_10100839010,حي البديع الشرقي,state_city_sa_gov_15,base.sa
+sa_dist_10100880001,حي ابو سليم,state_city_sa_gov_6,base.sa
+sa_dist_10100880002,حي السلام,state_city_sa_gov_6,base.sa
+sa_dist_10100880003,حي الجزيرة,state_city_sa_gov_6,base.sa
+sa_dist_10100880004,حي المروج,state_city_sa_gov_6,base.sa
+sa_dist_10100880005,حي الخليج,state_city_sa_gov_6,base.sa
+sa_dist_10100880006,حي الربوة,state_city_sa_gov_6,base.sa
+sa_dist_10100880007,حي الزهور,state_city_sa_gov_6,base.sa
+sa_dist_10100880008,حي البساتين,state_city_sa_gov_6,base.sa
+sa_dist_10100880009,حي الواحة,state_city_sa_gov_6,base.sa
+sa_dist_10100880010,حي الديرة,state_city_sa_gov_6,base.sa
+sa_dist_10100880011,حي الصناعية,state_city_sa_gov_6,base.sa
+sa_dist_10100880012,حي الورود,state_city_sa_gov_6,base.sa
+sa_dist_10100880013,حي الحزم,state_city_sa_gov_6,base.sa
+sa_dist_10100880014,حي الجفونية,state_city_sa_gov_6,base.sa
+sa_dist_10100880015,حي الضريب,state_city_sa_gov_6,base.sa
+sa_dist_10100962001,حي نجد,state_city_sa_gov_23,base.sa
+sa_dist_10100962002,حي ال هويمل,state_city_sa_gov_23,base.sa
+sa_dist_10100962003,حي الهفوف,state_city_sa_gov_23,base.sa
+sa_dist_10100962004,حي الوسيطا,state_city_sa_gov_23,base.sa
+sa_dist_10100962005,حي الرين الاعلى,state_city_sa_gov_23,base.sa
+sa_dist_10100962006,حي المعيزيله,state_city_sa_gov_23,base.sa
+sa_dist_10100962007,حي العمار,state_city_sa_gov_23,base.sa
+sa_dist_10100962008,حي المعتلا,state_city_sa_gov_23,base.sa
+sa_dist_10100962009,حي قبيبان,state_city_sa_gov_23,base.sa
+sa_dist_10100962010,حي الملك فيصل,state_city_sa_gov_23,base.sa
+sa_dist_10100962011,حي عشيرة,state_city_sa_gov_23,base.sa
+sa_dist_10100962012,حي الغريبية,state_city_sa_gov_23,base.sa
+sa_dist_10100962013,حي الملك فهد,state_city_sa_gov_23,base.sa
+sa_dist_10100962014,حي الفتح,state_city_sa_gov_23,base.sa
+sa_dist_10100962015,حي القميش,state_city_sa_gov_23,base.sa
+sa_dist_10100962016,حي الرفايع,state_city_sa_gov_23,base.sa
+sa_dist_10100962017,حي الرجع,state_city_sa_gov_23,base.sa
+sa_dist_10100962018,حي الوسطى,state_city_sa_gov_23,base.sa
+sa_dist_10100962019,حي عبلية,state_city_sa_gov_23,base.sa
+sa_dist_10100962020,حي النور,state_city_sa_gov_23,base.sa
+sa_dist_10100962021,حي القادسية,state_city_sa_gov_23,base.sa
+sa_dist_10100962022,حي الشعيفان,state_city_sa_gov_23,base.sa
+sa_dist_10100962023,حي الريعانية,state_city_sa_gov_23,base.sa
+sa_dist_10100962024,حي الحنو,state_city_sa_gov_23,base.sa
+sa_dist_10100962025,حي الرواما,state_city_sa_gov_23,base.sa
+sa_dist_10100962026,حي المثناه,state_city_sa_gov_23,base.sa
+sa_dist_10100962027,حي الفرعة,state_city_sa_gov_23,base.sa
+sa_dist_10100962028,حي الفردوس,state_city_sa_gov_23,base.sa
+sa_dist_10100962029,حي الرفاع,state_city_sa_gov_23,base.sa
+sa_dist_10100962030,حي الناصفه,state_city_sa_gov_23,base.sa
+sa_dist_10100962031,حي اليمامة,state_city_sa_gov_23,base.sa
+sa_dist_10100962032,حي المعترضة,state_city_sa_gov_23,base.sa
+sa_dist_10100962033,حي احد,state_city_sa_gov_23,base.sa
+sa_dist_10100962034,حي النقيعه,state_city_sa_gov_23,base.sa
+sa_dist_10100962035,حي البدائع,state_city_sa_gov_23,base.sa
+sa_dist_10100962036,حي الصفا,state_city_sa_gov_23,base.sa
+sa_dist_10100962037,حي اليرموك,state_city_sa_gov_23,base.sa
+sa_dist_10100962038,حي الشموع,state_city_sa_gov_23,base.sa
+sa_dist_10100962039,حي الرفيعة,state_city_sa_gov_23,base.sa
+sa_dist_10100962040,حي غرناطة,state_city_sa_gov_23,base.sa
+sa_dist_10100962041,حي الرين القديم,state_city_sa_gov_23,base.sa
+sa_dist_10100990001,حي الصناعية,state_city_sa_gov_16,base.sa
+sa_dist_10100990002,حي الحزيمية,state_city_sa_gov_16,base.sa
+sa_dist_10100990003,حي الصقورية,state_city_sa_gov_16,base.sa
+sa_dist_10100990004,حي المروج,state_city_sa_gov_16,base.sa
+sa_dist_10100990005,حي شخيب,state_city_sa_gov_16,base.sa
+sa_dist_10100990006,حي طويق,state_city_sa_gov_16,base.sa
+sa_dist_10100990007,حي الأندلس,state_city_sa_gov_16,base.sa
+sa_dist_10100990008,حي غرناطه,state_city_sa_gov_16,base.sa
+sa_dist_10100990009,حي الهدا,state_city_sa_gov_16,base.sa
+sa_dist_10100990010,حي العليا,state_city_sa_gov_16,base.sa
+sa_dist_10100990011,حي نواره,state_city_sa_gov_16,base.sa
+sa_dist_10100990012,حي وسيلة,state_city_sa_gov_16,base.sa
+sa_dist_10100990013,حي اللؤلؤة,state_city_sa_gov_16,base.sa
+sa_dist_10100990014,حي الراشدية,state_city_sa_gov_16,base.sa
+sa_dist_10100990015,حي الغطغط,state_city_sa_gov_16,base.sa
+sa_dist_10100990016,حي الريف,state_city_sa_gov_16,base.sa
+sa_dist_10100990018,حي المحمدية,state_city_sa_gov_16,base.sa
+sa_dist_10100990019,حي الواحة,state_city_sa_gov_16,base.sa
+sa_dist_10100990020,حي الحزم,state_city_sa_gov_16,base.sa
+sa_dist_10100990021,حي مشيرفة,state_city_sa_gov_16,base.sa
+sa_dist_10100990022,حي الجامعة,state_city_sa_gov_16,base.sa
+sa_dist_10100990023,حي الورود,state_city_sa_gov_16,base.sa
+sa_dist_10100990024,حي الياسمين,state_city_sa_gov_16,base.sa
+sa_dist_10100990025,حي الشلال,state_city_sa_gov_16,base.sa
+sa_dist_10101061001,حي المصانع,state_city_sa_gov_3,base.sa
+sa_dist_10101061002,حي البركة,state_city_sa_gov_3,base.sa
+sa_dist_10101061003,حي المنتزة,state_city_sa_gov_3,base.sa
+sa_dist_10101061004,حي الصناعية الجديدة,state_city_sa_gov_3,base.sa
+sa_dist_10101061005,حي السليمانية,state_city_sa_gov_3,base.sa
+sa_dist_10101061006,حي الصفاء,state_city_sa_gov_3,base.sa
+sa_dist_10101061007,حي البرج,state_city_sa_gov_3,base.sa
+sa_dist_10101061008,حي الورود,state_city_sa_gov_3,base.sa
+sa_dist_10101061009,حي السلام,state_city_sa_gov_3,base.sa
+sa_dist_10101061010,حي الرفيعة,state_city_sa_gov_3,base.sa
+sa_dist_10101061011,حي اليمامة,state_city_sa_gov_3,base.sa
+sa_dist_10101061012,حي الخالدية,state_city_sa_gov_3,base.sa
+sa_dist_10101061013,حي الخزامى,state_city_sa_gov_3,base.sa
+sa_dist_10101061014,حي العزيزية,state_city_sa_gov_3,base.sa
+sa_dist_10101061015,حي مشرف,state_city_sa_gov_3,base.sa
+sa_dist_10101061016,حي الراشدية,state_city_sa_gov_3,base.sa
+sa_dist_10101061017,حي المنيفية,state_city_sa_gov_3,base.sa
+sa_dist_10101061018,حي الناصفة,state_city_sa_gov_3,base.sa
+sa_dist_10101061019,حي البديعة,state_city_sa_gov_3,base.sa
+sa_dist_10101061020,حي المنصورة,state_city_sa_gov_3,base.sa
+sa_dist_10101061021,حي النهضة,state_city_sa_gov_3,base.sa
+sa_dist_10101061022,حي النزهة,state_city_sa_gov_3,base.sa
+sa_dist_10101061023,حي الريان,state_city_sa_gov_3,base.sa
+sa_dist_10101061024,حي الاندلس,state_city_sa_gov_3,base.sa
+sa_dist_10101061025,حي الفيصلية,state_city_sa_gov_3,base.sa
+sa_dist_10101061026,حي الزاهر,state_city_sa_gov_3,base.sa
+sa_dist_10101061027,منطقة صناعية,state_city_sa_gov_3,base.sa
+sa_dist_10101061028,حي العالية,state_city_sa_gov_3,base.sa
+sa_dist_10101061029,الهياثم,state_city_sa_gov_3,base.sa
+sa_dist_10101061030,حي العدامة,state_city_sa_gov_3,base.sa
+sa_dist_10101061031,حي القطار,state_city_sa_gov_3,base.sa
+sa_dist_10101061032,المدينة الصناعية بالخرج,state_city_sa_gov_3,base.sa
+sa_dist_10101061033,قاعدة الامير سلطان الجوية,state_city_sa_gov_3,base.sa
+sa_dist_10101061034,حي الجامعة,state_city_sa_gov_3,base.sa
+sa_dist_10101061035,حي جوهرة الخرج,state_city_sa_gov_3,base.sa
+sa_dist_10101061036,حي المروج,state_city_sa_gov_3,base.sa
+sa_dist_10101061037,حي السحاب,state_city_sa_gov_3,base.sa
+sa_dist_10101061038,حي اليرموك,state_city_sa_gov_3,base.sa
+sa_dist_10101061039,حي الاخضر,state_city_sa_gov_3,base.sa
+sa_dist_10101061040,حي الروابي,state_city_sa_gov_3,base.sa
+sa_dist_10101061041,حي قرطبة,state_city_sa_gov_3,base.sa
+sa_dist_10101061042,حي الهدا,state_city_sa_gov_3,base.sa
+sa_dist_10101061043,حي الحمراء,state_city_sa_gov_3,base.sa
+sa_dist_10101073001,حي الخالدية,state_city_sa_gov_22,base.sa
+sa_dist_10101073002,حي الشفاء,state_city_sa_gov_22,base.sa
+sa_dist_10101073003,حي السليمانية,state_city_sa_gov_22,base.sa
+sa_dist_10101073004,حي سدير,state_city_sa_gov_22,base.sa
+sa_dist_10101073005,حي السعيدان,state_city_sa_gov_22,base.sa
+sa_dist_10101073006,حي السماري,state_city_sa_gov_22,base.sa
+sa_dist_10101073007,حي العويمرية,state_city_sa_gov_22,base.sa
+sa_dist_10101073008,حي الصحنة,state_city_sa_gov_22,base.sa
+sa_dist_10101073009,حي العذراء,state_city_sa_gov_22,base.sa
+sa_dist_10101073010,حي الديرة,state_city_sa_gov_22,base.sa
+sa_dist_10101073011,حي الناصرية,state_city_sa_gov_22,base.sa
+sa_dist_10101073012,حي زميقة,state_city_sa_gov_22,base.sa
+sa_dist_10101073013,حي النهضة,state_city_sa_gov_22,base.sa
+sa_dist_10101351001,حي الخماسين الشمالي,state_city_sa_gov_7,base.sa
+sa_dist_10101351002,حي اللدام الجنوبي,state_city_sa_gov_7,base.sa
+sa_dist_10101351003,حي الحديدية,state_city_sa_gov_7,base.sa
+sa_dist_10101351004,حي القيروان,state_city_sa_gov_7,base.sa
+sa_dist_10101351005,حي المنتزه,state_city_sa_gov_7,base.sa
+sa_dist_10101351006,حي الروضة,state_city_sa_gov_7,base.sa
+sa_dist_10101351007,حي مقابل,state_city_sa_gov_7,base.sa
+sa_dist_10101351008,حي صناعية الحديدية,state_city_sa_gov_7,base.sa
+sa_dist_10101351009,حي التقنية,state_city_sa_gov_7,base.sa
+sa_dist_10101351010,حي الرويساء,state_city_sa_gov_7,base.sa
+sa_dist_10101351011,حي اللدام الشمالي,state_city_sa_gov_7,base.sa
+sa_dist_10101351012,حي آل عويمر,state_city_sa_gov_7,base.sa
+sa_dist_10101351013,حي الخماسين,state_city_sa_gov_7,base.sa
+sa_dist_10101351014,حي الولامين,state_city_sa_gov_7,base.sa
+sa_dist_10101351015,حي المعتلاء,state_city_sa_gov_7,base.sa
+sa_dist_10101351016,حي صناعية الشرفا,state_city_sa_gov_7,base.sa
+sa_dist_10101351017,حي الشرفا,state_city_sa_gov_7,base.sa
+sa_dist_10101351018,حي ال عريمة,state_city_sa_gov_7,base.sa
+sa_dist_10101351019,حي الزويراء,state_city_sa_gov_7,base.sa
+sa_dist_10101351020,حي الخالدية,state_city_sa_gov_7,base.sa
+sa_dist_10101351021,حي النزهة,state_city_sa_gov_7,base.sa
+sa_dist_10101351022,حي العزيزية,state_city_sa_gov_7,base.sa
+sa_dist_10101351023,حي نزوى,state_city_sa_gov_7,base.sa
+sa_dist_10101351024,حي العقيق,state_city_sa_gov_7,base.sa
+sa_dist_10101351025,حي الصالحية,state_city_sa_gov_7,base.sa
+sa_dist_10101351026,حي ال تميم و الصالحية,state_city_sa_gov_7,base.sa
+sa_dist_10101351027,حي المدرسة العسكرية,state_city_sa_gov_7,base.sa
+sa_dist_10101351028,حي العليا,state_city_sa_gov_7,base.sa
+sa_dist_10101351029,حي الحنابجة,state_city_sa_gov_7,base.sa
+sa_dist_10101351030,حي الورود,state_city_sa_gov_7,base.sa
+sa_dist_10101351031,حي المعتلاء الجنوبي,state_city_sa_gov_7,base.sa
+sa_dist_10101351032,حي النويعمة,state_city_sa_gov_7,base.sa
+sa_dist_10101351033,حي القويز,state_city_sa_gov_7,base.sa
+sa_dist_10101351034,الحي الغربي,state_city_sa_gov_7,base.sa
+sa_dist_10101351035,حي المستشفي,state_city_sa_gov_7,base.sa
+sa_dist_10101361001,حي النخيل,state_city_sa_gov_14,base.sa
+sa_dist_10101361002,حي الروضة,state_city_sa_gov_14,base.sa
+sa_dist_10101361003,حي الشفاء,state_city_sa_gov_14,base.sa
+sa_dist_10101361004,حي الديرة,state_city_sa_gov_14,base.sa
+sa_dist_10101361005,حي الملك عبدالعزيز,state_city_sa_gov_14,base.sa
+sa_dist_10101361006,حي الزهرة,state_city_sa_gov_14,base.sa
+sa_dist_10103158001,حي المدينة الجديدة,state_city_sa_gov_20,base.sa
+sa_dist_10103158002,حي الركية,state_city_sa_gov_20,base.sa
+sa_dist_10103158003,حي الحزيمية,state_city_sa_gov_20,base.sa
+sa_dist_10103158004,وسط المدينة,state_city_sa_gov_20,base.sa
+sa_dist_10103158005,حي العثمانية,state_city_sa_gov_20,base.sa
+sa_dist_10103158006,حي الصناعية,state_city_sa_gov_20,base.sa
+sa_dist_10103161001,حي الورود,state_city_sa_gov_11,base.sa
+sa_dist_10103161002,حي خضار,state_city_sa_gov_11,base.sa
+sa_dist_10103161003,حي الباطن,state_city_sa_gov_11,base.sa
+sa_dist_10103161004,حي النهضة,state_city_sa_gov_11,base.sa
+sa_dist_10103161005,حي الشعيب,state_city_sa_gov_11,base.sa
+sa_dist_10103161006,حي زياد,state_city_sa_gov_11,base.sa
+sa_dist_10103161007,حي الفرعة,state_city_sa_gov_11,base.sa
+sa_dist_10103161008,حي التضامن,state_city_sa_gov_11,base.sa
+sa_dist_10103161009,حي المنار,state_city_sa_gov_11,base.sa
+sa_dist_10103161010,حي المجد,state_city_sa_gov_11,base.sa
+sa_dist_10103161011,حي المصيف,state_city_sa_gov_11,base.sa
+sa_dist_10103161012,حي الصدر,state_city_sa_gov_11,base.sa
+sa_dist_10103161013,حي المحمدية,state_city_sa_gov_11,base.sa
+sa_dist_10103161014,حي السلام,state_city_sa_gov_11,base.sa
+sa_dist_10103161015,حي الحلة,state_city_sa_gov_11,base.sa
+sa_dist_10200005001,حي ج10,state_city_sa_gov_26,base.sa
+sa_dist_10200005002,حي ضاحية الاسكان,state_city_sa_gov_26,base.sa
+sa_dist_10200005003,منطقة إمتداد ضاحية الإسكان,state_city_sa_gov_26,base.sa
+sa_dist_10200005004,حي السيل الكبير,state_city_sa_gov_26,base.sa
+sa_dist_10200005005,حي الهدا,state_city_sa_gov_26,base.sa
+sa_dist_10200005006,حي الشفا,state_city_sa_gov_26,base.sa
+sa_dist_10200005007,حي ج3,state_city_sa_gov_26,base.sa
+sa_dist_10200005008,حي ج4,state_city_sa_gov_26,base.sa
+sa_dist_10200005009,حي ج5,state_city_sa_gov_26,base.sa
+sa_dist_10200005010,حي ج43,state_city_sa_gov_26,base.sa
+sa_dist_10200005011,حي ج16,state_city_sa_gov_26,base.sa
+sa_dist_10200005012,حي ج18,state_city_sa_gov_26,base.sa
+sa_dist_10200005013,حي ج11,state_city_sa_gov_26,base.sa
+sa_dist_10200005014,حي ج12,state_city_sa_gov_26,base.sa
+sa_dist_10200005015,حي ج15,state_city_sa_gov_26,base.sa
+sa_dist_10200005016,حي ج17,state_city_sa_gov_26,base.sa
+sa_dist_10200005017,حي ج22,state_city_sa_gov_26,base.sa
+sa_dist_10200005018,حي ج23,state_city_sa_gov_26,base.sa
+sa_dist_10200005019,حي ج25,state_city_sa_gov_26,base.sa
+sa_dist_10200005020,حي ج26,state_city_sa_gov_26,base.sa
+sa_dist_10200005021,حي ج28,state_city_sa_gov_26,base.sa
+sa_dist_10200005022,حي ج29,state_city_sa_gov_26,base.sa
+sa_dist_10200005023,حي معشي,state_city_sa_gov_26,base.sa
+sa_dist_10200005024,حي القمرية,state_city_sa_gov_26,base.sa
+sa_dist_10200005025,حي عودة,state_city_sa_gov_26,base.sa
+sa_dist_10200005026,حي السلامة,state_city_sa_gov_26,base.sa
+sa_dist_10200005027,حي قروى,state_city_sa_gov_26,base.sa
+sa_dist_10200005028,حي الصيانة,state_city_sa_gov_26,base.sa
+sa_dist_10200005029,حي سوق عكاظ,state_city_sa_gov_26,base.sa
+sa_dist_10200005030,حي ج21,state_city_sa_gov_26,base.sa
+sa_dist_10200005031,حي ج44,state_city_sa_gov_26,base.sa
+sa_dist_10200005032,حي ج27,state_city_sa_gov_26,base.sa
+sa_dist_10200005033,حي الشهداء الجنوبية,state_city_sa_gov_26,base.sa
+sa_dist_10200005034,حي شهار,state_city_sa_gov_26,base.sa
+sa_dist_10200005035,حي ج20,state_city_sa_gov_26,base.sa
+sa_dist_10200005036,حي نخب,state_city_sa_gov_26,base.sa
+sa_dist_10200005037,حي حوايا الشمالية,state_city_sa_gov_26,base.sa
+sa_dist_10200005038,حي الخالدية,state_city_sa_gov_26,base.sa
+sa_dist_10200005039,حي مسرة 1,state_city_sa_gov_26,base.sa
+sa_dist_10200005040,حي الربيع,state_city_sa_gov_26,base.sa
+sa_dist_10200005041,حي السلام,state_city_sa_gov_26,base.sa
+sa_dist_10200005042,حي الربوة,state_city_sa_gov_26,base.sa
+sa_dist_10200005043,حي حوايا الجنوبية,state_city_sa_gov_26,base.sa
+sa_dist_10200005044,حي القطبية,state_city_sa_gov_26,base.sa
+sa_dist_10200005045,حي العارمية 2,state_city_sa_gov_26,base.sa
+sa_dist_10200005046,حي المعترض,state_city_sa_gov_26,base.sa
+sa_dist_10200005047,حي الرويدف,state_city_sa_gov_26,base.sa
+sa_dist_10200005048,حي الجوهرة,state_city_sa_gov_26,base.sa
+sa_dist_10200005049,حي القميع,state_city_sa_gov_26,base.sa
+sa_dist_10200005050,حي جبرة,state_city_sa_gov_26,base.sa
+sa_dist_10200005051,حي الجفيجف,state_city_sa_gov_26,base.sa
+sa_dist_10200005052,حي الرحاب,state_city_sa_gov_26,base.sa
+sa_dist_10200005053,حي ج1,state_city_sa_gov_26,base.sa
+sa_dist_10200005054,حي الحلقة الغربية,state_city_sa_gov_26,base.sa
+sa_dist_10200005055,حي ج6,state_city_sa_gov_26,base.sa
+sa_dist_10200005056,حي المثناه,state_city_sa_gov_26,base.sa
+sa_dist_10200005057,حي الخضيرة,state_city_sa_gov_26,base.sa
+sa_dist_10200005058,حي ج37,state_city_sa_gov_26,base.sa
+sa_dist_10200005059,حي ج35,state_city_sa_gov_26,base.sa
+sa_dist_10200005060,حي الجال,state_city_sa_gov_26,base.sa
+sa_dist_10200005061,حي السرور,state_city_sa_gov_26,base.sa
+sa_dist_10200005062,حي النسيم,state_city_sa_gov_26,base.sa
+sa_dist_10200005063,حي المركزية,state_city_sa_gov_26,base.sa
+sa_dist_10200005064,حي الريان,state_city_sa_gov_26,base.sa
+sa_dist_10200005065,حي شبرا,state_city_sa_gov_26,base.sa
+sa_dist_10200005066,حي الشرقية,state_city_sa_gov_26,base.sa
+sa_dist_10200005067,حي العقيق,state_city_sa_gov_26,base.sa
+sa_dist_10200005068,حي العزيزية,state_city_sa_gov_26,base.sa
+sa_dist_10200005069,حي ريحه,state_city_sa_gov_26,base.sa
+sa_dist_10200005070,حي الوشحاء,state_city_sa_gov_26,base.sa
+sa_dist_10200005071,حي الشهداء الشمالية,state_city_sa_gov_26,base.sa
+sa_dist_10200005072,حي ج9,state_city_sa_gov_26,base.sa
+sa_dist_10200005073,حي قوات الدفاع الجوي,state_city_sa_gov_26,base.sa
+sa_dist_10200005074,حي الاسكان,state_city_sa_gov_26,base.sa
+sa_dist_10200005075,حي المضباع,state_city_sa_gov_26,base.sa
+sa_dist_10200005076,حي الواسط,state_city_sa_gov_26,base.sa
+sa_dist_10200005077,حي ج33,state_city_sa_gov_26,base.sa
+sa_dist_10200005078,حي النزهة,state_city_sa_gov_26,base.sa
+sa_dist_10200005079,حي ج8,state_city_sa_gov_26,base.sa
+sa_dist_10200005080,حي الضبط,state_city_sa_gov_26,base.sa
+sa_dist_10200005081,حي السويقة,state_city_sa_gov_26,base.sa
+sa_dist_10200005082,حي ج36,state_city_sa_gov_26,base.sa
+sa_dist_10200005083,حي مثمله,state_city_sa_gov_26,base.sa
+sa_dist_10200005084,حي الحوية,state_city_sa_gov_26,base.sa
+sa_dist_10200005085,حي ج40,state_city_sa_gov_26,base.sa
+sa_dist_10200005086,حي ج41,state_city_sa_gov_26,base.sa
+sa_dist_10200005087,حي الاخباب,state_city_sa_gov_26,base.sa
+sa_dist_10200005088,حي القراحين,state_city_sa_gov_26,base.sa
+sa_dist_10200005089,حي السداد,state_city_sa_gov_26,base.sa
+sa_dist_10200005090,حي أم العراد,state_city_sa_gov_26,base.sa
+sa_dist_10200005091,حي الحدائق,state_city_sa_gov_26,base.sa
+sa_dist_10200005092,حي أم السباع,state_city_sa_gov_26,base.sa
+sa_dist_10200005093,حي المعارض,state_city_sa_gov_26,base.sa
+sa_dist_10200005094,حي الردف,state_city_sa_gov_26,base.sa
+sa_dist_10200005095,حي ج32,state_city_sa_gov_26,base.sa
+sa_dist_10200005096,حي ج30,state_city_sa_gov_26,base.sa
+sa_dist_10200005097,حي ج31,state_city_sa_gov_26,base.sa
+sa_dist_10200005098,حي ج24,state_city_sa_gov_26,base.sa
+sa_dist_10200005099,حي الحلقة الشرقية,state_city_sa_gov_26,base.sa
+sa_dist_10200005100,حي القيم الأسفل,state_city_sa_gov_26,base.sa
+sa_dist_10200005101,المطار الدولي الجديد,state_city_sa_gov_26,base.sa
+sa_dist_10200005102,حي ج14,state_city_sa_gov_26,base.sa
+sa_dist_10200005103,حي ج13,state_city_sa_gov_26,base.sa
+sa_dist_10200005104,حي القيم الأعلى,state_city_sa_gov_26,base.sa
+sa_dist_10200005105,حي ج7,state_city_sa_gov_26,base.sa
+sa_dist_10200005106,حي ج19,state_city_sa_gov_26,base.sa
+sa_dist_10200005107,حي ج34,state_city_sa_gov_26,base.sa
+sa_dist_10200005108,حي العرج الأسفل,state_city_sa_gov_26,base.sa
+sa_dist_10200005109,جامعة الطائف الجديدة,state_city_sa_gov_26,base.sa
+sa_dist_10200005110,حي مسرة 2,state_city_sa_gov_26,base.sa
+sa_dist_10200005111,حي الفيصلية,state_city_sa_gov_26,base.sa
+sa_dist_10200005112,حي العرج الأعلى,state_city_sa_gov_26,base.sa
+sa_dist_10200005113,حي ج39,state_city_sa_gov_26,base.sa
+sa_dist_10200005114,حي ج38,state_city_sa_gov_26,base.sa
+sa_dist_10200005115,حي الغمير,state_city_sa_gov_26,base.sa
+sa_dist_10200005116,حي العارمية 1,state_city_sa_gov_26,base.sa
+sa_dist_10200005117,حي القديرة,state_city_sa_gov_26,base.sa
+sa_dist_10200005118,حي سديرة,state_city_sa_gov_26,base.sa
+sa_dist_10200006001,حي العدل,state_city_sa_gov_24,base.sa
+sa_dist_10200006002,حي الروضة,state_city_sa_gov_24,base.sa
+sa_dist_10200006003,حي المعابدة,state_city_sa_gov_24,base.sa
+sa_dist_10200006004,حي الخنساء,state_city_sa_gov_24,base.sa
+sa_dist_10200006005,حي السليمانية,state_city_sa_gov_24,base.sa
+sa_dist_10200006006,حي الجميزة,state_city_sa_gov_24,base.sa
+sa_dist_10200006007,حي جبل النور,state_city_sa_gov_24,base.sa
+sa_dist_10200006008,حي الهنداوية,state_city_sa_gov_24,base.sa
+sa_dist_10200006009,حي الرصيفة,state_city_sa_gov_24,base.sa
+sa_dist_10200006010,حي جرهم,state_city_sa_gov_24,base.sa
+sa_dist_10200006011,حي الخالدية,state_city_sa_gov_24,base.sa
+sa_dist_10200006012,حي المسفلة,state_city_sa_gov_24,base.sa
+sa_dist_10200006013,حي التقوى,state_city_sa_gov_24,base.sa
+sa_dist_10200006014,حي كدي,state_city_sa_gov_24,base.sa
+sa_dist_10200006015,حي القرارة والنقا,state_city_sa_gov_24,base.sa
+sa_dist_10200006016,حي الحرم,state_city_sa_gov_24,base.sa
+sa_dist_10200006017,حي حارة الباب والشامية,state_city_sa_gov_24,base.sa
+sa_dist_10200006018,حي التيسير,state_city_sa_gov_24,base.sa
+sa_dist_10200006019,حي جرول,state_city_sa_gov_24,base.sa
+sa_dist_10200006020,حي المشاعر,state_city_sa_gov_24,base.sa
+sa_dist_10200006021,حي المرسلات,state_city_sa_gov_24,base.sa
+sa_dist_10200006022,حي العزيزية,state_city_sa_gov_24,base.sa
+sa_dist_10200006023,حي الجامعة,state_city_sa_gov_24,base.sa
+sa_dist_10200006024,حي النسيم,state_city_sa_gov_24,base.sa
+sa_dist_10200006025,حي الزهراء,state_city_sa_gov_24,base.sa
+sa_dist_10200006026,حي الضيافة,state_city_sa_gov_24,base.sa
+sa_dist_10200006027,حي البيبان,state_city_sa_gov_24,base.sa
+sa_dist_10200006028,حي الحجون,state_city_sa_gov_24,base.sa
+sa_dist_10200006029,حي الطندباوي,state_city_sa_gov_24,base.sa
+sa_dist_10200006030,حي الشبيكة,state_city_sa_gov_24,base.sa
+sa_dist_10200006031,حي الهجلة,state_city_sa_gov_24,base.sa
+sa_dist_10200006032,حي المنصور,state_city_sa_gov_24,base.sa
+sa_dist_10200006033,حي الكعكية,state_city_sa_gov_24,base.sa
+sa_dist_10200006034,حي الشوقية,state_city_sa_gov_24,base.sa
+sa_dist_10200006035,حي الهجرة,state_city_sa_gov_24,base.sa
+sa_dist_10200006036,حي بطحاء قريش,state_city_sa_gov_24,base.sa
+sa_dist_10200006037,حي شرائع المجاهدين,state_city_sa_gov_24,base.sa
+sa_dist_10200006038,حي العوالي,state_city_sa_gov_24,base.sa
+sa_dist_10200006039,حي الشرائع,state_city_sa_gov_24,base.sa
+sa_dist_10200006040,حي الراشدية,state_city_sa_gov_24,base.sa
+sa_dist_10200006041,حي الخضراء,state_city_sa_gov_24,base.sa
+sa_dist_10200006042,حي الملك فهد,state_city_sa_gov_24,base.sa
+sa_dist_10200006043,حي العكيشية,state_city_sa_gov_24,base.sa
+sa_dist_10200006044,حي ولي العهد,state_city_sa_gov_24,base.sa
+sa_dist_10200006045,حي الاندلس,state_city_sa_gov_24,base.sa
+sa_dist_10200006046,حي ريع زاخر,state_city_sa_gov_24,base.sa
+sa_dist_10200006047,حي التنعيم,state_city_sa_gov_24,base.sa
+sa_dist_10200006048,حي الزاهر,state_city_sa_gov_24,base.sa
+sa_dist_10200006049,حي شعب عامر وشعب علي,state_city_sa_gov_24,base.sa
+sa_dist_10200006050,حي اجياد,state_city_sa_gov_24,base.sa
+sa_dist_10200006051,حي الحمراء وام الجود,state_city_sa_gov_24,base.sa
+sa_dist_10200006052,حي النزهة,state_city_sa_gov_24,base.sa
+sa_dist_10200006053,حي العتيبية,state_city_sa_gov_24,base.sa
+sa_dist_10200006054,حي الروابي,state_city_sa_gov_24,base.sa
+sa_dist_10200006055,حي العمرة الجديدة,state_city_sa_gov_24,base.sa
+sa_dist_10200006056,حي السلامة,state_city_sa_gov_24,base.sa
+sa_dist_10200006057,حي البحيرات,state_city_sa_gov_24,base.sa
+sa_dist_10200006058,حي النوارية,state_city_sa_gov_24,base.sa
+sa_dist_10200006059,حي الشهداء,state_city_sa_gov_24,base.sa
+sa_dist_10200006060,حي وادي جليل,state_city_sa_gov_24,base.sa
+sa_dist_10200006061,حي العسيلة,state_city_sa_gov_24,base.sa
+sa_dist_10200006062,حي جعرانة,state_city_sa_gov_24,base.sa
+sa_dist_10200006063,حي البيعة,state_city_sa_gov_24,base.sa
+sa_dist_10200006064,حي المغمس,state_city_sa_gov_24,base.sa
+sa_dist_10200006065,حي التروية,state_city_sa_gov_24,base.sa
+sa_dist_10200006066,حي الشرائع,state_city_sa_gov_24,base.sa
+sa_dist_10200006067,حي السلام,state_city_sa_gov_24,base.sa
+sa_dist_10200006068,حي الكوثر,state_city_sa_gov_24,base.sa
+sa_dist_10200018001,حي الزمرد,state_city_sa_gov_25,base.sa
+sa_dist_10200018002,حي اللؤلؤ,state_city_sa_gov_25,base.sa
+sa_dist_10200018003,حي الياقوت,state_city_sa_gov_25,base.sa
+sa_dist_10200018004,حي الصوارى,state_city_sa_gov_25,base.sa
+sa_dist_10200018005,حي الامواج,state_city_sa_gov_25,base.sa
+sa_dist_10200018006,حي الشراع,state_city_sa_gov_25,base.sa
+sa_dist_10200018007,حي الفردوس,state_city_sa_gov_25,base.sa
+sa_dist_10200018008,حي الفلاح,state_city_sa_gov_25,base.sa
+sa_dist_10200018009,حي الاصالة,state_city_sa_gov_25,base.sa
+sa_dist_10200018010,حي مريخ,state_city_sa_gov_25,base.sa
+sa_dist_10200018011,حي الشروق,state_city_sa_gov_25,base.sa
+sa_dist_10200018012,حي الامير فواز الشمالى,state_city_sa_gov_25,base.sa
+sa_dist_10200018013,حي الرياض,state_city_sa_gov_25,base.sa
+sa_dist_10200018014,حي الفروسية,state_city_sa_gov_25,base.sa
+sa_dist_10200018015,حي الرحمانية,state_city_sa_gov_25,base.sa
+sa_dist_10200018016,حي الصالحية,state_city_sa_gov_25,base.sa
+sa_dist_10200018017,حي الحمدانية,state_city_sa_gov_25,base.sa
+sa_dist_10200018018,حي الريان,state_city_sa_gov_25,base.sa
+sa_dist_10200018019,حي أم حبلين الغربية,state_city_sa_gov_25,base.sa
+sa_dist_10200018020,حي بريمان,state_city_sa_gov_25,base.sa
+sa_dist_10200018021,حي المنتزة,state_city_sa_gov_25,base.sa
+sa_dist_10200018022,حي الثعالبة,state_city_sa_gov_25,base.sa
+sa_dist_10200018023,حي البلد,state_city_sa_gov_25,base.sa
+sa_dist_10200018024,حي الفاروق,state_city_sa_gov_25,base.sa
+sa_dist_10200018025,حي العدل,state_city_sa_gov_25,base.sa
+sa_dist_10200018026,حي الهنداوية,state_city_sa_gov_25,base.sa
+sa_dist_10200018027,حي المحجر,state_city_sa_gov_25,base.sa
+sa_dist_10200018028,حي النهضة,state_city_sa_gov_25,base.sa
+sa_dist_10200018029,حي الخالدية,state_city_sa_gov_25,base.sa
+sa_dist_10200018030,جامعة الملك عبدالعزيز,state_city_sa_gov_25,base.sa
+sa_dist_10200018031,حي النخيل,state_city_sa_gov_25,base.sa
+sa_dist_10200018032,حي البغدادية الشرقية,state_city_sa_gov_25,base.sa
+sa_dist_10200018033,حي النزلة الشرقية,state_city_sa_gov_25,base.sa
+sa_dist_10200018034,حي البوادي,state_city_sa_gov_25,base.sa
+sa_dist_10200018035,حي السلامة,state_city_sa_gov_25,base.sa
+sa_dist_10200018036,حي الثغر,state_city_sa_gov_25,base.sa
+sa_dist_10200018037,حي الشرفية,state_city_sa_gov_25,base.sa
+sa_dist_10200018038,قاعدة الملك فيصل البحرية,state_city_sa_gov_25,base.sa
+sa_dist_10200018039,حي الشفا,state_city_sa_gov_25,base.sa
+sa_dist_10200018040,حي السنابل,state_city_sa_gov_25,base.sa
+sa_dist_10200018041,حي الهدى,state_city_sa_gov_25,base.sa
+sa_dist_10200018042,حي التضامن,state_city_sa_gov_25,base.sa
+sa_dist_10200018043,حي الكرامة,state_city_sa_gov_25,base.sa
+sa_dist_10200018044,حي الرحمة,state_city_sa_gov_25,base.sa
+sa_dist_10200018045,حي البركة,state_city_sa_gov_25,base.sa
+sa_dist_10200018046,حي المسرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018047,حي المليساء,state_city_sa_gov_25,base.sa
+sa_dist_10200018048,حي القوزين,state_city_sa_gov_25,base.sa
+sa_dist_10200018049,حي الوادي,state_city_sa_gov_25,base.sa
+sa_dist_10200018050,حي الفضيلة,state_city_sa_gov_25,base.sa
+sa_dist_10200018051,حي التعاون,state_city_sa_gov_25,base.sa
+sa_dist_10200018052,حي السروات,state_city_sa_gov_25,base.sa
+sa_dist_10200018053,حي الخمرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018054,حي الضاحية,state_city_sa_gov_25,base.sa
+sa_dist_10200018055,حي القرينية,state_city_sa_gov_25,base.sa
+sa_dist_10200018056,حي النزلة اليمانية,state_city_sa_gov_25,base.sa
+sa_dist_10200018057,حي النسيم,state_city_sa_gov_25,base.sa
+sa_dist_10200018058,حي القريات,state_city_sa_gov_25,base.sa
+sa_dist_10200018059,حي غليل,state_city_sa_gov_25,base.sa
+sa_dist_10200018060,حي الكندرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018061,حي العمارية,state_city_sa_gov_25,base.sa
+sa_dist_10200018062,حي الصحيفة,state_city_sa_gov_25,base.sa
+sa_dist_10200018063,حي السبيل,state_city_sa_gov_25,base.sa
+sa_dist_10200018064,حي الروضة,state_city_sa_gov_25,base.sa
+sa_dist_10200018065,حي بنى مالك,state_city_sa_gov_25,base.sa
+sa_dist_10200018066,حي الفيصلية,state_city_sa_gov_25,base.sa
+sa_dist_10200018067,حي الرحاب,state_city_sa_gov_25,base.sa
+sa_dist_10200018068,حي العزيزية,state_city_sa_gov_25,base.sa
+sa_dist_10200018069,حي مشرفة,state_city_sa_gov_25,base.sa
+sa_dist_10200018070,حي الورود,state_city_sa_gov_25,base.sa
+sa_dist_10200018071,حي الواحة,state_city_sa_gov_25,base.sa
+sa_dist_10200018072,حي ابرق الرغامة,state_city_sa_gov_25,base.sa
+sa_dist_10200018073,حي السليمانية,state_city_sa_gov_25,base.sa
+sa_dist_10200018074,حي الساحل,state_city_sa_gov_25,base.sa
+sa_dist_10200018075,حي البشائر,state_city_sa_gov_25,base.sa
+sa_dist_10200018076,حي المحمدية,state_city_sa_gov_25,base.sa
+sa_dist_10200018077,حي الكوثر,state_city_sa_gov_25,base.sa
+sa_dist_10200018078,حي طيبة,state_city_sa_gov_25,base.sa
+sa_dist_10200018079,حي النعيم,state_city_sa_gov_25,base.sa
+sa_dist_10200018080,حي البساتين,state_city_sa_gov_25,base.sa
+sa_dist_10200018081,حي الربوة,state_city_sa_gov_25,base.sa
+sa_dist_10200018082,حي النزهة,state_city_sa_gov_25,base.sa
+sa_dist_10200018083,حي الصفا,state_city_sa_gov_25,base.sa
+sa_dist_10200018084,حي المروة,state_city_sa_gov_25,base.sa
+sa_dist_10200018085,حي السامر,state_city_sa_gov_25,base.sa
+sa_dist_10200018086,حي الاجواد,state_city_sa_gov_25,base.sa
+sa_dist_10200018087,مطار الملك عبدالعزيز الدولي,state_city_sa_gov_25,base.sa
+sa_dist_10200018088,حي المنار,state_city_sa_gov_25,base.sa
+sa_dist_10200018089,المنطقة الصناعية,state_city_sa_gov_25,base.sa
+sa_dist_10200018090,حي الامير عبدالمجيد,state_city_sa_gov_25,base.sa
+sa_dist_10200018091,حي الوزيريه,state_city_sa_gov_25,base.sa
+sa_dist_10200018092,حي الجوهرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018093,حي الامير فواز الجنوبى,state_city_sa_gov_25,base.sa
+sa_dist_10200018094,حي المتنزهات,state_city_sa_gov_25,base.sa
+sa_dist_10200018095,حي الجامعة,state_city_sa_gov_25,base.sa
+sa_dist_10200018096,حي الروابي,state_city_sa_gov_25,base.sa
+sa_dist_10200018097,حي الفضل,state_city_sa_gov_25,base.sa
+sa_dist_10200018098,حي ام السلم,state_city_sa_gov_25,base.sa
+sa_dist_10200018100,حي البغدادية الغربية,state_city_sa_gov_25,base.sa
+sa_dist_10200018101,حي ابحر الشمالية,state_city_sa_gov_25,base.sa
+sa_dist_10200018102,حي الرويس,state_city_sa_gov_25,base.sa
+sa_dist_10200018103,حي بترومين,state_city_sa_gov_25,base.sa
+sa_dist_10200018104,حي الاندلس,state_city_sa_gov_25,base.sa
+sa_dist_10200018105,حي ابحر الجنوبية,state_city_sa_gov_25,base.sa
+sa_dist_10200018106,حي المرجان,state_city_sa_gov_25,base.sa
+sa_dist_10200018107,حي السرورية,state_city_sa_gov_25,base.sa
+sa_dist_10200018108,حي الاجاويد,state_city_sa_gov_25,base.sa
+sa_dist_10200018109,حي الشاطئ,state_city_sa_gov_25,base.sa
+sa_dist_10200018110,حي مدائن الفهد,state_city_sa_gov_25,base.sa
+sa_dist_10200018111,حي الزهراء,state_city_sa_gov_25,base.sa
+sa_dist_10200018112,حي الحمراء,state_city_sa_gov_25,base.sa
+sa_dist_10200018113,حي الفيحاء,state_city_sa_gov_25,base.sa
+sa_dist_10200018114,حي بحرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018115,ميناء جدة الاسلامي,state_city_sa_gov_25,base.sa
+sa_dist_10200018116,حي الوفاء,state_city_sa_gov_25,base.sa
+sa_dist_10200018117,حي الحرازات,state_city_sa_gov_25,base.sa
+sa_dist_10200018118,حي المحاميد,state_city_sa_gov_25,base.sa
+sa_dist_10200018119,المدينة الصناعية الثالثة,state_city_sa_gov_25,base.sa
+sa_dist_10200018120,حي الفنار,state_city_sa_gov_25,base.sa
+sa_dist_10200018121,حي السهل,state_city_sa_gov_25,base.sa
+sa_dist_10200018122,حي الدرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018123,حي المنارات,state_city_sa_gov_25,base.sa
+sa_dist_10200018124,حي الربيع,state_city_sa_gov_25,base.sa
+sa_dist_10200018125,حي الحجاز,state_city_sa_gov_25,base.sa
+sa_dist_10200018126,حي المزيرعة,state_city_sa_gov_25,base.sa
+sa_dist_10200018127,حي الصفوة,state_city_sa_gov_25,base.sa
+sa_dist_10200018128,حي المستقبل,state_city_sa_gov_25,base.sa
+sa_dist_10200018129,حي النجمة,state_city_sa_gov_25,base.sa
+sa_dist_10200018130,حي القوس,state_city_sa_gov_25,base.sa
+sa_dist_10200018131,حي الحفنة,state_city_sa_gov_25,base.sa
+sa_dist_10200018132,حي الجزيرة,state_city_sa_gov_25,base.sa
+sa_dist_10200018133,حي الشويضي,state_city_sa_gov_25,base.sa
+sa_dist_10200018134,حي الشرقية,state_city_sa_gov_25,base.sa
+sa_dist_10200018135,حي العشيرية,state_city_sa_gov_25,base.sa
+sa_dist_10200018136,حي أبو جعالة,state_city_sa_gov_25,base.sa
+sa_dist_10200018137,حي كتانة,state_city_sa_gov_25,base.sa
+sa_dist_10200018138,حي التلال,state_city_sa_gov_25,base.sa
+sa_dist_10200018139,حي الرمال,state_city_sa_gov_25,base.sa
+sa_dist_10200018140,حي المرسي,state_city_sa_gov_25,base.sa
+sa_dist_10200018141,حي المروج,state_city_sa_gov_25,base.sa
+sa_dist_10200018142,حي الخليج,state_city_sa_gov_25,base.sa
+sa_dist_10200018143,حي البحيرات,state_city_sa_gov_25,base.sa
+sa_dist_10200018144,حي الموج,state_city_sa_gov_25,base.sa
+sa_dist_10200018145,حي الغربية,state_city_sa_gov_25,base.sa
+sa_dist_10200018146,حي الزهور,state_city_sa_gov_25,base.sa
+sa_dist_10200018147,حي الهزاعية,state_city_sa_gov_25,base.sa
+sa_dist_10200018148,حي العسلاء,state_city_sa_gov_25,base.sa
+sa_dist_10200018149,حي العسلاء,state_city_sa_gov_25,base.sa
+sa_dist_10200018150,حي بلدة ذهبان,state_city_sa_gov_25,base.sa
+sa_dist_10200018151,حكومي,state_city_sa_gov_25,base.sa
+sa_dist_10200018152,حي العقيق,state_city_sa_gov_25,base.sa
+sa_dist_10200018153,حي النور,state_city_sa_gov_25,base.sa
+sa_dist_10200018154,حي صناعي,state_city_sa_gov_25,base.sa
+sa_dist_10200018155,حكومي,state_city_sa_gov_25,base.sa
+sa_dist_10200018156,حي الغدير,state_city_sa_gov_25,base.sa
+sa_dist_10200018157,حي الفرقان,state_city_sa_gov_25,base.sa
+sa_dist_10200018158,حي طابة,state_city_sa_gov_25,base.sa
+sa_dist_10200018159,حي الرواسي,state_city_sa_gov_25,base.sa
+sa_dist_10200018160,حي أم حبلين الشرقية,state_city_sa_gov_25,base.sa
+sa_dist_10200018161,حي قباء,state_city_sa_gov_25,base.sa
+sa_dist_10200018162,حي الرابية,state_city_sa_gov_25,base.sa
+sa_dist_10200018163,حي العليا,state_city_sa_gov_25,base.sa
+sa_dist_10200018164,حي البدور,state_city_sa_gov_25,base.sa
+sa_dist_10200018165,حي المجامع,state_city_sa_gov_25,base.sa
+sa_dist_10200018166,حي المرسلات,state_city_sa_gov_25,base.sa
+sa_dist_10200018167,حي الأثير,state_city_sa_gov_25,base.sa
+sa_dist_10200018168,حي صناعي,state_city_sa_gov_25,base.sa
+sa_dist_10200018169,حي الصفحة,state_city_sa_gov_25,base.sa
+sa_dist_10200018170,حي اليسر,state_city_sa_gov_25,base.sa
+sa_dist_10200018171,حي العبير,state_city_sa_gov_25,base.sa
+sa_dist_10200377002,حي الشفاء,state_city_sa_gov_29,base.sa
+sa_dist_10200377003,حي انكاس,state_city_sa_gov_29,base.sa
+sa_dist_10200377005,حي الصليب الشرقي,state_city_sa_gov_29,base.sa
+sa_dist_10200377006,حي الصليب الغربي,state_city_sa_gov_29,base.sa
+sa_dist_10200377007,حي المرجانية,state_city_sa_gov_29,base.sa
+sa_dist_10200377008,حي الجود,state_city_sa_gov_29,base.sa
+sa_dist_10200377009,حي الصبوح,state_city_sa_gov_29,base.sa
+sa_dist_10200377010,حي الفرنيسية الشرقية,state_city_sa_gov_29,base.sa
+sa_dist_10200377011,حي السوق,state_city_sa_gov_29,base.sa
+sa_dist_10200377012,حي الصمد,state_city_sa_gov_29,base.sa
+sa_dist_10200377013,المنطقة الصناعية المرحلة الثانية والثالثة,state_city_sa_gov_29,base.sa
+sa_dist_10201105001,حي الفيصلية,state_city_sa_gov_30,base.sa
+sa_dist_10201105002,حي البرقاء,state_city_sa_gov_30,base.sa
+sa_dist_10201105003,حي العزيزية,state_city_sa_gov_30,base.sa
+sa_dist_10201105004,المغاربة,state_city_sa_gov_30,base.sa
+sa_dist_10201105005,حي الدف,state_city_sa_gov_30,base.sa
+sa_dist_10201105006,حي السلام,state_city_sa_gov_30,base.sa
+sa_dist_10201105007,حي فازع,state_city_sa_gov_30,base.sa
+sa_dist_10201105008,حي الفلج,state_city_sa_gov_30,base.sa
+sa_dist_10201105009,حي الطلعة,state_city_sa_gov_30,base.sa
+sa_dist_10201105010,حي الشيوخ,state_city_sa_gov_30,base.sa
+sa_dist_10201105011,الصدر,state_city_sa_gov_30,base.sa
+sa_dist_10201105012,حي اللبدة,state_city_sa_gov_30,base.sa
+sa_dist_10201105013,حي الحميرات,state_city_sa_gov_30,base.sa
+sa_dist_10201105014,حي الروايضة,state_city_sa_gov_30,base.sa
+sa_dist_10201105015,غران,state_city_sa_gov_30,base.sa
+sa_dist_10201248001,حي الخالدية,state_city_sa_gov_32,base.sa
+sa_dist_10201248002,حي الناصرية,state_city_sa_gov_32,base.sa
+sa_dist_10201248003,حي الروضة,state_city_sa_gov_32,base.sa
+sa_dist_10201248004,حي الحزم,state_city_sa_gov_32,base.sa
+sa_dist_10201248005,حي النزهة,state_city_sa_gov_32,base.sa
+sa_dist_10201248006,حي الحديقة,state_city_sa_gov_32,base.sa
+sa_dist_10201248007,حي الفيصلية,state_city_sa_gov_32,base.sa
+sa_dist_10201248008,حي المحمدية,state_city_sa_gov_32,base.sa
+sa_dist_10201248009,حي السوق القديم,state_city_sa_gov_32,base.sa
+sa_dist_10201248010,حي الحارثية,state_city_sa_gov_32,base.sa
+sa_dist_10201248011,حي الهجرة,state_city_sa_gov_32,base.sa
+sa_dist_10201248012,حي الدغمية,state_city_sa_gov_32,base.sa
+sa_dist_10201390001,حي رقم 7,state_city_sa_gov_28,base.sa
+sa_dist_10201390002,حي ج1,state_city_sa_gov_28,base.sa
+sa_dist_10201390003,حي رقم 3,state_city_sa_gov_28,base.sa
+sa_dist_10201390004,حي رقم 5,state_city_sa_gov_28,base.sa
+sa_dist_10201390005,حي رقم 4,state_city_sa_gov_28,base.sa
+sa_dist_10201390006,حي رقم 2,state_city_sa_gov_28,base.sa
+sa_dist_10201390007,حي رقم 9,state_city_sa_gov_28,base.sa
+sa_dist_10201390008,حي رقم 1,state_city_sa_gov_28,base.sa
+sa_dist_10201390009,حي رقم 8,state_city_sa_gov_28,base.sa
+sa_dist_10201390010,حي رقم 10,state_city_sa_gov_28,base.sa
+sa_dist_10201390011,حي رقم 6,state_city_sa_gov_28,base.sa
+sa_dist_10201625001,حي الشرقية,state_city_sa_gov_27,base.sa
+sa_dist_10201625002,حي الخالدية,state_city_sa_gov_27,base.sa
+sa_dist_10201625003,حي الناعمية,state_city_sa_gov_27,base.sa
+sa_dist_10201625004,حي الازهار,state_city_sa_gov_27,base.sa
+sa_dist_10201625005,حي الغربي,state_city_sa_gov_27,base.sa
+sa_dist_10201625006,حي الرتبة,state_city_sa_gov_27,base.sa
+sa_dist_10201625007,حي الشامية,state_city_sa_gov_27,base.sa
+sa_dist_10202156001,حي السلام,state_city_sa_gov_33,base.sa
+sa_dist_10202156002,حي منيف,state_city_sa_gov_33,base.sa
+sa_dist_10202156003,حي العلاوة,state_city_sa_gov_33,base.sa
+sa_dist_10202156004,حي البلد,state_city_sa_gov_33,base.sa
+sa_dist_10202156005,حي كرا السردي,state_city_sa_gov_33,base.sa
+sa_dist_10202156006,حي الخالدية,state_city_sa_gov_33,base.sa
+sa_dist_10202156007,حي السوق,state_city_sa_gov_33,base.sa
+sa_dist_10202800001,حي الورود,state_city_sa_gov_31,base.sa
+sa_dist_10202800002,حي الجدر,state_city_sa_gov_31,base.sa
+sa_dist_10202800003,حي الحزم,state_city_sa_gov_31,base.sa
+sa_dist_10202800004,حي ملهي,state_city_sa_gov_31,base.sa
+sa_dist_10202800005,حي الأغر,state_city_sa_gov_31,base.sa
+sa_dist_10202800006,حي كويكب,state_city_sa_gov_31,base.sa
+sa_dist_10202800007,حي الوزران,state_city_sa_gov_31,base.sa
+sa_dist_10202800008,حي الدعيكة,state_city_sa_gov_31,base.sa
+sa_dist_10202800009,حي الجزء الشمالي,state_city_sa_gov_31,base.sa
+sa_dist_10202800010,حي الملحة 1,state_city_sa_gov_31,base.sa
+sa_dist_10202800011,حى النطوف,state_city_sa_gov_31,base.sa
+sa_dist_10202800012,حي البروج,state_city_sa_gov_31,base.sa
+sa_dist_10202800013,حي السلم,state_city_sa_gov_31,base.sa
+sa_dist_10202800014,حى السلم القديم,state_city_sa_gov_31,base.sa
+sa_dist_10202800015,حي النزهة,state_city_sa_gov_31,base.sa
+sa_dist_10202800016,حي السوق القديم,state_city_sa_gov_31,base.sa
+sa_dist_10202800017,حي الجدر الغربي,state_city_sa_gov_31,base.sa
+sa_dist_10202800018,حي الملحة 2,state_city_sa_gov_31,base.sa
+sa_dist_10202800019,حي العزيزية,state_city_sa_gov_31,base.sa
+sa_dist_10202800020,حي الصالحية,state_city_sa_gov_31,base.sa
+sa_dist_10202800021,حي الجدر الشرقي,state_city_sa_gov_31,base.sa
+sa_dist_10300014001,حي خاخ,state_city_sa_gov_41,base.sa
+sa_dist_10300014002,حي السكب,state_city_sa_gov_41,base.sa
+sa_dist_10300014003,حي الجصة,state_city_sa_gov_41,base.sa
+sa_dist_10300014004,حي رهط,state_city_sa_gov_41,base.sa
+sa_dist_10300014005,حي بني بياضة,state_city_sa_gov_41,base.sa
+sa_dist_10300014006,حي نبلاء,state_city_sa_gov_41,base.sa
+sa_dist_10300014007,حي الشهباء,state_city_sa_gov_41,base.sa
+sa_dist_10300014008,حي الرمانة,state_city_sa_gov_41,base.sa
+sa_dist_10300014009,حي ابو كبير,state_city_sa_gov_41,base.sa
+sa_dist_10300014010,حي الغراء,state_city_sa_gov_41,base.sa
+sa_dist_10300014011,حي السد,state_city_sa_gov_41,base.sa
+sa_dist_10300014012,حي الجابرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014013,حي الرانوناء,state_city_sa_gov_41,base.sa
+sa_dist_10300014014,حي الحديقة,state_city_sa_gov_41,base.sa
+sa_dist_10300014015,حي ابو بريقاء,state_city_sa_gov_41,base.sa
+sa_dist_10300014016,حي الروابي,state_city_sa_gov_41,base.sa
+sa_dist_10300014017,حي القصواء,state_city_sa_gov_41,base.sa
+sa_dist_10300014018,حي العصبة,state_city_sa_gov_41,base.sa
+sa_dist_10300014019,حي الخاتم,state_city_sa_gov_41,base.sa
+sa_dist_10300014020,حي العزيزية,state_city_sa_gov_41,base.sa
+sa_dist_10300014021,حي العهن,state_city_sa_gov_41,base.sa
+sa_dist_10300014022,حي ذو الحليفة,state_city_sa_gov_41,base.sa
+sa_dist_10300014023,حي وادي مهزور,state_city_sa_gov_41,base.sa
+sa_dist_10300014024,حي الدويمة,state_city_sa_gov_41,base.sa
+sa_dist_10300014025,حي وادي مذينب,state_city_sa_gov_41,base.sa
+sa_dist_10300014026,حي عين الخيف,state_city_sa_gov_41,base.sa
+sa_dist_10300014027,حي عروة,state_city_sa_gov_41,base.sa
+sa_dist_10300014028,حي الظاهرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014029,حي الشريبات,state_city_sa_gov_41,base.sa
+sa_dist_10300014030,حي جماء أم خالد,state_city_sa_gov_41,base.sa
+sa_dist_10300014031,حي الجمعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014032,حي المغيسلة,state_city_sa_gov_41,base.sa
+sa_dist_10300014033,حي قربان,state_city_sa_gov_41,base.sa
+sa_dist_10300014034,حي الدفاع,state_city_sa_gov_41,base.sa
+sa_dist_10300014035,حي سكة الحديد,state_city_sa_gov_41,base.sa
+sa_dist_10300014036,حى حرة الوبرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014037,حي الاصيفرين,state_city_sa_gov_41,base.sa
+sa_dist_10300014038,حي النقاء,state_city_sa_gov_41,base.sa
+sa_dist_10300014039,حي بني ظفر,state_city_sa_gov_41,base.sa
+sa_dist_10300014040,حي الاسكان,state_city_sa_gov_41,base.sa
+sa_dist_10300014041,حي الخالدية,state_city_sa_gov_41,base.sa
+sa_dist_10300014042,حي الجماوات,state_city_sa_gov_41,base.sa
+sa_dist_10300014043,حي المناخة,state_city_sa_gov_41,base.sa
+sa_dist_10300014044,حي بضاعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014045,حي جشم,state_city_sa_gov_41,base.sa
+sa_dist_10300014046,حي الهدراء,state_city_sa_gov_41,base.sa
+sa_dist_10300014047,حي السيح,state_city_sa_gov_41,base.sa
+sa_dist_10300014048,حي المصانع,state_city_sa_gov_41,base.sa
+sa_dist_10300014049,حي القبلتين,state_city_sa_gov_41,base.sa
+sa_dist_10300014050,حي السلام,state_city_sa_gov_41,base.sa
+sa_dist_10300014052,حي المبعوث,state_city_sa_gov_41,base.sa
+sa_dist_10300014053,حي الجامعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014054,حي بني حارثة,state_city_sa_gov_41,base.sa
+sa_dist_10300014055,حي بئر عثمان,state_city_sa_gov_41,base.sa
+sa_dist_10300014056,حي شظاة,state_city_sa_gov_41,base.sa
+sa_dist_10300014057,حي طيبة,state_city_sa_gov_41,base.sa
+sa_dist_10300014058,حي التلعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014059,حي الملك فهد,state_city_sa_gov_41,base.sa
+sa_dist_10300014061,حي البركة,state_city_sa_gov_41,base.sa
+sa_dist_10300014062,حي العيون,state_city_sa_gov_41,base.sa
+sa_dist_10300014063,حي الدار,state_city_sa_gov_41,base.sa
+sa_dist_10300014064,حي النخيل,state_city_sa_gov_41,base.sa
+sa_dist_10300014065,حي الزهرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014066,حي الحفيا,state_city_sa_gov_41,base.sa
+sa_dist_10300014067,حي البلقاء,state_city_sa_gov_41,base.sa
+sa_dist_10300014068,حي كتانة,state_city_sa_gov_41,base.sa
+sa_dist_10300014069,حي الصادقية,state_city_sa_gov_41,base.sa
+sa_dist_10300014070,حي الغابة,state_city_sa_gov_41,base.sa
+sa_dist_10300014072,حي وعيرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014073,حي المطار,state_city_sa_gov_41,base.sa
+sa_dist_10300014074,حي العريض,state_city_sa_gov_41,base.sa
+sa_dist_10300014075,حي العنابس,state_city_sa_gov_41,base.sa
+sa_dist_10300014076,حي الفتح,state_city_sa_gov_41,base.sa
+sa_dist_10300014077,حي الراية,state_city_sa_gov_41,base.sa
+sa_dist_10300014078,حي مسجد الدرع,state_city_sa_gov_41,base.sa
+sa_dist_10300014079,حي السقيا,state_city_sa_gov_41,base.sa
+sa_dist_10300014082,حي جبل عير,state_city_sa_gov_41,base.sa
+sa_dist_10300014083,حي الشافية,state_city_sa_gov_41,base.sa
+sa_dist_10300014084,حي الشهداء,state_city_sa_gov_41,base.sa
+sa_dist_10300014085,حي جبل احد,state_city_sa_gov_41,base.sa
+sa_dist_10300014086,حي بني خدرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014087,حي بني عبدالاشهل,state_city_sa_gov_41,base.sa
+sa_dist_10300014088,حي بني معاوية,state_city_sa_gov_41,base.sa
+sa_dist_10300014090,حي ورقان,state_city_sa_gov_41,base.sa
+sa_dist_10300014091,حي شوران,state_city_sa_gov_41,base.sa
+sa_dist_10300014092,حي الصناعية,state_city_sa_gov_41,base.sa
+sa_dist_10300014093,حي الدويخلة,state_city_sa_gov_41,base.sa
+sa_dist_10300014094,حي العاقول,state_city_sa_gov_41,base.sa
+sa_dist_10300014095,حي وادي البطان,state_city_sa_gov_41,base.sa
+sa_dist_10300014096,حي المليليح,state_city_sa_gov_41,base.sa
+sa_dist_10300014097,حي الاناهي,state_city_sa_gov_41,base.sa
+sa_dist_10300014098,حي وادي الحمض,state_city_sa_gov_41,base.sa
+sa_dist_10300014099,حى الخضراء,state_city_sa_gov_41,base.sa
+sa_dist_10300014100,حي ابومرخة,state_city_sa_gov_41,base.sa
+sa_dist_10300014101,حى الصهلوج,state_city_sa_gov_41,base.sa
+sa_dist_10300014102,حي المسبعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014103,حي الضميرية,state_city_sa_gov_41,base.sa
+sa_dist_10300014104,حي ضعة,state_city_sa_gov_41,base.sa
+sa_dist_10300014105,حي ام السيوف,state_city_sa_gov_41,base.sa
+sa_dist_10300014106,حي غراب,state_city_sa_gov_41,base.sa
+sa_dist_10300014107,حى حضوضاء,state_city_sa_gov_41,base.sa
+sa_dist_10300014108,حي الشرائع,state_city_sa_gov_41,base.sa
+sa_dist_10300014109,حى الصهوة,state_city_sa_gov_41,base.sa
+sa_dist_10300014110,حي المندسة,state_city_sa_gov_41,base.sa
+sa_dist_10300014111,حى القبيبة,state_city_sa_gov_41,base.sa
+sa_dist_10300014112,حي المزيين,state_city_sa_gov_41,base.sa
+sa_dist_10300014113,حى بني النجار,state_city_sa_gov_41,base.sa
+sa_dist_10300014114,حي حزرة الجنوب,state_city_sa_gov_41,base.sa
+sa_dist_10300014115,حى ابو سدر,state_city_sa_gov_41,base.sa
+sa_dist_10300014116,حى سد الغابة,state_city_sa_gov_41,base.sa
+sa_dist_10300014117,حى الحساء,state_city_sa_gov_41,base.sa
+sa_dist_10300014118,حي المدينة الصناعية,state_city_sa_gov_41,base.sa
+sa_dist_10300014119,حى المفرحات,state_city_sa_gov_41,base.sa
+sa_dist_10300014120,حي الصويدرة,state_city_sa_gov_41,base.sa
+sa_dist_10300014121,حي ابيار الماشي,state_city_sa_gov_41,base.sa
+sa_dist_10300014122,حي الفريش,state_city_sa_gov_41,base.sa
+sa_dist_10300014123,حي الـنقـمى,state_city_sa_gov_41,base.sa
+sa_dist_10300014124,الحرم الشريف,state_city_sa_gov_41,base.sa
+sa_dist_10300199001,حي العزيزية,state_city_sa_gov_43,base.sa
+sa_dist_10300199002,حي الصخيرات,state_city_sa_gov_43,base.sa
+sa_dist_10300199003,حي الرزيقية,state_city_sa_gov_43,base.sa
+sa_dist_10300199004,حي المحاش,state_city_sa_gov_43,base.sa
+sa_dist_10300199005,حي السلام,state_city_sa_gov_43,base.sa
+sa_dist_10300199006,حي صدر الغربية,state_city_sa_gov_43,base.sa
+sa_dist_10300199007,حي ساق,state_city_sa_gov_43,base.sa
+sa_dist_10300199008,حي الجديدة,state_city_sa_gov_43,base.sa
+sa_dist_10300288001,حي الخالدية,state_city_sa_gov_46,base.sa
+sa_dist_10300288002,حي الفيصلية,state_city_sa_gov_46,base.sa
+sa_dist_10300288003,حي الروضة,state_city_sa_gov_46,base.sa
+sa_dist_10300288004,حي سلطانة,state_city_sa_gov_46,base.sa
+sa_dist_10300288005,حي العزيزية,state_city_sa_gov_46,base.sa
+sa_dist_10300288006,حى الغزوة,state_city_sa_gov_46,base.sa
+sa_dist_10300483001,حي الياقوت,state_city_sa_gov_42,base.sa
+sa_dist_10300483002,حي المرجان,state_city_sa_gov_42,base.sa
+sa_dist_10300483003,حي البقاع,state_city_sa_gov_42,base.sa
+sa_dist_10300483004,حي الرحاب,state_city_sa_gov_42,base.sa
+sa_dist_10300483005,حي النعيم,state_city_sa_gov_42,base.sa
+sa_dist_10300483006,حي الازدهار,state_city_sa_gov_42,base.sa
+sa_dist_10300483007,حي الياسمين,state_city_sa_gov_42,base.sa
+sa_dist_10300483008,حي الدوحة,state_city_sa_gov_42,base.sa
+sa_dist_10300483009,حي الفلاح,state_city_sa_gov_42,base.sa
+sa_dist_10300483010,حي المصيف,state_city_sa_gov_42,base.sa
+sa_dist_10300483011,حي الرمال,state_city_sa_gov_42,base.sa
+sa_dist_10300483012,حي العزيزية,state_city_sa_gov_42,base.sa
+sa_dist_10300483013,حي اليرموك,state_city_sa_gov_42,base.sa
+sa_dist_10300483014,حي العروبة,state_city_sa_gov_42,base.sa
+sa_dist_10300483015,حي النزهة,state_city_sa_gov_42,base.sa
+sa_dist_10300483016,حي الجار,state_city_sa_gov_42,base.sa
+sa_dist_10300483017,حي الضباب,state_city_sa_gov_42,base.sa
+sa_dist_10300483018,حي المنار,state_city_sa_gov_42,base.sa
+sa_dist_10300483019,حي اللؤلؤة,state_city_sa_gov_42,base.sa
+sa_dist_10300483020,حي الجامعة,state_city_sa_gov_42,base.sa
+sa_dist_10300483021,حي المرسي,state_city_sa_gov_42,base.sa
+sa_dist_10300483022,حي الخليج,state_city_sa_gov_42,base.sa
+sa_dist_10300483023,حي السلام,state_city_sa_gov_42,base.sa
+sa_dist_10300483024,حي البندر,state_city_sa_gov_42,base.sa
+sa_dist_10300483025,حي الامارة,state_city_sa_gov_42,base.sa
+sa_dist_10300483026,حي الزهور,state_city_sa_gov_42,base.sa
+sa_dist_10300483027,حي الشعلة,state_city_sa_gov_42,base.sa
+sa_dist_10300483028,الحرس الوطني,state_city_sa_gov_42,base.sa
+sa_dist_10300483029,حي التلال,state_city_sa_gov_42,base.sa
+sa_dist_10300483030,حي الربيع,state_city_sa_gov_42,base.sa
+sa_dist_10300483031,حي النخيل,state_city_sa_gov_42,base.sa
+sa_dist_10300483032,حي النسيم,state_city_sa_gov_42,base.sa
+sa_dist_10300483033,حي قرطبة,state_city_sa_gov_42,base.sa
+sa_dist_10300483034,حي العصيلي,state_city_sa_gov_42,base.sa
+sa_dist_10300483035,حي الربوة,state_city_sa_gov_42,base.sa
+sa_dist_10300483036,حي السميري,state_city_sa_gov_42,base.sa
+sa_dist_10300483037,حي الورود,state_city_sa_gov_42,base.sa
+sa_dist_10300483038,حي الفردوس,state_city_sa_gov_42,base.sa
+sa_dist_10300483039,حي مشرفة,state_city_sa_gov_42,base.sa
+sa_dist_10300483040,حي الجابرية,state_city_sa_gov_42,base.sa
+sa_dist_10300483041,حي العقيق,state_city_sa_gov_42,base.sa
+sa_dist_10300483042,حي الواحة,state_city_sa_gov_42,base.sa
+sa_dist_10300483043,حي المروج,state_city_sa_gov_42,base.sa
+sa_dist_10300483044,حي النهضة,state_city_sa_gov_42,base.sa
+sa_dist_10300483045,حي الحوراء,state_city_sa_gov_42,base.sa
+sa_dist_10300483046,حي الصريف,state_city_sa_gov_42,base.sa
+sa_dist_10300483047,حي ينبع البلد,state_city_sa_gov_42,base.sa
+sa_dist_10300483048,حي البحيرة,state_city_sa_gov_42,base.sa
+sa_dist_10300483049,حي الحدائق,state_city_sa_gov_42,base.sa
+sa_dist_10300483050,حي المجد,state_city_sa_gov_42,base.sa
+sa_dist_10300483051,حي الصفا,state_city_sa_gov_42,base.sa
+sa_dist_10300483052,حي غرناطة,state_city_sa_gov_42,base.sa
+sa_dist_10300483053,حي الدانة,state_city_sa_gov_42,base.sa
+sa_dist_10300483054,حي الرابية,state_city_sa_gov_42,base.sa
+sa_dist_10300483055,حي الغدير,state_city_sa_gov_42,base.sa
+sa_dist_10300483056,حى المطار,state_city_sa_gov_42,base.sa
+sa_dist_10300483057,حي الشفا,state_city_sa_gov_42,base.sa
+sa_dist_10300483058,حي الروابي,state_city_sa_gov_42,base.sa
+sa_dist_10300483059,حي القادسية,state_city_sa_gov_42,base.sa
+sa_dist_10300483060,حي الفيحاء,state_city_sa_gov_42,base.sa
+sa_dist_10300483061,منطقة الايداع واعادة التصنيع,state_city_sa_gov_42,base.sa
+sa_dist_10300483062,حي العشيرة,state_city_sa_gov_42,base.sa
+sa_dist_10300483063,حي البثنة,state_city_sa_gov_42,base.sa
+sa_dist_10300483064,المنطقة الصناعية,state_city_sa_gov_42,base.sa
+sa_dist_10300483065,حي النجيل,state_city_sa_gov_42,base.sa
+sa_dist_10300483066,حي المروة,state_city_sa_gov_42,base.sa
+sa_dist_10300483067,حي الروضة,state_city_sa_gov_42,base.sa
+sa_dist_10300483068,حي الريان,state_city_sa_gov_42,base.sa
+sa_dist_10300483069,حي السويق,state_city_sa_gov_42,base.sa
+sa_dist_10300483070,حى رضوى,state_city_sa_gov_42,base.sa
+sa_dist_10300483071,حي الشاطئ,state_city_sa_gov_42,base.sa
+sa_dist_10300777001,المنطقة الصناعية,state_city_sa_gov_47,base.sa
+sa_dist_10301053001,حي الروضة,state_city_sa_gov_45,base.sa
+sa_dist_10301053002,حي الغزوة,state_city_sa_gov_45,base.sa
+sa_dist_10301053003,حي العدوة,state_city_sa_gov_45,base.sa
+sa_dist_10301053004,حي الغزلاني,state_city_sa_gov_45,base.sa
+sa_dist_10301053005,حي ادمان,state_city_sa_gov_45,base.sa
+sa_dist_10301053006,حي الجديد,state_city_sa_gov_45,base.sa
+sa_dist_10301053007,حي الشهداء,state_city_sa_gov_45,base.sa
+sa_dist_10400011001,حي اليرموك,state_city_sa_gov_88,base.sa
+sa_dist_10400011002,حي الرمال,state_city_sa_gov_88,base.sa
+sa_dist_10400011003,حي المروة,state_city_sa_gov_88,base.sa
+sa_dist_10400011004,حي الخضر,state_city_sa_gov_88,base.sa
+sa_dist_10400011005,حي اللسيب,state_city_sa_gov_88,base.sa
+sa_dist_10400011006,حي النور,state_city_sa_gov_88,base.sa
+sa_dist_10400011007,حي رواق,state_city_sa_gov_88,base.sa
+sa_dist_10400011008,حي القصيعة,state_city_sa_gov_88,base.sa
+sa_dist_10400011009,حي الغدير,state_city_sa_gov_88,base.sa
+sa_dist_10400011010,حي المروج,state_city_sa_gov_88,base.sa
+sa_dist_10400011011,حي السالمية,state_city_sa_gov_88,base.sa
+sa_dist_10400011012,حي الروابي,state_city_sa_gov_88,base.sa
+sa_dist_10400011013,حي حويلان,state_city_sa_gov_88,base.sa
+sa_dist_10400011014,حي الصباخ,state_city_sa_gov_88,base.sa
+sa_dist_10400011015,حي واسط,state_city_sa_gov_88,base.sa
+sa_dist_10400011016,حي خضيراء,state_city_sa_gov_88,base.sa
+sa_dist_10400011017,حي السلام,state_city_sa_gov_88,base.sa
+sa_dist_10400011018,حي الجنوب,state_city_sa_gov_88,base.sa
+sa_dist_10400011019,حي الخليج,state_city_sa_gov_88,base.sa
+sa_dist_10400011020,حي الضاحي,state_city_sa_gov_88,base.sa
+sa_dist_10400011021,حي خب البريدي,state_city_sa_gov_88,base.sa
+sa_dist_10400011022,حي السادة,state_city_sa_gov_88,base.sa
+sa_dist_10400011023,حي العريمضي,state_city_sa_gov_88,base.sa
+sa_dist_10400011024,حي الهلال,state_city_sa_gov_88,base.sa
+sa_dist_10400011025,حي العجيبة,state_city_sa_gov_88,base.sa
+sa_dist_10400011026,حي البساتين,state_city_sa_gov_88,base.sa
+sa_dist_10400011027,حي النسيم,state_city_sa_gov_88,base.sa
+sa_dist_10400011028,حي الموطا,state_city_sa_gov_88,base.sa
+sa_dist_10400011029,حي التعليم,state_city_sa_gov_88,base.sa
+sa_dist_10400011030,حي الجردة,state_city_sa_gov_88,base.sa
+sa_dist_10400011031,حي الصالحية,state_city_sa_gov_88,base.sa
+sa_dist_10400011032,حي المريديسية,state_city_sa_gov_88,base.sa
+sa_dist_10400011033,حي الشروق,state_city_sa_gov_88,base.sa
+sa_dist_10400011034,حي خب الثنيان,state_city_sa_gov_88,base.sa
+sa_dist_10400011035,حي الشماس,state_city_sa_gov_88,base.sa
+sa_dist_10400011036,حي القادسية,state_city_sa_gov_88,base.sa
+sa_dist_10400011037,حي الصفا,state_city_sa_gov_88,base.sa
+sa_dist_10400011038,حي الخبيب,state_city_sa_gov_88,base.sa
+sa_dist_10400011039,حي المرقب,state_city_sa_gov_88,base.sa
+sa_dist_10400011040,حي الربيع,state_city_sa_gov_88,base.sa
+sa_dist_10400011041,حي الرفيعة,state_city_sa_gov_88,base.sa
+sa_dist_10400011042,حي الزرقاء,state_city_sa_gov_88,base.sa
+sa_dist_10400011043,حي الحمر,state_city_sa_gov_88,base.sa
+sa_dist_10400011044,حي الشفق,state_city_sa_gov_88,base.sa
+sa_dist_10400011045,حي القاع البارد,state_city_sa_gov_88,base.sa
+sa_dist_10400011046,حي المنار,state_city_sa_gov_88,base.sa
+sa_dist_10400011047,حي الوسيطا,state_city_sa_gov_88,base.sa
+sa_dist_10400011048,حي الربوة,state_city_sa_gov_88,base.sa
+sa_dist_10400011049,حي المنتزه,state_city_sa_gov_88,base.sa
+sa_dist_10400011050,حي الصفراء,state_city_sa_gov_88,base.sa
+sa_dist_10400011051,حي النقع,state_city_sa_gov_88,base.sa
+sa_dist_10400011052,حي الفايزية,state_city_sa_gov_88,base.sa
+sa_dist_10400011053,حي النخيل,state_city_sa_gov_88,base.sa
+sa_dist_10400011054,حي الروضه,state_city_sa_gov_88,base.sa
+sa_dist_10400011055,حي النفل,state_city_sa_gov_88,base.sa
+sa_dist_10400011056,حي الإسكان,state_city_sa_gov_88,base.sa
+sa_dist_10400011057,حي الأخضر,state_city_sa_gov_88,base.sa
+sa_dist_10400011058,حي الشقة,state_city_sa_gov_88,base.sa
+sa_dist_10400011059,حي الرابية,state_city_sa_gov_88,base.sa
+sa_dist_10400011060,حي الريان,state_city_sa_gov_88,base.sa
+sa_dist_10400011061,حي النهضة,state_city_sa_gov_88,base.sa
+sa_dist_10400011062,حي الافق,state_city_sa_gov_88,base.sa
+sa_dist_10400011063,حي الورود,state_city_sa_gov_88,base.sa
+sa_dist_10400011064,حي الخزامى,state_city_sa_gov_88,base.sa
+sa_dist_10400011065,حي الجزيرة,state_city_sa_gov_88,base.sa
+sa_dist_10400011066,حي الرحاب,state_city_sa_gov_88,base.sa
+sa_dist_10400011067,حي الحزم,state_city_sa_gov_88,base.sa
+sa_dist_10400011068,حي الفاروق,state_city_sa_gov_88,base.sa
+sa_dist_10400011069,حي التشليح,state_city_sa_gov_88,base.sa
+sa_dist_10400080001,حي حطين,state_city_sa_gov_89,base.sa
+sa_dist_10400080002,حي سنام,state_city_sa_gov_89,base.sa
+sa_dist_10400080003,حي الروضة,state_city_sa_gov_89,base.sa
+sa_dist_10400080004,حي الدوحة,state_city_sa_gov_89,base.sa
+sa_dist_10400080005,حي الحاجب,state_city_sa_gov_89,base.sa
+sa_dist_10400080006,حي الرمال,state_city_sa_gov_89,base.sa
+sa_dist_10400080007,حي الحفيرة,state_city_sa_gov_89,base.sa
+sa_dist_10400080008,حي الصفا,state_city_sa_gov_89,base.sa
+sa_dist_10400080009,حي الملك خالد,state_city_sa_gov_89,base.sa
+sa_dist_10400080010,حي الملك فهد,state_city_sa_gov_89,base.sa
+sa_dist_10400080011,حي الرياضى,state_city_sa_gov_89,base.sa
+sa_dist_10400080012,حي القيروان,state_city_sa_gov_89,base.sa
+sa_dist_10400080013,حي غرناطة,state_city_sa_gov_89,base.sa
+sa_dist_10400080014,حي قرطبة,state_city_sa_gov_89,base.sa
+sa_dist_10400080015,حي العقيق,state_city_sa_gov_89,base.sa
+sa_dist_10400080016,حي الشفاء,state_city_sa_gov_89,base.sa
+sa_dist_10400080017,حي المطار,state_city_sa_gov_89,base.sa
+sa_dist_10400080018,حي السليمانية,state_city_sa_gov_89,base.sa
+sa_dist_10400080019,حي الوسطى,state_city_sa_gov_89,base.sa
+sa_dist_10400080020,المنطقة الصناعية الثانية,state_city_sa_gov_89,base.sa
+sa_dist_10400080021,المنطقة الصناعية الاولى,state_city_sa_gov_89,base.sa
+sa_dist_10400080022,حي الخليج,state_city_sa_gov_89,base.sa
+sa_dist_10400080023,حي المستودعات,state_city_sa_gov_89,base.sa
+sa_dist_10400080024,حي الهداء,state_city_sa_gov_89,base.sa
+sa_dist_10400080025,حي الصالحية,state_city_sa_gov_89,base.sa
+sa_dist_10400080026,حي المنتزة,state_city_sa_gov_89,base.sa
+sa_dist_10400080027,حي اليرموك,state_city_sa_gov_89,base.sa
+sa_dist_10400080028,حي النسيم,state_city_sa_gov_89,base.sa
+sa_dist_10400080029,حي الرحمانية,state_city_sa_gov_89,base.sa
+sa_dist_10400080030,حي دمشية,state_city_sa_gov_89,base.sa
+sa_dist_10400080031,حي المحمدية,state_city_sa_gov_89,base.sa
+sa_dist_10400080032,حي العبسة,state_city_sa_gov_89,base.sa
+sa_dist_10400080033,حي بدر,state_city_sa_gov_89,base.sa
+sa_dist_10400080034,حي الوهلان,state_city_sa_gov_89,base.sa
+sa_dist_10400080035,حي مليحة,state_city_sa_gov_89,base.sa
+sa_dist_10400080036,حي مربيدة,state_city_sa_gov_89,base.sa
+sa_dist_10400080037,حي العليا,state_city_sa_gov_89,base.sa
+sa_dist_10400080038,وسط المدينة,state_city_sa_gov_89,base.sa
+sa_dist_10400080039,حي الريان,state_city_sa_gov_89,base.sa
+sa_dist_10400080040,حي الفاخرية,state_city_sa_gov_89,base.sa
+sa_dist_10400080041,حي النقيلية,state_city_sa_gov_89,base.sa
+sa_dist_10400080042,حي السحيمية,state_city_sa_gov_89,base.sa
+sa_dist_10400080043,حي البديعة,state_city_sa_gov_89,base.sa
+sa_dist_10400080044,حي السلام,state_city_sa_gov_89,base.sa
+sa_dist_10400080045,حي اشبيلية,state_city_sa_gov_89,base.sa
+sa_dist_10400080046,حي العونية,state_city_sa_gov_89,base.sa
+sa_dist_10400080047,حي الحمراء,state_city_sa_gov_89,base.sa
+sa_dist_10400080048,حي الفيحاء,state_city_sa_gov_89,base.sa
+sa_dist_10400080050,حي الجامعي,state_city_sa_gov_89,base.sa
+sa_dist_10400080051,حي المروج,state_city_sa_gov_89,base.sa
+sa_dist_10400080052,حي اليمامة,state_city_sa_gov_89,base.sa
+sa_dist_10400080053,حي القادسية,state_city_sa_gov_89,base.sa
+sa_dist_10400080054,حي المنار,state_city_sa_gov_89,base.sa
+sa_dist_10400080055,حي الاشرفية,state_city_sa_gov_89,base.sa
+sa_dist_10400080056,حي الخزامى,state_city_sa_gov_89,base.sa
+sa_dist_10400080057,حي الروغاني,state_city_sa_gov_89,base.sa
+sa_dist_10400080058,حي الزهراء,state_city_sa_gov_89,base.sa
+sa_dist_10400080059,حي الصفراء,state_city_sa_gov_89,base.sa
+sa_dist_10400080060,حي المباركية,state_city_sa_gov_89,base.sa
+sa_dist_10400080061,حي المدوية,state_city_sa_gov_89,base.sa
+sa_dist_10400080062,حي اليرموك,state_city_sa_gov_89,base.sa
+sa_dist_10400080063,حي النظيم,state_city_sa_gov_89,base.sa
+sa_dist_10400080064,حي التحلية,state_city_sa_gov_89,base.sa
+sa_dist_10400080065,حي الجزيرة,state_city_sa_gov_89,base.sa
+sa_dist_10400080066,حي البستان,state_city_sa_gov_89,base.sa
+sa_dist_10400080067,حي الوفاء,state_city_sa_gov_89,base.sa
+sa_dist_10400080068,حي الزاهر,state_city_sa_gov_89,base.sa
+sa_dist_10400080069,حي الواحة,state_city_sa_gov_89,base.sa
+sa_dist_10400080070,حي سوق الماشية,state_city_sa_gov_89,base.sa
+sa_dist_10400080071,حي الجلده,state_city_sa_gov_89,base.sa
+sa_dist_10400080072,حي الندى,state_city_sa_gov_89,base.sa
+sa_dist_10400080073,حي ربوة الحاجب,state_city_sa_gov_89,base.sa
+sa_dist_10400080074,حي الغضا,state_city_sa_gov_89,base.sa
+sa_dist_10400080075,حي الشعيب,state_city_sa_gov_89,base.sa
+sa_dist_10400080076,حي البويطن,state_city_sa_gov_89,base.sa
+sa_dist_10400080077,حي النرجس,state_city_sa_gov_89,base.sa
+sa_dist_10400080078,حي عكاظ,state_city_sa_gov_89,base.sa
+sa_dist_10400080079,حي النفود,state_city_sa_gov_89,base.sa
+sa_dist_10400080080,حي الوادي,state_city_sa_gov_89,base.sa
+sa_dist_10400080081,حي القصور,state_city_sa_gov_89,base.sa
+sa_dist_10400080082,حي الحديقة,state_city_sa_gov_89,base.sa
+sa_dist_10400080083,حي المصيف,state_city_sa_gov_89,base.sa
+sa_dist_10400080084,حي الجوهرة,state_city_sa_gov_89,base.sa
+sa_dist_10400080086,حي الثقافة,state_city_sa_gov_89,base.sa
+sa_dist_10400080087,حي المروة,state_city_sa_gov_89,base.sa
+sa_dist_10400080088,حي الفخامة,state_city_sa_gov_89,base.sa
+sa_dist_10400080089,حي الفيصلية,state_city_sa_gov_89,base.sa
+sa_dist_10400080090,حي الزغيبة,state_city_sa_gov_89,base.sa
+sa_dist_10400080091,حي الاسكان,state_city_sa_gov_89,base.sa
+sa_dist_10400080092,حي الحزم,state_city_sa_gov_89,base.sa
+sa_dist_10401986001,حي السلام,state_city_sa_gov_99,base.sa
+sa_dist_10401986002,حي خصيبة,state_city_sa_gov_99,base.sa
+sa_dist_10401986003,حي البرود,state_city_sa_gov_99,base.sa
+sa_dist_10401986004,حي الفهيد,state_city_sa_gov_99,base.sa
+sa_dist_10401999001,حي الخزان,state_city_sa_gov_95,base.sa
+sa_dist_10401999002,حي المرقب,state_city_sa_gov_95,base.sa
+sa_dist_10401999003,حي التعليم,state_city_sa_gov_95,base.sa
+sa_dist_10401999004,حي الجردة,state_city_sa_gov_95,base.sa
+sa_dist_10401999005,حي النهضة,state_city_sa_gov_95,base.sa
+sa_dist_10401999006,حي النزهة,state_city_sa_gov_95,base.sa
+sa_dist_10401999007,حي المنتزة,state_city_sa_gov_95,base.sa
+sa_dist_10402421001,حي اليرموك,state_city_sa_gov_90,base.sa
+sa_dist_10402421002,حي الروضة,state_city_sa_gov_90,base.sa
+sa_dist_10402421003,حي الملك عبدالعزيز,state_city_sa_gov_90,base.sa
+sa_dist_10402421004,حي الاحتفالات,state_city_sa_gov_90,base.sa
+sa_dist_10402421005,حي الصناعية,state_city_sa_gov_90,base.sa
+sa_dist_10402421006,حي الملك فهد,state_city_sa_gov_90,base.sa
+sa_dist_10402421007,حي الحزم,state_city_sa_gov_90,base.sa
+sa_dist_10402421008,حي التعليم,state_city_sa_gov_90,base.sa
+sa_dist_10402421009,حي الربوة,state_city_sa_gov_90,base.sa
+sa_dist_10402421010,حي القادسية,state_city_sa_gov_90,base.sa
+sa_dist_10402421011,حي الشفاء,state_city_sa_gov_90,base.sa
+sa_dist_10402421012,حي الجندل,state_city_sa_gov_90,base.sa
+sa_dist_10402421013,حي وادي الرمة,state_city_sa_gov_90,base.sa
+sa_dist_10402421014,حي الملك فيصل,state_city_sa_gov_90,base.sa
+sa_dist_10402421015,حي المطار,state_city_sa_gov_90,base.sa
+sa_dist_10402421016,حي الزهرة,state_city_sa_gov_90,base.sa
+sa_dist_10402421017,حي الملك خالد,state_city_sa_gov_90,base.sa
+sa_dist_10402421018,حي السعادة,state_city_sa_gov_90,base.sa
+sa_dist_10402421019,حي قصر بن عقيل,state_city_sa_gov_90,base.sa
+sa_dist_10402421020,حي الحوطة,state_city_sa_gov_90,base.sa
+sa_dist_10402421021,حي المدينة,state_city_sa_gov_90,base.sa
+sa_dist_10402421022,حي النخيل,state_city_sa_gov_90,base.sa
+sa_dist_10402421023,حي الروابي,state_city_sa_gov_90,base.sa
+sa_dist_10402421024,حي الجريف,state_city_sa_gov_90,base.sa
+sa_dist_10402421025,حي الربيع,state_city_sa_gov_90,base.sa
+sa_dist_10402421026,حي السلام,state_city_sa_gov_90,base.sa
+sa_dist_10402421027,حي المنار,state_city_sa_gov_90,base.sa
+sa_dist_10402421028,حي بهجة,state_city_sa_gov_90,base.sa
+sa_dist_10402421029,حي النهضة,state_city_sa_gov_90,base.sa
+sa_dist_10402421030,حي الشنانة الشمالية,state_city_sa_gov_90,base.sa
+sa_dist_10402421031,حي الحمراء,state_city_sa_gov_90,base.sa
+sa_dist_10402421032,حي الالغربي,state_city_sa_gov_90,base.sa
+sa_dist_10402421033,حي الريان,state_city_sa_gov_90,base.sa
+sa_dist_10402421034,حي الواحة,state_city_sa_gov_90,base.sa
+sa_dist_10402421035,حي سوق الماشيه الجديد,state_city_sa_gov_90,base.sa
+sa_dist_10402421036,حي الخليج,state_city_sa_gov_90,base.sa
+sa_dist_10402421037,حي المصيف,state_city_sa_gov_90,base.sa
+sa_dist_10402421038,حي الاندلس,state_city_sa_gov_90,base.sa
+sa_dist_10402421039,حي المروج,state_city_sa_gov_90,base.sa
+sa_dist_10402421040,حي الورود,state_city_sa_gov_90,base.sa
+sa_dist_10402421041,حي الفيصلية,state_city_sa_gov_90,base.sa
+sa_dist_10402421042,حي الشنانة الجنوبية,state_city_sa_gov_90,base.sa
+sa_dist_10402448001,حي النخيل,state_city_sa_gov_91,base.sa
+sa_dist_10402448002,حي الورود,state_city_sa_gov_91,base.sa
+sa_dist_10402448003,حي المنتزه,state_city_sa_gov_91,base.sa
+sa_dist_10402448004,حي الصفراء,state_city_sa_gov_91,base.sa
+sa_dist_10402448005,حي البستان,state_city_sa_gov_91,base.sa
+sa_dist_10402448006,حي الجديدة,state_city_sa_gov_91,base.sa
+sa_dist_10402448007,حي الخزامى,state_city_sa_gov_91,base.sa
+sa_dist_10402448008,حي الخالدية,state_city_sa_gov_91,base.sa
+sa_dist_10402448009,حي الروضة,state_city_sa_gov_91,base.sa
+sa_dist_10402448010,حي الحزم,state_city_sa_gov_91,base.sa
+sa_dist_10402448011,حي الصناعية,state_city_sa_gov_91,base.sa
+sa_dist_10402448012,حي قرطبة,state_city_sa_gov_91,base.sa
+sa_dist_10402448013,حي السلام,state_city_sa_gov_91,base.sa
+sa_dist_10402448014,حي القادسية,state_city_sa_gov_91,base.sa
+sa_dist_10402448015,حي القفيفة,state_city_sa_gov_91,base.sa
+sa_dist_10402448016,حي ام عشيرة,state_city_sa_gov_91,base.sa
+sa_dist_10402448017,حي الصالحية,state_city_sa_gov_91,base.sa
+sa_dist_10402467005,حي الخزان,state_city_sa_gov_94,base.sa
+sa_dist_10402467006,حي النزهة,state_city_sa_gov_94,base.sa
+sa_dist_10402467007,حي القادسية,state_city_sa_gov_94,base.sa
+sa_dist_10402467008,حي النهضة,state_city_sa_gov_94,base.sa
+sa_dist_10402467009,حي التعاون,state_city_sa_gov_94,base.sa
+sa_dist_10402467010,حي الافراح,state_city_sa_gov_94,base.sa
+sa_dist_10402467011,حي القدس,state_city_sa_gov_94,base.sa
+sa_dist_10402467013,حي الحزم,state_city_sa_gov_94,base.sa
+sa_dist_10402467022,حي زبيدة,state_city_sa_gov_94,base.sa
+sa_dist_10402467023,حي النفل,state_city_sa_gov_94,base.sa
+sa_dist_10402481001,حي ام ثلعة,state_city_sa_gov_93,base.sa
+sa_dist_10402481002,حي العبيلة,state_city_sa_gov_93,base.sa
+sa_dist_10402481003,حي العثمانية,state_city_sa_gov_93,base.sa
+sa_dist_10402481004,حي الوسطى,state_city_sa_gov_93,base.sa
+sa_dist_10402481005,حي الشيرمي,state_city_sa_gov_93,base.sa
+sa_dist_10402481006,حي المستشفى,state_city_sa_gov_93,base.sa
+sa_dist_10402481007,حي البساتين,state_city_sa_gov_93,base.sa
+sa_dist_10402481008,حي الاندلس,state_city_sa_gov_93,base.sa
+sa_dist_10402481009,حي النخيل,state_city_sa_gov_93,base.sa
+sa_dist_10402481010,حي الرمة,state_city_sa_gov_93,base.sa
+sa_dist_10402481011,حي الصناعية,state_city_sa_gov_93,base.sa
+sa_dist_10402481012,حي الاصفر,state_city_sa_gov_93,base.sa
+sa_dist_10402481013,حي رامات,state_city_sa_gov_93,base.sa
+sa_dist_10402481014,حي العليا,state_city_sa_gov_93,base.sa
+sa_dist_10402481015,حي التعليم,state_city_sa_gov_93,base.sa
+sa_dist_10402481016,حي السلام,state_city_sa_gov_93,base.sa
+sa_dist_10402481017,حي العبدلية,state_city_sa_gov_93,base.sa
+sa_dist_10402481018,حي الدحلة,state_city_sa_gov_93,base.sa
+sa_dist_10402486001,حي السحابين الشمالي,state_city_sa_gov_52,base.sa
+sa_dist_10402486002,حي الخبراء القديمة,state_city_sa_gov_52,base.sa
+sa_dist_10402486003,حي الياسمين,state_city_sa_gov_52,base.sa
+sa_dist_10402486004,حي النسيم,state_city_sa_gov_52,base.sa
+sa_dist_10402486005,حي الورود,state_city_sa_gov_52,base.sa
+sa_dist_10402486006,حي الأندلس,state_city_sa_gov_52,base.sa
+sa_dist_10402486007,حي السحابين الجنوبي,state_city_sa_gov_52,base.sa
+sa_dist_10402486008,حي الربوة,state_city_sa_gov_52,base.sa
+sa_dist_10402486009,حي القدس,state_city_sa_gov_52,base.sa
+sa_dist_10402486010,حي الملاح,state_city_sa_gov_52,base.sa
+sa_dist_10402486011,حى الرفيعة,state_city_sa_gov_52,base.sa
+sa_dist_10402486012,حي الريان,state_city_sa_gov_52,base.sa
+sa_dist_10402486013,حي الروضة,state_city_sa_gov_52,base.sa
+sa_dist_10402486014,حي الربيع,state_city_sa_gov_52,base.sa
+sa_dist_10402486015,حي الصناعية,state_city_sa_gov_52,base.sa
+sa_dist_10402630002,حي الزهرة,state_city_sa_gov_92,base.sa
+sa_dist_10402630003,حي العزيزية,state_city_sa_gov_92,base.sa
+sa_dist_10402630004,حي الهلالية,state_city_sa_gov_92,base.sa
+sa_dist_10402630005,حي الخليج,state_city_sa_gov_92,base.sa
+sa_dist_10402630006,حي الملك عبدالله,state_city_sa_gov_92,base.sa
+sa_dist_10402630007,حي النهضة,state_city_sa_gov_92,base.sa
+sa_dist_10402630008,حي النخيل,state_city_sa_gov_92,base.sa
+sa_dist_10402630009,حي الاسكان,state_city_sa_gov_92,base.sa
+sa_dist_10402630010,حي الخالدية,state_city_sa_gov_92,base.sa
+sa_dist_10402630011,حي المحمدية,state_city_sa_gov_92,base.sa
+sa_dist_10402630012,حي القادسية,state_city_sa_gov_92,base.sa
+sa_dist_10402630013,حي الصناعية,state_city_sa_gov_92,base.sa
+sa_dist_10402630014,حي الريان,state_city_sa_gov_92,base.sa
+sa_dist_10402630015,حي الامل,state_city_sa_gov_92,base.sa
+sa_dist_10402630016,حي الرياض,state_city_sa_gov_92,base.sa
+sa_dist_10402630017,حي الديرة,state_city_sa_gov_92,base.sa
+sa_dist_10402630018,حي المجد,state_city_sa_gov_92,base.sa
+sa_dist_10402630019,حي الربوة,state_city_sa_gov_92,base.sa
+sa_dist_10402630020,حي الحمراء,state_city_sa_gov_92,base.sa
+sa_dist_10402630021,حي الروابي,state_city_sa_gov_92,base.sa
+sa_dist_10402630022,حي التقنية,state_city_sa_gov_92,base.sa
+sa_dist_10402630023,حي المنتزة,state_city_sa_gov_92,base.sa
+sa_dist_10402777001,حي الخبيب,state_city_sa_gov_96,base.sa
+sa_dist_10402777002,حي المتحف,state_city_sa_gov_96,base.sa
+sa_dist_10402777003,حي النخيل,state_city_sa_gov_96,base.sa
+sa_dist_10402777004,حي الشفاء,state_city_sa_gov_96,base.sa
+sa_dist_10402777005,حي الشماس,state_city_sa_gov_96,base.sa
+sa_dist_10402777006,حي البلاد,state_city_sa_gov_96,base.sa
+sa_dist_10402777008,حي الفاروق,state_city_sa_gov_96,base.sa
+sa_dist_10402777009,حي برزة,state_city_sa_gov_96,base.sa
+sa_dist_10402777010,حي الواسط,state_city_sa_gov_96,base.sa
+sa_dist_10402777011,حي البدع,state_city_sa_gov_96,base.sa
+sa_dist_10402777012,حي الجال,state_city_sa_gov_96,base.sa
+sa_dist_10402777013,حي الاندلس,state_city_sa_gov_96,base.sa
+sa_dist_10402777014,حي الميدان,state_city_sa_gov_96,base.sa
+sa_dist_10402777015,حي السلام,state_city_sa_gov_96,base.sa
+sa_dist_10402777016,حي الصفاء,state_city_sa_gov_96,base.sa
+sa_dist_10402777017,حي القادسية,state_city_sa_gov_96,base.sa
+sa_dist_10402777018,حي الصناعية,state_city_sa_gov_96,base.sa
+sa_dist_10402777019,حي المتوكل,state_city_sa_gov_96,base.sa
+sa_dist_10402988001,حي العزيزية,state_city_sa_gov_100,base.sa
+sa_dist_10402988002,حي الاندلس,state_city_sa_gov_100,base.sa
+sa_dist_10402988003,حي المصيف,state_city_sa_gov_100,base.sa
+sa_dist_10402988004,حي اليرموك,state_city_sa_gov_100,base.sa
+sa_dist_10402988005,حي الروضة,state_city_sa_gov_100,base.sa
+sa_dist_10402988006,حي الخليج,state_city_sa_gov_100,base.sa
+sa_dist_10402988007,حي الفيحاء,state_city_sa_gov_100,base.sa
+sa_dist_10402988008,حي الوادي,state_city_sa_gov_100,base.sa
+sa_dist_10402988009,حي الربوة,state_city_sa_gov_100,base.sa
+sa_dist_10402988010,حي المروج,state_city_sa_gov_100,base.sa
+sa_dist_10402988011,حي الملك فهد,state_city_sa_gov_100,base.sa
+sa_dist_10402988012,حي الازدهار,state_city_sa_gov_100,base.sa
+sa_dist_10402988013,حي القدس,state_city_sa_gov_100,base.sa
+sa_dist_10402988014,حي السعادة,state_city_sa_gov_100,base.sa
+sa_dist_10402988015,حي الشفاء,state_city_sa_gov_100,base.sa
+sa_dist_10402988016,حي الياسمين,state_city_sa_gov_100,base.sa
+sa_dist_10402988017,حي الملك عبدالله,state_city_sa_gov_100,base.sa
+sa_dist_10402988018,حي التعاون,state_city_sa_gov_100,base.sa
+sa_dist_10402988019,حي السلام,state_city_sa_gov_100,base.sa
+sa_dist_10402988020,حي المنار,state_city_sa_gov_100,base.sa
+sa_dist_10402988021,حي الريان,state_city_sa_gov_100,base.sa
+sa_dist_10402988022,حي النهضة,state_city_sa_gov_100,base.sa
+sa_dist_10403030001,فيضة ابان الاحمر,state_city_sa_gov_98,base.sa
+sa_dist_10403030002,النويصفة,state_city_sa_gov_98,base.sa
+sa_dist_10403030003,مشرفة عمودان,state_city_sa_gov_98,base.sa
+sa_dist_10403030004,كفت,state_city_sa_gov_98,base.sa
+sa_dist_10403151001,حي الرابية,state_city_sa_gov_97,base.sa
+sa_dist_10403151002,حي السلام,state_city_sa_gov_97,base.sa
+sa_dist_10403151003,حي النخيل,state_city_sa_gov_97,base.sa
+sa_dist_10403151004,حي الربوة,state_city_sa_gov_97,base.sa
+sa_dist_10403151005,حي المنتزه,state_city_sa_gov_97,base.sa
+sa_dist_10403151006,حي الجزيرة,state_city_sa_gov_97,base.sa
+sa_dist_10403151007,حي الملك عبدالله,state_city_sa_gov_97,base.sa
+sa_dist_10403151008,حي غرناطة,state_city_sa_gov_97,base.sa
+sa_dist_10403151009,حي ج1,state_city_sa_gov_97,base.sa
+sa_dist_10403151010,حي المحمدية,state_city_sa_gov_97,base.sa
+sa_dist_10403151011,حي الريان,state_city_sa_gov_97,base.sa
+sa_dist_10403151012,حي الرمثية,state_city_sa_gov_97,base.sa
+sa_dist_10403151013,حي الغربية,state_city_sa_gov_97,base.sa
+sa_dist_10403151014,حي الصفا,state_city_sa_gov_97,base.sa
+sa_dist_10403151015,حي القادسية,state_city_sa_gov_97,base.sa
+sa_dist_10403151016,حي حطين,state_city_sa_gov_97,base.sa
+sa_dist_10403151017,حي الوادي,state_city_sa_gov_97,base.sa
+sa_dist_10403151018,حي اليرموك,state_city_sa_gov_97,base.sa
+sa_dist_10500013001,حي الخالدية الشمالية,state_city_sa_gov_50,base.sa
+sa_dist_10500013002,حي الناصرية,state_city_sa_gov_50,base.sa
+sa_dist_10500013003,حي الصناعية الاولى,state_city_sa_gov_50,base.sa
+sa_dist_10500013004,حي الفنار,state_city_sa_gov_50,base.sa
+sa_dist_10500013005,حي الأثير,state_city_sa_gov_50,base.sa
+sa_dist_10500013006,حي الجلوية,state_city_sa_gov_50,base.sa
+sa_dist_10500013007,حي النخيل,state_city_sa_gov_50,base.sa
+sa_dist_10500013008,حي القزاز,state_city_sa_gov_50,base.sa
+sa_dist_10500013009,حي البادية,state_city_sa_gov_50,base.sa
+sa_dist_10500013010,حي الدواسر,state_city_sa_gov_50,base.sa
+sa_dist_10500013011,حي العنود,state_city_sa_gov_50,base.sa
+sa_dist_10500013012,حي الشاطئ الغربي,state_city_sa_gov_50,base.sa
+sa_dist_10500013013,حي الضباب,state_city_sa_gov_50,base.sa
+sa_dist_10500013014,حي المنار,state_city_sa_gov_50,base.sa
+sa_dist_10500013015,حي النور,state_city_sa_gov_50,base.sa
+sa_dist_10500013016,حي السلام,state_city_sa_gov_50,base.sa
+sa_dist_10500013017,حي الزهور,state_city_sa_gov_50,base.sa
+sa_dist_10500013018,حي المريكبات,state_city_sa_gov_50,base.sa
+sa_dist_10500013019,حي النهضة,state_city_sa_gov_50,base.sa
+sa_dist_10500013020,حي ضاحية الملك فهد,state_city_sa_gov_50,base.sa
+sa_dist_10500013021,حي السيف,state_city_sa_gov_50,base.sa
+sa_dist_10500013022,حي الصناعية,state_city_sa_gov_50,base.sa
+sa_dist_10500013023,حي احد,state_city_sa_gov_50,base.sa
+sa_dist_10500013024,حي بدر,state_city_sa_gov_50,base.sa
+sa_dist_10500013025,حي الخليج,state_city_sa_gov_50,base.sa
+sa_dist_10500013026,حي الروضة,state_city_sa_gov_50,base.sa
+sa_dist_10500013027,حي طيبة,state_city_sa_gov_50,base.sa
+sa_dist_10500013028,حي الجامعيين,state_city_sa_gov_50,base.sa
+sa_dist_10500013029,حي الريان,state_city_sa_gov_50,base.sa
+sa_dist_10500013030,حي القادسية,state_city_sa_gov_50,base.sa
+sa_dist_10500013031,حي غرناطة,state_city_sa_gov_50,base.sa
+sa_dist_10500013032,حي العدامة,state_city_sa_gov_50,base.sa
+sa_dist_10500013033,حي الامير محمد بن سعود,state_city_sa_gov_50,base.sa
+sa_dist_10500013034,حي الطبيشي,state_city_sa_gov_50,base.sa
+sa_dist_10500013035,حي المزروعية,state_city_sa_gov_50,base.sa
+sa_dist_10500013036,حي الصفا,state_city_sa_gov_50,base.sa
+sa_dist_10500013037,حي المنتزه,state_city_sa_gov_50,base.sa
+sa_dist_10500013038,حي النزهة,state_city_sa_gov_50,base.sa
+sa_dist_10500013039,حي الفردوس,state_city_sa_gov_50,base.sa
+sa_dist_10500013040,حي قصر الخليج,state_city_sa_gov_50,base.sa
+sa_dist_10500013041,المدينة الصناعية الثانية,state_city_sa_gov_50,base.sa
+sa_dist_10500013042,مطار الملك فهد الدولي,state_city_sa_gov_50,base.sa
+sa_dist_10500013043,حي الخضرية,state_city_sa_gov_50,base.sa
+sa_dist_10500013044,حي مدينة العمال,state_city_sa_gov_50,base.sa
+sa_dist_10500013045,حي العمامرة,state_city_sa_gov_50,base.sa
+sa_dist_10500013046,حي البديع,state_city_sa_gov_50,base.sa
+sa_dist_10500013047,حي الشاطئ الشرقي,state_city_sa_gov_50,base.sa
+sa_dist_10500013048,حي الفيحاء,state_city_sa_gov_50,base.sa
+sa_dist_10500013049,حي الشفاء,state_city_sa_gov_50,base.sa
+sa_dist_10500013050,حي الراكة الشمالية,state_city_sa_gov_50,base.sa
+sa_dist_10500013051,حي النورس,state_city_sa_gov_50,base.sa
+sa_dist_10500013052,حي الفيصلية,state_city_sa_gov_50,base.sa
+sa_dist_10500013053,حي الاتصالات,state_city_sa_gov_50,base.sa
+sa_dist_10500013054,حي ابن خلدون,state_city_sa_gov_50,base.sa
+sa_dist_10500013055,حي السوق,state_city_sa_gov_50,base.sa
+sa_dist_10500013056,حي الربيع,state_city_sa_gov_50,base.sa
+sa_dist_10500013057,حي الحمراء,state_city_sa_gov_50,base.sa
+sa_dist_10500013058,حي البحيرة,state_city_sa_gov_50,base.sa
+sa_dist_10500013059,حي الجوهرة,state_city_sa_gov_50,base.sa
+sa_dist_10500013060,حي الرابية,state_city_sa_gov_50,base.sa
+sa_dist_10500013061,حي الدانة,state_city_sa_gov_50,base.sa
+sa_dist_10500013062,حي المحمدية,state_city_sa_gov_50,base.sa
+sa_dist_10500013063,حي العزيزية,state_city_sa_gov_50,base.sa
+sa_dist_10500013064,حي الواحة,state_city_sa_gov_50,base.sa
+sa_dist_10500013065,حي البساتين,state_city_sa_gov_50,base.sa
+sa_dist_10500013066,حي الاسكان,state_city_sa_gov_50,base.sa
+sa_dist_10500013068,مدينة الملك فيصل الجامعية,state_city_sa_gov_50,base.sa
+sa_dist_10500013069,حي الحسام,state_city_sa_gov_50,base.sa
+sa_dist_10500013070,حي ميناء الملك عبدالعزيز,state_city_sa_gov_50,base.sa
+sa_dist_10500013071,حي النسيم,state_city_sa_gov_50,base.sa
+sa_dist_10500013072,حي الخالدية الجنوبية,state_city_sa_gov_50,base.sa
+sa_dist_10500013073,حي الشعلة,state_city_sa_gov_50,base.sa
+sa_dist_10500013074,حي الأنوار,state_city_sa_gov_50,base.sa
+sa_dist_10500013075,حي الأمل,state_city_sa_gov_50,base.sa
+sa_dist_10500013076,حي الشرق,state_city_sa_gov_50,base.sa
+sa_dist_10500013077,حي الهضبة,state_city_sa_gov_50,base.sa
+sa_dist_10500013078,حي المطار,state_city_sa_gov_50,base.sa
+sa_dist_10500013079,حي الأمانة,state_city_sa_gov_50,base.sa
+sa_dist_10500013080,حي الفرسان,state_city_sa_gov_50,base.sa
+sa_dist_10500013081,حي المها,state_city_sa_gov_50,base.sa
+sa_dist_10500013082,حي الندى,state_city_sa_gov_50,base.sa
+sa_dist_10500013083,المدينة الصناعية الثالثة,state_city_sa_gov_50,base.sa
+sa_dist_10500013084,مدينة الملك سلمان للطاقة,state_city_sa_gov_50,base.sa
+sa_dist_10500013085,حي الإسكان الجنوبي,state_city_sa_gov_50,base.sa
+sa_dist_10500013086,حي العروبة,state_city_sa_gov_50,base.sa
+sa_dist_10500013087,حي الاسكان الشمالي,state_city_sa_gov_50,base.sa
+sa_dist_10500013088,حي الجود,state_city_sa_gov_50,base.sa
+sa_dist_10500031001,حي التحلية,state_city_sa_gov_52,base.sa
+sa_dist_10500031002,حي ابن سيناء,state_city_sa_gov_52,base.sa
+sa_dist_10500031003,حي الحزام الاخضر,state_city_sa_gov_52,base.sa
+sa_dist_10500031004,حي صناعية الثقبة,state_city_sa_gov_52,base.sa
+sa_dist_10500031005,حي التعاون,state_city_sa_gov_52,base.sa
+sa_dist_10500031006,حي الراكة الجنوبية,state_city_sa_gov_52,base.sa
+sa_dist_10500031007,حي الخبر الشمالية,state_city_sa_gov_52,base.sa
+sa_dist_10500031008,حي مدينة العمال,state_city_sa_gov_52,base.sa
+sa_dist_10500031009,حي العقربية,state_city_sa_gov_52,base.sa
+sa_dist_10500031010,حي الخبر الجنوبية,state_city_sa_gov_52,base.sa
+sa_dist_10500031011,حي الروابي,state_city_sa_gov_52,base.sa
+sa_dist_10500031012,حي اليرموك,state_city_sa_gov_52,base.sa
+sa_dist_10500031013,حي قرطبة,state_city_sa_gov_52,base.sa
+sa_dist_10500031014,حي الجوهرة,state_city_sa_gov_52,base.sa
+sa_dist_10500031015,حي الحزام الذهبي,state_city_sa_gov_52,base.sa
+sa_dist_10500031016,حي الاندلس,state_city_sa_gov_52,base.sa
+sa_dist_10500031017,حي الهدا,state_city_sa_gov_52,base.sa
+sa_dist_10500031018,حي البندرية,state_city_sa_gov_52,base.sa
+sa_dist_10500031019,حي البستان,state_city_sa_gov_52,base.sa
+sa_dist_10500031020,حي الثقبة,state_city_sa_gov_52,base.sa
+sa_dist_10500031021,حي العليا,state_city_sa_gov_52,base.sa
+sa_dist_10500031022,حي الاسكان,state_city_sa_gov_52,base.sa
+sa_dist_10500031023,حي الحمراء,state_city_sa_gov_52,base.sa
+sa_dist_10500031024,حي الجسر,state_city_sa_gov_52,base.sa
+sa_dist_10500031025,حي الخزامى,state_city_sa_gov_52,base.sa
+sa_dist_10500031026,المدينة الرياضية,state_city_sa_gov_52,base.sa
+sa_dist_10500031027,حي البحر,state_city_sa_gov_52,base.sa
+sa_dist_10500031028,حي الكورنيش,state_city_sa_gov_52,base.sa
+sa_dist_10500031029,حي صناعية الفوازية,state_city_sa_gov_52,base.sa
+sa_dist_10500031030,حي الساحل,state_city_sa_gov_52,base.sa
+sa_dist_10500031031,حي الخور,state_city_sa_gov_52,base.sa
+sa_dist_10500031032,حي اشبيليا,state_city_sa_gov_52,base.sa
+sa_dist_10500031033,حي البحيرة,state_city_sa_gov_52,base.sa
+sa_dist_10500031034,حي الشراع,state_city_sa_gov_52,base.sa
+sa_dist_10500031035,حي الكوثر,state_city_sa_gov_52,base.sa
+sa_dist_10500031036,حي الرجاء,state_city_sa_gov_52,base.sa
+sa_dist_10500031037,حي الصواري,state_city_sa_gov_52,base.sa
+sa_dist_10500031038,حي العقيق,state_city_sa_gov_52,base.sa
+sa_dist_10500031039,حي المها,state_city_sa_gov_52,base.sa
+sa_dist_10500031040,حي الامواج,state_city_sa_gov_52,base.sa
+sa_dist_10500031041,حي اللؤلؤ,state_city_sa_gov_52,base.sa
+sa_dist_10500031042,حي المرجان,state_city_sa_gov_52,base.sa
+sa_dist_10500031043,حي السفن,state_city_sa_gov_52,base.sa
+sa_dist_10500031044,حي الصدفة,state_city_sa_gov_52,base.sa
+sa_dist_10500047001,حي الربيع,state_city_sa_gov_54,base.sa
+sa_dist_10500047002,حي الاسكان,state_city_sa_gov_54,base.sa
+sa_dist_10500047003,حي الجامعة,state_city_sa_gov_54,base.sa
+sa_dist_10500047004,حي الرابية,state_city_sa_gov_54,base.sa
+sa_dist_10500047005,حي التلال,state_city_sa_gov_54,base.sa
+sa_dist_10500047006,حي الشفاء,state_city_sa_gov_54,base.sa
+sa_dist_10500047007,حي الوادي,state_city_sa_gov_54,base.sa
+sa_dist_10500047008,حي البلدية,state_city_sa_gov_54,base.sa
+sa_dist_10500047009,حي الصناعية,state_city_sa_gov_54,base.sa
+sa_dist_10500047010,حي العزيزية,state_city_sa_gov_54,base.sa
+sa_dist_10500047011,حي الفيحاء,state_city_sa_gov_54,base.sa
+sa_dist_10500047012,حي الربوة,state_city_sa_gov_54,base.sa
+sa_dist_10500047013,حي الباطن,state_city_sa_gov_54,base.sa
+sa_dist_10500047014,حي المحمدية,state_city_sa_gov_54,base.sa
+sa_dist_10500047015,حي الخالدية,state_city_sa_gov_54,base.sa
+sa_dist_10500047016,حي النهضة,state_city_sa_gov_54,base.sa
+sa_dist_10500047017,حي الصفاء,state_city_sa_gov_54,base.sa
+sa_dist_10500047018,حي فليج,state_city_sa_gov_54,base.sa
+sa_dist_10500047019,حي قرطبة,state_city_sa_gov_54,base.sa
+sa_dist_10500047020,حي الروضة,state_city_sa_gov_54,base.sa
+sa_dist_10500047021,حي السليمانية,state_city_sa_gov_54,base.sa
+sa_dist_10500047022,حي الفيصلية,state_city_sa_gov_54,base.sa
+sa_dist_10500047023,حي النزهة,state_city_sa_gov_54,base.sa
+sa_dist_10500047024,حي المنار,state_city_sa_gov_54,base.sa
+sa_dist_10500047025,حي اليرموك,state_city_sa_gov_54,base.sa
+sa_dist_10500047026,حي الريان,state_city_sa_gov_54,base.sa
+sa_dist_10500047027,حي النايفية,state_city_sa_gov_54,base.sa
+sa_dist_10500047028,حي المروج,state_city_sa_gov_54,base.sa
+sa_dist_10500047029,حي النخيل,state_city_sa_gov_54,base.sa
+sa_dist_10500047030,حي الواحة,state_city_sa_gov_54,base.sa
+sa_dist_10500047031,حي المصيف,state_city_sa_gov_54,base.sa
+sa_dist_10500047032,حي غرناطة,state_city_sa_gov_54,base.sa
+sa_dist_10500047033,حي ابو موسى الاشعري,state_city_sa_gov_54,base.sa
+sa_dist_10500047034,حي الخليج,state_city_sa_gov_54,base.sa
+sa_dist_10500047035,حي الرائد,state_city_sa_gov_54,base.sa
+sa_dist_10500047036,حي الورود,state_city_sa_gov_54,base.sa
+sa_dist_10500067003,حي البديع,state_city_sa_gov_55,base.sa
+sa_dist_10500067004,منطقة المستودعات,state_city_sa_gov_55,base.sa
+sa_dist_10500067005,حي المجيدية,state_city_sa_gov_55,base.sa
+sa_dist_10500067006,حي الشاطئ,state_city_sa_gov_55,base.sa
+sa_dist_10500067007,حي الفتح,state_city_sa_gov_55,base.sa
+sa_dist_10500067008,حي الواحة,state_city_sa_gov_55,base.sa
+sa_dist_10500067009,حي المروج,state_city_sa_gov_55,base.sa
+sa_dist_10500067010,حي الصناعية,state_city_sa_gov_55,base.sa
+sa_dist_10500067011,حي الروضة,state_city_sa_gov_55,base.sa
+sa_dist_10500067012,حي الورود,state_city_sa_gov_55,base.sa
+sa_dist_10500067013,حي الرضا,state_city_sa_gov_55,base.sa
+sa_dist_10500067014,حي الجارودية,state_city_sa_gov_55,base.sa
+sa_dist_10500067015,حي حلة محيش,state_city_sa_gov_55,base.sa
+sa_dist_10500067016,حي الياقوت,state_city_sa_gov_55,base.sa
+sa_dist_10500067017,حي البديعة,state_city_sa_gov_55,base.sa
+sa_dist_10500067018,حي الدبابية,state_city_sa_gov_55,base.sa
+sa_dist_10500067019,حي الخامسة,state_city_sa_gov_55,base.sa
+sa_dist_10500067020,حي ام الجزم,state_city_sa_gov_55,base.sa
+sa_dist_10500067021,حي بديعة البصري,state_city_sa_gov_55,base.sa
+sa_dist_10500067022,حي المشتل,state_city_sa_gov_55,base.sa
+sa_dist_10500067023,حي الزمرد,state_city_sa_gov_55,base.sa
+sa_dist_10500067024,حي الناصرة,state_city_sa_gov_55,base.sa
+sa_dist_10500067025,حي البحاري,state_city_sa_gov_55,base.sa
+sa_dist_10500067026,حي مياس,state_city_sa_gov_55,base.sa
+sa_dist_10500067027,حي الجواهر,state_city_sa_gov_55,base.sa
+sa_dist_10500067028,حي الخزامى,state_city_sa_gov_55,base.sa
+sa_dist_10500067029,حي التوبي,state_city_sa_gov_55,base.sa
+sa_dist_10500067030,حي الجراري,state_city_sa_gov_55,base.sa
+sa_dist_10500067031,حي الشهباء,state_city_sa_gov_55,base.sa
+sa_dist_10500067032,حي القديح,state_city_sa_gov_55,base.sa
+sa_dist_10500067033,حي المدارس,state_city_sa_gov_55,base.sa
+sa_dist_10500067034,حي الشماسيه,state_city_sa_gov_55,base.sa
+sa_dist_10500067035,حي باب الساب,state_city_sa_gov_55,base.sa
+sa_dist_10500067036,حي الجميمة,state_city_sa_gov_55,base.sa
+sa_dist_10500067037,حي المسعودية,state_city_sa_gov_55,base.sa
+sa_dist_10500067038,حي الخويلدية,state_city_sa_gov_55,base.sa
+sa_dist_10500067039,حي العوامية,state_city_sa_gov_55,base.sa
+sa_dist_10500067040,حي الدويج,state_city_sa_gov_55,base.sa
+sa_dist_10500067041,حي الرابعة,state_city_sa_gov_55,base.sa
+sa_dist_10500067042,حي البستان,state_city_sa_gov_55,base.sa
+sa_dist_10500067043,حي الجزيرة,state_city_sa_gov_55,base.sa
+sa_dist_10500067044,حي الشريعة,state_city_sa_gov_55,base.sa
+sa_dist_10500067045,حي الوسادة,state_city_sa_gov_55,base.sa
+sa_dist_10500067046,حي القلعة,state_city_sa_gov_55,base.sa
+sa_dist_10500067047,حي البوادي,state_city_sa_gov_55,base.sa
+sa_dist_10500067048,حي الحسين,state_city_sa_gov_55,base.sa
+sa_dist_10500067049,حي المدني,state_city_sa_gov_55,base.sa
+sa_dist_10500067050,حي الثريا,state_city_sa_gov_55,base.sa
+sa_dist_10500067051,حي الريف,state_city_sa_gov_55,base.sa
+sa_dist_10500067052,حي باب الشمال,state_city_sa_gov_55,base.sa
+sa_dist_10500067053,حي البحر,state_city_sa_gov_55,base.sa
+sa_dist_10500067054,حي الشويكة,state_city_sa_gov_55,base.sa
+sa_dist_10500067055,حي الوديعه,state_city_sa_gov_55,base.sa
+sa_dist_10500067056,حي الكويكب,state_city_sa_gov_55,base.sa
+sa_dist_10500067057,حي النرجس,state_city_sa_gov_55,base.sa
+sa_dist_10500067058,حي الزهراء,state_city_sa_gov_55,base.sa
+sa_dist_10500067059,حي الزارة,state_city_sa_gov_55,base.sa
+sa_dist_10500089001,حي الرفاع,state_city_sa_gov_58,base.sa
+sa_dist_10500089002,حي الربوة,state_city_sa_gov_58,base.sa
+sa_dist_10500089003,حي الواحة,state_city_sa_gov_58,base.sa
+sa_dist_10500089004,حي غرناطة,state_city_sa_gov_58,base.sa
+sa_dist_10500089005,حي الزهور,state_city_sa_gov_58,base.sa
+sa_dist_10500089006,حي الروضة,state_city_sa_gov_58,base.sa
+sa_dist_10500089007,حي الربيع,state_city_sa_gov_58,base.sa
+sa_dist_10500089008,حي قصر عالي,state_city_sa_gov_58,base.sa
+sa_dist_10500089009,حي قرطبة,state_city_sa_gov_58,base.sa
+sa_dist_10500089010,حي الاندلس,state_city_sa_gov_58,base.sa
+sa_dist_10500089011,حي الخالدية,state_city_sa_gov_58,base.sa
+sa_dist_10500089012,حي الصناعية,state_city_sa_gov_58,base.sa
+sa_dist_10500089013,حي السلام,state_city_sa_gov_58,base.sa
+sa_dist_10500089014,حي النزهة,state_city_sa_gov_58,base.sa
+sa_dist_10500089015,حي المروج,state_city_sa_gov_58,base.sa
+sa_dist_10500113001,حي المرقاب,state_city_sa_gov_53,base.sa
+sa_dist_10500113002,حي طيبة,state_city_sa_gov_53,base.sa
+sa_dist_10500113004,حي الروضة,state_city_sa_gov_53,base.sa
+sa_dist_10500113005,حي الضباب,state_city_sa_gov_53,base.sa
+sa_dist_10500113006,حي الواحة,state_city_sa_gov_53,base.sa
+sa_dist_10500113007,حي الطوية,state_city_sa_gov_53,base.sa
+sa_dist_10500113008,حي الدانة,state_city_sa_gov_53,base.sa
+sa_dist_10500113009,حي الصفاة,state_city_sa_gov_53,base.sa
+sa_dist_10500113010,حي صناعية العريفي,state_city_sa_gov_53,base.sa
+sa_dist_10500113011,حي اليرموك,state_city_sa_gov_53,base.sa
+sa_dist_10500113012,حي البستان,state_city_sa_gov_53,base.sa
+sa_dist_10500113013,حي التعاون,state_city_sa_gov_53,base.sa
+sa_dist_10500113014,حي ابو موسى الاشعري,state_city_sa_gov_53,base.sa
+sa_dist_10500113015,حي الجوهرة,state_city_sa_gov_53,base.sa
+sa_dist_10500113016,حي غرناطة,state_city_sa_gov_53,base.sa
+sa_dist_10500113017,حي السلام,state_city_sa_gov_53,base.sa
+sa_dist_10500113018,حي الربوة,state_city_sa_gov_53,base.sa
+sa_dist_10500113019,حي البحر,state_city_sa_gov_53,base.sa
+sa_dist_10500113020,حي اشبلية,state_city_sa_gov_53,base.sa
+sa_dist_10500113021,حي الحمراء,state_city_sa_gov_53,base.sa
+sa_dist_10500113022,حي الخزامى,state_city_sa_gov_53,base.sa
+sa_dist_10500113023,حي العزيزية,state_city_sa_gov_53,base.sa
+sa_dist_10500113024,حي قرطبة,state_city_sa_gov_53,base.sa
+sa_dist_10500113025,حي الحويلات,state_city_sa_gov_53,base.sa
+sa_dist_10500113026,حي اللؤلؤ,state_city_sa_gov_53,base.sa
+sa_dist_10500113027,المنطقة الصناعية الاولى,state_city_sa_gov_53,base.sa
+sa_dist_10500113028,المنطقة الصناعية,state_city_sa_gov_53,base.sa
+sa_dist_10500113029,حي الشاطئ,state_city_sa_gov_53,base.sa
+sa_dist_10500113030,حي الاحساء,state_city_sa_gov_53,base.sa
+sa_dist_10500113031,المنطقة الصناعية الثانية,state_city_sa_gov_53,base.sa
+sa_dist_10500113032,المنطقة الصناعية الثالثة,state_city_sa_gov_53,base.sa
+sa_dist_10500113033,حي ينبع,state_city_sa_gov_53,base.sa
+sa_dist_10500113034,حي الفيحاء,state_city_sa_gov_53,base.sa
+sa_dist_10500113035,حي الخليج,state_city_sa_gov_53,base.sa
+sa_dist_10500113036,حي نجد,state_city_sa_gov_53,base.sa
+sa_dist_10500113037,حي دارين,state_city_sa_gov_53,base.sa
+sa_dist_10500113038,حي سدير,state_city_sa_gov_53,base.sa
+sa_dist_10500113039,حي مكة,state_city_sa_gov_53,base.sa
+sa_dist_10500113040,حي الحجاز,state_city_sa_gov_53,base.sa
+sa_dist_10500113041,حي الفردوس,state_city_sa_gov_53,base.sa
+sa_dist_10500113042,حي الاندلس,state_city_sa_gov_53,base.sa
+sa_dist_10500113043,حي الفاروق,state_city_sa_gov_53,base.sa
+sa_dist_10500113044,حي القدس,state_city_sa_gov_53,base.sa
+sa_dist_10500113045,حي جلمودة,state_city_sa_gov_53,base.sa
+sa_dist_10500113046,حي المطرفية,state_city_sa_gov_53,base.sa
+sa_dist_10500115002,حي الصناعية,state_city_sa_gov_57,base.sa
+sa_dist_10500115003,حي التشاليح,state_city_sa_gov_57,base.sa
+sa_dist_10500115004,حي الربيع,state_city_sa_gov_57,base.sa
+sa_dist_10500115005,حي العزيزية,state_city_sa_gov_57,base.sa
+sa_dist_10500115006,حي ج4,state_city_sa_gov_57,base.sa
+sa_dist_10500115007,حي الخليج,state_city_sa_gov_57,base.sa
+sa_dist_10500115008,حي المحمدية,state_city_sa_gov_57,base.sa
+sa_dist_10500115009,حي الفيصلية,state_city_sa_gov_57,base.sa
+sa_dist_10500243001,حي الربوة,state_city_sa_gov_59,base.sa
+sa_dist_10500243002,حي قرطبة,state_city_sa_gov_59,base.sa
+sa_dist_10500243003,حي الصناعية,state_city_sa_gov_59,base.sa
+sa_dist_10500243004,حي النزهة,state_city_sa_gov_59,base.sa
+sa_dist_10500243005,حي الاندلس,state_city_sa_gov_59,base.sa
+sa_dist_10500243006,حي الروضة,state_city_sa_gov_59,base.sa
+sa_dist_10500243007,حي غرناطة,state_city_sa_gov_59,base.sa
+sa_dist_10500243008,حي أشبيلية,state_city_sa_gov_59,base.sa
+sa_dist_10500243009,حي المطار,state_city_sa_gov_59,base.sa
+sa_dist_10500243010,حي المدينة,state_city_sa_gov_59,base.sa
+sa_dist_10500243011,حي النخيل,state_city_sa_gov_59,base.sa
+sa_dist_10500243012,حي الفردوس,state_city_sa_gov_59,base.sa
+sa_dist_10500243013,حي البساتين,state_city_sa_gov_59,base.sa
+sa_dist_10502464001,حي السلام,state_city_sa_gov_56,base.sa
+sa_dist_10502464002,حي الجوهرة,state_city_sa_gov_56,base.sa
+sa_dist_10502464003,حي التعاون,state_city_sa_gov_56,base.sa
+sa_dist_10502464004,حي الفيصلية,state_city_sa_gov_56,base.sa
+sa_dist_10502464005,حي الشاطئ,state_city_sa_gov_56,base.sa
+sa_dist_10502464006,حي الروضة,state_city_sa_gov_56,base.sa
+sa_dist_10502464007,حي الفيحاء,state_city_sa_gov_56,base.sa
+sa_dist_10502464008,حي الخزامى,state_city_sa_gov_56,base.sa
+sa_dist_10502464009,حي الياسمين,state_city_sa_gov_56,base.sa
+sa_dist_10502464010,حي العزيزية,state_city_sa_gov_56,base.sa
+sa_dist_10502464011,حي الدوائر الحكومية,state_city_sa_gov_56,base.sa
+sa_dist_10502464012,حي المحمدية,state_city_sa_gov_56,base.sa
+sa_dist_10502464013,المنطقة الصناعية الاولى,state_city_sa_gov_56,base.sa
+sa_dist_10502464014,المنطقة الصناعية الثانية,state_city_sa_gov_56,base.sa
+sa_dist_10502464015,حي الحمراء,state_city_sa_gov_56,base.sa
+sa_dist_10502464016,حي اللؤلؤة,state_city_sa_gov_56,base.sa
+sa_dist_10502464017,حي الريان,state_city_sa_gov_56,base.sa
+sa_dist_10502464018,حي اليرموك,state_city_sa_gov_56,base.sa
+sa_dist_10502464019,حي الخالدية,state_city_sa_gov_56,base.sa
+sa_dist_10502464020,حي الامل,state_city_sa_gov_56,base.sa
+sa_dist_10502464021,حي الملك فهد,state_city_sa_gov_56,base.sa
+sa_dist_10502464022,حي الامير نايف,state_city_sa_gov_56,base.sa
+sa_dist_10502464023,حي الزهور,state_city_sa_gov_56,base.sa
+sa_dist_10502464024,حي الامير فهد بن سلمان,state_city_sa_gov_56,base.sa
+sa_dist_10502464025,حي النهضة,state_city_sa_gov_56,base.sa
+sa_dist_10502464026,حي ارامكو,state_city_sa_gov_56,base.sa
+sa_dist_10502464027,حي النزهة,state_city_sa_gov_56,base.sa
+sa_dist_10502464028,حي المروج,state_city_sa_gov_56,base.sa
+sa_dist_10502590001,حي الزهور,state_city_sa_gov_60,base.sa
+sa_dist_10502590002,حي النعيم,state_city_sa_gov_60,base.sa
+sa_dist_10502590003,حي قرطبة,state_city_sa_gov_60,base.sa
+sa_dist_10502590004,حي المنتزة,state_city_sa_gov_60,base.sa
+sa_dist_10502590005,حي الاندلس,state_city_sa_gov_60,base.sa
+sa_dist_10502590006,حي الصناعية,state_city_sa_gov_60,base.sa
+sa_dist_10502590007,حي الفيحاء,state_city_sa_gov_60,base.sa
+sa_dist_10502590008,حي الدانة,state_city_sa_gov_60,base.sa
+sa_dist_10502590009,حي الروضة,state_city_sa_gov_60,base.sa
+sa_dist_10502590010,حي نجمة,state_city_sa_gov_60,base.sa
+sa_dist_10600015001,حي المنهل,state_city_sa_gov_62,base.sa
+sa_dist_10600015002,حي النصب,state_city_sa_gov_62,base.sa
+sa_dist_10600015003,وسط المدينة,state_city_sa_gov_62,base.sa
+sa_dist_10600015004,حي النزهة,state_city_sa_gov_62,base.sa
+sa_dist_10600015005,حي ذرة,state_city_sa_gov_62,base.sa
+sa_dist_10600015006,حي شمسان,state_city_sa_gov_62,base.sa
+sa_dist_10600015007,حي القرى,state_city_sa_gov_62,base.sa
+sa_dist_10600015008,حي الوردتين,state_city_sa_gov_62,base.sa
+sa_dist_10600015009,حي الربوة,state_city_sa_gov_62,base.sa
+sa_dist_10600015010,حي النسيم,state_city_sa_gov_62,base.sa
+sa_dist_10600015011,حي الاندلس,state_city_sa_gov_62,base.sa
+sa_dist_10600015013,حي الضباب,state_city_sa_gov_62,base.sa
+sa_dist_10600015014,حي الوصايف,state_city_sa_gov_62,base.sa
+sa_dist_10600015015,حي الشرفية,state_city_sa_gov_62,base.sa
+sa_dist_10600015016,حي العزيزية,state_city_sa_gov_62,base.sa
+sa_dist_10600015017,حي الشفاء,state_city_sa_gov_62,base.sa
+sa_dist_10600015018,حي المفتاحة,state_city_sa_gov_62,base.sa
+sa_dist_10600015019,حي السروات,state_city_sa_gov_62,base.sa
+sa_dist_10600015020,حي المروج,state_city_sa_gov_62,base.sa
+sa_dist_10600015021,حي السد,state_city_sa_gov_62,base.sa
+sa_dist_10600015022,حي الخشع,state_city_sa_gov_62,base.sa
+sa_dist_10600015023,حي القابل,state_city_sa_gov_62,base.sa
+sa_dist_10600015024,حي الفيصلية,state_city_sa_gov_62,base.sa
+sa_dist_10600015025,حي الخالدية,state_city_sa_gov_62,base.sa
+sa_dist_10600015026,حي العرين,state_city_sa_gov_62,base.sa
+sa_dist_10600015027,حي البديع,state_city_sa_gov_62,base.sa
+sa_dist_10600015028,حي الصفا,state_city_sa_gov_62,base.sa
+sa_dist_10600015029,حي ج 35,state_city_sa_gov_62,base.sa
+sa_dist_10600015030,حي المقضى,state_city_sa_gov_62,base.sa
+sa_dist_10600015031,حي التعاون,state_city_sa_gov_62,base.sa
+sa_dist_10600015032,حي الوادي,state_city_sa_gov_62,base.sa
+sa_dist_10600015033,حي الروضة,state_city_sa_gov_62,base.sa
+sa_dist_10600015034,حي الفل,state_city_sa_gov_62,base.sa
+sa_dist_10600015035,حي الروابي,state_city_sa_gov_62,base.sa
+sa_dist_10600015036,حي المطار,state_city_sa_gov_62,base.sa
+sa_dist_10600015037,حي المصيف,state_city_sa_gov_62,base.sa
+sa_dist_10600015038,حي سلطانة,state_city_sa_gov_62,base.sa
+sa_dist_10600015039,حي الصناعية,state_city_sa_gov_62,base.sa
+sa_dist_10600015040,حي البحيره,state_city_sa_gov_62,base.sa
+sa_dist_10600015041,حي العقيق,state_city_sa_gov_62,base.sa
+sa_dist_10600015042,حي السلام,state_city_sa_gov_62,base.sa
+sa_dist_10600015043,حي الزهور,state_city_sa_gov_62,base.sa
+sa_dist_10600015044,حي المسك,state_city_sa_gov_62,base.sa
+sa_dist_10600062001,حي الراقي,state_city_sa_gov_63,base.sa
+sa_dist_10600062002,حي الأسواق,state_city_sa_gov_63,base.sa
+sa_dist_10600062003,حي الواحة,state_city_sa_gov_63,base.sa
+sa_dist_10600062004,حي السد,state_city_sa_gov_63,base.sa
+sa_dist_10600062005,حي الجزيرة,state_city_sa_gov_63,base.sa
+sa_dist_10600062006,حي طيب الاسم,state_city_sa_gov_63,base.sa
+sa_dist_10600062007,حي الزهور,state_city_sa_gov_63,base.sa
+sa_dist_10600062008,حي الروضة,state_city_sa_gov_63,base.sa
+sa_dist_10600062009,حي المنتزه,state_city_sa_gov_63,base.sa
+sa_dist_10600062010,حي ضمك,state_city_sa_gov_63,base.sa
+sa_dist_10600062011,حي الخزان,state_city_sa_gov_63,base.sa
+sa_dist_10600062012,حي الخالدية,state_city_sa_gov_63,base.sa
+sa_dist_10600062013,حي الفتح,state_city_sa_gov_63,base.sa
+sa_dist_10600062014,حي النهضة,state_city_sa_gov_63,base.sa
+sa_dist_10600062015,حي شباعة,state_city_sa_gov_63,base.sa
+sa_dist_10600062016,حي المعزاب,state_city_sa_gov_63,base.sa
+sa_dist_10600062017,حي المثناة,state_city_sa_gov_63,base.sa
+sa_dist_10600062018,حي المعمورة,state_city_sa_gov_63,base.sa
+sa_dist_10600062019,حي النسيم,state_city_sa_gov_63,base.sa
+sa_dist_10600062020,حي شكر,state_city_sa_gov_63,base.sa
+sa_dist_10600062021,حي النزهة,state_city_sa_gov_63,base.sa
+sa_dist_10600062022,حي عتود,state_city_sa_gov_63,base.sa
+sa_dist_10600062023,حي ال هميلة,state_city_sa_gov_63,base.sa
+sa_dist_10600062024,حي العرق الجنوبي,state_city_sa_gov_63,base.sa
+sa_dist_10600062025,حي الصقور,state_city_sa_gov_63,base.sa
+sa_dist_10600062026,حي البوادي,state_city_sa_gov_63,base.sa
+sa_dist_10600062027,حي النخيل,state_city_sa_gov_63,base.sa
+sa_dist_10600062028,حي ام سرور,state_city_sa_gov_63,base.sa
+sa_dist_10600062029,حي الشرفية,state_city_sa_gov_63,base.sa
+sa_dist_10600062030,حي الربيع,state_city_sa_gov_63,base.sa
+sa_dist_10600062031,حي قمبر,state_city_sa_gov_63,base.sa
+sa_dist_10600062032,حي السلام,state_city_sa_gov_63,base.sa
+sa_dist_10600062033,حي العرق الشمالي,state_city_sa_gov_63,base.sa
+sa_dist_10600062034,حي الدوحة,state_city_sa_gov_63,base.sa
+sa_dist_10600062035,حي العزيزية,state_city_sa_gov_63,base.sa
+sa_dist_10600062036,حي القافلة,state_city_sa_gov_63,base.sa
+sa_dist_10600062037,مخطط الموسى,state_city_sa_gov_63,base.sa
+sa_dist_10600062038,سكن القاعدة الجوية,state_city_sa_gov_63,base.sa
+sa_dist_10600062039,حي الرونه,state_city_sa_gov_63,base.sa
+sa_dist_10600062040,حي الشفاء,state_city_sa_gov_63,base.sa
+sa_dist_10600062041,حي ذلالة,state_city_sa_gov_63,base.sa
+sa_dist_10600062042,حي الرصراص 2,state_city_sa_gov_63,base.sa
+sa_dist_10600062043,سكن المدينة العسكرية,state_city_sa_gov_63,base.sa
+sa_dist_10600062044,سكن مجموعة اللواء الرابع عشر,state_city_sa_gov_63,base.sa
+sa_dist_10600062046,حي الجامعيين,state_city_sa_gov_63,base.sa
+sa_dist_10600062047,حي الوسام,state_city_sa_gov_63,base.sa
+sa_dist_10600062048,حي اليرموك,state_city_sa_gov_63,base.sa
+sa_dist_10600062049,حي الحرابى,state_city_sa_gov_63,base.sa
+sa_dist_10600062050,حي شكر,state_city_sa_gov_63,base.sa
+sa_dist_10600062051,حي الحمراء,state_city_sa_gov_63,base.sa
+sa_dist_10600062052,حي الهرير الغربى,state_city_sa_gov_63,base.sa
+sa_dist_10600062053,حي المراث,state_city_sa_gov_63,base.sa
+sa_dist_10600062054,حي الظرفة,state_city_sa_gov_63,base.sa
+sa_dist_10600062055,حي تارة,state_city_sa_gov_63,base.sa
+sa_dist_10600062056,حي النجاح,state_city_sa_gov_63,base.sa
+sa_dist_10600062057,حي الجبل,state_city_sa_gov_63,base.sa
+sa_dist_10600062058,حي شمال التضامن,state_city_sa_gov_63,base.sa
+sa_dist_10600062059,حي نشوان,state_city_sa_gov_63,base.sa
+sa_dist_10600062060,حي المصيف,state_city_sa_gov_63,base.sa
+sa_dist_10600062061,حي الصناعية,state_city_sa_gov_63,base.sa
+sa_dist_10600062062,حي الوفاء,state_city_sa_gov_63,base.sa
+sa_dist_10600062063,حي التعاون,state_city_sa_gov_63,base.sa
+sa_dist_10600062064,حي أحد,state_city_sa_gov_63,base.sa
+sa_dist_10600062065,حي شعب ذهبان,state_city_sa_gov_63,base.sa
+sa_dist_10600062066,حي ذهبان الغربى,state_city_sa_gov_63,base.sa
+sa_dist_10600062067,حي ذهبان الشرقى,state_city_sa_gov_63,base.sa
+sa_dist_10600062068,حي الرصراص 1,state_city_sa_gov_63,base.sa
+sa_dist_10600062069,حي الوقواق,state_city_sa_gov_63,base.sa
+sa_dist_10600062070,حي الهرير الشرقى,state_city_sa_gov_63,base.sa
+sa_dist_10600062071,حي الوقبة,state_city_sa_gov_63,base.sa
+sa_dist_10600062072,حي مصلوم,state_city_sa_gov_63,base.sa
+sa_dist_10600065001,حي الخالدية,state_city_sa_gov_71,base.sa
+sa_dist_10600065002,حي الزيتون,state_city_sa_gov_71,base.sa
+sa_dist_10600065003,حي العزيزية,state_city_sa_gov_71,base.sa
+sa_dist_10600065004,حي السلامة,state_city_sa_gov_71,base.sa
+sa_dist_10600065005,حي النهضة,state_city_sa_gov_71,base.sa
+sa_dist_10600065006,حي وسط البلد,state_city_sa_gov_71,base.sa
+sa_dist_10600065007,حي الورود,state_city_sa_gov_71,base.sa
+sa_dist_10600065008,حي الزهور,state_city_sa_gov_71,base.sa
+sa_dist_10600065009,حي صفوان,state_city_sa_gov_71,base.sa
+sa_dist_10600065010,حي الصالحية,state_city_sa_gov_71,base.sa
+sa_dist_10600065011,حي المصيف,state_city_sa_gov_71,base.sa
+sa_dist_10600065012,حي الخليج,state_city_sa_gov_71,base.sa
+sa_dist_10600065013,حي الرونه,state_city_sa_gov_71,base.sa
+sa_dist_10600065014,المدينة العسكرية,state_city_sa_gov_71,base.sa
+sa_dist_10600065015,حي الروضه 1,state_city_sa_gov_71,base.sa
+sa_dist_10600256001,حي التعاون,state_city_sa_gov_75,base.sa
+sa_dist_10600256002,حي النزهة,state_city_sa_gov_75,base.sa
+sa_dist_10600256003,حي النهضة,state_city_sa_gov_75,base.sa
+sa_dist_10600256004,حي الخالدية,state_city_sa_gov_75,base.sa
+sa_dist_10600256005,حي الفاخرية,state_city_sa_gov_75,base.sa
+sa_dist_10600256006,حي الصفاء,state_city_sa_gov_75,base.sa
+sa_dist_10600256007,حي العليا,state_city_sa_gov_75,base.sa
+sa_dist_10600256008,حي المنهل,state_city_sa_gov_75,base.sa
+sa_dist_10600256009,حي العروبة,state_city_sa_gov_75,base.sa
+sa_dist_10600256010,حي الملك فهد,state_city_sa_gov_75,base.sa
+sa_dist_10600256011,حي الروضة,state_city_sa_gov_75,base.sa
+sa_dist_10600256012,حي المروج,state_city_sa_gov_75,base.sa
+sa_dist_10600256013,حي الصناعية,state_city_sa_gov_75,base.sa
+sa_dist_10600256014,حي النسيم,state_city_sa_gov_75,base.sa
+sa_dist_10601294001,حي النهضة,state_city_sa_gov_73,base.sa
+sa_dist_10601294002,حي الخليج,state_city_sa_gov_73,base.sa
+sa_dist_10601294003,حي الفيصلية,state_city_sa_gov_73,base.sa
+sa_dist_10601294004,حي التقدم,state_city_sa_gov_73,base.sa
+sa_dist_10601294005,حي الشرق,state_city_sa_gov_73,base.sa
+sa_dist_10601294006,حي الاندلس,state_city_sa_gov_73,base.sa
+sa_dist_10601294007,حي النسيم,state_city_sa_gov_73,base.sa
+sa_dist_10601294008,حي الخالدية,state_city_sa_gov_73,base.sa
+sa_dist_10601294009,حي الروضة,state_city_sa_gov_73,base.sa
+sa_dist_10601294010,حي العدالة,state_city_sa_gov_73,base.sa
+sa_dist_10601294011,حي الربيع,state_city_sa_gov_73,base.sa
+sa_dist_10601294012,حي الصناعية,state_city_sa_gov_73,base.sa
+sa_dist_10601443001,حي الخزان,state_city_sa_gov_68,base.sa
+sa_dist_10601443002,حي الزهور,state_city_sa_gov_68,base.sa
+sa_dist_10601443003,حي النخيل,state_city_sa_gov_68,base.sa
+sa_dist_10601443004,حي الوجه,state_city_sa_gov_68,base.sa
+sa_dist_10601443005,حي الغزالة,state_city_sa_gov_68,base.sa
+sa_dist_10601443006,حي الحجاز,state_city_sa_gov_68,base.sa
+sa_dist_10601443007,حي الفاخرية,state_city_sa_gov_68,base.sa
+sa_dist_10601443008,حي الخالدية,state_city_sa_gov_68,base.sa
+sa_dist_10601443009,حي العزيزية,state_city_sa_gov_68,base.sa
+sa_dist_10601443010,حي المدينة,state_city_sa_gov_68,base.sa
+sa_dist_10601443011,حي التعاون,state_city_sa_gov_68,base.sa
+sa_dist_10601443012,الطويفح,state_city_sa_gov_68,base.sa
+sa_dist_10601443013,الجربوعية,state_city_sa_gov_68,base.sa
+sa_dist_10601443014,القوزية,state_city_sa_gov_68,base.sa
+sa_dist_10601443015,آل قير,state_city_sa_gov_68,base.sa
+sa_dist_10601514001,حي الصواير,state_city_sa_gov_64,base.sa
+sa_dist_10601514002,حي الرمال,state_city_sa_gov_64,base.sa
+sa_dist_10601514003,حي الاندلس,state_city_sa_gov_64,base.sa
+sa_dist_10601514004,حي الخزان,state_city_sa_gov_64,base.sa
+sa_dist_10601514005,حي الربوة,state_city_sa_gov_64,base.sa
+sa_dist_10601514006,حي الفيحاء,state_city_sa_gov_64,base.sa
+sa_dist_10601514007,حي الخزامى,state_city_sa_gov_64,base.sa
+sa_dist_10601514008,حي الفهد,state_city_sa_gov_64,base.sa
+sa_dist_10601514009,حي الفيصلية,state_city_sa_gov_64,base.sa
+sa_dist_10601514010,حي النخيل,state_city_sa_gov_64,base.sa
+sa_dist_10601514011,حي الورود,state_city_sa_gov_64,base.sa
+sa_dist_10601514012,حي التضامن,state_city_sa_gov_64,base.sa
+sa_dist_10601514013,حي النهضة,state_city_sa_gov_64,base.sa
+sa_dist_10601514014,حي الريان,state_city_sa_gov_64,base.sa
+sa_dist_10601514015,حي الربيع,state_city_sa_gov_64,base.sa
+sa_dist_10601514016,حي الروضة,state_city_sa_gov_64,base.sa
+sa_dist_10601514017,حي الزهور,state_city_sa_gov_64,base.sa
+sa_dist_10601514018,حي البوادي,state_city_sa_gov_64,base.sa
+sa_dist_10601514019,حي الملك عبدالله,state_city_sa_gov_64,base.sa
+sa_dist_10601514020,حي المطار,state_city_sa_gov_64,base.sa
+sa_dist_10601514021,حي الصفا,state_city_sa_gov_64,base.sa
+sa_dist_10601514022,حي النسيم,state_city_sa_gov_64,base.sa
+sa_dist_10601514023,حي النزهة,state_city_sa_gov_64,base.sa
+sa_dist_10601514024,حي الصناعية,state_city_sa_gov_64,base.sa
+sa_dist_10601514025,حي الشفاء,state_city_sa_gov_64,base.sa
+sa_dist_10601514026,حي الوادي,state_city_sa_gov_64,base.sa
+sa_dist_10601514027,حي الامير سلطان,state_city_sa_gov_64,base.sa
+sa_dist_10601514028,حي المروج,state_city_sa_gov_64,base.sa
+sa_dist_10601627001,حي الواحة,state_city_sa_gov_43,base.sa
+sa_dist_10601627002,حي الربوة,state_city_sa_gov_43,base.sa
+sa_dist_10601627003,حي الشاطئ,state_city_sa_gov_43,base.sa
+sa_dist_10601627004,حي الروضة,state_city_sa_gov_43,base.sa
+sa_dist_10601627005,حي الخضراء,state_city_sa_gov_43,base.sa
+sa_dist_10601627006,حي الروابي,state_city_sa_gov_43,base.sa
+sa_dist_10601627007,حي الاندلس,state_city_sa_gov_43,base.sa
+sa_dist_10601627008,حي العزيزية,state_city_sa_gov_43,base.sa
+sa_dist_10601627009,حي الخالدية,state_city_sa_gov_43,base.sa
+sa_dist_10601627010,حي المنتزه,state_city_sa_gov_43,base.sa
+sa_dist_10601627011,حي الفيصلية,state_city_sa_gov_43,base.sa
+sa_dist_10601627012,حي العروبة,state_city_sa_gov_43,base.sa
+sa_dist_10601627013,حي الشرق,state_city_sa_gov_43,base.sa
+sa_dist_10601627014,حي الربيع,state_city_sa_gov_43,base.sa
+sa_dist_10601627015,حي الصفح,state_city_sa_gov_43,base.sa
+sa_dist_10601627016,حي الجزيرة,state_city_sa_gov_43,base.sa
+sa_dist_10601627017,حي الامل,state_city_sa_gov_43,base.sa
+sa_dist_10601801001,حي النسيم,state_city_sa_gov_66,base.sa
+sa_dist_10601801002,حي المنتزة,state_city_sa_gov_66,base.sa
+sa_dist_10601801003,حي الجنادرية,state_city_sa_gov_66,base.sa
+sa_dist_10601801004,حي النزهة,state_city_sa_gov_66,base.sa
+sa_dist_10601801005,حي الحيلة الشرقي,state_city_sa_gov_66,base.sa
+sa_dist_10601801006,حي المقاعد,state_city_sa_gov_66,base.sa
+sa_dist_10601801007,حي الظهرة,state_city_sa_gov_66,base.sa
+sa_dist_10601801008,حي الشهد,state_city_sa_gov_66,base.sa
+sa_dist_10601801009,حي الفيصلية,state_city_sa_gov_66,base.sa
+sa_dist_10601801010,حي الحيلة الغربي,state_city_sa_gov_66,base.sa
+sa_dist_10601801011,حي الخالدية,state_city_sa_gov_66,base.sa
+sa_dist_10601801012,حي الروضة,state_city_sa_gov_66,base.sa
+sa_dist_10601801013,حي البصرة,state_city_sa_gov_66,base.sa
+sa_dist_10601801014,حي الضرس,state_city_sa_gov_66,base.sa
+sa_dist_10601801015,حي البديع,state_city_sa_gov_66,base.sa
+sa_dist_10601801016,حي الزهراء,state_city_sa_gov_66,base.sa
+sa_dist_10601801017,حي البلد,state_city_sa_gov_66,base.sa
+sa_dist_10601801018,حي السلامة,state_city_sa_gov_66,base.sa
+sa_dist_10601801019,حي الوعد,state_city_sa_gov_66,base.sa
+sa_dist_10602519001,حي المطل,state_city_sa_gov_65,base.sa
+sa_dist_10602519002,حي الضباب,state_city_sa_gov_65,base.sa
+sa_dist_10602519003,حي المروج,state_city_sa_gov_65,base.sa
+sa_dist_10602519004,حي السروات,state_city_sa_gov_65,base.sa
+sa_dist_10602519005,حي الفيصلية,state_city_sa_gov_65,base.sa
+sa_dist_10602519006,حي السد,state_city_sa_gov_65,base.sa
+sa_dist_10602519007,حي الصديق,state_city_sa_gov_65,base.sa
+sa_dist_10602519008,حي الشروق,state_city_sa_gov_65,base.sa
+sa_dist_10602519009,حي الفاروق,state_city_sa_gov_65,base.sa
+sa_dist_10602519010,حي السلام,state_city_sa_gov_65,base.sa
+sa_dist_10602519011,حي بلال,state_city_sa_gov_65,base.sa
+sa_dist_10602519012,حي النسيم,state_city_sa_gov_65,base.sa
+sa_dist_10602519013,حي النزهة,state_city_sa_gov_65,base.sa
+sa_dist_10602519014,حي الاندلس,state_city_sa_gov_65,base.sa
+sa_dist_10602519015,حي الزهور,state_city_sa_gov_65,base.sa
+sa_dist_10602519016,حي اليمامة,state_city_sa_gov_65,base.sa
+sa_dist_10603273001,حي الامل,state_city_sa_gov_74,base.sa
+sa_dist_10603273002,حي السلام,state_city_sa_gov_74,base.sa
+sa_dist_10603273003,حي الشفاء,state_city_sa_gov_74,base.sa
+sa_dist_10603273004,حي الشلال,state_city_sa_gov_74,base.sa
+sa_dist_10603273005,حي الصناعية,state_city_sa_gov_74,base.sa
+sa_dist_10603273006,حي الضباب,state_city_sa_gov_74,base.sa
+sa_dist_10603273007,حي العزيزية,state_city_sa_gov_74,base.sa
+sa_dist_10603273008,حي المستقبل,state_city_sa_gov_74,base.sa
+sa_dist_10603273009,حي المصايف,state_city_sa_gov_74,base.sa
+sa_dist_10603273010,حي النزهة,state_city_sa_gov_74,base.sa
+sa_dist_10603273011,حي النسيم,state_city_sa_gov_74,base.sa
+sa_dist_10603273012,حي النهضة,state_city_sa_gov_74,base.sa
+sa_dist_10603328001,حي الفهد,state_city_sa_gov_67,base.sa
+sa_dist_10603328002,حي الشفا,state_city_sa_gov_67,base.sa
+sa_dist_10603328003,حي النور,state_city_sa_gov_67,base.sa
+sa_dist_10603328004,المنطقة الصناعية,state_city_sa_gov_67,base.sa
+sa_dist_10603328005,حي الربوة,state_city_sa_gov_67,base.sa
+sa_dist_10603328006,حي الروضة,state_city_sa_gov_67,base.sa
+sa_dist_10603328007,حي الخالدية,state_city_sa_gov_67,base.sa
+sa_dist_10603381001,حي الاطلال,state_city_sa_gov_72,base.sa
+sa_dist_10603381002,حي الورود,state_city_sa_gov_72,base.sa
+sa_dist_10603381003,حي البلد,state_city_sa_gov_72,base.sa
+sa_dist_10603383001,حي الربوه,state_city_sa_gov_80,base.sa
+sa_dist_10700001001,حي الإسكان,state_city_sa_gov_81,base.sa
+sa_dist_10700001002,حي العين,state_city_sa_gov_81,base.sa
+sa_dist_10700001003,حي الشفا,state_city_sa_gov_81,base.sa
+sa_dist_10700001004,حي الصفا,state_city_sa_gov_81,base.sa
+sa_dist_10700001005,حي الاخضر,state_city_sa_gov_81,base.sa
+sa_dist_10700001006,حي البوادي,state_city_sa_gov_81,base.sa
+sa_dist_10700001007,حي اليرموك,state_city_sa_gov_81,base.sa
+sa_dist_10700001008,الأحياء الجنوبية,state_city_sa_gov_81,base.sa
+sa_dist_10700001009,حي النظيم,state_city_sa_gov_81,base.sa
+sa_dist_10700001010,حي غرب الخالدية,state_city_sa_gov_81,base.sa
+sa_dist_10700001011,حي البساتين,state_city_sa_gov_81,base.sa
+sa_dist_10700001012,حي الحمراء,state_city_sa_gov_81,base.sa
+sa_dist_10700001013,البلدة القديمة,state_city_sa_gov_81,base.sa
+sa_dist_10700001014,حي السعادة,state_city_sa_gov_81,base.sa
+sa_dist_10700001015,حي سلطانة,state_city_sa_gov_81,base.sa
+sa_dist_10700001016,حي الفيصلية الجنوبية,state_city_sa_gov_81,base.sa
+sa_dist_10700001017,حي الفيصلية الشمالية,state_city_sa_gov_81,base.sa
+sa_dist_10700001018,حي النهضة,state_city_sa_gov_81,base.sa
+sa_dist_10700001019,حي الروضة,state_city_sa_gov_81,base.sa
+sa_dist_10700001020,حي المصيف الاول,state_city_sa_gov_81,base.sa
+sa_dist_10700001021,حي المروج الثاني,state_city_sa_gov_81,base.sa
+sa_dist_10700001022,حي الريان,state_city_sa_gov_81,base.sa
+sa_dist_10700001023,حي الورود,state_city_sa_gov_81,base.sa
+sa_dist_10700001024,مخطط الراجحي,state_city_sa_gov_81,base.sa
+sa_dist_10700001025,المدينة الجامعية,state_city_sa_gov_81,base.sa
+sa_dist_10700001026,حي الفلاح,state_city_sa_gov_81,base.sa
+sa_dist_10700001027,حي الزهراء,state_city_sa_gov_81,base.sa
+sa_dist_10700001028,حي رايس,state_city_sa_gov_81,base.sa
+sa_dist_10700001029,الدوائر الحكومية و,state_city_sa_gov_81,base.sa
+sa_dist_10700001030,الدوائر الحكومية ب,state_city_sa_gov_81,base.sa
+sa_dist_10700001031,الدوائر الحكومية د,state_city_sa_gov_81,base.sa
+sa_dist_10700001032,الدوائر الحكومية أ,state_city_sa_gov_81,base.sa
+sa_dist_10700001033,حي الجامعة,state_city_sa_gov_81,base.sa
+sa_dist_10700001034,الدوائر الحكومية ج,state_city_sa_gov_81,base.sa
+sa_dist_10700001035,الدوائر الحكومية هـ,state_city_sa_gov_81,base.sa
+sa_dist_10700001036,منطقة خاصة,state_city_sa_gov_81,base.sa
+sa_dist_10700001037,حي الدفاع,state_city_sa_gov_81,base.sa
+sa_dist_10700001041,حي الندى,state_city_sa_gov_81,base.sa
+sa_dist_10700001042,حي الهجن,state_city_sa_gov_81,base.sa
+sa_dist_10700001043,مطــار الامير سلطان بن عبدالعزيز الدولي,state_city_sa_gov_81,base.sa
+sa_dist_10700001044,حي القادسية الثاني,state_city_sa_gov_81,base.sa
+sa_dist_10700001045,حى طيبة,state_city_sa_gov_81,base.sa
+sa_dist_10700001046,المنطقة الصناعية,state_city_sa_gov_81,base.sa
+sa_dist_10700001047,حي القدس,state_city_sa_gov_81,base.sa
+sa_dist_10700001048,حي التعاون,state_city_sa_gov_81,base.sa
+sa_dist_10700001049,حي القادسية الاول,state_city_sa_gov_81,base.sa
+sa_dist_10700001050,حي غرناطة,state_city_sa_gov_81,base.sa
+sa_dist_10700001051,حي النخيل,state_city_sa_gov_81,base.sa
+sa_dist_10700001052,الاستاد الرياضي,state_city_sa_gov_81,base.sa
+sa_dist_10700001053,حي الياسمين,state_city_sa_gov_81,base.sa
+sa_dist_10700001054,حي السليمانية,state_city_sa_gov_81,base.sa
+sa_dist_10700001055,حي الاشرافية,state_city_sa_gov_81,base.sa
+sa_dist_10700001056,حي السلام,state_city_sa_gov_81,base.sa
+sa_dist_10700001057,حي قرطبة,state_city_sa_gov_81,base.sa
+sa_dist_10700001058,حي المروج الثالث,state_city_sa_gov_81,base.sa
+sa_dist_10700001059,حي المروج الاول,state_city_sa_gov_81,base.sa
+sa_dist_10700001060,حي الربوة,state_city_sa_gov_81,base.sa
+sa_dist_10700001061,حي المهرجان أ,state_city_sa_gov_81,base.sa
+sa_dist_10700001062,حي المهرجان ب,state_city_sa_gov_81,base.sa
+sa_dist_10700001063,حي الصالحية,state_city_sa_gov_81,base.sa
+sa_dist_10700001064,حي العزيزية القديمة,state_city_sa_gov_81,base.sa
+sa_dist_10700001065,حي العليا,state_city_sa_gov_81,base.sa
+sa_dist_10700001067,حي العزيزيه الجديده,state_city_sa_gov_81,base.sa
+sa_dist_10700001068,حي السلمان,state_city_sa_gov_81,base.sa
+sa_dist_10700036001,حي الظهرة,state_city_sa_gov_86,base.sa
+sa_dist_10700036002,حي اليرموك,state_city_sa_gov_86,base.sa
+sa_dist_10700036003,حي السبخة,state_city_sa_gov_86,base.sa
+sa_dist_10700036004,حي البلدة القديمة,state_city_sa_gov_86,base.sa
+sa_dist_10700036005,حي الريان,state_city_sa_gov_86,base.sa
+sa_dist_10700036006,حي المروج1,state_city_sa_gov_86,base.sa
+sa_dist_10700036007,حي القادسية,state_city_sa_gov_86,base.sa
+sa_dist_10700036008,حي النهضة,state_city_sa_gov_86,base.sa
+sa_dist_10700036009,حي السلطانيه,state_city_sa_gov_86,base.sa
+sa_dist_10700036010,حي الوصل,state_city_sa_gov_86,base.sa
+sa_dist_10700036011,حي المروج 2,state_city_sa_gov_86,base.sa
+sa_dist_10700036012,حي الفيصلية,state_city_sa_gov_86,base.sa
+sa_dist_10700036013,حي جنوب الحميضه,state_city_sa_gov_86,base.sa
+sa_dist_10700036014,حي الوادي,state_city_sa_gov_86,base.sa
+sa_dist_10700036015,حي الورود,state_city_sa_gov_86,base.sa
+sa_dist_10700036016,حي الحميضه,state_city_sa_gov_86,base.sa
+sa_dist_10700036017,حي غرب الظهره,state_city_sa_gov_86,base.sa
+sa_dist_10700036018,حي ج1,state_city_sa_gov_86,base.sa
+sa_dist_10700036019,حي ام عنم,state_city_sa_gov_86,base.sa
+sa_dist_10700036020,حي الجامعه,state_city_sa_gov_86,base.sa
+sa_dist_10700074001,حي الصفا,state_city_sa_gov_83,base.sa
+sa_dist_10700074002,حي الروضة,state_city_sa_gov_83,base.sa
+sa_dist_10700074003,حي المنتزه,state_city_sa_gov_83,base.sa
+sa_dist_10700074004,حي الربوة,state_city_sa_gov_83,base.sa
+sa_dist_10700074005,حي التجاري,state_city_sa_gov_83,base.sa
+sa_dist_10700074006,حي هداج,state_city_sa_gov_83,base.sa
+sa_dist_10700074007,حي القاع,state_city_sa_gov_83,base.sa
+sa_dist_10700074008,حي الفاو,state_city_sa_gov_83,base.sa
+sa_dist_10700074009,حي عكاظ,state_city_sa_gov_83,base.sa
+sa_dist_10700074010,حي الخبراء,state_city_sa_gov_83,base.sa
+sa_dist_10700074011,حي الشرق,state_city_sa_gov_83,base.sa
+sa_dist_10700074012,حي الرحمانية,state_city_sa_gov_83,base.sa
+sa_dist_10700074013,حي غرناطة,state_city_sa_gov_83,base.sa
+sa_dist_10700074014,حي الشفاء,state_city_sa_gov_83,base.sa
+sa_dist_10700074015,حي قريان,state_city_sa_gov_83,base.sa
+sa_dist_10700074016,حي النسيم,state_city_sa_gov_83,base.sa
+sa_dist_10700074017,حي المروج,state_city_sa_gov_83,base.sa
+sa_dist_10700074018,حي الاندلس,state_city_sa_gov_83,base.sa
+sa_dist_10700074019,حي الورود,state_city_sa_gov_83,base.sa
+sa_dist_10700074020,حي الحمراء,state_city_sa_gov_83,base.sa
+sa_dist_10700233001,حي الصفا,state_city_sa_gov_85,base.sa
+sa_dist_10700233002,حي البلد,state_city_sa_gov_85,base.sa
+sa_dist_10700233003,حي العزيزية,state_city_sa_gov_85,base.sa
+sa_dist_10700233004,حي الخالدية,state_city_sa_gov_85,base.sa
+sa_dist_10700233005,حي النهضة,state_city_sa_gov_85,base.sa
+sa_dist_10700233006,حي الفريعة,state_city_sa_gov_85,base.sa
+sa_dist_10700233007,حي الورود,state_city_sa_gov_85,base.sa
+sa_dist_10700323001,حي قرية الجبنون,state_city_sa_gov_84,base.sa
+sa_dist_10700323002,حي النسيم,state_city_sa_gov_84,base.sa
+sa_dist_10700323003,حي التحلية,state_city_sa_gov_84,base.sa
+sa_dist_10700323004,حي المرجان,state_city_sa_gov_84,base.sa
+sa_dist_10700323005,حي الصيادية,state_city_sa_gov_84,base.sa
+sa_dist_10700323006,حي البطحاء,state_city_sa_gov_84,base.sa
+sa_dist_10700323007,حي الروضة,state_city_sa_gov_84,base.sa
+sa_dist_10700323008,حي ابو شجرة,state_city_sa_gov_84,base.sa
+sa_dist_10700323009,حي البلد,state_city_sa_gov_84,base.sa
+sa_dist_10700323010,حي العليا,state_city_sa_gov_84,base.sa
+sa_dist_10700323011,حي السلام,state_city_sa_gov_84,base.sa
+sa_dist_10700323012,حي الضويحي,state_city_sa_gov_84,base.sa
+sa_dist_10701947001,حي صمدة,state_city_sa_gov_82,base.sa
+sa_dist_10701947002,حي المزارع,state_city_sa_gov_82,base.sa
+sa_dist_10701947003,حي المطار,state_city_sa_gov_82,base.sa
+sa_dist_10701947004,حي البلد,state_city_sa_gov_82,base.sa
+sa_dist_10701947005,حي المقيطع,state_city_sa_gov_82,base.sa
+sa_dist_10800010001,حي اجا,state_city_sa_gov_101,base.sa
+sa_dist_10800010002,حي العزيزية,state_city_sa_gov_101,base.sa
+sa_dist_10800010003,حي المزعبر,state_city_sa_gov_101,base.sa
+sa_dist_10800010004,حي برزان,state_city_sa_gov_101,base.sa
+sa_dist_10800010005,حي المحطة,state_city_sa_gov_101,base.sa
+sa_dist_10800010006,حي سماح,state_city_sa_gov_101,base.sa
+sa_dist_10800010007,حي لبدة,state_city_sa_gov_101,base.sa
+sa_dist_10800010008,حي الزبارة,state_city_sa_gov_101,base.sa
+sa_dist_10800010009,حي السمراء,state_city_sa_gov_101,base.sa
+sa_dist_10800010010,المنطقة الصناعية,state_city_sa_gov_101,base.sa
+sa_dist_10800010011,حي الزهراء,state_city_sa_gov_101,base.sa
+sa_dist_10800010012,حي الخزامى,state_city_sa_gov_101,base.sa
+sa_dist_10800010013,حي مغيضة,state_city_sa_gov_101,base.sa
+sa_dist_10800010014,حي حدري البلاد,state_city_sa_gov_101,base.sa
+sa_dist_10800010015,حي الخريمي,state_city_sa_gov_101,base.sa
+sa_dist_10800010016,حي السويفلة,state_city_sa_gov_101,base.sa
+sa_dist_10800010017,حي ج2,state_city_sa_gov_101,base.sa
+sa_dist_10800010018,حي البدنة,state_city_sa_gov_101,base.sa
+sa_dist_10800010019,حي الوسيطاء,state_city_sa_gov_101,base.sa
+sa_dist_10800010020,حي صبابة,state_city_sa_gov_101,base.sa
+sa_dist_10800010021,حي المطار,state_city_sa_gov_101,base.sa
+sa_dist_10800010022,حي البحيرة,state_city_sa_gov_101,base.sa
+sa_dist_10800010023,حي المدائن,state_city_sa_gov_101,base.sa
+sa_dist_10800010024,حي النقرة قفار,state_city_sa_gov_101,base.sa
+sa_dist_10800010025,حي النقرة,state_city_sa_gov_101,base.sa
+sa_dist_10800010026,حي الخماشية,state_city_sa_gov_101,base.sa
+sa_dist_10800010027,مطار حائل الدولي,state_city_sa_gov_101,base.sa
+sa_dist_10800010029,حي السويفلة,state_city_sa_gov_101,base.sa
+sa_dist_10800010031,حي المنتزه الغربي,state_city_sa_gov_101,base.sa
+sa_dist_10800010032,حي المصيف,state_city_sa_gov_101,base.sa
+sa_dist_10800010033,حي المنتزه الشرقي,state_city_sa_gov_101,base.sa
+sa_dist_10800010034,حي اللقيطة,state_city_sa_gov_101,base.sa
+sa_dist_10800010035,حي الوادي,state_city_sa_gov_101,base.sa
+sa_dist_10800010036,حي الرصف,state_city_sa_gov_101,base.sa
+sa_dist_10800010037,حي الشفا,state_city_sa_gov_101,base.sa
+sa_dist_10800010038,حي ضاحية الملك فهد,state_city_sa_gov_101,base.sa
+sa_dist_10800010039,حي البادية,state_city_sa_gov_101,base.sa
+sa_dist_10800010040,حي الورود,state_city_sa_gov_101,base.sa
+sa_dist_10800010041,حي صلاح الدين الشرقي,state_city_sa_gov_101,base.sa
+sa_dist_10800010042,حي الطريفي,state_city_sa_gov_101,base.sa
+sa_dist_10800010043,حي النيصية,state_city_sa_gov_101,base.sa
+sa_dist_10800010044,حي قفار,state_city_sa_gov_101,base.sa
+sa_dist_10801228001,حي السلام,state_city_sa_gov_104,base.sa
+sa_dist_10801228002,حي النهضة,state_city_sa_gov_104,base.sa
+sa_dist_10801228003,حي الصالحية,state_city_sa_gov_104,base.sa
+sa_dist_10801228004,حي الخليج,state_city_sa_gov_104,base.sa
+sa_dist_10801228005,حي العزيزية,state_city_sa_gov_104,base.sa
+sa_dist_10801228006,حي الازدهار,state_city_sa_gov_104,base.sa
+sa_dist_10801228007,حي الورود,state_city_sa_gov_104,base.sa
+sa_dist_10801228008,حي الملك عبدالله,state_city_sa_gov_104,base.sa
+sa_dist_10801228009,حي الحمراء,state_city_sa_gov_104,base.sa
+sa_dist_10801228010,حي العليا,state_city_sa_gov_104,base.sa
+sa_dist_10801228011,حي الصناعية,state_city_sa_gov_104,base.sa
+sa_dist_10802332001,حي النخيل الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332002,حي الوادي,state_city_sa_gov_108,base.sa
+sa_dist_10802332003,حي النهضة,state_city_sa_gov_108,base.sa
+sa_dist_10802332004,حي الجامعة الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332005,حي الحفيرة الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332006,حي حفيرة السبعة الشمالي,state_city_sa_gov_108,base.sa
+sa_dist_10802332007,حي الاستراحات الأوسط,state_city_sa_gov_108,base.sa
+sa_dist_10802332008,حي الريان الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332009,حي الحفيرة الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332010,حي حفيرة السبعة الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332011,حي حفاير العهين الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332012,حي حفيرة السبعة الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332013,حي الواحة,state_city_sa_gov_108,base.sa
+sa_dist_10802332014,حي الرفيعة,state_city_sa_gov_108,base.sa
+sa_dist_10802332015,حي الريان الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332016,حي الصناعية,state_city_sa_gov_108,base.sa
+sa_dist_10802332017,حي البلدية,state_city_sa_gov_108,base.sa
+sa_dist_10802332018,حي التعاون,state_city_sa_gov_108,base.sa
+sa_dist_10802332019,حي الديرة,state_city_sa_gov_108,base.sa
+sa_dist_10802332020,حي الاستراحات الغربي,state_city_sa_gov_108,base.sa
+sa_dist_10802332021,حي الجامعة الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332022,حي الاستراحات الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332023,حي الجامعة الاوسط,state_city_sa_gov_108,base.sa
+sa_dist_10802332024,حي النخيل الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802332025,حي حفاير العهين الشرقي,state_city_sa_gov_108,base.sa
+sa_dist_10802370001,حي بقعاء الشرقيه,state_city_sa_gov_102,base.sa
+sa_dist_10802370002,حي صلاح الدين,state_city_sa_gov_102,base.sa
+sa_dist_10802370003,حي الظهيره,state_city_sa_gov_102,base.sa
+sa_dist_10802370004,حي الحفل,state_city_sa_gov_102,base.sa
+sa_dist_10802370005,حي ج9,state_city_sa_gov_102,base.sa
+sa_dist_10802370006,حي ج8,state_city_sa_gov_102,base.sa
+sa_dist_10802370007,حي ج7,state_city_sa_gov_102,base.sa
+sa_dist_10802370008,حي ج6,state_city_sa_gov_102,base.sa
+sa_dist_10802370009,حي ج5,state_city_sa_gov_102,base.sa
+sa_dist_10802370010,حي ج4,state_city_sa_gov_102,base.sa
+sa_dist_10802370011,حي ج3,state_city_sa_gov_102,base.sa
+sa_dist_10802370012,حي ج2,state_city_sa_gov_102,base.sa
+sa_dist_10802370013,حي ج16,state_city_sa_gov_102,base.sa
+sa_dist_10802370014,حي ج15,state_city_sa_gov_102,base.sa
+sa_dist_10802370015,حي ج13,state_city_sa_gov_102,base.sa
+sa_dist_10802370016,حي ج12,state_city_sa_gov_102,base.sa
+sa_dist_10802370017,حي ج11,state_city_sa_gov_102,base.sa
+sa_dist_10802370018,حي ج10,state_city_sa_gov_102,base.sa
+sa_dist_10802370019,حي بقعاء القديمه,state_city_sa_gov_102,base.sa
+sa_dist_10802370020,حي بقعاء الشرقيه القديمه,state_city_sa_gov_102,base.sa
+sa_dist_10802370021,حي الوسطى,state_city_sa_gov_102,base.sa
+sa_dist_10902208001,حي الورود,state_city_sa_gov_150,base.sa
+sa_dist_10902208003,حي السلطانة,state_city_sa_gov_150,base.sa
+sa_dist_10902208004,حي الخليج,state_city_sa_gov_150,base.sa
+sa_dist_10902208005,حي الصالحية,state_city_sa_gov_150,base.sa
+sa_dist_10902208006,حي العزيزية,state_city_sa_gov_150,base.sa
+sa_dist_10902208007,حي الخالدية,state_city_sa_gov_150,base.sa
+sa_dist_10902208008,حي المساعدية,state_city_sa_gov_150,base.sa
+sa_dist_10902208009,حي العروبة,state_city_sa_gov_150,base.sa
+sa_dist_10902208010,حي اليرموك,state_city_sa_gov_150,base.sa
+sa_dist_10902208011,حي الواحة,state_city_sa_gov_150,base.sa
+sa_dist_10902208012,حي النهضة,state_city_sa_gov_150,base.sa
+sa_dist_10902208013,حي الربوة,state_city_sa_gov_150,base.sa
+sa_dist_10902208014,حي المنتزه,state_city_sa_gov_150,base.sa
+sa_dist_10902208015,حي اسكان قوى الأمن,state_city_sa_gov_150,base.sa
+sa_dist_10902208016,حي الروابي,state_city_sa_gov_150,base.sa
+sa_dist_10902208017,حي الفيصلية شرق,state_city_sa_gov_150,base.sa
+sa_dist_10902208018,حي الصناعي,state_city_sa_gov_150,base.sa
+sa_dist_10902208019,حي الصناعية القديمة,state_city_sa_gov_150,base.sa
+sa_dist_10902208020,حي الصناعية الجديدة,state_city_sa_gov_150,base.sa
+sa_dist_10902208021,حي الشفا,state_city_sa_gov_150,base.sa
+sa_dist_10902208022,حي الفيصلية غرب,state_city_sa_gov_150,base.sa
+sa_dist_10902213001,حي غرناطة الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213002,أملاك الحرس الوطني,state_city_sa_gov_148,base.sa
+sa_dist_10902213003,حي الشروق الاداري,state_city_sa_gov_148,base.sa
+sa_dist_10902213004,حي القدس الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213005,حي النخيل الشمالي,state_city_sa_gov_148,base.sa
+sa_dist_10902213006,حي ضاحية الملك فهد,state_city_sa_gov_148,base.sa
+sa_dist_10902213007,حي المروج الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213008,حي الروابي,state_city_sa_gov_148,base.sa
+sa_dist_10902213009,حي اشبيلية الشمالي,state_city_sa_gov_148,base.sa
+sa_dist_10902213010,حي الشامل,state_city_sa_gov_148,base.sa
+sa_dist_10902213011,حي الصناعية الاولى,state_city_sa_gov_148,base.sa
+sa_dist_10902213012,مدينة الانعام,state_city_sa_gov_148,base.sa
+sa_dist_10902213013,حي الصقًار,state_city_sa_gov_148,base.sa
+sa_dist_10902213014,حي تشليح السيارات,state_city_sa_gov_148,base.sa
+sa_dist_10902213015,حي البساتين الاداري الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902213016,حي الشذا,state_city_sa_gov_148,base.sa
+sa_dist_10902213017,حي تلال عرعر,state_city_sa_gov_148,base.sa
+sa_dist_10902213018,حي النهضة,state_city_sa_gov_148,base.sa
+sa_dist_10902213019,حي الرفاع,state_city_sa_gov_148,base.sa
+sa_dist_10902213020,حي الفنار,state_city_sa_gov_148,base.sa
+sa_dist_10902213021,حي الخليج الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213022,حي الصالحية,state_city_sa_gov_148,base.sa
+sa_dist_10902213023,حي المنصورية,state_city_sa_gov_148,base.sa
+sa_dist_10902213024,حي الارجوان الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902213025,حي السعادة,state_city_sa_gov_148,base.sa
+sa_dist_10902213026,حي الفيصلية,state_city_sa_gov_148,base.sa
+sa_dist_10902213027,حي الريان,state_city_sa_gov_148,base.sa
+sa_dist_10902213028,حي النور,state_city_sa_gov_148,base.sa
+sa_dist_10902213029,حي الأمانه الاداري,state_city_sa_gov_148,base.sa
+sa_dist_10902213030,حي العزيزية,state_city_sa_gov_148,base.sa
+sa_dist_10902213031,حي الخالدية,state_city_sa_gov_148,base.sa
+sa_dist_10902213032,حي بدنة,state_city_sa_gov_148,base.sa
+sa_dist_10902213033,حي المطار,state_city_sa_gov_148,base.sa
+sa_dist_10902213034,حي مشرف,state_city_sa_gov_148,base.sa
+sa_dist_10902213035,حي الجوهرة,state_city_sa_gov_148,base.sa
+sa_dist_10902213036,حي الروضة,state_city_sa_gov_148,base.sa
+sa_dist_10902213037,حي المحمدية,state_city_sa_gov_148,base.sa
+sa_dist_10902213038,حي المساعدية,state_city_sa_gov_148,base.sa
+sa_dist_10902213039,حي الوئام,state_city_sa_gov_148,base.sa
+sa_dist_10902213040,حي النسيم,state_city_sa_gov_148,base.sa
+sa_dist_10902213041,حي المهندسين,state_city_sa_gov_148,base.sa
+sa_dist_10902213042,حي قرطبة,state_city_sa_gov_148,base.sa
+sa_dist_10902213043,حي الربوة,state_city_sa_gov_148,base.sa
+sa_dist_10902213044,حي النزهة,state_city_sa_gov_148,base.sa
+sa_dist_10902213045,حي النخيل الجنوبي,state_city_sa_gov_148,base.sa
+sa_dist_10902213046,حي الجامعة,state_city_sa_gov_148,base.sa
+sa_dist_10902213047,حي البساتين الاداري الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213048,حي البراعم,state_city_sa_gov_148,base.sa
+sa_dist_10902213049,حي معيلة,state_city_sa_gov_148,base.sa
+sa_dist_10902213050,حي المباركية,state_city_sa_gov_148,base.sa
+sa_dist_10902213051,حي هجرة ابن سعيد,state_city_sa_gov_148,base.sa
+sa_dist_10902213052,حي الصناعية الثانية,state_city_sa_gov_148,base.sa
+sa_dist_10902213053,حي الهلالي,state_city_sa_gov_148,base.sa
+sa_dist_10902213054,حي الفروسية,state_city_sa_gov_148,base.sa
+sa_dist_10902213055,حي اشبيلية الجنوبي,state_city_sa_gov_148,base.sa
+sa_dist_10902213056,حي القدس الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902213057,محجوزات ارمكو,state_city_sa_gov_148,base.sa
+sa_dist_10902213058,حي التقنية,state_city_sa_gov_148,base.sa
+sa_dist_10902213059,حي ام الضيان,state_city_sa_gov_148,base.sa
+sa_dist_10902213060,حي غرناطة الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902213061,حي الارجوان الشرقي,state_city_sa_gov_148,base.sa
+sa_dist_10902213062,حي الخليج الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902213063,حي الياسمين,state_city_sa_gov_148,base.sa
+sa_dist_10902213064,حي الزهور,state_city_sa_gov_148,base.sa
+sa_dist_10902213065,حي الاصداف,state_city_sa_gov_148,base.sa
+sa_dist_10902213066,حي المروج الغربي,state_city_sa_gov_148,base.sa
+sa_dist_10902256001,حي العمال,state_city_sa_gov_149,base.sa
+sa_dist_10902256003,حي المدينة,state_city_sa_gov_149,base.sa
+sa_dist_10902256004,حي الفيصلية,state_city_sa_gov_149,base.sa
+sa_dist_10902256008,حي  الادارى,state_city_sa_gov_149,base.sa
+sa_dist_10902256009,حي الصناعية,state_city_sa_gov_149,base.sa
+sa_dist_10902256011,حي الملز,state_city_sa_gov_149,base.sa
+sa_dist_10902256012,حي المحمدية,state_city_sa_gov_149,base.sa
+sa_dist_10902256013,حي الروضة,state_city_sa_gov_149,base.sa
+sa_dist_10902256014,حي اليرموك,state_city_sa_gov_149,base.sa
+sa_dist_10902256015,حي الشمال,state_city_sa_gov_149,base.sa
+sa_dist_10902256017,حي الجميماء,state_city_sa_gov_149,base.sa
+sa_dist_10902256018,حي المساعدية,state_city_sa_gov_149,base.sa
+sa_dist_10902256019,حي العزيزية,state_city_sa_gov_149,base.sa
+sa_dist_10902256020,حي القادسية,state_city_sa_gov_149,base.sa
+sa_dist_10902256021,حي الورود,state_city_sa_gov_149,base.sa
+sa_dist_10902256022,حي الربيع,state_city_sa_gov_149,base.sa
+sa_dist_10902256023,حي الخالدية,state_city_sa_gov_149,base.sa
+sa_dist_10902256024,حي النموذجية,state_city_sa_gov_149,base.sa
+sa_dist_10902256025,حي التعاون,state_city_sa_gov_149,base.sa
+sa_dist_10902256026,حي السلام,state_city_sa_gov_149,base.sa
+sa_dist_10902256027,حي إسكان حرس الحدود,state_city_sa_gov_149,base.sa
+sa_dist_10902256028,حي الاسكان الخيرى,state_city_sa_gov_149,base.sa
+sa_dist_10902256029,حي المروج,state_city_sa_gov_149,base.sa
+sa_dist_10902256030,حي الجبهان,state_city_sa_gov_149,base.sa
+sa_dist_10902256031,جامعة الحدود الشمالية,state_city_sa_gov_149,base.sa
+sa_dist_11000017001,حي القلعة,state_city_sa_gov_110,base.sa
+sa_dist_11000017002,حي الاراك,state_city_sa_gov_110,base.sa
+sa_dist_11000017004,حي الصفا,state_city_sa_gov_110,base.sa
+sa_dist_11000017005,حي السويس,state_city_sa_gov_110,base.sa
+sa_dist_11000017006,حي البشائر,state_city_sa_gov_110,base.sa
+sa_dist_11000017007,حي المطار,state_city_sa_gov_110,base.sa
+sa_dist_11000017008,حي الروابي,state_city_sa_gov_110,base.sa
+sa_dist_11000017009,حي الزهور,state_city_sa_gov_110,base.sa
+sa_dist_11000017010,حي الشاطئ,state_city_sa_gov_110,base.sa
+sa_dist_11000017011,حي الروضة,state_city_sa_gov_110,base.sa
+sa_dist_11000017012,حي الشامية,state_city_sa_gov_110,base.sa
+sa_dist_11000017013,المنطقة الصناعية,state_city_sa_gov_110,base.sa
+sa_dist_11000017014,حي النور,state_city_sa_gov_110,base.sa
+sa_dist_11000017015,حي النسيم,state_city_sa_gov_110,base.sa
+sa_dist_11000017016,حي الجبل,state_city_sa_gov_110,base.sa
+sa_dist_11000017017,حي مزهرة,state_city_sa_gov_110,base.sa
+sa_dist_11003479001,حي الريان,state_city_sa_gov_111,base.sa
+sa_dist_11003479002,حي الحسيني,state_city_sa_gov_111,base.sa
+sa_dist_11003479003,حي الفلاح,state_city_sa_gov_111,base.sa
+sa_dist_11003479004,حي حلة الأحوس,state_city_sa_gov_111,base.sa
+sa_dist_11003479005,حي جخيرة,state_city_sa_gov_111,base.sa
+sa_dist_11003479006,حي العزيزية,state_city_sa_gov_111,base.sa
+sa_dist_11003479007,حي النزهة,state_city_sa_gov_111,base.sa
+sa_dist_11003479008,حي الواحة,state_city_sa_gov_111,base.sa
+sa_dist_11003479009,حي النخيل,state_city_sa_gov_111,base.sa
+sa_dist_11003479010,حي السعادة,state_city_sa_gov_111,base.sa
+sa_dist_11003479011,حي المجد,state_city_sa_gov_111,base.sa
+sa_dist_11003479012,الحشيبرية,state_city_sa_gov_111,base.sa
+sa_dist_11003479013,حي الملك فهد,state_city_sa_gov_111,base.sa
+sa_dist_11003479014,حي الروضة,state_city_sa_gov_111,base.sa
+sa_dist_11003479015,حي الصفاء,state_city_sa_gov_111,base.sa
+sa_dist_11003479016,حي الفردوس,state_city_sa_gov_111,base.sa
+sa_dist_11003479017,حي النهضة,state_city_sa_gov_111,base.sa
+sa_dist_11003479018,حي الرحاب,state_city_sa_gov_111,base.sa
+sa_dist_11003479019,حي الربيع,state_city_sa_gov_111,base.sa
+sa_dist_11003479020,حي الفيصلية,state_city_sa_gov_111,base.sa
+sa_dist_11003479021,حي المروج,state_city_sa_gov_111,base.sa
+sa_dist_11003479022,حي الخالدية,state_city_sa_gov_111,base.sa
+sa_dist_11003479023,الرونة,state_city_sa_gov_111,base.sa
+sa_dist_11003479024,الغراء,state_city_sa_gov_111,base.sa
+sa_dist_11003479025,حي العريش,state_city_sa_gov_111,base.sa
+sa_dist_11003479026,حي بوتيشة,state_city_sa_gov_111,base.sa
+sa_dist_11003479027,حي المعترض,state_city_sa_gov_111,base.sa
+sa_dist_11003479028,حي الظبية,state_city_sa_gov_111,base.sa
+sa_dist_11003479029,الباحر,state_city_sa_gov_111,base.sa
+sa_dist_11003479030,الفقره,state_city_sa_gov_111,base.sa
+sa_dist_11003479031,الشواهية,state_city_sa_gov_111,base.sa
+sa_dist_11003479032,شهده,state_city_sa_gov_111,base.sa
+sa_dist_11003479033,عبدالله العيافي (العيافي),state_city_sa_gov_111,base.sa
+sa_dist_11003479034,حله محسنالمحاسنة,state_city_sa_gov_111,base.sa
+sa_dist_11003479035,الجعاونه,state_city_sa_gov_111,base.sa
+sa_dist_11003479036,السروريه,state_city_sa_gov_111,base.sa
+sa_dist_11003479037,حله القميري,state_city_sa_gov_111,base.sa
+sa_dist_11003479038,ابو دنقور,state_city_sa_gov_111,base.sa
+sa_dist_11003479039,ام القحفه,state_city_sa_gov_111,base.sa
+sa_dist_11003479040,حله مروعي بن شامي,state_city_sa_gov_111,base.sa
+sa_dist_11003479041,العداية,state_city_sa_gov_111,base.sa
+sa_dist_11003479042,قبه,state_city_sa_gov_111,base.sa
+sa_dist_11003479043,العواجمه,state_city_sa_gov_111,base.sa
+sa_dist_11003479044,النزلـــه,state_city_sa_gov_111,base.sa
+sa_dist_11003479045,البطيح,state_city_sa_gov_111,base.sa
+sa_dist_11003479046,الكومه,state_city_sa_gov_111,base.sa
+sa_dist_11003479047,العشة,state_city_sa_gov_111,base.sa
+sa_dist_11003479048,حنقفه,state_city_sa_gov_111,base.sa
+sa_dist_11003479049,ابو الطيور,state_city_sa_gov_111,base.sa
+sa_dist_11003479050,عوانه,state_city_sa_gov_111,base.sa
+sa_dist_11003479051,العرضه,state_city_sa_gov_111,base.sa
+sa_dist_11003479052,حلة العرشي,state_city_sa_gov_111,base.sa
+sa_dist_11003479053,العسيله,state_city_sa_gov_111,base.sa
+sa_dist_11003479054,الحقاويه,state_city_sa_gov_111,base.sa
+sa_dist_11003479055,الشعاره,state_city_sa_gov_111,base.sa
+sa_dist_11003479056,القواعة,state_city_sa_gov_111,base.sa
+sa_dist_11003479057,تيهان (حلة تيهان),state_city_sa_gov_111,base.sa
+sa_dist_11003479058,الدواحشه,state_city_sa_gov_111,base.sa
+sa_dist_11003479059,الباطنه,state_city_sa_gov_111,base.sa
+sa_dist_11003479060,الشمه,state_city_sa_gov_111,base.sa
+sa_dist_11003479061,الطراشه,state_city_sa_gov_111,base.sa
+sa_dist_11003479062,جريبه,state_city_sa_gov_111,base.sa
+sa_dist_11003479063,الهدوى,state_city_sa_gov_111,base.sa
+sa_dist_11003479065,حلة ابو حبيبه,state_city_sa_gov_111,base.sa
+sa_dist_11003479066,الحرف,state_city_sa_gov_111,base.sa
+sa_dist_11003479067,المجديره,state_city_sa_gov_111,base.sa
+sa_dist_11003479068,السبخة,state_city_sa_gov_111,base.sa
+sa_dist_11003479069,منسيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479071,الخواره,state_city_sa_gov_111,base.sa
+sa_dist_11003479072,الهجاريه,state_city_sa_gov_111,base.sa
+sa_dist_11003479073,الشواجرة والجرابية,state_city_sa_gov_111,base.sa
+sa_dist_11003479074,الخواجيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479075,السوالمه,state_city_sa_gov_111,base.sa
+sa_dist_11003479076,النعامية,state_city_sa_gov_111,base.sa
+sa_dist_11003479077,الفقرة,state_city_sa_gov_111,base.sa
+sa_dist_11003479078,الزيديه,state_city_sa_gov_111,base.sa
+sa_dist_11003479079,الخوالده,state_city_sa_gov_111,base.sa
+sa_dist_11003479080,ام العرش,state_city_sa_gov_111,base.sa
+sa_dist_11003479081,الحمضيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479082,الصنيف,state_city_sa_gov_111,base.sa
+sa_dist_11003479083,وجه الحسن,state_city_sa_gov_111,base.sa
+sa_dist_11003479084,قوز الجعافره,state_city_sa_gov_111,base.sa
+sa_dist_11003479085,العبده,state_city_sa_gov_111,base.sa
+sa_dist_11003479086,حلة ابراهيم عيسى,state_city_sa_gov_111,base.sa
+sa_dist_11003479087,الرجيع,state_city_sa_gov_111,base.sa
+sa_dist_11003479089,الأثلة,state_city_sa_gov_111,base.sa
+sa_dist_11003479090,زربه,state_city_sa_gov_111,base.sa
+sa_dist_11003479091,الجديين,state_city_sa_gov_111,base.sa
+sa_dist_11003479092,شيبان,state_city_sa_gov_111,base.sa
+sa_dist_11003479093,الحجرين,state_city_sa_gov_111,base.sa
+sa_dist_11003479094,زباره الجديين,state_city_sa_gov_111,base.sa
+sa_dist_11003479095,حله محمد عيسى,state_city_sa_gov_111,base.sa
+sa_dist_11003479096,حله العقيبي,state_city_sa_gov_111,base.sa
+sa_dist_11003479097,حله الحو تين,state_city_sa_gov_111,base.sa
+sa_dist_11003479098,حله الصهلولي,state_city_sa_gov_111,base.sa
+sa_dist_11003479099,حله مشاري,state_city_sa_gov_111,base.sa
+sa_dist_11003479100,حله الحكمى,state_city_sa_gov_111,base.sa
+sa_dist_11003479101,حله عبدالله قبع,state_city_sa_gov_111,base.sa
+sa_dist_11003479102,حله الكلابيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479103,حله بن علوان,state_city_sa_gov_111,base.sa
+sa_dist_11003479104,حلة المكي,state_city_sa_gov_111,base.sa
+sa_dist_11003479105,حله ابو مرعي,state_city_sa_gov_111,base.sa
+sa_dist_11003479106,حله عطيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479107,الخضراء,state_city_sa_gov_111,base.sa
+sa_dist_11003479108,الجمالة,state_city_sa_gov_111,base.sa
+sa_dist_11003479109,الدحيقي,state_city_sa_gov_111,base.sa
+sa_dist_11003479110,قرية الجوابره,state_city_sa_gov_111,base.sa
+sa_dist_11003479111,الزقله,state_city_sa_gov_111,base.sa
+sa_dist_11003479112,نورة,state_city_sa_gov_111,base.sa
+sa_dist_11003479113,جميما,state_city_sa_gov_111,base.sa
+sa_dist_11003479114,المحاصيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479115,الجاره القديمه,state_city_sa_gov_111,base.sa
+sa_dist_11003479116,الزينيه,state_city_sa_gov_111,base.sa
+sa_dist_11003479117,حلة علي بن موسى,state_city_sa_gov_111,base.sa
+sa_dist_11003479118,الصامخ,state_city_sa_gov_111,base.sa
+sa_dist_11003479119,الشقافه والمصاوفة,state_city_sa_gov_111,base.sa
+sa_dist_11003479120,الكلبه,state_city_sa_gov_111,base.sa
+sa_dist_11003479121,الفصاله والدغاريه,state_city_sa_gov_111,base.sa
+sa_dist_11003479122,الحوامضه جحيش,state_city_sa_gov_111,base.sa
+sa_dist_11003479123,الشعافه,state_city_sa_gov_111,base.sa
+sa_dist_11003479124,ابوالمقره,state_city_sa_gov_111,base.sa
+sa_dist_11003479125,ام الشباقاء,state_city_sa_gov_111,base.sa
+sa_dist_11003479126,اللخبصية,state_city_sa_gov_111,base.sa
+sa_dist_11003479127,الشاخر,state_city_sa_gov_111,base.sa
+sa_dist_11003479128,ابو السلع,state_city_sa_gov_111,base.sa
+sa_dist_11003479129,الزيني,state_city_sa_gov_111,base.sa
+sa_dist_11003479130,العمارده,state_city_sa_gov_111,base.sa
+sa_dist_11003479131,الحواية,state_city_sa_gov_111,base.sa
+sa_dist_11003479132,القصاده,state_city_sa_gov_111,base.sa
+sa_dist_11003479133,النجابه و الجحاجح,state_city_sa_gov_111,base.sa
+sa_dist_11003479134,العرجين,state_city_sa_gov_111,base.sa
+sa_dist_11003479135,ابو الكرش,state_city_sa_gov_111,base.sa
+sa_dist_11003479136,السداده,state_city_sa_gov_111,base.sa
+sa_dist_11003479137,الرافعي,state_city_sa_gov_111,base.sa
+sa_dist_11003525001,حي السادلية,state_city_sa_gov_112,base.sa
+sa_dist_11003525002,حي الورود,state_city_sa_gov_112,base.sa
+sa_dist_11003525003,حي الصناعية,state_city_sa_gov_112,base.sa
+sa_dist_11003525004,حي القدس,state_city_sa_gov_112,base.sa
+sa_dist_11003525005,حي الملك فهد,state_city_sa_gov_112,base.sa
+sa_dist_11003525006,حي النهضة,state_city_sa_gov_112,base.sa
+sa_dist_11003525007,حي السلام,state_city_sa_gov_112,base.sa
+sa_dist_11003525008,حي الربيع,state_city_sa_gov_112,base.sa
+sa_dist_11003525009,حي الزهور,state_city_sa_gov_112,base.sa
+sa_dist_11003525010,حي النزهة,state_city_sa_gov_112,base.sa
+sa_dist_11003525011,حي الروضة,state_city_sa_gov_112,base.sa
+sa_dist_11003525012,حي الخالدية,state_city_sa_gov_112,base.sa
+sa_dist_11003525013,حي النسيم,state_city_sa_gov_112,base.sa
+sa_dist_11003525014,حي الاندلس,state_city_sa_gov_112,base.sa
+sa_dist_11003525015,حي الصفا,state_city_sa_gov_112,base.sa
+sa_dist_11003525016,حي العقدة,state_city_sa_gov_112,base.sa
+sa_dist_11003525017,حي المريخية,state_city_sa_gov_112,base.sa
+sa_dist_11003525018,حي المهدج,state_city_sa_gov_112,base.sa
+sa_dist_11003525019,حي قويعية,state_city_sa_gov_112,base.sa
+sa_dist_11003525020,حي قامرة,state_city_sa_gov_112,base.sa
+sa_dist_11003525021,حي حاكمة ابي عريش,state_city_sa_gov_112,base.sa
+sa_dist_11003525022,حي الشاقة,state_city_sa_gov_112,base.sa
+sa_dist_11003542001,حي الركوبة,state_city_sa_gov_113,base.sa
+sa_dist_11003542002,حي الجردية,state_city_sa_gov_113,base.sa
+sa_dist_11003542003,حي الجرادية,state_city_sa_gov_113,base.sa
+sa_dist_11003542004,حي صامطة,state_city_sa_gov_113,base.sa
+sa_dist_11003542005,حي الطرشية,state_city_sa_gov_113,base.sa
+sa_dist_11003542006,حي مجعر,state_city_sa_gov_113,base.sa
+sa_dist_11003542007,حي الخضراء,state_city_sa_gov_113,base.sa
+sa_dist_11003542008,الواسط,state_city_sa_gov_113,base.sa
+sa_dist_11003542009,حي الزاوية,state_city_sa_gov_113,base.sa
+sa_dist_11003597001,حي الربيع,state_city_sa_gov_115,base.sa
+sa_dist_11003597002,حي الروابى,state_city_sa_gov_115,base.sa
+sa_dist_11003597003,حي النخيل,state_city_sa_gov_115,base.sa
+sa_dist_11003652001,حي الغصينية,state_city_sa_gov_114,base.sa
+sa_dist_11003652002,حي الواسط,state_city_sa_gov_114,base.sa
+sa_dist_11003652003,حي العمارية,state_city_sa_gov_114,base.sa
+sa_dist_11003652004,حي القسوم,state_city_sa_gov_114,base.sa
+sa_dist_11003652005,حي الصفا,state_city_sa_gov_114,base.sa
+sa_dist_11003652006,حي البياطرية,state_city_sa_gov_114,base.sa
+sa_dist_11003652007,حي خلب,state_city_sa_gov_114,base.sa
+sa_dist_11003652008,حي الروضة,state_city_sa_gov_114,base.sa
+sa_dist_11003652009,حي العز,state_city_sa_gov_114,base.sa
+sa_dist_11003652010,حي البلدية,state_city_sa_gov_114,base.sa
+sa_dist_11003652011,حي الميزاب,state_city_sa_gov_114,base.sa
+sa_dist_11003652012,حي المنزم,state_city_sa_gov_114,base.sa
+sa_dist_11003652013,حي المطلع,state_city_sa_gov_114,base.sa
+sa_dist_11003652014,حي الحصامة,state_city_sa_gov_114,base.sa
+sa_dist_11003652015,المنطقة الصناعية,state_city_sa_gov_114,base.sa
+sa_dist_11003652016,حي حكامية العز,state_city_sa_gov_114,base.sa
+sa_dist_11003652017,حي حاكمة الدغارير,state_city_sa_gov_114,base.sa
+sa_dist_11003652018,حي الدغارير,state_city_sa_gov_114,base.sa
+sa_dist_11102522001,حي الصالحية,state_city_sa_gov_131,base.sa
+sa_dist_11102522002,حي يدمة الثاني,state_city_sa_gov_131,base.sa
+sa_dist_11102522003,حي جنوب يدمة,state_city_sa_gov_131,base.sa
+sa_dist_11102522004,حي يدمة الاول,state_city_sa_gov_131,base.sa
+sa_dist_11102522005,حي الحزام الشرقي,state_city_sa_gov_131,base.sa
+sa_dist_11103347001,حي الفيصلية,state_city_sa_gov_128,base.sa
+sa_dist_11103347002,حي السوق,state_city_sa_gov_128,base.sa
+sa_dist_11103347003,حي جنوب المستشفى العسكري,state_city_sa_gov_128,base.sa
+sa_dist_11103347004,حي سلطانة,state_city_sa_gov_128,base.sa
+sa_dist_11103347005,حي المستشفى العسكري,state_city_sa_gov_128,base.sa
+sa_dist_11103347006,حي الروضة الشمالية,state_city_sa_gov_128,base.sa
+sa_dist_11103347007,مخطط ا,state_city_sa_gov_128,base.sa
+sa_dist_11103347008,مخطط ب,state_city_sa_gov_128,base.sa
+sa_dist_11103347009,حي الصناعية,state_city_sa_gov_128,base.sa
+sa_dist_11103347010,حي الفهد,state_city_sa_gov_128,base.sa
+sa_dist_11103347011,حي الروضة الجنوبية,state_city_sa_gov_128,base.sa
+sa_dist_11103347012,حي النزهة,state_city_sa_gov_128,base.sa
+sa_dist_11103396001,حي حبونا,state_city_sa_gov_129,base.sa
+sa_dist_11103417001,حي العان,state_city_sa_gov_127,base.sa
+sa_dist_11103417002,حي الشرفة الجنوبية,state_city_sa_gov_127,base.sa
+sa_dist_11103417003,حي الغويلا ب,state_city_sa_gov_127,base.sa
+sa_dist_11103417004,حي القابل,state_city_sa_gov_127,base.sa
+sa_dist_11103417005,حي شرق رجلا,state_city_sa_gov_127,base.sa
+sa_dist_11103417006,حي الشبهان,state_city_sa_gov_127,base.sa
+sa_dist_11103417007,حي صهبان,state_city_sa_gov_127,base.sa
+sa_dist_11103417009,حي شعب رير,state_city_sa_gov_127,base.sa
+sa_dist_11103417010,حي الصناعية,state_city_sa_gov_127,base.sa
+sa_dist_11103417011,حي المعامر,state_city_sa_gov_127,base.sa
+sa_dist_11103417012,حي زور الحارث,state_city_sa_gov_127,base.sa
+sa_dist_11103417013,حي ريمان,state_city_sa_gov_127,base.sa
+sa_dist_11103417014,حي الخالدية,state_city_sa_gov_127,base.sa
+sa_dist_11103417015,حي الامير مشعل,state_city_sa_gov_127,base.sa
+sa_dist_11103417016,المطار,state_city_sa_gov_127,base.sa
+sa_dist_11103417017,حي الجربة,state_city_sa_gov_127,base.sa
+sa_dist_11103417018,حي الحصين,state_city_sa_gov_127,base.sa
+sa_dist_11103417019,حي المركب,state_city_sa_gov_127,base.sa
+sa_dist_11103417020,حي أبا السعود,state_city_sa_gov_127,base.sa
+sa_dist_11103417021,حي نهوقة,state_city_sa_gov_127,base.sa
+sa_dist_11103417022,حي صحيفات,state_city_sa_gov_127,base.sa
+sa_dist_11103417023,حي بنى سلمان,state_city_sa_gov_127,base.sa
+sa_dist_11103417024,حي زور العماري,state_city_sa_gov_127,base.sa
+sa_dist_11103417025,حي تصلال,state_city_sa_gov_127,base.sa
+sa_dist_11103417026,حي جنوب الجامعة,state_city_sa_gov_127,base.sa
+sa_dist_11103417027,حي الخرعاء,state_city_sa_gov_127,base.sa
+sa_dist_11103417028,حي الصفا,state_city_sa_gov_127,base.sa
+sa_dist_11103417029,حي سقام,state_city_sa_gov_127,base.sa
+sa_dist_11103417030,حي أبا الخريـت,state_city_sa_gov_127,base.sa
+sa_dist_11103417031,حي فواز,state_city_sa_gov_127,base.sa
+sa_dist_11103417032,حي الاثايبة,state_city_sa_gov_127,base.sa
+sa_dist_11103417033,حي العريسة,state_city_sa_gov_127,base.sa
+sa_dist_11103417034,حي صاغر,state_city_sa_gov_127,base.sa
+sa_dist_11103417035,حي المسماة,state_city_sa_gov_127,base.sa
+sa_dist_11103417036,حي الفيصلية,state_city_sa_gov_127,base.sa
+sa_dist_11103417037,حي شرق المطار أ,state_city_sa_gov_127,base.sa
+sa_dist_11103417038,جامعة نجران,state_city_sa_gov_127,base.sa
+sa_dist_11103417039,حي الحضن,state_city_sa_gov_127,base.sa
+sa_dist_11103417040,حي الموفجة,state_city_sa_gov_127,base.sa
+sa_dist_11103417041,حي غرب الدارة,state_city_sa_gov_127,base.sa
+sa_dist_11103417042,حي بئر أبين,state_city_sa_gov_127,base.sa
+sa_dist_11103417043,حي برك,state_city_sa_gov_127,base.sa
+sa_dist_11103417044,حي الفهد,state_city_sa_gov_127,base.sa
+sa_dist_11103417045,حي الحايرة,state_city_sa_gov_127,base.sa
+sa_dist_11103417046,حي الرويكبة,state_city_sa_gov_127,base.sa
+sa_dist_11103417047,حي شعب بران,state_city_sa_gov_127,base.sa
+sa_dist_11103417048,حي النهضة,state_city_sa_gov_127,base.sa
+sa_dist_11103417049,حي الغويلا د,state_city_sa_gov_127,base.sa
+sa_dist_11103417050,حي المشعلية الشمالية,state_city_sa_gov_127,base.sa
+sa_dist_11103417051,حي الشعبة الغربية,state_city_sa_gov_127,base.sa
+sa_dist_11103417052,حي دحضة,state_city_sa_gov_127,base.sa
+sa_dist_11103417053,حي الغويلا أ,state_city_sa_gov_127,base.sa
+sa_dist_11103417054,حي الابرقين,state_city_sa_gov_127,base.sa
+sa_dist_11103417055,حي ابا الرشاش,state_city_sa_gov_127,base.sa
+sa_dist_11103417056,حي العريسة,state_city_sa_gov_127,base.sa
+sa_dist_11103417057,حي سلوى,state_city_sa_gov_127,base.sa
+sa_dist_11103417058,حي زور وادعة,state_city_sa_gov_127,base.sa
+sa_dist_11103417059,حي نهيقة,state_city_sa_gov_127,base.sa
+sa_dist_11103417060,حي الشرفة الغربية,state_city_sa_gov_127,base.sa
+sa_dist_11103417061,حي الغويلا ج,state_city_sa_gov_127,base.sa
+sa_dist_11103417062,حي الخضراء القديمة,state_city_sa_gov_127,base.sa
+sa_dist_11103417063,حي شرق المطار ج,state_city_sa_gov_127,base.sa
+sa_dist_11103417064,حي شرق المطار د,state_city_sa_gov_127,base.sa
+sa_dist_11103417065,حي شرق المطار ب,state_city_sa_gov_127,base.sa
+sa_dist_11103417066,حي شرق الدارة,state_city_sa_gov_127,base.sa
+sa_dist_11103417067,حي الشعبة الشرقية,state_city_sa_gov_127,base.sa
+sa_dist_11103417068,حي المشعلية الجنوبية,state_city_sa_gov_127,base.sa
+sa_dist_11103417069,حي الـرمال,state_city_sa_gov_127,base.sa
+sa_dist_11103417070,حي رجلا الشماليـة,state_city_sa_gov_127,base.sa
+sa_dist_11103417071,حي الاخدود,state_city_sa_gov_127,base.sa
+sa_dist_11103417072,حي رجلا الجنوبية,state_city_sa_gov_127,base.sa
+sa_dist_11103417073,حي الشرفة الشمالية,state_city_sa_gov_127,base.sa
+sa_dist_11103417074,حي المخيم,state_city_sa_gov_127,base.sa
+sa_dist_11201531001,حي الشطيبة,state_city_sa_gov_135,base.sa
+sa_dist_11201542001,حي الشروق,state_city_sa_gov_134,base.sa
+sa_dist_11201542002,حي النسيم,state_city_sa_gov_134,base.sa
+sa_dist_11201542003,حي السلامة,state_city_sa_gov_134,base.sa
+sa_dist_11201542004,حي الصفا,state_city_sa_gov_134,base.sa
+sa_dist_11201542005,حي الازهر,state_city_sa_gov_134,base.sa
+sa_dist_11201542006,حي الضباب,state_city_sa_gov_134,base.sa
+sa_dist_11201542007,حي شهبة,state_city_sa_gov_134,base.sa
+sa_dist_11201542008,حي النزهة,state_city_sa_gov_134,base.sa
+sa_dist_11201542009,حي الربوة,state_city_sa_gov_134,base.sa
+sa_dist_11201542010,حي الشفا,state_city_sa_gov_134,base.sa
+sa_dist_11201542011,حي البريدة,state_city_sa_gov_134,base.sa
+sa_dist_11201542012,حي المرتفعات,state_city_sa_gov_134,base.sa
+sa_dist_11201542013,حي الروضة,state_city_sa_gov_134,base.sa
+sa_dist_11201542014,حي الباهر,state_city_sa_gov_134,base.sa
+sa_dist_11201542015,حي الحجاز,state_city_sa_gov_134,base.sa
+sa_dist_11201542016,حي ج1,state_city_sa_gov_134,base.sa
+sa_dist_11201542017,حي ج2,state_city_sa_gov_134,base.sa
+sa_dist_11201542018,حي ج4,state_city_sa_gov_134,base.sa
+sa_dist_11201542019,حي ج5,state_city_sa_gov_134,base.sa
+sa_dist_11201542020,حي الطفير,state_city_sa_gov_134,base.sa
+sa_dist_11202819001,مخطط المطار,state_city_sa_gov_138,base.sa
+sa_dist_11202819002,حي الغوث,state_city_sa_gov_138,base.sa
+sa_dist_11302226001,حي حصيدة,state_city_sa_gov_145,base.sa
+sa_dist_11302226003,حي الملك فهد,state_city_sa_gov_145,base.sa
+sa_dist_11302226004,حي الفيصلية,state_city_sa_gov_145,base.sa
+sa_dist_11302226006,حي الصناعية,state_city_sa_gov_145,base.sa
+sa_dist_11302226012,حي الشفا,state_city_sa_gov_145,base.sa
+sa_dist_11302226015,حي المروج,state_city_sa_gov_145,base.sa
+sa_dist_11302226016,حي الورود,state_city_sa_gov_145,base.sa
+sa_dist_11302226017,حي الرحمة,state_city_sa_gov_145,base.sa
+sa_dist_11302226018,حي العزيزية,state_city_sa_gov_145,base.sa
+sa_dist_11302226019,حي السلام,state_city_sa_gov_145,base.sa
+sa_dist_11302226020,حي الجوهرة,state_city_sa_gov_145,base.sa
+sa_dist_11302226021,حي النرجس,state_city_sa_gov_145,base.sa
+sa_dist_11302226022,حي الازدهار,state_city_sa_gov_145,base.sa
+sa_dist_11302226023,حي النفل,state_city_sa_gov_145,base.sa
+sa_dist_11302226024,حي الريحان,state_city_sa_gov_145,base.sa
+sa_dist_11302226025,حي الدانة,state_city_sa_gov_145,base.sa
+sa_dist_11302226026,حي النخيل,state_city_sa_gov_145,base.sa
+sa_dist_11302226027,حي الريان,state_city_sa_gov_145,base.sa
+sa_dist_11302226028,حي الياسمين,state_city_sa_gov_145,base.sa
+sa_dist_11302226029,حي الرسالة,state_city_sa_gov_145,base.sa
+sa_dist_11302226030,حي الاندلس,state_city_sa_gov_145,base.sa
+sa_dist_11302226031,حي الروضة,state_city_sa_gov_145,base.sa
+sa_dist_11302226032,حي الشروق,state_city_sa_gov_145,base.sa
+sa_dist_11302226033,حي الوادي,state_city_sa_gov_145,base.sa
+sa_dist_11302226034,حي الخزامى,state_city_sa_gov_145,base.sa
+sa_dist_11302226035,حي الرواد,state_city_sa_gov_145,base.sa
+sa_dist_11302226036,حي الروابي,state_city_sa_gov_145,base.sa
+sa_dist_11302226037,حي الفرسان,state_city_sa_gov_145,base.sa
+sa_dist_11302226038,حي البادية,state_city_sa_gov_145,base.sa
+sa_dist_11302226039,حي المنار,state_city_sa_gov_145,base.sa
+sa_dist_11302226040,حي الامير عبدالاله بن عبدالعزيز,state_city_sa_gov_145,base.sa
+sa_dist_11302226041,حي الواحة,state_city_sa_gov_145,base.sa
+sa_dist_11302226042,حي الغدير,state_city_sa_gov_145,base.sa
+sa_dist_11302226043,حي الرحاب,state_city_sa_gov_145,base.sa
+sa_dist_11302226044,حي الندى,state_city_sa_gov_145,base.sa
+sa_dist_11302226045,حي الربيع,state_city_sa_gov_145,base.sa
+sa_dist_11302226046,حي الامل,state_city_sa_gov_145,base.sa
+sa_dist_11302226047,حي الزيتون,state_city_sa_gov_145,base.sa
+sa_dist_11302226048,حي النهضة,state_city_sa_gov_145,base.sa
+sa_dist_11302226049,حي الرفاع,state_city_sa_gov_145,base.sa
+sa_dist_11302226050,حي الصفاء,state_city_sa_gov_145,base.sa
+sa_dist_11302226051,حي النزهة,state_city_sa_gov_145,base.sa
+sa_dist_11302226052,حي الزمرد,state_city_sa_gov_145,base.sa
+sa_dist_11302237001,حي العزيزية,state_city_sa_gov_144,base.sa
+sa_dist_11302237002,حي الشعلة,state_city_sa_gov_144,base.sa
+sa_dist_11302237003,حي الهدا,state_city_sa_gov_144,base.sa
+sa_dist_11302237004,حي الاندلس,state_city_sa_gov_144,base.sa
+sa_dist_11302237005,حي الرحمانية,state_city_sa_gov_144,base.sa
+sa_dist_11302237006,حي البديعة,state_city_sa_gov_144,base.sa
+sa_dist_11302237007,حي الصالحية,state_city_sa_gov_144,base.sa
+sa_dist_11302237008,حي الزهور,state_city_sa_gov_144,base.sa
+sa_dist_11302237009,حي الرواد,state_city_sa_gov_144,base.sa
+sa_dist_11302237010,حي المنار,state_city_sa_gov_144,base.sa
+sa_dist_11302237011,حي النور,state_city_sa_gov_144,base.sa
+sa_dist_11302237012,حي النخيل,state_city_sa_gov_144,base.sa
+sa_dist_11302237013,حي الزهراء,state_city_sa_gov_144,base.sa
+sa_dist_11302237014,حي السليمانية,state_city_sa_gov_144,base.sa
+sa_dist_11302237015,حي الروضة,state_city_sa_gov_144,base.sa
+sa_dist_11302237016,حي الندى,state_city_sa_gov_144,base.sa
+sa_dist_11302237017,حي الحزم,state_city_sa_gov_144,base.sa
+sa_dist_11302237018,حي الغدير,state_city_sa_gov_144,base.sa
+sa_dist_11302237019,حي الزيتون,state_city_sa_gov_144,base.sa
+sa_dist_11302237020,حي المروج,state_city_sa_gov_144,base.sa
+sa_dist_11302237021,حي الازدهار,state_city_sa_gov_144,base.sa
+sa_dist_11302237022,حي الجوهرة,state_city_sa_gov_144,base.sa
+sa_dist_11302237023,حي الصناعية,state_city_sa_gov_144,base.sa
+sa_dist_11302237024,حي المجد,state_city_sa_gov_144,base.sa
+sa_dist_11302237025,حي الريان,state_city_sa_gov_144,base.sa
+sa_dist_11302237026,حي الربيع,state_city_sa_gov_144,base.sa
+sa_dist_11302237027,حي النهضة,state_city_sa_gov_144,base.sa
+sa_dist_11302237028,حي أحد,state_city_sa_gov_144,base.sa
+sa_dist_11302237029,حي الفرسان,state_city_sa_gov_144,base.sa
+sa_dist_11302237030,حي الرسالة,state_city_sa_gov_144,base.sa
+sa_dist_11302237031,حي العروبة,state_city_sa_gov_144,base.sa
+sa_dist_11302237032,حي الشفاء,state_city_sa_gov_144,base.sa
+sa_dist_11302237033,حي الشروق,state_city_sa_gov_144,base.sa
+sa_dist_11302237034,حي الرحاب,state_city_sa_gov_144,base.sa
+sa_dist_11302237035,حي النزهة,state_city_sa_gov_144,base.sa
+sa_dist_11302237036,حي الفاروق,state_city_sa_gov_144,base.sa
+sa_dist_11302237037,حي الياسمين,state_city_sa_gov_144,base.sa
+sa_dist_11302237038,حي الطوير,state_city_sa_gov_144,base.sa
+sa_dist_11302237039,حي سلطانة,state_city_sa_gov_144,base.sa
+sa_dist_11302237040,حي السنابل,state_city_sa_gov_144,base.sa
+sa_dist_11302237041,حي الضاحية,state_city_sa_gov_144,base.sa
+sa_dist_11302237042,حي الشعيب,state_city_sa_gov_144,base.sa
+sa_dist_11302237043,حي الواحة,state_city_sa_gov_144,base.sa
+sa_dist_11302237044,حي الفيصلية,state_city_sa_gov_144,base.sa
+sa_dist_11302237045,حي المعاقلة,state_city_sa_gov_144,base.sa
+sa_dist_11302237046,حي المطر,state_city_sa_gov_144,base.sa
+sa_dist_11302237047,حي الصديق,state_city_sa_gov_144,base.sa
+sa_dist_11302237048,حي البستان,state_city_sa_gov_144,base.sa
+sa_dist_11302237049,حي الخليج,state_city_sa_gov_144,base.sa
+sa_dist_11302237050,حي الفتح,state_city_sa_gov_144,base.sa
+sa_dist_11302237051,حي الورود,state_city_sa_gov_144,base.sa
+sa_dist_11302237052,حي السلام,state_city_sa_gov_144,base.sa
+sa_dist_11302237053,حي السوق,state_city_sa_gov_144,base.sa
+sa_dist_11302237054,حي الشلهوب,state_city_sa_gov_144,base.sa
+sa_dist_11302237055,حي المحمدية,state_city_sa_gov_144,base.sa
+sa_dist_11302237056,حي الزعفران,state_city_sa_gov_144,base.sa
+sa_dist_11302237057,حي النفل,state_city_sa_gov_144,base.sa
+sa_dist_11302237058,حي الربوة,state_city_sa_gov_144,base.sa
+sa_dist_11302237059,حي اليرموك,state_city_sa_gov_144,base.sa
+sa_dist_11302237060,حي الصفاء,state_city_sa_gov_144,base.sa
+sa_dist_11302237061,حي الكوثر,state_city_sa_gov_144,base.sa
+sa_dist_11302237062,حي الضلع,state_city_sa_gov_144,base.sa
+sa_dist_11302237063,حي بدر,state_city_sa_gov_144,base.sa
+sa_dist_11302237064,حي التلال,state_city_sa_gov_144,base.sa
+sa_dist_11302237065,حي الياقوت,state_city_sa_gov_144,base.sa
+sa_dist_11302237066,حي السنبلة,state_city_sa_gov_144,base.sa
+sa_dist_11302237067,حي المرجان,state_city_sa_gov_144,base.sa
+sa_dist_11302237068,حي الظلال,state_city_sa_gov_144,base.sa
+sa_dist_11302237069,حي اليمام,state_city_sa_gov_144,base.sa
+sa_dist_11302237070,حي اجياد,state_city_sa_gov_144,base.sa
+sa_dist_11302237071,حي الروابي,state_city_sa_gov_144,base.sa
+sa_dist_11302237072,حي الرابية,state_city_sa_gov_144,base.sa
+sa_dist_11302240001,حي الزيتون,state_city_sa_gov_147,base.sa
+sa_dist_11302240002,حي العزيزية,state_city_sa_gov_147,base.sa
+sa_dist_11302240003,حي الخالدية,state_city_sa_gov_147,base.sa
+sa_dist_11302240004,حي الرحمانية,state_city_sa_gov_147,base.sa
+sa_dist_11302240005,حي الخزامى,state_city_sa_gov_147,base.sa
+sa_dist_11302240006,حي حدرج,state_city_sa_gov_147,base.sa
+sa_dist_11302240007,حي الربيع,state_city_sa_gov_147,base.sa
+sa_dist_11302240008,حي النسيم,state_city_sa_gov_147,base.sa
+sa_dist_11302240009,حي البستان,state_city_sa_gov_147,base.sa
+sa_dist_11302240010,حي الصفا,state_city_sa_gov_147,base.sa
+sa_dist_11302240011,حي الاندلس,state_city_sa_gov_147,base.sa
+sa_dist_11302240012,حي المروج,state_city_sa_gov_147,base.sa
+sa_dist_11302240013,حي النفل,state_city_sa_gov_147,base.sa
+sa_dist_11302240014,حي النخيل,state_city_sa_gov_147,base.sa
+sa_dist_11302240015,حي الحزم,state_city_sa_gov_147,base.sa
+sa_dist_11302240016,حي الواحة,state_city_sa_gov_147,base.sa
+sa_dist_11302240017,حي السلام,state_city_sa_gov_147,base.sa
+sa_dist_11302240018,حي الشفاء,state_city_sa_gov_147,base.sa
+sa_dist_11302240019,حي الورود,state_city_sa_gov_147,base.sa
+sa_dist_11302240020,حي المروة,state_city_sa_gov_147,base.sa
+sa_dist_11302240021,حي السمح,state_city_sa_gov_147,base.sa
+sa_dist_11302240022,حي النزهة,state_city_sa_gov_147,base.sa
+sa_dist_11302240023,حي الصالحية,state_city_sa_gov_147,base.sa
+sa_dist_11302240024,حي الروابي,state_city_sa_gov_147,base.sa
+sa_dist_11302240025,حي الربوة,state_city_sa_gov_147,base.sa
+sa_dist_11302240026,حي العروبة,state_city_sa_gov_147,base.sa
+sa_dist_11302240027,حي المنتزة,state_city_sa_gov_147,base.sa
+sa_dist_11302240028,حي الرحاب,state_city_sa_gov_147,base.sa
+sa_dist_11302268001,حي الغروب,state_city_sa_gov_146,base.sa
+sa_dist_11302268002,حي التحكيم,state_city_sa_gov_146,base.sa
+sa_dist_11302268003,حي غرب دومة الجندل,state_city_sa_gov_146,base.sa
+sa_dist_11302268004,حي الغربي,state_city_sa_gov_146,base.sa
+sa_dist_11302268005,حي الوادي,state_city_sa_gov_146,base.sa
+sa_dist_11302268006,حي البحيرات,state_city_sa_gov_146,base.sa
+sa_dist_11302268007,حي الربوة,state_city_sa_gov_146,base.sa
+sa_dist_11302268008,حي الملك فهد,state_city_sa_gov_146,base.sa
+sa_dist_11302268009,حي خذماء,state_city_sa_gov_146,base.sa
+sa_dist_11302268010,حي العزيزية,state_city_sa_gov_146,base.sa
+sa_dist_11302268011,حي الفيصلية,state_city_sa_gov_146,base.sa
+sa_dist_11302268012,حي سيل الدلهمية,state_city_sa_gov_146,base.sa
+sa_dist_11302268013,حي الملك عبدالعزيز,state_city_sa_gov_146,base.sa
+sa_dist_11302268014,حي اليمامة,state_city_sa_gov_146,base.sa
+sa_dist_11302268015,حي الخالدية,state_city_sa_gov_146,base.sa
+sa_dist_11302268016,حي المروج,state_city_sa_gov_146,base.sa
+sa_dist_11302268017,حي الصفاه الاول,state_city_sa_gov_146,base.sa
+sa_dist_11302268018,حي أصفان,state_city_sa_gov_146,base.sa
+sa_dist_11302268021,حي الرديفة والرافعية,state_city_sa_gov_146,base.sa
+sa_dist_11302268022,حي الدانة,state_city_sa_gov_146,base.sa
+sa_dist_11302268023,حي التلال,state_city_sa_gov_146,base.sa
+sa_dist_11302268024,حي البوداي,state_city_sa_gov_146,base.sa
+sa_dist_11302268025,حي الصناعي,state_city_sa_gov_146,base.sa
+sa_dist_11302268026,حي النزهة,state_city_sa_gov_146,base.sa
+sa_dist_11302268027,حي الشفاء,state_city_sa_gov_146,base.sa
+sa_dist_11302268028,حي الغدير,state_city_sa_gov_146,base.sa
+sa_dist_11302268029,حي الجوهرة,state_city_sa_gov_146,base.sa
+sa_dist_11302268030,حي الصفاه الثاني,state_city_sa_gov_146,base.sa
+sa_dist_11302268031,حي المصيف,state_city_sa_gov_146,base.sa

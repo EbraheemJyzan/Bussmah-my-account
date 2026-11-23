@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ============================================== -->
+        <!-- User Roles Mapping                             -->
+        <!-- ============================================== -->
+        <record id="role_analyst" model="res.users.role">
+            <field name="name">Analyst Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_analyst')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_studies_manager" model="res.users.role">
+            <field name="name">Studies Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_studies_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_deputy_studies_manager" model="res.users.role">
+            <field name="name">Deputy Studies Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_deputy_studies_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_rnd_manager" model="res.users.role">
+            <field name="name">R&amp;D Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_rnd_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_sales_manager" model="res.users.role">
+            <field name="name">Sales Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_sales_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_auctions_manager" model="res.users.role">
+            <field name="name">Auctions Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_auctions_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_commercial_sector_manager" model="res.users.role">
+            <field name="name">Commercial Sector Manager Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_commercial_sector_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_negotiator" model="res.users.role">
+            <field name="name">Negotiator Role</field>
+            <field name="implied_ids" eval="[(4, ref('group_negotiator')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="role_contract_manager" model="res.users.role">
+            <field name="name">Contract Manager Role (مسؤول التعاقد)</field>
+            <field name="implied_ids" eval="[(4, ref('group_contract_manager')), (4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="user_analyst" model="res.users">
+            <field name="name">Analyst (الدارس)</field>
+            <field name="login">analyst@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_studies_manager" model="res.users">
+            <field name="name">Studies Manager (مدير الدراسات)</field>
+            <field name="login">studies_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_deputy_studies_manager" model="res.users">
+            <field name="name">Deputy Studies Manager (نائب مدير الدراسات)</field>
+            <field name="login">deputy_studies@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_rnd_manager" model="res.users">
+            <field name="name">R&amp;D Manager (مدير البحث والتطوير)</field>
+            <field name="login">rnd_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_sales_manager" model="res.users">
+            <field name="name">Sales Manager (مدير المبيعات)</field>
+            <field name="login">sales_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_auctions_manager" model="res.users">
+            <field name="name">Auctions Manager (مدير المزادات)</field>
+            <field name="login">auctions_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_commercial_sector_manager" model="res.users">
+            <field name="name">Commercial Sector Manager (مدير القطاع التجاري)</field>
+            <field name="login">commercial_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_negotiator" model="res.users">
+            <field name="name">Negotiator (المتفاوض)</field>
+            <field name="login">negotiator@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+        <record id="user_contract_manager" model="res.users">
+            <field name="name">Contract Manager (مسؤول التعاقد)</field>
+            <field name="login">contract_manager@gmail.com</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="tz">Asia/Riyadh</field>
+        </record>
+
+    </data>
+
+    <data noupdate="1">
+        <!-- Linking Users to Roles -->
+        <record id="role_analyst_link" model="res.users.role.line">
+            <field name="role_id" ref="role_analyst"/>
+            <field name="user_id" ref="user_analyst"/>
+        </record>
+
+        <record id="role_studies_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_studies_manager"/>
+            <field name="user_id" ref="user_studies_manager"/>
+        </record>
+
+        <record id="role_deputy_studies_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_deputy_studies_manager"/>
+            <field name="user_id" ref="user_deputy_studies_manager"/>
+        </record>
+
+        <record id="role_rnd_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_rnd_manager"/>
+            <field name="user_id" ref="user_rnd_manager"/>
+        </record>
+
+        <record id="role_sales_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_sales_manager"/>
+            <field name="user_id" ref="user_sales_manager"/>
+        </record>
+
+        <record id="role_auctions_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_auctions_manager"/>
+            <field name="user_id" ref="user_auctions_manager"/>
+        </record>
+
+        <record id="role_commercial_sector_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_commercial_sector_manager"/>
+            <field name="user_id" ref="user_commercial_sector_manager"/>
+        </record>
+
+        <record id="role_negotiator_link" model="res.users.role.line">
+            <field name="role_id" ref="role_negotiator"/>
+            <field name="user_id" ref="user_negotiator"/>
+        </record>
+
+        <record id="role_contract_manager_link" model="res.users.role.line">
+            <field name="role_id" ref="role_contract_manager"/>
+            <field name="user_id" ref="user_contract_manager"/>
+        </record>
+    </data>
+</odoo>

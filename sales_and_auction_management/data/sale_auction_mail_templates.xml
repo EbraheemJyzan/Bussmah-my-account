@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Email Template: Project Manager Assigned (sales and auction management Project) -->
+        <record id="email_template_sales_auction_project_manager_assigned" model="mail.template">
+            <field name="name">Project Manager Assigned (Project)</field>
+            <field name="model_id" ref="sales_and_auction_management.model_bussma_project"/>
+            <field name="subject">تم تعيينك مدير مشروع للمشروع {{ object.name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        <t t-out="object.project_manager_id.name"/><br/><br/>
+                        تم تعيينكم مدير مشروع للمشروع 
+                        <strong><t t-out="object.name or 'N/A'"/></strong>.<br/>
+                        نرجو التكرم بالدخول إلى النظام ومتابعة أعمال المشروع.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط المشروع
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Study User Assigned for Government Auctions (Eanfaz) -->
+        <record id="email_template_sales_auction_study_user_assigned" model="mail.template">
+            <field name="name">Sales and Auction Management: Study User Assigned (Eanfaz)</field>
+            <field name="model_id" ref="sales_and_auction_management.model_sales_auction_management"/>
+            <field name="subject">تم تعيينك دارساً للعقار {{ object.auction_name or object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        <t t-out="object.assigned_study_user_id.name"/><br/><br/>
+                        تم تعيينكم دارساً للعقار
+                        <strong><t t-out="object.auction_name or 'N/A'"/></strong>
+                        <t t-if="object.entrie_name">
+                            (رقم العقار: <strong><t t-out="object.entrie_name"/></strong>)
+                        </t>.<br/>
+                        نرجو التكرم بالدخول إلى النظام واستكمال الدراسة المطلوبة،
+                        وذلك لضمان استمرارية العمل وفق الجدول الزمني المحدد.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط العقار
+                        </a>
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الإدراج
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template: Real Estate Portfolio New Property Notification -->
+        <record id="email_template_sales_auction_portfolio_new_property" model="mail.template">
+            <field name="name">Sales and Auction Management: Portfolio New Property</field>
+            <field name="model_id" ref="sales_and_auction_management.model_sales_auction_management"/>
+            <field name="subject">Notification: New Property in Real Estate Portfolio - {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        A new property has been added to the Real Estate Portfolio.<br/><br/>
+                        <strong>Document:</strong> "<t t-out="object.entrie_name or 'N/A'"/>"
+                        <t t-if="object.project_type_selection == 'sales' or (object.entry_id and object.entry_id.committee_decision == 'direct_sale')">
+                            (Sales Department)
+                        </t>
+                        <t t-else="">
+                            (Auctions Department)
+                        </t>
+                        <br/><br/>
+                        Please log in to the system to follow up on the work.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

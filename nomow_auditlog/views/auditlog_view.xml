@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- auditlog.rule -->
+    <record model="ir.ui.view" id="view_auditlog_rule_form">
+        <field name="name">auditlog.rule.form</field>
+        <field name="model">auditlog.rule</field>
+        <field name="arch" type="xml">
+            <form string="Rule">
+                <header>
+                    <button string="Subscribe" name="subscribe" type="object" invisible="state != 'draft'" class="oe_highlight" />
+                    <button string="Unsubscribe" name="unsubscribe" type="object" invisible="state != 'subscribed'" />
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Rule Name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Log Sale Orders" readonly="state == 'subscribed'"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Configuration">
+                            <field name="model_id" readonly="state == 'subscribed'" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="log_type" readonly="state == 'subscribed'"/>
+                            <field name="capture_record" invisible="log_type != 'full' or log_unlink != True"/>
+                            <field name="users_to_exclude_ids" widget="many2many_avatar_user" readonly="state == 'subscribed'"/>
+                            <field name="fields_to_exclude_ids" widget="many2many_tags" readonly="state == 'subscribed'" options="{'no_create': True}"/>
+                            <field name="action_id" readonly="state == 'subscribed'" groups="base.group_no_one"/>
+                        </group>
+                        <group string="Operations to Log">
+                            <field name="log_create" readonly="state == 'subscribed'"/>
+                            <field name="log_read" readonly="state == 'subscribed'"/>
+                            <field name="log_write" readonly="state == 'subscribed'"/>
+                            <field name="log_unlink" readonly="state == 'subscribed'"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_auditlog_rule_tree">
+        <field name="name">auditlog.rule.tree</field>
+        <field name="model">auditlog.rule</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'draft'" decoration-bf="state == 'subscribed'">
+                <field name="name" />
+                <field name="model_id" />
+                <field name="log_type" />
+                <field name="log_read" />
+                <field name="log_write" />
+                <field name="log_unlink" />
+                <field name="log_create" />
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'subscribed'" />
+            </list>
+        </field>
+    </record>
+    <record id="view_auditlog_rule_search" model="ir.ui.view">
+        <field name="name">auditlog.rule.search</field>
+        <field name="model">auditlog.rule</field>
+        <field name="arch" type="xml">
+            <search string="Rules">
+                <field name="name" />
+                <filter name="state_draft" domain="[('state','=','draft')]" string="Draft" />
+                <filter name="state_subscribed" domain="[('state','=','subscribed')]" string="Subscribed" />
+                <field name="model_id" />
+                <group expand="0" string="Group By...">
+                    <filter name="group_by_state" string="State" domain="[]" context="{'group_by':'state'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_auditlog_rule_tree">
+        <field name="name">Rules</field>
+        <field name="res_model">auditlog.rule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="view_auditlog_rule_search" />
+    </record>
+    <!-- auditlog.log -->
+    <record model="ir.ui.view" id="view_auditlog_log_form">
+        <field name="name">auditlog.log.form</field>
+        <field name="model">auditlog.log</field>
+        <field name="arch" type="xml">
+            <form string="Log" delete="false" create="false" edit="false">
+                <header>
+                    <field name="method_type" invisible="1" />
+                    <field name="is_store" invisible="1"/>
+                    <button name="restore_data" icon="fa-refresh" invisible="method_type != 'unlink' or is_store" type="object" string="Restore Record" class="oe_highlight" />
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Restored" bg_color="text-bg-success" invisible="not is_store"/>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="record_exists" invisible="1"/>
+                        <button name="action_open_record" type="object" class="oe_stat_button" icon="fa-external-link" invisible="not record_exists">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">View Record</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Resource Name"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Log Information">
+                            <field name="model_id" readonly="1" options="{'no_open': True}"/>
+                            <field name="res_id" readonly="1" string="Record ID"/>
+                            <field name="restored_res_id" readonly="1" invisible="not is_store" string="Restored Record ID"/>
+                            <field name="user_id" widget="many2one_avatar_user" readonly="1"/>
+                            <field name="method_type" widget="badge" decoration-info="method_type == 'create'" decoration-warning="method_type == 'write'" decoration-danger="method_type == 'unlink'" readonly="1" />
+                        </group>
+                        <group string="Metadata">
+                            <field name="create_date" readonly="1" string="Log Date"/>
+                            <field name="log_type" readonly="1" />
+                            <field name="ip_address" readonly="1" />
+                            <field name="os" readonly="1" />
+                            <field name="browser" readonly="1" />
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Modified Fields" name="modified_fields">
+                            <field name="line_ids" readonly="1" nolabel="1">
+                                <form string="Field Change Details">
+                                    <group>
+                                        <field name="field_id" readonly="1" />
+                                        <field name="field_name" invisible="field_id != False" readonly="1" groups="base.group_no_one" />
+                                    </group>
+                                    <group string="Values" col="4">
+                                        <field name="old_value" readonly="1" />
+                                        <field name="new_value" readonly="1" />
+                                        <field name="old_value_text" readonly="1" />
+                                        <field name="new_value_text" readonly="1" />
+                                    </group>
+                                </form>
+                                <list>
+                                    <field name="field_description" />
+                                    <field name="field_name" groups="base.group_no_one" />
+                                    <field name="old_value_text" string="Old Value"/>
+                                    <field name="new_value_text" string="New Value"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Creation Log" name="creation_log" invisible="not log_create_id or method_type == 'create'">
+                            <group>
+                                <group string="Log Information">
+                                    <field name="log_create_user_id" widget="many2one_avatar_user" readonly="1"/>
+                                </group>
+                                <group string="Metadata">
+                                    <field name="log_create_date" readonly="1" string="Log Date"/>
+                                    <field name="ip_address" readonly="1" />
+                                    <field name="os" readonly="1" />
+                                    <field name="browser" readonly="1" />
+                                </group>
+                            </group>
+                            <field name="log_create_line_ids" readonly="1" nolabel="1">
+                                <form string="Field Change Details">
+                                    <group>
+                                        <field name="field_id" readonly="1" />
+                                        <field name="field_name" invisible="field_id != False" readonly="1" groups="base.group_no_one" />
+                                    </group>
+                                    <group string="Values" col="4">
+                                        <field name="new_value" readonly="1" />
+                                        <field name="new_value_text" readonly="1" />
+                                    </group>
+                                </form>
+                                <list>
+                                    <field name="field_description" />
+                                    <field name="field_name" groups="base.group_no_one" />
+                                    <field name="new_value_text" string="New Value"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Write Logs" name="write_logs" invisible="not log_write_ids">
+                            <group>
+                                <field name="log_write_ids" readonly="1" nolabel="1" colspan="2" widget="many2many">
+                                    <list create="false" edit="false" delete="false">
+                                        <field name="create_date"/>
+                                        <field name="user_id"/>
+                                        <field name="method_type"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Technical Context" name="technical_context" groups="base.group_no_one">
+                            <group>
+                                <group string="Model Technical Details">
+                                    <field name="model_name" readonly="1" />
+                                    <field name="model_model" readonly="1" />
+                                </group>
+                                <group string="HTTP Context">
+                                    <field name="http_session_id" readonly="1" />
+                                    <field name="http_request_id" readonly="1" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_auditlog_log_tree">
+        <field name="name">auditlog.log.tree</field>
+        <field name="model">auditlog.log</field>
+        <field name="arch" type="xml">
+            <list create="false" delete="false">
+                <header>
+                    <button name="restore_data" type="object" string="Restore Records" class="oe_highlight" />
+                </header>
+                <field name="create_date" />
+                <field name="name" />
+                <field name="model_id" />
+                <field name="res_id" />
+                <field name="method_type" widget="badge" decoration-info="method_type == 'create'" decoration-warning="method_type == 'write'" decoration-danger="method_type == 'unlink'" />
+                <field name="user_id" />
+                <field name="ip_address" optional="show" />
+                <field name="os" optional="show" />
+                <field name="is_store" widget="badge" decoration-success="is_store == True" optional="show" string="Restored"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_auditlog_log_search" model="ir.ui.view">
+        <field name="name">auditlog.log.search</field>
+        <field name="model">auditlog.log</field>
+        <field name="arch" type="xml">
+            <search string="Logs">
+                <field name="name" string="Resource Name or ID" filter_domain="['|', ('name', 'ilike', self), ('res_id', '=', self)]" />
+                <field name="res_id" string="Resource ID" />
+                <field name="model_id" string="Model" />
+                <field name="model_model" string="Technical Model Name" />
+                <field name="user_id" string="User" />
+                <field name="method" string="Method" />
+                <field name="http_session_id" string="Session ID" />
+                <field name="http_request_id" string="HTTP Request Path" />
+                <field name="ip_address" string="IP Address" />
+                <field name="os" string="OS" />
+
+                <filter name="filter_create" string="Created Records" domain="[('method_type', '=', 'create')]" />
+                <filter name="filter_write" string="Modified Records" domain="[('method_type', '=', 'write')]" />
+                <filter name="filter_unlink" string="Deleted Records" domain="[('method_type', '=', 'unlink')]" />
+                <separator/>
+                <filter name="filter_restored" string="Restored Records" domain="[('is_store', '=', True)]" />
+                <filter name="filter_not_restored" string="Deleted &amp; Not Restored" domain="[('method_type', '=', 'unlink'), ('is_store', '=', False)]" />
+                <separator/>
+                <filter name="filter_today" string="Today" domain="[('create_date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00'))]"/>
+                <filter name="filter_yesterday" string="Yesterday" domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:00')), ('create_date', '&lt;', context_today().strftime('%Y-%m-%d 00:00:00'))]"/>
+                <filter name="filter_week" string="Last 7 Days" domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d 00:00:00'))]"/>
+                <separator/>
+                <filter name="filter_full_log" string="Full Logs" domain="[('log_type', '=', 'full')]" />
+                <filter name="filter_fast_log" string="Fast Logs" domain="[('log_type', '=', 'fast')]" />
+
+                <group expand="0" string="Group By...">
+                    <filter name="group_by_user_id" string="User" domain="[]" context="{'group_by':'user_id'}" />
+                    <filter name="group_by_model_id" string="Model" domain="[]" context="{'group_by':'model_id'}" />
+                    <filter name="method_type" string="Operation Type" domain="[]" context="{'group_by':'method_type'}" />
+                    <filter name="group_by_res_id" string="Resource ID" domain="[]" context="{'group_by':'res_id'}" />
+                    <filter name="group_by_create_date" string="Date" domain="[]" context="{'group_by':'create_date:day'}" />
+                    <filter name="group_by_http_session" string="User session" domain="[]" context="{'group_by':'http_session_id'}" />
+                    <filter name="group_by_http_request" string="HTTP Request" domain="[]" context="{'group_by':'http_request_id'}" />
+                    <filter name="group_by_ip_address" string="IP Address" domain="[]" context="{'group_by':'ip_address'}" />
+                    <filter name="group_by_os" string="OS" domain="[]" context="{'group_by':'os'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_auditlog_log_tree">
+        <field name="name">Logs</field>
+        <field name="res_model">auditlog.log</field>
+        <field name="search_view_id" ref="view_auditlog_log_search" />
+    </record>
+    <!-- auditlog.log.line -->
+    <record model="ir.ui.view" id="view_auditlog_line_tree">
+        <field name="name">view.auditlog.line.tree</field>
+        <field name="model">auditlog.log.line.view</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="create_date" optional="show" />
+                <field name="user_id" optional="show" />
+                <field name="http_session_id" optional="hide" />
+                <field name="http_request_id" optional="hide" />
+                <field name="name" optional="show" />
+                <field name="model_id" optional="hide" />
+                <field name="model_model" optional="hide" />
+                <field name="model_name" optional="hide" />
+                <field name="field_id" optional="hide" />
+                <field name="field_name" optional="hide" />
+                <field name="field_description" optional="show" />
+                <field name="old_value" optional="hide" />
+                <field name="new_value" optional="hide" />
+                <field name="old_value_text" optional="show" />
+                <field name="new_value_text" optional="show" />
+                <field name="log_type" optional="hide" />
+            </list>
+        </field>
+    </record>
+    <record id="view_auditlog_line_search" model="ir.ui.view">
+        <field name="name">auditlog.line.search</field>
+        <field name="model">auditlog.log.line.view</field>
+        <field name="arch" type="xml">
+            <search string="Log Lines">
+                <field name="name" string="Resource Name or ID" filter_domain="['|', ('name', 'ilike', self), ('res_id', '=', self)]" />
+                <field name="model_id" />
+                <field name="res_id" />
+                <field name="user_id" />
+                <group expand="0" string="Group By...">
+                    <filter name="group_by_user_id" string="User" domain="[]" context="{'group_by':'user_id'}" />
+                    <filter name="group_by_model_id" string="Model" domain="[]" context="{'group_by':'model_id'}" />
+                    <filter name="group_by_field_id" string="Field" domain="[]" context="{'group_by':'field_id'}" />
+                    <filter name="group_by_res_id" string="Resource ID" domain="[]" context="{'group_by':'res_id'}" />
+                    <filter name="group_by_create_date" string="Date" domain="[]" context="{'group_by':'create_date'}" />
+                    <filter name="group_by_http_session" string="User session" domain="[]" context="{'group_by':'http_session_id'}" />
+                    <filter name="group_by_http_request" string="HTTP Request" domain="[]" context="{'group_by':'http_request_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_auditlog_line" model="ir.actions.act_window">
+        <field name="name">Log Lines</field>
+        <field name="res_model">auditlog.log.line.view</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_auditlog_line_search" />
+        <field name="context">{'search_default_group_by_model_id': 1}</field>
+    </record>
+
+    <!-- auditlog.restore.confirm.wizard -->
+    <record id="view_auditlog_restore_confirm_wizard_form" model="ir.ui.view">
+        <field name="name">auditlog.restore.confirm.wizard.form</field>
+        <field name="model">auditlog.restore.confirm.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Restore Confirmation">
+                <div class="alert alert-warning mb-3" role="alert">
+                    <p class="mb-0 fs-5"><field name="message" readonly="1" nolabel="1"/></p>
+                </div>
+                <footer>
+                    <button name="action_confirm_restore" string="Yes, Continue" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

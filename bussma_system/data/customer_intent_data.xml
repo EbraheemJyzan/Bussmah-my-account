@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Customer Intent Data                                              -->
+        <!-- ================================================================ -->
+
+        <record id="customer_intent_direct_sale" model="customer.intent">
+            <field name="name">Direct Sale</field>
+            <field name="code">direct_sale</field>
+        </record>
+
+        <record id="customer_intent_auction" model="customer.intent">
+            <field name="name">Auction</field>
+            <field name="code">auction</field>
+        </record>
+
+        <record id="customer_intent_select_all" model="customer.intent">
+            <field name="name">Select All</field>
+            <field name="code">select_all</field>
+        </record>
+
+        <record id="customer_intent_studies_recommendation" model="customer.intent">
+            <field name="name">Studies Recommendation</field>
+            <field name="code">studies_recommendation</field>
+        </record>
+
+    </data>
+</odoo>

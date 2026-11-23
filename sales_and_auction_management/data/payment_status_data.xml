@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="payment_status_invoice_paid" model="payment.status">
+            <field name="name">Real Estate Invoice Paid</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="payment_status_amount_paid" model="payment.status">
+            <field name="name">Amount Paid</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="payment_status_not_paid" model="payment.status">
+            <field name="name">Not Paid</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

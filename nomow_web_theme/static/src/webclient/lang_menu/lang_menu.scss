@@ -1,0 +1,19 @@
+.dropdown-lang{
+    .dropdown-toggle{
+        &:focus,
+        &:hover {
+            // background: darken($mk_color_brand, 10%);
+            color: $mk-appbar-background !important;
+        }
+    }
+    .o_menu_item{
+        color: $mk-appbar-background;
+    }
+    .o_lang_flag{
+        width: 1em;
+        height: 1em;
+        margin-right: 0.2em;
+        border-radius: 50rem;
+        object-fit: cover;
+    }
+}

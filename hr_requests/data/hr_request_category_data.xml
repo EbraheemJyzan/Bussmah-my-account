@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for HR Request -->
+        <record id="seq_hr_request" model="ir.sequence">
+            <field name="name">Sequence for HR Request</field>
+            <field name="code">hr.request</field>
+            <field name="prefix">HRREQ/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Categories for Employee Requests -->
+        <record id="category_documents_certificates" model="hr.request.category">
+            <field name="name">حزمة الوثائق والشهادات</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="category_salaries_benefits" model="hr.request.category">
+            <field name="name">حزمة الرواتب والمزايا</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="category_medical_insurance" model="hr.request.category">
+            <field name="name">حزمة التأمين الطبي</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="category_travel_visas" model="hr.request.category">
+            <field name="name">حزمة السفر والتأشيرات</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="category_tech_services" model="hr.request.category">
+            <field name="name">حزمة الخدمات التقنية</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="category_admin_services" model="hr.request.category">
+            <field name="name">حزمة الخدمات الإدارية</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">60</field>
+        </record>
+
+        <record id="category_training_development" model="hr.request.category">
+            <field name="name">حزمة التدريب والتطوير</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">70</field>
+        </record>
+
+        <record id="category_professional_cert" model="hr.request.category">
+            <field name="name">حزمة التوثيق المهني</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">80</field>
+        </record>
+
+        <record id="category_other_requests" model="hr.request.category">
+            <field name="name">طلبات اخرى</field>
+            <field name="employee_classification">employee</field>
+            <field name="sequence">90</field>
+        </record>
+
+        <!-- Categories for Manager Requests -->
+        <record id="category_employee_management" model="hr.request.category">
+            <field name="name">حزمة إدارة الموظفين</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record id="category_discipline_performance" model="hr.request.category">
+            <field name="name">حزمة الإنظباط والأداء</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">110</field>
+        </record>
+
+        <record id="category_attendance_time" model="hr.request.category">
+            <field name="name">حزمة الدوام والوقت</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">120</field>
+        </record>
+
+        <record id="category_purchases_expenses" model="hr.request.category">
+            <field name="name">حزمة المشتريات والمصروفات</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">130</field>
+        </record>
+
+        <record id="category_accidents_safety" model="hr.request.category">
+            <field name="name">حزمة الحوادث والسلامة</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">140</field>
+        </record>
+
+        <record id="category_official_accreditations" model="hr.request.category">
+            <field name="name">حزمة الشهادات والاعتمادات الرسمية</field>
+            <field name="employee_classification">manager</field>
+            <field name="sequence">150</field>
+        </record>
+    </data>
+</odoo>

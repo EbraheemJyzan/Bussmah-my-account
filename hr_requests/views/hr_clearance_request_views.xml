@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Clearance Request Tree / List View -->
+    <record id="view_hr_clearance_request_tree" model="ir.ui.view">
+        <field name="name">hr.clearance.request.tree</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <list string="Clearance Requests">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="employee_number"/>
+                <field name="job_title"/>
+                <field name="employee_department"/>
+                <field name="procedure_types"/>
+                <field name="joining_date"/>
+                <field name="last_working_day"/>
+                <field name="date"/>
+                <field name="stage_id" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Clearance Request Form View -->
+    <record id="view_hr_clearance_request_form" model="ir.ui.view">
+        <field name="name">hr.clearance.request.form</field>
+        <field name="model">hr.request</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <form string="Clearance Request">
+                <header>
+                    <field name="is_clearance" invisible="1"/>
+                    <field name="hr_stage_selection" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_emp_manager_logged" invisible="1"/>
+                    <field name="is_hr_user_logged" invisible="1"/>
+                    <field name="is_finance_user_logged" invisible="1"/>
+                    <field name="is_it_user_logged" invisible="1"/>
+                    <field name="is_legal_user_logged" invisible="1"/>
+                    <field name="is_system" invisible="1"/>
+                    <field name="is_hr_manager" invisible="1"/>
+
+                    <!-- Stage Action Buttons -->
+                    <button name="action_clearance_submit"
+                            string="Submit Request"
+                            type="object"
+                            class="btn-primary"
+                            invisible="hr_stage_selection != 'clearance_draft' or not is_hr_manager"
+                            confirm="Are you sure you want to submit this clearance request?"/>
+                    <button name="action_clearance_to_departments"
+                            string="Pass to Departments"
+                            type="object"
+                            class="btn-primary"
+                            invisible="hr_stage_selection != 'clearance_emp_dept' or (not is_emp_manager_logged and not is_hr_manager)"
+                            confirm="Confirm moving to Concerned Departments stage?"/>
+                    <button name="action_clearance_archive"
+                            string="Send to Archive"
+                            type="object"
+                            class="btn-success"
+                            invisible="hr_stage_selection != 'clearance_departments' or not is_hr_manager"
+                            confirm="Are you sure you want to move this request to Archive?"/>
+                    <button name="action_clearance_reset_to_draft"
+                            string="Reset to Draft"
+                            type="object"
+                            invisible="hr_stage_selection in ('clearance_draft', False) or not is_hr_manager"
+                            confirm="Do you want to reset the request to Draft stage?"/>
+
+                    <field name="stage_id" widget="statusbar" domain="[('hr_stage_selection', 'in', ('clearance_draft', 'clearance_emp_dept', 'clearance_departments', 'clearance_archive'))]"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <!-- Header Fields Before Notebook -->
+                    <group string="Clearance Request Details">
+                        <group>
+                            <field name="date" string="Request Date" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="user_id" string="Employee Name" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="employee_number" string="Employee Number" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="job_title" string="Job Title" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="procedure_types" string="Procedure Type" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                        </group>
+                        <group>
+                            <field name="joining_date" string="First Working Day" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="last_working_day" string="Last Working Day" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="employee_department" string="Employee Department" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="employee_manager_id" string="Department Manager" readonly="not is_hr_manager or hr_stage_selection != 'clearance_draft'"/>
+                            <field name="procedure_status" invisible="1"/>
+                            <field name="procedure_status_ids" widget="many2many_checkboxes" string="Procedure Status" readonly="not is_hr_manager or hr_stage_selection == 'clearance_archive'"/>
+                            <field name="final_interview" string="Final Interview" readonly="not is_hr_manager"/>
+                        </group>
+                    </group>
+
+                    <!-- Department Notebook Pages -->
+                    <notebook>
+                        <page string="Employee Management" invisible="(hr_stage_selection == 'clearance_draft' and not is_hr_manager) or (not is_emp_manager_logged and not is_hr_manager)">
+                            <group>
+                                <field name="emp_dept_custody_status" widget="radio" options="{'horizontal': true}" readonly="not is_emp_manager_logged"/>
+                                <field name="emp_dept_notes" placeholder="Employee Management Notes..." readonly="not is_emp_manager_logged"/>
+                            </group>
+                        </page>
+
+                        <page string="HR Department" invisible="(hr_stage_selection in ('clearance_draft', 'clearance_emp_dept') and not is_hr_manager) or (not is_hr_user_logged and not is_hr_manager)">
+                            <group>
+                                <field name="hr_user_id" readonly="not is_system"/>
+                                <field name="hr_custody_status" widget="radio" options="{'horizontal': true}" readonly="not is_hr_user_logged"/>
+                                <field name="hr_notes" placeholder="HR Notes..." readonly="not is_hr_user_logged"/>
+                            </group>
+                        </page>
+
+                        <page string="Financial Department" invisible="(hr_stage_selection in ('clearance_draft', 'clearance_emp_dept') and not is_hr_manager) or (not is_finance_user_logged and not is_hr_manager)">
+                            <group>
+                                <field name="finance_user_id" readonly="not is_system"/>
+                                <field name="finance_custody_status" widget="radio" options="{'horizontal': true}" readonly="not is_finance_user_logged"/>
+                                <field name="finance_notes" placeholder="Financial Notes..." readonly="not is_finance_user_logged"/>
+                            </group>
+                        </page>
+
+                        <page string="IT Department" invisible="(hr_stage_selection in ('clearance_draft', 'clearance_emp_dept') and not is_hr_manager) or (not is_it_user_logged and not is_hr_manager)">
+                            <group>
+                                <field name="it_user_id" readonly="not is_system"/>
+                                <field name="it_custody_status" widget="radio" options="{'horizontal': true}" readonly="not is_it_user_logged"/>
+                                <field name="it_notes" placeholder="IT Notes..." readonly="not is_it_user_logged"/>
+                            </group>
+                        </page>
+
+                        <page string="Legal Department" invisible="(hr_stage_selection in ('clearance_draft', 'clearance_emp_dept') and not is_hr_manager) or (not is_legal_user_logged and not is_hr_manager)">
+                            <group>
+                                <field name="legal_user_id" readonly="not is_system"/>
+                                <field name="legal_custody_status" widget="radio" options="{'horizontal': true}" readonly="not is_legal_user_logged"/>
+                                <field name="legal_notes" placeholder="Legal Notes..." readonly="not is_legal_user_logged"/>
+                            </group>
+                        </page>
+
+                        <page string="Attachments and Notes" invisible="not is_hr_manager or hr_stage_selection == 'clearance_archive'">
+                            <group>
+                                <field name="attachment_ids" widget="many2many_binary" string="Attachments"/>
+                                <field name="notes" placeholder="Enter any additional notes here..."/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Clearance Request Search View -->
+    <record id="view_hr_clearance_request_search" model="ir.ui.view">
+        <field name="name">hr.clearance.request.search</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <search string="Search Clearance Requests">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="employee_number"/>
+                <field name="employee_department"/>
+                <field name="stage_id"/>
+                <filter string="My Requests" name="my_requests" domain="[('user_id', '=', uid)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Employee Department" name="group_department" context="{'group_by': 'employee_department'}"/>
+                    <filter string="Procedure Type" name="group_procedure_types" context="{'group_by': 'procedure_types'}"/>
+                    <filter string="Procedure Status" name="group_procedure_status" context="{'group_by': 'procedure_status'}"/>
+                    <filter string="Stage" name="group_stage" context="{'group_by': 'stage_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Clearance Request Kanban View -->
+    <record id="view_hr_clearance_request_kanban" model="ir.ui.view">
+        <field name="name">hr.clearance.request.kanban</field>
+        <field name="model">hr.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" class="o_kanban_small_column" group_create="false" records_draggable="false" group_delete="false" edit="false" delete="false">
+                <field name="name"/>
+                <field name="employee_department"/>
+                <field name="user_id"/>
+                <field name="stage_id"/>
+                <field name="hr_stage_selection"/>
+                <field name="activity_state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="o_kanban_record_headings">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="user_id"/>
+                        </div>
+                        <div class="text-muted small">
+                            <field name="employee_department"/>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mt-2">
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="activity_ids" widget="kanban_activity"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Clearance Request Action -->
+    <record id="action_hr_clearance_request" model="ir.actions.act_window">
+        <field name="name">Clearance Requests</field>
+        <field name="res_model">hr.request</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_clearance', '=', True)]</field>
+        <field name="search_view_id" ref="view_hr_clearance_request_search"/>
+        <field name="context">{'default_is_clearance': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Clearance Request
+            </p>
+        </field>
+    </record>
+
+    <record id="action_hr_clearance_request_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_hr_clearance_request_kanban"/>
+        <field name="act_window_id" ref="action_hr_clearance_request"/>
+    </record>
+
+    <record id="action_hr_clearance_request_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_hr_clearance_request_tree"/>
+        <field name="act_window_id" ref="action_hr_clearance_request"/>
+    </record>
+
+    <record id="action_hr_clearance_request_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_hr_clearance_request_form"/>
+        <field name="act_window_id" ref="action_hr_clearance_request"/>
+    </record>
+
+</odoo>
