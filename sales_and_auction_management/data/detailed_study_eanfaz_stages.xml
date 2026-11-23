@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ================================================================ -->
+        <!-- Request Type: Detailed Study - Eanfaz                             -->
+        <!-- ================================================================ -->
+        <record id="detailed_study_eanfaz" model="request.type">
+            <field name="name">Detailed Study - Eanfaz</field>
+            <field name="res_model_id" ref="bussma_system.model_entries"/>
+            <field name="res_model">entries</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage 1: Studies Supervisor (Eanfaz)                             -->
+        <!-- ================================================================ -->
+        <record id="stage_studies_supervisor_eanfaz" model="request.stage">
+            <field name="name">Studies Supervisor</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="bussma_system.model_entries"/>
+            <field name="sequence">3</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [
+                ref('bussma_system.role_studies_manager'),
+                ref('bussma_system.role_deputy_studies_manager'),
+                ref('bussma_system.role_rnd_manager')
+            ])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('detailed_study_eanfaz')])]"/>
+            <field name="project_stage_selection">studies_supervisor_eanfaz</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage 2: Detailed Study (Eanfaz)                                 -->
+        <!-- ================================================================ -->
+        <record id="stage_detailed_study_eanfaz" model="request.stage">
+            <field name="name">Detailed Study</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="bussma_system.model_entries"/>
+            <field name="sequence">4</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_analyst')])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('detailed_study_eanfaz')])]"/>
+            <field name="project_stage_selection">detailed_study_eanfaz</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage 3: Detailed Study Approval - Eanfaz                         -->
+        <!-- ================================================================ -->
+        <record id="stage_detailed_study_approval_eanfaz" model="request.stage">
+            <field name="name">Detailed Study Approval - Eanfaz</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="bussma_system.model_entries"/>
+            <field name="sequence">5</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [
+                ref('bussma_system.role_studies_manager'),
+                ref('bussma_system.role_deputy_studies_manager'),
+                ref('bussma_system.role_rnd_manager')
+            ])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('detailed_study_eanfaz')])]"/>
+            <field name="project_stage_selection">detailed_study_approval_eanfaz</field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- Stage 4: Detailed Study - Eanfaz Completed                       -->
+        <!-- ================================================================ -->
+        <record id="stage_detailed_study_completed_eanfaz" model="request.stage">
+            <field name="name">Detailed Study - Eanfaz Completed</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="bussma_system.model_entries"/>
+            <field name="sequence">6</field>
+            <field name="state">done</field>
+            <field name="assign_type">users</field>
+            <field name="default_user_ids" eval="[(6, 0, [])]"/>
+            <field name="request_type_ids" eval="[(6, 0, [ref('detailed_study_eanfaz')])]"/>
+            <field name="project_stage_selection">detailed_study_completed_eanfaz</field>
+        </record>
+    </data>
+</odoo>

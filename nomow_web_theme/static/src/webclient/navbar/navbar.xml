@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+  <!--  Inherit navbar  -->
+    <t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//header[hasclass('o_navbar')]" position="inside">
+            <div class="sidebar_panel" id="sidebar_panel">
+                <div class="sidebar">
+                    <ul class="sidebar_menu">
+                        <t t-foreach="menuService.getApps()" t-as="app" t-key="app.id">
+                            <li t-att-data-menu-xmlid="app.xmlid" class="o_app fw-bolder py-2" t-att-class="{'active': menuService.getCurrentApp() === app}">
+                                <a role="menuitem" class="nav-link" t-att-href="getMenuItemHref(app)"  t-on-onClick="onNavBarDropdownItemSelection.bind(this)">
+                                    <img 
+                                        t-if="app.webIconData and app.webIconData != '/web/static/img/default_icon_app.png'"          		
+                                        class="sidebar_img" 
+                                        t-attf-src="{{app.webIconData}}"
+                                    />
+                                    <img class="sidebar_img" t-else=""
+                                        t-attf-src="/nomow_web_theme/static/src/img/main-menu.png"/>
+                                </a>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+        </xpath>
+    </t>
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//Dropdown" position="replace">
+            <button t-on-click="changeSidebar" class="nav-link btn btn-primary o-navigable o_menu_brand d-flex mx-2 o_not_editable btn-sidebar" type="button">
+                    <i class="oi oi-chevron-left fa-lg"/>
+            </button>
+        </xpath>
+    </t>
+</templates>

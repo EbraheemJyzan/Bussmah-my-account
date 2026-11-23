@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        The activity badge for bussma.opportunity kanban is rendered directly
+        in the base kanban view (bussma_opportunity_views.xml).
+        This file is kept as a placeholder for future theme-level overrides.
+    -->
+</odoo>

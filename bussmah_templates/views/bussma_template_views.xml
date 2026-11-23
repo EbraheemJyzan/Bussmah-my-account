@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Kanban View -->
+        <record id="view_bussma_template_kanban" model="ir.ui.view">
+            <field name="name">bussma.template.kanban</field>
+            <field name="model">bussma.template</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_dashboard o_emoticon_kanban" highlight_color="color" create="false" edit="false" delete="false" sample="1">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="form_view"/>
+                    <field name="model_name"/>
+                    <field name="description"/>
+                    <field name="image_128"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="card">
+                            <div t-attf-class="oe_kanban_card oe_kanban_color_#{record.color.raw_value} p-2 shadow-sm rounded border ms-1 me-1 mb-2" 
+                                 style="cursor: pointer; transition: all 0.2s ease-in-out; max-width: 310px;" 
+                                 type="object" 
+                                 name="action_open_form_view">
+                                <div class="o_kanban_card_header d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <t t-if="record.image_128.raw_value">
+                                            <img t-attf-src="/web/image/bussma.template/#{record.id.raw_value}/image_128" 
+                                                 alt="Template Image" 
+                                                 class="o_kanban_image rounded-circle border p-1 bg-white shadow-sm" 
+                                                 style="width: 38px; height: 38px; object-fit: cover;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="rounded-circle bg-primary bg-opacity-10 p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+                                                <i class="fa fa-file-text-o fa-lg text-primary"/>
+                                            </div>
+                                        </t>
+                                        <h4 class="o_kanban_record_title fw-bold mb-0 text-dark" style="font-size: 1.05rem;">
+                                            <field name="name"/>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_card_content mt-1">
+                                    <p class="text-muted mb-2" style="font-size: 0.85rem; min-height: 32px; line-height: 1.3;">
+                                        <field name="description"/>
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                                        <span class="badge bg-light text-secondary border small" style="font-size: 0.75rem;">
+                                            <i class="fa fa-code me-1"/> <field name="model_name"/>
+                                        </span>
+                                        <button type="object" name="action_open_form_view" class="btn btn-primary btn-sm px-2.5 py-1 fw-bold" style="font-size: 0.8rem;">
+                                            <i class="fa fa-plus-circle me-1"/> Open Template
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Form View (Restricted to Administrators Only) -->
+        <record id="view_bussma_template_form" model="ir.ui.view">
+            <field name="name">bussma.template.form</field>
+            <field name="model">bussma.template</field>
+            <field name="arch" type="xml">
+                <form string="Template">
+                    <sheet>
+                        <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                        <div class="oe_title">
+                            <label for="name" string="Template Name"/>
+                            <h1><field name="name" placeholder="e.g. Entries..."/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="form_view" readonly="1" options="{'no_create': True, 'no_open': True}" groups="base.group_system"/>
+                                <field name="model_name" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="color" widget="color_picker"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="description" placeholder="Template description..."/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bussma_template" model="ir.actions.act_window">
+            <field name="name">Templates</field>
+            <field name="res_model">bussma.template</field>
+            <field name="view_mode">kanban</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No templates added yet!
+                </p>
+            </field>
+        </record>
+        <record id="action_bussma_template_configuration" model="ir.actions.act_window">
+            <field name="name">Templates Configuration</field>
+            <field name="res_model">bussma.template</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No templates added yet!
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

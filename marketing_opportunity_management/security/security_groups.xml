@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="group_marketing_user" model="res.groups">
+            <field name="name">Marketing User</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+        </record>
+
+        <record id="group_marketing_supervisor" model="res.groups">
+            <field name="name">Marketing Supervisor</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+            <field name="implied_ids" eval="[(4, ref('group_marketing_user'))]"/>
+        </record>
+
+        <record id="group_opportunity_user" model="res.groups">
+            <field name="name">Opportunity User</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+        </record>
+
+        <record id="group_opportunity_management" model="res.groups">
+            <field name="name">Opportunity Management</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+            <field name="implied_ids" eval="[(4, ref('group_opportunity_user'))]"/>
+        </record>
+        <record id="group_opportunity_contact_officer" model="res.groups">
+            <field name="name">Assigned User</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user')), (4, ref('group_opportunity_user'))]"/>
+        </record>
+
+        <record id="group_department_manager" model="res.groups">
+            <field name="name">Department Managers</field>
+            <field name="category_id" ref="base.module_category_marketing"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

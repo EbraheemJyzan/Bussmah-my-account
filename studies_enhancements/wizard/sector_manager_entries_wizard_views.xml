@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="view_sector_manager_entries_wizard_form" model="ir.ui.view">
+        <field name="name">sector.manager.entries.wizard.form</field>
+        <field name="model">sector.manager.entries.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Commercial Sector Manager Actions">
+                <sheet>
+                    <field name="has_rejected_owner_entry" invisible="1"/>
+                    <field name="is_all_rejected_owner" invisible="1"/>
+                    <field name="entry_ids" invisible="1"/>
+
+                    <group>
+                        <field name="approval_process" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+
+                    <!-- Case 1: Committee Decision Approval -->
+                    <group invisible="approval_process != 'committee_decision'">
+                        <field name="commercial_sector_manager_approval" widget="radio" options="{'horizontal': true}" required="approval_process == 'committee_decision'"/>
+                        <field name="commercial_sector_manager_notes" placeholder="Enter notes here..." invisible="commercial_sector_manager_approval not in ('return_committee', 'approval', 'postponed')" required="commercial_sector_manager_approval == 'return_committee'"/>
+                        <field name="commercial_sector_manager_reason" placeholder="Enter reason for rejection or transfer here..." invisible="commercial_sector_manager_approval not in ('declined', 'transfer')" required="commercial_sector_manager_approval in ('declined', 'transfer')"/>
+                    </group>
+
+                    <!-- Case 2: Contract Approval -->
+                    <group invisible="approval_process != 'contract_approval'">
+                        <field name="commercial_sector_manager_contract_approval" widget="radio" options="{'horizontal': true}" required="approval_process == 'contract_approval'"/>
+                        <field name="commercial_sector_manager_contract_notes" placeholder="Enter notes or reason for rejection here..." invisible="commercial_sector_manager_contract_approval not in ('rejected', 'transfer', 'accepted')" required="approval_process == 'contract_approval' and commercial_sector_manager_contract_approval == 'rejected'"/>
+                    </group>
+
+                    <separator string="Selected Entries"/>
+                    <field name="line_ids">
+                        <list create="false" delete="true">
+                            <field name="entry_id" column_invisible="1" force_save="1"/>
+                            <field name="entrie_name"/>
+                            <field name="partner_id"/>
+                            <field name="customer_intent_rel"/>
+                            <field name="property_type"/>
+                            <field name="entered_by_id"/>
+                            <field name="stage_id"/>
+                            <field name="owner_decision_display" column_invisible="parent.approval_process != 'contract_approval'"/>
+                        </list>
+                    </field>
+                </sheet>
+                <footer>
+                    <!-- Committee Decision Buttons -->
+                    <button name="action_apply" string="Accept Listing and Move to Negotiation" type="object" class="btn-success"
+                            invisible="approval_process != 'committee_decision' or commercial_sector_manager_approval != 'approval'"/>
+
+                    <button name="action_apply" string="Return Listing to Committee" type="object" class="btn-warning"
+                            invisible="approval_process != 'committee_decision' or commercial_sector_manager_approval != 'return_committee'"/>
+
+                    <button name="action_apply" string="Transfer Listing to Partners Management" type="object" class="btn-info"
+                            invisible="approval_process != 'committee_decision' or commercial_sector_manager_approval != 'transfer'"/>
+
+                    <button name="action_apply" string="Decline Listing and Archive" type="object" class="btn-danger"
+                            invisible="approval_process != 'committee_decision' or commercial_sector_manager_approval != 'declined'"/>
+
+                    <button name="action_apply" string="Move to postponed page" type="object" class="btn-secondary"
+                            invisible="approval_process != 'committee_decision' or commercial_sector_manager_approval != 'postponed'"/>
+
+                    <!-- Contract Approval Buttons -->
+                    <button name="action_apply" string="Send To Contract Follow-up" type="object" class="btn-success"
+                            invisible="approval_process != 'contract_approval' or commercial_sector_manager_contract_approval != 'accepted' or has_rejected_owner_entry"/>
+
+                    <button name="action_apply" string="Archived Entry" type="object" class="btn-danger"
+                            invisible="approval_process != 'contract_approval' or commercial_sector_manager_contract_approval != 'accepted' or not is_all_rejected_owner"/>
+
+                    <button name="action_apply" string="Send To Contract Follow-up / Archived Entry" type="object" class="btn-success"
+                            invisible="approval_process != 'contract_approval' or commercial_sector_manager_contract_approval != 'accepted' or not (has_rejected_owner_entry and not is_all_rejected_owner)"/>
+
+                    <button name="action_apply" string="Return to Negotiator" type="object" class="btn-danger"
+                            invisible="approval_process != 'contract_approval' or commercial_sector_manager_contract_approval != 'rejected'"/>
+
+                    <button name="action_apply" string="Transfer Listing to Partners Management" type="object" class="btn-info"
+                            invisible="approval_process != 'contract_approval' or commercial_sector_manager_contract_approval != 'transfer'"/>
+
+                    <!-- Fallback button -->
+                    <button name="action_apply" string="Apply Action" type="object" class="btn-primary"
+                            invisible="(approval_process == 'committee_decision' and commercial_sector_manager_approval != False) or (approval_process == 'contract_approval' and commercial_sector_manager_contract_approval != False)"/>
+
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action bound to entries model list view for Commercial Sector Manager group only -->
+    <record id="action_sector_manager_entries_wizard" model="ir.actions.act_window">
+        <field name="name">Commercial Sector Manager Actions</field>
+        <field name="res_model">sector.manager.entries.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="bussma_system.model_entries"/>
+        <field name="binding_view_types">list</field>
+        <field name="groups_id" eval="[(4, ref('bussma_system.group_commercial_sector_manager'))]"/>
+    </record>
+</odoo>

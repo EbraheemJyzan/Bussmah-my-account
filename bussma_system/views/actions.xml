@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- ========================= -->
+        <!-- Actions -->
+        <!-- ========================= -->
+
+        <!-- ================================================================ -->
+        <!-- Entries Action                                                    -->
+        <!-- Stage: entry_screen — All Employees                              -->
+        <!-- ================================================================ -->
+        <record id="entries_action" model="ir.actions.act_window">
+            <field name="name">Entries</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('project_stage_selection', '=', 'entry_screen')]</field>
+            <field name="context">{'create': True, 'delete': False, 'is_entry_screen_action': True}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Define Project Path Action                                        -->
+        <!-- Stage: define_project_path_assign_analyst                        -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="define_project_path_action" model="ir.actions.act_window">
+            <field name="name">Define Project Path</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain" eval="[('stage_id', '=', ref('bussma_system.define_project_path_assign_analyst')),('is_entry_archive', '=', False),('is_deferred_opportunities_archive', '=', False),('is_listing_archive_2023', '=', False),('is_technical_offers_archive', '=', False),('is_partners_screen', '=', False)]"/>
+            <field name="context">{'create': False, 'delete': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Data Completion Action                                            -->
+        <!-- Stage: data_completion                                            -->
+        <!-- Allowed: Assigned Data Completer                                  -->
+        <!-- ================================================================ -->
+        <record id="data_completion_action" model="ir.actions.act_window">
+            <field name="name">Data Completion</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('project_stage_selection', '=', 'data_completion')]</field>
+            <field name="context">{'create': False, 'delete': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Preliminary Study Action                                          -->
+        <!-- Stages: analyst, study_approval, committee_decision ...          -->
+        <!-- Allowed: Studies Manager, Deputy, R&D Manager, Analyst           -->
+        <!-- ================================================================ -->
+        <record id="direct_sale_preliminary_study_action" model="ir.actions.act_window">
+            <field name="name">Preliminary Study</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,pivot,form</field>
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'analyst',
+                    'study_approval',
+                    'committee_decision',
+                    'sales_manager_decision',
+                    'auctions_manager_decision',
+                    'commercial_manager_approval',
+                    'assign_negotiator',
+                    'negotiator',
+                    'manager_contract_approval',
+                    'contract_followup',
+                    'contract_completion',
+                )),
+                ('is_assign_detailed_study', '=', False),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('is_partners_screen', '=', False),
+                ('project_path', '=', 'standard')
+            ]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+            <field name="search_view_id" ref="bussma_system.view_entries_search"/>
+            <field name="context">{'create': False, 'hide_personal_create_uid': True, 'search_default_project_stage': 1, 'delete': False}</field>
+
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Detailed Study Action                                             -->
+        <!-- Same participants as Preliminary Study                           -->
+        <!-- ================================================================ -->
+        <record id="direct_sale_detailed_study_action" model="ir.actions.act_window">
+            <field name="name">Detailed</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,pivot,graph,form</field>
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'detailed_study_analyst',
+                    'detailed_study_approval',
+                    'analyst',
+                    'study_approval',
+                    'committee_decision',
+                    'sales_manager_decision',
+                    'auctions_manager_decision',
+                    'commercial_manager_approval',
+                    'assign_negotiator',
+                    'negotiator',
+                    'manager_contract_approval',
+                    'contract_followup',
+                    'negotiation_approval',
+                    'contract_completion',
+                )),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False),
+                ('is_partners_screen', '=', False),
+                '|',
+                    ('is_assign_detailed_study', '=', True),
+                    ('project_path', '=', 'specialized')
+            ]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+            <field name="search_view_id" ref="bussma_system.view_entries_search"/>
+            <field name="context">{'create': False, 'hide_personal_create_uid': True, 'search_default_project_stage': 1, 'delete': False}</field>
+
+        </record>
+        
+        <!-- ================================================================ -->
+        <!-- City Study Action                                                 -->
+        <!-- Stages: city_study_analyst, city_study_approval                 -->
+        <!-- Allowed: Analyst, Studies Manager, Deputy, R&D Manager          -->
+        <!-- ================================================================ -->
+        <record id="direct_sale_city_study_action" model="ir.actions.act_window">
+            <field name="name">Cities</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[
+                ('project_stage_selection', 'in', (
+                    'city_study_analyst',
+                    'city_study_approval',
+                )),
+                ('is_entry_archive', '=', False),
+                ('is_deferred_opportunities_archive', '=', False),
+                ('is_listing_archive_2023', '=', False),
+                ('is_technical_offers_archive', '=', False)]
+            </field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+            <field name="search_view_id" ref="bussma_system.view_entries_search"/>
+            <field name="context">{'create': False, 'hide_personal_create_uid': True, 'search_default_project_stage': 1, 'delete': False}</field>
+
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Archived Entry Action                                             -->
+        <!-- ================================================================ -->
+
+        <record id="archived_entry_action" model="ir.actions.act_window">
+            <field name="name">Archived Entry</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_entry_archive', '=', True)]</field>
+            <field name="context">{'search_default_project_stage': 1, 'create': False, 'edit': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- Deferred Opportunities Archive Action -->
+        <record id="deferred_opportunities_archive_action" model="ir.actions.act_window">
+            <field name="name">Deferred Opportunities Archive</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_deferred_opportunities_archive', '=', True)]</field>
+            <field name="context">{'search_default_project_stage': 1, 'create': False, 'is_deferred_opportunities_archive_menu': True}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- Entries Archive - 2023 Action -->
+        <record id="listing_archive_2023_action" model="ir.actions.act_window">
+            <field name="name">Entries Archive - 2023</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_listing_archive_2023', '=', True)]</field>
+            <field name="context">{'search_default_project_stage': 1, 'create': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- Technical Offers Archive Action -->
+        <record id="technical_offers_archive_action" model="ir.actions.act_window">
+            <field name="name">Technical Offers Archive</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_technical_offers_archive', '=', True)]</field>
+            <field name="context">{'search_default_project_stage': 1, 'create': False}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- Partners Screen Action -->
+        <record id="partners_screen_action" model="ir.actions.act_window">
+            <field name="name">Partners Screen</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_partners_screen', '=', True)]</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+
+        <!-- Setting - request stage -->
+        <record id="action_request_stage" model="ir.actions.act_window">
+            <field name="name">request stage</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">request.stage</field>
+            <field name="view_mode">list,kanban,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <!-- Setting - request type -->
+        <record id="action_request_type" model="ir.actions.act_window">
+            <field name="name">request type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">request.type</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'default_res_model_id': 'bussma_system.project.main.project'}</field>
+            <field name="domain">[]</field>
+        </record>
+        
+        <!-- Action for Customers -->
+        <record id="action_res_partner_customer" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('is_customer', '=', True)]</field>
+            <field name="context">{'default_is_customer': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new customer
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Property Types -->
+        <record id="action_property_type" model="ir.actions.act_window">
+            <field name="name">Property Types</field>
+            <field name="res_model">property.type</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Define a new property type
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Property Usage Types -->
+        <record id="action_property_usage_type" model="ir.actions.act_window">
+            <field name="name">Property Usage Types</field>
+            <field name="res_model">property.usage.type</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Define a new property usage type
+                </p>
+            </field>
+        </record>
+
+        <!-- Saudi Cities (res.country.state) -->
+        <record id="action_saudi_cities" model="ir.actions.act_window">
+            <field name="name">Cities</field>
+            <field name="res_model">res.country.state</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('country_id.code', '=', 'SA'), ('code', '=like', 'CT_%')]</field>
+            <field name="context" eval="{'default_country_id': ref('base.sa'), 'default_code': 'CT_'}"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new city
+                </p>
+            </field>
+        </record>
+
+        <!-- Saudi Neighborhoods (res.city) -->
+        <record id="action_saudi_neighborhoods" model="ir.actions.act_window">
+            <field name="name">Neighborhoods</field>
+            <field name="res_model">res.city</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('country_id.code', '=', 'SA')]</field>
+                <field name="context" eval="{'default_country_id': ref('base.sa')}"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new neighborhood
+                </p>
+            </field>
+        </record>
+        <!-- ================================================================ -->
+        <!-- My Studies Action                                                  -->
+        <!-- Shows entries created by the current user from all study paths    -->
+        <!-- Grouped by stage, with searchpanel for path and stage             -->
+        <!-- ================================================================ -->
+        <record id="my_studies_action" model="ir.actions.act_window">
+            <field name="name">My Studies</field>
+            <field name="res_model">entries</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[
+                ('create_uid', '=', uid),
+            ]</field>
+            <field name="context">{
+                'create': False,
+                'search_default_group_by_stage': 1,
+                'delete': False,
+            }</field>
+            <field name="search_view_id" ref="bussma_system.view_my_studies_search"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('bussma_system.entries_kanban_view')}),
+                (0, 0, {'view_mode': 'list',   'view_id': ref('bussma_system.entries_list_view')}),
+                (0, 0, {'view_mode': 'form',   'view_id': ref('bussma_system.entries_form_view')})]"/>
+        </record>
+    </data>
+</odoo>

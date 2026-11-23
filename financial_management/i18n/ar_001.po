@@ -1,0 +1,1334 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* financial_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-19 13:54+0000\n"
+"PO-Revision-Date: 2026-08-19 13:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Warning: Request was "
+"returned with the following notes:</strong>"
+msgstr ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">تحذير: تم إرجاع الطلب مع "
+"الملاحظات التالية:</strong>"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تنسيق استثناء النشاط"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__advertising_campaign_costs
+msgid "Ad Campaign Costs"
+msgstr "تكاليف الحملات الإعلانية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__admin_accountant_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_admin_accountant
+#: model:request.stage,name:financial_management.stage_fin_admin_accountant
+msgid "Administration Accountant Approval"
+msgstr "اعتماد محاسب الإدارة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__admin_accountant_notes
+msgid "Administration Accountant Notes"
+msgstr "ملاحظات محاسب الإدارة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__employee_id
+msgid "Applicant"
+msgstr "مقدم الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Approval Decisions"
+msgstr "قرارات الاعتماد"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__admin_accountant_approval__approved
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__dept_mgr_approval__approved
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__financial_mgr_approval__approved
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__marketing_mgr_approval__approved
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__sector_accountant_approval__approved
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__sector_mgr_approval__approved
+msgid "Approved"
+msgstr "موافق"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_archived
+#: model:request.stage,name:financial_management.stage_fin_archived
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_financial_request_archived
+#: model:ir.ui.menu,name:financial_management.menu_financial_request_archived
+msgid "Archived Requests"
+msgstr "صندوق الطلبات المغلقة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the "
+"Administration Accountant Approval stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة اعتماد محاسب الإدارة؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the Commercial "
+"Sector Accountant Approval stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة اعتماد محاسب القطاع التجاري؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the Commercial "
+"Sector Manager Approval stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة اعتماد مدير القطاع التجاري؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the Department "
+"Manager Approval stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة اعتماد مدير القسم؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the Marketing "
+"Manager Approval stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة اعتماد مدير التسويق؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to reject the request and return it to the Request "
+"Submission stage?"
+msgstr "هل أنت متأكد من رفض الطلب وإعادته إلى مرحلة رفع الطلب؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Are you sure you want to submit the request for Marketing Manager approval?"
+msgstr "هل أنت متأكد من إرسال الطلب لاعتماد مدير التسويق؟"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__receipt_attachment_ids
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_attach_receipts
+#: model:request.stage,name:financial_management.stage_fin_attach_receipts
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Attach Receipts"
+msgstr "إرفاق الإيصالات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__auction_tools
+msgid "Auction Tools"
+msgstr "أدوات المزاد"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__emcee_costs
+msgid "Auctioneer Costs"
+msgstr "تكاليف المحرج"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__department__auctions
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Auctions"
+msgstr "المزادات"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__audio_recording
+msgid "Audio Recording"
+msgstr "التسجيل الصوتي"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__billboard_installation_costs
+msgid "Billboard Installation Costs"
+msgstr "تكاليف تركيب اللوحات"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__brochure_printing
+msgid "Brochures Printing"
+msgstr "طباعة بروشورات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_admin_accountant
+msgid "Can Approve Admin Accountant"
+msgstr "صلاحية اعتماد محاسب الإدارة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_dept_mgr
+msgid "Can Approve Dept Mgr"
+msgstr "صلاحية اعتماد مدير القسم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_financial_mgr
+msgid "Can Approve Financial Mgr"
+msgstr "صلاحية اعتماد مدير الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_marketing_mgr
+msgid "Can Approve Marketing Mgr"
+msgstr "صلاحية اعتماد مدير التسويق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_sector_accountant
+msgid "Can Approve Sector Accountant"
+msgstr "صلاحية اعتماد محاسب القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_approve_sector_mgr
+msgid "Can Approve Sector Mgr"
+msgstr "صلاحية اعتماد مدير القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__can_attach_receipts
+msgid "Can Attach Receipts"
+msgstr "صلاحية إرفاق الإيصالات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_bussma_marketing_material__can_see_financial_buttons
+msgid "Can See Financial Buttons"
+msgstr "إمكانية رؤية أزرار الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__sector_accountant_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_sector_accountant
+#: model:request.stage,name:financial_management.stage_fin_sector_accountant
+msgid "Commercial Sector Accountant Approval"
+msgstr "اعتماد محاسب القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__sector_accountant_notes
+msgid "Commercial Sector Accountant Notes"
+msgstr "ملاحظات محاسب القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__sector_mgr_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_sector_mgr
+#: model:request.stage,name:financial_management.stage_fin_sector_mgr
+msgid "Commercial Sector Manager Approval"
+msgstr "اعتماد مدير القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__sector_mgr_notes
+msgid "Commercial Sector Manager Notes"
+msgstr "ملاحظات مدير القطاع التجاري"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/bussma_marketing_material_inherit.py:0
+#: model:ir.model.fields,field_description:financial_management.field_bussma_marketing_material__cost_invoice_count
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__invoice_type__cost
+#: model_terms:ir.ui.view,arch_db:financial_management.view_bussma_marketing_material_form_inherit_financial
+msgid "Cost Invoices"
+msgstr "فواتير التكاليف"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_bussma_marketing_material_form_inherit_financial
+msgid "Create Financial Request"
+msgstr "إنشاء طلب للإدارة المالية"
+
+#. module: financial_management
+#: model_terms:ir.actions.act_window,help:financial_management.action_financial_request
+msgid "Create your first Financial Management Request!"
+msgstr "أنشئ أول طلب للإدارة المالية!"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+msgid "Creation Date"
+msgstr "تاريخ الإنشاء"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__decorations_entertainment
+msgid "Decorations & Entertainment"
+msgstr "ديكورات وترفيه"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__department
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__department_id
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Department"
+msgstr "القسم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__dept_mgr_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_dept_mgr
+#: model:request.stage,name:financial_management.stage_fin_dept_mgr
+msgid "Department Manager Approval"
+msgstr "اعتماد مدير القسم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__dept_mgr_notes
+msgid "Department Manager Notes"
+msgstr "ملاحظات مدير القسم"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__digital_apps_accounts
+msgid "Digital Applications & Ad Accounts"
+msgstr "تطبيقات رقمية وحسابات إعلانية"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__department__direct_sales
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Direct Sales"
+msgstr "البيع المباشر"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__display_button_accept
+msgid "Display Button Accept"
+msgstr "عرض زر القبول"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__display_button_previous
+msgid "Display Button Previous"
+msgstr "عرض زر السابق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__display_button_refuse
+msgid "Display Button Refuse"
+msgstr "عرض زر الرفض"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__display_button_send
+msgid "Display Button Send"
+msgstr "عرض زر الإرسال"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm approving the request and submitting it to the Administration"
+" Accountant?"
+msgstr "هل تؤكد اعتماد الطلب وإرساله لمحاسب الإدارة؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm approving the request and submitting it to the Commercial "
+"Sector Accountant?"
+msgstr "هل تؤكد اعتماد الطلب وإرساله لمحاسب القطاع التجاري؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm approving the request and submitting it to the Commercial "
+"Sector Manager?"
+msgstr "هل تؤكد اعتماد الطلب وإرساله لمدير القطاع التجاري؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm approving the request and submitting it to the Department "
+"Manager?"
+msgstr "هل تؤكد اعتماد الطلب وإرساله لمدير القسم؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm approving the request and submitting it to the Financial "
+"Management Manager?"
+msgstr "هل تؤكد اعتماد الطلب وإرساله لمدير الإدارة المالية؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Do you confirm attaching receipts and closing the request?"
+msgstr "هل تؤكد إرفاق الإيصالات وإغلاق الطلب؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"Do you confirm final approval and submitting the request to the Attach "
+"Receipts stage?"
+msgstr "هل تؤكد الاعتماد النهائي وإرسال الطلب لمرحلة إرفاق الإيصالات؟"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__includes_vat
+msgid "Does the Invoice Amount Include VAT?"
+msgstr "هل قيمة الفاتورة تشمل ضريبة القيمة المضافة؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Administration Accountant notes..."
+msgstr "أدخل ملاحظات محاسب الإدارة..."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Commercial Sector Accountant notes..."
+msgstr "أدخل ملاحظات محاسب القطاع التجاري..."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Commercial Sector Manager notes..."
+msgstr "أدخل ملاحظات مدير القطاع التجاري..."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Department Manager notes..."
+msgstr "أدخل ملاحظات مدير القسم..."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Financial Management Manager notes..."
+msgstr "أدخل ملاحظات مدير الإدارة المالية..."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Enter Marketing Manager notes..."
+msgstr "أدخل ملاحظات مدير التسويق..."
+
+#. module: financial_management
+#: model:ir.ui.menu,name:financial_management.menu_financial_management_root
+msgid "Financial Management"
+msgstr "الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_financial_request
+msgid "Financial Management - Invoice Request"
+msgstr "الإدارة المالية - طلب فاتورة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__financial_mgr_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_financial_mgr
+#: model:request.stage,name:financial_management.stage_fin_financial_mgr
+msgid "Financial Management Manager Approval"
+msgstr "اعتماد مدير الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__financial_mgr_notes
+msgid "Financial Management Manager Notes"
+msgstr "ملاحظات مدير الإدارة المالية"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/bussma_marketing_material_inherit.py:0
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Financial Management Request"
+msgstr "طلب إدارة مالية"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_financial_request
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+msgid "Financial Management Requests"
+msgstr "طلبات الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_bussma_marketing_material__financial_request_count
+msgid "Financial Request Count"
+msgstr "عدد طلبات الإدارة المالية"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/bussma_marketing_material_inherit.py:0
+msgid "Financial Request for Marketing Material: %s"
+msgstr "طلب مالي للمادة التسويقية: %s"
+
+#. module: financial_management
+#: model:mail.template,name:financial_management.email_template_financial_request_archived
+msgid "Financial Request: Request Archived Notification"
+msgstr "إشعار أرشفة واكتمال طلب الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_bussma_marketing_material__financial_request_ids
+#: model:ir.ui.menu,name:financial_management.menu_financial_request_list
+msgid "Financial Requests"
+msgstr "طلبات الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_request_stage__financial_stage_selection
+msgid "Financial Stage Selection"
+msgstr "تحديد مرحلة الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__hall_booking_fees
+msgid "Hall Reservation Fees"
+msgstr "رسوم حجز قاعة"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__sofa_hall_rent
+msgid "Hall Sofa Rental"
+msgstr "إيجار كنب قاعة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__hospitality_distributions
+msgid "Hospitality & Giveaways"
+msgstr "ضيافة وتوزيعات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، ستتطلب الرسائل الجديدة انتباهك."
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__message_has_error
+#: model:ir.model.fields,help:financial_management.field_financial_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فستكون هناك أخطاء في تسليم بعض الرسائل."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "In Approval"
+msgstr "قيد الاعتماد"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__influencer_campaigns
+msgid "Influencer Campaigns"
+msgstr "حملات المؤثرين"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+msgid "Invoice Amount"
+msgstr "قيمة الفاتورة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__invoice_amount
+msgid "Invoice Amount (SAR)"
+msgstr "قيمة الفاتورة (ر.س)"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__invoice_description
+msgid "Invoice Description"
+msgstr "وصف الفاتورة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Invoice Details"
+msgstr "تفاصيل الفاتورة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__invoice_type
+msgid "Invoice Type"
+msgstr "نوع الفاتورة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__job_id
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__kanban_color
+msgid "Kanban Color Index"
+msgstr "مؤشر لون كانبان"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__department__marketing
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Marketing"
+msgstr "التسويق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__marketing_mgr_approval
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_marketing_mgr
+#: model:request.stage,name:financial_management.stage_fin_marketing_mgr
+msgid "Marketing Manager Approval"
+msgstr "اعتماد مدير التسويق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__marketing_mgr_notes
+msgid "Marketing Manager Notes"
+msgstr "ملاحظات مدير التسويق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__marketing_material_id
+msgid "Marketing Material"
+msgstr "المادة التسويقية"
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_bussma_marketing_material
+msgid "Marketing Materials"
+msgstr "المواد التسويقية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__marketing_id
+msgid "Marketing Project"
+msgstr "المشروع التسويقي"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "My Requests"
+msgstr "طلباتي"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الحدث القادم في التقويم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط القادم"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__includes_vat__no
+msgid "No"
+msgstr "لا"
+
+#. module: financial_management
+#: model_terms:ir.actions.act_window,help:financial_management.action_financial_request_archived
+msgid "No archived requests yet."
+msgstr "لا توجد طلبات مؤرشفة حتى الآن."
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__notes
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__name
+msgid "Number"
+msgstr "الرقم"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ تسليم"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Administration Accountant notes explaining the reason for "
+"returning."
+msgstr "يرجى كتابة ملاحظات محاسب الإدارة تبيّن سبب الإعادة."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Commercial Sector Accountant notes explaining the reason for "
+"returning."
+msgstr "يرجى كتابة ملاحظات محاسب القطاع التجاري تبيّن سبب الإعادة."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Commercial Sector Manager notes explaining the reason for "
+"returning."
+msgstr "يرجى كتابة ملاحظات مدير القطاع التجاري تبيّن سبب الإعادة."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Department Manager notes explaining the reason for returning."
+msgstr "يرجى كتابة ملاحظات مدير القسم تبيّن سبب الإعادة."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Financial Management Manager notes explaining the reason for "
+"returning."
+msgstr "يرجى كتابة ملاحظات مدير الإدارة المالية تبيّن سبب الإعادة."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Please write Marketing Manager notes explaining the reason for returning."
+msgstr "يرجى كتابة ملاحظات مدير التسويق تبيّن سبب الإعادة."
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__project_name
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Project Name"
+msgstr "اسم المشروع"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__radio
+msgid "Radio"
+msgstr "إذاعة"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__real_estate_photography
+msgid "Real Estate Photography"
+msgstr "تصوير العقارات"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Receipt Attachments"
+msgstr "مرفقات الإيصالات"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__receipts_count
+msgid "Receipts Count"
+msgstr "عدد الإيصالات"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__admin_accountant_approval__rejected
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__dept_mgr_approval__rejected
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__financial_mgr_approval__rejected
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__marketing_mgr_approval__rejected
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__sector_accountant_approval__rejected
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__sector_mgr_approval__rejected
+msgid "Rejected"
+msgstr "رفض"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__removal_costs
+msgid "Removal Operation Costs"
+msgstr "تكاليف عمليات الإزالة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__code
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Request Number"
+msgstr "رقم الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__is_returned
+msgid "Request Returned"
+msgstr "تم إرجاع الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__request_stage__financial_stage_selection__fin_draft
+#: model:request.stage,name:financial_management.stage_fin_draft
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Request Submission"
+msgstr "رفع الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__request_type
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Request Type"
+msgstr "نوع الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__request_type_id
+msgid "Request Type (System)"
+msgstr "نوع الطلب (النظام)"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__date
+msgid "Request date"
+msgstr "تاريخ الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Requester Information"
+msgstr "معلومات مقدم الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__requester_id
+msgid "Requester Name"
+msgstr "اسم مقدم الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__return_notes
+msgid "Return Notes"
+msgstr "ملاحظات الإعادة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Administration Accountant Approval Stage"
+msgstr "إعادة إلى مرحلة اعتماد محاسب الإدارة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Commercial Sector Accountant Approval Stage"
+msgstr "إعادة إلى مرحلة اعتماد محاسب القطاع التجاري"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Commercial Sector Manager Approval Stage"
+msgstr "إعادة إلى مرحلة اعتماد مدير القطاع التجاري"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Department Manager Approval Stage"
+msgstr "إعادة إلى مرحلة اعتماد مدير القسم"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Marketing Manager Approval Stage"
+msgstr "إعادة إلى مرحلة اعتماد مدير التسويق"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Return to Request Submission Stage"
+msgstr "إعادة إلى مرحلة رفع الطلب"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__road_billboards
+msgid "Roadside Billboards"
+msgstr "اللوحات الدعائية على الطرق"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Search Financial Management Requests"
+msgstr "بحث في طلبات الإدارة المالية"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__shield_box
+msgid "Shield Box"
+msgstr "صندوق الدرع"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__shield_box_contents
+msgid "Shield Box Contents"
+msgstr "محتوى صندوق الدرع"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"Sorry, creating financial requests is restricted to Marketing Supervisor or "
+"Financial Management Manager only."
+msgstr "عذراً، يقتصر إنشاء طلبات الإدارة المالية على مشرف التسويق أو مدير الإدارة المالية فقط."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid "Sorry, this action is restricted to Financial Management Manager only."
+msgstr "عذراً، هذا الإجراء مخصص لمدير الإدارة المالية فقط."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/bussma_marketing_material_inherit.py:0
+msgid ""
+"Sorry, this action is restricted to Marketing Supervisor, Marketing Material"
+" Responsible, Department Managers, and Marketing Project Manager only."
+msgstr "عذراً، هذا الإجراء مخصص لمشرف التسويق، مسؤول المادة التسويقية، مدراء الأقسام، ومدير المشروع التسويقي فقط."
+
+#. module: financial_management
+#: model:ir.model,name:financial_management.model_request_stage
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__stage_id
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__financial_stage_selection
+msgid "Stage Selection"
+msgstr "تحديد المرحلة"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Administration Accountant Approval"
+msgstr "إرسال لاعتماد محاسب الإدارة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Archiving"
+msgstr "إرسال للأرشفة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Attach Receipts Stage"
+msgstr "إرسال لمرحلة إرفاق الإيصالات"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Commercial Sector Accountant Approval"
+msgstr "إرسال لاعتماد محاسب القطاع التجاري"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Commercial Sector Manager Approval"
+msgstr "إرسال لاعتماد مدير القطاع التجاري"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Department Manager Approval"
+msgstr "إرسال لاعتماد مدير القسم"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Financial Management Manager Approval"
+msgstr "إرسال لاعتماد مدير الإدارة المالية"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Submit for Marketing Manager Approval"
+msgstr "إرسال لاعتماد مدير التسويق"
+
+#. module: financial_management
+#: model_terms:ir.actions.act_window,help:financial_management.action_financial_request
+msgid "Submit your request and track approval stages through to archiving."
+msgstr "قم برفع طلبك وتتبع مراحل الاعتماد حتى الأرشفة."
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__iban_attachment_ids
+msgid "Supplier Bank IBAN Attachments"
+msgstr "رفع الإيبان البنكي للمورد"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/bussma_marketing_material_inherit.py:0
+#: model:ir.model.fields,field_description:financial_management.field_bussma_marketing_material__supplier_invoice_count
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__invoice_type__supplier
+#: model_terms:ir.ui.view,arch_db:financial_management.view_bussma_marketing_material_form_inherit_financial
+msgid "Supplier Invoices"
+msgstr "فواتير الموردين"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__supplier_name
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_list
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Supplier Name"
+msgstr "اسم المورد"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_kanban
+msgid "Supplier"
+msgstr "المورد"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__request_type__tv_advertisement
+msgid "TV Advertisement"
+msgstr "إعلان تلفزيون"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__tax_invoice_attachment_ids
+msgid "Tax Invoice Attachments"
+msgstr "رفع الفاتورة الضريبية"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"The number of uploaded attachments (%s) does not match the specified number "
+"of receipts (%s). Please attach attachments matching the specified number of"
+" receipts only (%s)."
+msgstr "عدد المرفقات المرفوعة (%s) لا يطابق عدد الإيصالات المحدد (%s). يرجى إرفاق المرفقات بعدد الإيصالات المحدد فقط (%s)."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid ""
+"The number of uploaded attachments (%s) exceeds the specified number of "
+"receipts (%s). Please attach attachments matching the specified number of "
+"receipts only (%s)."
+msgstr "عدد المرفقات المرفوعة (%s) يتجاوز عدد الإيصالات المحدد (%s). يرجى إرفاق المرفقات بعدد الإيصالات المحدد فقط (%s)."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid "The number of receipts must be at least 1."
+msgstr "يجب أن يكون عدد الإيصالات 1 على الأقل."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid "The requested stage was not found."
+msgstr "لم يتم العثور على المرحلة المطلوبة."
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المستجّل."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Upload Supplier Bank IBAN"
+msgstr "رفع الإيبان البنكي للمورد"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Upload Tax Invoice"
+msgstr "رفع الفاتورة الضريبية"
+
+#. module: financial_management
+#: model:ir.model.fields,field_description:financial_management.field_financial_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: financial_management
+#: model:ir.model.fields,help:financial_management.field_financial_request__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ اتصالات الموقع الإلكتروني"
+
+#. module: financial_management
+#: model:ir.model.fields.selection,name:financial_management.selection__financial_request__includes_vat__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid "You must select 'Approved' to proceed to the next stage."
+msgstr "يجب تحديد خيار 'موافق' للاعتماد للانتقال إلى المرحلة التالية."
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/financial_request.py:0
+msgid "You must select 'Rejected' to return the request."
+msgstr "يجب تحديد خيار 'رفض' لإعادة الطلب."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid ""
+"<strong class=\"text-warning-emphasis d-block mb-1\">Warning: Request was "
+"returned with the following notes:</strong>"
+msgstr "تحذير: تم إرجاع الطلب مع الملاحظات التالية:"
+
+#. module: financial_management
+#: model:mail.template,body_html:financial_management.email_template_financial_request_archived
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Financial Management System - Bussma</strong><br/><br/>\n"
+"                        Dear User,<br/><br/>\n"
+"                        Please be informed that all approvals for the Financial Request have been completed and archived under number: <strong><t t-out=\"object.code or 'N/A'\"/></strong>.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.code or '-'\"/></li>\n"
+"                            <li><strong>Requester:</strong> <t t-out=\"object.requester_id.name or '-'\"/></li>\n"
+"                            <li><strong>Project Name:</strong> <t t-out=\"object.project_name or '-'\"/></li>\n"
+"                            <li><strong>Invoice Type:</strong> <t t-out=\"dict(object._fields['invoice_type']._description_selection(object.env)).get(object.invoice_type) or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"dict(object._fields['request_type']._description_selection(object.env)).get(object.request_type) or '-'\"/></li>\n"
+"                            <li><strong>Invoice Amount:</strong> <t t-out=\"object.invoice_amount or 0.0\"/> <t t-out=\"object.currency_id.symbol or 'SAR'\"/></li>\n"
+"                            <li><strong>Supplier Name:</strong> <t t-out=\"object.supplier_name or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view the details of the request by clicking the link below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>نظام الإدارة المالية - بصمة</strong><br/><br/>\n"
+"                        السلام عليكم ورحمة الله وبركاته،<br/><br/>\n"
+"                        نحيطكم علماً باكتمل كافة اعتمادات طلب الإدارة المالية وأرشفته برقم: <strong><t t-out=\"object.code or 'N/A'\"/></strong>.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.code or '-'\"/></li>\n"
+"                            <li><strong>مقدم الطلب:</strong> <t t-out=\"object.requester_id.name or '-'\"/></li>\n"
+"                            <li><strong>اسم المشروع:</strong> <t t-out=\"object.project_name or '-'\"/></li>\n"
+"                            <li><strong>نوع الفاتورة:</strong> <t t-out=\"dict(object._fields['invoice_type']._description_selection(object.env)).get(object.invoice_type) or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"dict(object._fields['request_type']._description_selection(object.env)).get(object.request_type) or '-'\"/></li>\n"
+"                            <li><strong>قيمة الفاتورة:</strong> <t t-out=\"object.invoice_amount or 0.0\"/> <t t-out=\"object.currency_id.symbol or 'ر.س'\"/></li>\n"
+"                            <li><strong>اسم المورد:</strong> <t t-out=\"object.supplier_name or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على تفاصيل الطلب من خلال الضغط على الرابط أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #875A7B; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: financial_management
+#: model:mail.template,subject:financial_management.email_template_financial_request_archived
+msgid ""
+"Financial Request Archived & Completed Notification {{ object.code }} - {{ "
+"object.project_name or '' }}"
+msgstr "إشعار أرشفة واكتمال طلب الإدارة المالية رقم {{ object.code }} - {{ "
+"object.project_name or '' }}"
+
+#. module: financial_management
+#: model:res.groups,name:financial_management.group_financial_management_user
+msgid "Financial Management User"
+msgstr "مستخدم الإدارة المالية"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Cancel Request"
+msgstr "إلغاء الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Undo Cancel Request"
+msgstr "التراجع عن إلغاء الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Are you sure you want to cancel this request?"
+msgstr "هل أنت متأكد من إلغاء هذا الطلب؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Are you sure you want to undo cancel this request?"
+msgstr "هل أنت متأكد من التراجع عن إلغاء هذا الطلب؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Reject Request"
+msgstr "رفض الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Undo Reject Request"
+msgstr "التراجع عن رفض الطلب"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Are you sure you want to undo reject this request?"
+msgstr "هل أنت متأكد من التراجع عن رفض هذا الطلب؟"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Are you sure you want to reject this request?"
+msgstr "هل أنت متأكد من رفض هذا الطلب؟"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_financial_request_cancelled
+#: model:ir.ui.menu,name:financial_management.menu_financial_request_cancelled
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Cancelled Requests"
+msgstr "طلبات ملغية"
+
+#. module: financial_management
+#: model:ir.actions.act_window,name:financial_management.action_financial_request_rejected
+#: model:ir.ui.menu,name:financial_management.menu_financial_request_rejected
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_search
+msgid "Rejected Requests"
+msgstr "طلبات مرفوضة"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_form
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/record_control_wizard_inherit.py:0
+#: model:ir.model.fields,field_description:financial_management.field_record_control_wizard__financial_request_id
+#: model:ir.model.fields.selection,name:financial_management.selection__record_control_wizard__control_type__financial_request
+msgid "Financial Request"
+msgstr "المشتريات"
+
+#. module: financial_management
+#. odoo-python
+#: code:addons/financial_management/models/record_control_wizard_inherit.py:0
+msgid "Please select a Financial Request to delete."
+msgstr "الرجاء تحديد سجل طلب مشتريات للحذف."
+
+#. module: financial_management
+#: model_terms:ir.ui.view,arch_db:financial_management.view_financial_request_kanban
+msgid "<span>Supplier : </span>"
+msgstr "<span>المورد: </span>"

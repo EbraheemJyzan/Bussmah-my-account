@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_opportunity" model="bussma.opportunity.department">
+            <field name="name">Opportunity Department</field>
+            <field name="code">OPPORTUNITY</field>
+        </record>
+    </data>
+</odoo>

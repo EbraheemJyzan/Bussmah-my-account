@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_entries_return_log_tree" model="ir.ui.view">
+        <field name="name">entries.return.log.tree</field>
+        <field name="model">entries.return.log</field>
+        <field name="arch" type="xml">
+            <list string="Return Logs" create="0" delete="0" edit="0" default_order="date desc">
+                <field name="date"/>
+                <field name="user_id"/>
+                <field name="study_type_detail" column_invisible="context.get('hide_study_type', True)"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_entries_return_log_form" model="ir.ui.view">
+        <field name="name">entries.return.log.form</field>
+        <field name="model">entries.return.log</field>
+        <field name="arch" type="xml">
+            <form string="Return Log" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="entry_id" readonly="1"/>
+                            <field name="study_type_detail" invisible="return_type != 'study_to_analyst'" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date" readonly="1"/>
+                            <field name="user_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="note" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

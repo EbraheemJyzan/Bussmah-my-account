@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="financial_request_kanban_view_inherit_activity" model="ir.ui.view">
+        <field name="name">financial.request.kanban.view.inherit.activity</field>
+        <field name="model">financial.request</field>
+        <field name="inherit_id" ref="financial_management.view_financial_request_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="activity_state"/>
+                <field name="is_my_activity"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_headings')]/span[hasclass('text-muted')]" position="replace">
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="text-muted small">
+                        <field name="code"/>
+                    </span>
+                    <span t-if="record.activity_state.raw_value and ['today', 'overdue'].includes(record.activity_state.raw_value) and record.is_my_activity.raw_value" class="badge rounded-circle custom-activity-badge bg-success text-white ms-auto" t-att-title="record.activity_state.value">
+                        1
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

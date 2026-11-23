@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<defs><clipPath id="c-auctions"><rect width="1024" height="1024" rx="230"/></clipPath></defs>
+<g clip-path="url(#c-auctions)">
+<rect width="1024" height="1024" fill="#FFFFFF"/>
+<circle cx="820" cy="1060" r="140" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="141 28 264 40" stroke-dashoffset="0"/>
+<circle cx="820" cy="1060" r="206" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="207 42 388 40" stroke-dashoffset="37"/>
+<circle cx="820" cy="1060" r="272" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="273 56 513 40" stroke-dashoffset="74"/>
+<circle cx="820" cy="1060" r="338" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="340 28 637 40" stroke-dashoffset="111"/>
+<circle cx="820" cy="1060" r="404" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="406 42 762 40" stroke-dashoffset="148"/>
+<circle cx="820" cy="1060" r="470" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="472 56 886 40" stroke-dashoffset="185"/>
+<circle cx="820" cy="1060" r="536" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="539 28 1010 40" stroke-dashoffset="222"/>
+<circle cx="820" cy="1060" r="602" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="605 42 1135 40" stroke-dashoffset="259"/>
+<circle cx="820" cy="1060" r="668" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="672 56 1259 40" stroke-dashoffset="296"/>
+<circle cx="820" cy="1060" r="734" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="738 28 1384 40" stroke-dashoffset="333"/>
+<circle cx="820" cy="1060" r="800" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="804 42 1508 40" stroke-dashoffset="370"/>
+<circle cx="820" cy="1060" r="866" fill="none" stroke="#00AEEF" stroke-opacity="0.09" stroke-width="26" stroke-linecap="round" stroke-dasharray="871 56 1632 40" stroke-dashoffset="407"/>
+</g>
+<rect x="3" y="3" width="1018" height="1018" rx="227" fill="none" stroke="#3A3A3C" stroke-opacity="0.10" stroke-width="6"/>
+<g transform="translate(232 232) scale(5.6)">
+<g transform="rotate(-45 46 40)">
+<rect x="22" y="20" width="48" height="24" rx="6" fill="#00AEEF"/>
+<line x1="46" y1="46" x2="46" y2="94" fill="none" stroke="#00AEEF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<rect x="8" y="76" width="48" height="18" rx="7" fill="#3A3A3C" stroke="#FFFFFF" stroke-width="6"/>
+</g>
+</svg>

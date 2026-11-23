@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* nomow_web_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-30 15:11+0000\n"
+"PO-Revision-Date: 2026-07-30 15:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.fields_inherit
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.reset_password_inherit
+msgid "<i class=\"fa fa-envelope me-2 text-success\"/>Your Email"
+msgstr "<i class=\"fa fa-envelope me-2 text-success\"/>بريدك الإلكتروني"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.fields_inherit
+msgid "<i class=\"fa fa-lock me-2 text-success\"/>Confirm Password"
+msgstr "<i class=\"fa fa-lock me-2 text-success\"/>تأكيد كلمة المرور"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.fields_inherit
+msgid "<i class=\"fa fa-lock me-2 text-success\"/>Password"
+msgstr "<i class=\"fa fa-lock me-2 text-success\"/>كلمة المرور"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_inherit
+msgid "<i class=\"fa fa-sign-in me-2\"/>Log in"
+msgstr "<i class=\"fa fa-sign-in me-2\"/>تسجيل الدخول"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.fields_inherit
+msgid "<i class=\"fa fa-user me-2 text-success\"/>Your Name"
+msgstr "<i class=\"fa fa-user me-2 text-success\"/>اسمك"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.reset_password_inherit
+msgid "<span class=\"mx-2\">Reset Password</span>"
+msgstr "<span class=\"mx-2\">إعادة تعيين كلمة المرور</span>"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.signup_inherit
+msgid "<span class=\"mx-2\">Sign up</span>"
+msgstr "<span class=\"mx-2\">تسجيل</span>"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_inherit
+msgid "<span><i class=\"fa fa-envelope me-2 text-success\"/>Email</span>"
+msgstr ""
+"<span><i class=\"fa fa-envelope me-2 text-success\"/>البريد "
+"الإلكتروني</span>"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_inherit
+msgid "<span><i class=\"fa fa-lock me-2 text-success\"/>Password</span>"
+msgstr "<span><i class=\"fa fa-lock me-2 text-success\"/>كلمة المرور</span>"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,help:nomow_web_theme.field_res_company__background_image
+msgid "Add Background image"
+msgstr "أضف صورة خلفية"
+
+#. module: nomow_web_theme
+#. odoo-javascript
+#: code:addons/nomow_web_theme/static/src/components/menu_canonical_searchbar/searchbar.xml:0
+msgid "App Icon"
+msgstr "أيقونة التطبيق"
+
+#. module: nomow_web_theme
+#: model:ir.actions.client,name:nomow_web_theme.apps_menu_action
+#: model:ir.ui.menu,name:nomow_web_theme.apps_menu
+msgid "Apps Menu"
+msgstr "قائمة التطبيقات"
+
+#. module: nomow_web_theme
+#: model:ir.actions.act_window,name:nomow_web_theme.res_users_view_form_apps_menu_preferences_action
+msgid "Apps Menu Preferences"
+msgstr "تفضيلات قائمة التطبيقات"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_users__apps_menu_search_type
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Apps Menu Search Type"
+msgstr "نوع البحث في قائمة التطبيقات"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_users__apps_menu_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Apps Menu Theme"
+msgstr "سمة قائمة التطبيقات"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_company__background_login
+msgid "Background Login"
+msgstr "خلفية تسجيل الدخول"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_company__background_image
+msgid "Background image"
+msgstr "صورة الخلفية"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields.selection,name:nomow_web_theme.selection__res_users__apps_menu_search_type__canonical
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Canonical"
+msgstr "قياسي"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields.selection,name:nomow_web_theme.selection__res_users__apps_menu_search_type__command_palette
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Command Palette"
+msgstr "لوحة الأوامر"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields.selection,name:nomow_web_theme.selection__res_users__apps_menu_theme__community
+msgid "Community"
+msgstr "مجتمعي"
+
+#. module: nomow_web_theme
+#: model:ir.model,name:nomow_web_theme.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields.selection,name:nomow_web_theme.selection__res_users__apps_menu_search_type__fuse
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Fuse"
+msgstr "فيوز"
+
+#. module: nomow_web_theme
+#: model:ir.model,name:nomow_web_theme.model_ir_http
+msgid "HTTP Routing"
+msgstr "مسار HTTP"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_company__image_login
+msgid "Image Login"
+msgstr "صورة تسجيل الدخول"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_company__image_theam
+msgid "Image Theam"
+msgstr "صورة السمة"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.view_company_form_inherit
+msgid "Image Thme"
+msgstr "صورة السمة"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields.selection,name:nomow_web_theme.selection__res_users__apps_menu_theme__milk
+msgid "Milk"
+msgstr "حليب"
+
+#. module: nomow_web_theme
+#. odoo-javascript
+#: code:addons/nomow_web_theme/static/src/components/menu_canonical_searchbar/searchbar.xml:0
+msgid "Nothing to show"
+msgstr "لا يوجد شيء للعرض"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_layout_inherit
+msgid "Please enter your login details"
+msgstr "يرجى إدخال بيانات الدخول الخاصة بك"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,field_description:nomow_web_theme.field_res_users__is_redirect_home
+msgid "Redirect to Home"
+msgstr "إعادة التوجيه إلى الصفحة الرئيسية"
+
+#. module: nomow_web_theme
+#: model:ir.model.fields,help:nomow_web_theme.field_res_users__is_redirect_home
+msgid "Redirect to dashboard after signing in"
+msgstr "إعادة التوجيه إلى لوحة التحكم بعد تسجيل الدخول"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_inherit
+msgid "Reset Password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Search Type"
+msgstr "نوع البحث"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Search Type Help"
+msgstr "مساعدة نوع البحث"
+
+#. module: nomow_web_theme
+#. odoo-javascript
+#: code:addons/nomow_web_theme/static/src/components/menu_canonical_searchbar/searchbar.xml:0
+#: code:addons/nomow_web_theme/static/src/components/menu_odoo_searchbar/searchbar.xml:0
+msgid "Search menus..."
+msgstr "ابحث في القوائم..."
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "Theme"
+msgstr "السمة"
+
+#. module: nomow_web_theme
+#: model:ir.model,name:nomow_web_theme.model_res_users
+msgid "User"
+msgstr "المستخدم"
+
+#. module: nomow_web_theme
+#: model:ir.model,name:nomow_web_theme.model_res_users_settings
+msgid "User Settings"
+msgstr "إعدادات المستخدم "
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.login_layout_inherit
+msgid "Welcome Back"
+msgstr "مرحباً بعودتك"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "a new search algorithm is used"
+msgstr "يتم استخدام خوارزمية بحث جديدة"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "the standard odoo search tool"
+msgstr "أداة البحث القياسية في أودو"
+
+#. module: nomow_web_theme
+#: model_terms:ir.ui.view,arch_db:nomow_web_theme.res_users_view_form_apps_menu_preferences
+msgid "uses a standard algorithm"
+msgstr "يستخدم خوارزمية قياسية"

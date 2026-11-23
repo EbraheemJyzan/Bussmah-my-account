@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Customer Role Data                                               -->
+        <!-- ================================================================ -->
+
+        <record id="customer_role_owner" model="customer.role">
+            <field name="name">Owner</field>
+            <field name="code">owner</field>
+        </record>
+
+        <record id="customer_role_agent" model="customer.role">
+            <field name="name">Agent</field>
+            <field name="code">agent</field>
+        </record>
+
+        <record id="customer_role_broker" model="customer.role">
+            <field name="name">Broker</field>
+            <field name="code">broker</field>
+        </record>
+
+        <record id="customer_role_other" model="customer.role">
+            <field name="name">Other</field>
+            <field name="code">other</field>
+        </record>
+
+    </data>
+</odoo>

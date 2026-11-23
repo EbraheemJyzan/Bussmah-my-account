@@ -1,0 +1,121 @@
+/* ============================================================================
+   Custom Breadcrumb Visual Identity - Option 1: Dynamic Directional Chevron
+   Module: custom_activity_nomow_web_theme
+   Description: Renders precise FontAwesome vector chevrons matching reading flow:
+                - LTR (English): \f105 (fa-angle-right ›) -> Points Right
+                - RTL (Arabic):  \f104 (fa-angle-left  ‹) -> Points Left
+   ============================================================================ */
+
+/* Base Breadcrumb Container */
+.o_control_panel .breadcrumb,
+.o_breadcrumb,
+.breadcrumb {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+    padding: 4px 0 !important;
+    font-family: inherit;
+
+    .breadcrumb-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        font-size: 1.2rem !important; /* Enlarged path items */
+        font-weight: 700 !important;
+        // color: #64748b !important;
+        transition: color 0.2s ease;
+
+        /* Non-active links and path items */
+        a, span:not(.text-truncate) {
+            // color: #64748b !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease, opacity 0.2s ease;
+
+            &:hover {
+                // color: #0097a7 !important;
+                opacity: 1 !important;
+            }
+        }
+
+        /* Default LTR Direction (Left to Right: Home › Sales › Opportunity) */
+        & + .breadcrumb-item {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+
+            &::before {
+                content: "\f105" !important; /* FontAwesome fa-angle-right (›) */
+                font-family: "Font Awesome 6 Free", "FontAwesome" !important;
+                font-weight: 900 !important;
+                // color: #0097a7 !important;
+                font-size: 1.2rem !important;
+                line-height: 1 !important;
+                opacity: 0.85 !important;
+                padding: 0 0.4rem !important;
+                display: inline-block !important;
+                vertical-align: middle !important;
+                transition: transform 0.2s ease, color 0.2s ease;
+            }
+        }
+
+        /* Active / Current Page Title Styling */
+        &.active,
+        &:last-child {
+            color: #0f172a !important;
+            font-weight: 800 !important;
+            font-size: 1.35rem !important; /* Enlarged active breadcrumb title */
+
+            a, span, .text-truncate {
+                // color: #006064 !important;
+                font-weight: 800 !important;
+                font-size: 1.35rem !important;
+            }
+        }
+    }
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   Enlarge Record Display Name & Gear Sub-Text (e.g. ⚙ EN09468 / display_name)
+   ════════════════════════════════════════════════════════════════════════════ */
+.o_control_panel .breadcrumb-item.active,
+.o_control_panel .breadcrumb-item:last-child,
+.o_control_panel .o_last_breadcrumb_item,
+.o_control_panel .o_breadcrumb_title,
+.o_control_panel .o_breadcrumb span,
+.o_control_panel .o_breadcrumb a,
+.o_form_view .oe_title,
+.o_form_view .oe_title *,
+.o_form_view .o_form_sheet .oe_title,
+.o_form_view .o_form_sheet .oe_title *,
+.o_control_panel div[class*="title"],
+.o_control_panel span[class*="title"],
+.o_control_panel i.fa-gear + *,
+.o_control_panel i.fa-cog + *,
+.o_control_panel .fa-gear,
+.o_control_panel .fa-cog {
+    font-size: 1.35rem !important; /* Enlarged display_name font size */
+    font-weight: 800 !important;
+    // color: #006064 !important;
+}
+
+/* ----------------------------------------------------------------------------
+   RTL Direction Specific Override (Right to Left flow)
+   ---------------------------------------------------------------------------- */
+body.o_rtl,
+html[dir="rtl"],
+[dir="rtl"],
+.o_rtl {
+    .o_control_panel .breadcrumb,
+    .o_breadcrumb,
+    .breadcrumb {
+        .breadcrumb-item + .breadcrumb-item {
+            &::before {
+                content: "\f104" !important; /* FontAwesome fa-angle-left (‹) -> Points Left */
+                font-family: "Font Awesome 6 Free", "FontAwesome" !important;
+                font-weight: 900 !important;
+                font-size: 1.2rem !important;
+                padding: 0 0.4rem !important;
+            }
+        }
+    }
+}

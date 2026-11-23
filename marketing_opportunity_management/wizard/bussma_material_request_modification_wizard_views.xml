@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bussma_material_request_modification_wizard_form" model="ir.ui.view">
+            <field name="name">bussma.material.request.modification.wizard.form</field>
+            <field name="model">bussma.material.request.modification.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Request Marketing Material Modification">
+                    <sheet>
+                        <group>
+                            <field name="material_id" invisible="1"/>
+                            <field name="notes" placeholder="Please enter modification description details..." required="1"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Submit Modification Request" name="action_confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

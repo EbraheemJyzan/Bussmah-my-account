@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+        <record id="powerbi_connection_form" model="ir.ui.view">
+            <field name="name">powerbi.connection.form</field>
+            <field name="model">powerbi.connection</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Power BI Connection Instance">
+                    <header>
+                        <button name="test_powerbi_connection"
+                            type='object'
+                            icon="fa-compress"
+                            class="btn btn-primary o_wow"
+                            string='Connect Power BI'
+                            invisible="connection_status == True" />
+                        <button name="reset_powerbi_connection"
+                            type='object'
+                            icon="fa-expand"
+                            class="btn btn-danger o_wow"
+                            string='Disconnect Power BI'
+                            invisible="connection_status != True" />
+
+                        <field name="state" widget="statusbar" />
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object"
+                                name="configure_cron"
+                                string='Configure Cron'
+                                class="oe_stat_button"
+                                icon="fa-cogs"
+                            />
+                            <button name="toggle_active" type="object" class="oe_stat_button">
+                                <div>
+                                    <field name="active" widget="boolean_toggle" />
+                                    <strong class="text-success" invisible="not active"> ACTIVE</strong>
+                                    <strong class="text-muted" invisible="active"> INACTIVE</strong>
+                                </div>
+                            </button>
+                        </div>
+                        <widget name="web_ribbon" text="Connected"
+                            invisible="connection_status != True" />
+                        <widget name="web_ribbon" text="Disconnected" bg_color="bg-danger"
+                            invisible="connection_status != False" />
+
+                        <div class="badge badge-danger"
+                            invisible="state != 'failed'">
+                            error
+                        </div>
+
+                        <h3>
+                            <field name="status" invisible="state != 'failed'" />
+                        </h3>
+                        <div class="oe_horizontal_separator oe_clear ">
+                            <separator string="Power BI Settings" />
+                        </div>
+                        <group>
+                            <group>
+                                <field name="api_url" />
+                                <field name="authority_url" />
+                                <field name="version" />
+                                <field name="access_method" readonly="connection_status == True" />
+                                <field name="connection_status" invisible="1" />
+                            </group>
+                        </group>
+                        <a invisible="access_method == 'mu'"
+                            href="https://docs.microsoft.com/en-us/power-bi/developer/embedded/embed-service-principal"
+                            target="_blank">How to setup a service principle for your azure AD app.</a>
+                        <notebook>
+                            <page string="Imports"
+                                invisible="connection_status == False">
+
+                                <button name="open_report_wizard"
+                                    class="btn btn-primary"
+                                    type='object'
+                                    string='Import Reports'
+                                />
+                                <span style='margin:10px'>
+                                    <button name="open_dashboard_wizard"
+                                        type='object'
+                                        class="btn btn-primary"
+                                        style='margin:10px'
+                                        string='Import Dashboards'
+                                    />
+                                </span>
+
+                                <button name="action_import_workspace"
+                                    type='object'
+                                    class="btn btn-primary"
+                                    string='Import Workspaces'
+                                />
+                            </page>
+                            <page string="Power BI User Credentials"
+                                invisible="access_method != 'mu'">
+
+                                <div class="row mt16 o_settings_container">
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_right_pane">
+                                            <label string="User Name" for="user" />
+                                            <div class="text-muted">
+                                                Power BI account username.
+                                            </div>
+                                            <div>
+                                                <field name="user" placeholder="Example: user"
+                                                    required="access_method == 'mu'"
+                                                    readonly="connection_status == True" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box"
+                                        invisible="id != False">
+                                        <div class="o_setting_right_pane">
+                                            <label string="Password" for="pwd" />
+                                            <div class="text-muted">
+                                                Power BI account password.
+                                            </div>
+                                            <div>
+                                                <field name="pwd" placeholder="Example: password"
+                                                    password="True"
+                                                    required="access_method == 'mu' and id == False" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box"
+                                        invisible="id == False">
+                                        <div class="o_setting_right_pane">
+                                            <div class="text-muted">
+                                                Click here to update the credential
+                                            </div>
+                                            <button name="update_credentials"
+                                                string="Update Credentials" type="object"
+                                                class="btn-warning" icon="fa-edit"
+                                                invisible="id == False" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </page>
+                            <page string="App Credentials">
+                                <h2
+                                    style="margin-top: 10px !important;background-color: #e9ecef;padding-left: 8px;">
+                                    App Credentials
+                                </h2>
+                                <div class="row mt16 o_settings_container">
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_right_pane">
+                                            <label string="Client Id" for="client_id" />
+                                            <div class="text-muted">
+                                                Client/Application id of application you have
+                                                registered on Azure Active Directory.
+                                            </div>
+                                            <div>
+                                                <field name="client_id" password="1"
+                                                    placeholder="Example: client id" required="1"
+                                                    readonly="connection_status == True" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_right_pane">
+                                            <label string="Client Secret" for="client_secret" />
+                                            <div class="text-muted">
+                                                Client/Application secret of application you get
+                                                after registering the application.
+                                            </div>
+                                            <div>
+                                                <field name="client_secret" password="1"
+                                                    placeholder="Example: client secret"
+                                                    required='1'
+                                                    readonly="connection_status == True" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_right_pane">
+                                            <label string="Tenent Id" for="tenent_id" />
+                                            <div class="text-muted">
+                                                Tenent id of your organization's azure account.
+                                            </div>
+                                            <div>
+                                                <field name="tenent_id" password="1"
+                                                    placeholder="Example: tenent id" required='1'
+                                                    readonly="connection_status == True" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_right_pane">
+                                            <label string="Redirect URI" for="redirect_uri" />
+                                            <div class="text-muted"> You should use this URI while
+                                                registering your app on Azure portal.
+                                            </div>
+                                            <div>
+                                                <field name="redirect_uri"
+                                                    placeholder="Example: redirect uri"
+                                                    readonly="1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+                            <page string="General">
+                                <div class="row mt16 o_settings_container">
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_left_pane" />
+                                        <div class="o_setting_right_pane">
+                                            <label string="Default Timezone" for="wk_time_zone" />
+                                            <div class="text-muted">
+                                                The datetime field value will be synced in this
+                                                timezone on powerbi end.
+                                            </div>
+                                            <div class="text-muted">
+                                                <b>
+                                                    <field name="wk_time_zone"
+                                                        readonly="state == 'connected'" />
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_left_pane" />
+                                        <div class="o_setting_right_pane">
+                                            <label string="Default Records Sync Limit "
+                                                for="record_sync_limit" />
+                                            <div class="text-muted">
+                                                Number of records to sync from the table during data
+                                                export.
+                                            </div>
+                                            <div class="text-muted">
+                                                <b>
+                                                    <field name="record_sync_limit"
+                                                        readonly="state == 'connected'" />
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt16 o_settings_container"
+                                    invisible="access_method == 'mu'">
+                                    <div class="col-xs-12 col-md-6 o_setting_box">
+                                        <div class="o_setting_left_pane" />
+                                        <div class="o_setting_right_pane">
+                                            <label string="Emails of PowerBI users"
+                                                for="sp_users_email" />
+                                            <div class="text-muted">
+                                                Emails of users to be added to Workspaces exported
+                                                via the Service Principal method. Separate multiple
+                                                emails with commas.
+                                            </div>
+                                            <div class="text-muted">
+                                                <b>
+                                                    <field name="sp_users_email"
+                                                        required="access_method == 'sp'"
+                                                        readonly="state == 'connected'" />
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter />
+                </form>
+            </field>
+        </record>
+
+        <record id="powerbi_connection_tree" model="ir.ui.view">
+            <field name="name">powerbi.connection.tree</field>
+            <field name="model">powerbi.connection</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Power BI Connection Instances">
+                    <field name="instance" />
+                    <field name="user" />
+                    <field name="access_method" />
+                    <field name="active" />
+                    <field name="connection_status" optional="hide" />
+                    <field name="state"
+                        decoration-success="state == 'connected'"
+                        decoration-info="state == 'draft'"
+                        decoration-danger="state == 'failed'"
+                        widget="badge" optional="show" />
+                    <field name="create_date" />
+                    <field name="create_uid" widget="many2one_avatar_user" />
+                </list>
+            </field>
+        </record>
+
+        <record id="powerbi_connection_tree_action" model="ir.actions.act_window">
+            <field name="name">Power BI Connection</field>
+            <field name="res_model">powerbi.connection</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Click to define a new connection.
+                </p>
+                <p>
+                    Odoo Power BI Connector will connect your powerbi account to odoo. You can sync
+                    your data from odoo to powerbi and then create reports and graph for analysis.
+                </p>
+            </field>
+            <field name="view_id" ref="powerbi_connection_tree" />
+        </record>
+
+    </data>
+</odoo>

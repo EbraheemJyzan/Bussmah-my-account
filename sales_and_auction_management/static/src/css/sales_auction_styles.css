@@ -1,0 +1,543 @@
+/* ══════════════════════════════════════════════════════════════════
+   EDITABLE FIELDS HIGHLIGHT — sales_and_auction_management
+   The yellow color applies ONLY to the VALUE area (inner input/span),
+   NOT to the field label/string.
+   Readonly fields keep Odoo's default appearance (no override).
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Outer widget: transparent background, yellow border only ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) {
+    background-color: transparent !important;
+    border: 1px solid #fde047 !important;
+    border-radius: 4px;
+    padding: 2px 6px !important;
+}
+
+/* Avoid breaking monetary fields spacing */
+.o_form_view .o_field_widget.o_field_monetary:not(.o_readonly_modifier):not(.no_editable_style) {
+    padding: 0 !important;
+}
+
+/* ── Yellow background on the actual VALUE elements (inputs, selects, textareas) ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) input:not([type="checkbox"]):not([type="radio"]),
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) select,
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) textarea,
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o_input,
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o-autocomplete--input,
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o_datepicker_input {
+    background-color: #fef9c3 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Prevent absolute-positioned span overlay in monetary fields from blocking input visibility */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) span.o_input {
+    background-color: transparent !important;
+}
+
+/* ── Many2one displayed value (link/span shown before clicking) ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o_field_many2one_selection,
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o-autocomplete {
+    background-color: #fef9c3 !important;
+    border-radius: 3px;
+}
+
+/* ── Selection field displayed value ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) select.o_input {
+    background-color: #fef9c3 !important;
+    border: none !important;
+}
+
+/* ── Binary upload button ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) .o_select_file_button {
+    background-color: #fef08a !important;
+    border: 1px solid #fde047 !important;
+    color: #713f12 !important;
+}
+
+/* ── Checkbox / radio accent color ── */
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) input[type="checkbox"],
+.o_form_view .o_field_widget:not(.o_readonly_modifier):not(.no_editable_style) input[type="radio"] {
+    accent-color: #ca8a04 !important;
+}
+
+/* ── Backward compatibility: imported_data_field — now a no-op ── */
+.o_form_view .o_field_widget.imported_data_field {
+    /* intentionally empty — readonly fields use Odoo default */
+}
+
+/* =========================================================
+   KANBAN PREMIUM DESIGN CLASSES (PHASE 2)
+   ========================================================= */
+.bussma-kanban-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 8px;
+    min-width: 265px;
+    font-size: 13px;
+}
+
+.bussma-top-ribbon {
+    display: flex;
+    height: 30px;
+    width: 100%;
+}
+
+.bussma-ribbon-color {
+    flex: 0 0 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12.5px;
+    border-bottom-left-radius: 12px;
+}
+
+.bussma-ribbon-gray {
+    flex: 1;
+    background-color: #e5e7eb;
+}
+
+.bussma-main-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.bussma-l-bar {
+    width: 35px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+}
+
+.bussma-content-area {
+    padding: 8px;
+    flex-grow: 1;
+}
+
+.bussma-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.bussma-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #000;
+}
+
+.bussma-info-box {
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bussma-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+.bussma-info-row:last-child {
+    margin-bottom: 0;
+}
+
+.bussma-divider {
+    border-bottom: 2px dotted #ced4da;
+    margin: 8px 0;
+}
+
+/* THEMES */
+/* 1. Eanfaz (Blue) */
+.theme-eanfaz .bussma-ribbon-color,
+.theme-eanfaz .bussma-l-bar {
+    background-color: #0B357F;
+}
+
+.theme-eanfaz .bussma-info-box {
+    background-color: #E2E8F0;
+}
+
+.theme-eanfaz .bussma-pill {
+    background: linear-gradient(to right, #cbd5e1, #e2e8f0);
+    border: 1px solid #94a3b8;
+}
+
+.theme-eanfaz .bussma-action-btn {
+    background: linear-gradient(180deg, #1e3a8a, #0B357F);
+    color: #fff;
+}
+
+/* 2. Private (Orange) */
+.theme-pvt .bussma-ribbon-color,
+.theme-pvt .bussma-l-bar {
+    background-color: #C05C06;
+}
+
+.theme-pvt .bussma-info-box {
+    background-color: #F8EEDB;
+}
+
+.theme-pvt .bussma-pill {
+    background: linear-gradient(to right, #fde68a, #fcd34d);
+    border: 1px solid #d97706;
+}
+
+.theme-pvt .bussma-action-btn {
+    background: linear-gradient(180deg, #ea580c, #c2410c);
+    color: #fff;
+}
+
+/* 3. Sales (Green) */
+.theme-sales .bussma-ribbon-color,
+.theme-sales .bussma-l-bar {
+    background-color: #0D7142;
+}
+
+.theme-sales .bussma-info-box {
+    background-color: #E7EED7;
+}
+
+.theme-sales .bussma-pill {
+    background: linear-gradient(to right, #bbf7d0, #86efac);
+    border: 1px solid #16a34a;
+}
+
+.theme-sales .bussma-action-btn {
+    background: linear-gradient(180deg, #16a34a, #0D7142);
+    color: #fff;
+}
+
+/* 4. City (Violet/Purple) */
+.theme-city .bussma-ribbon-color,
+.theme-city .bussma-l-bar {
+    background-color: #6d28d9;
+}
+
+.theme-city .bussma-info-box {
+    background-color: #f5f3ff;
+}
+
+.theme-city .bussma-pill {
+    background: linear-gradient(to right, #ddd6fe, #c084fc);
+    border: 1px solid #7c3aed;
+}
+
+.theme-city .bussma-action-btn {
+    background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+    color: #fff;
+}
+
+/* Common Buttons */
+.bussma-action-btn {
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.bussma-btn-grey {
+    background-color: #cbd5e1;
+    color: #475569;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+/* =========================================================
+   PORTFOLIO KANBAN CARD
+   ========================================================= */
+.pf-kanban-card {
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-width: 260px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.pf-kanban-card:hover,
+.bussma-kanban-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+
+/* Header bar */
+.pf-kanban-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 10px;
+    background: linear-gradient(135deg, #1a3c6e 0%, #2563eb 100%);
+    color: #ffffff;
+    direction: rtl;
+    border-radius: 12px;
+}
+
+.pf-kanban-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.pf-kanban-title {
+    flex: 1;
+    overflow: hidden;
+}
+
+.pf-portfolio-name {
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+/* Badge counter */
+.pf-kanban-badge {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Divider */
+.pf-kanban-divider {
+    height: -3px;
+    background: linear-gradient(to right, #2563eb, #93c5fd, #ffffff);
+}
+
+/* User row */
+.pf-kanban-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+}
+
+.pf-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #bfdbfe;
+    flex-shrink: 0;
+}
+
+.pf-user-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pf-user-label {
+    font-size: 10px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pf-user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Notes */
+.pf-kanban-notes {
+    padding: 6px 16px 8px;
+    font-size: 12px;
+    color: #64748b;
+    border-top: 1px dashed #e2e8f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Footer */
+.pf-kanban-footer {
+    padding: 10px 16px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.pf-btn-properties {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+}
+
+.pf-btn-properties:hover {
+    background: linear-gradient(135deg, #1e40af, #1d4ed8);
+    transform: scale(1.03);
+    color: #ffffff !important;
+}
+
+.pf-no-properties {
+    font-size: 12px;
+    color: #94a3b8;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* =========================================================
+   SPECIAL BASIC PORTFOLIO PROJECT KANBAN CARD
+   ========================================================= */
+.bussma-project-basic-special {
+    border: 2px solid #eab308 !important;
+    border-left: 4px solid #ca8a04 !important;
+    background: linear-gradient(to bottom, #fffdf5 0%, #ffffff 100%) !important;
+    box-shadow: 0 10px 25px rgba(234, 179, 8, 0.15) !important;
+}
+
+.bussma-project-basic-special:hover {
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.25) !important;
+    transform: translateY(-4px) !important;
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+    color: #854d0e;
+    border: 1px solid #eab308;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(234, 179, 8, 0.25);
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* =========================================================
+   PROJECT KANBAN VIEW STYLING
+   ========================================================= */
+.bussma-project-kanban-card {
+    border-radius: 8px;
+    min-height: 120px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    background: white;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bussma-project-kanban-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.06);
+}
+
+.theme-project-sales {
+    border-left: 4px solid #2563eb !important;
+}
+
+.theme-project-pvt {
+    border-left: 4px solid #10b981 !important;
+}
+
+.theme-project-enf {
+    border-left: 4px solid #f97316 !important;
+}
+
+.theme-project-city {
+    border-left: 4px solid #8b5cf6 !important;
+}
+
+.btn-project-view {
+    font-size: 12px;
+    border-radius: 4px;
+    color: #475569 !important;
+    background-color: transparent;
+    transition: background-color 0.2s, color 0.2s;
+    border: none !important;
+}
+
+.btn-project-view:hover {
+    background-color: #f1f5f9;
+    color: #0f172a !important;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 2px 5px rgba(234, 179, 8, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 2px 10px rgba(234, 179, 8, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 2px 5px rgba(234, 179, 8, 0.25);
+    }
+}

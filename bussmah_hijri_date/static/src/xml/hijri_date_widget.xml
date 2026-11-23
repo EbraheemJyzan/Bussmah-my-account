@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="bussmah_hijri_date.HijriDateField">
+        <div class="o_hijri_date_widget d-flex flex-column position-relative" t-ref="root">
+            <!-- Readonly Mode (Matches standard Odoo fields style) -->
+            <t t-if="props.readonly">
+                <span class="text-truncate">
+                    <t t-if="formattedHijriValue">
+                        <span class="fw-semibold text-primary" t-esc="formattedHijriValue"/> <span class="text-muted text-nowrap small font-monospace">(<t t-esc="formattedGregorianValue"/> م)</span>
+                    </t>
+                    <t t-else="">
+                        <span class="text-muted">-</span>
+                    </t>
+                </span>
+            </t>
+            
+            <!-- Edit Mode (Matches standard Odoo input text fields) -->
+            <t t-else="">
+                <input
+                    type="text"
+                    class="o_input o_datetime_input cursor-pointer"
+                    t-att-value="inputValue"
+                    t-att-placeholder="inputPlaceholder"
+                    t-on-change="onInputChange"
+                    t-on-focus="onInputFocus"
+                    t-ref="input"
+                    autocomplete="off"
+                />
+                
+                <!-- Popover Datepicker -->
+                <t t-if="state.showPicker">
+                    <div class="o_hijri_datepicker_popover shadow-lg rounded p-3 border" t-ref="popover">
+                        <!-- Calendar Mode Switcher inside the popover -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="btn-group btn-group-sm w-100" role="group" aria-label="Calendar Mode">
+                                <button
+                                    type="button"
+                                    t-attf-class="btn w-50 py-1 fw-bold {{ state.currentMode === 'hijri' ? 'btn-primary' : 'btn-light border text-muted' }}"
+                                    t-on-click="() => this.setMode('hijri')"
+                                >
+                                    هجري (Hijri)
+                                </button>
+                                <button
+                                    type="button"
+                                    t-attf-class="btn w-50 py-1 fw-bold {{ state.currentMode === 'gregorian' ? 'btn-primary' : 'btn-light border text-muted' }}"
+                                    t-on-click="() => this.setMode('gregorian')"
+                                >
+                                    ميلادي (Gregorian)
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Header -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <button class="btn btn-sm btn-light border-0" t-on-click="prevMonth" type="button">
+                                <i class="fa fa-chevron-left" />
+                            </button>
+                            
+                            <div class="d-flex gap-2 align-items-center">
+                                <!-- Month Selection -->
+                                <select class="form-select form-select-sm border bg-light fw-bold text-center" t-on-change="onMonthSelect" t-model="state.pickerMonth">
+                                    <t t-foreach="monthsList" t-as="m" t-key="m.value">
+                                        <option t-att-value="m.value" t-esc="m.label" />
+                                    </t>
+                                </select>
+                                
+                                <!-- Year Selection -->
+                                <select class="form-select form-select-sm border bg-light fw-bold text-center" t-on-change="onYearSelect" t-model="state.pickerYear">
+                                    <t t-foreach="yearsList" t-as="y" t-key="y">
+                                        <option t-att-value="y" t-esc="y" />
+                                    </t>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-sm btn-light border-0" t-on-click="nextMonth" type="button">
+                                <i class="fa fa-chevron-right" />
+                            </button>
+                        </div>
+                        
+                        <!-- Days Header -->
+                        <div class="o_datepicker_days_header d-grid text-center text-muted fw-bold mb-2 small" style="grid-template-columns: repeat(7, 1fr);">
+                            <t t-foreach="daysOfWeek" t-as="day" t-key="day">
+                                <div><t t-esc="day" /></div>
+                            </t>
+                        </div>
+                        
+                        <!-- Days Grid -->
+                        <div class="o_datepicker_days_grid d-grid text-center gap-1 mb-3" style="grid-template-columns: repeat(7, 1fr);">
+                            <!-- Padding days -->
+                            <t t-foreach="gridPaddingDays" t-as="empty" t-key="'empty-' + empty_index">
+                                <div class="p-1 text-muted opacity-25">-</div>
+                            </t>
+                            <!-- Month days -->
+                            <t t-foreach="gridDays" t-as="day" t-key="'day-' + day">
+                                <button
+                                    type="button"
+                                    t-attf-class="btn btn-sm p-0 rounded-circle border-0 d-flex align-items-center justify-content-center {{ isSelectedDay(day) ? 'btn-primary fw-bold text-white' : 'btn-light' }}"
+                                    style="width: 32px; height: 32px;"
+                                    t-on-click="() => this.selectDay(day)"
+                                >
+                                    <t t-esc="day" />
+                                </button>
+                            </t>
+                        </div>
+                        
+                        <!-- Time Picker (for datetime type) -->
+                        <t t-if="props.showTime">
+                            <div class="o_datepicker_time_section border-top pt-3 d-flex align-items-center justify-content-center gap-2">
+                                <i class="fa fa-clock-o text-muted" />
+                                <select class="form-select form-select-sm border-0 bg-light fw-bold text-center w-auto" t-model="state.pickerHour" t-on-change="onTimeChange">
+                                    <t t-foreach="hoursList" t-as="h" t-key="h">
+                                        <option t-att-value="h" t-esc="formatNumber(h)" />
+                                    </t>
+                                </select>
+                                <span class="fw-bold">:</span>
+                                <select class="form-select form-select-sm border-0 bg-light fw-bold text-center w-auto" t-model="state.pickerMinute" t-on-change="onTimeChange">
+                                    <t t-foreach="minutesList" t-as="m" t-key="m">
+                                        <option t-att-value="m" t-esc="formatNumber(m)" />
+                                    </t>
+                                </select>
+                            </div>
+                        </t>
+                        
+                        <!-- Quick actions -->
+                        <div class="o_datepicker_footer border-top pt-2 mt-2 d-flex justify-content-between">
+                            <button type="button" class="btn btn-sm btn-link text-primary p-0 text-decoration-none" t-on-click="selectToday">اليوم</button>
+                            <button type="button" class="btn btn-sm btn-link text-secondary p-0 text-decoration-none" t-on-click="closePicker">إغلاق</button>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </div>
+    </t>
+</templates>

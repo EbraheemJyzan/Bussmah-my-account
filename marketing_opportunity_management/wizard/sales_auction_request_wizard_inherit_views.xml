@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sales_auction_request_wizard_form_inherit" model="ir.ui.view">
+        <field name="name">sales.auction.request.wizard.form.inherit.marketing</field>
+        <field name="model">sales.auction.request.wizard</field>
+        <field name="inherit_id" ref="sales_and_auction_management.view_entries_request_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <field name="marketing_id" readonly="1" invisible="not marketing_id"/>
+                <group invisible="request_type != 'marketing'">
+                    <group string="Request and Project Info">
+                        <field name="name" required="request_type == 'marketing'" readonly="1"/>
+                        <field name="project_id" readonly="1" invisible="not project_id"/>
+                        <field name="property_ids" widget="many2many_tags" invisible="not project_id"/>
+                    </group>
+                </group>
+                <group string="Details and Notes" invisible="request_type != 'marketing'">
+                    <field name="description" placeholder="Detailed request description / notes..."/>
+                </group>
+                <group string="Attachments" invisible="request_type != 'marketing'">
+                    <field name="attachments_ids" widget="many2many_binary"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="template_entry" model="bussma.template">
+            <field name="name">الإدراجات</field>
+            <field name="form_view" ref="bussma_system.entries_form_view"/>
+            <field name="description">نموذج لإنشاء وتعبئة بيانات الإدراجات</field>
+            <field name="sequence">1</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="template_hr_request" model="bussma.template">
+            <field name="name">طلبات HR</field>
+            <field name="form_view" ref="hr_requests.view_hr_request_form"/>
+            <field name="description">نموذج لإنشاء وتعبئة طلبات الموارد البشرية (HR)</field>
+            <field name="sequence">2</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="template_office_request" model="bussma.template">
+            <field name="name">طلبات التسويق</field>
+            <field name="form_view" ref="marketing_opportunity_management.view_office_request_form"/>
+            <field name="description">نموذج لإنشاء وتعبئة طلبات التسويق</field>
+            <field name="sequence">3</field>
+            <field name="color">7</field>
+        </record>
+    </data>
+</odoo>

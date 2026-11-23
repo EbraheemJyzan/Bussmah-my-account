@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+	<record id="unpublish_wizard_form2" model="ir.ui.view">
+		<field name="name">unpublish.message.wizard</field>
+		<field name="model">unpublish.message.wizard</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name='operation' widget='radio'
+							invisible="operation_object == 'kql.database'" />
+					</group>
+					<div invisible="operation_object != 'dataset'" class="alert alert-warning">
+						<div invisible="operation == 'delete'"> The dataset will be unlinked from
+							the Power BI dataset but the dataset on the Power BI end will not be
+							affected.<br></br> Upon publishing the dataset again a new dataset will
+							be created on Power BI. </div>
+						<div invisible="operation == 'unlink'"> The dataset will be unlinked from
+							the Power BI dataset and the dataset on the Power BI will get deleted
+							with all its tables and data in it.<br></br> Upon publishing the dataset
+							again a new dataset will be created on Power BI. </div>
+					</div>
+					<div invisible="operation_object != 'eventhouse'" class="alert alert-warning">
+						<div invisible="operation == 'delete'"> The eventhouse will be unlinked from
+							the Power BI eventhouse but the eventhouse on the Power BI end will not
+							be affected.<br></br> Upon publishing the eventhouse again a new
+							eventhouse will be created on Power BI. </div>
+						<div invisible="operation == 'unlink'"> The eventhouse will be unlinked from
+							the Power BI eventhouse and the eventhouse on the Power BI will get
+							deleted with all its content.<br></br> Upon publishing the eventhouse
+							again a new eventhouse will be created on Power BI. </div>
+					</div>
+					<div invisible="operation_object != 'table'" class="alert alert-warning">
+						<div invisible="operation == 'delete'"> The table will be unlinked from the
+							Power BI table but the table on the Power BI end will not be affected.<br></br>
+							Upon publishing the table again a Same table will be updated on Power
+							BI. </div>
+						<div invisible="operation == 'unlink'"> The table will be unlinked from the
+							Power BI table and the table on the Power BI will get deleted with all
+							its content.<br></br> Upon publishing the table again a new table will
+							be created on Power BI. </div>
+					</div>
+					<div invisible="operation_object != 'kql.database'" class="alert alert-warning">
+						<div invisible="operation == 'unlink'"> The database will be unlinked from
+							the Power BI database and the database on the Power BI will get deleted
+							with all its content.<br></br> Upon publishing the database again a new
+							database will be created on Power BI. </div>
+					</div>
+					<br></br>
+
+					<group>
+						<field name='reason' />
+					</group>
+
+					<footer>
+						<button name="unpublish" type="object" class="oe_highlight" string="Confirm">
+						</button>
+						<button special="cancel" class="btn-danger" string="Close" />
+					</footer>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+</odoo>

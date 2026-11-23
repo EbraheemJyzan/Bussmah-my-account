@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Assign Properties to Portfolio List View (Wizard View) -->
+        <record id="view_entries_assign_portfolio_list" model="ir.ui.view">
+            <field name="name">entries.assign.portfolio.list</field>
+            <field name="model">entries</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <list string="Select Properties to Assign to Portfolio" create="0" delete="0" edit="0">
+                    <header>
+                        <button name="action_assign_to_portfolio"
+                                type="object"
+                                string="Assign Selected Properties to Portfolio"
+                                class="oe_highlight"
+                                groups="base.group_system,bussma_system.group_sales_manager,bussma_system.group_auctions_manager,bussma_system.group_studies_manager,bussma_system.group_deputy_studies_manager,bussma_system.group_city_studies_manager"/>
+                    </header>
+                    <field name="entrie_name"/>
+                    <field name="partner_id"/>
+                    <field name="city"/>
+                    <field name="district_id"/>
+                    <field name="property_type"/>
+                    <field name="area_sqm"/>
+                    <field name="stage_id"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Dedicated Selection List View for Batch Portfolio Entries (No wizard header buttons) -->
+        <record id="view_entries_batch_portfolio_select_list" model="ir.ui.view">
+            <field name="name">entries.batch.portfolio.select.list</field>
+            <field name="model">entries</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <list string="Select Portfolio Properties in Same Stage" create="0" delete="0" edit="0">
+                    <field name="entrie_name" string="Property Name"/>
+                    <field name="partner_id" string="Client"/>
+                    <field name="city" string="City"/>
+                    <field name="district_id" string="District"/>
+                    <field name="property_type" string="Property Type"/>
+                    <field name="area_sqm" string="Area (m²)"/>
+                    <field name="stage_id" string="Stage"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Inherit Entries Form View to show Portfolio Fields & Batch Panel in Entry Screen -->
+        <record id="view_entries_form_inherit_portfolio" model="ir.ui.view">
+            <field name="name">entries.form.inherit.portfolio</field>
+            <field name="model">entries</field>
+            <field name="inherit_id" ref="bussma_system.entries_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='requires_technical_offer']" position="after">
+                    <field name="has_portfolio" readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"/>
+                    <field name="portfolio_id"
+                           invisible="not has_portfolio"
+                           required="has_portfolio"
+                           readonly="is_entry_archive or (project_stage_selection != 'entry_screen' and not (project_stage_selection == 'data_completion' and is_assigned_data_completer))"
+                           options="{'no_create': True, 'no_open': False}"/>
+                </xpath>
+
+                <xpath expr="//notebook" position="before">
+                    <field name="batch_allowed_entry_ids" invisible="1"/>
+                    <!-- Batch Action Panel for Portfolio Properties -->
+                    <div class="card mb-3 border-primary shadow-sm"
+                         invisible="not has_portfolio or not portfolio_id or is_entry_archive">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <field name="enable_portfolio_batch_action" widget="boolean_toggle"/>
+                                <strong class="text-primary">Apply Action on Portfolio Properties</strong>
+                                <span class="badge rounded-pill bg-info text-dark" invisible="not enable_portfolio_batch_action">
+                                    <field name="batch_peer_count" readonly="1"/> <span class="ms-1">Available in same stage</span>
+                                </span>
+                                <span class="badge rounded-pill bg-success text-white" invisible="not enable_portfolio_batch_action or not batch_portfolio_entry_ids">
+                                    <field name="batch_selected_count" readonly="1"/> <span class="ms-1">Selected</span>
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2" invisible="not enable_portfolio_batch_action or not batch_portfolio_entry_ids">
+                                <button name="action_batch_clear_all"
+                                        type="object"
+                                        string="Clear Selection"
+                                        icon="fa-times"
+                                        class="btn btn-sm btn-outline-danger"/>
+                            </div>
+                        </div>
+                        <div class="card-body p-2" invisible="not enable_portfolio_batch_action">
+                            <div class="alert alert-info py-2 px-3 mb-2 small d-flex align-items-center gap-2">
+                                <i class="fa fa-info-circle fa-lg text-info"/>
+                                <div>
+                                    Select portfolio properties to sync changes with. When you save this record or click any stage action button in the header, all modified data and stage actions will automatically be applied to the selected properties.
+                                </div>
+                            </div>
+                            <field name="batch_portfolio_entry_ids"
+                                   domain="[('id', 'in', batch_allowed_entry_ids)]"
+                                   context="{'tree_view_ref': 'study_portfolio_management.view_entries_batch_portfolio_select_list', 'list_view_ref': 'study_portfolio_management.view_entries_batch_portfolio_select_list'}"
+                                   widget="many2many">
+                                <list string="Selected Properties for Batch Action" create="0">
+                                    <field name="entrie_name" string="Property Name"/>
+                                    <field name="city" string="City"/>
+                                    <field name="district_id" string="District"/>
+                                    <field name="property_type" string="Property Type"/>
+                                    <field name="area_sqm" string="Area (m²)"/>
+                                    <field name="stage_id" string="Stage"/>
+                                </list>
+                            </field>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Eanfaz Detailed Study Form View to show Portfolio Field & Batch Panel -->
+        <record id="view_detailed_study_eanfaz_inherit_portfolio" model="ir.ui.view">
+            <field name="name">entries.detailed.study.eanfaz.inherit.portfolio</field>
+            <field name="model">entries</field>
+            <field name="inherit_id" ref="sales_and_auction_management.detailed_study_eanfaz_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='p2_need_identity']" position="after">
+                    <field name="has_portfolio" readonly="1"/>
+                    <field name="portfolio_id" invisible="not has_portfolio" readonly="1" options="{'no_create': True, 'no_open': False}"/>
+                </xpath>
+
+                <xpath expr="//notebook" position="before">
+                    <field name="batch_allowed_entry_ids" invisible="1"/>
+                    <!-- Batch Action Panel for Portfolio Properties -->
+                    <div class="card mb-3 border-primary shadow-sm"
+                         invisible="not has_portfolio or not portfolio_id or is_entry_archive">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <field name="enable_portfolio_batch_action" widget="boolean_toggle"/>
+                                <strong class="text-primary">Apply Action on Portfolio Properties</strong>
+                                <span class="badge rounded-pill bg-info text-dark" invisible="not enable_portfolio_batch_action">
+                                    <field name="batch_peer_count" readonly="1"/> <span class="ms-1">Available in same stage</span>
+                                </span>
+                                <span class="badge rounded-pill bg-success text-white" invisible="not enable_portfolio_batch_action or not batch_portfolio_entry_ids">
+                                    <field name="batch_selected_count" readonly="1"/> <span class="ms-1">Selected</span>
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2" invisible="not enable_portfolio_batch_action or not batch_portfolio_entry_ids">
+                                <button name="action_batch_clear_all"
+                                        type="object"
+                                        string="Clear Selection"
+                                        icon="fa-times"
+                                        class="btn btn-sm btn-outline-danger"/>
+                            </div>
+                        </div>
+                        <div class="card-body p-2" invisible="not enable_portfolio_batch_action">
+                            <div class="alert alert-info py-2 px-3 mb-2 small d-flex align-items-center gap-2">
+                                <i class="fa fa-info-circle fa-lg text-info"/>
+                                <div>
+                                    Select portfolio properties to sync changes with. When you save this record or click any stage action button in the header, all modified data and stage actions will automatically be applied to the selected properties.
+                                </div>
+                            </div>
+                            <field name="batch_portfolio_entry_ids"
+                                   domain="[('id', 'in', batch_allowed_entry_ids)]"
+                                   context="{'tree_view_ref': 'study_portfolio_management.view_entries_batch_portfolio_select_list', 'list_view_ref': 'study_portfolio_management.view_entries_batch_portfolio_select_list'}"
+                                   widget="many2many">
+                                <list string="Selected Properties for Batch Action" create="0">
+                                    <field name="entrie_name" string="Property Name"/>
+                                    <field name="city" string="City"/>
+                                    <field name="district_id" string="District"/>
+                                    <field name="property_type" string="Property Type"/>
+                                    <field name="area_sqm" string="Area (m²)"/>
+                                    <field name="stage_id" string="Stage"/>
+                                </list>
+                            </field>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Entries Search View to filter/group by Portfolio and Study Type -->
+        <record id="view_entries_search_inherit_portfolio" model="ir.ui.view">
+            <field name="name">entries.search.inherit.portfolio</field>
+            <field name="model">entries</field>
+            <field name="inherit_id" ref="bussma_system.view_entries_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='commercial_sector_stages']" position="before">
+                    <field name="portfolio_id"/>
+                    <field name="study_type"/>
+                    <filter name="filter_has_portfolio" string="Has Portfolio" domain="[('has_portfolio', '=', True)]"/>
+                    <filter name="filter_no_portfolio" string="No Portfolio" domain="[('has_portfolio', '=', False)]"/>
+                    <separator/>
+                    <filter name="filter_preliminary_study" string="Preliminary Study" domain="[('study_type', '=', 'preliminary')]"/>
+                    <filter name="filter_detailed_study" string="Detailed Study" domain="[('study_type', '=', 'detailed')]"/>
+                    <separator/>
+                </xpath>
+                <xpath expr="//group[1]" position="inside">
+                    <filter name="group_by_portfolio" string="Study Portfolio" context="{'group_by': 'portfolio_id'}"/>
+                    <filter name="group_by_study_type" string="Study Type" context="{'group_by': 'study_type'}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

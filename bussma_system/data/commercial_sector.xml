@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- request.type -->
+        <!-- Preliminary Study -->
+        <record id="preliminary_study" model="request.type">
+            <field name="name">Preliminary Study</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="res_model">entries</field>
+        </record>
+        <!-- Detailed Study -->
+        <record id="detailed_study" model="request.type">
+            <field name="name">Detailed Study</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="res_model">entries</field>
+        </record>
+        <!-- City Study -->
+        <record id="city_study" model="request.type">
+            <field name="name">City Study</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="res_model">entries</field>
+        </record>
+
+        <!-- Stage Sequence Ranges:
+             10s: Entry & Path (10-19) | 30s: Studies (30-39) | 40s: Committee & Managers (40-49)
+             50s: Negotiation & Contracts (50-59) | 60: Completed | 70s: City Study (70-79) -->
+        <!-- ================================================================ -->
+        <!-- Stage: Entry Screen                                               -->
+        <!-- Allowed: All Employees (base.group_user)                        -->
+        <!-- ================================================================ -->
+        <record id="entry_screen" model="request.stage">
+            <field name="name">Entry Screen</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">10</field>
+            <field name="state">draft</field>
+            <field name="assign_type">users</field>
+            <field name="default_user_ids" eval="[(6, 0, [
+                ref('bussma_system.user_analyst'),
+                ref('bussma_system.user_studies_manager'),
+                ref('bussma_system.user_deputy_studies_manager'),
+                ref('bussma_system.user_rnd_manager'),
+                ref('bussma_system.user_sales_manager'),
+                ref('bussma_system.user_auctions_manager'),
+                ref('bussma_system.user_commercial_sector_manager'),
+                ref('bussma_system.user_negotiator')
+            ])]"/>
+            <field name="project_stage_selection">entry_screen</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Data Completion (hidden unless record is returned here)    -->
+        <!-- Allowed: Assigned Data Completer                                 -->
+        <!-- ================================================================ -->
+        <record id="data_completion" model="request.stage">
+            <field name="name">Data Completion</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">12</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">users</field>
+            <field name="default_user_ids" eval="[(6, 0, [])]"/>
+            <field name="project_stage_selection">data_completion</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Define Project Path & Assign Analyst                       -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="define_project_path_assign_analyst" model="request.stage">
+            <field name="name">Define Project Path</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">15</field>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_studies_manager'), ref('bussma_system.role_deputy_studies_manager'), ref('bussma_system.role_rnd_manager')])]"/>
+            <field name="project_stage_selection">define_project_path_assign_analyst</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Preliminary Study Analyst                                  -->
+        <!-- Allowed: Analyst -->
+        <!-- ================================================================ -->
+        <record id="analyst" model="request.stage">
+            <field name="name">Preliminary Study Analyst</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">30</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_analyst')])]"/>
+            <field name="project_stage_selection">analyst</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Preliminary Study Approval                                 -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="study_approval" model="request.stage">
+            <field name="name">Preliminary Study Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">32</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_studies_manager'), ref('bussma_system.role_deputy_studies_manager'), ref('bussma_system.role_rnd_manager')])]"/>
+            <field name="project_stage_selection">study_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Detailed Study Analyst                                     -->
+        <!-- Allowed: Analyst                                                 -->
+        <!-- ================================================================ -->
+        <record id="detailed_study_analyst" model="request.stage">
+            <field name="name">Detailed Study Analyst</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">34</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_analyst')])]"/>
+            <field name="project_stage_selection">detailed_study_analyst</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Detailed Study Approval                                    -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="detailed_study_approval" model="request.stage">
+            <field name="name">Detailed Study Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">36</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_studies_manager'), ref('bussma_system.role_deputy_studies_manager'), ref('bussma_system.role_rnd_manager')])]"/>
+            <field name="project_stage_selection">detailed_study_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Committee Decision                                         -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="committee_decision" model="request.stage">
+            <field name="name">Committee Decision</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">40</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_studies_manager'), ref('bussma_system.role_deputy_studies_manager'), ref('bussma_system.role_rnd_manager')])]"/>
+            <field name="project_stage_selection">committee_decision</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Sales Manager Decision                                     -->
+        <!-- Allowed: Sales Manager                                            -->
+        <!-- ================================================================ -->
+        <record id="sale_manager_decision" model="request.stage">
+            <field name="name">Sales Manager Decision</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">42</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_sales_manager')])]"/>
+            <field name="project_stage_selection">sales_manager_decision</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Auctions Manager Decision                                  -->
+        <!-- Allowed: Auctions Manager                                         -->
+        <!-- ================================================================ -->
+        <record id="auctions_manager_decision" model="request.stage">
+            <field name="name">Auctions Manager Decision</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">44</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_auctions_manager')])]"/>
+            <field name="project_stage_selection">auctions_manager_decision</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Commercial Manager Approval                                -->
+        <!-- Allowed: Commercial Sector Manager                               -->
+        <!-- ================================================================ -->
+        <record id="commercial_manager_approval" model="request.stage">
+            <field name="name">Commercial Manager Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">46</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_commercial_sector_manager')])]"/>
+            <field name="project_stage_selection">commercial_manager_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Assign Negotiator                                          -->
+        <!-- Allowed: Assign Negotiator Group                                  -->
+        <!-- ================================================================ -->
+        <record id="assign_negotiator" model="request.stage">
+            <field name="name">Assign Negotiator</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">50</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="project_stage_selection">assign_negotiator</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Negotiator                                                 -->
+        <!-- Allowed: Negotiator -->
+        <!-- ================================================================ -->
+        <record id="negotiator" model="request.stage">
+            <field name="name">Negotiator</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">52</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_negotiator')])]"/>
+            <field name="project_stage_selection">negotiator</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Manager Contract Approval                                  -->
+        <!-- Allowed: Commercial Sector Manager                               -->
+        <!-- ================================================================ -->
+        <record id="manager_contract_approval" model="request.stage">
+            <field name="name">Commercial Sector Manager Contract Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">54</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_commercial_sector_manager')])]"/>
+            <field name="project_stage_selection">manager_contract_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Contract Follow-up                                         -->
+        <!-- Allowed: Sales Manager, Auctions Manager                         -->
+        <!-- ================================================================ -->
+        <record id="contract_followup" model="request.stage">
+            <field name="name">Contract Followup</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">56</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_auctions_manager')])]"/>
+            <field name="project_stage_selection">contract_followup</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Negotiation Approval                                       -->
+        <!-- Allowed: Commercial Sector Manager, Studies Manager              -->
+        <!-- ================================================================ -->
+        <record id="negotiation_approval" model="request.stage">
+            <field name="name">Negotiation Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">58</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_commercial_sector_manager'), ref('bussma_system.role_studies_manager')])]"/>
+            <field name="project_stage_selection">negotiation_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Contract Completion                                        -->
+        <!-- Allowed: Contract Manager                                          -->
+        <!-- ================================================================ -->
+        <record id="contract_completion" model="request.stage">
+            <field name="name">Contract Completion</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">59</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_contract_manager')])]"/>
+            <field name="project_stage_selection">contract_completion</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: Completed                                                  -->
+        <!-- ================================================================ -->
+        <record id="completed" model="request.stage">
+            <field name="name">Completed Detailed Study</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">60</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">done</field>
+            <field name="assign_type">users</field>
+            <field name="default_user_ids" eval="[(6, 0, [])]"/>
+            <field name="project_stage_selection">completed</field>
+        </record>
+
+        <!-- Cities Study -->
+        <!-- ================================================================ -->
+        <!-- Stage: City Study - Analyst                                       -->
+        <!-- Allowed: Analyst -->
+        <!-- ================================================================ -->
+        <record id="city_study_analyst" model="request.stage">
+            <field name="name">City Study - Analyst</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">70</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('city_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_analyst')])]"/>
+            <field name="project_stage_selection">city_study_analyst</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: City Study - Approval                                      -->
+        <!-- Allowed: Studies Manager, Deputy Studies Manager, R&D Manager    -->
+        <!-- ================================================================ -->
+        <record id="city_study_approval" model="request.stage">
+            <field name="name">City Study - Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">72</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('city_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_studies_manager'), ref('bussma_system.role_deputy_studies_manager'), ref('bussma_system.role_rnd_manager')])]"/>
+            <field name="project_stage_selection">city_study_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
+        <!-- Stage: City Study - Completed                                     -->
+        <!-- ================================================================ -->
+        <record id="city_study_completed" model="request.stage">
+            <field name="name">City Study - Completed</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">74</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('city_study')])]"/>
+            <field name="state">done</field>
+            <field name="assign_type">users</field>
+            <field name="default_user_ids" eval="[(6, 0, [])]"/>
+            <field name="project_stage_selection">city_study_completed</field>
+        </record>
+
+        <function model="entries" name="_migrate_detailed_study_stages"/>
+        <function model="entries" name="_migrate_department_manager_stages"/>
+    </data>
+</odoo>

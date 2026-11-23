@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Form View for bussma.marketing -->
+        <record id="view_bussma_marketing_form" model="ir.ui.view">
+            <field name="name">bussma.marketing.form</field>
+            <field name="model">bussma.marketing</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Management" create="false">
+                    <header>
+                        <button name="action_send_for_review_and_classification"
+                                string="Review and Classification"
+                                type="object"
+                                class="btn-primary"
+                                invisible="marketing_stage_selection != 'mkt_draft' or not is_marketing_supervisor"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"/>
+                        <button name="action_send_to_done"
+                                string="Completed"
+                                type="object"
+                                class="btn-primary"
+                                invisible="marketing_stage_selection != 'mkt_approval' or not is_marketing_supervisor"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"/>
+                        <button name="action_open_return_to_opportunity_wizard"
+                                string="Return to Requester"
+                                type="object"
+                                class="btn-warning"
+                                icon="fa-undo"
+                                invisible="marketing_stage_selection != 'mkt_review' or not is_marketing_supervisor"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"/>
+                        <field name="stage_id" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <field name="is_marketing_supervisor" invisible="1"/>
+                        <field name="marketing_stage_selection" invisible="1"/>
+                        <field name="is_office_request" invisible="1"/>
+                        <field name="is_opportunity_request" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_materials_done" type="object" class="oe_stat_button" icon="fa-cubes">
+                                <field name="material_count" widget="statinfo" string="Completed Marketing Materials"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Project Name..." readonly="not is_marketing_supervisor or marketing_stage_selection not in ['mkt_draft', 'mkt_review']"/></h1>
+                            <h3><field name="code" readonly="1"/></h3>
+                        </div>
+                        <group>
+                            <group string="Project and Property Information">
+                                <field name="opportunity_id" groups="base.group_system" invisible="not is_opportunity_request or not opportunity_id" readonly="1"/>
+                                <field name="opportunity_id" options="{'no_open': True}" groups="!base.group_system" invisible="not is_opportunity_request or not opportunity_id" readonly="1"/>
+                                <field name="bussma_project_id" groups="base.group_system" invisible="not bussma_project_id" readonly="1"/>
+                                <field name="bussma_project_id" options="{'no_open': True}" groups="!base.group_system" invisible="not bussma_project_id" readonly="1"/>
+                                <field name="project_cat" invisible="not bussma_project_id" readonly="1"/>
+                                <field name="office_department_id" invisible="not is_office_request" options="{'no_open': True}" readonly="1"/>
+                                <field name="requested_by_id" invisible="not is_office_request" options="{'no_open': True}" readonly="1"/>
+                                <field name="partner_id" options="{'no_open': True}" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'change_request')  or bussma_project_id"/>
+                                <field name="property_name" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design') or bussma_project_id"/>
+                                <field name="property_type_id" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design')  or bussma_project_id"/>
+                                <field name="city_id" options="{'no_open': True}" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design') or bussma_project_id"/>
+                                <field name="district_id" options="{'no_open': True}" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design') or bussma_project_id"/>
+                                <field name="area_sqm" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design')  or bussma_project_id"/>
+                                <field name="sale_price" readonly="1" invisible="is_office_request and office_request_type not in ('project_request', 'signboard_design')  or bussma_project_id"/>
+                            </group>
+                            <group string="Campaign Details">
+                                <field name="material_responsible_id" readonly="not is_marketing_supervisor or marketing_stage_selection not in ['mkt_draft', 'mkt_review']"/>
+                                <field name="start_date" readonly="not is_marketing_supervisor or marketing_stage_selection not in ['mkt_draft', 'mkt_review']"/>
+                                <field name="end_date" readonly="not is_marketing_supervisor or marketing_stage_selection not in ['mkt_draft', 'mkt_review']"/>
+                                <field name="budget" readonly="not is_marketing_supervisor or marketing_stage_selection not in ['mkt_draft', 'mkt_review']"/>
+                            </group>
+                        </group>
+                        <group string="Opportunity Details" invisible="not is_opportunity_request and not opportunity_id">
+                            <group>
+                                <field name="opportunity_type" readonly="1"/>
+                                <field name="opportunity_source" readonly="1"/>
+                                <field name="source_other" readonly="1" invisible="opportunity_source != 'external_source'"/>
+                                <field name="source" invisible="1"/>
+                                <field name="priority" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="client_requirements" readonly="1"/>
+                            </group>
+                        </group>
+                        <group string="Request Type" invisible="not is_office_request">
+                            <group>
+                                <field name="office_request_type" readonly="1"/>
+                            </group>
+                        </group>
+
+                        <!-- ============ Project ============ -->
+                        <group string="Project Details" invisible="not is_office_request or office_request_type != 'project_request'">
+                            <group>
+                                <field name="project_name" string="Project Name" readonly="1"/>
+                                <field name="project_type_selection" string="Project Type" readonly="1"/>
+                                <field name="city_id" string="City" readonly="1"/>
+                                <field name="needs_identity" string="Needs Identity?" readonly="1"/>
+                                <field name="has_proposed_project_name" widget="radio" options="{'horizontal': true}" string="Has Proposed Project Name?" readonly="1"/>
+                                <field name="proposed_project_name" invisible="has_proposed_project_name != 'yes'" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                                <field name="is_masterplan" widget="radio" options="{'horizontal': true}" string="Is Project a Masterplan?" readonly="1"/>
+                                <field name="delivery_date" string="Delivery Date" readonly="1"/>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Change Request ============ -->
+                        <group string="Change Request Details" invisible="not is_office_request or office_request_type != 'change_request'">
+                            <group>
+                                <field name="change_request_type" string="Change Type" readonly="1"/>
+                                <field name="target_marketing_project_id" string="Project to Change" readonly="1"/>
+                                <field name="delivery_date" string="Delivery Date" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Business Card ============ -->
+                        <group string="Employee Information" invisible="not is_office_request or office_request_type != 'business_card'">
+                            <group>
+                                <field name="employee_name" string="Name" readonly="1"/>
+                                <field name="job_title" string="Job Title" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="phone_number" string="Phone" readonly="1"/>
+                                <field name="extension_number" string="Extension" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Email Signature ============ -->
+                        <group string="Employee Information" invisible="not is_office_request or office_request_type != 'email_signature'">
+                            <group>
+                                <field name="employee_name" string="Name" readonly="1"/>
+                                <field name="job_title" string="Job Title" readonly="1"/>
+                                <field name="employee_number" string="Employee Number" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="employee_email" string="Employee Email" readonly="1"/>
+                                <field name="phone_number" string="Phone" readonly="1"/>
+                                <field name="extension_number" string="Extension" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Signboard Design ============ -->
+                        <group string="Signboard Details" invisible="not is_office_request or office_request_type != 'signboard_design'">
+                            <group>
+                                <field name="property_code" string="Property Code" readonly="1"/>
+                                <field name="signboard_size" string="Signboard Size" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?" readonly="1"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Design Request ============ -->
+                        <group string="Request Details" invisible="not is_office_request or office_request_type != 'design_request'">
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?" readonly="1"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Internal Communication ============ -->
+                        <group string="Request Details" invisible="not is_office_request or office_request_type != 'internal_communication'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Thank You Certificate ============ -->
+                        <group string="Employee Information" invisible="not is_office_request or office_request_type != 'thank_you_certificate'">
+                            <group>
+                                <field name="employee_name" string="Name" readonly="1"/>
+                                <field name="job_title" string="Job Title" readonly="1"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ ID Card ============ -->
+                        <group string="Employee Information" invisible="not is_office_request or office_request_type != 'id_card'">
+                            <group>
+                                <field name="employee_name" string="Name" readonly="1"/>
+                                <field name="job_title" string="Job Title" readonly="1"/>
+                                <field name="employee_number" string="Employee Number" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- ============ Other ============ -->
+                        <group string="Request Details" invisible="not is_office_request or office_request_type != 'other'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?" readonly="1"/>
+                            </group>
+                        </group>
+                        <!-- Request Description -->
+                        <group string="Request Description" invisible="not is_office_request or office_request_type not in ('project_request', 'change_request', 'design_request', 'internal_communication', 'thank_you_certificate', 'other')">
+                            <field name="request_description" nolabel="1" readonly="1" placeholder="Detailed request description..."/>
+                        </group>
+                        <group string="Marketing Activities" invisible="not (marketing_stage_selection in ['mkt_review', 'mkt_approval'])">
+                            <field name="marketing_activity_domain" invisible="1"/>
+                            <field name="marketing_activity_ids" widget="many2many_checkboxes" nolabel="1" readonly="not is_marketing_supervisor" domain="marketing_activity_domain"/>
+                        </group>
+                        <field name="is_returned_to_requester" invisible="1"/>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not is_returned_to_requester or marketing_stage_selection != 'mkt_review'">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Request Return to Requester Notes</strong>
+                                <field name="return_to_requester_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="attachment_return_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                        <notebook>
+                            <page string="Project Properties" name="project_properties" invisible="not bussma_project_id">
+                                <field name="sales_auction_ids" readonly="1" options="{'no_create': True}">
+                                    <list create="false" delete="false" edit="false">
+                                        <field name="currency_id" column_invisible="True"/>
+                                        <field name="partner_id"/>
+                                        <field name="entrie_name"/>
+                                        <field name="partner_mobile"/>
+                                        <field name="city"/>
+                                        <field name="district_id"/>
+                                        <field name="property_type"/>
+                                        <field name="area_sqm"/>
+                                        <field name="committee_decision_rel"/>
+                                        <field name="direct_sale_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="direct_sale_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="committe_notes"/>
+                                    </list>
+                                    <form create="0" edit="0" delete="0">
+                                        <sheet>
+                                            <div class="oe_title">
+                                                <h1>
+                                                    <field name="entrie_name" readonly="1"/>
+                                                </h1>
+                                            </div>
+                                            <group>
+                                                <group string="Client &amp; Contracting Information">
+                                                    <field name="partner_id" readonly="1"/>
+                                                    <field name="partner_mobile" readonly="1"/>
+                                                    <field name="contract_client_name" readonly="1"/>
+                                                    <field name="contract_agreed_price" widget="monetary" readonly="1"/>
+                                                    <field name="contract_duration" readonly="1"/>
+                                                    <field name="currency_id" invisible="1"/>
+                                                </group>
+                                                <group string="Property Details">
+                                                    <field name="property_type" readonly="1"/>
+                                                    <field name="city" readonly="1"/>
+                                                    <field name="district_id" readonly="1"/>
+                                                    <field name="area_sqm" readonly="1"/>
+                                                    <field name="deed_number" readonly="1"/>
+                                                    <field name="plan_number" readonly="1"/>
+                                                    <field name="plot_number" readonly="1"/>
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Preliminary Study" name="preliminary_study">
+                                                    <group>
+                                                        <group string="Study Status &amp; Pricing">
+                                                            <field name="preliminary_study_status" readonly="1"/>
+                                                            <field name="customer_price_per_sqm" widget="monetary" readonly="1"/>
+                                                            <field name="final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_index_average" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Income &amp; Property Info">
+                                                            <field name="verified_income" widget="monetary" readonly="1"/>
+                                                            <field name="expected_full_lease_income" widget="monetary" readonly="1"/>
+                                                            <field name="properties_count" readonly="1"/>
+                                                            <field name="building_requirements" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Analyst Recommendations &amp; Notes">
+                                                        <field name="analyst_recommendation_preliminary" readonly="1"/>
+                                                        <field name="analyst_rejection_notes" readonly="1" invisible="not analyst_rejection_notes"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Detailed Study" name="detailed_study">
+                                                    <group>
+                                                        <group string="Detailed Evaluation &amp; Pricing">
+                                                            <field name="detailed_final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="detailed_comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_ministry_index_average" widget="monetary" readonly="1"/>
+                                                            <field name="lowest_price_per_meter_total_property" widget="monetary" readonly="1"/>
+                                                            <field name="approximate_building_value_per_meter" widget="monetary" readonly="1"/>
+                                                            <field name="current_total_income" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Property Specifications">
+                                                            <field name="building_area" readonly="1"/>
+                                                            <field name="floors_count" readonly="1"/>
+                                                            <field name="units_count" readonly="1"/>
+                                                            <field name="building_license_number" readonly="1"/>
+                                                            <field name="building_license_date" readonly="1"/>
+                                                            <field name="best_property_use" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group>
+                                                        <group string="Services &amp; Utilities">
+                                                            <field name="electricity_service" readonly="1"/>
+                                                            <field name="electricity_meters_count" readonly="1"/>
+                                                            <field name="water_service" readonly="1"/>
+                                                            <field name="water_meters_count" readonly="1"/>
+                                                            <field name="sewage_service" readonly="1"/>
+                                                            <field name="pavement_service" readonly="1"/>
+                                                        </group>
+                                                        <group string="Analysis Points">
+                                                            <field name="internal_strength_points" readonly="1"/>
+                                                            <field name="external_strength_points" readonly="1"/>
+                                                            <field name="external_weakness_points" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Detailed Analyst Recommendation">
+                                                        <field name="analyst_recommendation_details" readonly="1"/>
+                                                        <field name="detailed_building_requirements" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Negotiation &amp; Committee Decision" name="negotiation_page">
+                                                    <group>
+                                                        <group string="Owner Final Negotiation">
+                                                            <field name="final_owner_decision" readonly="1"/>
+                                                            <field name="final_owner_price" widget="monetary" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_decision" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_price" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Committee Decision">
+                                                            <field name="committee_decision" readonly="1"/>
+                                                            <field name="committee_decision_date" readonly="1"/>
+                                                            <field name="marketing_duration_months" readonly="1"/>
+                                                            <field name="committe_notes" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Attachments &amp; Documents" name="attachments">
+                                                    <group>
+                                                        <group string="Contracts &amp; Deeds">
+                                                            <field name="rent_contract_ids" widget="many2many_binary" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment_name" invisible="1"/>
+                                                        </group>
+                                                        <group string="Photos &amp; Files">
+                                                            <field name="facility_photo_ids" widget="many2many_binary" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Notes &amp; Description" name="notes">
+                                                    <group>
+                                                        <field name="entered_notes" readonly="1"/>
+                                                        <field name="property_description" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Opportunity Properties" name="opportunity_properties" invisible="not is_opportunity_request">
+                                <field name="entry_ids" readonly="1" options="{'no_create': True}">
+                                    <list create="false" delete="false" edit="false">
+                                        <field name="currency_id" column_invisible="True"/>
+                                        <field name="partner_id"/>
+                                        <field name="entrie_name"/>
+                                        <field name="partner_mobile"/>
+                                        <field name="city"/>
+                                        <field name="district_id"/>
+                                        <field name="property_type"/>
+                                        <field name="area_sqm"/>
+                                        <field name="committee_decision_rel" string="Committee Decision"/>
+                                        <field name="direct_sale_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="direct_sale_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_price_per_meter" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="auction_total_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                        <field name="committe_notes"/>
+                                    </list>
+                                    <form create="0" edit="0" delete="0">
+                                        <sheet>
+                                            <div class="oe_title">
+                                                <h1>
+                                                    <field name="entrie_name" readonly="1"/>
+                                                </h1>
+                                            </div>
+                                            <group>
+                                                <group string="Client &amp; Contracting Information">
+                                                    <field name="partner_id" readonly="1"/>
+                                                    <field name="partner_mobile" readonly="1"/>
+                                                    <field name="contract_client_name" readonly="1"/>
+                                                    <field name="contract_agreed_price" widget="monetary" readonly="1"/>
+                                                    <field name="contract_duration" readonly="1"/>
+                                                    <field name="currency_id" invisible="1"/>
+                                                </group>
+                                                <group string="Property Details">
+                                                    <field name="property_type" readonly="1"/>
+                                                    <field name="city" readonly="1"/>
+                                                    <field name="district_id" readonly="1"/>
+                                                    <field name="area_sqm" readonly="1"/>
+                                                    <field name="deed_number" readonly="1"/>
+                                                    <field name="plan_number" readonly="1"/>
+                                                    <field name="plot_number" readonly="1"/>
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Preliminary Study" name="preliminary_study">
+                                                    <group>
+                                                        <group string="Study Status &amp; Pricing">
+                                                            <field name="preliminary_study_status" readonly="1"/>
+                                                            <field name="customer_price_per_sqm" widget="monetary" readonly="1"/>
+                                                            <field name="final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_index_average" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Income &amp; Property Info">
+                                                            <field name="verified_income" widget="monetary" readonly="1"/>
+                                                            <field name="expected_full_lease_income" widget="monetary" readonly="1"/>
+                                                            <field name="properties_count" readonly="1"/>
+                                                            <field name="building_requirements" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Analyst Recommendations &amp; Notes">
+                                                        <field name="analyst_recommendation_preliminary" readonly="1"/>
+                                                        <field name="analyst_rejection_notes" readonly="1" invisible="not analyst_rejection_notes"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Detailed Study" name="detailed_study">
+                                                    <group>
+                                                        <group string="Detailed Evaluation &amp; Pricing">
+                                                            <field name="detailed_final_property_price" widget="monetary" readonly="1"/>
+                                                            <field name="detailed_comparison_average" widget="monetary" readonly="1"/>
+                                                            <field name="justice_ministry_index_average" widget="monetary" readonly="1"/>
+                                                            <field name="lowest_price_per_meter_total_property" widget="monetary" readonly="1"/>
+                                                            <field name="approximate_building_value_per_meter" widget="monetary" readonly="1"/>
+                                                            <field name="current_total_income" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Property Specifications">
+                                                            <field name="building_area" readonly="1"/>
+                                                            <field name="floors_count" readonly="1"/>
+                                                            <field name="units_count" readonly="1"/>
+                                                            <field name="building_license_number" readonly="1"/>
+                                                            <field name="building_license_date" readonly="1"/>
+                                                            <field name="best_property_use" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group>
+                                                        <group string="Services &amp; Utilities">
+                                                            <field name="electricity_service" readonly="1"/>
+                                                            <field name="electricity_meters_count" readonly="1"/>
+                                                            <field name="water_service" readonly="1"/>
+                                                            <field name="water_meters_count" readonly="1"/>
+                                                            <field name="sewage_service" readonly="1"/>
+                                                            <field name="pavement_service" readonly="1"/>
+                                                        </group>
+                                                        <group string="Analysis Points">
+                                                            <field name="internal_strength_points" readonly="1"/>
+                                                            <field name="external_strength_points" readonly="1"/>
+                                                            <field name="external_weakness_points" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                    <group string="Detailed Analyst Recommendation">
+                                                        <field name="analyst_recommendation_details" readonly="1"/>
+                                                        <field name="detailed_building_requirements" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                                <page string="Negotiation &amp; Committee Decision" name="negotiation_page">
+                                                    <group>
+                                                        <group string="Owner Final Negotiation">
+                                                            <field name="final_owner_decision" readonly="1"/>
+                                                            <field name="final_owner_price" widget="monetary" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_decision" readonly="1"/>
+                                                            <field name="manager_negotiator_final_owner_price" widget="monetary" readonly="1"/>
+                                                        </group>
+                                                        <group string="Committee Decision">
+                                                            <field name="committee_decision" readonly="1"/>
+                                                            <field name="committee_decision_date" readonly="1"/>
+                                                            <field name="marketing_duration_months" readonly="1"/>
+                                                            <field name="committe_notes" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Attachments &amp; Documents" name="attachments">
+                                                    <group>
+                                                        <group string="Contracts &amp; Deeds">
+                                                            <field name="rent_contract_ids" widget="many2many_binary" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment" filename="contract_agency_deed_attachment_name" readonly="1"/>
+                                                            <field name="contract_agency_deed_attachment_name" invisible="1"/>
+                                                        </group>
+                                                        <group string="Photos &amp; Files">
+                                                            <field name="facility_photo_ids" widget="many2many_binary" readonly="1"/>
+                                                        </group>
+                                                    </group>
+                                                </page>
+                                                <page string="Notes &amp; Description" name="notes">
+                                                    <group>
+                                                        <field name="entered_notes" readonly="1"/>
+                                                        <field name="property_description" readonly="1"/>
+                                                    </group>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Marketing Materials" invisible="not (marketing_stage_selection in ['mkt_review', 'mkt_approval', 'mkt_done'])">
+                                <field name="material_ids" readonly="not is_marketing_supervisor">
+                                    <list editable="bottom" create="false">
+                                        <field name="code" readonly="1"/>
+                                        <field name="name"/>
+                                        <field name="department_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                        <field name="task_count" readonly="1"/>
+                                        <field name="notes"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Marketing Material Results" invisible="not(marketing_stage_selection in ['mkt_approval', 'mkt_done']) or not is_marketing_supervisor">
+                                <field name="material_ids" mode="kanban" readonly="1">
+                                    <kanban default_group_by="activity_id" create="false" edit="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="employee_id"/>
+                                        <field name="result_notes"/>
+                                        <field name="output_attachment_ids"/>
+                                        <field name="activity_id"/>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="oe_kanban_card oe_kanban_global_click p-2 border rounded shadow-sm mb-2 bg-white">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <strong class="fs-6 text-primary"><field name="name"/></strong>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small">
+                                                        <strong>Responsible: </strong>
+                                                        <field name="employee_id"/>
+                                                    </div>
+                                                    <div class="mb-1 text-muted small" t-if="record.result_notes.raw_value">
+                                                        <strong>Notes:<br/> </strong>
+                                                        <field name="result_notes"/>
+                                                    </div>
+                                                    <div class="mt-2" t-if="record.output_attachment_ids.raw_value">
+                                                        <strong>Attachments:<br/> </strong>
+                                                        <field name="output_attachment_ids" widget="many2many_binary"/>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page string="Request Requirements / Notes">
+                                <field name="notes" placeholder="Request requirements or marketing campaign notes..." readonly="1"/>
+                                <field name="attachments_request_ids" widget="many2many_binary" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View for bussma.marketing -->
+        <record id="view_bussma_marketing_tree" model="ir.ui.view">
+            <field name="name">bussma.marketing.tree</field>
+            <field name="model">bussma.marketing</field>
+            <field name="arch" type="xml">
+                <list string="Marketing Management" create="false">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="opportunity_id"/>
+                    <field name="partner_id"/>
+                    <field name="property_name"/>
+                    <field name="city_id"/>
+                    <field name="district_id"/>
+                    <field name="property_type_id"/>
+                    <field name="area_sqm"/>
+                    <field name="sale_price"/>
+                    <field name="material_responsible_id"/>
+                    <field name="start_date"/>
+                    <field name="budget"/>
+                    <field name="project_status" widget="badge"/>
+                    <field name="stage_id"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Search View for bussma.marketing (Standard Actions) -->
+        <record id="view_bussma_marketing_search" model="ir.ui.view">
+            <field name="name">bussma.marketing.search</field>
+            <field name="model">bussma.marketing</field>
+            <field name="arch" type="xml">
+                <search string="Search Marketing">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="property_name"/>
+                    <field name="material_responsible_id"/>
+                    <field name="city_id"/>
+                    <field name="district_id"/>
+                    <field name="property_type_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Material Responsible" name="group_by_material_responsible" context="{'group_by': 'material_responsible_id'}"/>
+                        <filter string="Project Status" name="group_by_project_status" context="{'group_by': 'project_status'}"/>
+                        <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                        <filter string="City" name="group_by_city" context="{'group_by': 'city_id'}"/>
+                        <filter string="Property Type" name="group_by_property_type" context="{'group_by': 'property_type_id'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="stage_id" icon="fa-tasks" enable_counters="1" filter_bussma="1"/>
+                        <field name="material_responsible_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                        <field name="partner_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- Search View for Marketing Archive -->
+        <record id="view_bussma_marketing_archive_search" model="ir.ui.view">
+            <field name="name">bussma.marketing.archive.search</field>
+            <field name="model">bussma.marketing</field>
+            <field name="arch" type="xml">
+                <search string="Search Marketing Archive">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="partner_id"/>
+                    <field name="property_name"/>
+                    <field name="material_responsible_id"/>
+                    <field name="city_id"/>
+                    <field name="district_id"/>
+                    <field name="property_type_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Request Category" name="group_by_request_category" context="{'group_by': 'request_type_category'}"/>
+                        <filter string="Project Status" name="group_by_project_status" context="{'group_by': 'project_status'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="request_type_category" icon="fa-filter" enable_counters="1"/>
+                        <field name="material_responsible_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                        <field name="partner_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- Kanban View 1: bussma.marketing -->
+        <record id="view_bussma_marketing_kanban" model="ir.ui.view">
+            <field name="name">bussma.marketing.kanban</field>
+            <field name="model">bussma.marketing</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_small_column" sample="1" create="false" delete="false">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="property_name"/>
+                    <field name="city_id"/>
+                    <field name="district_id"/>
+                    <field name="property_type_id"/>
+                    <field name="project_status"/>
+                    <field name="state"/>
+                    <field name="material_count"/>
+                    <field name="my_activity_count"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="oe_kanban_global_click">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                    <span class="badge text-bg-secondary"><field name="code"/></span>
+                                </div>
+                                <div class="text-muted small mb-1">
+                                    <t t-if="record.partner_id.raw_value">
+                                        <i class="fa fa-user me-1"/> <field name="partner_id"/><br/>
+                                    </t>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <field name="marketing_stage_selection" widget="label_selection" options="{'classes': {'mkt_draft': 'default', 'mkt_review': 'warning', 'mkt_approval': 'warning', 'mkt_done': 'success'}}"/>
+                                </div>
+                                <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center gap-1">
+                                    <button name="action_view_materials" type="object" class="btn btn-sm btn-outline-primary flex-grow-1 d-flex align-items-center justify-content-center gap-1">
+                                        <span><i class="fa fa-cubes me-1"/>Marketing Materials (<field name="material_count"/>)</span>
+                                        <t t-if="record.my_activity_count.raw_value &gt; 0">
+                                            <span class="badge rounded-circle custom-activity-badge bg-success text-white ms-auto" t-att-title="record.my_activity_count.raw_value + ' Activities'">
+                                                <t t-out="record.my_activity_count.raw_value"/>
+                                    </span>
+                                        </t>
+                                    </button>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- 1. Projects -->
+        <record id="action_bussma_projects" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">bussma.marketing</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="search_view_id" ref="view_bussma_marketing_search"/>
+            <field name="domain">[('marketing_stage_selection', '!=', 'mkt_done'), ('bussma_project_id', '!=', False)]</field>
+            <field name="context">{'search_default_group_by_project_status': 1, 'delete': False}</field>
+        </record>
+
+        <!-- 2. Opportunity Requests -->
+        <record id="action_bussma_marketing_opportunity_requests" model="ir.actions.act_window">
+            <field name="name">Opportunity Requests</field>
+            <field name="res_model">bussma.marketing</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="search_view_id" ref="view_bussma_marketing_search"/>
+            <field name="domain">[('marketing_stage_selection', '!=', 'mkt_done'), '|', ('opportunity_id', '!=', False), ('is_opportunity_request', '=', True)]</field>
+            <field name="context">{'search_default_group_by_project_status': 1, 'delete': False}</field>
+        </record>
+
+        <!-- 3. Marketing Requests -->
+        <record id="action_bussma_marketing_office_requests" model="ir.actions.act_window">
+            <field name="name">Marketing Requests</field>
+            <field name="res_model">bussma.marketing</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="search_view_id" ref="view_bussma_marketing_search"/>
+            <field name="domain">[('marketing_stage_selection', '!=', 'mkt_done'), ('office_request_id', '!=', False)]</field>
+            <field name="context">{'search_default_group_by_project_status': 1, 'delete': False}</field>
+        </record>
+
+        <!-- 4. Marketing Archive -->
+        <record id="action_bussma_marketing_archive" model="ir.actions.act_window">
+            <field name="name">Marketing Archive</field>
+            <field name="res_model">bussma.marketing</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('marketing_stage_selection', '=', 'mkt_done')]</field>
+            <field name="context">{'delete': False}</field>
+            <field name="search_view_id" ref="view_bussma_marketing_archive_search"/>
+        </record>
+    </data>
+</odoo>

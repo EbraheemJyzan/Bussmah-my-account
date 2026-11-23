@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="standard_study_manager_approval_completed" model="standard.study.manager.approval">
+            <field name="name">Completed</field>
+            <field name="code">completed</field>
+        </record>
+
+        <record id="standard_study_manager_approval_incomplete" model="standard.study.manager.approval">
+            <field name="name">Incomplete</field>
+            <field name="code">incomplete</field>
+        </record>
+
+        <record id="standard_study_manager_approval_reject_and_archive" model="standard.study.manager.approval">
+            <field name="name">Reject and Archive</field>
+            <field name="code">reject_and_archive</field>
+        </record>
+
+    </data>
+</odoo>

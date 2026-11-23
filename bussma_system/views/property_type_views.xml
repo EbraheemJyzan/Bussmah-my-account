@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record id="view_property_type_list" model="ir.ui.view">
+            <field name="name">property.type.list</field>
+            <field name="model">property.type</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name"/>
+                    <field name="is_land" widget="boolean_toggle"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_property_type_search" model="ir.ui.view">
+            <field name="name">property.type.search</field>
+            <field name="model">property.type</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <separator/>
+                    <filter string="Is Land" name="is_land" domain="[('is_land', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

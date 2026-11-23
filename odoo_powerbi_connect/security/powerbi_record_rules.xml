@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data>
+
+        <record id="rule_powerbi_fabric_dashboard_item" model="ir.rule">
+            <field name="name">Powerbi Connector Dashboard Item</field>
+            <field name='model_id' ref="model_powerbi_connector_dashboard" />
+            <field name='groups' eval="[(4,ref('group_powerbi_fabric'))]"></field>
+            <field name='domain_force'>[('state','!=','dataset')]</field>
+        </record>
+
+        <record id="rule_powerbi_fabric_table" model="ir.rule">
+            <field name="name">Fabric Database Table</field>
+            <field name='model_id' ref="model_powerbi_table" />
+            <field name='groups' eval="[(4,ref('group_powerbi_fabric'))]"></field>
+            <field name='domain_force'>[('dataset_id','=',False)]</field>
+        </record>
+
+        <record id="rule_powerbi_dataset_menu_hide" model="ir.rule">
+            <field name="name">Datasets Menu Hide</field>
+            <field name='model_id' ref="base.model_ir_ui_menu" />
+            <field name='groups' eval="[(4,ref('group_powerbi_fabric'))]"></field>
+            <field name='domain_force' eval="[('id','!=',ref('menu_powerbi_dataset'))]" />
+        </record>
+
+        <record id="rule_powerbi_manager" model="ir.rule">
+            <field name="name">Powerbi Manager</field>
+            <field name='model_id' ref="model_powerbi_workspace" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user" model="ir.rule">
+            <field name="name">Powerbi User</field>
+            <field name='model_id' ref="model_powerbi_workspace" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('message_partner_ids','in',[user.partner_id.id]),('responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_eventhouse_manager" model="ir.rule">
+            <field name="name">Powerbi Eventhouse Manager</field>
+            <field name='model_id' ref="model_powerbi_eventhouse" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_eventhouse_user" model="ir.rule">
+            <field name="name">Powerbi Eventhouse User</field>
+            <field name='model_id' ref="model_powerbi_eventhouse" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('message_partner_ids','in',[user.partner_id.id]),('workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_manager_database" model="ir.rule">
+            <field name="name">Powerbi Manager database</field>
+            <field name='model_id' ref="model_powerbi_kql_database" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user_database" model="ir.rule">
+            <field name="name">Powerbi User database</field>
+            <field name='model_id' ref="model_powerbi_kql_database" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('message_partner_ids','in',[user.partner_id.id]),('workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_manager_dataset" model="ir.rule">
+            <field name="name">Powerbi Manager dataset</field>
+            <field name='model_id' ref="model_powerbi_dataset" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user_dataset" model="ir.rule">
+            <field name="name">Powerbi User dataset</field>
+            <field name='model_id' ref="model_powerbi_dataset" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('message_partner_ids','in',[user.partner_id.id]),('workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_manager_table" model="ir.rule">
+            <field name="name">Powerbi Manager Table</field>
+            <field name='model_id' ref="model_powerbi_table" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user_table" model="ir.rule">
+            <field name="name">Powerbi User Table</field>
+            <field name='model_id' ref="model_powerbi_table" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|','|',('message_partner_ids','in',[user.partner_id.id]),('dataset_id.workspace_id.responsible_users.id','=',user.id),('database_id.workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_manager_report" model="ir.rule">
+            <field name="name">Powerbi Manager Report</field>
+            <field name='model_id' ref="model_powerbi_report" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user_report" model="ir.rule">
+            <field name="name">Powerbi User Report</field>
+            <field name='model_id' ref="model_powerbi_report" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('workspace_id.message_partner_ids','in',[user.partner_id.id]),('workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+        <record id="rule_powerbi_manager_dashboard" model="ir.rule">
+            <field name="name">Powerbi Manager Dashboard</field>
+            <field name='model_id' ref="model_powerbi_dashboard" />
+            <field name='groups' eval="[(4,ref('group_powerbi_manager'))]"></field>
+            <field name='domain_force'>[(1,'=',1)]</field>
+        </record>
+
+        <record id="rule_powerbi_user_dashboard" model="ir.rule">
+            <field name="name">Powerbi User Dashboard</field>
+            <field name='model_id' ref="model_powerbi_dashboard" />
+            <field name='groups' eval="[(4,ref('group_powerbi_user'))]"></field>
+            <field name='domain_force'>
+                ['|',('workspace_id.message_partner_ids','in',[user.partner_id.id]),('workspace_id.responsible_users.id','=',user.id)]</field>
+        </record>
+
+    </data>
+</odoo>

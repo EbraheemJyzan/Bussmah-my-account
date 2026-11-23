@@ -1,0 +1,43 @@
+{
+    'name': 'Bussmah Auctions and Sales Management',
+    'version': '18.0.1.0.0',
+    'website': "https://www.nomowsoft.com",
+    'category': 'Services',
+    'summary': 'Auctions and Sales Management for Bussmah System Entries',
+    'description': """
+        Auctions and Sales Management for Bussmah System Entries
+    """,
+    'author': 'NomowSoft Team',
+    'depends': ['request', 'bussma_system'],
+    'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'data/payment_status_data.xml',
+        'views/sale_auction_management_task_views.xml',
+        'data/sale_auction_sequences.xml',
+        'data/bussma_project_data.xml',
+        'data/users_roles_data.xml',
+        'data/sale_auction_stages.xml',
+        'data/detailed_study_eanfaz_stages.xml',
+        'data/project_cron.xml',
+        'data/sale_auction_mail_templates.xml',
+        'views/request_stage_views.xml',
+        'views/sales_views.xml',
+        'views/auctions_views.xml',
+        'views/entries_inherit_views.xml',
+        'wizard/record_control_wizard_views.xml',
+        'wizard/sale_auction_request_wizard_views.xml',
+        'views/entries_import_wizard_views.xml',
+        'views/eanfaz_import_wizard_views.xml',
+        'views/bussma_project_views.xml',
+        'views/sale_auction_menus.xml',
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'sales_and_auction_management/static/src/css/sales_auction_styles.css',
+        ],
+    },
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

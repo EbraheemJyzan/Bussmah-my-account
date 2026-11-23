@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Daily Cron finding duplicates -->
+        <record id="cron_find_partner_duplicates" model="ir.cron">
+            <field name="name">Partners: Find Duplicates Daily</field>
+            <field name="model_id" ref="kw_partner_merge.model_kw_partner_duplicate"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_find_duplicates()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Weekly Cron merging duplicates -->
+        <record id="cron_merge_partner_duplicates" model="ir.cron">
+            <field name="name">Partners: Merge Duplicates Weekly</field>
+            <field name="model_id" ref="kw_partner_merge.model_kw_partner_duplicate"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_merge_duplicates()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

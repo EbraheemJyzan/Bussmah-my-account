@@ -1,0 +1,158 @@
+$color_1: #ffffff;
+$color_2: #6a7187;
+$color_3: #fff;
+$background-color_1: #2a3042;
+
+.sidebar_panel {
+	height: calc(100% - 0%);
+	position: fixed;
+	top: 0px;
+	background-color: $mk-appbar-background;
+	transform: translateX(0);
+	width: 70px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	z-index: 999;
+	transition: all 0.6s;
+
+	.sidebar {
+		padding: 0;
+		white-space: nowrap;
+		padding-bottom: 20px;
+		padding-top: 5px;
+
+		.sidebar_head {
+			padding-top: 20px;
+			padding-left: 15px;
+			color: $color_2;
+			font-size: 14px;
+		}
+
+		.sidebar_menu {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
+				padding: 0;
+				border: 0px;
+				display: block;
+
+				a {
+					margin: 0;
+					border: 0px;
+					display: block;
+					cursor: pointer;
+					overflow: hidden;
+					padding: 8px 10px 8px 25px;
+					color:$mk-appbar-color;
+					font-size: 13px;
+					transition: all 0.5s;
+
+					.sidebar_img {
+						width: 20px;
+						margin-right: 8px;
+					}
+				}
+
+				&:hover {
+					a {
+						background: darken($mk-appbar-background, 10%);
+					}
+				}
+			}
+
+			li.active {
+				a {
+					background: darken($mk-appbar-background, 10%);
+				}
+			}
+		}
+
+		a.nav-link.active {
+			color: $color_3 !important;
+			opacity: 1;
+		}
+	}
+
+	.nav-link {
+		transition: all 0.5s;
+	}
+}
+
+.sidebar_panel.close_sidebar {
+	transform: translateX(-75px);
+
+}
+
+.o_action_manager {
+	margin-left: 70px;
+	transition: all 0.5s;
+}
+
+.o_action_manager.close_o_action_manager {
+	margin-left: 0;
+	transition: all 0.5s;
+}
+
+
+.o_main_navbar {
+	transform: translateX(70px);
+	transition: all 0.5s;
+	width: calc(100% - 70px);
+	.btn-sidebar{
+		background-color: transparent; 
+		border-color: transparent;
+		color: $mk-appsmenu-color;
+		&:active, &:focus{
+			background-color: transparent; 
+			border-color: transparent;
+			box-shadow: none
+		}
+	}
+	.o_menu_sections{
+		.o_nav_entry,
+		.dropdown-toggle{
+			color: $mk-appsmenu-color;
+			background: inherit;
+			&:hover{
+				background: darken($mk_color_brand, 10%);
+				color: $mk-appsmenu-color !important;
+			}
+			&:focus{
+				background: darken($mk_color_brand, 10%);
+				color: $mk-appsmenu-color !important;
+			}
+		}
+	}
+	.o_menu_brand{
+		color: $mk-appsmenu-color;
+		&:hover{
+			background: darken($mk_color_brand, 10%);
+			color: $mk-appsmenu-color;
+		}
+	}
+
+}
+
+.o_main_navbar.close_o_main_navbar {
+	width: 100%;
+	transition: all 0.5s;
+	transform: translateX(0);
+	.btn-sidebar{
+		i{
+			&:before{
+				content: '\e80d';
+			}
+		}
+	}
+}
+
+.o_navbar {
+	z-index: 10;
+}
+.o_loading_indicator{
+	background-color: $mk-appbar-background;
+}

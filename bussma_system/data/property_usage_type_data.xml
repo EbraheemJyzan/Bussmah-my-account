@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- ================================================================ -->
+        <!-- Property Usage Type Data                                          -->
+        <!-- ================================================================ -->
+
+        <record id="property_usage_residential" model="property.usage.type">
+            <field name="name">Residential</field>
+            <field name="code">residential</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_residential_buildings" model="property.usage.type">
+            <field name="name">Residential Buildings</field>
+            <field name="code">residential_buildings</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_mixed_use" model="property.usage.type">
+            <field name="name">Commercial &amp; Residential</field>
+            <field name="code">mixed_use</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_commercial" model="property.usage.type">
+            <field name="name">Commercial</field>
+            <field name="code">commercial</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_industrial" model="property.usage.type">
+            <field name="name">Industrial</field>
+            <field name="code">industrial</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_warehouses" model="property.usage.type">
+            <field name="name">Warehouses &amp; Storage</field>
+            <field name="code">warehouses_storage</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_services" model="property.usage.type">
+            <field name="name">Services &amp; Public Utility</field>
+            <field name="code">services_public</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_recreation" model="property.usage.type">
+            <field name="name">Recreation &amp; Tourism</field>
+            <field name="code">recreation_tourism</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_lodging" model="property.usage.type">
+            <field name="name">Tourist Lodging</field>
+            <field name="code">tourist_lodging</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_parking" model="property.usage.type">
+            <field name="name">Parking Lots</field>
+            <field name="code">parking_lots</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="property_usage_agricultural" model="property.usage.type">
+            <field name="name">Agriculture</field>
+            <field name="code">agricultural</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

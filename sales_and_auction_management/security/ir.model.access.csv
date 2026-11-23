@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_auction_management,sales.auction.management,model_sales_auction_management,base.group_user,1,1,1,1
+access_entries_import_wizard,entries.import.wizard,model_entries_import_wizard,base.group_user,1,1,1,1
+access_eanfaz_entries_import_wizard,eanfaz.entries.import.wizard,model_eanfaz_entries_import_wizard,base.group_user,1,1,1,1
+access_record_control_wizard,record.control.wizard,model_record_control_wizard,base.group_user,1,1,1,1
+access_sales_auction_request_wizard,sales.auction.request.wizard,model_sales_auction_request_wizard,base.group_user,1,1,1,1
+access_project_task,project.task,model_project_task,base.group_user,1,1,1,1
+access_bussma_project,bussma.project,model_bussma_project,base.group_user,1,1,1,1
+access_payment_status,payment.status,model_payment_status,base.group_user,1,1,1,1
+
+

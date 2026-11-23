@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menu under Settings -> Technical -> User Interface -->
+    <menuitem
+        id="menu_kanban_view_setting_ui"
+        name="Kanban View Settings"
+        parent="base.next_id_2"
+        action="action_kanban_view_setting"
+        sequence="50"
+        groups="base.group_system"/>
+
+    <menuitem
+        id="menu_tree_view_setting_ui"
+        name="Tree View Group Settings"
+        parent="base.next_id_2"
+        action="action_tree_view_setting"
+        sequence="51"
+        groups="base.group_system"/>
+
+</odoo>

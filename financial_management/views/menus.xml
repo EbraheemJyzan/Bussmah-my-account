@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Root Menu: Financial Management -->
+        <menuitem id="menu_financial_management_root"
+                  name="Financial Management"
+                  web_icon="financial_management,static/description/icon.svg"
+                  groups="financial_management.group_financial_management,financial_management.group_financial_management_accountant,financial_management.group_financial_management_user,marketing_opportunity_management.group_marketing_supervisor,bussma_system.group_commercial_sector_manager"
+                  sequence="30"/>
+
+        <!-- Main: Financial Requests -->
+        <menuitem id="menu_financial_request_list"
+                  name="Financial Requests"
+                  parent="menu_financial_management_root"
+                  action="action_financial_request"
+                  sequence="10"/>
+        <menuitem id="menu_financial_request_cancelled"
+                  name="Cancelled Requests"
+                  parent="menu_financial_management_root"
+                  action="action_financial_request_cancelled"
+                  groups="base.group_system,financial_management.group_financial_management"
+                  sequence="20"/>
+
+        <menuitem id="menu_financial_request_rejected"
+                  name="Rejected Requests"
+                  parent="menu_financial_management_root"
+                  action="action_financial_request_rejected"
+                  groups="base.group_system,financial_management.group_financial_management"
+                  sequence="25"/>
+
+        <!-- Menu: Archived Requests -->
+        <menuitem id="menu_financial_request_archived"
+                  name="Archived Requests"
+                  parent="menu_financial_management_root"
+                  action="action_financial_request_archived"
+                  groups="financial_management.group_financial_management_user"
+                  sequence="30"/>
+    </data>
+</odoo>

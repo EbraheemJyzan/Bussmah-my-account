@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Wizard Form View -->
+        <record id="view_entries_import_wizard_form" model="ir.ui.view">
+            <field name="name">entries.import.wizard.form</field>
+            <field name="model">entries.import.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div invisible="state != 'draft'">
+                            <group string="Import Template (Download Excel Sample)">
+                                <div class="text-muted mb-2">
+                                    You can download the approved template and fill in the data accordingly to ensure column and value compatibility with the system:<br/>
+                                    Note: Optional and selection fields must use the exact values specified in system choices.
+                                </div>
+                                <div class="mb-3">
+                                    <button name="action_download_template"
+                                            string="Download Excel Template"
+                                            type="object"
+                                            icon="fa-download"
+                                            class="btn btn-outline-primary me-2"/>
+                                </div>
+                                <group>
+                                    <field name="template_file"
+                                           filename="template_filename"
+                                           widget="binary"
+                                           readonly="1"
+                                           string="Import Template"/>
+                                    <field name="template_filename" invisible="1"/>
+                                </group>
+                            </group>
+                            <group string="Upload Excel File for Import">
+                                <group>
+                                    <field name="file_data"
+                                           filename="file_name"
+                                           widget="binary"
+                                           required="0"/>
+                                    <field name="file_name" invisible="1"/>
+                                </group>
+                            </group>
+                        </div>
+                        <!-- DONE state: show result -->
+                        <div invisible="state != 'done'">
+                            <group string="Import Result" style="direction:rtl;">
+                                <field name="result_info"
+                                       widget="text"
+                                       nolabel="1"
+                                       style="white-space:pre-wrap; font-size:13px;"/>
+                            </group>
+                        </div>
+                        <field name="state" invisible="1"/>
+                    </sheet>
+                    <footer>
+                        <!-- Draft buttons -->
+                        <button name="action_import"
+                                string="Import"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'draft'"
+                                confirm="Are you sure you want to import?"/>
+
+                        <button string="Cancel"
+                                class="btn-secondary"
+                                special="cancel"
+                                invisible="state != 'draft'"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_entries_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import Entries</field>
+            <field name="res_model">entries.import.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_entries_import_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

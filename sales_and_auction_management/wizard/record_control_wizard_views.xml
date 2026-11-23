@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_record_control_wizard_form" model="ir.ui.view">
+        <field name="name">record.control.wizard.form</field>
+        <field name="model">record.control.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Record Control">
+                <sheet>
+                    <group>
+                        <field name="control_type" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+                    <group invisible="control_type != 'menu'">
+                        <field name="menu_ids_domain" invisible="1"/>
+                        <field name="menu_id" domain="[('id', 'in', menu_ids_domain)]" options="{'no_create': True}" required="control_type == 'menu'"/>
+                        <field name="new_menu_name" required="control_type == 'menu'"/>
+                    </group>
+                    <group name="group_record_selection" invisible="control_type == 'menu'">
+                        <field name="entry_id" invisible="control_type != 'phase1'" required="control_type == 'phase1'" options="{'no_create': True}"/>
+                        <field name="entry_p2_id" invisible="control_type != 'phase2'" required="control_type == 'phase2'" options="{'no_create': True}"/>
+                        <field name="project_id" invisible="control_type != 'project'" required="control_type == 'project'" options="{'no_create': True}"/>
+                        <field name="is_delete" string="Delete Record"/>
+                    </group>
+                    <group string="Configuration Override" invisible="control_type not in ['phase1', 'phase2'] or is_delete">
+                        <field name="target_model" invisible="1"/>
+                        <field name="stage_id_domain" invisible="1"/>
+                        <field name="request_type_id" invisible="control_type not in ['phase1', 'phase2']" options="{'no_create': True}"/>
+                        <field name="stage_id" options="{'no_create': True}" domain="stage_id_domain"/>
+                        <!-- Studies Fields -->
+                        <field name="project_path" invisible="control_type != 'phase1'"/>
+                        <field name="requires_technical_offer" invisible="control_type != 'phase1'"/>
+                        <field name="is_entry_archive" invisible="control_type != 'phase1'"/>
+                        <field name="is_deferred_opportunities_archive" invisible="control_type != 'phase1'"/>
+                        <field name="is_listing_archive_2023" invisible="control_type != 'phase1'"/>
+                        <field name="is_technical_offers_archive" invisible="control_type != 'phase1'"/>
+                        <field name="is_partners_screen" invisible="control_type != 'phase1'"/>
+                        <!-- Sales and Auctions Fields -->
+                        <field name="is_move_to_direct_sales" invisible="control_type != 'phase2'"/>
+                        <field name="is_sale_cancelled" invisible="control_type != 'phase2'"/>
+                        <field name="is_sold" invisible="control_type != 'phase2'"/>
+                        <field name="is_single_project" invisible="control_type != 'phase2'"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_confirm"
+                            string="Confirm and Open Record"
+                            type="object"
+                            class="btn-primary"
+                            invisible="is_delete or control_type == 'menu'"/>
+                    <button name="action_confirm"
+                            string="Confirm"
+                            type="object"
+                            class="btn-primary"
+                            invisible="control_type != 'menu'"/>
+                    <button name="action_delete_record"
+                            string="Delete Record"
+                            type="object"
+                            class="btn-danger"
+                            invisible="not is_delete"
+                            confirm="Are you sure you want to permanently delete this record?"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_record_control_wizard" model="ir.actions.act_window">
+        <field name="name">Control Panel</field>
+        <field name="res_model">record.control.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

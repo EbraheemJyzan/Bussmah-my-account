@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- List View -->
+    <record id="view_tree_view_setting_tree" model="ir.ui.view">
+        <field name="name">tree.view.setting.list</field>
+        <field name="model">tree.view.setting</field>
+        <field name="arch" type="xml">
+            <list string="Tree / List View Settings">
+                <field name="model_id"/>
+                <field name="model_name"/>
+                <field name="view_id"/>
+                <field name="col_header_bg_color" widget="color" string="Col Header BG"/>
+                <field name="col_header_text_color" widget="color" string="Col Header Text"/>
+                <field name="col_header_font_size" string="Col Font Size"/>
+                <field name="col_header_font_bold" widget="boolean_toggle" string="Col Bold"/>
+                <field name="group_bg_color" widget="color" string="Group BG"/>
+                <field name="group_text_color" widget="color" string="Group Text"/>
+                <field name="group_font_size" string="Group Font Size"/>
+                <field name="group_font_bold" widget="boolean_toggle" string="Group Bold"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_tree_view_setting_form" model="ir.ui.view">
+        <field name="name">tree.view.setting.form</field>
+        <field name="model">tree.view.setting</field>
+        <field name="arch" type="xml">
+            <form string="Tree / List View Setting">
+                <sheet>
+                    <div class="alert alert-info d-flex align-items-center mb-3" role="alert">
+                        <div>
+                            <h5 class="alert-heading mb-1"><i class="fa fa-info-circle me-1"/>Working Method:</h5>
+                            <p class="mb-0">
+                                When this Setting is enabled:
+                                <br/>
+                                1. <strong>Column Headers:</strong> Control the background color, text color, font size, font weight, and font family of the main table header.
+                                <br/>
+                                2. <strong>Group Headers:</strong> Control the background color, text color, font size, font weight, and font family of the group headers.
+                            </p>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Target Model and View">
+                            <field name="model_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="model_name"/>
+                            <field name="view_id" options="{'no_create': True}"/>
+                        </group>
+                        <group string="Status">
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Column Headers" name="page_column_headers">
+                            <group>
+                                <group string="Colors">
+                                    <field name="col_header_bg_color" widget="color"/>
+                                    <field name="col_header_text_color" widget="color"/>
+                                    <field name="col_header_hover_bg_color" widget="color"/>
+                                </group>
+                                <group string="Typography">
+                                    <field name="col_header_font_size"/>
+                                    <field name="col_header_font_bold" widget="boolean_toggle"/>
+                                    <field name="col_header_font_family" placeholder="e.g. Cairo, Tajawal, Arial"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Group By Headers" name="page_group_headers">
+                            <group>
+                                <group string="Colors">
+                                    <field name="group_bg_color" widget="color"/>
+                                    <field name="group_text_color" widget="color"/>
+                                    <field name="group_hover_bg_color" widget="color"/>
+                                </group>
+                                <group string="Typography">
+                                    <field name="group_font_size"/>
+                                    <field name="group_font_bold" widget="boolean_toggle"/>
+                                    <field name="group_font_family" placeholder="e.g. Cairo, Tajawal, Arial"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_tree_view_setting_search" model="ir.ui.view">
+        <field name="name">tree.view.setting.search</field>
+        <field name="model">tree.view.setting</field>
+        <field name="arch" type="xml">
+            <search string="Search Tree Settings">
+                <field name="model_id"/>
+                <field name="model_name"/>
+                <field name="view_id"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Model" name="group_by_model" domain="[]" context="{'group_by': 'model_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_tree_view_setting" model="ir.actions.act_window">
+        <field name="name">Tree / List View Settings</field>
+        <field name="res_model">tree.view.setting</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_tree_view_setting_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new Tree / List View Styling setting
+            </p>
+            <p>
+                Configure models and list/tree views to customize column titles (headers) and grouped headers styling (background colors, text colors, font sizes, and bold fonts).
+            </p>
+        </field>
+    </record>
+
+</odoo>

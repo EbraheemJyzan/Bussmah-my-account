@@ -1,0 +1,21 @@
+{
+    "name": "Request Managment",
+    "version": "18.0.1.0.2",
+    "category": "Common",
+    "author": "MASA",
+    "depends": ["hr", "base_user_role", "calendar", "mail_activity_archive"],
+    "data": [
+        "security/request_security.xml",
+        "security/ir.model.access.csv",
+        "data/request_data.xml",
+        "views/menu.xml",
+        "views/request_views.xml",
+        "views/request_stage_views.xml",
+        "views/mail_activity_view.xml",
+    ],
+    "demo": [],
+    "qweb": [],
+    "installable": True,
+    "application": True,
+    "license": "LGPL-3",
+}

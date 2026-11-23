@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Requests for Employee Documents and Certificates -->
+        <record id="type_salary_definition" model="hr.request.type">
+            <field name="name">تعريف راتب</field>
+            <field name="code">salary_definition</field>
+            <field name="category_id" ref="category_documents_certificates"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_id_card" model="hr.request.type">
+            <field name="name">بطاقة تعريف</field>
+            <field name="code">id_card</field>
+            <field name="category_id" ref="category_documents_certificates"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="type_work_card" model="hr.request.type">
+            <field name="name">بطاقة عمل</field>
+            <field name="code">work_card</field>
+            <field name="category_id" ref="category_documents_certificates"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="type_chamber_attestation" model="hr.request.type">
+            <field name="name">تصديق من الغرفة التجارية</field>
+            <field name="code">chamber_attestation</field>
+            <field name="category_id" ref="category_documents_certificates"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Requests for Employee Salaries and Benefits -->
+        <record id="type_salary_fixation" model="hr.request.type">
+            <field name="name">تثبيت راتب</field>
+            <field name="code">salary_fixation</field>
+            <field name="category_id" ref="category_salaries_benefits"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_change_bank_account" model="hr.request.type">
+            <field name="name">تغيير الحساب البنكي</field>
+            <field name="code">change_bank_account</field>
+            <field name="category_id" ref="category_salaries_benefits"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="type_annual_leave_bonus" model="hr.request.type">
+            <field name="name">مكافأة إجازة سنوية</field>
+            <field name="code">annual_leave_bonus</field>
+            <field name="category_id" ref="category_salaries_benefits"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="type_overtime_request" model="hr.request.type">
+            <field name="name">طلب ساعات عمل إضافية</field>
+            <field name="code">overtime_request</field>
+            <field name="category_id" ref="category_salaries_benefits"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Requests for Employee Medical Insurance -->
+        <record id="type_add_dependent_insurance" model="hr.request.type">
+            <field name="name">إضافة تابع للتأمين الطبي</field>
+            <field name="code">add_dependent_insurance</field>
+            <field name="category_id" ref="category_medical_insurance"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_remove_dependent_insurance" model="hr.request.type">
+            <field name="name">حذف تابع من التأمين الطبي</field>
+            <field name="code">remove_dependent_insurance</field>
+            <field name="category_id" ref="category_medical_insurance"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Requests for Employee Travel and Visas -->
+        <record id="type_family_visit" model="hr.request.type">
+            <field name="name">زيارة عائلية</field>
+            <field name="code">family_visit</field>
+            <field name="category_id" ref="category_travel_visas"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_exit_reentry_visa" model="hr.request.type">
+            <field name="name">تأشيرة خروج وعودة</field>
+            <field name="code">exit_reentry_visa</field>
+            <field name="category_id" ref="category_travel_visas"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="type_flight_ticket" model="hr.request.type">
+            <field name="name">تذكرة سفر</field>
+            <field name="code">flight_ticket</field>
+            <field name="category_id" ref="category_travel_visas"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- Requests for Employee Technical Services -->
+        <record id="type_email_signature" model="hr.request.type">
+            <field name="name">طلب توقيع بريد إلكتروني</field>
+            <field name="code">email_signature</field>
+            <field name="category_id" ref="category_tech_services"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Requests for Employee Administrative Services -->
+        <record id="type_stationery_tools" model="hr.request.type">
+            <field name="name">طلب أدوات قرطاسية</field>
+            <field name="code">stationery_tools</field>
+            <field name="category_id" ref="category_admin_services"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Requests for Employee Training and Development -->
+        <record id="type_training_course" model="hr.request.type">
+            <field name="name">طلب دورة تدريبية</field>
+            <field name="code">training_course</field>
+            <field name="category_id" ref="category_training_development"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_cert_documentation" model="hr.request.type">
+            <field name="name">توثيق دورة/شهادة</field>
+            <field name="code">cert_documentation</field>
+            <field name="category_id" ref="category_training_development"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Requests for Employee Professional Certification -->
+        <record id="type_prof_cert_documentation" model="hr.request.type">
+            <field name="name">توثيق دورة تدريبية أو شهادة</field>
+            <field name="code">prof_cert_documentation</field>
+            <field name="category_id" ref="category_professional_cert"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Other Requests -->
+        <record id="type_general_request" model="hr.request.type">
+            <field name="name">طلب عام</field>
+            <field name="code">general_request</field>
+            <field name="category_id" ref="category_other_requests"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Manager Requests -->
+
+        <!-- Requests for Employee Management -->
+        <record id="type_recruitment_request" model="hr.request.type">
+            <field name="name">طلب توظيف</field>
+            <field name="code">recruitment_request</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_transfer_employee" model="hr.request.type">
+            <field name="name">طلب نقل موظف</field>
+            <field name="code">transfer_employee</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="type_promotion_raise" model="hr.request.type">
+            <field name="name">طلب ترقية وزيادة راتب</field>
+            <field name="code">promotion_raise</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="type_change_profession" model="hr.request.type">
+            <field name="name">تغيير المهنة</field>
+            <field name="code">change_profession</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="type_renew_contract" model="hr.request.type">
+            <field name="name">تجديد العقد</field>
+            <field name="code">renew_contract</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="type_non_renew_contract" model="hr.request.type">
+            <field name="name">عدم تجديد العقد</field>
+            <field name="code">non_renew_contract</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">60</field>
+        </record>
+        <record id="type_extend_probation" model="hr.request.type">
+            <field name="name">تمديد فترة التجربة</field>
+            <field name="code">extend_probation</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">70</field>
+        </record>
+        <record id="type_non_extend_probation" model="hr.request.type">
+            <field name="name">عدم تمديد فترة التجربة</field>
+            <field name="code">non_extend_probation</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">80</field>
+        </record>
+        <record id="type_pass_probation" model="hr.request.type">
+            <field name="name">اجتياز فترة تجربة</field>
+            <field name="code">pass_probation</field>
+            <field name="category_id" ref="category_employee_management"/>
+            <field name="sequence">90</field>
+        </record>
+
+        <!-- Requests for Employee Discipline and Performance -->
+        <record id="type_warning_notice" model="hr.request.type">
+            <field name="name">إشعار إنذار</field>
+            <field name="code">warning_notice</field>
+            <field name="category_id" ref="category_discipline_performance"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Requests for Employee Attendance and Time -->
+        <record id="type_manager_overtime" model="hr.request.type">
+            <field name="name">طلب ساعات عمل إضافية</field>
+            <field name="code">manager_overtime</field>
+            <field name="category_id" ref="category_attendance_time"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Requests for Purchases and Expenses -->
+        <record id="type_purchase_request" model="hr.request.type">
+            <field name="name">طلب شراء</field>
+            <field name="code">purchase_request</field>
+            <field name="category_id" ref="category_purchases_expenses"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_expense_disbursement" model="hr.request.type">
+            <field name="name">طلب صرف</field>
+            <field name="code">expense_disbursement</field>
+            <field name="category_id" ref="category_purchases_expenses"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Requests for Accidents and Safety -->
+        <record id="type_work_injury_report" model="hr.request.type">
+            <field name="name">إبلاغ إصابة عمل</field>
+            <field name="code">work_injury_report</field>
+            <field name="category_id" ref="category_accidents_safety"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Requests for Official Certifications and Accreditations -->
+        <record id="type_gosi_cert" model="hr.request.type">
+            <field name="name">طلب شهادة التأمينات الاجتماعية</field>
+            <field name="code">gosi_cert</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="type_chamber_cert" model="hr.request.type">
+            <field name="name">طلب شهادة الغرفة التجارية</field>
+            <field name="code">chamber_cert</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="type_commercial_register" model="hr.request.type">
+            <field name="name">طلب السجل التجاري</field>
+            <field name="code">commercial_register</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="type_saudization_cert" model="hr.request.type">
+            <field name="name">طلب شهادة السعودة</field>
+            <field name="code">saudization_cert</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="type_chamber_attestation_manager" model="hr.request.type">
+            <field name="name">طلب تصديق من الغرفة التجارية</field>
+            <field name="code">chamber_attestation_manager</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">50</field>
+        </record>
+        <record id="type_safety_health_cert" model="hr.request.type">
+            <field name="name">طلب شهادة السلامة والصحة المهنية</field>
+            <field name="code">safety_health_cert</field>
+            <field name="category_id" ref="category_official_accreditations"/>
+            <field name="sequence">60</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_office_request_marketing_wizard_form" model="ir.ui.view">
+            <field name="name">office.request.marketing.wizard.form</field>
+            <field name="model">office.request.marketing.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create / Edit Marketing Request">
+                    <sheet>
+                        <!-- Common Info -->
+                        <group>
+                            <group string="Request Information">
+                                <field name="office_request_id" readonly="1" invisible="1"/>
+                                <field name="office_request_type" readonly="1"/>
+                                <field name="name"/>
+                                <field name="department_id"/>
+                                <field name="requested_by_id"/>
+                            </group>
+                        </group>
+                        <!-- ============ Project ============ -->
+                        <group string="Project Details" invisible="office_request_type != 'project_request'">
+                            <group>
+                                <field name="project_name" string="Project Name"/>
+                                <field name="project_type_selection" string="Project Type"/>
+                                <field name="city_id" string="City"/>
+                                <field name="needs_identity" string="Needs Identity?"/>
+                                <field name="has_proposed_project_name" widget="radio" options="{'horizontal': true}" string="Has Proposed Project Name?"/>
+                                <field name="proposed_project_name" invisible="has_proposed_project_name != 'yes'"/>
+                            </group>
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                                <field name="is_masterplan" widget="radio" options="{'horizontal': true}" string="Is Project a Masterplan?"/>
+                                <field name="delivery_date" string="Delivery Date"/>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?"/>
+                            </group>
+                        </group>
+                        <!-- ============ Change Request ============ -->
+                        <group string="Change Request Details" invisible="office_request_type != 'change_request'">
+                            <group>
+                                <field name="change_request_type" string="Change Type"/>
+                                <field name="target_marketing_project_id" string="Project to Change"/>
+                                <field name="delivery_date" string="Delivery Date"/>
+                            </group>
+                            <group>
+                                <field name="has_attachments" widget="radio" options="{'horizontal': true}" string="Has Attachments?"/>
+                            </group>
+                        </group>
+                        <!-- ============ Business Card ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'business_card'">
+                            <group>
+                                <field name="employee_name" string="Name"/>
+                                <field name="job_title" string="Job Title"/>
+                            </group>
+                            <group>
+                                <field name="phone_number" string="Phone"/>
+                                <field name="extension_number" string="Extension"/>
+                            </group>
+                        </group>
+                        <!-- ============ Email Signature ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'email_signature'">
+                            <group>
+                                <field name="employee_name" string="Name"/>
+                                <field name="job_title" string="Job Title"/>
+                                <field name="employee_number" string="Employee Number"/>
+                            </group>
+                            <group>
+                                <field name="employee_email" string="Employee Email"/>
+                                <field name="phone_number" string="Phone"/>
+                                <field name="extension_number" string="Extension"/>
+                            </group>
+                        </group>
+                        <!-- ============ Signboard Design ============ -->
+                        <group string="Signboard Details" invisible="office_request_type != 'signboard_design'">
+                            <group>
+                                <field name="property_code" string="Property Code"/>
+                                <field name="signboard_size" string="Signboard Size"/>
+                            </group>
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+                        <!-- ============ Design Request ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'design_request'">
+                            <group>
+                                <field name="needs_identity" string="Needs Identity?"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+                        <!-- ============ Internal Communication ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'internal_communication'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+                        <!-- ============ Thank You Certificate ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'thank_you_certificate'">
+                            <group>
+                                <field name="employee_name" string="Name"/>
+                                <field name="job_title" string="Job Title"/>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+                        <!-- ============ ID Card ============ -->
+                        <group string="Employee Information" invisible="office_request_type != 'id_card'">
+                            <group>
+                                <field name="employee_name" string="Name"/>
+                                <field name="job_title" string="Job Title"/>
+                                <field name="employee_number" string="Employee Number"/>
+                            </group>
+                        </group>
+                        <!-- ============ Other ============ -->
+                        <group string="Request Details" invisible="office_request_type != 'other'">
+                            <group>
+                                <field name="needs_content_writing" string="Needs Content Writing?"/>
+                            </group>
+                        </group>
+                        <!-- Request Description (Mandatory) -->
+                        <group string="Request Description *">
+                            <field name="description" nolabel="1" required="1" placeholder="Detailed request description..."/>
+                        </group>
+                        <group string="Attachments (if any)">
+                            <field name="attachments_ids" widget="many2many_binary" nolabel="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Confirm and Send" name="action_create_or_update_marketing_request" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

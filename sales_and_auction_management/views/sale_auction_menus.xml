@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_employee_guide_root" 
+                  name="Employee Guide" 
+                  web_icon="sales_and_auction_management,static/description/employee_icon.svg"
+                  sequence="4"/>
+
+        <!-- Inherit and move Entries and My Studies under Employee Guide -->
+        <menuitem id="entries_for_employee_guide" 
+                  name="Entries"
+                  parent="menu_employee_guide_root" 
+                  sequence="1"/>
+        <menuitem id="bussma_system.entries_menu" 
+                  parent="entries_for_employee_guide" 
+                  sequence="1"/>
+        <menuitem id="menu_my_eanfaz_entries" 
+                  name="Eanfaz Entries"
+                  parent="entries_for_employee_guide" 
+                  action="action_my_eanfaz_entries"
+                  sequence="2"/>
+
+        <menuitem id="my_requests" 
+                  name="My Requests"
+                  parent="menu_employee_guide_root" 
+                  sequence="3"/>
+
+        <menuitem id="bussma_system.my_studies_menu" 
+                  parent="menu_employee_guide_root" 
+                  sequence="2"/>
+
+        <!-- Inherit setting_menu to add group_system_admin -->
+        <menuitem id="bussma_system.setting_menu" 
+                  groups="base.group_system,sales_and_auction_management.group_system_admin"
+                  parent="bussma_system.rout_menu_commercial_sector"/>
+
+        <menuitem id="menu_sales_management_root" 
+                name="Sales Management" 
+                web_icon="sales_and_auction_management,static/description/sales_icon.svg"
+                groups="bussma_system.group_commercial_sector_manager,bussma_system.group_sales_manager,sales_and_auction_management.group_sales_project_manager,sales_and_auction_management.group_system_admin"
+                sequence="10"/>
+        <menuitem id="menu_auctions_management_root" 
+                name="Auctions Management" 
+                web_icon="sales_and_auction_management,static/description/auctions_icon.svg"
+                groups="bussma_system.group_commercial_sector_manager,bussma_system.group_auctions_manager,sales_and_auction_management.group_sales_project_manager,sales_and_auction_management.group_system_admin"
+                sequence="11"/>
+        <menuitem id="menu_collection_and_finance_root" 
+                name="Collection and Finance" 
+                web_icon="sales_and_auction_management,static/description/finance_icon.svg"
+                groups="sales_and_auction_management.group_commercial_sector_accountant,sales_and_auction_management.group_collection_evacuation_officer,sales_and_auction_management.group_system_admin,bussma_system.group_commercial_sector_manager"
+                sequence="12"/>
+        <!-- Sub-roots under Auctions Management -->
+        <menuitem id="menu_auctions_root" 
+                name="Auctions Private" 
+                parent="menu_auctions_management_root" 
+                sequence="3"/>
+        <menuitem id="menu_auctions_gov_root" 
+                name="Government Auctions" 
+                parent="menu_auctions_management_root" 
+                sequence="4"/>
+        <!-- Sales Management Menus -->
+        <menuitem id="menu_bussma_project_sales"
+                name="Direct sales"
+                parent="menu_sales_management_root"
+                action="action_bussma_project_sales"
+                sequence="0"/>
+        <menuitem id="menu_project_sales_basic"
+                name="محفظة العقارات الأساسية بيع مباشر"
+                parent="menu_sales_management_root"
+                action="action_project_sales_basic"
+                sequence="1"/>
+        <menuitem id="menu_phase2_sales_archive"
+                name="Sales Archive"
+                parent="menu_sales_management_root"
+                action="action_sales_archive"
+                groups="bussma_system.group_sales_manager,sales_and_auction_management.group_system_admin,base.group_system"
+                sequence="3"/>
+        <menuitem id="menu_control_panel_root"
+                name="Control Panel"
+                web_icon="sales_and_auction_management,static/description/control_panel_icon.svg"
+                action="action_record_control_wizard"
+                groups="base.group_system,sales_and_auction_management.group_system_admin"
+                sequence="13"/>
+        <menuitem id="menu_import_properties"
+                name="Import Properties"
+                parent="menu_employee_guide_root"
+                sequence="4"/>
+        <menuitem id="menu_entries_import"
+                name="Import Entries"
+                parent="menu_import_properties"
+                action="action_entries_import_wizard"
+                sequence="1"/>
+        <menuitem id="menu_eanfaz_entries_import"
+                name="Import Eanfaz Properties"
+                parent="menu_import_properties"
+                action="action_eanfaz_entries_import_wizard"
+                sequence="2"/>
+        <menuitem id="completed_studies_menu"
+                name="Completed Studies"
+                parent="bussma_system.direct_sale_menu"
+                action="completed_studies_action"
+                sequence="10"/>
+        <!-- Auctions Private Menus -->
+        <menuitem id="menu_bussma_project_auction_pvt"
+                name="Auction of Private"
+                parent="menu_auctions_root"
+                action="action_bussma_project_auction_pvt"
+                sequence="1"/>
+        <menuitem id="menu_project_auctions_pvt_basic"
+                name="محفظة العقارات الأساسية مزاد - خاص"
+                parent="menu_auctions_root"
+                action="action_project_auctions_pvt_basic"
+                sequence="2"/>
+        <menuitem id="menu_archive_auctions"
+                name="Auctions Archive"
+                parent="menu_auctions_management_root"
+                action="action_archive_auctions"
+                sequence="8"/>
+        <!-- Government Auctions Menus -->
+        <menuitem id="menu_bussma_project_auction_enf"
+                name="Auction of Eanfaz"
+                parent="menu_auctions_gov_root"
+                action="action_bussma_project_auction_enf"
+                sequence="1"/>
+        <menuitem id="menu_project_auctions_enf_basic"
+                name="محفظة العقارات الأساسية مزاد - انفاذ"
+                parent="menu_auctions_gov_root"
+                action="action_project_auctions_enf_basic"
+                sequence="2"/>
+        <menuitem id="menu_bussma_project_city"
+                name="Cities"
+                parent="menu_auctions_gov_root"
+                action="action_bussma_project_city"
+                sequence="3"/>
+        <menuitem id="menu_project_cities_basic"
+                name="محفظة العقارات الأساسية مدن"
+                parent="menu_auctions_gov_root"
+                action="action_project_cities_basic"
+                sequence="4"/>
+        <!-- Collection and Finance Menus -->
+        <menuitem id="menu_sales_fin"
+                name="Sales and Finance"
+                parent="menu_collection_and_finance_root"
+                action="action_shared_finance"
+                groups="sales_and_auction_management.group_commercial_sector_accountant,sales_and_auction_management.group_collection_evacuation_officer,sales_and_auction_management.group_system_admin"
+                sequence="5"/>
+        <menuitem id="menu_col_trans"
+                name="Collection and Evacuation"
+                parent="menu_collection_and_finance_root"
+                action="action_shared_collection_transfer"
+                groups="sales_and_auction_management.group_collection_evacuation_officer,sales_and_auction_management.group_system_admin,bussma_system.group_commercial_sector_manager"
+                sequence="6"/>
+    </data>
+</odoo>

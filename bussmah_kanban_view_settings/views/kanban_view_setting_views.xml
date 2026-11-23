@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- List / Tree View -->
+    <record id="view_kanban_view_setting_tree" model="ir.ui.view">
+        <field name="name">kanban.view.setting.list</field>
+        <field name="model">kanban.view.setting</field>
+        <field name="arch" type="xml">
+            <list string="Kanban View Settings">
+                <field name="model_id"/>
+                <field name="model_name"/>
+                <field name="is_action_specific"/>
+                <field name="action_ids" widget="many2many_tags" optional="show"/>
+                <field name="group_ids" widget="many2many_tags"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_kanban_view_setting_form" model="ir.ui.view">
+        <field name="name">kanban.view.setting.form</field>
+        <field name="model">kanban.view.setting</field>
+        <field name="arch" type="xml">
+            <form string="Kanban View Setting">
+                <sheet>
+                    <div class="alert alert-info d-flex align-items-center mb-3" role="alert">
+                        <div>
+                            <h5 class="alert-heading mb-1"><i class="fa fa-info-circle me-1"/> How it works:</h5>
+                            <p class="mb-0">
+                                When active, <strong>only</strong> members of the groups specified in <em>Allowed Groups</em> are permitted to click and open records of this model (or specific action) from Kanban or List view.
+                                Users not in these groups will have non-clickable records <code>(can_open = 0 / no_open = 1)</code>.
+                            </p>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Model &amp; Scope Selection">
+                            <field name="model_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="model_name" invisible="1"/>
+                            <field name="is_action_specific"/>
+                            <field name="action_ids" widget="many2many_tags" options="{'no_create': True}" 
+                                   invisible="not is_action_specific" 
+                                   placeholder="Select specific actions..."/>
+                        </group>
+                        <group string="Status">
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <group string="Permissions Groups">
+                        <field name="group_ids" widget="many2many_tags" options="{'no_create': True}" placeholder="Select groups allowed to open records..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_kanban_view_setting_search" model="ir.ui.view">
+        <field name="name">kanban.view.setting.search</field>
+        <field name="model">kanban.view.setting</field>
+        <field name="arch" type="xml">
+            <search string="Search Kanban Settings">
+                <field name="model_id"/>
+                <field name="model_name"/>
+                <field name="action_ids"/>
+                <field name="group_ids"/>
+                <filter string="Specific Actions" name="specific_actions" domain="[('is_action_specific', '=', True)]"/>
+                <filter string="Entire Model" name="entire_model" domain="[('is_action_specific', '=', False)]"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Model" name="group_by_model" domain="[]" context="{'group_by': 'model_id'}"/>
+                    <filter string="Scope" name="group_by_scope" domain="[]" context="{'group_by': 'is_action_specific'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_kanban_view_setting" model="ir.actions.act_window">
+        <field name="name">Kanban View Settings</field>
+        <field name="res_model">kanban.view.setting</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_kanban_view_setting_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new setting to control record opening from Kanban and List views
+            </p>
+            <p>
+                Define which models and user groups can click to open records, while keeping records non-clickable for other users.
+            </p>
+        </field>
+    </record>
+
+</odoo>

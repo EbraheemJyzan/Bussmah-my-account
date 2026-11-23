@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<record id="mail_activity_view_tree_inherit_mail_activity_archive" model="ir.ui.view">
+        <field name="name">mail.activity.view.tree.inherit</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_tree" />
+        <field name="arch" type="xml">
+            <field name="res_name" position="after">
+                <field name="active" invisible="1" />
+            </field>
+
+        </field>
+</record>
+
+    <record
+        id="mail_activity_view_form_inherit_mail_activity_archive"
+        model="ir.ui.view"
+    >
+        <field name="name">mail.activity.view.form.inherit</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form" />
+        <field name="arch" type="xml">
+            <field name="res_name" position="after">
+                <field name="active" invisible="1" />
+            </field>
+
+        </field>
+</record>
+
+
+
+</odoo>

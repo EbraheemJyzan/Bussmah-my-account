@@ -1,0 +1,2544 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_requests
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-23 13:43+0000\n"
+"PO-Revision-Date: 2026-08-23 13:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__active
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__active
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__active
+#: model:ir.model.fields,field_description:hr_requests.field_hr_clearance_procedure_status__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__notes
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Additional Notes"
+msgstr "ملاحظات إضافية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__course_category__admin
+msgid "Administrative"
+msgstr "إداري"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__user_id
+msgid "Applicant"
+msgstr "المتقدم"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Approve Request"
+msgstr "الموافقة على الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_approved
+#: model:request.stage,name:hr_requests.stage_hr_approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__fixed_stage__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__state__approved
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_assets_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_commercial_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_executive_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_finance_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_hr_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_it_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_legal_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_marketing_manager_approval__approved
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_projects_manager_approval__approved
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to reject this request?"
+msgstr "هل أنت متأكد من رفض هذا الطلب؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to submit the request?"
+msgstr "هل أنت متأكد من إرسال الطلب؟"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__attachment_ids
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__qualification__bachelor
+msgid "Bachelor"
+msgstr "بكالوريوس"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Bank account must belong to the requesting employee"
+msgstr "يجب أن يكون الحساب البنكي باسم الموظف صاحب الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__course_category__compliance
+msgid "Compliance"
+msgstr "الامتثال"
+
+#. module: hr_requests
+#: model:ir.ui.menu,name:hr_requests.menu_hr_request_config
+msgid "Configuration"
+msgstr "اعدادات الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__course_category
+msgid "Course Category"
+msgstr "تصنيف الدورة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__course_name
+msgid "Course Name"
+msgstr "اسم الدورة"
+
+#. module: hr_requests
+#: model_terms:ir.actions.act_window,help:hr_requests.action_hr_request
+msgid "Create a new HR request"
+msgstr "قم بإنشاء طلب موارد بشرية جديد"
+
+#. module: hr_requests
+#: model_terms:ir.actions.act_window,help:hr_requests.action_hr_request_category
+msgid "Create a new request category"
+msgstr "قم بإنشاء تصنيف طلب جديد"
+
+#. module: hr_requests
+#: model_terms:ir.actions.act_window,help:hr_requests.action_hr_request_type
+msgid "Create a new request type"
+msgstr "قم بإنشاء نوع طلب جديد"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__create_uid
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__create_uid
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__create_date
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__create_date
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__department_id
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__office_department_id
+msgid "Department"
+msgstr "الإدارة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__description
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__description
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__qualification__diploma
+msgid "Diploma"
+msgstr "دبلوم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__directed_to
+msgid "Directed To"
+msgstr "موجه إلى"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__display_button_accept
+msgid "Display Button Accept"
+msgstr "عرض زر القبول"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__display_button_previous
+msgid "Display Button Previous"
+msgstr "عرض زر السابق"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__display_button_refuse
+msgid "Display Button Refuse"
+msgstr "عرض زر الرفض"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__display_button_send
+msgid "Display Button Send"
+msgstr "عرض زر الإرسال"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__display_name
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__display_name
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Do you confirm approving this request?"
+msgstr "هل تؤكد الموافقة على هذا الطلب؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Do you want to reset the request to Draft stage?"
+msgstr "هل تريد إعادة الطلب إلى مرحلة المسودة؟"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__fixed_stage__draft
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_draft
+#: model:request.stage,name:hr_requests.stage_clearance_draft
+#: model:request.stage,name:hr_requests.stage_hr_draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__employee_classification
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__employee_classification
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__employee_classification
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Employee Classification"
+msgstr "تصنيف الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__employee_number
+msgid "Employee Number"
+msgstr "الرقم الوظيفي"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Employee Number"
+msgstr "رقم الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__employee_classification__employee
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_category__employee_classification__employee
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Employee Request"
+msgstr "طلب موظف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__end_date
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Enter any additional notes here..."
+msgstr "أدخل أي ملاحظات إضافية هنا..."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة فونت أوسوم مثل fa-tasks"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/record_control_wizard_inherit.py:0
+#: model:ir.model,name:hr_requests.model_hr_request
+#: model:ir.model.fields,field_description:hr_requests.field_record_control_wizard__hr_request_id
+#: model:ir.model.fields.selection,name:hr_requests.selection__record_control_wizard__control_type__hr_request
+#: model:request.type,name:hr_requests.request_type_hr
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "HR Request"
+msgstr "طلب موارد بشرية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_tree
+msgid "HR Request Categories"
+msgstr "تصنيفات طلبات الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model,name:hr_requests.model_hr_request_category
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_form
+msgid "HR Request Category"
+msgstr "تصنيف طلب الموارد البشرية"
+
+#. module: hr_requests
+#: model:res.groups,name:hr_requests.group_hr_request_manager
+msgid "HR Request Manager"
+msgstr "إدارة الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model,name:hr_requests.model_hr_request_type
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_form
+msgid "HR Request Type"
+msgstr "نوع طلب الموارد البشرية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_tree
+msgid "HR Request Types"
+msgstr "أنواع طلبات الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.actions.act_window,name:hr_requests.action_hr_request
+#: model:ir.ui.menu,name:hr_requests.menu_hr_request_main
+#: model:ir.ui.menu,name:hr_requests.menu_hr_request_root
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_tree
+msgid "HR Requests"
+msgstr "طلبات الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_request_stage__hr_stage_selection
+msgid "HR Stage Selection"
+msgstr "اختيار مرحلة الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__qualification__high_school
+msgid "High School"
+msgstr "ثانوي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__id
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__id
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__message_has_error
+#: model:ir.model.fields,help:hr_requests.field_hr_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل تحتوي على خطأ في التسليم."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_manager
+msgid "Is Manager"
+msgstr "مدير"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__job_id
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__job_title
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__kanban_color
+msgid "Kanban Color Index"
+msgstr "مؤشر لون كانبان"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__write_uid
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__write_uid
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__write_date
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__write_date
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__employee_classification__manager
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_category__employee_classification__manager
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Manager Request"
+msgstr "طلب مدير"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__qualification__master
+msgid "Master"
+msgstr "ماجستير"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+msgid "My Requests"
+msgstr "طلباتي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__card_name
+#: model:ir.model.fields,field_description:hr_requests.field_hr_clearance_procedure_status__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__new_bank_name
+msgid "New Bank Name"
+msgstr "اسم البنك الجديد"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__new_iban
+msgid "New IBAN"
+msgstr "رقم الآيبان الجديد"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الحدث التقويمي للنشاط القادم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط القادم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__course_category__personal
+msgid "Personal Skills"
+msgstr "مهارات شخصية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__qualification__phd
+msgid "PhD"
+msgstr "دكتوراه"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__price
+msgid "Price"
+msgstr "السعر"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__qualification
+msgid "Qualification"
+msgstr "المؤهل"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Reject Request"
+msgstr "رفض الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_rejected
+#: model:request.stage,name:hr_requests.stage_hr_rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__fixed_stage__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_assets_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_commercial_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_executive_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_finance_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_hr_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_it_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_legal_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_marketing_manager_approval__rejected
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__dept_projects_manager_approval__rejected
+#: model:request.stage,name:hr_requests.stage_hr_rejected
+msgid "Rejected"
+msgstr "رفض"
+
+#. module: hr_requests
+#: model:ir.actions.act_window,name:hr_requests.action_hr_request_category
+msgid "Request Categories"
+msgstr "تصنيفات الطلبات"
+
+#. module: hr_requests
+#: model:ir.ui.menu,name:hr_requests.menu_hr_request_category
+msgid "Request Categories (Packages)"
+msgstr "تصنيفات الطلبات (الحزم)"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__category_id
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__name
+msgid "Request Category"
+msgstr "تصنيف الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__category_id
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Request Category (Package)"
+msgstr "تصنيف الطلب (الحزمة)"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__date
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__request_details
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Request Details"
+msgstr "تفاصيل الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__name
+msgid "Request Number"
+msgstr "رقم الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__type_id
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__name
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+msgid "Request Type"
+msgstr "نوع الطلب"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__request_type_id
+msgid "Request Type (System)"
+msgstr "نوع الطلب (النظام)"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__request_type_code
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__code
+msgid "Request Type Code"
+msgstr "كود نوع الطلب"
+
+#. module: hr_requests
+#: model:ir.actions.act_window,name:hr_requests.action_hr_request_type
+#: model:ir.ui.menu,name:hr_requests.menu_hr_request_type
+msgid "Request Types"
+msgstr "أنواع الطلبات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__required_skills
+msgid "Required Skills"
+msgstr "المهارات المطلوبة"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة النصية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_category_search
+msgid "Search Categories"
+msgstr "بحث التصنيفات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+msgid "Search Requests"
+msgstr "بحث الطلبات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_type_search
+msgid "Search Types"
+msgstr "بحث الأنواع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_category__sequence
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request_type__sequence
+#: model:ir.model.fields,field_description:hr_requests.field_hr_clearance_procedure_status__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: hr_requests
+#: model:ir.model,name:hr_requests.model_request_stage
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__stage_id
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_search
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__hr_stage_selection
+msgid "Stage Selection"
+msgstr "اختيار المرحلة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تجاوز الموعد المحدد\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Submit Request"
+msgstr "إرسال الطلب"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Submit Request"
+msgstr "إرسال لادارة الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__fixed_stage__submitted
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_submitted
+#: model:request.stage,name:hr_requests.stage_hr_submitted
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__course_category__tech
+msgid "Technical"
+msgstr "تقني"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid "The requested stage was not found."
+msgstr "المرحلة المطلوبة غير موجودة في النظام."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__training_entity
+msgid "Training Entity"
+msgstr "جهة التدريب"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء في السجل."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: hr_requests
+#: model:ir.model.fields,help:hr_requests.field_hr_request__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_request_approved
+msgid "HR Request: Request Approved"
+msgstr "طلب موارد بشرية: تمت الموافقة على الطلب"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_request_approved
+msgid "Your HR Request {{ object.name }} Has Been Approved"
+msgstr "تمت الموافقة على طلب الموارد البشرية رقم {{ object.name }}"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_request_rejected
+msgid "Your HR Request {{ object.name }} Has Been Rejected"
+msgstr "تم رفض طلب الموارد البشرية رقم {{ object.name }}"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_request_approved
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear Employee,<br/><br/>\n"
+"                        We are pleased to inform you that your request submitted to the Human Resources Department has been <strong>approved</strong>.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Request Category:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view the details of the request by clicking the link below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        السلام عليكم ورحمة الله وبركاته،<br/><br/>\n"
+"                        يسعدنا إبلاغكم بأنه <strong>تمت الموافقة</strong> على طلبكم المقدم إلى إدارة الموارد البشرية.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>تصنيف الطلب:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على تفاصيل الطلب من خلال الضغط على الرابط أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_request_rejected
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear Employee,<br/><br/>\n"
+"                        We regret to inform you that your request submitted to the Human Resources Department has been <strong>rejected</strong>.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Request Category:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        For inquiries or to submit a new request, you can view the details of the request by clicking the link below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        السلام عليكم ورحمة الله وبركاته،<br/><br/>\n"
+"                        نأسف لإبلاغكم بأنه <strong>تم رفض</strong> طلبكم المقدم إلى إدارة الموارد البشرية.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>تصنيف الطلب:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        للاستفسار أو تقديم طلب جديد، يمكنكم الاطلاع على تفاصيل الطلب من خلال الضغط على الرابط أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_request_rejected
+msgid "HR Request: Request Rejected"
+msgstr "طلب موارد بشرية: تم رفض الطلب"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_request_rejected
+msgid "Your HR Request {{ object.name }} Has Been Rejected"
+msgstr "تم رفض طلب الموارد البشرية رقم {{ object.name }}"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Send to Archive"
+msgstr "إرسال للأرشيف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_search
+msgid "Search Clearance Requests"
+msgstr "البحث في طلبات إخلاء الطرف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__resignation
+msgid "Resignation"
+msgstr "استقالة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__emp_dept_custody_status__received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__finance_custody_status__received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__hr_custody_status__received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__it_custody_status__received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__legal_custody_status__received
+msgid "Received"
+msgstr "تم الاستلام"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__procedure_status
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__procedure_status_ids
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_search
+msgid "Procedure Status"
+msgstr "حالة الإجراء"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__procedure_types
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_search
+msgid "Procedure Type"
+msgstr "نوع الإجراء"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid ""
+"Please fill in the following fields before submitting the request:\n"
+"• %s"
+msgstr ""
+"يرجى ملء الحقول التالية قبل تقديم الطلب:\n"
+"• %s"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid "Only HR Request Managers are allowed to create Clearance Requests."
+msgstr "يُسمح فقط لمديري طلبات الموارد البشرية بإنشاء طلبات إخلاء الطرف."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Pass to Departments"
+msgstr "تمرير للإدارات المعنية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_status__interview
+msgid "Personal Interview Conducted with Employee"
+msgstr "تم عمل مقابلة شخصية مع الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__finance_custody_status__no_custody
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__hr_custody_status__no_custody
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__it_custody_status__no_custody
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__legal_custody_status__no_custody
+msgid "No Custody"
+msgstr "لا يوجد عُهدة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__emp_dept_custody_status__not_received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__finance_custody_status__not_received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__hr_custody_status__not_received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__it_custody_status__not_received
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__legal_custody_status__not_received
+msgid "Not Received"
+msgstr "لم يتم الاستلام"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__last_working_day
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Last Working Day"
+msgstr "آخر يوم عمل"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_legal_clearance_user
+msgid "Legal Clearance Officer"
+msgstr "مسؤول إخلاء الطرف للإدارة القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__legal_custody_status
+msgid "Legal Custody Status"
+msgstr "هل تم استلام كافة العُهد؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Legal Department"
+msgstr "الإدارة القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__legal_user_id
+msgid "Legal Manager / User"
+msgstr "مدير الادارة القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__legal_notes
+msgid "Legal Notes"
+msgstr "ملاحظات الإدارة القانونية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Legal Notes..."
+msgstr "ملاحظات الإدارة القانونية..."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_hr_manager
+msgid "Is Hr Manager"
+msgstr "هل هو مدير موارد بشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_hr_user_logged
+msgid "Is Hr User Logged"
+msgstr "هل المستخدم الحالي من الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_it_user_logged
+msgid "Is It User Logged"
+msgstr "هل المستخدم الحالي من تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_legal_user_logged
+msgid "Is Legal User Logged"
+msgstr "هل المستخدم الحالي من القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__emp_dept_custody_status__in_progress
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__finance_custody_status__in_progress
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__hr_custody_status__in_progress
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__it_custody_status__in_progress
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__legal_custody_status__in_progress
+msgid "In Progress"
+msgstr "قيد الإجراء"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_clearance
+msgid "Is Clearance Request"
+msgstr "هل هو طلب إخلاء طرف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_emp_manager_logged
+msgid "Is Emp Manager Logged"
+msgstr "هل المستخدم الحالي مدير الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__is_finance_user_logged
+msgid "Is Finance User Logged"
+msgstr "هل المستخدم الحالي من المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_it_clearance_user
+msgid "IT Clearance Officer"
+msgstr "مسؤول إخلاء طرف تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__it_custody_status
+msgid "IT Custody Status"
+msgstr "هل تم استلام كافة العُهد؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "IT Department"
+msgstr "إدارة تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__it_user_id
+msgid "IT Manager / User"
+msgstr "مدير تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__it_notes
+msgid "IT Notes"
+msgstr "ملاحظات تقنية المعلومات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "IT Notes..."
+msgstr "ملاحظات تقنية المعلومات..."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_hr_clearance_user
+msgid "HR Clearance Officer"
+msgstr "مسؤول إخلاء طرف الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__hr_custody_status
+msgid "HR Custody Status"
+msgstr "هل تم استلام كافة العُهد؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "HR Department"
+msgstr "إدارة الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__hr_user_id
+msgid "HR Manager / User"
+msgstr "مدير الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__hr_notes
+msgid "HR Notes"
+msgstr "ملاحظات الموارد البشرية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "HR Notes..."
+msgstr "ملاحظات الموارد البشرية..."
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_status__experience_cert_issued
+msgid "Experience Certificate Issued"
+msgstr "تم إصدار شهادة الخبرة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__final_interview
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Final Interview"
+msgstr "المقابلة النهائية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_finance_clearance_user
+msgid "Financial Clearance Officer"
+msgstr "مسؤول إخلاء طرف الادارة المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_status__clearance_prepared
+msgid "Financial Clearance Prepared for Termination of Services"
+msgstr "تم إعداد المخالصة المالية لإنهاء الخدمات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__finance_custody_status
+msgid "Financial Custody Status"
+msgstr "هل تم استلام كافة العُهد؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Financial Department"
+msgstr "الإدارة المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__finance_user_id
+msgid "Financial Manager / User"
+msgstr "مدير الإدارة المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__finance_notes
+msgid "Financial Notes"
+msgstr "ملاحظات الإدارة المالية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Financial Notes..."
+msgstr "ملاحظات الإدارة المالية..."
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__joining_date
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "First Working Day"
+msgstr "أول يوم عمل"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__end_of_service
+msgid "End of Service"
+msgstr "إنهاء خدمة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__employee_department
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_search
+msgid "Employee Department"
+msgstr "قسم الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__clearance_emp_dept
+#: model:request.stage,name:hr_requests.stage_clearance_emp_dept
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Employee Management"
+msgstr "إدارة الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__emp_dept_notes
+msgid "Employee Management Notes"
+msgstr "ملاحظات إدارة الموظف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Employee Management Notes..."
+msgstr "ملاحظات إدارة الموظف..."
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__emp_dept_custody_status
+msgid "Employee Mgmt Custody Status"
+msgstr "هل تم استلام كافة العُهد؟"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__clearance_draft
+msgid "Draft (Clearance)"
+msgstr "مسودة"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__employee_manager_id
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Department Manager"
+msgstr "مدير إدارة الموظف"
+
+#. module: hr_requests
+#: model_terms:ir.actions.act_window,help:hr_requests.action_hr_clearance_request
+msgid "Create a new Clearance Request"
+msgstr "إنشاء طلب إخلاء طرف جديد"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Confirm moving to Concerned Departments stage?"
+msgstr "هل تؤكد الانتقال إلى مرحلة الإدارات المعنية؟"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__clearance_departments
+#: model:request.stage,name:hr_requests.stage_clearance_departments
+msgid "Concerned Departments"
+msgstr "الإدارات المعنية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__clearance
+msgid "Clearance"
+msgstr "إخلاء طرف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_users_form_inherit_hr_clearance
+msgid "Clearance Department Responsibilities"
+msgstr "مسؤولوا إخلاء الطرف من الإدارات"
+
+#. module: hr_requests
+#: model:request.type,name:hr_requests.request_type_clearance
+msgid "Clearance Process"
+msgstr "إجراء إخلاء الطرف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Clearance Request"
+msgstr "طلب إخلاء طرف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Clearance Request Details"
+msgstr "تفاصيل طلب إخلاء الطرف"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_clearance_emp_manager
+msgid "Clearance Request: {{ object.user_id.name or '-' }}"
+msgstr "طلب إخلاء طرف: {{ object.user_id.name or '-' }}"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_clearance_finance
+msgid ""
+"Clearance Request: {{ object.user_id.name or '-' }} - Financial Department"
+msgstr "طلب إخلاء طرف: {{ object.user_id.name or '-' }} - الإدارة المالية"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_clearance_hr
+msgid "Clearance Request: {{ object.user_id.name or '-' }} - HR Department"
+msgstr ""
+"طلب إخلاء طرف: {{ object.user_id.name or '-' }} - إدارة الموارد البشرية"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_clearance_it
+msgid "Clearance Request: {{ object.user_id.name or '-' }} - IT Department"
+msgstr ""
+"طلب إخلاء طرف: {{ object.user_id.name or '-' }} - إدارة تقنية المعلومات"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_clearance_legal
+msgid "Clearance Request: {{ object.user_id.name or '-' }} - Legal Department"
+msgstr "طلب إخلاء طرف: {{ object.user_id.name or '-' }} - الإدارة القانونية"
+
+#. module: hr_requests
+#: model:ir.actions.act_window,name:hr_requests.action_hr_clearance_request
+#: model:ir.ui.menu,name:hr_requests.menu_hr_clearance_request_main
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_tree
+msgid "Clearance Requests"
+msgstr "طلبات إخلاء الطرف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_users_form_inherit_hr_clearance
+msgid "HR Approvers Responsibilities"
+msgstr "مسؤولوا اعتمادات HR"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_clearance_emp_manager
+msgid "Clearance: Employee Manager Notification"
+msgstr "إخلاء الطرف: إشعار مدير الموظف"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_clearance_finance
+msgid "Clearance: Finance Department Notification"
+msgstr "إخلاء الطرف: إشعار الإدارة المالية"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_clearance_hr
+msgid "Clearance: HR Department Notification"
+msgstr "إخلاء الطرف: إشعار إدارة الموارد البشرية"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_clearance_it
+msgid "Clearance: IT Department Notification"
+msgstr "إخلاء الطرف: إشعار إدارة تقنية المعلومات"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_clearance_legal
+msgid "Clearance: Legal Department Notification"
+msgstr "إخلاء الطرف: إشعار الإدارة القانونية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Attachments and Notes"
+msgstr "المرفقات والملاحظات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Are you sure you want to submit this clearance request?"
+msgstr "هل أنت تأكد من أنك تريد تقديم طلب إخلاء الطرف هذا؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_clearance_request_form
+msgid "Are you sure you want to move this request to Archive?"
+msgstr "هل أنت تأكد من أنك تريد نقل هذا الطلب إلى الأرشيف؟"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__clearance_archive
+#: model:request.stage,name:hr_requests.stage_clearance_archive
+msgid "Archive"
+msgstr "الأرشيف"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_clearance_finance
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Dear Financial Manager,<br/><br/>\n"
+"                        The clearance request for employee <strong><t t-out=\"object.user_id.name or '-'\"/></strong> has been forwarded to the Financial Department.<br/>\n"
+"                        Please kindly review and take the necessary action regarding financial clearances and notes.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Procedure Type:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        عزيزي المدير المالي،<br/><br/>\n"
+"                        تم توجيه طلب إخلاء الطرف للموظف <strong><t t-out=\"object.user_id.name or '-'\"/></strong> إلى الإدارة المالية.<br/>\n"
+"                        يرجى المراجعة واتخاذ الإجراءات اللازمة بشأن المخالصات والملاحظات المالية.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الإجراء:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            عرض الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_clearance_hr
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Dear HR Manager,<br/><br/>\n"
+"                        The clearance request for employee <strong><t t-out=\"object.user_id.name or '-'\"/></strong> has been forwarded to the HR Department.<br/>\n"
+"                        Please kindly review and take the necessary action regarding HR custody status and notes.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Procedure Type:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        عزيزي مدير الموارد البشرية،<br/><br/>\n"
+"                        تم توجيه طلب إخلاء الطرف للموظف <strong><t t-out=\"object.user_id.name or '-'\"/></strong> إلى إدارة الموارد البشرية.<br/>\n"
+"                        يرجى المراجعة واتخاذ الإجراءات اللازمة بشأن حالة العُهد وملاحظات الموارد البشرية.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الإجراء:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            عرض الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_clearance_it
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Dear IT Manager,<br/><br/>\n"
+"                        The clearance request for employee <strong><t t-out=\"object.user_id.name or '-'\"/></strong> has been forwarded to the IT Department.<br/>\n"
+"                        Please kindly review and take the necessary action regarding IT assets/custody status and notes.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Procedure Type:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        عزيزي مدير تقنية المعلومات،<br/><br/>\n"
+"                        تم توجيه طلب إخلاء الطرف للموظف <strong><t t-out=\"object.user_id.name or '-'\"/></strong> إلى إدارة تقنية المعلومات.<br/>\n"
+"                        يرجى المراجعة واتخاذ الإجراءات اللازمة بشأن عُهد/أصول تقنية المعلومات والملاحظات.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الإجراء:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            عرض الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_clearance_legal
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Dear Legal Manager,<br/><br/>\n"
+"                        The clearance request for employee <strong><t t-out=\"object.user_id.name or '-'\"/></strong> has been forwarded to the Legal Department.<br/>\n"
+"                        Please kindly review and take the necessary action regarding legal custody status and notes.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Procedure Type:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        عزيزي مدير الإدارة القانونية،<br/><br/>\n"
+"                        تم توجيه طلب إخلاء الطرف للموظف <strong><t t-out=\"object.user_id.name or '-'\"/></strong> إلى الإدارة القانونية.<br/>\n"
+"                        يرجى المراجعة واتخاذ الإجراءات اللازمة بشأن حالة العُهد والملاحظات القانونية.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الإجراء:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            عرض الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_clearance_emp_manager
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Dear Manager,<br/><br/>\n"
+"                        A clearance request has been submitted for employee <strong><t t-out=\"object.user_id.name or '-'\"/></strong>.<br/>\n"
+"                        Please kindly take the necessary actions and update the custody status and notes for your department.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Procedure Type:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        عزيزي المدير،<br/><br/>\n"
+"                        تم تقديم طلب إخلاء طرف للموظف <strong><t t-out=\"object.user_id.name or '-'\"/></strong>.<br/>\n"
+"                        يرجى اتخاذ الإجراءات اللازمة وتحديث حالة العُهد والملاحظات الخاصة بقسمكم.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الإجراء:</strong> <t t-out=\"object.procedure_types or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            عرض الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_status__medical_insurance_removed
+msgid "Employee Removed from Medical Insurance"
+msgstr " تم حذف الموظف من التأمين الطبي"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_status__qiwa_removed
+msgid "Employee Removed from Qiwa"
+msgstr "تم حذف الموظف من قوى"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__no_renewal
+msgid "Non-Renewal of Contract"
+msgstr "عدم تجديد عقد"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__probation_fail
+msgid "Failure to Pass Probation Period"
+msgstr "عدم اجتياز فترة التجربة"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__mutual_termination
+msgid "Mutual Termination of Contract"
+msgstr "انهاء عقد بالتراضي"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__termination_77
+msgid "Contract Termination - Article 77"
+msgstr "انهاء عقد على المادة 77"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__termination_80
+msgid "Contract Termination - Article 80"
+msgstr "انهاء عقد على المادة 80"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__termination_87
+msgid "Contract Termination - Article 87"
+msgstr "انهاء عقد على المادة 87"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__retirement
+msgid "Retirement"
+msgstr "التقاعد"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__procedure_types__other
+msgid "Other"
+msgstr "أخري"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/record_control_wizard_inherit.py:0
+msgid "Please select an HR Request to delete."
+msgstr "الرجاء تحديد سجل طلب الموارد البشرية للحذف."
+
+#. module: hr_requests
+#: model:ir.ui.menu,name:hr_requests.menu_hr_all_request_main
+msgid "All Requests"
+msgstr "جميع الطلبات"
+
+#. module: hr_requests
+#: model:res.groups,name:hr_requests.group_hr_request_user
+msgid "HR Request User"
+msgstr "مستخدم الموارد البشرية"
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid ""
+"Only the assigned manager for %(dept)s can set or change the approval "
+"status."
+msgstr ""
+"فقط المدير المعين لإدارة %(dept)s يملك صلاحية تحديد أو تغيير حالة الموافقة."
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid ""
+"Cannot send the request to the next stage because approval from %(dept)s has"
+" not been granted. The approval status must be set to 'Approved' by the "
+"assigned manager."
+msgstr ""
+"لا يمكن إرسال الطلب إلى المرحلة التالية قبل اعتماد مدير الإدارة (%(dept)s). "
+"يجب أن تكون حالة الموافقة 'معتمد'."
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid ""
+"Cannot return the request to HR because approval status from %(dept)s is not"
+" 'Rejected'. The approval status must be set to 'Rejected' by the assigned "
+"manager."
+msgstr ""
+"لا يمكن إرجاع الطلب إلى إدارة الموارد البشرية قبل رفض مدير الإدارة "
+"(%(dept)s). يجب أن تكون حالة الموافقة 'مرفوض'."
+
+#. module: hr_requests
+#. odoo-python
+#: code:addons/hr_requests/models/hr_request.py:0
+msgid ""
+"Only the assigned department manager or an HR Request Manager can perform "
+"this action."
+msgstr ""
+"فقط مدير الإدارة المعني أو مدير طلبات الموارد البشرية يملك صلاحية تنفيذ هذا "
+"الإجراء."
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_commercial
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_commercial
+#: model:request.stage,name:hr_requests.stage_hr_dept_commercial
+msgid "Commercial Sector Management"
+msgstr "إدارة القطاع التجاري"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_projects
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_projects
+#: model:request.stage,name:hr_requests.stage_hr_dept_projects
+msgid "Project Management"
+msgstr "إدارة المشاريع"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_marketing
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_marketing
+#: model:request.stage,name:hr_requests.stage_hr_dept_marketing
+msgid "Marketing Management"
+msgstr "إدارة التسويق"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_legal
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_legal
+#: model:request.stage,name:hr_requests.stage_hr_dept_legal
+msgid "Legal Management"
+msgstr "الإدارة القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_finance
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_finance
+#: model:request.stage,name:hr_requests.stage_hr_dept_finance
+msgid "Financial Management"
+msgstr "الإدارة المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_hr
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_hr
+#: model:request.stage,name:hr_requests.stage_hr_dept_hr
+msgid "Human Resources Management"
+msgstr "إدارة الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_assets
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_assets
+#: model:request.stage,name:hr_requests.stage_hr_dept_assets
+msgid "Assets & Investment Management"
+msgstr "إدارة الأصول والاستثمار"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_it
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_it
+#: model:request.stage,name:hr_requests.stage_hr_dept_it
+msgid "IT Management"
+msgstr "إدارة تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__department__hr_dept_executive
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_dept_executive
+#: model:request.stage,name:hr_requests.stage_hr_dept_executive
+msgid "Executive Management"
+msgstr "الإدارة التنفيذية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "This request was returned from "
+msgstr "تم إرجاع هذا الطلب من "
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid ""
+" with rejection. You may enter a note below and re-send it back to the "
+"department, or reject the request."
+msgstr ""
+" بالرفض. يمكنك إدخال ملاحظة أدناه وإعادة إرسال الطلب إلى الإدارة، أو رفض "
+"الطلب."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Department Rejection Note: "
+msgstr "ملاحظة رفض الإدارة: "
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__returned_from_dept_notes
+msgid "Department Rejection Note"
+msgstr "ملاحظة رفض الإدارة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__resend_notes
+msgid "Resend Notes"
+msgstr "ملاحظات إعادة الإرسال"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Enter note for the department before re-sending..."
+msgstr "أدخل ملاحظة للإدارة قبل إعادة الإرسال..."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Resend Note: "
+msgstr "ملاحظة إعادة الإرسال: "
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Send to Next Department"
+msgstr "إرسال إلى الإدارة التالية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to approve and send to the next department?"
+msgstr "هل أنت متأكد من رغبتك في الموافقة والإرسال إلى الإدارة التالية؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Send to HR"
+msgstr "الموافقة والإرسال إلى الموارد البشرية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to approve and send to HR?"
+msgstr "هل أنت متأكد من رغبتك في الموافقة والإرسال إلى الموارد البشرية؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Reject and Return"
+msgstr "رفض وإرجاع"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid ""
+"Are you sure you want to reject this request and return it to submitted "
+"stage?"
+msgstr "هل أنت متأكد من رغبتك في رفض هذا الطلب وإرجاعه إلى مرحلة تم الارسال"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Send for Approvals"
+msgstr "إرسال للاعتمادات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to send the request for department approvals?"
+msgstr "هل أنت متأكد من رغبتك في إرسال الطلب لاعتمادات الإدارات؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to send the request to HR Approval?"
+msgstr ""
+"هل أنت متأكد من رغبتك في إرسال الطلب إلى مرحلة اعتماد الموارد البشرية؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Re-send to Department"
+msgstr "إعادة الإرسال إلى الإدارة الرافضة"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to re-send this request back to the department?"
+msgstr "هل أنت متأكد من رغبتك في إعادة إرسال هذا الطلب إلى الإدارة الرافضة؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to approve this request?"
+msgstr "هل أنت متأكد من رغبتك في اعتماد هذا الطلب؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Are you sure you want to reset the request to draft?"
+msgstr "هل أنت متأكد من رغبتك في إعادة تعيين الطلب إلى المسودة؟"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid ""
+"Add the required departments for request approval and sequence them as needed.\n"
+"                            If no departments are added, the request will proceed directly to final approval."
+msgstr ""
+"أضف الإدارات المطلوبة لاعتماد الطلب ورتّب تسلسلها حسب الحاجة.\n"
+"                            إذا لم تتم إضافة أي إدارات، فسيتم تحويل الطلب مباشرة إلى الاعتماد النهائي للموارد البشرية."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Department Approvals Workflow"
+msgstr "مسار اعتمادات الإدارات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Project Management Approval"
+msgstr "اعتماد إدارة المشاريع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_projects_manager_id
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_projects_manager_user
+msgid "Projects Manager"
+msgstr "مدير المشاريع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_commercial_manager_id
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_commercial_manager_user
+msgid "Commercial Sector Manager"
+msgstr "مدير القطاع التجاري"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_commercial_manager_approval
+msgid "Commercial Manager Approval"
+msgstr "موافقة مدير القطاع التجاري"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_commercial_manager_notes
+msgid "Commercial Manager Notes"
+msgstr "ملاحظات مدير القطاع التجاري"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Commercial Sector Approval"
+msgstr "اعتماد القطاع التجاري"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_projects_manager_approval
+msgid "Projects Manager Approval"
+msgstr "موافقة مدير المشاريع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_projects_manager_notes
+msgid "Projects Manager Notes"
+msgstr "ملاحظات مدير المشاريع"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Marketing Management Approval"
+msgstr "اعتماد إدارة التسويق"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_marketing_manager_id
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_marketing_manager_user
+msgid "Marketing Manager"
+msgstr "مدير التسويق"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_marketing_manager_approval
+msgid "Marketing Manager Approval"
+msgstr "موافقة مدير التسويق"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_marketing_manager_notes
+msgid "Marketing Manager Notes"
+msgstr "ملاحظات مدير التسويق"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Legal Management Approval"
+msgstr "اعتماد الإدارة القانونية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_legal_manager_id
+msgid "Legal Manager"
+msgstr "المدير القانوني"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_legal_manager_approval
+msgid "Legal Manager Approval"
+msgstr "موافقة المدير القانوني"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_legal_manager_notes
+msgid "Legal Manager Notes"
+msgstr "ملاحظات المدير القانوني"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Financial Management Approval"
+msgstr "اعتماد الإدارة المالية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_finance_manager_id
+msgid "Finance Manager"
+msgstr "المدير المالي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_finance_manager_approval
+msgid "Finance Manager Approval"
+msgstr "موافقة المدير المالي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_finance_manager_notes
+msgid "Finance Manager Notes"
+msgstr "ملاحظات المدير المالي"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Human Resources Approval"
+msgstr "اعتماد الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_hr_manager_id
+msgid "HR Manager"
+msgstr "مدير الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_hr_manager_approval
+msgid "HR Manager Approval"
+msgstr "موافقة مدير الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_hr_manager_notes
+msgid "HR Manager Notes"
+msgstr "ملاحظات مدير الموارد البشرية"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Assets & Investment Approval"
+msgstr "اعتماد إدارة الأصول والاستثمار"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_assets_manager_id
+msgid "Assets Manager"
+msgstr "مدير الأصول والاستثمار"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_assets_manager_approval
+msgid "Assets Manager Approval"
+msgstr "موافقة مدير الأصول والاستثمار"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_assets_manager_notes
+msgid "Assets Manager Notes"
+msgstr "ملاحظات مدير الأصول والاستثمار"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "IT Management Approval"
+msgstr "اعتماد إدارة تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_it_manager_id
+msgid "IT Manager"
+msgstr "مدير تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_it_manager_approval
+msgid "IT Manager Approval"
+msgstr "موافقة مدير تقنية المعلومات"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_it_manager_notes
+msgid "IT Manager Notes"
+msgstr "ملاحظات مدير تقنية المعلومات"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Executive Management Approval"
+msgstr "اعتماد الإدارة التنفيذية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_executive_manager_id
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_executive_manager_user
+msgid "Executive Manager"
+msgstr "المدير التنفيذي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_executive_manager_approval
+msgid "Executive Manager Approval"
+msgstr "موافقة المدير التنفيذي"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__dept_executive_manager_notes
+msgid "Executive Manager Notes"
+msgstr "ملاحظات المدير التنفيذي"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_request_submitted
+msgid "HR Request: Request Submitted to HR Manager"
+msgstr "طلب الموارد البشرية: تم تقديم الطلب إلى مدير الموارد البشرية"
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_request_submitted
+msgid ""
+"New HR Request Submitted: {{ object.name }} - {{ object.type_id.name or '-' "
+"}}"
+msgstr ""
+"تم تقديم طلب موارد بشرية جديد: {{ object.name }} - {{ object.type_id.name or"
+" '-' }}"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_request_submitted
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear <strong t-out=\"ctx.get('manager_name') or 'HR Manager'\"/>,<br/><br/>\n"
+"                        A new HR request has been submitted and is awaiting your review.<br/>\n"
+"                        <strong>An HR request has been sent to you. Kindly review it.</strong><br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Employee:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Category:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view and process the request by clicking the button below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        عزيزي <strong t-out=\"ctx.get('manager_name') or 'مدير الموارد البشرية'\"/>،<br/><br/>\n"
+"                        تم تقديم طلب موارد بشرية جديد وبانتظار مراجعتكم الكريمة.<br/>\n"
+"                        <strong>تم إرسال طلب موارد بشرية إليكم، يرجى التكرم بالاطلاع والمراجعة.</strong><br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>الموظف:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>تصنيف الطلب:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على الطلب واتخاذ الإجراء اللازم من خلال الضغط على الزر أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_dept_approval_required
+msgid ""
+"Approval Required: HR Request {{ object.name }} - {{ ctx.get('dept_name') or"
+" object._get_current_dept_name() }}"
+msgstr ""
+"مطلوب الاعتماد: طلب موارد بشرية {{ object.name }} - {{ ctx.get('dept_name') "
+"or object._get_current_dept_name() }}"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_dept_approval_required
+msgid "HR Request: Department Approval Required"
+msgstr "طلب الموارد البشرية: مطلوب اعتماد الإدارة"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_dept_approval_required
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear <strong t-out=\"ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'Department Manager'\"/>,<br/><br/>\n"
+"                        An HR request requires your approval for <strong><t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></strong>.<br/>\n"
+"                        Please review the details below and take the appropriate action.<br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Requested By:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>Department:</strong> <t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view and process the request by clicking the button below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        عزيزي <strong t-out=\"ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'مدير الإدارة'\"/>،<br/><br/>\n"
+"                        يتطلب طلب الموارد البشرية موافقتكم واعتمادكم لإدارة <strong><t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></strong>.<br/>\n"
+"                        يرجى التكرم بالاطلاع على التفاصيل أدناه واتخاذ الإجراء المناسب.<br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>مقدم الطلب:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>الإدارة:</strong> <t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على الطلب ومعالجته من خلال الضغط على الزر أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #007bff; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_dept_approval_reassigned
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear <strong t-out=\"ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'Department Manager'\"/>,<br/><br/>\n"
+"                        This HR request has been re-assigned to you for approval for <strong><t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></strong>.<br/>\n"
+"                        Please review the request and take the appropriate action.<br/><br/>\n"
+"                        <t t-if=\"object.resend_notes\">\n"
+"                            <div style=\"background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0;\">\n"
+"                                <strong>HR Note:</strong> <t t-out=\"object.resend_notes\"/>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Requested By:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>Department:</strong> <t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view and process the request by clicking the button below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #ff9800; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        عزيزي <strong t-out=\"ctx.get('dept_manager_name') or object._get_current_dept_manager().name or 'مدير الإدارة'\"/>،<br/><br/>\n"
+"                        تمت إعادة إسناد هذا الطلب إليكم للموافقة والاعتماد لإدارة <strong><t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></strong>.<br/>\n"
+"                        يرجى مراجعة الطلب واتخاذ الإجراء المناسب.<br/><br/>\n"
+"                        <t t-if=\"object.resend_notes\">\n"
+"                            <div style=\"background-color: #fff3cd; border-right: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0;\">\n"
+"                                <strong>ملاحظة الموارد البشرية:</strong> <t t-out=\"object.resend_notes\"/>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>مقدم الطلب:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>الإدارة:</strong> <t t-out=\"ctx.get('dept_name') or object._get_current_dept_name()\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على الطلب ومعالجته من خلال الضغط على الزر أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #ff9800; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_dept_approval_reassigned
+msgid ""
+"HR Request Re-assigned for Approval: {{ object.name }} - {{ "
+"ctx.get('dept_name') or object._get_current_dept_name() }}"
+msgstr ""
+"إعادة إسناد طلب موارد بشرية للاعتماد: {{ object.name }} - {{ "
+"ctx.get('dept_name') or object._get_current_dept_name() }}"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_dept_approval_reassigned
+msgid "HR Request: Department Approval Re-assigned"
+msgstr "طلب الموارد البشرية: إعادة إسناد اعتماد الإدارة"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_dept_rejected
+msgid "HR Request: Department Rejection Notification"
+msgstr "طلب الموارد البشرية: إشعار رفض من الإدارة"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_dept_rejected
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear <strong t-out=\"ctx.get('manager_name') or 'HR Manager'\"/>,<br/><br/>\n"
+"                        An HR request has been <strong>rejected and returned</strong> to the HR Department for your review.<br/><br/>\n"
+"                        </p><div style=\"background-color: #f8d7da; border-left: 4px solid #dc3545; padding: 12px 15px; margin: 15px 0; border-radius: 4px;\">\n"
+"                            <strong>Rejection Details:</strong><br/>\n"
+"                            <strong>Department:</strong> <t t-out=\"ctx.get('dept_name') or '-' \"/><br/>\n"
+"                            <strong>Rejected By:</strong> <t t-out=\"ctx.get('rejected_by_name') or '-' \"/><br/>\n"
+"                            <t t-if=\"ctx.get('rejection_notes')\">\n"
+"                                <strong>Rejection Notes:</strong> <t t-out=\"ctx.get('rejection_notes')\"/>\n"
+"                            </t>\n"
+"                        </div>\n"
+"                        <br/>\n"
+"                        <strong>Request Information:</strong>\n"
+"                        <ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Employee:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Category:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can review the request and re-send it to the department or take appropriate action by clicking the button below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        عزيزي <strong t-out=\"ctx.get('manager_name') or 'مدير الموارد البشرية'\"/>،<br/><br/>\n"
+"                        تم <strong>رفض وإرجاع</strong> طلب موارد بشرية إلى إدارة الموارد البشرية لمراجعتكم.<br/><br/>\n"
+"                        </p><div style=\"background-color: #f8d7da; border-right: 4px solid #dc3545; padding: 12px 15px; margin: 15px 0; border-radius: 4px;\">\n"
+"                            <strong>تفاصيل الرفض:</strong><br/>\n"
+"                            <strong>الإدارة:</strong> <t t-out=\"ctx.get('dept_name') or '-' \"/><br/>\n"
+"                            <strong>رُفض من قِبل:</strong> <t t-out=\"ctx.get('rejected_by_name') or '-' \"/><br/>\n"
+"                            <t t-if=\"ctx.get('rejection_notes')\">\n"
+"                                <strong>ملاحظات الرفض:</strong> <t t-out=\"ctx.get('rejection_notes')\"/>\n"
+"                            </t>\n"
+"                        </div>\n"
+"                        <br/>\n"
+"                        <strong>معلومات الطلب:</strong>\n"
+"                        <ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>الموظف:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>تصنيف الطلب:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم مراجعة الطلب وإعادة إرساله إلى الإدارة أو اتخاذ الإجراء المناسب من خلال الضغط على الزر أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #dc3545; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_dept_rejected
+msgid ""
+"HR Request Returned: {{ object.name }} - Rejected by {{ ctx.get('dept_name')"
+" or '-' }}"
+msgstr ""
+"تم إرجاع طلب موارد بشرية: {{ object.name }} - تم الرفض من قِبل {{ "
+"ctx.get('dept_name') or '-' }}"
+
+#. module: hr_requests
+#: model:mail.template,name:hr_requests.email_template_hr_approval_required
+msgid "HR Request: HR Approval Required"
+msgstr "طلب الموارد البشرية: مطلوب اعتماد الموارد البشرية"
+
+#. module: hr_requests
+#: model:mail.template,body_html:hr_requests.email_template_hr_approval_required
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"ltr\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: left; line-height: 1.6;\">\n"
+"                        Sender: <strong>Human Resources Department - Bussma</strong><br/><br/>\n"
+"                        Dear <strong t-out=\"ctx.get('manager_name') or 'HR Manager'\"/>,<br/><br/>\n"
+"                        All department managers' approvals have been completed for this HR request.<br/>\n"
+"                        <strong>The request now requires your approval.</strong><br/><br/>\n"
+"                        <strong>Request Details:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>Request Number:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>Employee:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Category:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Type:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>Request Date:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        You can view and process the request by clicking the button below.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            View Request in System\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\" dir=\"rtl\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 14px; text-align: right; line-height: 1.6;\">\n"
+"                        المرسل: <strong>إدارة الموارد البشرية - بصمة</strong><br/><br/>\n"
+"                        عزيزي <strong t-out=\"ctx.get('manager_name') or 'مدير الموارد البشرية'\"/>،<br/><br/>\n"
+"                        تم استكمال كافة موافقات مدراء الإدارات على هذا الطلب.<br/>\n"
+"                        <strong>الطلب الآن بانتظار موافقتكم واعتمادكم النهائي.</strong><br/><br/>\n"
+"                        <strong>تفاصيل الطلب:</strong>\n"
+"                        </p><ul style=\"line-height: 1.8;\">\n"
+"                            <li><strong>رقم الطلب:</strong> <t t-out=\"object.name or '-'\"/></li>\n"
+"                            <li><strong>الموظف:</strong> <t t-out=\"object.user_id.name or '-'\"/></li>\n"
+"                            <li><strong>تصنيف الطلب:</strong> <t t-out=\"object.category_id.name or '-'\"/></li>\n"
+"                            <li><strong>نوع الطلب:</strong> <t t-out=\"object.type_id.name or '-'\"/></li>\n"
+"                            <li><strong>تاريخ الطلب:</strong> <t t-out=\"object.date or '-'\"/></li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        يمكنكم الاطلاع على الطلب واتخاذ الإجراء اللازم من خلال الضغط على الزر أدناه.\n"
+"                    \n"
+"                    <div style=\"margin: 20px 0px; text-align: center;\">\n"
+"                        <a t-att-href=\"object.get_hr_request_url()\" style=\"background-color: #28a745; padding: 10px 20px; text-decoration: none; color: #ffffff; border-radius: 5px; font-size: 14px; display: inline-block;\">\n"
+"                            معاينة الطلب في النظام\n"
+"                        </a>\n"
+"                    </div>\n"
+"                </div>\n"
+"            "
+
+#. module: hr_requests
+#: model:mail.template,subject:hr_requests.email_template_hr_approval_required
+msgid ""
+"HR Request Pending Approval: {{ object.name }} - {{ object.type_id.name or "
+"'-' }}"
+msgstr ""
+"طلب موارد بشرية بانتظار الاعتماد: {{ object.name }} - {{ object.type_id.name"
+" or '-' }}"
+
+#. module: hr_requests
+#: model:request.stage,name:hr_requests.stage_hr_approval
+msgid "HR Approval"
+msgstr "اعتماد الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request_dept_line__fixed_stage__hr_approval
+#: model:ir.model.fields.selection,name:hr_requests.selection__request_stage__hr_stage_selection__hr_approval
+msgid "HR Approval"
+msgstr "الاعتماد النهائي ل HR"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid ""
+"with rejection. You may enter a note below and re-send it back to the "
+"department, or reject the request."
+msgstr ""
+"مع الرفض. يمكنك إدخال ملاحظة أدناه وإعادة إرساله إلى الإدارة، أو رفض الطلب."
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "This request was returned from"
+msgstr "تمت إعادة هذا الطلب من"
+
+#. module: hr_requests
+#: model:ir.model,name:hr_requests.model_hr_clearance_procedure_status
+msgid "Clearance Procedure Status"
+msgstr "حالة إجراء إخلاء الطرف"
+
+#. module: hr_requests
+#: model:hr.clearance.procedure.status,name:hr_requests.procedure_status_interview
+msgid "Personal Interview Conducted with Employee"
+msgstr "تم عمل مقابلة شخصية مع الموظف"
+
+#. module: hr_requests
+#: model:hr.clearance.procedure.status,name:hr_requests.procedure_status_clearance_prepared
+msgid "Financial Clearance Prepared for Termination of Services"
+msgstr "تم إعداد المخالصة المالية لإنهاء الخدمات"
+
+#. module: hr_requests
+#: model:hr.clearance.procedure.status,name:hr_requests.procedure_status_medical_insurance_removed
+msgid "Employee Removed from Medical Insurance"
+msgstr "تم إسقاط الموظف من التأمين الطبي"
+
+#. module: hr_requests
+#: model:hr.clearance.procedure.status,name:hr_requests.procedure_status_qiwa_removed
+msgid "Employee Removed from Qiwa"
+msgstr "تم إسقاط الموظف من قوى"
+
+#. module: hr_requests
+#: model:hr.clearance.procedure.status,name:hr_requests.procedure_status_experience_cert_issued
+msgid "Experience Certificate Issued"
+msgstr "تم إصدار شهادة خبرة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_res_users__is_assets_manager_user
+msgid "Assets & Investment Manager"
+msgstr "مدير الأصول والاستثمار"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_users_form_inherit_hr_clearance
+msgid "HR Request Department Managers"
+msgstr "مديرو أقسام طلبات الموارد البشرية"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__recruitment_structure
+msgid "Employee Structure"
+msgstr "هيكلة الموظف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__recruitment_structure__new
+msgid "New Employment"
+msgstr "توظيف جديد"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__recruitment_structure__replacement
+msgid "Replacement Employment"
+msgstr "توظيف بديل"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__recruitment_type
+msgid "Recruitment Type"
+msgstr "نوع التوظيف"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__recruitment_type__urgent
+msgid "Urgent"
+msgstr "عاجل"
+
+#. module: hr_requests
+#: model:ir.model.fields.selection,name:hr_requests.selection__hr_request__recruitment_type__non_urgent
+msgid "Non-Urgent"
+msgstr "غير عاجل"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__branch
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__required_tasks
+msgid "Required Tasks"
+msgstr "المهام المطلوبة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__required_experience
+msgid "Required Experience"
+msgstr "الخبرة المطلوبة"
+
+#. module: hr_requests
+#: model:ir.model.fields,field_description:hr_requests.field_hr_request__reason_for_need
+msgid "Reason for Need"
+msgstr "سبب الاحتياج"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Recruitment Details"
+msgstr "تفاصيل التوظيف"
+
+#. module: hr_requests
+#: model_terms:ir.ui.view,arch_db:hr_requests.view_hr_request_form
+msgid "Job Requirements & Justifications"
+msgstr "متطلبات الوظيفة ومبررات الاحتياج"

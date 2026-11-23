@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bussma_material_pm_approval_wizard_form" model="ir.ui.view">
+            <field name="name">bussma.material.pm.approval.wizard.form</field>
+            <field name="model">bussma.material.pm.approval.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="material_stage_selection" invisible="1"/>
+                        <field name="bussma_project_id" invisible="1"/>
+                        <field name="is_opportunity_request" invisible="1"/>
+                        <field name="is_office_request" invisible="1"/>
+                        <!-- Project Request Alert -->
+                        <div class="alert alert-info d-flex align-items-center gap-2 mb-3" invisible="material_stage_selection != 'mat_pm_approve' or is_opportunity_request or is_office_request">
+                            <i class="fa fa-info-circle fa-lg text-info"/>
+                            <div>
+                                <strong>Pending Project Manager Approval:</strong> Please review the marketing material details below and choose to approve or reject with notes.
+                            </div>
+                        </div>
+                        <!-- Opportunity Request Alert -->
+                        <div class="alert alert-info d-flex align-items-center gap-2 mb-3" invisible="material_stage_selection != 'mat_pm_approve' or not is_opportunity_request">
+                            <i class="fa fa-info-circle fa-lg text-info"/>
+                            <div>
+                                <strong>Pending Opportunity Management Approval:</strong> Please review the marketing material details below and choose to approve or reject with notes.
+                            </div>
+                        </div>
+                        <!-- Office Request Alert -->
+                        <div class="alert alert-info d-flex align-items-center gap-2 mb-3" invisible="material_stage_selection != 'mat_pm_approve' or not is_office_request">
+                            <i class="fa fa-info-circle fa-lg text-info"/>
+                            <div>
+                                <strong>Pending Service Requester Approval:</strong> Please review the marketing material details below and choose to approve or reject with notes.
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="material_id" options="{'no_open': True}"/>
+                                <field name="marketing_id" options="{'no_open': True}"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <group string="Notes Results">
+                            <field name="result_notes" readonly="1"/>
+                        </group>
+                        <!-- Project Request Return Notes -->
+                        <group string="Project Manager Return Notes and Attachments" invisible="material_stage_selection != 'mat_pm_approve' or is_opportunity_request or is_office_request">
+                            <field name="pm_rejection_notes" placeholder="Enter return notes here if rejecting..."/>
+                            <field name="pm_rejection_attachment_ids" widget="many2many_binary" string="Rejection Attachments"/>
+                        </group>
+                        <!-- Opportunity Request Return Notes -->
+                        <group string="Opportunity Management Return Notes and Attachments" invisible="material_stage_selection != 'mat_pm_approve' or not is_opportunity_request">
+                            <field name="pm_rejection_notes" placeholder="Enter return notes here if rejecting..."/>
+                            <field name="pm_rejection_attachment_ids" widget="many2many_binary" string="Rejection Attachments"/>
+                        </group>
+                        <!-- Office Request Return Notes -->
+                        <group string="Service Requester Return Notes and Attachments" invisible="material_stage_selection != 'mat_pm_approve' or not is_office_request">
+                            <field name="pm_rejection_notes" placeholder="Enter return notes here if rejecting..."/>
+                            <field name="pm_rejection_attachment_ids" widget="many2many_binary" string="Rejection Attachments"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_approve"
+                                string="Approve"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_pm_approve'"/>
+                        <button name="action_reject"
+                                string="Reject"
+                                type="object"
+                                class="btn-danger"
+                                invisible="material_stage_selection != 'mat_pm_approve'"/>
+                        <button string="Close" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

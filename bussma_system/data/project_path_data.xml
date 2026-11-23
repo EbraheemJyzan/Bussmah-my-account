@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ================================================================ -->
+        <!-- Project Path Data                                                -->
+        <!-- ================================================================ -->
+
+        <record id="project_path_cities" model="project.path">
+            <field name="name">Cities</field>
+            <field name="code">cities</field>
+        </record>
+
+        <record id="project_path_specialized" model="project.path">
+            <field name="name">Specialized</field>
+            <field name="code">specialized</field>
+        </record>
+
+        <record id="project_path_standard" model="project.path">
+            <field name="name">Standard</field>
+            <field name="code">standard</field>
+        </record>
+
+    </data>
+</odoo>

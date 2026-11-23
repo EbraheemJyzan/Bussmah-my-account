@@ -1,0 +1,867 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* nomow_auditlog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 08:35+0000\n"
+"PO-Revision-Date: 2026-07-29 08:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "<span class=\"o_stat_text\">View Record</span>"
+msgstr "عرض السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__action_id
+msgid "Action"
+msgstr "الإجراء"
+
+#. module: nomow_auditlog
+#: model:ir.ui.menu,name:nomow_auditlog.menu_audit
+msgid "Audit"
+msgstr "التدقيق"
+
+#. module: nomow_auditlog
+#: model:ir.module.category,name:nomow_auditlog.module_category_auditlog
+msgid "Auditlog"
+msgstr "سجل التدقيق"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_autovacuum
+msgid "Auditlog - Delete old logs"
+msgstr "سجل التدقيق - حذف السجلات القديمة"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_http_session
+msgid "Auditlog - HTTP User session log"
+msgstr "سجل التدقيق - سجل جلسة مستخدم HTTP"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_http_request
+msgid "Auditlog - HTTP request log"
+msgstr "سجل التدقيق - سجل طلب HTTP"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_log
+msgid "Auditlog - Log"
+msgstr "سجل التدقيق - السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_log_line
+#: model:ir.model,name:nomow_auditlog.model_auditlog_log_line_view
+msgid "Auditlog - Log details (fields updated)"
+msgstr "سجل التدقيق - تفاصيل السجل (الحقول المحدثة)"
+
+#. module: nomow_auditlog
+#: model:ir.model,name:nomow_auditlog.model_auditlog_rule
+msgid "Auditlog - Rule"
+msgstr "سجل التدقيق - القاعدة"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_autovacuum_form
+msgid "Auditlog Autovacuum"
+msgstr "التنظيف التلقائي لسجل التدقيق"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__browser
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__browser
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__browser
+msgid "Browser"
+msgstr "المتصفح"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__capture_record
+msgid "Capture Record"
+msgstr "التقاط السجل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_form
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_form
+msgid "Client Details"
+msgstr "تفاصيل العميل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Configuration"
+msgstr "التهيئة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__user_context
+msgid "Context"
+msgstr "السياق"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_log__method_type__create
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Created Records"
+msgstr "السجلات المنشأة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__create_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__create_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__create_date
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_search
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_create_line_ids
+msgid "Creation Field Changes"
+msgstr "تغييرات حقول الإنشاء"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Creation Log"
+msgstr "سجل الإنشاء"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_create_date
+msgid "Creation Log Date"
+msgstr "تاريخ سجل الإنشاء"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_create_user_id
+msgid "Creation User"
+msgstr "مستخدم الإنشاء"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_create_id
+msgid "Creation log"
+msgstr "سجل الإنشاء"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_autovacuum__from_date
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_autovacuum__to_date
+msgid ""
+"Delete logs older than this date. If not set, all logs older than the number"
+" of days specified in the cron will be deleted."
+msgstr ""
+"احذف السجلات الأقدم من هذا التاريخ. إذا لم يتم تحديده، فسيتم حذف جميع "
+"السجلات الأقدم من عدد الأيام المحددة في الكرون."
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_autovacuum
+#: model:ir.ui.menu,name:nomow_auditlog.menu_action_auditlog_autovacuum
+msgid "Delete movement records"
+msgstr "حذف سجلات الحركة"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Deleted Records"
+msgstr "السجلات المحذوفة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__field_description
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__field_description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_autovacuum__state__done
+msgid "Done"
+msgstr "تم"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_autovacuum__state__draft
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_rule__state__draft
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_write_ids
+msgid "Edit log"
+msgstr "سجل التعديل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Fast Logs"
+msgstr "السجلات السريعة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_log__log_type__fast
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_rule__log_type__fast
+msgid "Fast log"
+msgstr "سجل سريع"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__field_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__field_id
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+msgid "Field"
+msgstr "الحقل"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/rule.py:0
+msgid "Field 'model_id' cannot be empty."
+msgstr "لا يمكن أن يكون الحقل 'model_id' فارغًا."
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Field Change Details"
+msgstr "تفاصيل تغيير الحقل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__fields_to_exclude_ids
+msgid "Fields to Exclude"
+msgstr "الحقول المستبعدة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__line_ids
+msgid "Fields updated"
+msgstr "الحقول المحدثة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__from_date
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Full Logs"
+msgstr "السجلات الكاملة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_log__log_type__full
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_rule__log_type__full
+msgid "Full log"
+msgstr "سجل كامل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__log_type
+msgid ""
+"Full log: make a diff between the data before and after the operation (log more info like computed fields which were updated, but it is slower)\n"
+"Fast log: only log the changes made through the create and write operations (less information, but it is faster)"
+msgstr ""
+"سجل كامل: يُظهر الفرق بين البيانات قبل العملية وبعدها (يُسجل معلومات إضافية، مثل الحقول المحسوبة التي تم تحديثها، ولكنه أبطأ)\n"
+"سجل سريع: يُسجل فقط التغييرات التي أُجريت خلال عمليتي الإنشاء والكتابة (معلومات أقل، ولكنه أسرع)"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_autovacuum_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "HTTP Context"
+msgstr "سياق HTTP"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__http_request_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__http_request_id
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_form
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "HTTP Request"
+msgstr "طلب HTTP"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "HTTP Request Path"
+msgstr "مسار طلب HTTP"
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_http_request_tree
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__http_request_ids
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_form
+msgid "HTTP Requests"
+msgstr "طلبات HTTP"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__ip_address
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__ip_address
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__ip_address
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "IP Address"
+msgstr "عنوان IP"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__is_store
+msgid "Is Store"
+msgstr "مخزن"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Last 7 Days"
+msgstr "آخر 7 أيام"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__write_uid
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__write_date
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__log_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__log_id
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Log"
+msgstr "السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__log_create
+msgid "Log Creates"
+msgstr "تسجيل عمليات الإنشاء"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Log Date"
+msgstr "تاريخ السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__log_unlink
+msgid "Log Deletes"
+msgstr "تسجيل عمليات الحذف"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Log Information"
+msgstr "معلومات السجل"
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_line
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+msgid "Log Lines"
+msgstr "سطور السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__log_read
+msgid "Log Reads"
+msgstr "تسجيل عمليات القراءة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__log_write
+msgid "Log Writes"
+msgstr "تسجيل عمليات الكتابة"
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_log_tree
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__log_ids
+#: model:ir.ui.menu,name:nomow_auditlog.menu_audit_logs
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_form
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Logs"
+msgstr "السجلات"
+
+#. module: nomow_auditlog
+#: model:res.groups,name:nomow_auditlog.group_auditlog_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Metadata"
+msgstr "البيانات الوصفية"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__method
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__method
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Method"
+msgstr "الطريقة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__method_type
+msgid "Method Type"
+msgstr "نوع العملية"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__model_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__model_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__model_id
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Model"
+msgstr "النموذج"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__model_model
+msgid "Model Model"
+msgstr "نموذج النموذج"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__model_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__model_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__model_name
+msgid "Model Name"
+msgstr "اسم النموذج"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Model Technical Details"
+msgstr "التفاصيل التقنية للنموذج"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Modified Fields"
+msgstr "الحقول المعدلة"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Modified Records"
+msgstr "السجلات المعدلة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__display_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__name
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_autovacuum_search
+msgid "Name"
+msgstr "الاسم"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_autovacuum_form
+msgid "Name..."
+msgstr "الاسم..."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__new_value
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__new_value
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "New Value"
+msgstr "القيمة الجديدة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__new_value_text
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__new_value_text
+msgid "New value Text"
+msgstr "نص القيمة الجديدة"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log_line.py:0
+msgid "No field defined to create line."
+msgstr "لم يتم تعريف حقل لإنشاء."
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/rule.py:0
+msgid "No model defined to create line."
+msgstr "لم يتم تعريف أي نموذج لإنشائه"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log.py:0
+msgid "No model defined to create log."
+msgstr "لم يتم تعريف نموذج لإنشاء السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__os
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__os
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__os
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "OS"
+msgstr "نظام التشغيل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__old_value
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__old_value
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Old Value"
+msgstr "القيمة القديمة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__old_value_text
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__old_value_text
+msgid "Old value Text"
+msgstr "نص القيمة القديمة"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Operation Type"
+msgstr "نوع العملية"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Operations to Log"
+msgstr "العمليات المراد تسجيلها"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__name
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+msgid "Path"
+msgstr "المسار"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__record_exists
+msgid "Record Exists"
+msgstr "السجل موجود"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Record ID"
+msgstr "معرف السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__res_id
+msgid "Res"
+msgstr "المصدر"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__res_id
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Resource ID"
+msgstr "معرف السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__name
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Resource Name"
+msgstr "اسم السجل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Resource Name or ID"
+msgstr "اسم السجل أو معرفه"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log.py:0
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Restore Record"
+msgstr "ارجاع السجل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_tree
+msgid "Restore Records"
+msgstr "استعادة السجلات"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__root_url
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+msgid "Root URL"
+msgstr "الرابط الجذري"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Rule"
+msgstr "القاعدة"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Rule Name"
+msgstr "اسم القاعدة"
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_rule_tree
+#: model:ir.ui.menu,name:nomow_auditlog.menu_action_auditlog_rule_tree
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_search
+msgid "Rules"
+msgstr "القواعد"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_autovacuum_form
+msgid "Run Autovacuum"
+msgstr "تشغيل التنظيف التلقائي"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__model_id
+msgid "Select model for which you want to generate log."
+msgstr "حدد النموذج الذي تريد إنشاء السجل له."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__capture_record
+msgid "Select this if you want to keep track of Unlink Record"
+msgstr "حدد هذا إذا كنت تريد متابعة إلغاء ربط السجل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__log_create
+msgid ""
+"Select this if you want to keep track of creation on any record of the model"
+" of this rule"
+msgstr ""
+"حدد هذا الخيار إذا كنت ترغب في تتبع إنشاء أي سجل من سجلات النموذج لهذا "
+"القانون."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__log_unlink
+msgid ""
+"Select this if you want to keep track of deletion on any record of the model"
+" of this rule"
+msgstr "حدد هذا إذا كنت تريد متابعة الحذف على أي سجل للنموذج لهذا القانون."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__log_write
+msgid ""
+"Select this if you want to keep track of modification on any record of the "
+"model of this rule"
+msgstr ""
+"حدد هذا إذا كنت تريد متابعة التعديل على أي سجل من سجلات النموذج لهذا "
+"القانون."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__log_read
+msgid ""
+"Select this if you want to keep track of read/open on any record of the "
+"model of this rule"
+msgstr ""
+"حدد هذا إذا كنت تريد متابعة القراءة/الفتح لأي سجل من سجلات النموذج لهذا "
+"القانون."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__http_session_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__http_session_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__http_session_id
+msgid "Session"
+msgstr "الجلسة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__name
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Session ID"
+msgstr "معرف الجلسة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__state
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__state
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_autovacuum__state
+msgid "State of the autovacuum operation."
+msgstr "حالة عملية التنظيف التلقائي."
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Subscribe"
+msgstr "تفعيل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_rule__state__subscribed
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_search
+msgid "Subscribed"
+msgstr "مفعل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Technical Context"
+msgstr "السياق التقني"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__model_model
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__model_model
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Technical Model Name"
+msgstr "اسم النموذج التقني"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line__field_name
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__field_name
+msgid "Technical name"
+msgstr "الاسم التقني"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log_line.py:0
+msgid "The field 'field_id' cannot be empty."
+msgstr "لا يمكن أن يكون الحقل 'field_id' فارغًا."
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log.py:0
+msgid "The field 'model_id' cannot be empty."
+msgstr "لا يمكن أن يكون الحقل 'model_id' فارغًا."
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/log.py:0
+msgid "The target record no longer exists or has been deleted."
+msgstr "السجل المستهدف لم يعد موجوداً أو تم حذفه."
+
+#. module: nomow_auditlog
+#: model:ir.model.constraint,message:nomow_auditlog.constraint_auditlog_rule_model_uniq
+msgid ""
+"There is already a rule defined on this model\n"
+"You cannot define another: please edit the existing one."
+msgstr ""
+"يوجد بالفعل قانون محدد لهذا النموذج\n"
+"لا يمكنك تحديد قانون آخر: يرجى تعديل القانون الحالي."
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_autovacuum__to_date
+msgid "To Date"
+msgstr "إلى تاريخ"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__log_type
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__log_type
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__log_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_log__method_type__unlink
+msgid "Unlink"
+msgstr "حذف"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "Unsubscribe"
+msgstr "إلغاء التفعيل"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_request__user_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_http_session__user_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log__user_id
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_log_line_view__user_id
+#: model:res.groups,name:nomow_auditlog.group_auditlog_user
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "User"
+msgstr "المستخدم"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_request_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_form
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_line_search
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "User session"
+msgstr "جلسة المستخدم"
+
+#. module: nomow_auditlog
+#: model:ir.actions.act_window,name:nomow_auditlog.action_auditlog_http_session_tree
+#: model:ir.ui.menu,name:nomow_auditlog.menu_action_auditlog_http_session_tree
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_http_session_search
+msgid "User sessions"
+msgstr "جلسات المستخدمين"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__user_ids
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,field_description:nomow_auditlog.field_auditlog_rule__users_to_exclude_ids
+msgid "Users to Exclude"
+msgstr "المستخدمون المستثنون"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Values"
+msgstr "القيم"
+
+#. module: nomow_auditlog
+#. odoo-python
+#: code:addons/nomow_auditlog/models/rule.py:0
+msgid "View logs"
+msgstr "عرض السجلات"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields.selection,name:nomow_auditlog.selection__auditlog_log__method_type__write
+msgid "Write"
+msgstr "تعديل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_form
+msgid "Write Logs"
+msgstr "سجلات التعديل"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_log_search
+msgid "Yesterday"
+msgstr "أمس"
+
+#. module: nomow_auditlog
+#: model_terms:ir.ui.view,arch_db:nomow_auditlog.view_auditlog_rule_form
+msgid "e.g. Log Sale Orders"
+msgstr "مثال: تسجيل أوامر البيع"
+
+#. module: nomow_auditlog
+#: model:ir.model.fields,help:nomow_auditlog.field_auditlog_rule__user_ids
+msgid "if no user is added then it will applicable for all users"
+msgstr "إذا لم يتم إضافة أي مستخدم، فسيتم تطبيق القاعدة على جميع المستخدمين"

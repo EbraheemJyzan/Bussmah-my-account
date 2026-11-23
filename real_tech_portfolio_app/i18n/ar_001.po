@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* real_tech_portfolio_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 15:03+0000\n"
+"PO-Revision-Date: 2026-09-10 15:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: real_tech_portfolio_app
+#: model:ir.model,name:real_tech_portfolio_app.model_bussma_project
+msgid "Bussma Project"
+msgstr "مشاريع بصمة"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.actions.act_window,help:real_tech_portfolio_app.action_bussma_project_real_tech
+msgid "Dose’t have any data for this app"
+msgstr "لا توجد اي بيانات في هذا التطبيق"
+
+#. module: real_tech_portfolio_app
+#: model:ir.model,name:real_tech_portfolio_app.model_ir_ui_menu
+msgid "Menu"
+msgstr "القائمة"
+
+#. module: real_tech_portfolio_app
+#: model:ir.actions.act_window,name:real_tech_portfolio_app.action_bussma_project_real_tech
+#: model:ir.model.fields,field_description:real_tech_portfolio_app.field_bussma_project__is_real_tech_portfolio_app
+#: model:ir.module.category,name:real_tech_portfolio_app.module_category_real_tech
+#: model:ir.ui.menu,name:real_tech_portfolio_app.menu_real_tech_portfolio_app_child
+#: model:ir.ui.menu,name:real_tech_portfolio_app.menu_real_tech_portfolio_app_root
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_form_inherit_real_tech
+msgid "Real Tech Portfolio App"
+msgstr "تطبيق محافظ Real Tech"
+
+#. module: real_tech_portfolio_app
+#: model:res.groups,name:real_tech_portfolio_app.group_real_tech_portfolios_app
+msgid "User Access"
+msgstr "تطبيق محافظ Real Tech"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<i class=\"fa fa-building-o\" style=\"color: #64748b;\"/>\n"
+"                                        <span>Properties:</span>"
+msgstr ""
+"<i class=\"fa fa-building-o\" style=\"color: #64748b;\"/>\n"
+"                                        <span>العقارات:</span>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<i class=\"fa fa-folder-open-o\" title=\"Category\" style=\"color: #64748b; "
+"margin-left: 2px;\"/>"
+msgstr ""
+"<i class=\"fa fa-folder-open-o\" title=\"الفئة\" style=\"color: #64748b; "
+"margin-left: 2px;\"/>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0;\">\n"
+"                                            Private Auction\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0;\">\n"
+"                                            مزاد خاص\n"
+"                                        </span>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;\">\n"
+"                                            Direct Sales\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe;\">\n"
+"                                            بيع مباشر\n"
+"                                        </span>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #f5f3ff; color: #5b21b6; border: 1px solid #ddd6fe;\">\n"
+"                                            Cities\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #f5f3ff; color: #5b21b6; border: 1px solid #ddd6fe;\">\n"
+"                                            مدن\n"
+"                                        </span>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_real_tech_kanban
+msgid ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #fff7ed; color: #9a3412; border: 1px solid #ffedd5;\">\n"
+"                                            Eanfaz Auction\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"badge\" style=\"font-size: 11px; padding: 4px 8px; border-radius: 6px; background-color: #fff7ed; color: #9a3412; border: 1px solid #ffedd5;\">\n"
+"                                            مزاد إنفاذ\n"
+"                                        </span>"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_form_inherit_real_tech
+msgid "Real Tech App"
+msgstr "تطبيق Real Tech"
+
+#. module: real_tech_portfolio_app
+#: model_terms:ir.ui.view,arch_db:real_tech_portfolio_app.view_bussma_project_form_inherit_real_tech
+msgid "Are you sure you want to add this project to Real Tech App?"
+msgstr "هل انت متأكد من رغبتك في إضافة هذا المشروع لتطبيق Real Tech App"

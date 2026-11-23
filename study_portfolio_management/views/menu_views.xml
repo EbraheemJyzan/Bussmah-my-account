@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Study Portfolios Menu under Studies (direct_sale_menu) -->
+        <menuitem id="menu_study_portfolio"
+                  name="Study Portfolios"
+                  parent="bussma_system.direct_sale_menu"
+                  action="action_study_portfolio"
+                  sequence="4"/>
+    </data>
+</odoo>
+

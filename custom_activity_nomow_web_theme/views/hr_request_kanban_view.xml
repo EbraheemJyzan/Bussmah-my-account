@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Kanban view inherit for hr.request: add activity badge -->
+    <record id="hr_request_kanban_view_inherit_activity" model="ir.ui.view">
+        <field name="name">hr.request.kanban.view.inherit.activity</field>
+        <field name="model">hr.request</field>
+        <field name="inherit_id" ref="hr_requests.view_hr_request_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_state']" position="after">
+                <field name="is_my_activity"/>
+            </xpath>
+            <xpath expr="//strong[hasclass('o_kanban_record_title')]" position="replace">
+                <div class="d-flex align-items-center justify-content-between w-100">
+                    <strong class="o_kanban_record_title">
+                        <field name="name"/>
+                    </strong>
+                    <span t-if="record.activity_state.raw_value and ['today', 'overdue'].includes(record.activity_state.raw_value) and record.is_my_activity.raw_value"
+                          class="badge rounded-circle custom-activity-badge bg-success text-white ms-2"
+                          t-att-title="record.activity_state.value">
+                        1
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

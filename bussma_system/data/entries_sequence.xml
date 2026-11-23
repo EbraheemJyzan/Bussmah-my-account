@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_bussma_entries" model="ir.sequence">
+            <field name="name">Entries Sequence</field>
+            <field name="code">bussma.entries.sequence</field>
+            <field name="prefix">EN</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,116 @@
+/* Make cells in non-openable lists show default cursor instead of pointer */
+.o_data_row.o_list_no_open .o_data_cell {
+    cursor: default !important;
+}
+
+/* Bussmah Column Headers (Table Header thead th) Styling */
+.o_list_renderer.o_bussmah_col_header {
+    .o_list_table thead {
+        > tr {
+            background-color: var(--bussmah-col-header-bg, #f8fafc) !important;
+            --bs-table-bg: var(--bussmah-col-header-bg, #f8fafc);
+            --table-bg: var(--bussmah-col-header-bg, #f8fafc);
+        }
+
+        > tr > th {
+            background-color: var(--bussmah-col-header-bg, #f8fafc) !important;
+            --bs-table-bg: var(--bussmah-col-header-bg, #f8fafc);
+            --table-bg: var(--bussmah-col-header-bg, #f8fafc);
+            color: var(--bussmah-col-header-color, #334155) !important;
+            font-size: var(--bussmah-col-header-size, 13px) !important;
+            font-weight: var(--bussmah-col-header-weight, 700) !important;
+            font-family: var(--bussmah-col-header-font, inherit) !important;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.15) !important;
+            vertical-align: middle;
+
+            /* Child text, links, icons, titles, and toggles */
+            &,
+            > span,
+            > a,
+            > i,
+            > button,
+            .o_column_title,
+            .o_list_actions_header,
+            .o_optional_columns_dropdown_toggle {
+                color: var(--bussmah-col-header-color, #334155) !important;
+                font-size: var(--bussmah-col-header-size, 13px) !important;
+                font-weight: var(--bussmah-col-header-weight, 700) !important;
+                font-family: var(--bussmah-col-header-font, inherit) !important;
+            }
+
+            &.o_column_sortable:hover {
+                background-color: var(--bussmah-col-header-hover-bg, #e2e8f0) !important;
+                --bs-table-bg: var(--bussmah-col-header-hover-bg, #e2e8f0);
+                --table-bg: var(--bussmah-col-header-hover-bg, #e2e8f0);
+            }
+
+            &.o_list_record_selector {
+                background-color: var(--bussmah-col-header-bg, #f8fafc) !important;
+            }
+
+            .o_optional_columns_dropdown_toggle {
+                background-color: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+/* Bussmah Grouped Header Styling for Tree/List Views */
+.o_list_renderer.o_bussmah_grouped_header {
+    .o_list_table tbody > tr.o_group_header {
+        --bs-table-bg: var(--bussmah-group-bg, #e2e8f0);
+        --bs-table-accent-bg: var(--bussmah-group-bg, #e2e8f0);
+        background-color: var(--bussmah-group-bg, #e2e8f0) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.18) !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+        > th,
+        > td {
+            background-color: var(--bussmah-group-bg, #e2e8f0) !important;
+            color: var(--bussmah-group-color, #0f172a) !important;
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+            font-family: var(--bussmah-group-font, inherit) !important;
+        }
+
+        &:hover {
+            --bs-table-bg: var(--bussmah-group-hover-bg, #cbd5e1);
+            --bs-table-accent-bg: var(--bussmah-group-hover-bg, #cbd5e1);
+            background-color: var(--bussmah-group-hover-bg, #cbd5e1) !important;
+
+            > th,
+            > td {
+                background-color: var(--bussmah-group-hover-bg, #cbd5e1) !important;
+            }
+        }
+
+        .o_group_name {
+            font-size: var(--bussmah-group-size, 15px) !important;
+            font-weight: var(--bussmah-group-weight, 700) !important;
+            color: var(--bussmah-group-color, #0f172a) !important;
+            font-family: var(--bussmah-group-font, inherit) !important;
+            letter-spacing: 0.2px;
+
+            .o_group_caret {
+                font-size: 1.15em;
+                margin-inline-end: 6px;
+                color: var(--bussmah-group-color, #0f172a) !important;
+            }
+        }
+
+        .o_list_number {
+            font-size: var(--bussmah-group-size, 15px) !important;
+            font-weight: var(--bussmah-group-weight, 700) !important;
+            color: var(--bussmah-group-color, #0f172a) !important;
+            font-family: var(--bussmah-group-font, inherit) !important;
+        }
+    }
+
+    /* Distinct data rows underneath */
+    .o_list_table tbody > tr.o_data_row {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}

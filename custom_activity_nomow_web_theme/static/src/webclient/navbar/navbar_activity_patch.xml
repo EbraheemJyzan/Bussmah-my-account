@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- 1. Home Apps Grid Menu Badge -->
+    <t t-inherit="nomow_web_theme.AppsMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o-app-menu-list')]//div[hasclass('o_app')]" position="inside">
+            <span t-if="getMenuActivityCount(app.xmlid) &gt; 0" class="badge rounded-circle custom-activity-badge" t-att-title="getMenuActivityCount(app.xmlid) + ' Activity Notifications'">
+                <t t-out="getMenuActivityCount(app.xmlid)"/>
+            </span>
+        </xpath>
+    </t>
+
+    <!-- 2. Sidebar App Menu Badge -->
+    <t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//ul[hasclass('sidebar_menu')]//a" position="inside">
+            <span t-if="getMenuActivityCount(app.xmlid) &gt; 0" class="badge rounded-circle custom-activity-badge" t-att-title="getMenuActivityCount(app.xmlid) + ' Activity Notifications'">
+                <t t-out="getMenuActivityCount(app.xmlid)"/>
+            </span>
+        </xpath>
+    </t>
+</templates>

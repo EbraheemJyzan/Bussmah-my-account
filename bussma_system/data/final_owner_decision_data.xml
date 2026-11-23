@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ================================================================ -->
+        <!-- Final Owner Decision Data                                         -->
+        <!-- ================================================================ -->
+
+        <record id="final_owner_decision_committee_price" model="final.owner.decision">
+            <field name="name">Approved at Committee Price</field>
+            <field name="code">committee_price</field>
+        </record>
+
+        <record id="final_owner_decision_higher_price" model="final.owner.decision">
+            <field name="name">Approved at Another Price</field>
+            <field name="code">higher_price</field>
+        </record>
+
+        <record id="final_owner_decision_rejected" model="final.owner.decision">
+            <field name="name">Rejected</field>
+            <field name="code">rejected</field>
+        </record>
+
+    </data>
+</odoo>

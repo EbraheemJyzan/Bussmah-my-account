@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Bussma Project Form View -->
+        <record id="view_bussma_project_form_inherit_marketing" model="ir.ui.view">
+            <field name="name">bussma.project.form.inherit.marketing</field>
+            <field name="model">bussma.project</field>
+            <field name="inherit_id" ref="sales_and_auction_management.view_bussma_project_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='action_send_all_to_supervisor']" position="after">
+                    <button name="action_raise_marketing_request_wizard"
+                            type="object"
+                            string="Raise Marketing Request"
+                            class="btn-primary"
+                            invisible="id == False or marketing_id or is_basic or bussma_project_stage_selection == 'bussma_project_completed'"/>
+                    <button name="action_raise_marketing_request_wizard"
+                            class="btn-warning"
+                            string="Resend Marketing Request"
+                            type="object"
+                            invisible="not marketing_id or not is_returned_to_requester or is_basic or bussma_project_stage_selection == 'bussma_project_completed'"/>
+                </xpath>
+                <xpath expr="//notebook" position="before">
+                    <field name="marketing_id" invisible="1"/>
+                    <field name="material_ids" invisible="1"/>
+                    <field name="marketing_stage_selection" invisible="1"/>
+                    <field name="is_returned_to_requester" invisible="1"/>
+                    <field name="has_pm_or_done_materials" invisible="1"/>
+                    <!-- Marketing Pending Info Alert for Project -->
+                    <div class="alert alert-info d-flex align-items-start gap-2 mb-3" invisible="not marketing_id or is_returned_to_requester or (marketing_stage_selection == 'mkt_done')">
+                        <i class="fa fa-info-circle fa-lg mt-1 text-info"/>
+                        <div class="w-100">
+                            <strong class="text-info-emphasis d-block">The request has been sent to the marketing department, and we are awaiting the results.</strong>
+                        </div>
+                    </div>
+                    <!-- Marketing Returned Alert for Project -->
+                    <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not is_returned_to_requester">
+                        <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                        <div class="w-100">
+                            <strong class="text-warning-emphasis d-block mb-1">Warning: The request has been returned from the marketing department with the following notes:</strong>
+                            <field name="return_to_requester_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            <field name="attachment_return_ids" widget="many2many_binary" readonly="1"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Marketing Materials Results" invisible="not marketing_id or not has_pm_or_done_materials">
+                        <field name="material_ids" mode="kanban" readonly="1" no_open="1" domain="[('material_stage_selection', 'in', ['mat_pm_approve', 'mat_done'])]">
+                            <kanban default_group_by="activity_id" create="false" edit="false" delete="false" can_open="false">
+                                <field name="name"/>
+                                <field name="employee_id"/>
+                                <field name="result_notes"/>
+                                <field name="output_attachment_ids"/>
+                                <field name="activity_id"/>
+                                <field name="material_stage_selection"/>
+                                <field name="is_project_manager"/>
+                                <field name="modification_request_count"/>
+                                <templates>
+                                    <t t-name="card">
+                                        <div class="oe_kanban_card p-2 border rounded shadow-sm mb-2 bg-white">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <strong class="fs-6 text-primary"><field name="name"/></strong>
+                                            </div>
+                                            <div class="mb-1 text-muted small">
+                                                <strong>Responsible: </strong>
+                                                <field name="employee_id"/>
+                                            </div>
+                                            <div class="mb-1 text-muted small" t-if="record.result_notes.raw_value">
+                                                <strong>Notes / Results: </strong>
+                                                <field name="result_notes"/>
+                                            </div>
+                                            <div class="mt-2 pt-2 border-top" t-if="record.output_attachment_ids.raw_value and record.output_attachment_ids.raw_value.length">
+                                                <strong class="text-secondary small d-block mb-1"><i class="fa fa-paperclip me-1"/>Final Attachments:</strong>
+                                                <field name="output_attachment_ids" widget="many2many_binary" readonly="1"/>
+                                            </div>
+                                            <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_pm_approve'">
+                                                <span class="badge text-bg-warning">Pending PM Approval</span>
+                                                <button name="action_open_pm_approval_wizard" type="object" class="btn btn-sm btn-primary">
+                                                    <i class="fa fa-gavel me-1"/> PM Decision
+                                                </button>
+                                            </div>
+                                            <div class="mt-2 pt-2 border-top d-flex justify-content-between align-items-center" t-if="record.material_stage_selection.raw_value == 'mat_done'">
+                                                <span class="badge text-bg-success">Completed ✓</span>
+                                                <button name="action_open_request_modification_wizard" type="object" class="btn btn-sm btn-warning" t-if="record.is_project_manager.raw_value">
+                                                    <i class="fa fa-edit me-1"/> Request Modification
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

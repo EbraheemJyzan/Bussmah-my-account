@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_material_return_stage_wizard_form" model="ir.ui.view">
+            <field name="name">material.return.stage.wizard.form</field>
+            <field name="model">material.return.stage.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Return to Previous Stage">
+                    <sheet>
+                        <group>
+                            <field name="material_id" invisible="1"/>
+                            <field name="stage_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="supervisor_notes" placeholder="Write modification notes or reason for return..."/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Confirm Return" name="action_confirm_return" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

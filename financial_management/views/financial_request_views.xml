@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- ============================================================
+             FORM VIEW
+        ============================================================ -->
+        <record id="view_financial_request_form" model="ir.ui.view">
+            <field name="name">financial.request.form</field>
+            <field name="model">financial.request</field>
+            <field name="arch" type="xml">
+                <form string="Financial Management Request">
+                    <header>
+                        <!-- Stage 1: Request Submission -> Marketing Manager Approval -->
+                        <button name="action_submit_to_marketing_manager"
+                                string="Submit for Marketing Manager Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="financial_stage_selection != 'fin_draft' or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to submit the request for Marketing Manager approval?"/>
+                        <!-- Stage 2: Marketing Manager Approval -->
+                        <button name="action_approve_marketing_manager"
+                                string="Submit for Commercial Sector Accountant Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_marketing_mgr' or marketing_mgr_approval != 'approved' or not can_approve_marketing_mgr or is_cancelled or is_rejected"
+                                confirm="Do you confirm approving the request and submitting it to the Commercial Sector Accountant?"/>
+                        <button name="action_reject_marketing_manager"
+                                string="Return to Request Submission Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_marketing_mgr' or marketing_mgr_approval != 'rejected' or not can_approve_marketing_mgr or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Request Submission stage?"/>
+                        <!-- Stage 3: Commercial Sector Accountant Approval -->
+                        <button name="action_approve_sector_accountant"
+                                string="Submit for Department Manager Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_sector_accountant' or sector_accountant_approval != 'approved' or not can_approve_sector_accountant or is_cancelled or is_rejected"
+                                confirm="Do you confirm approving the request and submitting it to the Department Manager?"/>
+                        <button name="action_reject_sector_accountant"
+                                string="Return to Marketing Manager Approval Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_sector_accountant' or sector_accountant_approval != 'rejected' or not can_approve_sector_accountant or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Marketing Manager Approval stage?"/>
+                        <!-- Stage 4: Department Manager Approval -->
+                        <button name="action_approve_dept_manager"
+                                string="Submit for Commercial Sector Manager Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_dept_mgr' or dept_mgr_approval != 'approved' or not can_approve_dept_mgr or is_cancelled or is_rejected"
+                                confirm="Do you confirm approving the request and submitting it to the Commercial Sector Manager?"/>
+                        <button name="action_reject_dept_manager"
+                                string="Return to Commercial Sector Accountant Approval Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_dept_mgr' or dept_mgr_approval != 'rejected' or not can_approve_dept_mgr or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Commercial Sector Accountant Approval stage?"/>
+                        <!-- Stage 5: Commercial Sector Manager Approval -->
+                        <button name="action_approve_sector_manager"
+                                string="Submit for Administration Accountant Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_sector_mgr' or sector_mgr_approval != 'approved' or not can_approve_sector_mgr or is_cancelled or is_rejected"
+                                confirm="Do you confirm approving the request and submitting it to the Administration Accountant?"/>
+                        <button name="action_reject_sector_manager"
+                                string="Return to Department Manager Approval Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_sector_mgr' or sector_mgr_approval != 'rejected' or not can_approve_sector_mgr or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Department Manager Approval stage?"/>
+                        <!-- Stage 6: Administration Accountant Approval -->
+                        <button name="action_approve_admin_accountant"
+                                string="Submit for Financial Management Manager Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_admin_accountant' or admin_accountant_approval != 'approved' or not can_approve_admin_accountant or is_cancelled or is_rejected"
+                                confirm="Do you confirm approving the request and submitting it to the Financial Management Manager?"/>
+                        <button name="action_reject_admin_accountant"
+                                string="Return to Commercial Sector Manager Approval Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_admin_accountant' or admin_accountant_approval != 'rejected' or not can_approve_admin_accountant or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Commercial Sector Manager Approval stage?"/>
+                        <!-- Stage 7: Financial Management Manager Approval -->
+                        <button name="action_approve_financial_manager"
+                                string="Submit for Attach Receipts Stage"
+                                type="object"
+                                class="btn-success"
+                                invisible="financial_stage_selection != 'fin_financial_mgr' or financial_mgr_approval != 'approved' or not can_approve_financial_mgr or is_cancelled or is_rejected"
+                                confirm="Do you confirm final approval and submitting the request to the Attach Receipts stage?"/>
+                        <button name="action_reject_financial_manager"
+                                string="Return to Administration Accountant Approval Stage"
+                                type="object"
+                                class="btn-danger"
+                                invisible="financial_stage_selection != 'fin_financial_mgr' or financial_mgr_approval != 'rejected' or not can_approve_financial_mgr or is_cancelled or is_rejected"
+                                confirm="Are you sure you want to reject the request and return it to the Administration Accountant Approval stage?"/>
+                        <!-- Stage 8: Attach Receipts -> Archive -->
+                        <button name="action_submit_receipts"
+                                string="Submit for Archiving"
+                                type="object"
+                                class="btn-primary"
+                                invisible="financial_stage_selection != 'fin_attach_receipts' or not can_attach_receipts or is_cancelled or is_rejected"
+                                confirm="Do you confirm attaching receipts and closing the request?"/>
+
+                        <!-- Cancelled & Rejected Toggle Buttons -->
+                        <button name="action_toggle_cancelled"
+                                string="Cancel Request"
+                                type="object"
+                                class="btn-danger"
+                                invisible="is_cancelled or is_rejected"
+                                groups="base.group_system,financial_management.group_financial_management"
+                                confirm="Are you sure you want to cancel this request?"/>
+                        <button name="action_toggle_cancelled"
+                                string="Undo Cancel Request"
+                                type="object"
+                                class="btn-secondary"
+                                invisible="not is_cancelled"
+                                confirm="Are you sure you want to undo cancel this request?"
+                                groups="base.group_system,financial_management.group_financial_management"/>
+
+                        <button name="action_toggle_rejected"
+                                string="Reject Request"
+                                type="object"
+                                class="btn-warning"
+                                invisible="is_rejected or is_cancelled"
+                                groups="base.group_system,financial_management.group_financial_management"
+                                confirm="Are you sure you want to reject this request?"/>
+                        <button name="action_toggle_rejected"
+                                string="Undo Reject Request"
+                                type="object"
+                                class="btn-secondary"
+                                invisible="not is_rejected"
+                                confirm="Are you sure you want to undo reject this request?"
+                                groups="base.group_system,financial_management.group_financial_management"/>
+
+                        <field name="stage_id" widget="statusbar" statusbar_visible="stage_fin_draft,stage_fin_marketing_mgr,stage_fin_sector_accountant,stage_fin_dept_mgr,stage_fin_sector_mgr,stage_fin_admin_accountant,stage_fin_financial_mgr,stage_fin_attach_receipts,stage_fin_archived"/>
+                    </header>
+
+                    <sheet>
+                        <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" invisible="not is_cancelled"/>
+                        <widget name="web_ribbon" title="Rejected" bg_color="bg-warning" invisible="not is_rejected"/>
+
+                        <!-- Title -->
+                        <div class="oe_title">
+                            <label for="code" string="Request Number"/>
+                            <h1>
+                                <field name="code" readonly="1"/>
+                            </h1>
+                        </div>
+                        <!-- Hidden technical fields -->
+                        <field name="financial_stage_selection" invisible="1"/>
+                        <field name="is_returned" invisible="1"/>
+                        <field name="can_approve_marketing_mgr" invisible="1"/>
+                        <field name="can_approve_sector_accountant" invisible="1"/>
+                        <field name="can_approve_dept_mgr" invisible="1"/>
+                        <field name="can_approve_sector_mgr" invisible="1"/>
+                        <field name="can_approve_admin_accountant" invisible="1"/>
+                        <field name="can_approve_financial_mgr" invisible="1"/>
+                        <field name="can_attach_receipts" invisible="1"/>
+                        <field name="marketing_id_domain" invisible="1"/>
+                        <!-- ────────────────────────────────────────────
+                             SECTION: Basic Request Information
+                        ──────────────────────────────────────────────── -->
+                        <group string="Requester Information">
+                            <group>
+                                <field name="requester_id"
+                                       readonly="1"/>
+                                <field name="department"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="marketing_id"
+                                       domain="marketing_id_domain"
+                                       invisible="financial_stage_selection != 'fin_draft'"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="marketing_material_id"
+                                       domain="[('marketing_id', '=', marketing_id)]"
+                                       invisible="financial_stage_selection != 'fin_draft'"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="project_name"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                            </group>
+                            <group>
+                                <field name="request_type"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="supplier_name"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="date"
+                                    readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="invoice_type"
+                                       invisible="1"/>
+                            </group>
+                        </group>
+                        <!-- ────────────────────────────────────────────
+                             SECTION: Invoice Details
+                        ──────────────────────────────────────────────── -->
+                        <group string="Invoice Details">
+                            <group>
+                                <field name="invoice_amount"
+                                       widget="monetary"
+                                       options="{'currency_field': 'currency_id'}"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="includes_vat"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                            </group>
+                            <group>
+                                <field name="invoice_description"
+                                       readonly="financial_stage_selection != 'fin_draft'"/>
+                            </group>
+                        </group>
+                        <!-- ────────────────────────────────────────────
+                             SECTION: Attachments (Request Submission Stage)
+                        ──────────────────────────────────────────────── -->
+                        <group string="Attachments" invisible="financial_stage_selection not in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr', 'fin_sector_mgr', 'fin_admin_accountant', 'fin_financial_mgr', 'fin_attach_receipts', 'fin_archived']">
+                            <group string="Upload Supplier Bank IBAN">
+                                <field name="iban_attachment_ids"
+                                       widget="many2many_binary"
+                                       readonly="financial_stage_selection != 'fin_draft'"
+                                       nolabel="1"/>
+                            </group>
+                            <group string="Upload Tax Invoice">
+                                <field name="tax_invoice_attachment_ids"
+                                       widget="many2many_binary"
+                                       readonly="financial_stage_selection != 'fin_draft'"
+                                       nolabel="1"/>
+                            </group>
+                        </group>
+                        <!-- ────────────────────────────────────────────
+                             Request Returned Alert (Appears above approval decisions)
+                        ──────────────────────────────────────────────── -->
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not is_returned or not return_notes">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Warning: Request was returned with the following notes:</strong>
+                                <field name="return_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            </div>
+                        </div>
+                        <!-- ────────────────────────────────────────────
+                             SECTION: Approval Decisions & Notes
+                        ──────────────────────────────────────────────── -->
+                        <group string="Approval Decisions" invisible="financial_stage_selection == 'fin_draft'">
+                            <group>
+                                <field name="marketing_mgr_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection == 'fin_draft'"
+                                       readonly="financial_stage_selection != 'fin_marketing_mgr' or not can_approve_marketing_mgr"/>
+                                <field name="marketing_mgr_notes"
+                                       placeholder="Enter Marketing Manager notes..."
+                                       invisible="financial_stage_selection == 'fin_draft' or (financial_stage_selection != 'fin_marketing_mgr' and not marketing_mgr_notes)"
+                                       readonly="financial_stage_selection != 'fin_marketing_mgr' or not can_approve_marketing_mgr"/>
+
+                                <field name="sector_accountant_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr']"
+                                       readonly="financial_stage_selection != 'fin_sector_accountant' or not can_approve_sector_accountant"/>
+                                <field name="sector_accountant_notes"
+                                       placeholder="Enter Commercial Sector Accountant notes..."
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr'] or (financial_stage_selection != 'fin_sector_accountant' and not sector_accountant_notes)"
+                                       readonly="financial_stage_selection != 'fin_sector_accountant' or not can_approve_sector_accountant"/>
+
+                                <field name="dept_mgr_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant']"
+                                       readonly="financial_stage_selection != 'fin_dept_mgr' or not can_approve_dept_mgr"/>
+                                <field name="dept_mgr_notes"
+                                       placeholder="Enter Department Manager notes..."
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant'] or (financial_stage_selection != 'fin_dept_mgr' and not dept_mgr_notes)"
+                                       readonly="financial_stage_selection != 'fin_dept_mgr' or not can_approve_dept_mgr"/>
+                            </group>
+                            <group>
+                                <field name="sector_mgr_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr']"
+                                       readonly="financial_stage_selection != 'fin_sector_mgr' or not can_approve_sector_mgr"/>
+                                <field name="sector_mgr_notes"
+                                       placeholder="Enter Commercial Sector Manager notes..."
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr'] or (financial_stage_selection != 'fin_sector_mgr' and not sector_mgr_notes)"
+                                       readonly="financial_stage_selection != 'fin_sector_mgr' or not can_approve_sector_mgr"/>
+
+                                <field name="admin_accountant_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr', 'fin_sector_mgr']"
+                                       readonly="financial_stage_selection != 'fin_admin_accountant' or not can_approve_admin_accountant"/>
+                                <field name="admin_accountant_notes"
+                                       placeholder="Enter Administration Accountant notes..."
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr', 'fin_sector_mgr'] or (financial_stage_selection != 'fin_admin_accountant' and not admin_accountant_notes)"
+                                       readonly="financial_stage_selection != 'fin_admin_accountant' or not can_approve_admin_accountant"/>
+
+                                <field name="financial_mgr_approval"
+                                       widget="radio"
+                                       options="{'horizontal': True}"
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr', 'fin_sector_mgr', 'fin_admin_accountant']"
+                                       readonly="financial_stage_selection != 'fin_financial_mgr' or not can_approve_financial_mgr"/>
+                                <field name="financial_mgr_notes"
+                                       placeholder="Enter Financial Management Manager notes..."
+                                       invisible="financial_stage_selection in ['fin_draft', 'fin_marketing_mgr', 'fin_sector_accountant', 'fin_dept_mgr', 'fin_sector_mgr', 'fin_admin_accountant'] or (financial_stage_selection != 'fin_financial_mgr' and not financial_mgr_notes)"
+                                       readonly="financial_stage_selection != 'fin_financial_mgr' or not can_approve_financial_mgr"/>
+                            </group>
+                        </group>
+                        <!-- ────────────────────────────────────────────
+                             SECTION: Attach Receipts (Appears from Stage 8)
+                        ──────────────────────────────────────────────── -->
+                        <group string="Attach Receipts" invisible="financial_stage_selection not in ['fin_attach_receipts', 'fin_archived']">
+                            <group>
+                                <field name="receipts_count"
+                                       readonly="financial_stage_selection != 'fin_attach_receipts' or not can_attach_receipts"/>
+                            </group>
+                            <group string="Receipt Attachments">
+                                <field name="receipt_attachment_ids"
+                                       widget="many2many_binary"
+                                       readonly="financial_stage_selection != 'fin_attach_receipts' or not can_attach_receipts"
+                                       nolabel="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             LIST VIEW
+        ============================================================ -->
+        <record id="view_financial_request_list" model="ir.ui.view">
+            <field name="name">financial.request.list</field>
+            <field name="model">financial.request</field>
+            <field name="arch" type="xml">
+                <list string="Financial Management Requests" default_order="id desc">
+                    <field name="code" string="Request Number"/>
+                    <field name="requester_id" string="Requester"/>
+                    <field name="department" string="Department"/>
+                    <field name="project_name" string="Project Name"/>
+                    <field name="request_type" string="Request Type"/>
+                    <field name="supplier_name" string="Supplier Name"/>
+                    <field name="invoice_amount" string="Invoice Amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="currency_id" column_invisible="1"/>
+                    <field name="stage_id" string="Stage"/>
+                    <field name="create_date" string="Creation Date"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             KANBAN VIEW
+        ============================================================ -->
+        <record id="view_financial_request_kanban" model="ir.ui.view">
+            <field name="name">financial.request.kanban</field>
+            <field name="model">financial.request</field>
+            <field name="arch" type="xml">
+                <kanban
+                        group_create="false"
+                        records_draggable="false"
+                        group_delete="false"
+                        class="o_kanban_small_column"
+                        sample="1"
+                        create="true"
+                        edit="false"
+                        delete="false">
+                    <field name="code"/>
+                    <field name="project_name"/>
+                    <field name="requester_id"/>
+                    <field name="supplier_name"/>
+                    <field name="department"/>
+                    <field name="request_type"/>
+                    <field name="invoice_amount"/>
+                    <field name="currency_id"/>
+                    <field name="stage_id"/>
+                    <field name="financial_stage_selection"/>
+                    <templates>
+                        <t t-name="card">
+                            <div class="oe_kanban_content d-flex flex-column h-100">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <span class="text-muted small">
+                                            <field name="code"/>
+                                        </span>
+                                        <strong class="o_kanban_record_title fs-6">
+                                            <field name="project_name"/>
+                                        </strong>
+                                        <div class="o_kanban_record_subtitle text-muted mt-1 small">
+                                            <div>
+                                                <i class="fa fa-user me-1"/>
+                                                <field name="requester_id"/>
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-building me-1"/>
+                                                <field name="department"/>
+                                            </div>
+                                            <div style="color: #00BFFF;">
+                                                <span>Supplier : </span>
+                                                <field name="supplier_name"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_body mt-2">
+                                    <span class="badge text-bg-info me-1">
+                                        <field name="request_type"/>
+                                    </span>
+                                </div>
+                                <footer class="pt-1 mt-auto border-top d-flex align-items-center justify-content-between">
+                                    <strong class="text-success">
+                                        <field name="invoice_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    </strong>
+                                    <field name="requester_id" widget="many2one_avatar_user"/>
+                                </footer>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             SEARCH VIEW
+        ============================================================ -->
+        <record id="view_financial_request_search" model="ir.ui.view">
+            <field name="name">financial.request.search</field>
+            <field name="model">financial.request</field>
+            <field name="arch" type="xml">
+                <search string="Search Financial Management Requests">
+                    <field name="code" string="Request Number"/>
+                    <field name="project_name" string="Project Name"/>
+                    <field name="requester_id" string="Requester"/>
+                    <field name="supplier_name" string="Supplier Name"/>
+
+                    <filter string="My Requests" name="my_requests"
+                            domain="[('requester_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Request Submission" name="stage_draft"
+                            domain="[('financial_stage_selection', '=', 'fin_draft')]"/>
+                    <filter string="In Approval" name="stage_in_progress"
+                            domain="[('stage_id.state', '=', 'in_progress')]"/>
+                    <filter string="Archived" name="stage_archived"
+                            domain="[('financial_stage_selection', '=', 'fin_archived')]"/>
+                    <filter string="Cancelled Requests" name="is_cancelled"
+                            domain="[('is_cancelled', '=', True)]"/>
+                    <filter string="Rejected Requests" name="is_rejected"
+                            domain="[('is_rejected', '=', True)]"/>
+                    <separator/>
+                    <filter string="Direct Sales" name="dept_direct_sales"
+                            domain="[('department', '=', 'direct_sales')]"/>
+                    <filter string="Auctions" name="dept_auctions"
+                            domain="[('department', '=', 'auctions')]"/>
+                    <filter string="Marketing" name="dept_marketing"
+                            domain="[('department', '=', 'marketing')]"/>
+
+                    <group expand="0" string="Group By">
+                        <filter string="Stage" name="group_stage"
+                                context="{'group_by': 'stage_id'}"/>
+                        <filter string="Department" name="group_department"
+                                context="{'group_by': 'department'}"/>
+                        <filter string="Requester" name="group_requester"
+                                context="{'group_by': 'requester_id'}"/>
+                        <filter string="Request Type" name="group_request_type"
+                                context="{'group_by': 'request_type'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="stage_id" icon="fa-tasks" enable_counters="1"/>
+                        <field name="department" icon="fa-building" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             ACTIONS
+        ============================================================ -->
+        <record id="action_financial_request" model="ir.actions.act_window">
+            <field name="name">Financial Management Requests</field>
+            <field name="res_model">financial.request</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('financial_stage_selection', '!=', 'fin_archived'), ('is_cancelled', '=', False), ('is_rejected', '=', False)]</field>
+            <field name="context">{'search_default_my_requests': 0, 'search_default_group_stage': 1, 'delete': False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Financial Management Request!
+                </p>
+                <p>
+                    Submit your request and track approval stages through to archiving.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_financial_request_cancelled" model="ir.actions.act_window">
+            <field name="name">Cancelled Requests</field>
+            <field name="res_model">financial.request</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_cancelled', '=', True)]</field>
+            <field name="context">{'search_default_my_requests': 0, 'delete': False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No cancelled requests found.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_financial_request_rejected" model="ir.actions.act_window">
+            <field name="name">Rejected Requests</field>
+            <field name="res_model">financial.request</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('is_rejected', '=', True)]</field>
+            <field name="context">{'search_default_my_requests': 0, 'delete': False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No rejected requests found.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_financial_request_archived" model="ir.actions.act_window">
+            <field name="name">Archived Requests</field>
+            <field name="res_model">financial.request</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('financial_stage_selection', '=', 'fin_archived')]</field>
+            <field name="context">{'search_default_my_requests': 0, 'delete': False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No archived requests yet.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

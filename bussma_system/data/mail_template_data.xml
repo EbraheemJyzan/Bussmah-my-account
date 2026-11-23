@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Email Template for Analyst Notification -->
+        <record id="email_template_analyst_assigned" model="mail.template">
+            <field name="name">Entry: Analyst Assigned</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">تم تعيينك كدارس للادراج {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        <t t-if="object.project_path == 'cities'"><t t-out="object.city_analyst_id.name"/></t>
+                        <t t-elif="object.project_path == 'specialized'"><t t-out="object.detailed_analyst_id.name"/></t>
+                        <t t-else=""><t t-out="object.analyst_id.name"/></t><br/><br/>
+                        تم تعيينكم بإعداد 
+                        <strong>
+                            <t t-if="object.project_path == 'specialized' or object.is_assign_detailed_study">دراسة تفصيلية</t>
+                            <t t-elif="object.project_path == 'standard'">دراسة اولية</t>
+                            <t t-elif="object.project_path == 'cities'">دراسة مدن</t>
+                            <t t-else=""><t t-out="object.project_path"/></t>
+                        </strong> 
+                        للإدراج رقم <strong><t t-out="object.entrie_name or 'N/A'"/></strong>.<br/>
+                        نرجو التكرم بالدخول إلى النظام واستكمال البيانات المطلوبة،
+                        وذلك لضمان استمرارية العمل وفق الجدول الزمني المحدد.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الإدراج
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        
+        <!-- Email Template for Negotiator Notification -->
+        <record id="email_template_negotiator_assigned" model="mail.template">
+            <field name="name">Entry: Negotiator Assigned</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">تم تعيينك كمتفاوض للإدراج {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        <t t-out="object.assigned_negotiator.name"/><br/><br/>
+                        تم تعيينكم كمتفاوض للإدراج رقم <strong><t t-out="object.entrie_name or 'N/A'"/></strong>.<br/>
+                        نرجو التكرم بالدخول إلى النظام واستكمال البيانات المطلوبة،
+                        وذلك لضمان استمرارية العمل وفق الجدول الزمني المحدد.    
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الإدراج
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template for Negotiation Approval Managers Notification -->
+        <record id="email_template_negotiation_approval_managers" model="mail.template">
+            <field name="name">Entry: Negotiation Approval Required</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">اعتماد التفاوض مطلوب للإدراج {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        السادة المدراء،<br/><br/>
+                        يُرجى العلم بأنه تم إرجاع الإدراج رقم <strong><t t-out="object.entrie_name or 'N/A'"/></strong>
+                        إلى مرحلة <strong>اعتماد التفاوض</strong> ويستلزم اعتمادكم.<br/><br/>
+                        نرجو التكرم بالدخول إلى النظام ومراجعة البيانات واتخاذ الإجراء اللازم.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الإدراج
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template for Auction Negotiation Approval (Commercial Sector Manager) -->
+        <record id="email_template_auction_negotiation_approval_commercial_manager" model="mail.template">
+            <field name="name">Entry: Auction Negotiation Approval Required (Commercial Sector Manager)</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">اعتماد التفاوض مطلوب للإدراج {{ object.entrie_name }} (مزادات)</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="rtl">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: right;">
+                        المرسل: <strong>بصمة لإدارة العقارات</strong><br/><br/>
+                        سعادة مدير القطاع التجاري المحترم،<br/><br/>
+                        يُرجى العلم بأنه تم نقل الإدراج رقم <strong><t t-out="object.entrie_name or 'N/A'"/></strong> (قرار اللجنة: مزادات)
+                        إلى مرحلة <strong>اعتماد التفاوض</strong> ويستلزم اعتمادكم.<br/><br/>
+                        نرجو التكرم بالدخول إلى النظام ومراجعة البيانات واتخاذ الإجراء اللازم.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            رابط الإدراج
+                        </a>
+                    </div>
+                </div>
+            </field>
+        </record>
+        <!-- Email Template for Entry Returned to Lister Notification -->
+        <record id="email_template_entry_returned_to_lister" model="mail.template">
+            <field name="name">Entry: Returned to Lister</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Entry Returned to Lister - {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear Lister / <strong><t t-out="object.entered_by_id.name or object.create_uid.name or 'Respected User'"/></strong>,<br/><br/>
+                        Please be informed that Entry No. <strong><t t-out="object.entrie_name or 'N/A'"/></strong> has been returned to you at the <strong>Entry Screen</strong> stage.<br/><br/>
+                        <strong>Return Note:</strong><br/>
+                        <t t-out="object.return_to_lister_note or 'N/A'"/><br/><br/>
+                        Please log in to the system to review the notes and update the required information.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template for Entry Data Completion Notification -->
+        <record id="email_template_entry_data_completion" model="mail.template">
+            <field name="name">Entry: Data Completion</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Data Completion Required - {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong><t t-out="object.data_completer_id.name or 'Respected User'"/></strong>,<br/><br/>
+                        Please be informed that Entry No. <strong><t t-out="object.entrie_name or 'N/A'"/></strong> has been assigned to you at the <strong>Data Completion</strong> stage.<br/><br/>
+                        <strong>Notes:</strong><br/>
+                        <t t-out="object.data_completion_note or 'N/A'"/><br/><br/>
+                        Please log in to the system to review the notes and complete the required information.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!-- Email Template: Sent to Deputy Studies Manager for Approval -->
+        <record id="email_template_sent_to_deputy_studies_manager" model="mail.template">
+            <field name="name">Entry: Sent to Deputy Studies Manager for Approval</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Action Required: Negotiation Approval — Entry {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong>Deputy Studies Manager</strong>,<br/><br/>
+                        Please be informed that the negotiation result for Entry No.
+                        <strong><t t-out="object.entrie_name or 'N/A'"/></strong>
+                        has been submitted for your review and approval.<br/><br/>
+                        <strong>Entry Details:</strong><br/>
+                        — Submitted by: <t t-out="(object.env.user.name) or 'N/A'"/><br/><br/>
+                        Please log in to the system, review the negotiation details, and take the appropriate action (Approve / Reject).
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Return to Negotiator (shared for all return scenarios) -->
+        <!-- Used when: Deputy rejects → back to negotiator/sales mgr/auctions mgr -->
+        <!--            Commercial Sector Manager rejects → back to sales mgr/auctions mgr -->
+        <!-- Recipient email and name are passed dynamically via email_values in Python code -->
+        <record id="email_template_returned_to_negotiator" model="mail.template">
+            <field name="name">Entry: Returned to Negotiator</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Entry Returned for Re-Negotiation — {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong>Negotiator</strong>,<br/><br/>
+                        Please be informed that Entry No.
+                        <strong><t t-out="object.entrie_name or 'N/A'"/></strong>
+                        has been returned to you for <strong>re-negotiation</strong>.<br/><br/>
+                        Please log in to the system, review the notes, re-negotiate, and resubmit the entry for approval.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Contract Manager Assigned Notification -->
+        <record id="email_template_contract_manager_assigned" model="mail.template">
+            <field name="name">Entry: Contract Manager Assigned</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Assigned as Contract Manager — Entry {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong>
+                            <t t-if="object.committee_decision == 'auction'">
+                                <t t-out="object.auction_assigned_contract_manager.name or 'Contract Manager'"/>
+                            </t>
+                            <t t-else="">
+                                <t t-out="object.direct_sale_assigned_contract_manager.name or 'Contract Manager'"/>
+                            </t>
+                        </strong>,<br/><br/>
+                        Please be informed that you have been assigned as the <strong>Contract Manager</strong> for Entry No.
+                        <strong><t t-out="object.entrie_name or 'N/A'"/></strong>.<br/><br/>
+                        Please log in to the system to review the entry details and proceed with the required contracting procedures.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Project Manager Assignment Required Notification -->
+        <record id="email_template_contract_followup_project_manager_assignment" model="mail.template">
+            <field name="name">Entry: Project Manager Assignment Required</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Action Required: Project Manager Assignment for Entry {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong>
+                            <t t-if="object.committee_decision == 'auction'">Auctions Manager</t>
+                            <t t-else="">Sales Manager</t>
+                        </strong>,<br/><br/>
+                        Please be informed that Entry No. <strong><t t-out="object.entrie_name or 'N/A'"/></strong> has reached the <strong>Contract Follow-up</strong> stage.<br/><br/>
+                        You are required to log in to the system and assign a <strong>Project Manager</strong> for this property.<br/><br/>
+                        <strong>Property Details:</strong><br/>
+                        - Committee Decision: <strong><t t-out="object.committee_decision or 'N/A'"/></strong><br/>
+                        - Client Name: <strong><t t-out="object.contract_client_name or object.partner_id.name or 'N/A'"/></strong><br/>
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Project Manager Assigned Notification -->
+        <record id="email_template_project_manager_assigned" model="mail.template">
+            <field name="name">Entry: Project Manager Assigned</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Assigned as Project Manager — Entry {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear <strong><t t-out="object.assigned_project_manager.name or 'Project Manager'"/></strong>,<br/><br/>
+                        Please be informed that you have been assigned as the <strong>Project Manager</strong> for Entry No.
+                        <strong><t t-out="object.entrie_name or 'N/A'"/></strong>.<br/><br/>
+                        <strong>Property &amp; Client Details:</strong><br/>
+                        - Client Name: <strong><t t-out="object.contract_client_name or object.partner_id.name or 'N/A'"/></strong><br/>
+                        - Committee Decision: <strong><t t-out="object.committee_decision or 'N/A'"/></strong><br/><br/>
+                        Please log in to the system to review the entry details and proceed with your tasks.
+                    </p>
+                    <div style="margin: 16px 0px 16px 0px; text-align: center;">
+                        <a t-att-href="'%s/web#id=%s&amp;model=%s&amp;view_type=form' % (object.get_base_url(), object.id, object._name)"
+                           style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 13px;">
+                            View Entry
+                        </a>
+                    </div>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email Template: Negotiator Replaced Notification -->
+        <record id="email_template_negotiator_replaced" model="mail.template">
+            <field name="name">Entry: Negotiator Replaced</field>
+            <field name="model_id" ref="bussma_system.model_entries"/>
+            <field name="subject">Notice: Negotiator Replacement — Entry {{ object.entrie_name }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;" dir="ltr">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px; text-align: left;">
+                        Sender: <strong>Bussma Real Estate Management</strong><br/><br/>
+                        Dear Negotiation Officer / <strong><t t-out="ctx.get('old_negotiator_name') or object.env.context.get('old_negotiator_name') or 'Negotiation Officer'"/></strong>,<br/><br/>
+                        Please be informed that you have been replaced as the negotiation officer for Entry No. <strong><t t-out="object.entrie_name or 'N/A'"/></strong> by another negotiation officer.<br/><br/>
+                        Thank you for your efforts and cooperation.
+                    </p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

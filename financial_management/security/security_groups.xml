@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Application Category -->
+        <record id="module_category_financial_management" model="ir.module.category">
+            <field name="name">Financial Management</field>
+            <field name="sequence">100</field>
+        </record>
+        <!-- Single Group -->
+        <record id="group_financial_management" model="res.groups">
+            <field name="name">Financial Management</field>
+            <field name="category_id" ref="module_category_financial_management"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <!-- Accountant Group -->
+        <record id="group_financial_management_accountant" model="res.groups">
+            <field name="name">Financial Management Accountant</field>
+            <field name="category_id" ref="module_category_financial_management"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <!-- User Group -->
+        <record id="group_financial_management_user" model="res.groups">
+            <field name="name">Financial Management User</field>
+            <field name="category_id" ref="module_category_financial_management"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

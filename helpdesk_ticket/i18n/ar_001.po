@@ -1,0 +1,260 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_ticket
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 10:21+0000\n"
+"PO-Revision-Date: 2026-03-16 10:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_ticket
+#: model:ir.actions.report,print_report_name:helpdesk_ticket.action_report_ticket
+msgid "'Ticket - %s' % (object.name)"
+msgstr "'تذكرة - %s' % (object.name)"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__date_close
+msgid "Close Date"
+msgstr "تاريخ الإغلاق"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__color
+msgid "Color Index"
+msgstr "معرف اللون"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.actions.act_window,help:helpdesk_ticket.action_helpdesk_ticket
+msgid "Create your first Helpdesk Ticket"
+msgstr "أنشئ تذكرة الدعم الفني الأولى الخاصة بك"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__description
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.report_ticket_status
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_kanban
+msgid "Dropdown menu"
+msgstr "القائمة المنسدلة"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: helpdesk_ticket
+#: model:ir.module.category,name:helpdesk_ticket.module_category_helpdesk_ticket
+#: model:ir.ui.menu,name:helpdesk_ticket.menu_helpdesk_tickets
+msgid "Helpdesk"
+msgstr "الدعم الفني"
+
+#. module: helpdesk_ticket
+#: model:ir.model,name:helpdesk_ticket.model_helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Helpdesk Ticket"
+msgstr "تذكرة دعم فني"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__priority__2
+msgid "High"
+msgstr "عالي"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__priority__0
+msgid "Low"
+msgstr "منخفض"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__state__new
+msgid "New"
+msgstr "جديد"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__priority__1
+msgid "Normal"
+msgstr "عادي"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__date_open
+msgid "Open Date"
+msgstr "تاريخ الفتح"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__priority
+msgid "Priority"
+msgstr "الأولوية"
+
+#. module: helpdesk_ticket
+#: model:ir.actions.server,name:helpdesk_ticket.ir_cron_notify_unresolved_tickets_ir_actions_server
+msgid "Rappel des tickets non résolus"
+msgstr "تذكير بالتذاكر غير المحلولة"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__name
+msgid "Reference"
+msgstr "الرقم المرجعي"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Solve"
+msgstr "حل"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__state__solved
+msgid "Solved"
+msgstr "تم الحل"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_form
+msgid "Start"
+msgstr "بدء"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__state
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.report_ticket_status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__subject
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.report_ticket_status
+msgid "Subject"
+msgstr "الموضوع"
+
+#. module: helpdesk_ticket
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.report_ticket_status
+msgid "Ticket Report :"
+msgstr "تقرير التذكرة :"
+
+#. module: helpdesk_ticket
+#: model:ir.actions.act_window,name:helpdesk_ticket.action_helpdesk_ticket
+#: model:ir.ui.menu,name:helpdesk_ticket.menu_helpdesk_ticket_items
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.view_helpdesk_ticket_tree
+msgid "Tickets"
+msgstr "التذاكر"
+
+#. module: helpdesk_ticket
+#: model:ir.actions.report,name:helpdesk_ticket.action_report_ticket
+msgid "Tickets Report"
+msgstr "تقرير التذاكر"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields.selection,name:helpdesk_ticket.selection__helpdesk_ticket__priority__3
+msgid "Urgent"
+msgstr "عاجل"
+
+#. module: helpdesk_ticket
+#: model:ir.model.fields,field_description:helpdesk_ticket.field_helpdesk_ticket__user_id
+#: model_terms:ir.ui.view,arch_db:helpdesk_ticket.report_ticket_status
+msgid "User"
+msgstr "المستخدم"
+
+#. module: helpdesk_ticket
+#: model:res.groups,name:helpdesk_ticket.group_helpdesk_manager
+msgid "Helpdesk Manager"
+msgstr "مدير الدعم الفني"
+
+#. module: helpdesk_ticket
+#: model:res.groups,name:helpdesk_ticket.group_helpdesk_user
+msgid "Helpdesk User"
+msgstr "مستخدم"

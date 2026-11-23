@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_real_tech_portfolio_app_root"
+                  name="Real Tech Portfolio App"
+                  web_icon="real_tech_portfolio_app,static/description/icon.png"
+                  action="action_bussma_project_real_tech"
+                  groups="real_tech_portfolio_app.group_real_tech_portfolios_app"
+                  sequence="28"/>
+
+        <menuitem id="menu_real_tech_portfolio_app_child"
+                  name="Real Tech Portfolio App"
+                  parent="menu_real_tech_portfolio_app_root"
+                  action="action_bussma_project_real_tech"
+                  groups="real_tech_portfolio_app.group_real_tech_portfolios_app"
+                  sequence="10"/>
+    </data>
+</odoo>

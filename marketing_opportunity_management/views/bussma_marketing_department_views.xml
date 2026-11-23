@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for bussma.marketing.department -->
+        <record id="view_bussma_marketing_department_form" model="ir.ui.view">
+            <field name="name">bussma.marketing.department.form</field>
+            <field name="model">bussma.marketing.department</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Department">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code" readonly="1"/>
+                                <field name="manager_id"/>
+                            </group>
+                            <group>
+                                <field name="color" widget="color_picker"/>
+                                <field name="sequence" readonly="1"/>
+                                <field name="member_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View for bussma.marketing.department -->
+        <record id="view_bussma_marketing_department_tree" model="ir.ui.view">
+            <field name="name">bussma.marketing.department.tree</field>
+            <field name="model">bussma.marketing.department</field>
+            <field name="arch" type="xml">
+                <list string="Marketing Departments" create="false" delete="false">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="manager_id"/>
+                    <field name="member_ids" widget="many2many_tags"/>
+                    <field name="color" widget="color_picker"/>
+                    <field name="active"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action for bussma.marketing.department -->
+        <record id="action_bussma_marketing_department" model="ir.actions.act_window">
+            <field name="name">Marketing Departments</field>
+            <field name="res_model">bussma.marketing.department</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'no_create': True}</field>
+        </record>
+    </data>
+</odoo>

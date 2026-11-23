@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top Level Menu -->
+    <menuitem id="menu_hr_request_root"
+              name="HR Requests"
+              web_icon="hr_requests,static/description/icon.svg"
+              groups="hr_requests.group_hr_request_manager,hr_requests.group_hr_request_user"
+              sequence="25"/>
+
+    <!-- Main Section Menu -->
+    <menuitem id="menu_hr_request_main"
+              name="HR Requests"
+              parent="sales_and_auction_management.my_requests"
+              action="action_hr_request"
+              sequence="2"/>
+
+    <menuitem id="menu_hr_all_request_main"
+              name="All Requests"
+              parent="menu_hr_request_root"
+              action="action_hr_request"
+              sequence="2"/>
+
+    <!-- Clearance Requests Menu under Employee Guide -->
+    <menuitem id="menu_hr_clearance_request_main"
+              name="Clearance Requests"
+              parent="menu_hr_request_root"
+              action="action_hr_clearance_request"
+              sequence="4"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_hr_request_config"
+              name="Configuration"
+              parent="menu_hr_request_root"
+              sequence="100"
+              groups="hr_requests.group_hr_request_manager"/>
+
+    <menuitem id="menu_hr_request_category"
+              name="Request Categories (Packages)"
+              parent="menu_hr_request_config"
+              action="action_hr_request_category"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_request_type"
+              name="Request Types"
+              parent="menu_hr_request_config"
+              action="action_hr_request_type"
+              sequence="20"/>
+</odoo>

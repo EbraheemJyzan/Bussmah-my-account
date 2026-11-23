@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View for bussma.marketing.material -->
+        <record id="view_bussma_marketing_material_form" model="ir.ui.view">
+            <field name="name">bussma.marketing.material.form</field>
+            <field name="model">bussma.marketing.material</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form string="Marketing Materials">
+                    <header>
+                        <!-- ===== Content Execution Stage ===== -->
+                        <button name="action_send_to_content_approval"
+                                string="Send to Content Supervisor Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="material_stage_selection != 'mat_content_exec'"/>
+
+                        <!-- ===== Content Supervisor Approval Stage ===== -->
+                        <button name="action_send_to_design_exec"
+                                string="Send to Design Execution"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_content_approve' or content_supervisor_approval != 'approve'"/>
+                        <button name="action_reject_content_approval"
+                                string="Return to Content Execution"
+                                type="object"
+                                class="btn-danger"
+                                invisible="material_stage_selection != 'mat_content_approve' or content_supervisor_approval != 'reject'"/>
+
+                        <!-- ===== Design Execution Stage ===== -->
+                        <button name="action_send_to_design_approval"
+                                string="Send to Design Supervisor Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="material_stage_selection != 'mat_design_exec'"/>
+
+                        <!-- ===== Design Supervisor Approval Stage ===== -->
+                        <button name="action_send_to_digital_exec"
+                                string="Send to Campaigns and Publishing Setup"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_design_approve' or design_supervisor_approval != 'approve'"/>
+                        <button name="action_send_to_ops_exec"
+                                string="Send to Printing and Production"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_design_approve' or design_supervisor_approval != 'approve'"/>
+                        <button name="action_send_to_mat_marketing_approve"
+                                string="Send to Marketing Supervisor Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_design_approve' or design_supervisor_approval != 'approve'"/>
+                        <button name="action_reject_design_approval"
+                                string="Return to Design Execution"
+                                type="object"
+                                class="btn-danger"
+                                invisible="material_stage_selection != 'mat_design_approve' or design_supervisor_approval != 'reject'"/>
+
+                        <!-- ===== Campaigns & Publishing Setup Stage ===== -->
+                        <button name="action_send_to_digital_approval"
+                                string="Send to Digital Supervisor Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="material_stage_selection != 'mat_digital_exec'"/>
+
+                        <!-- ===== Digital Supervisor Approval Stage ===== -->
+                        <button name="action_send_to_mat_marketing_approve"
+                                string="Send to Marketing Supervisor Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_digital_approve' or digital_supervisor_approval != 'approve'"/>
+                        <button name="action_reject_digital_approval"
+                                string="Return to Campaigns Setup"
+                                type="object"
+                                class="btn-danger"
+                                invisible="material_stage_selection != 'mat_digital_approve' or digital_supervisor_approval != 'reject'"/>
+
+                        <!-- ===== Printing & Production Stage ===== -->
+                        <button name="action_send_to_ops_approval"
+                                string="Send to Operations Supervisor Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="material_stage_selection != 'mat_ops_exec'"/>
+
+                        <!-- ===== Operations Supervisor Approval Stage ===== -->
+                        <button name="action_send_to_mat_marketing_approve"
+                                string="Send to Marketing Supervisor Approval"
+                                type="object"
+                                class="btn-success"
+                                invisible="material_stage_selection != 'mat_ops_approve' or ops_supervisor_approval != 'approve'"/>
+                        <button name="action_reject_ops_approval"
+                                string="Return to Printing and Production"
+                                type="object"
+                                class="btn-danger"
+                                invisible="material_stage_selection != 'mat_ops_approve' or ops_supervisor_approval != 'reject'"/>
+
+                        <!-- ===== Marketing Supervisor Approval Stage ===== -->
+                        <button name="action_send_to_pm_approval"
+                                string="Send for PM Approval"
+                                type="object"
+                                class="btn-primary"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"
+                                confirm="Are you sure you want to send for PM Approval?"
+                                invisible="material_stage_selection != 'mat_marketing_approve' or is_opportunity_request or is_office_request"/>
+                        <button name="action_send_to_pm_approval"
+                                string="Send for Opportunity Management Approval"
+                                type="object"
+                                class="btn-primary"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"
+                                confirm="Are you sure you want to send for Opportunity Management Approval?"
+                                invisible="material_stage_selection != 'mat_marketing_approve' or not is_opportunity_request"/>
+                        <button name="action_send_to_pm_approval"
+                                string="Send to Service Requester"
+                                type="object"
+                                class="btn-primary"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"
+                                confirm="Are you sure you want to send to Service Requester?"
+                                invisible="material_stage_selection != 'mat_marketing_approve' or not is_office_request"/>
+                        <button name="action_approve_complete_material"
+                                string="Send to Complete"
+                                type="object"
+                                class="btn-success"
+                                groups="marketing_opportunity_management.group_marketing_supervisor"
+                                invisible="1"/>
+                        <!-- ===== General Return Button ===== -->
+                        <button name="action_open_return_stage_wizard" string="Return to Previous Stage" type="object" class="btn-warning" icon="fa-undo" groups="marketing_opportunity_management.group_marketing_supervisor"/>
+                        <field name="stage_id" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="is_marketing_supervisor" invisible="1"/>
+                        <field name="is_material_responsible" invisible="1"/>
+                        <field name="material_stage_selection" invisible="1"/>
+                        <field name="returned_stage_id" invisible="1"/>
+                        <field name="bussma_project_id" invisible="1"/>
+                        <field name="is_opportunity_request" invisible="1"/>
+                        <field name="is_office_request" invisible="1"/>
+                        <field name="is_project_manager" invisible="1"/>
+                       <field name="modification_return_count" invisible="1"/>
+                        <field name="rejection_return_count" invisible="1"/>
+                        <field name="last_return_type" invisible="1"/>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_modification_returns" type="object" class="oe_stat_button" icon="fa-building" invisible="modification_return_count == 0">
+                                <field name="modification_return_count" widget="statinfo" string="Modification Returns" class="no_readonly_style"/>
+                            </button>
+                            <button name="action_view_rejection_returns" type="object" class="oe_stat_button" icon="fa-building" invisible="rejection_return_count == 0">
+                                <field name="rejection_return_count" widget="statinfo" string="Rejection Returns" class="no_readonly_style"/>
+                            </button>
+                        </div>
+                        <!-- Warning Alert Box for Returned Record -->
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Marketing material name..." readonly="not is_marketing_supervisor"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="activity_id" readonly="1" options="{'no_open': True}"/>
+                                <field name="code" readonly="1"/>
+                                <field name="user_id" readonly="not is_marketing_supervisor" options="{'no_open': True}"/>
+                                <field name="department_ids" widget="many2many_tags" options="{'color_field': 'color'}" readonly="1"/>
+                                <field name="marketing_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="needs_content" invisible="1" readonly="1"/>
+                                <field name="task_count"/>
+                                <field name="modification_request_count" string="Modification Requests Count" readonly="1" invisible="0"/>
+                            </group>
+                        </group>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="not supervisor_notes or stage_id != returned_stage_id">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Marketing Supervisor Note (Record Returned)</strong>
+                                <field name="supervisor_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="supervisor_attachment_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_content_exec' or content_supervisor_approval != 'reject' or not content_supervisor_notes">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Content Supervisor Return Note</strong>
+                                <field name="content_supervisor_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_design_exec' or design_supervisor_approval != 'reject' or not design_supervisor_notes">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Design Supervisor Return Note</strong>
+                                <field name="design_supervisor_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_digital_exec' or digital_supervisor_approval != 'reject' or not digital_supervisor_notes">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Digital and Publishing Supervisor Return Note</strong>
+                                <field name="digital_supervisor_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_ops_exec' or ops_supervisor_approval != 'reject' or not ops_supervisor_notes">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Printing and Operations Supervisor Return Note</strong>
+                                <field name="ops_supervisor_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_marketing_approve' or not pm_rejection_notes or last_return_type != 'pm_rejection'">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Project Manager Return Note</strong>
+                                <field name="pm_rejection_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="pm_rejection_attachment_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning d-flex align-items-start gap-2 mb-3" invisible="material_stage_selection != 'mat_marketing_approve' or not modification_request_notes or last_return_type != 'modification'">
+                            <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
+                            <div class="w-100">
+                                <strong class="text-warning-emphasis d-block mb-1">Alert: Modification Request Note</strong>
+                                <field name="modification_request_notes" readonly="1" class="text-dark fst-italic d-block mb-2"/>
+                                <field name="modification_attachment_ids" widget="many2many_binary" readonly="1"/>
+                            </div>
+                        </div>
+                        <group name="department_manager_approval" string="Department Manager Approvals">
+                            <field name="content_supervisor_approval"
+                                   widget="radio"
+                                   options="{'horizontal': true}"
+                                   invisible="material_stage_selection != 'mat_content_approve'"/>
+                            <field name="content_supervisor_notes"
+                                   placeholder="Enter content return notes..."
+                                   invisible="material_stage_selection != 'mat_content_approve' or content_supervisor_approval != 'reject'"/>
+                            <field name="design_supervisor_approval"
+                                   widget="radio"
+                                   options="{'horizontal': true}"
+                                   invisible="material_stage_selection != 'mat_design_approve'"/>
+                            <field name="design_supervisor_notes"
+                                   placeholder="Enter design return notes..."
+                                   invisible="material_stage_selection != 'mat_design_approve' or design_supervisor_approval != 'reject'"/>
+                            <field name="digital_supervisor_approval"
+                                   widget="radio"
+                                   options="{'horizontal': true}"
+                                   invisible="material_stage_selection != 'mat_digital_approve'"/>
+                            <field name="digital_supervisor_notes"
+                                   placeholder="Enter publishing and digital return notes..."
+                                   invisible="material_stage_selection != 'mat_digital_approve' or digital_supervisor_approval != 'reject'"/>
+                            <field name="ops_supervisor_approval"
+                                   widget="radio"
+                                   options="{'horizontal': true}"
+                                   invisible="material_stage_selection != 'mat_ops_approve'"/>
+                            <field name="ops_supervisor_notes"
+                                   placeholder="Enter printing and operations return notes..."
+                                   invisible="material_stage_selection != 'mat_ops_approve' or ops_supervisor_approval != 'reject'"/>
+                        </group>
+                        <notebook>
+                            <page string="Related Tasks">
+                                <field name="task_ids">
+                                    <list editable="bottom" delete="0">
+                                        <field name="is_marketing_supervisor" column_invisible="1"/>
+                                        <field name="is_authorized_supervisor" readonly="1" column_invisible="1"/>
+                                        <field name="is_task_assignee" readonly="1" column_invisible="1"/>
+                                        <field name="name" readonly="state in ('approved', 'cancel')"/>
+                                        <field name="department_id" readonly="state in ('approved', 'cancel')"/>
+                                        <field name="department_member_ids" column_invisible="1"/>
+                                        <field name="user_ids" widget="many2many_tags" domain="['|', ('department_id', '=', False), ('id', 'in', department_member_ids)]" readonly="state in ('approved', 'cancel')"/>
+                                        <field name="date_deadline" readonly="state in ('approved', 'cancel')"/>
+                                        <field name="state" readonly="(state in ('approved', 'cancel') and not is_authorized_supervisor) or (state not in ('approved', 'cancel') and not (is_task_assignee or is_authorized_supervisor))"/>
+                                        <field name="request_attachment_ids" widget="many2many_binary" readonly="state in ('approved', 'cancel') or not is_authorized_supervisor"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Task Outputs">
+                                <field name="completed_task_ids">
+                                    <list readonly="1" delete="0">
+                                        <field name="name"/>
+                                        <field name="result_notes"/>
+                                        <field name="result_attachment_ids" widget="many2many_binary"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Final Marketing Material Output">
+                                <group>
+                                    <field name="result_notes" readonly="material_stage_selection in ['mat_pm_approve', 'mat_done'] or not (is_marketing_supervisor or is_material_responsible)"/>
+                                    <field name="output_attachment_ids" widget="many2many_binary" readonly="material_stage_selection in ['mat_pm_approve', 'mat_done'] or not (is_marketing_supervisor or is_material_responsible)"/>
+                                </group>
+                            </page>
+                            <page string="Stage History and Durations" groups="sales_and_auction_management.group_system_admin">
+                                <group>
+                                    <group string="Current and Total Duration">
+                                        <field name="current_stage_duration_days" string="Current Stage (Days)"/>
+                                        <field name="total_stage_duration_days" string="Total All Stages (Days)"/>
+                                    </group>
+                                    <group string="Department Total Durations (Days)">
+                                        <field name="duration_dept_content_days" string="Content Dept Total (Days)"/>
+                                        <field name="duration_dept_design_days" string="Design Dept Total (Days)"/>
+                                        <field name="duration_dept_digital_days" string="Digital Dept Total (Days)"/>
+                                        <field name="duration_dept_ops_days" string="Operations Dept Total (Days)"/>
+                                    </group>
+                                </group>
+                                <separator string="Return Counts (Approval to Execution)"/>
+                                <div class="d-flex flex-wrap gap-3 mb-3">
+                                    <button name="action_view_content_returns"
+                                        type="object"
+                                        class="btn btn-outline-secondary d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_content == 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_content" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Content Returns</span>
+                                    </button>
+                                    <button name="action_view_content_returns"
+                                        type="object"
+                                        class="btn btn-outline-light text-muted d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_content != 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_content" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Content Returns</span>
+                                    </button>
+                                    <button name="action_view_design_returns"
+                                        type="object"
+                                        class="btn btn-outline-secondary d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_design == 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_design" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Design Returns</span>
+                                    </button>
+                                    <button name="action_view_design_returns"
+                                        type="object"
+                                        class="btn btn-outline-light text-muted d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_design != 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_design" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Design Returns</span>
+                                    </button>
+                                    <button name="action_view_digital_returns"
+                                        type="object"
+                                        class="btn btn-outline-secondary d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_digital == 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_digital" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Digital Returns</span>
+                                    </button>
+                                    <button name="action_view_digital_returns"
+                                        type="object"
+                                        class="btn btn-outline-light text-muted d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_digital != 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_digital" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Digital Returns</span>
+                                    </button>
+                                    <button name="action_view_ops_returns"
+                                        type="object"
+                                        class="btn btn-outline-secondary d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_ops == 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_ops" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Operations Returns</span>
+                                    </button>
+                                    <button name="action_view_ops_returns"
+                                        type="object"
+                                        class="btn btn-outline-light text-muted d-flex flex-column align-items-center px-4 py-2"
+                                        invisible="return_count_ops != 0">
+                                        <span class="fs-4 fw-bold">
+                                            <field name="return_count_ops" nolabel="1" readonly="1"/>
+                                        </span>
+                                        <span>Operations Returns</span>
+                                    </button>
+                                </div>
+                                <group string="Stages Durations (Days)">
+                                    <group string="Content and Design">
+                                        <field name="duration_content_exec_days" string="Content Execution (Days)"/>
+                                        <field name="duration_content_approve_days" string="Content Approval (Days)"/>
+                                        <field name="duration_design_exec_days" string="Design Execution (Days)"/>
+                                        <field name="duration_design_approve_days" string="Design Approval (Days)"/>
+                                    </group>
+                                    <group string="Digital and Ops">
+                                        <field name="duration_digital_exec_days" string="Digital Execution (Days)"/>
+                                        <field name="duration_digital_approve_days" string="Digital Approval (Days)"/>
+                                        <field name="duration_ops_exec_days" string="Operations Execution (Days)"/>
+                                        <field name="duration_ops_approve_days" string="Operations Approval (Days)"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="stage_history_filter_stage_id"
+                                        string="Filter by Stage"
+                                        options="{'no_create': True, 'no_edit': True}"
+                                        placeholder="-- All Stages --"/>
+                                </group>
+                                <field name="stage_history_filtered_ids" readonly="1">
+                                    <list string="Stage Log" create="0" delete="0" edit="0" no_open="1">
+                                        <field name="stage_id"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+                                        <field name="duration_days" string="Duration (Days)"/>
+                                        <field name="is_return" string="Return" widget="boolean"/>
+                                        <field name="returned_by_user_id" string="Returned By"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Return Notes" name="return_notes" invisible="modification_request_count == 0">
+                                <field name="return_note_ids" readonly="1">
+                                    <list string="Return Notes" create="0" delete="0" edit="0">
+                                        <field name="date" string="Date"/>
+                                        <field name="user_id" string="Requested By"/>
+                                        <field name="notes" string="Modification Notes"/>
+                                        <field name="attachment_ids" widget="many2many_binary" string="Attachments"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View for bussma.marketing.material -->
+        <record id="view_bussma_marketing_material_list" model="ir.ui.view">
+            <field name="name">bussma.marketing.material.list</field>
+            <field name="model">bussma.marketing.material</field>
+            <field name="arch" type="xml">
+                <list string="Marketing Materials">
+                    <field name="name"/>
+                    <field name="activity_id"/>
+                    <field name="user_id"/>
+                    <field name="department_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="marketing_id"/>
+                    <field name="stage_id"/>
+                    <field name="current_stage_duration_days" string="Days in Stage"/>
+                    <field name="task_count"/>
+                </list>
+            </field>
+        </record>
+
+         <record id="view_bussma_material_return_list" model="ir.ui.view">
+            <field name="name">bussma.material.return.list</field>
+            <field name="model">bussma.material.stage.history</field>
+            <field name="arch" type="xml">
+                <list string="Return Records" create="0" delete="0" edit="0">
+                    <field name="stage_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="duration_days" string="Duration (Days)"/>
+                    <field name="returned_by_user_id" string="Returned By"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_bussma_material_return_note_list" model="ir.ui.view">
+            <field name="name">bussma.material.return.note.list</field>
+            <field name="model">bussma.material.return.note</field>
+            <field name="arch" type="xml">
+                <list string="Return Notes" create="0" delete="0" edit="0" default_order="date desc">
+                    <field name="date" string="Date"/>
+                    <field name="user_id" string="Requested By"/>
+                    <field name="return_type" string="Return Type"/>
+                    <field name="notes" string="Notes"/>
+                    <field name="attachment_ids" widget="many2many_binary" string="Attachments"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_bussma_material_return_note_form" model="ir.ui.view">
+            <field name="name">bussma.material.return.note.form</field>
+            <field name="model">bussma.material.return.note</field>
+            <field name="arch" type="xml">
+                <form string="Return Note" create="0" edit="0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="material_id" readonly="1"/>
+                                <field name="marketing_id" readonly="1"/>
+                                <field name="user_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="date" readonly="1"/>
+                                <field name="return_type" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="notes" string="Notes" readonly="1"/>
+                            <field name="attachment_ids" widget="many2many_binary" string="Attachments" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Kanban View 2: bussma.marketing.material (Grouped by department with embedded department-filtered tasks list) -->
+        <record id="view_bussma_marketing_material_kanban" model="ir.ui.view">
+            <field name="name">bussma.marketing.material.kanban</field>
+            <field name="model">bussma.marketing.material</field>
+            <field name="arch" type="xml">
+                <!-- <kanban default_group_by="department_ids" class="o_kanban_small_column" sample="1"> -->
+                <kanban class="o_kanban_small_column" sample="1" records_draggable="false" create="0" group_create="0" group_edit="0" archive="0" >
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="department_ids"/>
+                    <field name="marketing_id"/>
+                    <field name="task_count"/>
+                    <field name="task_json"/>
+                    <field name="context_dept_code"/>
+                    <field name="hide_new_task"/>
+                    <field name="activity_state"/>
+                    <field name="is_my_activity"/>
+                    <templates>
+                        <t t-name="card">
+                            <t t-set="raw_group" t-value="record.group &amp;&amp; record.group.value"/>
+                            <t t-set="current_dept_id" t-value="Array.isArray(raw_group) ? raw_group[0] : raw_group"/>
+                            <t t-set="dept_arg" t-value="current_dept_id || 'False'"/>
+                            <t t-set="filter_code" t-value="record.context_dept_code.raw_value || ''"/>
+
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <strong class="o_kanban_record_title fs-6"><field name="name"/></strong>
+                                <span t-if="record.activity_state.raw_value and ['today', 'overdue'].includes(record.activity_state.raw_value) and record.is_my_activity.raw_value" class="badge rounded-circle custom-activity-badge bg-success text-white ms-auto" t-att-title="record.activity_state.value">
+                                    1
+                                </span>
+                            </div>
+                            <div class="text-muted small mb-1">
+                                <t t-if="record.user_id.raw_value">
+                                    <i class="fa fa-user me-1"/> <field name="user_id"/><br/>
+                                </t>
+                                <t t-if="record.marketing_id.raw_value">
+                                    <i class="fa fa-bullhorn me-1"/> <field name="marketing_id"/>
+                                </t>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center my-2">
+                                <field name="department_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            </div>
+
+                            <!-- Embedded Tasks List inside Kanban Card (Strictly Filtered by Department Group) -->
+                            <div class="mt-2 pt-2 border-top">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="fw-bold small text-muted">
+                                        <i class="fa fa-tasks me-1"/>Tasks
+                                    </span>
+                                    <t t-if="!record.hide_new_task.raw_value">
+                                        <button name="action_create_task_dialog" type="object" t-att-context="&quot;{'click_department_id': &quot; + dept_arg + &quot;}&quot;" class="btn btn-link btn-sm p-0 text-decoration-none" title="Add new task for this department">
+                                            <i class="fa fa-plus-circle text-primary me-1"/>New Task
+                                        </button>
+                                    </t>
+                                </div>
+                                <t t-if="record.task_json.raw_value">
+                                    <ul class="list-group list-group-flush small border-0">
+                                        <t t-set="tasks" t-value="JSON.parse(record.task_json.raw_value || '[]')"/>
+                                        <t t-foreach="tasks" t-as="t" t-key="t.id">
+                                            <t t-if="!filter_code || t.department_code === filter_code">
+                                                <li t-attf-class="list-group-item d-flex justify-content-between align-items-center px-1 py-1 rounded mb-1 #{t.bg_class || 'bg-transparent'} border-bottom-0">
+                                                    <div class="d-flex align-items-center gap-1 text-truncate">
+                                                        <button type="object" name="action_open_task_dialog" t-att-context="&quot;{'click_task_id': &quot; + t.id + &quot;}&quot;" class="btn btn-link btn-sm text-start text-dark p-0 text-truncate text-decoration-none" style="max-width: 140px;">
+                                                            <i class="fa fa-angle-left text-primary me-1"/><t t-esc="t.name"/>
+                                                        </button>
+                                                        <t t-if="t.has_my_activity">
+                                                            <span class="badge rounded-circle custom-activity-badge bg-success text-white" style="font-size: 0.60rem; min-width: 15px; height: 15px;" title="Task Activity">1</span>
+                                                        </t>
+                                                    </div>
+                                                     <t t-if="t.departments &amp;&amp; t.departments.length">
+                                                         <div class="d-flex flex-wrap gap-1 mx-1">
+                                                             <t t-foreach="t.departments" t-as="dept" t-key="dept.id">
+                                                                 <span t-attf-class="badge o_tag o_tag_color_#{dept.color} px-2" style="font-size: 0.50rem;">
+                                                                     <t t-esc="dept.name"/>
+                                                                 </span>
+                                                             </t>
+                                                         </div>
+                                                     </t>
+                                                    <span t-attf-class="badge #{t.state_class}" style="font-size: 0.68rem;"><t t-esc="t.state_title"/></span>
+                                                </li>
+                                            </t>
+                                        </t>
+                                    </ul>
+                                </t>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search View for bussma.marketing.material -->
+        <record id="view_bussma_marketing_material_search" model="ir.ui.view">
+            <field name="name">bussma.marketing.material.search</field>
+            <field name="model">bussma.marketing.material</field>
+            <field name="arch" type="xml">
+                <search string="Search Marketing Materials">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="marketing_id"/>
+                    <field name="department_ids"/>
+                    <field name="stage_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Responsible" name="group_by_user" context="{'group_by': 'user_id'}"/>
+                        <filter string="Department" name="group_by_department" context="{'group_by': 'department_ids'}"/>
+                        <filter string="Marketing Record" name="group_by_marketing" context="{'group_by': 'marketing_id'}"/>
+                        <filter string="Stage" name="group_by_stage" context="{'group_by': 'stage_id'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="stage_id" icon="fa-tasks" enable_counters="1" filter_bussma="1"/>
+                        <field name="user_id" icon="fa-users" enable_counters="1" hierarchize="0" filter_bussma="1"/>
+                        <field name="department_ids" icon="fa-building" enable_counters="1" select="multi" filter_bussma="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- Department Actions for bussma.marketing.material -->
+        <record id="action_bussma_marketing_material_content" model="ir.actions.act_window">
+            <field name="name">Content Department</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('department_ids.code', '=', 'CONTENT'), ('marketing_id', '!=', False), ('material_stage_selection', '!=', 'mat_marketing_approve')]</field>
+            <field name="context">{'search_default_group_by_marketing': 1, 'filter_dept_code': 'CONTENT', 'delete': False}</field>
+        </record>
+
+        <record id="action_bussma_marketing_material_design" model="ir.actions.act_window">
+            <field name="name">Design Department</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('department_ids.code', '=', 'DESIGN'), ('marketing_id', '!=', False), ('material_stage_selection', '!=', 'mat_marketing_approve')]</field>
+            <field name="context">{'search_default_group_by_marketing': 1, 'filter_dept_code': 'DESIGN', 'delete': False}</field>
+        </record>
+
+        <record id="action_bussma_marketing_material_digital" model="ir.actions.act_window">
+            <field name="name">Digital and Publishing Department</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('department_ids.code', '=', 'DIGITAL'), ('marketing_id', '!=', False), ('material_stage_selection', '!=', 'mat_marketing_approve')]</field>
+            <field name="context">{'search_default_group_by_marketing': 1, 'filter_dept_code': 'DIGITAL', 'delete': False}</field>
+        </record>
+
+        <record id="action_bussma_marketing_material_ops" model="ir.actions.act_window">
+            <field name="name">Operations Department</field>
+            <field name="res_model">bussma.marketing.material</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="domain">[('department_ids.code', '=', 'OPS'), ('marketing_id', '!=', False), ('material_stage_selection', '!=', 'mat_marketing_approve')]</field>
+            <field name="context">{'search_default_group_by_marketing': 1, 'filter_dept_code': 'OPS', 'delete': False}</field>
+        </record>
+    </data>
+</odoo>

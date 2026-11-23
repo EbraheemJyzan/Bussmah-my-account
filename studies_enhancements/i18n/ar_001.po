@@ -1,0 +1,559 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* studies_enhancements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 13:57+0000\n"
+"PO-Revision-Date: 2026-11-03 13:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid ""
+"A user can only belong to one committee decision list. Duplicated user(s): "
+"%s"
+msgstr ""
+"لا يمكن للمستخدم أن ينتمي إلى أكثر من قائمة قرار لجنة واحدة. المستخدم(ين) "
+"المكرر(ين): %s"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_approval__approval
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Accept Listing and Move to Negotiation"
+msgstr "قبول الإدراج ونقله لمرحلة المفاوضة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_contract_approval__accepted
+msgid "Accepted"
+msgstr "موافقة"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Apply Action"
+msgstr "تطبيق الإجراء"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_approved_users
+msgid "Approved"
+msgstr "موافق"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Approved at Committee Price"
+msgstr "موافق بسعر اللجنة"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Approved at Another Price"
+msgstr "موافق بسعر آخر"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Archived Entry"
+msgstr "أرشيف الادراجات"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__committee_entries_wizard__committee_decision__auction
+msgid "Auction"
+msgstr "المزادات"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__auction_price_per_meter
+msgid "Auction Price per Square Meter"
+msgstr "سعر المتر مربع للمزادات"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_committee_entries_wizard_form
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: studies_enhancements
+#: model:ir.actions.act_window,name:studies_enhancements.action_sector_manager_entries_wizard
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Commercial Sector Manager Actions"
+msgstr "إجراءات مدير القطاع التجاري"
+
+#. module: studies_enhancements
+#: model:ir.model,name:studies_enhancements.model_sector_manager_entries_wizard
+msgid "Commercial Sector Manager Actions Wizard"
+msgstr "معالج إجراءات مدير القطاع التجاري"
+
+#. module: studies_enhancements
+#: model:ir.model,name:studies_enhancements.model_sector_manager_entries_wizard_line
+msgid "Commercial Sector Manager Actions Wizard Line"
+msgstr "سطر معالج إجراءات مدير القطاع التجاري"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__commercial_sector_manager_approval
+msgid "Commercial Sector Manager Approval"
+msgstr "موافقة مدير القطاع التجاري لقرار اللجنة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__approval_process__contract_approval
+msgid "Commercial Sector Manager Approval for Client Contract"
+msgstr "اعتماد مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__approval_process__committee_decision
+msgid "Commercial Sector Manager Approval for Committee Decision"
+msgstr "اعتماد مدير القطاع التجاري لقرار اللجنة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__commercial_sector_manager_contract_approval
+msgid "Commercial Sector Manager Contract Approval"
+msgstr "موافقة مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__commercial_sector_manager_notes
+msgid "Commercial Sector Manager Notes"
+msgstr "ملاحظات مدير القطاع التجاري"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__commercial_sector_manager_contract_notes
+msgid "Commercial Sector Manager Notes for Client Contract"
+msgstr "ملاحظة مدير القطاع التجاري للتعاقد مع العميل"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Commercial Sector Manager actions successfully applied to %s entries."
+msgstr "تم تطبيق إجراءات مدير القطاع التجاري بنجاح على %s من الإدراجات."
+
+#. module: studies_enhancements
+#: model:ir.model,name:studies_enhancements.model_committee_entries_wizard
+msgid "Committee Actions Wizard"
+msgstr "معالج إجراءات اللجنة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_decision
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_decision_rel
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_committee_entries_wizard_form
+msgid "Committee Decision"
+msgstr "قرار اللجنة"
+
+#. module: studies_enhancements
+#: model:ir.actions.act_window,name:studies_enhancements.action_committee_entries_wizard
+msgid "Committee Decision Actions"
+msgstr "إجراءات قرار اللجنة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_decision_date
+msgid "Committee Decision Date"
+msgstr "تاريخ قرار اللجنة"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Committee decision successfully applied to %s entries."
+msgstr "تم تطبيق قرار اللجنة بنجاح على %s من الإدراجات."
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__create_uid
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__create_uid
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__create_date
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__create_date
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__stage_id
+msgid "Current Stage"
+msgstr "المرحلة الحالية"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__approval_process
+msgid "Current Stage / Action Type"
+msgstr "المرحلة الحالية / نوع الإجراء"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__customer_intent_rel
+msgid "Customer Intent"
+msgstr "رغبة العميل"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__partner_id
+msgid "Customer Name"
+msgstr "اسم العميل"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_approval__declined
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Decline Listing and Archive"
+msgstr "رفض الإدراج وأرشفته"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__committee_entries_wizard__committee_decision__direct_sale
+msgid "Direct Sale"
+msgstr "بيع مباشر"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__direct_sale_price_per_meter
+msgid "Direct Sale Price per Square Meter"
+msgstr "سعر المتر مربع للبيع المباشر"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__display_name
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__display_name
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Enter notes here..."
+msgstr "أدخل الملاحظات هنا..."
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Enter notes or reason for rejection here..."
+msgstr "أدخل الملاحظات أو سبب الرفض هنا..."
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Enter reason for rejection or transfer here..."
+msgstr "أدخل سبب الرفض أو التحويل هنا..."
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__entered_by_id
+msgid "Entered By"
+msgstr "اسم المدرج"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__entry_id
+msgid "Entry"
+msgstr "الإدراج"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"Entry '%s': You cannot proceed to the Contract Stage.\n"
+"Approval from both the Sector Manager and the Owner is required first."
+msgstr ""
+"الإدراج '%s': لا يمكنك المتابعة إلى مرحلة التعاقد.\n"
+"موافقة كل من مدير القطاع والمالك مطلوبة أولاً."
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__entrie_name
+msgid "Entry Reference"
+msgstr "المرجع"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__committee_entries_wizard__committee_decision__exclusion
+msgid "Exclusion"
+msgstr "استبعاد"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__has_rejected_owner_entry
+msgid "Has Rejected Owner Entry"
+msgstr "يحتوي على إدراج بقرار مالك مرفوض"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__id
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__id
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__is_all_rejected_owner
+msgid "Is All Rejected Owner"
+msgstr "جميع قرارات الملاك مرفوضة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__write_uid
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__write_uid
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__write_date
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__write_date
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__marketing_duration_months
+msgid "Marketing Duration (Months)"
+msgstr "مدة التسويق بالشهر"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_approval__postponed
+msgid "Move to Postponed Page"
+msgstr "النقل إلى صفحة الفرص المؤجلة"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Move to postponed page"
+msgstr "النقل إلى صفحة الفرص المؤجلة"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "No entries selected to apply the action."
+msgstr "لم يتم تحديد أي إدراجات لتطبيق الإجراء عليها."
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committe_notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__owner_decision_display
+msgid "Owner Decision"
+msgstr "قرار المالك"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"Please enter Commercial Sector Manager notes for rejecting the owner "
+"decision."
+msgstr "يرجى إدخال ملاحظات مدير القطاع التجاري لرفض قرار المالك."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"Please enter Commercial Sector Manager notes for returning the listing to "
+"the committee."
+msgstr "يرجى إدخال ملاحظات مدير القطاع التجاري لإعادة الإدراج إلى اللجنة."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please enter a valid Auction price per square meter."
+msgstr "يرجى إدخال سعر متر مربع صحيح للمزاد."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please enter a valid Direct Sale price per square meter."
+msgstr "يرجى إدخال سعر متر مربع صحيح للبيع المباشر."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please enter the committee notes explaining the reason for exclusion."
+msgstr "يرجى إدخال ملاحظات اللجنة لتوضيح سبب الاستبعاد."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Please enter the reason for rejection or transfer."
+msgstr "يرجى إدخال سبب الرفض أو التحويل."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"Please select a Commercial Sector Manager Approval option for Committee "
+"Decision."
+msgstr "يرجى تحديد خيار موافقة مدير القطاع التجاري لقرار اللجنة."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Please select a Commercial Sector Manager Contract Approval option."
+msgstr "يرجى تحديد خيار موافقة مدير القطاع التجاري للتعاقد مع العميل."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please select the Committee Decision before proceeding."
+msgstr "يرجى تحديد قرار اللجنة قبل المتابعة."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please select the approved committee members."
+msgstr "يرجى تحديد أعضاء اللجنة الموافقين."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please select the committee decision date."
+msgstr "يرجى تحديد تاريخ قرار اللجنة."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please select the rejecting committee members."
+msgstr "يرجى تحديد أعضاء اللجنة الرافضين."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid "Please specify a valid marketing duration (months)."
+msgstr "يرجى تحديد مدة تسويق صحيحة (بالأشهر)."
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_postponed_users
+msgid "Postponed"
+msgstr "تأجيل الادراج"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__property_type
+msgid "Property Type"
+msgstr "نوع العقار"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__commercial_sector_manager_reason
+msgid "Reason for Rejection or Transfer"
+msgstr "سبب الرفض او التحويل"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__committee_rejected_users
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_contract_approval__rejected
+msgid "Rejected"
+msgstr "رفض"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_approval__return_committee
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Return Listing to Committee"
+msgstr "إعادة الإدراج إلى اللجنة"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Return to Negotiator"
+msgstr "إعادة إلى مدير القسم للتفاوض"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_committee_entries_wizard__entry_ids
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__line_ids
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Selected Entries"
+msgstr "الإدراجات المحددة"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard__entry_ids
+msgid "Selected Entries (Fallback)"
+msgstr "الإدراجات المحددة (احتياطي)"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Send To Contract Follow-up"
+msgstr "إرسال لمتابعة التعاقد"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Send To Contract Follow-up / Archived Entry"
+msgstr "إرسال لمتابعة التعاقد / نقل الى الارشيف"
+
+#. module: studies_enhancements
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_committee_entries_wizard_form
+msgid "Send to Department Manager"
+msgstr "إرسال لمدير القسم"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid "Success"
+msgstr "تم بنجاح"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"The following properties/entries are archived and cannot be processed:\n"
+"\n"
+"%s"
+msgstr ""
+"الإدراجات/العقارات التالية مؤرشفة ولا يمكن معالجتها:\n"
+"\n"
+"%s"
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/committee_entries_wizard.py:0
+msgid ""
+"The following properties/entries are not in the 'Committee Decision' stage:\n"
+"\n"
+"%s\n"
+"\n"
+"Please make sure all selected entries are in the 'Committee Decision' stage before applying this action."
+msgstr ""
+"الإدراجات/العقارات التالية ليست في مرحلة 'قرار اللجنة':\n"
+"\n"
+"%s\n"
+"\n"
+"يرجى التأكد من أن جميع الإدراجات المحددة في مرحلة 'قرار اللجنة' قبل تطبيق هذا الإجراء."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"The following properties/entries are not in the required stage (Commercial Sector Manager Approval):\n"
+"\n"
+"%s\n"
+"\n"
+"Please ensure that all selected entries are in the 'Commercial Sector Manager Approval' stage before applying this action."
+msgstr ""
+"الإدراجات/العقارات التالية ليست في المرحلة المطلوبة (اعتماد مدير القطاع التجاري لقرار اللجنة):\n"
+"\n"
+"%s\n"
+"\n"
+"يرجى التأكد من أن جميع الإدراجات المحددة في مرحلة 'اعتماد مدير القطاع التجاري لقرار اللجنة' قبل تطبيق هذا الإجراء."
+
+#. module: studies_enhancements
+#. odoo-python
+#: code:addons/studies_enhancements/wizard/sector_manager_entries_wizard.py:0
+msgid ""
+"The following properties/entries are not in the required stage (Manager Contract Approval):\n"
+"\n"
+"%s\n"
+"\n"
+"Please ensure that all selected entries are in the 'Manager Contract Approval' stage before applying this action."
+msgstr ""
+"الإدراجات/العقارات التالية ليست في المرحلة المطلوبة (اعتماد مدير القطاع التجاري للتعاقد مع العميل):\n"
+"\n"
+"%s\n"
+"\n"
+"يرجى التأكد من أن جميع الإدراجات المحددة في مرحلة 'اعتماد مدير القطاع التجاري للتعاقد مع العميل' قبل تطبيق هذا الإجراء."
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_approval__transfer
+#: model_terms:ir.ui.view,arch_db:studies_enhancements.view_sector_manager_entries_wizard_form
+msgid "Transfer Listing to Partners Management"
+msgstr "تحويل الإدراج إلى إدارة الشركاء"
+
+#. module: studies_enhancements
+#: model:ir.model.fields.selection,name:studies_enhancements.selection__sector_manager_entries_wizard__commercial_sector_manager_contract_approval__transfer
+msgid "Transfer to Partners"
+msgstr "التحويل الى لادارة الشركاء"
+
+#. module: studies_enhancements
+#: model:ir.model.fields,field_description:studies_enhancements.field_sector_manager_entries_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "المعالج"
