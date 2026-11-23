@@ -86,12 +86,12 @@ msgstr "المبيعات مع المالية"
 #. module: sales_and_auction_management
 #: model:request.stage,name:sales_and_auction_management.p2_auction_enf_detailed_appr
 msgid "Approval of Detailed Study for Government Auctions"
-msgstr "اعتماد الدراسة التفصيلية"
+msgstr "اعتماد الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model:request.stage,name:sales_and_auction_management.p2_auction_enf_detailed
 msgid "Detailed Study for Government Auctions"
-msgstr "الدراسة التفصيلية"
+msgstr "الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model:request.stage,name:sales_and_auction_management.p2_stage_sales_direct_mgmt
@@ -290,13 +290,13 @@ msgstr "تفاصيل العقار"
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_auction_form
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_sales_form
 msgid "Preliminary Study Information"
-msgstr "الدراسة الاولية"
+msgstr "الدراسة العادية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_auction_form
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_sales_form
 msgid "Detailed Study Information"
-msgstr "الدراسة التفصيلية"
+msgstr "الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
@@ -337,7 +337,7 @@ msgstr "تحليل والتوصيات"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Studies Supervisor Approval For Detailed Study Eanfaz"
-msgstr "اعتماد الدراسة التفصيلية - انفاذ"
+msgstr "اعتماد الدراسة النوعية - انفاذ"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -402,7 +402,7 @@ msgstr "موافقة مدير الدراسات"
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Detailed Study"
-msgstr "الدراسة التفصيلية"
+msgstr "الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -826,7 +826,7 @@ msgstr "القسم"
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_sales_auction_management__detailed_analyst_id
 msgid "Detailed Assigned Analyst"
-msgstr "تعيين الدارس التفصيلي"
+msgstr "تعيين الدارس النوعي"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_sales_auction_management__display_button_accept
@@ -1003,7 +1003,7 @@ msgstr "نقاط الضعف الداخلية"
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_sales_auction_management__is_assign_detailed_study
 msgid "Is Assign Detailed Study"
-msgstr "تم تعيين دراسة تفصيلية"
+msgstr "تم تعيين دراسة نوعية"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_sales_auction_management__is_authorized_property
@@ -1783,12 +1783,12 @@ msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقا
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Send To Detailed Study"
-msgstr "إرسال للدراسة التفصيلية"
+msgstr "إرسال للدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Are You Sure You Want to Send This Property to Detailed Study?"
-msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقار للدراسة التفصيلية؟"
+msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقار للدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -1798,12 +1798,12 @@ msgstr "هل أنت متأكد من رغبتك في إرجاع هذا العقا
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Send To Detailed Approval"
-msgstr "إرسال لاعتماد الدراسة التفصيلية"
+msgstr "إرسال لاعتماد الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Are You Sure You Want to Send This Property to Detailed Approval?"
-msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقار لاعتماد الدراسة التفصيلية؟"
+msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقار لاعتماد الدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -1819,12 +1819,12 @@ msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقا
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Return To Detailed Study"
-msgstr "إرجاع إلى الدراسة التفصيلية"
+msgstr "إرجاع إلى الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Are You Sure You Want to Return This Property to Detailed Study?"
-msgstr "هل أنت متأكد من رغبتك في إرجاع هذا العقار إلى الدراسة التفصيلية؟"
+msgstr "هل أنت متأكد من رغبتك في إرجاع هذا العقار إلى الدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -1839,12 +1839,12 @@ msgstr "هل أنت متأكد من رغبتك في إرسال هذا العقا
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Return to Detailed Study"
-msgstr "إرجاع إلى الدراسة التفصيلية"
+msgstr "إرجاع إلى الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
 msgid "Are You Sure You Want to Return This Property to Detailed Study?"
-msgstr "هل أنت متأكد من رغبتك في إرجاع هذا العقار إلى الدراسة التفصيلية؟"
+msgstr "هل أنت متأكد من رغبتك في إرجاع هذا العقار إلى الدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_entries_eanfaz_form
@@ -2922,7 +2922,7 @@ msgstr "محفظة المدن الاساسية"
 #: model:ir.ui.menu,name:sales_and_auction_management.detailed_study_eanfaz_menu
 #: model:request.type,name:sales_and_auction_management.detailed_study_eanfaz
 msgid "Detailed Study - Eanfaz"
-msgstr "الدراسة التفصيلية - انفاذ"
+msgstr "الدراسة النوعية - انفاذ"
 
 #. module: sales_and_auction_management
 #: model:ir.actions.act_window,name:sales_and_auction_management.action_bussma_project_city
@@ -2968,14 +2968,14 @@ msgstr "مزادات انفاذ"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 msgid "Send All to Studies Supervisor"
-msgstr "ارسال جميع العقارات للدراسة التفصيلية"
+msgstr "ارسال جميع العقارات للدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 msgid ""
 "Are You Sure You Want to Send All Properties in This Project to the Studies "
 "Supervisor?"
-msgstr "هل انت متاكد من ارسال جميع العقارات في هذا المشروع التي في مرحلة ادارة مشروع-انفاذ للدراسة التفصيلية"
+msgstr "هل انت متاكد من ارسال جميع العقارات في هذا المشروع التي في مرحلة ادارة مشروع-انفاذ للدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_bussma_project__active
@@ -3090,13 +3090,13 @@ msgstr "+ اضافة عقار انفاذ"
 #: model:ir.model.fields.selection,name:sales_and_auction_management.selection__request_stage__project_stage_selection__detailed_study_approval_eanfaz
 #: model:request.stage,name:sales_and_auction_management.stage_detailed_study_approval_eanfaz
 msgid "Detailed Study Approval - Eanfaz"
-msgstr "اعتماد الدراسة التفصيلية - انفاذ"
+msgstr "اعتماد الدراسة النوعية - انفاذ"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields.selection,name:sales_and_auction_management.selection__request_stage__project_stage_selection__detailed_study_completed_eanfaz
 #: model:request.stage,name:sales_and_auction_management.stage_detailed_study_completed_eanfaz
 msgid "Detailed Study - Eanfaz Completed"
-msgstr "دراسة تفصيلية - انفاذ مكتملة"
+msgstr "دراسة نوعية - انفاذ مكتملة"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_entries__notes_supervisor_study
@@ -3148,28 +3148,28 @@ msgstr "الملاحظات"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
 msgid "Send to Detailed Analyst"
-msgstr "ارسال للدراسة تفصيلية"
+msgstr "ارسال للدراسة نوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
 msgid "Are you sure you want to send this entry to the detailed analyst?"
-msgstr "هل انت متاكد من ارسال هذا العقار للدراسة التفصيلية؟"
+msgstr "هل انت متاكد من ارسال هذا العقار للدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #. odoo-python
 #: code:addons/sales_and_auction_management/models/entries_inherit.py:0
 msgid "Please assign a Detailed Analyst before proceeding."
-msgstr "يرجى تعيين دارس تفصيلي قبل المتابعة."
+msgstr "يرجى تعيين دارس نوعي قبل المتابعة."
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
 msgid "Send for Approval"
-msgstr "ارسال لاعتماد الدراسة التفصيلية"
+msgstr "ارسال لاعتماد الدراسة النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
 msgid "Are you sure you want to send the detailed study for approval?"
-msgstr "هل انت متاكد من ارسال الدراسة التفصيلية - انفاذ للاعتماد؟"
+msgstr "هل انت متاكد من ارسال الدراسة النوعية - انفاذ للاعتماد؟"
 
 #. module: sales_and_auction_management
 #. odoo-python
@@ -3202,7 +3202,7 @@ msgstr "اعتماد وانهاء الدراسة"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.detailed_study_eanfaz_form_view
 msgid "Are you sure you want to approve and complete this detailed study?"
-msgstr "هل انت متاكد من اعتماد وانهاء هذه الدراسة التفصيلية؟"
+msgstr "هل انت متاكد من اعتماد وانهاء هذه الدراسة النوعية؟"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
@@ -3968,7 +3968,7 @@ msgstr "توصيات وملاحظات المحلل"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 msgid "Detailed Evaluation & Pricing"
-msgstr "التقييم والتسعير التفصيلي"
+msgstr "التقييم والتسعير النوعي"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
@@ -3988,7 +3988,7 @@ msgstr "عناصر التحليل"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 msgid "Detailed Analyst Recommendation"
-msgstr "توصية المحلل التفصيلية"
+msgstr "توصية المحلل النوعية"
 
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
@@ -4023,7 +4023,7 @@ msgstr "الملاحظات والوصف"
 #. module: sales_and_auction_management
 #: model_terms:ir.ui.view,arch_db:sales_and_auction_management.view_bussma_project_form
 msgid "Preliminary Study"
-msgstr "الدراسة الأولية"
+msgstr "الدراسة العادية"
 
 #. module: sales_and_auction_management
 #: model:ir.model.fields,field_description:sales_and_auction_management.field_sales_auction_management__rent_contract_ids

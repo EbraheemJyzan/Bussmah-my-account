@@ -4807,7 +4807,7 @@ msgstr "تفاصيل العقار"
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_opportunity_form
 msgid "Preliminary Study"
-msgstr "الأولية"
+msgstr "العادية"
 
 #. module: marketing_opportunity_management
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
@@ -4849,19 +4849,19 @@ msgstr "توصيات وملاحظات المحلل"
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_opportunity_form
 msgid "Detailed Study"
-msgstr "دراسة تفصيلية"
+msgstr "دراسة نوعية"
 
 #. module: marketing_opportunity_management
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_opportunity_form
 msgid "Detailed Evaluation & Pricing"
-msgstr "التقييم والتسعير التفصيلي"
+msgstr "التقييم والتسعير النوعي"
 
 #. module: marketing_opportunity_management
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_opportunity_form
 msgid "Detailed Evaluation &amp; Pricing"
-msgstr "التقييم والتسعير التفصيلي"
+msgstr "التقييم والتسعير النوعي"
 
 #. module: marketing_opportunity_management
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
@@ -4891,7 +4891,7 @@ msgstr "عناصر التحليل"
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_opportunity_form
 msgid "Detailed Analyst Recommendation"
-msgstr "توصية المحلل التفصيلية"
+msgstr "توصية المحلل النوعية"
 
 #. module: marketing_opportunity_management
 #: model_terms:ir.ui.view,arch_db:marketing_opportunity_management.view_bussma_marketing_form

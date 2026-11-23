@@ -254,7 +254,7 @@ msgstr "عدد عقارات قرار اللجنة"
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_completed
 msgid "Completed Detailed Study Properties Count"
-msgstr "عدد عقارات اكتمال الدراسة التفصيلية"
+msgstr "عدد عقارات اكتمال الدراسة النوعية"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_manager_contract_approval
@@ -304,12 +304,12 @@ msgstr "عدد عقارات قرار مدير المزادات"
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_analyst
 msgid "Detailed Study Analyst Properties Count"
-msgstr "عدد عقارات إعداد الدراسة التفصيلية"
+msgstr "عدد عقارات إعداد الدراسة النوعية"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_approval
 msgid "Detailed Study Approval Properties Count"
-msgstr "عدد عقارات اعتماد الدراسة التفصيلية"
+msgstr "عدد عقارات اعتماد الدراسة النوعية"
 
 #. module: study_portfolio_management
 #: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_study_portfolio_form
@@ -320,22 +320,22 @@ msgstr "الوصف والملاحظات"
 #: model:ir.model.fields.selection,name:study_portfolio_management.selection__entries__study_type__detailed
 #: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
 msgid "Detailed Study"
-msgstr "دراسة تفصيلية"
+msgstr "دراسة نوعية"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_approval_eanfaz
 msgid "Detailed Study Approval Properties Count"
-msgstr "عدد عقارات اعتماد الدراسة التفصيلية - إنفاذ"
+msgstr "عدد عقارات اعتماد الدراسة النوعية - إنفاذ"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_completed_eanfaz
 msgid "Detailed Study Completed Properties Count"
-msgstr "عدد عقارات اكتمال الدراسة التفصيلية - إنفاذ"
+msgstr "عدد عقارات اكتمال الدراسة النوعية - إنفاذ"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__stage_count_detailed_study_eanfaz
 msgid "Detailed Study Properties Count"
-msgstr "عدد عقارات الدراسة التفصيلية - إنفاذ"
+msgstr "عدد عقارات الدراسة النوعية - إنفاذ"
 
 #. module: study_portfolio_management
 #: model:ir.model.fields,field_description:study_portfolio_management.field_study_portfolio__display_name
@@ -592,7 +592,7 @@ msgstr "مراحل المحفظة"
 #: model:ir.model.fields.selection,name:study_portfolio_management.selection__entries__study_type__preliminary
 #: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_entries_search_inherit_portfolio
 msgid "Preliminary Study"
-msgstr "دراسة أولية"
+msgstr "دراسة عادية"
 
 #. module: study_portfolio_management
 #. odoo-python
@@ -792,7 +792,7 @@ msgstr "إرسال إلى نائب مدير الدراسات"
 #. odoo-python
 #: code:addons/study_portfolio_management/models/entries_inherit.py:0
 msgid "Send to Detailed Study"
-msgstr "إرسال إلى الدراسة التفصيلية"
+msgstr "إرسال إلى الدراسة النوعية"
 
 #. module: study_portfolio_management
 #: model_terms:ir.ui.view,arch_db:study_portfolio_management.view_detailed_study_eanfaz_inherit_portfolio
@@ -1035,7 +1035,7 @@ msgid ""
 "You cannot execute batch action on property '%s': You are not the assigned "
 "detailed analyst for this property."
 msgstr ""
-"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست محلل الدراسة التفصيلية "
+"لا يمكنك تنفيذ الإجراء الجماعي على العقار '%s': لست محلل الدراسة النوعية "
 "المسند إليه هذا العقار."
 
 #. module: study_portfolio_management

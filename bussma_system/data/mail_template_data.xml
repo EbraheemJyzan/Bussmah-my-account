@@ -15,8 +15,8 @@
                         <t t-else=""><t t-out="object.analyst_id.name"/></t><br/><br/>
                         تم تعيينكم بإعداد 
                         <strong>
-                            <t t-if="object.project_path == 'specialized' or object.is_assign_detailed_study">دراسة تفصيلية</t>
-                            <t t-elif="object.project_path == 'standard'">دراسة اولية</t>
+                            <t t-if="object.project_path == 'specialized' or object.is_assign_detailed_study">دراسة نوعية</t>
+                            <t t-elif="object.project_path == 'standard'">دراسة عادية</t>
                             <t t-elif="object.project_path == 'cities'">دراسة مدن</t>
                             <t t-else=""><t t-out="object.project_path"/></t>
                         </strong> 

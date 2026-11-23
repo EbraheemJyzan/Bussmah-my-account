@@ -423,17 +423,17 @@ msgstr "إدراج"
 #: model:request.stage,name:bussma_system.direct_sale_detailed_study_analyst
 #: model:request.type,name:bussma_system.direct_sale_detailed_study
 msgid "Detailed Study"
-msgstr "الدراسة التفصيلية"
+msgstr "الدراسة النوعية"
 
 #. module: bussma_system
 #: model:ir.ui.menu,name:bussma_system.direct_sale_detailed_study_menu
 msgid "Detailed"
-msgstr "التفصيلية"
+msgstr "النوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Detailed Study Information"
-msgstr "الدراسة التفصيلية"
+msgstr "الدراسة النوعية"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__direct_sale_price_per_meter
@@ -833,17 +833,17 @@ msgstr "رابط دقيق لموقع اللوحة"
 #: model:ir.actions.act_window,name:bussma_system.direct_sale_preliminary_study_action
 #: model:request.type,name:bussma_system.preliminary_study
 msgid "Preliminary Study"
-msgstr "الدراسة الأولية"
+msgstr "الدراسة العادية"
 
 #. module: bussma_system
 #: model:ir.ui.menu,name:bussma_system.direct_sale_preliminary_study_menu
 msgid "Preliminary Study"
-msgstr "الأولية"
+msgstr "العادية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Preliminary Study Information"
-msgstr "الدراسة الأولية"
+msgstr "الدراسة العادية"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__preliminary_study_status
@@ -1038,18 +1038,18 @@ msgstr "اعتماد الدراسة"
 #: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__study_approval
 #: model:request.stage,name:bussma_system.study_approval
 msgid "Preliminary Study Approval"
-msgstr "اعتماد الدراسة الأولية"
+msgstr "اعتماد الدراسة العادية"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__standard_study_manager_approval
 #: model:ir.model.fields,field_description:bussma_system.field_entries__standard_study_manager_approval_rel
 msgid "Study Manager Approval"
-msgstr "موافقة مدير الدراسة (اولي)"
+msgstr "موافقة مدير الدراسة (عادي)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__specialized_study_manager_approval
 msgid "Study Manager Approval"
-msgstr "موافقة مدير الدراسة (تفصيلي)"
+msgstr "موافقة مدير الدراسة (نوعي)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__cities_study_manager_approval
@@ -1280,7 +1280,7 @@ msgstr "استبعاد"
 #: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__analyst
 #: model:request.stage,name:bussma_system.analyst
 msgid "Preliminary Study Analyst"
-msgstr "إعداد الدراسة الأولية"
+msgstr "إعداد الدراسة العادية"
 
 #. module: bussma_system
 #: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__negotiator
@@ -1356,7 +1356,7 @@ msgstr "دراسة مدن منتهية"
 #: model:ir.model.fields,field_description:bussma_system.field_entries__is_assign_detailed_study
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Assign Detailed Study"
-msgstr "تعيين دراسة تفصيلية"
+msgstr "تعيين دراسة نوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.view_entries_search
@@ -1401,12 +1401,12 @@ msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to return the entry to the analyst for the detailed study?"
-msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة تفصيلية؟"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة نوعية؟"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to return the entry to the analyst for the preliminary study?"
-msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة أولية؟"
+msgstr "هل أنت متأكد أنك تريد إعادة الإدراج إلى الدارس دراسة عادية؟"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -1496,7 +1496,7 @@ msgstr "استخدامات العقار"
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_analyst_id
 msgid "Detailed Assigned Analyst"
-msgstr "تعيين الدارس التفصيلي"
+msgstr "تعيين الدارس النوعي"
 
 #. module: bussma_system
 #: model:ir.model,name:bussma_system.model_property_type
@@ -1626,7 +1626,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Please assign a Detailed Assigned Analyst before proceeding."
-msgstr "الرجاء تعيين دارس تفصيلي قبل المتابعة"
+msgstr "الرجاء تعيين دارس نوعي قبل المتابعة"
 
 #. module: bussma_system
 #. odoo-python
@@ -1776,12 +1776,12 @@ msgstr "هل أنت متأكد أنك تريد إرسال الى موافقة م
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to send the entry to the assign detailed study?"
-msgstr "هل أنت متأكد أنك تريد إرسال الإدراج إلى تعيين دراسة تفصيلية؟"
+msgstr "هل أنت متأكد أنك تريد إرسال الإدراج إلى تعيين دراسة نوعية؟"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to send the preliminary study for approval?"
-msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة الأولية للاعتماد؟"
+msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة العادية للاعتماد؟"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -1863,7 +1863,7 @@ msgstr "ارجاعات مدراء القسم"
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Dose not confirm detailed study"
-msgstr "لم يتم تاكيد الدراسة التفصيلية"
+msgstr "لم يتم تاكيد الدراسة النوعية"
 
 #. module: bussma_system
 #: model:ir.model,name:bussma_system.model_entries_return_log
@@ -2036,7 +2036,7 @@ msgstr "تحديد الكل"
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Send To Assign Detailed Study"
-msgstr "تعيين دراسة تفصيلية"
+msgstr "تعيين دراسة نوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -2051,7 +2051,7 @@ msgstr "إرسال لمتابعة التعاقد"
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Complete Detailed Study"
-msgstr "إكمال الدراسة التفصيلية"
+msgstr "إكمال الدراسة النوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -2091,7 +2091,7 @@ msgstr "إرسال للدارس"
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Send to Preliminary Study Approval"
-msgstr "إرسال لاعتماد الدراسة الأولية"
+msgstr "إرسال لاعتماد الدراسة العادية"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__state
@@ -2109,7 +2109,7 @@ msgstr "اسم الولاية"
 #: model:ir.model.fields,field_description:bussma_system.field_entries__study_return_count
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Preliminary Study Returns"
-msgstr "إرجاعات الدراسة الأولية"
+msgstr "إرجاعات الدراسة العادية"
 
 #. module: bussma_system
 #. odoo-python
@@ -2117,7 +2117,7 @@ msgstr "إرجاعات الدراسة الأولية"
 #: model:ir.model.fields,field_description:bussma_system.field_entries__detailed_study_return_count
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Detailed Study Returns"
-msgstr "إرجاعات الدراسة التفصيلية"
+msgstr "إرجاعات الدراسة النوعية"
 
 #. module: bussma_system
 #. odoo-python
@@ -2225,7 +2225,7 @@ msgstr "تم إرسال بريد إلكتروني إلى المفاوض"
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Please select a detailed analyst"
-msgstr "الرجاء اختيار دارس تفصيلي"
+msgstr "الرجاء اختيار دارس نوعي"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -2235,7 +2235,7 @@ msgstr "إرسال للدارس"
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to send this entry to the detailed study?"
-msgstr "هل انت متاكد من رغبتك في ارسال هذا الادراج للدارس التفصيلي؟"
+msgstr "هل انت متاكد من رغبتك في ارسال هذا الادراج للدارس النوعي؟"
 
 #. module: bussma_system
 #. odoo-python
@@ -2294,12 +2294,12 @@ msgstr "مدن"
 #. module: bussma_system
 #: model:request.type,name:bussma_system.detailed_study
 msgid "Detailed Study"
-msgstr "دراسة تفصيلية"
+msgstr "دراسة نوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Complete Analyst Study"
-msgstr "دراسة اولية مكتملة"
+msgstr "دراسة عادية مكتملة"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
@@ -2818,12 +2818,12 @@ msgstr "تحديد مسار المشروع (أيام)"
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_preliminary_analyst_days
 msgid "Preliminary Study Analyst Duration (Days)"
-msgstr "الدراسة الأولية (أيام)"
+msgstr "الدراسة العادية (أيام)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_detailed_analyst_days
 msgid "Detailed Study Analyst Duration (Days)"
-msgstr "الدراسة التفصيلية (أيام)"
+msgstr "الدراسة النوعية (أيام)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_study_approval_days
@@ -2833,12 +2833,12 @@ msgstr "اعتماد الدراسة (أيام)"
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_preliminary_study_approval_days
 msgid "Preliminary Study Approval Duration (Days)"
-msgstr "اعتماد دراسة اولية (ايام)"
+msgstr "اعتماد دراسة عادية (ايام)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_detailed_study_approval_days
 msgid "Detailed Study Approval Duration (Days)"
-msgstr "اعتماد دراسة تفصيلية (ايام)"
+msgstr "اعتماد دراسة نوعية (ايام)"
 
 #. module: bussma_system
 #: model:ir.model.fields,field_description:bussma_system.field_entries__duration_committee_decision_days
@@ -3037,12 +3037,12 @@ msgstr "هل انت متاكد من نقل هذا الادراج الي مرحل
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
 msgid "<span class=\"x-small text-muted\">Primary Analyst:</span>"
-msgstr "<span class=\"x-small text-muted\">الدارس اولي:</span>"
+msgstr "<span class=\"x-small text-muted\">الدارس عادي:</span>"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_kanban_view
 msgid "<span class=\"x-small text-muted\">Detailed Analyst:</span>"
-msgstr "<span class=\"x-small text-muted\">دارس تفصيلي:</span>"
+msgstr "<span class=\"x-small text-muted\">دارس نوعي:</span>"
 
 #. module: bussma_system
 #. odoo-python
@@ -3724,41 +3724,41 @@ msgstr "هل الإدراج تابع لمزادات مدن؟"
 #: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__detailed_study_analyst
 #: model:request.stage,name:bussma_system.detailed_study_analyst
 msgid "Detailed Study Analyst"
-msgstr "إعداد الدراسة التفصيلية"
+msgstr "إعداد الدراسة النوعية"
 
 #. module: bussma_system
 #: model:ir.model.fields.selection,name:bussma_system.selection__request_stage__project_stage_selection__detailed_study_approval
 #: model:request.stage,name:bussma_system.detailed_study_approval
 msgid "Detailed Study Approval"
-msgstr "اعتماد الدراسة التفصيلية"
+msgstr "اعتماد الدراسة النوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Send to Detailed Study Approval"
-msgstr "إرسال لاعتماد الدراسة التفصيلية"
+msgstr "إرسال لاعتماد الدراسة النوعية"
 
 #. module: bussma_system
 #: model_terms:ir.ui.view,arch_db:bussma_system.entries_form_view
 msgid "Are you sure you want to send the detailed study for approval?"
-msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة التفصيلية للاعتماد؟"
+msgstr "هل أنت متأكد من رغبتك في إرسال الدراسة النوعية للاعتماد؟"
 
 #. module: bussma_system
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Preliminary Study Approval stage not found. Please contact administrator."
-msgstr "مرحلة اعتماد الدراسة الأولية غير موجودة. يرجى التواصل مع المسؤول."
+msgstr "مرحلة اعتماد الدراسة العادية غير موجودة. يرجى التواصل مع المسؤول."
 
 #. module: bussma_system
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Detailed Study Approval stage not found. Please contact administrator."
-msgstr "مرحلة اعتماد الدراسة التفصيلية غير موجودة. يرجى التواصل مع المسؤول."
+msgstr "مرحلة اعتماد الدراسة النوعية غير موجودة. يرجى التواصل مع المسؤول."
 
 #. module: bussma_system
 #. odoo-python
 #: code:addons/bussma_system/models/entries.py:0
 msgid "Only the Studies Manager can approve the detailed study."
-msgstr "فقط مدير الدراسات يمكنه اعتماد الدراسة التفصيلية."
+msgstr "فقط مدير الدراسات يمكنه اعتماد الدراسة النوعية."
 
 #. module: bussma_system
 #. odoo-python
