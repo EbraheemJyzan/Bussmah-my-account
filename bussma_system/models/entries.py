@@ -687,6 +687,7 @@ class Entries(models.Model):
     duration_commercial_approval_days = fields.Float(string='Commercial Manager Approval Duration (Days)', compute='_compute_stage_durations')
     duration_assign_negotiator_days = fields.Float(string='Assign Negotiator Duration (Days)', compute='_compute_stage_durations')
     duration_negotiator_days = fields.Float(string='Negotiator Duration (Days)', compute='_compute_stage_durations')
+    duration_deputy_studies_manager_approval_days = fields.Float(string='Deputy Studies Manager Approval Duration (Days)', compute='_compute_stage_durations')
     duration_manager_contract_approval_days = fields.Float(string='Manager Contract Approval Duration (Days)', compute='_compute_stage_durations')
     duration_contract_followup_days = fields.Float(string='Contract Followup Duration (Days)', compute='_compute_stage_durations')
     duration_negotiation_approval_days = fields.Float(string='Negotiation Approval Duration (Days)', compute='_compute_stage_durations')
@@ -1215,6 +1216,7 @@ class Entries(models.Model):
             rec.duration_commercial_approval_days = round(stage_sums.get('commercial_manager_approval', 0.0), 2)
             rec.duration_assign_negotiator_days = round(stage_sums.get('assign_negotiator', 0.0), 2)
             rec.duration_negotiator_days = round(stage_sums.get('negotiator', 0.0), 2)
+            rec.duration_deputy_studies_manager_approval_days = round(stage_sums.get('deputy_studies_manager_approval', 0.0), 2)
             rec.duration_manager_contract_approval_days = round(stage_sums.get('manager_contract_approval', 0.0), 2)
             rec.duration_contract_followup_days = round(stage_sums.get('contract_followup', 0.0), 2)
             rec.duration_negotiation_approval_days = round(stage_sums.get('negotiation_approval', 0.0), 2)
@@ -1636,12 +1638,18 @@ class Entries(models.Model):
 
         # 5. Negotiation
         elif self.project_stage_selection == 'negotiator':
-            if not self.is_sent_to_deputy_studies_manager:
-                if self.is_manager_negotiator:
-                    fields_to_check = ['manager_negotiator_note']
-                else:
-                    fields_to_check = ['negotiator_note']
-                error_msg = _("The following fields are required before moving from the negotiation stage:\n- %s")
+            if self.is_manager_negotiator:
+                fields_to_check = ['manager_negotiator_note']
+            else:
+                fields_to_check = ['negotiator_note']
+            error_msg = _("The following fields are required before moving from the negotiation stage:\n- %s")
+
+        # 5.1 Deputy Studies Manager Approval
+        elif self.project_stage_selection == 'deputy_studies_manager_approval':
+            fields_to_check = ['deputy_studies_manager_approval']
+            if self.deputy_studies_manager_approval == 'rejected':
+                fields_to_check.append('deputy_studies_manager_notes')
+            error_msg = _("The following fields are required before moving from the Deputy Studies Manager approval stage:\n- %s")
 
         # 6. Contracting Stage
         elif self.project_stage_selection == 'contract_followup':
@@ -1760,7 +1768,7 @@ class Entries(models.Model):
                     'note': rec.commercial_sector_manager_contract_notes,
                 })
                 negotiator_stage = self.env.ref('bussma_system.negotiator')
-                rec.write({'stage_id': negotiator_stage.id, 'is_sent_to_deputy_studies_manager': False, 'is_manager_negotiator': True})
+                rec.write({'stage_id': negotiator_stage.id, 'is_sent_to_deputy_studies_manager': False, 'is_manager_negotiator': True, 'deputy_studies_manager_approval': False})
                 # Send return email to ALL users in the responsible group
                 if rec.committee_decision == 'direct_sale':
                     sales_group = self.env.ref('bussma_system.group_sales_manager', raise_if_not_found=False)
@@ -1798,8 +1806,10 @@ class Entries(models.Model):
                             raise UserError(_("Please set the owner's final price per meter before sending to Deputy Studies Manager."))
                         if not rec.final_owner_price or rec.final_owner_price <= 0:
                             raise UserError(_("Please set the owner's final price before sending to Deputy Studies Manager."))
-                # Open the sub-step
-                rec.write({'is_sent_to_deputy_studies_manager': True})
+                deputy_stage = self.env.ref('bussma_system.deputy_studies_manager_approval', raise_if_not_found=False)
+                if not deputy_stage:
+                    raise UserError(_("Deputy Studies Manager Approval stage not found. Please contact the administrator."))
+                rec.write({'stage_id': deputy_stage.id, 'is_sent_to_deputy_studies_manager': True})
                 # Find deputy studies manager users and send email to each
                 deputy_group = self.env.ref('bussma_system.group_deputy_studies_manager', raise_if_not_found=False)
                 if deputy_group:
@@ -1812,12 +1822,12 @@ class Entries(models.Model):
 
     def action_deputy_return_to_negotiator(self):
         """Deputy Studies Manager rejects and returns to negotiator.
-        The gate (is_sent_to_deputy_studies_manager) is reset to False,
-        forcing a re-negotiate + re-send cycle before deputy can review again.
         Notes stay so the warning banner shows the reason.
         """
         for rec in self:
-            if rec.project_stage_selection == 'negotiator':
+            if rec.project_stage_selection in ['deputy_studies_manager_approval', 'negotiator']:
+                if not self.env.user.has_group('bussma_system.group_deputy_studies_manager'):
+                    raise UserError(_("Only the Deputy Studies Manager can return this entry to the negotiator."))
                 if not rec.deputy_studies_manager_notes:
                     raise UserError(_("Please provide a note/reason for returning to negotiator."))
                 self.env['entries.return.log'].create({
@@ -1825,8 +1835,8 @@ class Entries(models.Model):
                     'return_type': 'deputy_to_negotiator',
                     'note': rec.deputy_studies_manager_notes,
                 })
-                # Reset the gate — notes stay for the warning banner
-                rec.write({'is_sent_to_deputy_studies_manager': False})
+                negotiator_stage = self.env.ref('bussma_system.negotiator')
+                rec.write({'stage_id': negotiator_stage.id, 'is_sent_to_deputy_studies_manager': False, 'deputy_studies_manager_approval': False})
                 # Determine recipients based on who is the negotiator
                 if rec.is_manager_negotiator:
                     # Returned to ALL users in the sales or auctions manager group
@@ -2315,16 +2325,20 @@ class Entries(models.Model):
                                 'is_returned_from_commercial_manager': True,
                                })
                     return True
-                if rec.is_sent_to_deputy_studies_manager:
-                    if rec.deputy_studies_manager_approval != 'accepted':
-                        raise UserError(_("Approval from the Deputy Studies Manager is required before sending to Contract Approval."))
-                    if not self.env.user.has_group('bussma_system.group_deputy_studies_manager'):
-                        raise UserError(_("Only the Deputy Studies Manager can send this entry to Contract Approval."))
-                    manager_contract_approval_stage = self.env.ref('bussma_system.manager_contract_approval', raise_if_not_found=False)
-                    if not manager_contract_approval_stage:
-                        raise UserError(_("The manager contract approval stage is not found. Please contact the administrator."))
-                    rec.write({'stage_id': manager_contract_approval_stage.id})
-                    return True
+                rec.action_send_to_deputy_studies_manager()
+                return True
+
+            # ── Stage: Deputy Studies Manager Approval ──────────────────────────
+            elif rec.project_stage_selection == 'deputy_studies_manager_approval':
+                if not self.env.user.has_group('bussma_system.group_deputy_studies_manager'):
+                    raise UserError(_("Only the Deputy Studies Manager can send this entry to Contract Approval."))
+                if rec.deputy_studies_manager_approval != 'accepted':
+                    raise UserError(_("Approval from the Deputy Studies Manager is required before sending to Contract Approval."))
+                manager_contract_approval_stage = self.env.ref('bussma_system.manager_contract_approval', raise_if_not_found=False)
+                if not manager_contract_approval_stage:
+                    raise UserError(_("The manager contract approval stage is not found. Please contact the administrator."))
+                rec.write({'stage_id': manager_contract_approval_stage.id})
+                return True
 
             elif rec.project_stage_selection == 'manager_contract_approval':
                 owner_decision = (
@@ -2501,10 +2515,18 @@ class Entries(models.Model):
             if rec.project_stage_selection == 'commercial_manager_approval':
                 rec.display_button_accept = False
                 continue
-            # Negotiator Stage Deputy Approval check
+            # Negotiator Stage check
             if rec.project_stage_selection == 'negotiator':
-                # Hide main advance button if sub-step not completed
-                if not rec.is_sent_to_deputy_studies_manager or rec.deputy_studies_manager_approval != 'accepted':
+                owner_dec = rec.manager_negotiator_final_owner_decision if rec.is_manager_negotiator else rec.final_owner_decision
+                if not owner_dec:
+                    hide_accept = True
+                elif owner_dec != 'higher_price':
+                    price = rec.manager_negotiator_final_owner_price if rec.is_manager_negotiator else rec.final_owner_price
+                    if owner_dec != 'rejected' and (not price or price <= 0):
+                        hide_accept = True
+            # Deputy Studies Manager Approval Stage check
+            if rec.project_stage_selection == 'deputy_studies_manager_approval':
+                if rec.deputy_studies_manager_approval != 'accepted':
                     hide_accept = True
             # 6️ Manager Contract Approval (NEW LOGIC)
             if rec.project_stage_selection == 'manager_contract_approval':
@@ -3303,10 +3325,9 @@ class Entries(models.Model):
                         study_menu_domain = [
                             '|', '|', '|', '|', '|',
                             ('assigned_project_manager', '=', user.id),
-                            '&', '&',
+                            '&',
                             ('assigned_negotiator', '=', user.id),
                             ('project_stage_selection', '=', 'negotiator'),
-                            ('is_sent_to_deputy_studies_manager', '=', False),
                             ('direct_sale_assigned_contract_manager', '=', user.id),
                             ('auction_assigned_contract_manager', '=', user.id),
                             '&',
@@ -3329,10 +3350,9 @@ class Entries(models.Model):
                             '&',
                             ('data_completer_id', '=', user.id),
                             ('project_stage_selection', '=', 'data_completion'),
-                            '&', '&',
+                            '&',
                             ('assigned_negotiator', '=', user.id),
                             ('project_stage_selection', '=', 'negotiator'),
-                            ('is_sent_to_deputy_studies_manager', '=', False),
                             ('direct_sale_assigned_contract_manager', '=', user.id),
                             ('auction_assigned_contract_manager', '=', user.id)
                         ]

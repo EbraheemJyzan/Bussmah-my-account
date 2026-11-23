@@ -237,6 +237,22 @@
         </record>
 
         <!-- ================================================================ -->
+        <!-- Stage: Deputy Studies Manager Approval                            -->
+        <!-- Allowed: Deputy Studies Manager                                  -->
+        <!-- ================================================================ -->
+        <record id="deputy_studies_manager_approval" model="request.stage">
+            <field name="name">Deputy Studies Manager Approval</field>
+            <field name="res_model">entries</field>
+            <field name="res_model_id" ref="model_entries"/>
+            <field name="sequence">53</field>
+            <field name="request_type_ids" eval="[(6, 0, [ref('preliminary_study'), ref('detailed_study')])]"/>
+            <field name="state">in_progress</field>
+            <field name="assign_type">role</field>
+            <field name="default_role_ids" eval="[(6, 0, [ref('bussma_system.role_deputy_studies_manager')])]"/>
+            <field name="project_stage_selection">deputy_studies_manager_approval</field>
+        </record>
+
+        <!-- ================================================================ -->
         <!-- Stage: Manager Contract Approval                                  -->
         <!-- Allowed: Commercial Sector Manager                               -->
         <!-- ================================================================ -->
