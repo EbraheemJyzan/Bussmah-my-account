@@ -9,7 +9,8 @@
             <field name="name">entries.list.view</field>
             <field name="model">entries</field>
             <field name="arch" type="xml">
-                <list string="Entries">
+                <list string="Entries" class="o_entries_list" decoration-danger="manager_negotiator_final_owner_decision == 'rejected' or (final_owner_decision == 'rejected' and manager_negotiator_final_owner_decision != 'committee_price' and manager_negotiator_final_owner_decision != 'higher_price')">
+                    <field name="final_owner_decision" column_invisible="True"/>
                     <field name="entrie_name" readonly="1" decoration-bf="1" optional="show"/>
                     <field name="customer_intent_rel" optional="show"/>
                     <field name="partner_id" optional="show"/>

@@ -123,3 +123,50 @@
     color: #034547 !important;
     text-decoration: underline !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   ENTRIES LIST VIEW: HIGHLIGHT OWNER REJECTED ENTRIES IN LIGHT RED
+   تلوين الإدراجات التي قرار المالك النهائي فيها رفض باللون الأحمر الفاتح
+   ══════════════════════════════════════════════════════════════════ */
+.o_list_table tr.o_data_row.text-danger,
+.o_list_table tr.o_data_row.text-danger > td,
+.o_list_table tr.o_data_row.text-danger > th {
+    --bs-table-bg: #fee2e2 !important;
+    --bs-table-accent-bg: #fee2e2 !important;
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+.o_list_table tr.o_data_row.text-danger:hover,
+.o_list_table tr.o_data_row.text-danger:hover > td,
+.o_list_table tr.o_data_row.text-danger:hover > th {
+    --bs-table-bg: #fecaca !important;
+    --bs-table-accent-bg: #fecaca !important;
+    background-color: #fecaca !important;
+}
+
+.o_list_table tr.o_data_row.o_data_row_selected.text-danger,
+.o_list_table tr.o_data_row.o_data_row_selected.text-danger > td,
+.o_list_table tr.o_data_row.o_data_row_selected.text-danger > th {
+    --bs-table-bg: #fca5a5 !important;
+    --bs-table-accent-bg: #fca5a5 !important;
+    background-color: #fca5a5 !important;
+}
+
+/* Ensure links and text inside rejected rows stay clear and distinct */
+.o_list_table tr.o_data_row.text-danger a,
+.o_list_table tr.o_data_row.text-danger a:hover,
+.o_list_table tr.o_data_row.text-danger .o_field_widget:not(.o_field_badge) {
+    color: #991b1b !important;
+}
+
+/* Dark mode compatibility */
+[data-bs-theme="dark"] .o_list_table tr.o_data_row.text-danger,
+[data-bs-theme="dark"] .o_list_table tr.o_data_row.text-danger > td,
+[data-bs-theme="dark"] .o_list_table tr.o_data_row.text-danger > th {
+    --bs-table-bg: rgba(239, 68, 68, 0.25) !important;
+    --bs-table-accent-bg: rgba(239, 68, 68, 0.25) !important;
+    background-color: rgba(239, 68, 68, 0.25) !important;
+    color: #fca5a5 !important;
+}
+
