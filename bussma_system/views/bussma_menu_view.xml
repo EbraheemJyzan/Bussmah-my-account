@@ -4,7 +4,7 @@
         <menuitem id="rout_menu_commercial_sector" name="Studies Management" sequence="5" web_icon="bussma_system,static/description/icon.svg" groups="bussma_system.group_studies_user,bussma_system.group_assign_negotiator,bussma_system.group_city_studies_manager,bussma_system.group_data_completer"/>
         <menuitem id="entries_main_menu" name="Entries" parent="rout_menu_commercial_sector" sequence="0" />
         <menuitem id="entries_menu" name="Entries" action="entries_action" parent="entries_main_menu" sequence="0" />
-        <menuitem id="define_project_path_menu" name="Define Project Path" action="define_project_path_action" parent="entries_main_menu" sequence="1" />
+        <menuitem id="define_project_path_menu" name="Define Project Paths" action="define_project_path_action" parent="direct_sale_menu" sequence="1" />
         <menuitem id="data_completion_menu" name="Data Completion" action="data_completion_action" parent="entries_main_menu" sequence="2" />
 
         <menuitem id="direct_sale_menu" name="Studies" parent="rout_menu_commercial_sector" sequence="1" />

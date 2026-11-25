@@ -1,0 +1,25 @@
+{
+    "version": "18.0.0",
+    "configurations": [
+        {
+            "name": "odoo18",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/masa/odoo_apps/odoo18/odoo-bin",
+            "console": "internalConsole",
+            //"console": "integratedTerminal",
+            "args": [
+                "--config=/home/masa/odoo_apps/config/odoo_18/Bussmah-my-account.conf",
+                // "marketing_opportunity_management",
+                // "-u", "bussma_system",
+                //  "-u", "sales_and_auction_management",
+                // "-u", "request",
+                //  "-u", "hospital_immunizations",
+                // "-u", "marketing_opportunity_management",
+                // "-u", "financial_management",
+                //  "-u", "web",
+                // "-u", "nomow_dynamic_dashboard"
+            ]
+        }
+    ]
+}
