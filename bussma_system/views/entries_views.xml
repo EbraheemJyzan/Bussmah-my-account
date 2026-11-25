@@ -252,17 +252,17 @@
                     <button name="action_accept" class="btn-success" string="Send to Negotiator" type="object" confirm="Are you sure you want to send this entry to the negotiator?" invisible="not (project_stage_selection == 'assign_negotiator' and assigned_negotiator != False)" groups="bussma_system.group_assign_negotiator" />
                     <!-- Send to Manager Contract Approval (Negotiator) -->
                     <!-- Button: Send to Deputy Studies Manager for approval (shown after negotiation result is set) -->
-                    <button name="action_accept" class="btn-primary" string="Send to Deputy Studies Manager" type="object"
+                    <button name="action_send_to_deputy_studies_manager" class="btn-primary" string="Send to Deputy Studies Manager" type="object"
                         confirm="Are you sure you want to send the negotiation result to the Deputy Studies Manager for approval?"
-                        invisible="not (project_stage_selection == 'negotiator' and ((not is_manager_negotiator and final_owner_decision != False and final_owner_decision != 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision != False and manager_negotiator_final_owner_decision != 'higher_price')))"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False and ((not is_manager_negotiator and final_owner_decision != False and final_owner_decision != 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision != False and manager_negotiator_final_owner_decision != 'higher_price')))"
                         groups="bussma_system.group_negotiator,bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
                     <!-- Button: Send to Contract Approval (only after deputy approval is accepted) -->
                     <button name="action_accept" class="btn-success" string="Send To Sector Manager Approval" type="object" confirm="Are you sure you want to send the entry to the Commercial Sector Manager's approval stage for the negotiation result?"
-                        invisible="not (project_stage_selection == 'deputy_studies_manager_approval' and deputy_studies_manager_approval == 'accepted')"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'accepted' and ((not is_manager_negotiator and final_owner_decision != 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision != 'higher_price')))"
                         groups="bussma_system.group_deputy_studies_manager" />
                     <!-- Return to Negotiator (Deputy Studies Manager) - shown when rejected -->
                     <button name="action_deputy_return_to_negotiator" class="btn-warning" string="Return to Negotiator" type="object" confirm="Are you sure you want to return this entry to the negotiator?"
-                        invisible="not (project_stage_selection == 'deputy_studies_manager_approval' and deputy_studies_manager_approval == 'rejected')"
+                        invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'rejected')"
                         groups="bussma_system.group_deputy_studies_manager" />
                     <!-- Return to Committee -->
                     <button name="action_accept" class="btn-warning" string="Return to Committee" type="object" confirm="Are you sure you want to return this entry to the committee?" invisible="not (project_stage_selection == 'negotiator' and ((not is_manager_negotiator and final_owner_decision == 'higher_price') or (is_manager_negotiator and manager_negotiator_final_owner_decision == 'higher_price')))" groups="bussma_system.group_negotiator,bussma_system.group_sales_manager,bussma_system.group_auctions_manager" />
@@ -618,7 +618,7 @@
                         </div>
                         <!-- Deputy Studies Manager Rejection Notes: shown to negotiator after rejection return -->
                         <div class="alert alert-warning d-flex align-items-start gap-2 mb-0"
-                            invisible="not (project_stage_selection == 'negotiator' and deputy_studies_manager_notes != False)">
+                            invisible="not (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False and deputy_studies_manager_notes != False)">
                             <i class="fa fa-exclamation-triangle fa-lg mt-1 text-warning"/>
                             <div class="w-100">
                                 <strong class="text-warning-emphasis d-block mb-1">Deputy Studies Manager Rejection Note — Please Re-Negotiate and Re-Send</strong>
@@ -993,7 +993,7 @@
                                 <field name="property_stage" readonly="is_entry_archive"/>
                             </group>
                         </page>
-                        <page name="negotiation_page" string="Negotiation" invisible="project_stage_selection not in ('assign_negotiator', 'negotiator', 'deputy_studies_manager_approval',
+                        <page name="negotiation_page" string="Negotiation" invisible="project_stage_selection not in ('assign_negotiator', 'negotiator',
                                                                                                                         'manager_contract_approval', 'contract_followup', 'negotiation_approval',
                                                                                                                         'contract_completion', 'completed', 'city_study_completed') or project_path == 'cities'">
                             <group>
@@ -1001,42 +1001,42 @@
                                 <group string="Negotiation Assignment">
                                     <field name="assigned_negotiator" readonly="is_entry_archive or (project_stage_selection not in ('assign_negotiator', 'negotiator') or is_assign_negotiator_group == False)" required="project_stage_selection == 'assign_negotiator'"/>
                                 </group>
-                                <group string="Negotiation" invisible="project_stage_selection not in ('negotiator', 'deputy_studies_manager_approval', 'manager_contract_approval',
+                                <group string="Negotiation" invisible="project_stage_selection not in ('negotiator', 'manager_contract_approval',
                                                                                                                         'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
                                     <field name="is_sent_to_deputy_studies_manager" invisible="1"/>
                                     <field name="final_owner_decision" invisible="1"/>
-                                    <field name="final_owner_decision_rel" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False)" required="project_stage_selection == 'negotiator'" options="{'no_create': True, 'no_open': True}"/>
-                                    <field name="final_owner_price_per_meter" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                                    <field name="final_owner_price" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="final_owner_decision_rel" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator'" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="final_owner_price_per_meter" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="final_owner_price" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
                                     <field name="final_owner_price_diff_percentage" readonly="1" class="oe_inline"/>
-                                    <field name="owner_rejection_reasons" invisible="final_owner_decision != 'rejected'" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False)" required="project_stage_selection == 'negotiator' and (final_owner_decision == 'rejected' and is_manager_negotiator == False)"/>
-                                    <field name="negotiator_note" string="Negotiator Note" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False)" />
+                                    <field name="owner_rejection_reasons" invisible="final_owner_decision != 'rejected'" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and (final_owner_decision == 'rejected' and is_manager_negotiator == False)"/>
+                                    <field name="negotiator_note" string="Negotiator Note" readonly="is_entry_archive or ((project_stage_selection != 'negotiator' or is_manager_negotiator) or is_negotiator_group == False or is_sent_to_deputy_studies_manager)" />
                                 </group>
                                 <group string="Sales Manager Negotiator" invisible="not (is_manager_negotiator == True and committee_decision == 'direct_sale')">
-                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'direct_sale'" />
-                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'direct_sale'" />
+                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
                                     <field name="manager_negotiator_price_diff_percentage" readonly="1" class="oe_inline"/>
-                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'direct_sale'"/>
-                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False)" />
+                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'direct_sale'"/>
+                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_sales_manager_group == False or is_sent_to_deputy_studies_manager)" />
                                 </group>
                                 <group string="Auctions Manager Negotiator" invisible="not (is_manager_negotiator == True and committee_decision == 'auction')">
-                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'auction'" />
-                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
-                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                                    <field name="manager_negotiator_final_owner_decision" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and committee_decision == 'auction'" />
+                                    <field name="manager_negotiator_final_owner_price_per_meter" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                    <field name="manager_negotiator_final_owner_price" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" />
                                     <field name="manager_negotiator_price_diff_percentage" readonly="1" class="oe_inline"/>
-                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'auction'"/>
-                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False)" />
+                                    <field name="manager_negotiator_owner_rejection_reasons" invisible="manager_negotiator_final_owner_decision != 'rejected'" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" required="project_stage_selection == 'negotiator' and is_manager_negotiator and manager_negotiator_final_owner_decision == 'rejected' and committee_decision == 'auction'"/>
+                                    <field name="manager_negotiator_note" string="Manager Negotiator Note" readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_auctions_manager_group == False or is_sent_to_deputy_studies_manager)" />
                                 </group>
                             </group>
                              <group name="deputy_studies_manager_approval_group" string="Deputy Studies Manager Approval"
-                                    invisible="project_stage_selection not in ('deputy_studies_manager_approval', 'manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
+                                    invisible="project_stage_selection not in ('negotiator', 'manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities' or (project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == False)">
                                  <field name="deputy_studies_manager_approval"
-                                        readonly="is_entry_archive or (project_stage_selection != 'deputy_studies_manager_approval' or is_deputy_studies_manager_group == False)"
-                                        required="project_stage_selection == 'deputy_studies_manager_approval'"/>
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_deputy_studies_manager_group == False)"
+                                        required="project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True"/>
                                  <field name="deputy_studies_manager_notes"
-                                        readonly="is_entry_archive or (project_stage_selection != 'deputy_studies_manager_approval' or is_deputy_studies_manager_group == False)"
-                                        required="project_stage_selection == 'deputy_studies_manager_approval' and deputy_studies_manager_approval == 'rejected'"/>
+                                        readonly="is_entry_archive or (project_stage_selection != 'negotiator' or is_deputy_studies_manager_group == False)"
+                                        required="project_stage_selection == 'negotiator' and is_sent_to_deputy_studies_manager == True and deputy_studies_manager_approval == 'rejected'"/>
                              </group>
                              <group name="commercial_sector_manager_contract_approval_group" string="Commercial Sector Manager Approval for Contract" invisible="project_stage_selection not in ('manager_contract_approval', 'contract_followup', 'negotiation_approval', 'contract_completion', 'completed') or project_path == 'cities'">
                                 <field name="commercial_sector_manager_contract_approval" readonly="is_entry_archive or (project_stage_selection != 'manager_contract_approval' or is_commercial_manager_group == False)" required="project_stage_selection == 'manager_contract_approval'" />
@@ -1202,7 +1202,6 @@
                                 <group string="Negotiation and Contract Stages">
                                     <field name="duration_assign_negotiator_days"/>
                                     <field name="duration_negotiator_days"/>
-                                    <field name="duration_deputy_studies_manager_approval_days"/>
                                     <field name="duration_manager_contract_approval_days"/>
                                     <field name="duration_contract_followup_days"/>
                                     <field name="duration_negotiation_approval_days"/>
@@ -1223,7 +1222,7 @@
                                     string="Filter by Stage"
                                     options="{'no_create': True, 'no_edit': True}"
                                     placeholder="-- All Stages --"
-                                    domain="[('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'city_study_analyst', 'city_study_approval'])] if project_path == 'cities' else [('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval', 'committee_decision', 'sales_manager_decision', 'auctions_manager_decision', 'commercial_manager_approval', 'assign_negotiator', 'negotiator', 'deputy_studies_manager_approval', 'manager_contract_approval', 'contract_followup', 'contract_completion'])]"/>
+                                    domain="[('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'city_study_analyst', 'city_study_approval'])] if project_path == 'cities' else [('res_model', '=', 'entries'), ('project_stage_selection', 'in', ['entry_screen', 'data_completion', 'define_project_path_assign_analyst', 'analyst', 'study_approval', 'detailed_study_analyst', 'detailed_study_approval', 'committee_decision', 'sales_manager_decision', 'auctions_manager_decision', 'commercial_manager_approval', 'assign_negotiator', 'negotiator', 'manager_contract_approval', 'contract_followup', 'contract_completion'])]"/>
                             </group>
                             <field name="stage_history_filtered_ids" readonly="1">
                                 <list string="Stage Log" create="0" delete="0" edit="0" no_open="1">

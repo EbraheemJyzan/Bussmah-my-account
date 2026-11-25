@@ -19,7 +19,6 @@ class RequestStage(models.Model):
         ('commercial_manager_approval', 'Commercial Manager Approval'),
         ('assign_negotiator', 'Assign Negotiator'),
         ('negotiator', 'Negotiator'),
-        ('deputy_studies_manager_approval', 'Deputy Studies Manager Approval'),
         ('manager_contract_approval', 'Manager Contract Approval'),
         ('contract_followup', 'Contract Followup'),
         ('negotiation_approval', 'Negotiation Approval'),

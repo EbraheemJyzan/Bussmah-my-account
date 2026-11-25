@@ -5,7 +5,7 @@
         <menuitem id="entries_main_menu" name="Entries" parent="rout_menu_commercial_sector" sequence="0" />
         <menuitem id="entries_menu" name="Entries" action="entries_action" parent="entries_main_menu" sequence="0" />
         <menuitem id="define_project_path_menu" name="Define Project Path" action="define_project_path_action" parent="entries_main_menu" sequence="1" />
-        <menuitem id="data_completion_menu" name="Data Completion" action="data_completion_action" parent="entries_main_menu" sequence="2" />
+        <menuitem id="data_completion_menu" name="Data Completion" action="data_completion_action" parent="direct_sale_menu" sequence="2" />
 
         <menuitem id="direct_sale_menu" name="Studies" parent="rout_menu_commercial_sector" sequence="1" />
         <menuitem id="my_studies_menu" name="My Studies" action="my_studies_action" parent="direct_sale_menu" sequence="0"/>
